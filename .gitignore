@@ -1,6 +1,6 @@
 venv/
 .venv/
-.DS_Store/**
+.DS_Store
 ml-25m.zip
 ml-25m
 datasets/
