@@ -8,7 +8,7 @@
       <excludeFolder url="file://$MODULE_DIR$/ml-25m" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.9 (Machine_Learning_Python)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.11 (Machine_Learning_Algorithms)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
