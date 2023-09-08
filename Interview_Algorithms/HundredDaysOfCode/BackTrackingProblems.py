@@ -194,15 +194,6 @@ def fib(n):
             b = a+b
             a = b-a
         return b
-def staircaseTraversal(height, maxSteps):
-    # Write your code here
-    if height <=1:
-        return 1
-    steps = 0
-    for i in range(1,maxSteps+1):
-        if i<=height:
-            steps+=staircaseTraversal(height-i,maxSteps)
-    return steps
 
 
 
@@ -222,4 +213,3 @@ if __name__ == '__main__':
     print(a1)
     s = 3
     print(getPermutations1(list(range(1,6))))
-    print(staircaseTraversal(4,3))
