@@ -26,5 +26,8 @@ def anagrams(S):                   # S is a set of strings
         else:
             d[s] = [word]          # add a new signature and its first word
     # -- extract anagrams, ingoring anagram groups of size 1
-    return [d[s] for s in d if len(d[s]) > 1]
+    return [d[s] for s in d if len(d[s]) >= 1]
 # snip}
+if __name__ == '__main__':
+    strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
+    print(anagrams(strs))

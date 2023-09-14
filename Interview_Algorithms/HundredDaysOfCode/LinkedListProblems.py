@@ -184,7 +184,7 @@ def rearrangeLinkedList(head:LinkedList, k)->LinkedList:
     beforeEnd.next = afterStart
     return beforeStart
 
-def rearrangeLinkedList(node:LinkedList,k):
+def rearrangeLinkedListV2(node:LinkedList,k):
     head = node
     tail = node
     while node is not None:
