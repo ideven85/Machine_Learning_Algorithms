@@ -33,7 +33,7 @@ class SaveTheDate(TestCase):
         self.assertEqual(response.url, reverse('save-the-date'))
 
     def test_expired_token(self):
-        ts = login_token_generator._num_days(date(2019, 1, 1))
+        ts = login_token_generator._num_days(date(2023, 9, 30))
         token = login_token_generator._make_token_with_timestamp(self.guest, ts)
         response = self.client.get(reverse('guest-login'), data={'access_code': token})
         self.assertEqual(response.status_code, 200)

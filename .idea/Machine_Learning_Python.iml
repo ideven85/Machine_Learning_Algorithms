@@ -19,8 +19,12 @@
       <excludeFolder url="file://$MODULE_DIR$/datasets" />
       <excludeFolder url="file://$MODULE_DIR$/ml-25m" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv1" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv2" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv3" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv4" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.11 (Machine_Learning_Algorithms)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.11" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">

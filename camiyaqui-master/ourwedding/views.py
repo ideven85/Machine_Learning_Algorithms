@@ -56,9 +56,11 @@ class Register(View):
 
 class GuestLogin(View):
     def get(self, request):
-        """Handles the login if the user has an access code. If the form includes a next parameter it will
+        """Handles the login if the user has an access code.
+         If the form includes a next parameter it will
         redirect to that page.
-        This is handy for sending e-mails that allow users to go directly to a special page.
+        This is handy for sending e-mails that allow users to go
+        directly to a special page.
         """
         form = SecretCodeForm(request.GET)
         if form.is_valid():

@@ -38,7 +38,7 @@ class LoginTokenGenerator:
         ts_b36 = int_to_base36(timestamp)
         us_b36 = int_to_base36(user.pk)
 
-        hash_string = salted_hmac(
+        hash_string = salted_hmac(#Java Kmac
             self.key_salt,
             self._make_hash_value(user, timestamp),
             secret=self.secret
