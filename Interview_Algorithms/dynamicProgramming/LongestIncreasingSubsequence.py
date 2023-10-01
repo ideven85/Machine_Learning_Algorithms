@@ -15,7 +15,9 @@ def lis(nums):
     print(dp)
     return max(dp)
 
-def findNumberOfLIS(nums: List[int]) -> int:
+
+#todo
+def findNumberOfLIS( nums: List[int]) -> int:
     pass
 
 
@@ -23,4 +25,5 @@ def findNumberOfLIS(nums: List[int]) -> int:
 
 if __name__ == '__main__':
     nums = [90,93,94,95,99,1,2,3,97,98,101,102,103,107,111,112,113,114]
+    nums1 = [1, 3, 5, 4, 7]
     print(lis(nums))

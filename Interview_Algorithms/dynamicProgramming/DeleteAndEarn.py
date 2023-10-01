@@ -1,3 +1,4 @@
+import time
 from collections import defaultdict
 from functools import cache
 from math import log
@@ -52,8 +53,40 @@ def deleteAndEarn( nums: List[int]) -> int:
 
     return max_points(max_number)
 
+
+def deleteAndEarnMemoised( nums: List[int]) -> int:
+    cacheMap = defaultdict(int)
+
+    @cache
+    def dp(num:int)->int:
+        if num==0:
+            return 0
+        if num==1:
+            return numMap[1]
+        if cacheMap[num]!=0:
+            return cacheMap[num]
+        gain = numMap[num]
+        cacheMap[num]=max(dp(num-2)+gain,dp(num-1))
+        return cacheMap[num]
+
+    numMap = defaultdict(int)
+    maxNum=0
+    for e in nums:
+        numMap[e]+=e
+        maxNum=max(maxNum,e)
+    return dp(maxNum)
+
+
+
+
 if __name__ == '__main__':
-    nums = [3, 4, 2]
+    nums = [2,2,3,3,3,4]
     sol=Solution()
+    a = time.time()
     print(sol.deleteAndEarn(nums))
-    print(deleteAndEarn(nums))
+    b=time.time()
+    deleteAndEarn(nums)
+    c=time.time()
+    deleteAndEarnMemoised(nums)
+    d=time.time()
+    print(d-b)

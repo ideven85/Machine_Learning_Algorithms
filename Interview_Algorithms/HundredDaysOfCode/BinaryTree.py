@@ -251,7 +251,7 @@ def balancedHeightUtil(root, balanced):
     treeHeight = 1+max(left,right)
     return treeHeight
 
-# TODO
+
 def maxPathSum(root: Optional[TreeNode]) -> int:
     if not root:
         return 0
