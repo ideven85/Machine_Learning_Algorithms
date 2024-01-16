@@ -34,6 +34,11 @@ class Sample:
         e.marks+=100
         e.display()
 
+class TestStudent(Student):
+    def __init__(self,name='.',marks=0,subjects='Maths'):
+        super().__init__(name,marks,subjects)
+
+
 
 
 s1 = Sample(); s2 = Sample()

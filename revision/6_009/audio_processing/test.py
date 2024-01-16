@@ -57,9 +57,9 @@ def test_backwards_small():
 
 
 def test_backwards_real():
-    inp = lab.load_wav(os.path.join(TEST_DIRECTORY, 'sounds', 'hello.wav'))
+    inp = lab.load_wav(os.path.join(TEST_DIRECTORY, 'sounds', 'crash.wav'))
     inp2 = copy.deepcopy(inp)
-    outfile = os.path.join(TEST_DIRECTORY, 'test_outputs', 'hello_backwards.wav')
+    outfile = os.path.join(TEST_DIRECTORY, 'test_outputs', 'crash_backwards.wav')
     compare_against_file(lab.backwards(inp), outfile)
     assert inp == inp2, 'be careful not to modify the input!'
 

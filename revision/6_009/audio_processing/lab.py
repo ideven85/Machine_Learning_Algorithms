@@ -171,9 +171,9 @@ if __name__ == "__main__":
     # here is an example of loading a file (note that this is specified as
     # sounds/hello.wav, rather than just as hello.wav, to account for the
     # sound files being in a different directory than this file)
-    hello = load_wav("mystery.wav")
+    hello = load_wav("sounds/crash.wav")
     #write_wav(backwards(hello),'mystery.wav')
-    write_wav(backwards(hello), "mystery_reversed.wav")
+    write_wav(backwards(hello), "crash_reversed.wav")
 
 
 
