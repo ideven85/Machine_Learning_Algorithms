@@ -22,6 +22,8 @@ class PalindromePartioning:
 
 
 
+from dis import dis
 if __name__ == '__main__':
     s = "aab"
-    print(PalindromePartioning().partition(s))
+    x = PalindromePartioning().partition(s)
+    dis(PalindromePartioning().partition)

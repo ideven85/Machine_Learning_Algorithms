@@ -61,6 +61,34 @@ class MinHeap:
         self.heap.append(value)
         self.siftUp(len(self) - 1)
 
+    def __getitem__(self, index):
+        if  index >= len(self):
+            raise IndexError("Index out of range")
+        return self.heap[index]
+
+    def __iter__(self):
+        # raise AssertionError("Cannot iterate a heap only query")
+        return HeapIterator(self.heap)
+    def __repr__(self):
+        # raise SyntaxError("Heaps can only be peeked")
+        return str(self.heap)
+
+class HeapIterator:
+    def __init__(self,heap):
+        self.heap = heap
+        self.index = 0
+
+    def __next__(self):
+        try:
+            value = self.heap[self.index]
+        except IndexError as e:
+            raise StopIteration(e)
+        self.index += 1
+        return value
+
+    def __iter__(self):
+        return self
+
 
 if __name__ == '__main__':
     a=[48, 12, 24, 7, 8,  24, 391, 24, 56, 2, 6, 8, 41]
@@ -71,3 +99,14 @@ if __name__ == '__main__':
     print(heap.peek())
     print(heap.remove())
     print(heap.remove())
+    print(heap)
+    print(heap[2])
+    print(heap[-2])
+    for e in heap:
+        print(e,end=' ')
+    x = HeapIterator(heap)
+    print(x)
+    print("\n",next(x))
+    for e in x:
+        print(e,end=' ')
+    print()
