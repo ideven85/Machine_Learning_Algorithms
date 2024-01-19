@@ -212,4 +212,5 @@ if __name__ == '__main__':
     print()
     print(a1)
     s = 3
-    print(getPermutations1(list(range(1,6))))
+    print(getPermutations1([1,2,1]))
+    print(getPermutations([1,2,1],3))
