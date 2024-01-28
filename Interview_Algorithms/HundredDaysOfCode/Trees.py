@@ -159,6 +159,7 @@ class BinaryTree:
 
 
         output = self.bfs(target,parents,k)
+        
         return [] if output is None else output
 
     def bfs(self,startingNode:TreeNode,parents:dict,k:int)->List[int]:
