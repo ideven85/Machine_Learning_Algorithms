@@ -43,50 +43,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python tests.pytest for test.test_backwards_random.executor": "Run",
-    "Python tests.pytest for test.test_backwards_real.executor": "Run",
-    "Python tests.pytest for test.test_backwards_small.executor": "Run",
-    "Python tests.pytest for test.test_mix_random.executor": "Run",
-    "Python tests.pytest for test.test_mix_real.executor": "Run",
-    "Python tests.pytest for test.test_mix_small.executor": "Run",
-    "Python.BackTrackingProblems.executor": "Run",
-    "Python.ClockDeco.executor": "Run",
-    "Python.DiskUsage.executor": "Run",
-    "Python.Functions.executor": "Run",
-    "Python.GeneratePermutations.executor": "Run",
-    "Python.Iterator_Classes.executor": "Run",
-    "Python.Map_Filter_Reduce.executor": "Run",
-    "Python.MinHeap.executor": "Run",
-    "Python.PalindromePartioning.executor": "Run",
-    "Python.Person.executor": "Run",
-    "Python.Plots.executor": "Run",
-    "Python.Register.executor": "Run",
-    "Python.Revision.executor": "Run",
-    "Python.Scraping.executor": "Run",
-    "Python.Student.executor": "Run",
-    "Python.Threading.executor": "Run",
-    "Python.Vector.executor": "Run",
-    "Python.alien_invasion.executor": "Run",
-    "Python.lab.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/deven/Desktop/Machine_Learning_Algorithms/100DaysOfPython",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python tests.pytest for test.test_backwards_random.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test.test_backwards_real.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test.test_backwards_small.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test.test_mix_random.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test.test_mix_real.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test.test_mix_small.executor&quot;: &quot;Run&quot;,
+    &quot;Python.BackTrackingProblems.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ClockDeco.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DiskUsage.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Functions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.GeneratePermutations.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Iterator_Classes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Map_Filter_Reduce.executor&quot;: &quot;Run&quot;,
+    &quot;Python.MinHeap.executor&quot;: &quot;Run&quot;,
+    &quot;Python.PalindromePartioning.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Person.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Plots.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Register.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Revision.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Scraping.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Student.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Threading.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Vector.executor&quot;: &quot;Run&quot;,
+    &quot;Python.alien_invasion.executor&quot;: &quot;Run&quot;,
+    &quot;Python.lab.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/deven/Desktop/Machine_Learning_Algorithms/100DaysOfPython&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/100DaysOfPython" />
@@ -328,31 +328,56 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Person.coverage" NAME="Person Coverage Results" MODIFIED="1705284134232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/oops" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$bipedal_walker.coverage" NAME="bipedal_walker Coverage Results" MODIFIED="1706780957911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gym/envs/box2d" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_dynamics.coverage" NAME="car_dynamics Coverage Results" MODIFIED="1706781525919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/6_009" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Chatgpt.coverage" NAME="Chatgpt Coverage Results" MODIFIED="1706783894725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$SlidingWindow.coverage" NAME="SlidingWindow Coverage Results" MODIFIED="1706794368717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms_Revision" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Iterator_Classes.coverage" NAME="Iterator_Classes Coverage Results" MODIFIED="1705395920780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/oops" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$PalindromePartioning.coverage" NAME="PalindromePartioning Coverage Results" MODIFIED="1705389976657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Person.coverage" NAME="Person Coverage Results" MODIFIED="1705284134232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/oops" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_dynamics__1_.coverage" NAME="car_dynamics (1) Coverage Results" MODIFIED="1706782102902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/box2d" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$DiskUsage.coverage" NAME="DiskUsage Coverage Results" MODIFIED="1705631653432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Vector.coverage" NAME="Vector Coverage Results" MODIFIED="1705641733729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/basics" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_mix_small.coverage" NAME="pytest for test.test_mix_small Coverage Results" MODIFIED="1705289831634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_backwards_random.coverage" NAME="pytest for test.test_backwards_random Coverage Results" MODIFIED="1705289811787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$lab.coverage" NAME="lab Coverage Results" MODIFIED="1705290143404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$ClockDeco.coverage" NAME="ClockDeco Coverage Results" MODIFIED="1705634649472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/basics" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$main.coverage" NAME="main Coverage Results" MODIFIED="1704142329942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Functions.coverage" NAME="Functions Coverage Results" MODIFIED="1705383915879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$BackTrackingProblems.coverage" NAME="BackTrackingProblems Coverage Results" MODIFIED="1705481936221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Student.coverage" NAME="Student Coverage Results" MODIFIED="1705286247192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/oops" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Scraping.coverage" NAME="Scraping Coverage Results" MODIFIED="1705304341408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_backwards_real.coverage" NAME="pytest for test.test_backwards_real Coverage Results" MODIFIED="1705290020750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_random.coverage" NAME="pytest for test.test_backwards_random Coverage Results" MODIFIED="1707286876459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab1/audio_processing" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_backwards_small.coverage" NAME="pytest for test.test_backwards_small Coverage Results" MODIFIED="1705289798679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$MinHeap.coverage" NAME="MinHeap Coverage Results" MODIFIED="1705397751290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/Heaps" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_backwards_real.coverage" NAME="pytest for test.test_backwards_real Coverage Results" MODIFIED="1705290020750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Game.coverage" NAME="Game Coverage Results" MODIFIED="1706781497423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$alien_invasion.coverage" NAME="alien_invasion Coverage Results" MODIFIED="1705638619146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/AlienInvasion" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Register.coverage" NAME="Register Coverage Results" MODIFIED="1705633189164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/basics/decorators_closures" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$GeneratePermutations.coverage" NAME="GeneratePermutations Coverage Results" MODIFIED="1705482885433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/BackTracking" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_racing__1_.coverage" NAME="car_racing (1) Coverage Results" MODIFIED="1706781564783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/6_009" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$LargestNumber.coverage" NAME="LargestNumber Coverage Results" MODIFIED="1706796725094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms_Revision" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Threading.coverage" NAME="Threading Coverage Results" MODIFIED="1705300818297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_mix_small.coverage" NAME="pytest for test.test_mix_small Coverage Results" MODIFIED="1707288319268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_mix_real.coverage" NAME="pytest for test.test_mix_real Coverage Results" MODIFIED="1705289838635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$bipedal_walker__1_.coverage" NAME="bipedal_walker (1) Coverage Results" MODIFIED="1706782097558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/box2d" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$camera.coverage" NAME="camera Coverage Results" MODIFIED="1706780471834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/lib/python3.11/site-packages/pygame/examples" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_random__1_.coverage" NAME="pytest for test.test_backwards_random (1) Coverage Results" MODIFIED="1707287057692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_mix_real.coverage" NAME="pytest for test.test_mix_real Coverage Results" MODIFIED="1707288489544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_mix_random.coverage" NAME="pytest for test.test_mix_random Coverage Results" MODIFIED="1707288496303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_convolve_small.coverage" NAME="pytest for test.test_convolve_small Coverage Results" MODIFIED="1707290717520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$walker2d_v4.coverage" NAME="walker2d_v4 Coverage Results" MODIFIED="1706782195859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/mujoco" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$PalindromePartioning.coverage" NAME="PalindromePartioning Coverage Results" MODIFIED="1705389976657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_real.coverage" NAME="pytest for test.test_backwards_real Coverage Results" MODIFIED="1707286848284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab1/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_mix_small.coverage" NAME="pytest for test.test_mix_small Coverage Results" MODIFIED="1705289831634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$lab.coverage" NAME="lab Coverage Results" MODIFIED="1705290143404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$ClockDeco.coverage" NAME="ClockDeco Coverage Results" MODIFIED="1705634649472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/basics" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$main.coverage" NAME="main Coverage Results" MODIFIED="1704142329942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$lab.coverage" NAME="lab Coverage Results" MODIFIED="1707291508518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Functions.coverage" NAME="Functions Coverage Results" MODIFIED="1705383915879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_real__1_.coverage" NAME="pytest for test.test_backwards_real (1) Coverage Results" MODIFIED="1707287053286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$BackTrackingProblems.coverage" NAME="BackTrackingProblems Coverage Results" MODIFIED="1705481936221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Student.coverage" NAME="Student Coverage Results" MODIFIED="1705286247192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/oops" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Scraping.coverage" NAME="Scraping Coverage Results" MODIFIED="1705304341408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$MinHeap.coverage" NAME="MinHeap Coverage Results" MODIFIED="1705397751290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/Heaps" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_small__1_.coverage" NAME="pytest for test.test_backwards_small (1) Coverage Results" MODIFIED="1707287047801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Plots.coverage" NAME="Plots Coverage Results" MODIFIED="1705290830795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Revision.coverage" NAME="Revision Coverage Results" MODIFIED="1704144786776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Threading.coverage" NAME="Threading Coverage Results" MODIFIED="1705300818297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_mix_real.coverage" NAME="pytest for test.test_mix_real Coverage Results" MODIFIED="1705289838635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Map_Filter_Reduce.coverage" NAME="Map_Filter_Reduce Coverage Results" MODIFIED="1705398729272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Unzip.coverage" NAME="Unzip Coverage Results" MODIFIED="1707285911185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$video.coverage" NAME="video Coverage Results" MODIFIED="1706780436321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/lib/python3.11/site-packages/pygame/examples" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_mix_random.coverage" NAME="pytest for test.test_mix_random Coverage Results" MODIFIED="1705289844599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_small.coverage" NAME="pytest for test.test_backwards_small Coverage Results" MODIFIED="1707286669965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab1/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_racing.coverage" NAME="car_racing Coverage Results" MODIFIED="1706782107500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/box2d" />
   </component>
 </project>
