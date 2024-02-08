@@ -60,18 +60,24 @@ def convolve(sound, kernel):
     samples = sound["samples"]
     l1 = len(samples)
     l2 = len(kernel)
-    output = [[0 for i in range(len(samples))] for _ in range(l2)]
+    output =[]
     print(output)
     m = 0
-    for i in range(len(kernel)):
-        m = 0
-        for j in range(i, len(samples)):
-            output[i][j] = samples[i] * kernel[j]
-            m += 1
-        print(output)
-    print(output)
+    for i in range(l1):
+        j=0
+        output.append([])
+        for j in range(i):
+            output[i].append(0)
+        for _ in range(l2):
+            output[i].append(kernel[j]*samples[i])
+
     # assert output == [1, 0, -1, -6]
-    return {"rate": sound["rate"], "samples": output}
+    expected_output = [0 for _ in range(len(output))]
+    for i in range(len(output)):
+        for j in range(len(output[i])):
+            expected_output[i]+=output[i][j]
+    print(expected_output)
+    return {"rate": sound["rate"], "samples": expected_output}
 
 
 def echo(sound, num_echoes, delay, scale):

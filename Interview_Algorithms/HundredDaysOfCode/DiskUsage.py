@@ -1,11 +1,13 @@
 import os
+class FileNotFoundException(Exception):
+    pass
 
 
 def get_usage(given_path):
     total = 0
     if not given_path:
         total = 0
-        return FileNotFoundError("File not Found")
+        return FileNotFoundException()
 
     else:
         total = os.path.getsize(given_path)
@@ -16,7 +18,7 @@ def get_usage(given_path):
             children = os.path.join(given_path,file)
             if not children:
                 total += 0
-                return FileNotFoundError("File not Found")
+                return FileNotFoundException()
 
             else:
                 total += get_usage(children)
