@@ -5,24 +5,188 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="846e98b3-3911-4544-982f-b0717cda9b23" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/100DaysOfML/RL/First.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/100DaysOfML/Revision/Checking.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/100DaysOfML/Revision/DSA/DP.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/100DaysOfML/Revision/DSA/Main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/100DaysOfML/Revision/DSA/Trees/TreeProblems.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/100DaysOfML/Revision/Problems.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/100DaysOfML/Revision/Sentence.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/100DaysOfML/Revision/Test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6_009/lab1/Environment_Model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithms_Revision/NodesKDistance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithms/graphs/Main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithms/graphs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithms/strings/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Maths/SimpleMaths.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example-code-2e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Machine_Learning_Algorithms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Machine_Learning_Algorithms.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/100DaysOfPython/Chatgpt.py" beforeDir="false" afterPath="$PROJECT_DIR$/100DaysOfPython/Asyncio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/6_009/audio_processing/lab.py" beforeDir="false" afterPath="$PROJECT_DIR$/6_009/audio_processing/lab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/BinaryTree.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/BinaryTree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/DiskUsage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/DiskUsage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/AlgoExpert/Sortings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/AlgoExpert/Sortings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/AlgoExpert/TreeOperations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/AlgoExpert/TreeOperations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/AlgoExpert/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/6_009/lab2/image_processing/2dVector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/Arrays/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/AlgoExpert/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/BackTracking/GenerateParenthesis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/BackTracking/GenerateParenthesis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/BackTracking/GeneratePermutations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/BackTracking/GeneratePermutations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/BackTracking/NQueens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/BackTracking/NQueens.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/BackTracking/StairCaseTraversal.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/BackTracking/StairCaseTraversal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/Heaps/MinHeap.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Heaps/MinHeap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/Heaps/OurHeap.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Heaps/OurHeap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/Heaps/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/AlienInvasion/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/AlienInvasion/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Arrays/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/AlienInvasion/alien_invasion.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/AlienInvasion/alien_invasion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/Arrays.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Arrays.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/BackTrackingProblems.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/BackTrackingProblems.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/BinaryTree.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/BinaryTree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/BinaryTreeContruction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/BinaryTreeContruction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/BinaryTreeProblems.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/BinaryTreeProblems.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/DFS.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/DFS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/DiskUsage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/DiskUsage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/DynamicProgramming.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/DynamicProgramming.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/EasyProblems.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/EasyProblems.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/EditDistance.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/EditDistance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/GraphProblems.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/GraphProblems.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/Graphs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Graphs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/GreedyAlgorithms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/GreedyAlgorithms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/Hashing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Hashing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/InOrderSuccessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/InOrderSuccessor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/LinkedListProblems.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/LinkedListProblems.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/MathTheory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/MathTheory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/MilkTea.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/MilkTea.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/MinMaxStack.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/MinMaxStack.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/MultiProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/MultiProcessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/MultiProcessingExamples.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/MultiProcessingExamples.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/MultiThreading.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/MultiThreading.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/Object_Oriented_Programming.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Object_Oriented_Programming.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/Queues.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Queues.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/Searching.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Searching.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/SlidingWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/SlidingWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/Sortings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Sortings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/StacksAndQueues.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/StacksAndQueues.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/StringProblems.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/StringProblems.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/Strings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Strings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/Tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/Trees.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Trees.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/BackTracking/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/local_testing_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/local_testing_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/LeetCode/DP.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/LeetCode/DP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/LeetCode/Trees.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/LeetCode/Trees.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/LinkedListProblems/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/LinkedListProblems/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/LinkedListProblems/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Heaps/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/Ninjas/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Ninjas/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/Ninjas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/LeetCode/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/Ninjas/trees/LargestBST.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Ninjas/trees/LargestBST.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/Ninjas/trees/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/LinkedListProblems/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming/DeleteAndEarn.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/dynamicProgramming/DeleteAndEarn.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming/DeleteAndEarn.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/dynamicProgramming/DeleteAndEarn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming/Dynamic.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/dynamicProgramming/Dynamic.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming/FallingTriangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/dynamicProgramming/FallingTriangle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming/LevhensteinDistance.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/dynamicProgramming/LevhensteinDistance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming/LongestIncreasingSubsequence.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/dynamicProgramming/LongestIncreasingSubsequence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming/Matrix Multiplications.md" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/dynamicProgramming/Matrix Multiplications.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming/MatrixMultiplications.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/dynamicProgramming/MatrixMultiplications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming/MaxCombinationOfCoins.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/dynamicProgramming/MaxCombinationOfCoins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming/MinCostClimbingStairs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/dynamicProgramming/MinCostClimbingStairs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming/MinPathSum.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/dynamicProgramming/MinPathSum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming/PalindromePartioning.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/dynamicProgramming/PalindromePartioning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Ninjas/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/AllPathsSourceTarget.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/AllPathsSourceTarget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/Dijkstra.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/Dijkstra.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/DisjointSets.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/DisjointSets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/IsGraphBiPartite.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/IsGraphBiPartite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/KeysAndRooms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/KeysAndRooms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/dynamicProgramming/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/MinConnectionsToBeAdded.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/MinConnectionsToBeAdded.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/MinCostToConnectPoints.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/MinCostToConnectPoints.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/MinimumPassesOfMatrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/MinimumPassesOfMatrix.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/NearestCell.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/NearestCell.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/NumberOfProvinces.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/NumberOfProvinces.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/REVERSE.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/REVERSE.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/RemoveIslands.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/RemoveIslands.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/TopologicalSorting.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/TopologicalSorting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/UnionFind.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/UnionFind.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/UniqueBinarySearchTrees.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/graphs/UniqueBinarySearchTrees.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/graphs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Ninjas/trees/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/strings/CommonCharacters.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/strings/CommonCharacters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/strings/GroupAnarams.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/strings/GroupAnarams.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/strings/OneEditDistance.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/strings/OneEditDistance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/strings/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/anagrams.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/anagrams.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/arithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/arithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/arithm_expr_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/arithm_expr_eval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/arithm_expr_target.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/arithm_expr_target.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/bellman_ford.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/bellman_ford.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/bfs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/bfs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/biconnected_components.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/biconnected_components.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/binary_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/binary_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/bipartite_matching.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/bipartite_matching.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/bipartite_vertex_cover.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/bipartite_vertex_cover.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/closest_points.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/closest_points.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/closest_values.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/closest_values.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/convex_hull.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/convex_hull.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/dancing_links.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/dancing_links.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/dfs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/dfs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/dijkstra.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/dijkstra.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/dilworth.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/dilworth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/dinic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/dinic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/dist_grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/dist_grid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/edmonds_karp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/edmonds_karp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/eulerian_tour.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/eulerian_tour.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/fast_exponentiation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/fast_exponentiation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/fenwick.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/fenwick.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/fft.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/fft.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/floyd_warshall.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/floyd_warshall.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/ford_fulkerson.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/ford_fulkerson.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/freivalds.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/freivalds.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/gale_shapley.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/gale_shapley.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/gauss_jordan.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/gauss_jordan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/graph01.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/graph01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/horn_sat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/horn_sat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/huffman.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/huffman.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/interval_cover.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/interval_cover.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/interval_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/interval_tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/intervals_union.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/intervals_union.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/karatsuba.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/karatsuba.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/knapsack.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/knapsack.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/knuth_morris_pratt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/knuth_morris_pratt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/kruskal.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/kruskal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/kuhn_munkres.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/kuhn_munkres.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/kuhn_munkres_n4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/kuhn_munkres_n4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/laser_mirrors.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/laser_mirrors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/left_right_inversions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/left_right_inversions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/levenshtein.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/levenshtein.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/longest_common_subsequence.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/longest_common_subsequence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/longest_increasing_subsequence.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/longest_increasing_subsequence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/lowest_common_ancestor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/lowest_common_ancestor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/majority.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/majority.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/manacher.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/manacher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/matrix_chain_mult.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/matrix_chain_mult.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/max_interval_intersec.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/max_interval_intersec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/merge_ordered_lists.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/merge_ordered_lists.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/min_mean_cycle.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/min_mean_cycle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/next_permutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/next_permutation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/our_heap.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/our_heap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/our_queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/our_queue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/our_std.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/our_std.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/pareto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/pareto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/partition_refinement.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/partition_refinement.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/permutation_rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/permutation_rank.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/polygon.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/polygon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/predictive_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/predictive_text.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/primes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/primes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/rabin_karp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/rabin_karp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/range_minimum_query.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/range_minimum_query.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/rectangles_from_grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/rectangles_from_grid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/rectangles_from_histogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/rectangles_from_histogram.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/rectangles_from_points.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/rectangles_from_points.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/roman_numbers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/roman_numbers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/scalar.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/scalar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/shortest_cycle.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/shortest_cycle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/skip_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/skip_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/strongly_connected_components.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/strongly_connected_components.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/subsetsum.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/subsetsum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/subsetsum_divide.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/subsetsum_divide.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/sudoku.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/three_partition.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/three_partition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/topological_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/topological_order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/trie.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/trie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/two_sat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/two_sat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/union_rectangles.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/union_rectangles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview_Algorithms/tryalgo/windows_k_distinct.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/tryalgo/windows_k_distinct.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,60 +220,63 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python tests.pytest for test.test_backwards_random.executor": "Run",
-    "Python tests.pytest for test.test_backwards_real.executor": "Run",
-    "Python tests.pytest for test.test_backwards_small.executor": "Run",
-    "Python tests.pytest for test.test_convolve_small.executor": "Run",
-    "Python tests.pytest for test.test_mix_random.executor": "Run",
-    "Python tests.pytest for test.test_mix_real.executor": "Run",
-    "Python tests.pytest for test.test_mix_small.executor": "Run",
-    "Python.BackTrackingProblems.executor": "Run",
-    "Python.Checking.executor": "Run",
-    "Python.ClockDeco.executor": "Run",
-    "Python.DP.executor": "Run",
-    "Python.DiskUsage.executor": "Run",
-    "Python.Environment_Model.executor": "Run",
-    "Python.Functions.executor": "Run",
-    "Python.GeneratePermutations.executor": "Run",
-    "Python.Iterator_Classes.executor": "Run",
-    "Python.Map_Filter_Reduce.executor": "Run",
-    "Python.MinConnectionsToBeAdded.executor": "Run",
-    "Python.MinHeap.executor": "Run",
-    "Python.MinPathSum.executor": "Run",
-    "Python.PalindromePartioning.executor": "Run",
-    "Python.Person.executor": "Run",
-    "Python.Plots.executor": "Run",
-    "Python.Problems.executor": "Run",
-    "Python.Register.executor": "Run",
-    "Python.Revision.executor": "Run",
-    "Python.Scraping.executor": "Run",
-    "Python.Sentence.executor": "Run",
-    "Python.Student.executor": "Run",
-    "Python.Threading.executor": "Run",
-    "Python.TreeOperations.executor": "Run",
-    "Python.TreeProblems.executor": "Run",
-    "Python.Vector.executor": "Run",
-    "Python.alien_invasion.executor": "Run",
-    "Python.lab.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/deven/Developer/Machine_Learing_Algorithms",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "Errors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python tests.pytest for test.test_backwards_random.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test.test_backwards_real.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test.test_backwards_small.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test.test_convolve_small.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test.test_load.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test.test_mix_random.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test.test_mix_real.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test.test_mix_small.executor&quot;: &quot;Run&quot;,
+    &quot;Python.2dVector.executor&quot;: &quot;Run&quot;,
+    &quot;Python.BackTrackingProblems.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Checking.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ClockDeco.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DP.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DiskUsage.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Environment_Model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Functions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.GeneratePermutations.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Iterator_Classes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Map_Filter_Reduce.executor&quot;: &quot;Run&quot;,
+    &quot;Python.MinConnectionsToBeAdded.executor&quot;: &quot;Run&quot;,
+    &quot;Python.MinHeap.executor&quot;: &quot;Run&quot;,
+    &quot;Python.MinPathSum.executor&quot;: &quot;Run&quot;,
+    &quot;Python.PalindromePartioning.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Person.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Plots.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Problems.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Register.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Revision.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Scraping.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Sentence.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Student.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Threading.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TreeOperations.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TreeProblems.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Vector.executor&quot;: &quot;Run&quot;,
+    &quot;Python.alien_invasion.executor&quot;: &quot;Run&quot;,
+    &quot;Python.lab.executor&quot;: &quot;Run&quot;,
+    &quot;Python.listcomp_speed.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/deven/Developer/Machine_Learing_Algorithms&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/100DaysOfPython" />
@@ -119,15 +286,15 @@
       <recent name="$PROJECT_DIR$/datasets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/HundredDaysOfCode" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/100DaysOfML/Revision/DSA/Trees" />
       <recent name="$PROJECT_DIR$/100DaysOfML/Revision/DSA" />
       <recent name="$PROJECT_DIR$/100DaysOfML/Revision" />
-      <recent name="$PROJECT_DIR$/100DaysOfPython" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test.test_convolve_small">
-    <configuration name="Environment_Model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.listcomp_speed">
+    <configuration name="2dVector" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Machine_Learning_Algorithms" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,12 +303,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/6_009/lab1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/6_009/lab2/image_processing" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/6_009/lab1/Environment_Model.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/6_009/lab2/image_processing/2dVector.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,7 +317,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="MinConnectionsToBeAdded" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="lab" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Machine_Learning_Algorithms" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,12 +326,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Interview_Algorithms/graphs" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/6_009/lab2/image_processing" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Interview_Algorithms/graphs/MinConnectionsToBeAdded.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/6_009/lab2/image_processing/lab.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -173,7 +340,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="TreeOperations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="listcomp_speed" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Machine_Learning_Algorithms" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -182,35 +349,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Interview_Algorithms/AlgoExpert" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/example-code-2e/02-array-seq" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Interview_Algorithms/AlgoExpert/TreeOperations.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TreeProblems" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Machine_Learning_Algorithms" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/100DaysOfML/Revision/DSA/Trees" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/100DaysOfML/Revision/DSA/Trees/TreeProblems.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/example-code-2e/02-array-seq/listcomp_speed.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -237,13 +381,31 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for test.test_load" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Machine_Learning_Algorithms" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/6_009/lab2/image_processing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.test_load&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.listcomp_speed" />
+        <item itemvalue="Python.lab" />
+        <item itemvalue="Python.2dVector" />
+        <item itemvalue="Python tests.pytest for test.test_load" />
         <item itemvalue="Python tests.pytest for test.test_convolve_small" />
-        <item itemvalue="Python.TreeProblems" />
-        <item itemvalue="Python.Environment_Model" />
-        <item itemvalue="Python.TreeOperations" />
-        <item itemvalue="Python.MinConnectionsToBeAdded" />
       </list>
     </recent_temporary>
   </component>
@@ -286,6 +448,9 @@
       <workItem from="1707323547196" duration="1214000" />
       <workItem from="1707416814015" duration="10708000" />
       <workItem from="1707430158897" duration="4661000" />
+      <workItem from="1708605319952" duration="958000" />
+      <workItem from="1708606297362" duration="4140000" />
+      <workItem from="1708610489456" duration="1805000" />
     </task>
     <servers />
   </component>
@@ -321,12 +486,12 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/Arrays.py</url>
+          <url>file://$PROJECT_DIR$/Algorithms/Arrays.py</url>
           <line>218</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode/SlidingWindow.py</url>
+          <url>file://$PROJECT_DIR$/Algorithms/SlidingWindow.py</url>
           <line>36</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
@@ -349,66 +514,70 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$bipedal_walker.coverage" NAME="bipedal_walker Coverage Results" MODIFIED="1706780957911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gym/envs/box2d" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_dynamics.coverage" NAME="car_dynamics Coverage Results" MODIFIED="1706781525919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/6_009" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Chatgpt.coverage" NAME="Chatgpt Coverage Results" MODIFIED="1706783894725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Problems.coverage" NAME="Problems Coverage Results" MODIFIED="1707311536741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$SlidingWindow.coverage" NAME="SlidingWindow Coverage Results" MODIFIED="1706794368717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms_Revision" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Person.coverage" NAME="Person Coverage Results" MODIFIED="1705284134232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/oops" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Iterator_Classes.coverage" NAME="Iterator_Classes Coverage Results" MODIFIED="1705395920780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/oops" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_dynamics__1_.coverage" NAME="car_dynamics (1) Coverage Results" MODIFIED="1706782102902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/box2d" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$DiskUsage.coverage" NAME="DiskUsage Coverage Results" MODIFIED="1705631653432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Vector.coverage" NAME="Vector Coverage Results" MODIFIED="1705641733729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/basics" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_mix_real.coverage" NAME="pytest for test.test_mix_real Coverage Results" MODIFIED="1705289838635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$GeneratePermutations.coverage" NAME="GeneratePermutations Coverage Results" MODIFIED="1705482885433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/BackTracking" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$walker2d_v4.coverage" NAME="walker2d_v4 Coverage Results" MODIFIED="1706782195859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/mujoco" />
     <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Checking.coverage" NAME="Checking Coverage Results" MODIFIED="1707298950899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$DiskUsage.coverage" NAME="DiskUsage Coverage Results" MODIFIED="1707324125787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Python$lab.coverage" NAME="lab Coverage Results" MODIFIED="1708609024369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab2/image_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$MinPathSum.coverage" NAME="MinPathSum Coverage Results" MODIFIED="1707423571552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$bipedal_walker.coverage" NAME="bipedal_walker Coverage Results" MODIFIED="1706780957911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gym/envs/box2d" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$DP.coverage" NAME="DP Coverage Results" MODIFIED="1707423223023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML/Revision/DSA" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Environment_Model.coverage" NAME="Environment_Model Coverage Results" MODIFIED="1707431390728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab1" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$alien_invasion.coverage" NAME="alien_invasion Coverage Results" MODIFIED="1705638619146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/AlienInvasion" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Python$2dVector.coverage" NAME="2dVector Coverage Results" MODIFIED="1708608577476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab2/image_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$BackTrackingProblems.coverage" NAME="BackTrackingProblems Coverage Results" MODIFIED="1705481936221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Register.coverage" NAME="Register Coverage Results" MODIFIED="1705633189164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/basics/decorators_closures" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_mix_small.coverage" NAME="pytest for test.test_mix_small Coverage Results" MODIFIED="1705289831634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Functions.coverage" NAME="Functions Coverage Results" MODIFIED="1705383915879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$camera.coverage" NAME="camera Coverage Results" MODIFIED="1706780471834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/lib/python3.11/site-packages/pygame/examples" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$ClockDeco.coverage" NAME="ClockDeco Coverage Results" MODIFIED="1705634649472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/basics" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Game.coverage" NAME="Game Coverage Results" MODIFIED="1706781497423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_backwards_random.coverage" NAME="pytest for test.test_backwards_random Coverage Results" MODIFIED="1705289811787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
     <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_random.coverage" NAME="pytest for test.test_backwards_random Coverage Results" MODIFIED="1707286876459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab1/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_backwards_real.coverage" NAME="pytest for test.test_backwards_real Coverage Results" MODIFIED="1705290020750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_backwards_small.coverage" NAME="pytest for test.test_backwards_small Coverage Results" MODIFIED="1705289798679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Game.coverage" NAME="Game Coverage Results" MODIFIED="1706781497423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$alien_invasion.coverage" NAME="alien_invasion Coverage Results" MODIFIED="1705638619146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/AlienInvasion" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Register.coverage" NAME="Register Coverage Results" MODIFIED="1705633189164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/basics/decorators_closures" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$GeneratePermutations.coverage" NAME="GeneratePermutations Coverage Results" MODIFIED="1705482885433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/BackTracking" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_racing__1_.coverage" NAME="car_racing (1) Coverage Results" MODIFIED="1706781564783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/6_009" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$LargestNumber.coverage" NAME="LargestNumber Coverage Results" MODIFIED="1706796725094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms_Revision" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_mix_small.coverage" NAME="pytest for test.test_mix_small Coverage Results" MODIFIED="1707288319268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Threading.coverage" NAME="Threading Coverage Results" MODIFIED="1705300818297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_mix_real.coverage" NAME="pytest for test.test_mix_real Coverage Results" MODIFIED="1705289838635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$bipedal_walker__1_.coverage" NAME="bipedal_walker (1) Coverage Results" MODIFIED="1706782097558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/box2d" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$camera.coverage" NAME="camera Coverage Results" MODIFIED="1706780471834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/lib/python3.11/site-packages/pygame/examples" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_random__1_.coverage" NAME="pytest for test.test_backwards_random (1) Coverage Results" MODIFIED="1707287057692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_mix_real.coverage" NAME="pytest for test.test_mix_real Coverage Results" MODIFIED="1707288489544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$TreeProblems.coverage" NAME="TreeProblems Coverage Results" MODIFIED="1707432545724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML/Revision/DSA/Trees" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$TreeOperations.coverage" NAME="TreeOperations Coverage Results" MODIFIED="1707425979923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/AlgoExpert" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_mix_random.coverage" NAME="pytest for test.test_mix_random Coverage Results" MODIFIED="1707288496303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_convolve_small.coverage" NAME="pytest for test.test_convolve_small Coverage Results" MODIFIED="1707434809622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$walker2d_v4.coverage" NAME="walker2d_v4 Coverage Results" MODIFIED="1706782195859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/mujoco" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$PalindromePartioning.coverage" NAME="PalindromePartioning Coverage Results" MODIFIED="1705389976657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_real.coverage" NAME="pytest for test.test_backwards_real Coverage Results" MODIFIED="1707286848284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab1/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Environment_Model.coverage" NAME="Environment_Model Coverage Results" MODIFIED="1707431390728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab1" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_mix_small.coverage" NAME="pytest for test.test_mix_small Coverage Results" MODIFIED="1705289831634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_real__1_.coverage" NAME="pytest for test.test_backwards_real (1) Coverage Results" MODIFIED="1707287053286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$DiskUsage.coverage" NAME="DiskUsage Coverage Results" MODIFIED="1705631653432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_dynamics__1_.coverage" NAME="car_dynamics (1) Coverage Results" MODIFIED="1706782102902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/box2d" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Problems.coverage" NAME="Problems Coverage Results" MODIFIED="1707311536741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_convolve_small.coverage" NAME="pytest for test.test_convolve_small Coverage Results" MODIFIED="1707434809622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Revision.coverage" NAME="Revision Coverage Results" MODIFIED="1704144786776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$DiskUsage.coverage" NAME="DiskUsage Coverage Results" MODIFIED="1707324125787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$bipedal_walker__1_.coverage" NAME="bipedal_walker (1) Coverage Results" MODIFIED="1706782097558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/box2d" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$lab.coverage" NAME="lab Coverage Results" MODIFIED="1707291508518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Python$listcomp_speed.coverage" NAME="listcomp_speed Coverage Results" MODIFIED="1708609320432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example-code-2e/02-array-seq" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$SlidingWindow.coverage" NAME="SlidingWindow Coverage Results" MODIFIED="1706794368717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms_Revision" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_racing.coverage" NAME="car_racing Coverage Results" MODIFIED="1706782107500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/box2d" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$TreeProblems.coverage" NAME="TreeProblems Coverage Results" MODIFIED="1707432545724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML/Revision/DSA/Trees" />
     <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Sentence.coverage" NAME="Sentence Coverage Results" MODIFIED="1707300797576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML/Revision" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$lab.coverage" NAME="lab Coverage Results" MODIFIED="1705290143404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$ClockDeco.coverage" NAME="ClockDeco Coverage Results" MODIFIED="1705634649472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/basics" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$main.coverage" NAME="main Coverage Results" MODIFIED="1704142329942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$lab.coverage" NAME="lab Coverage Results" MODIFIED="1707291508518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Functions.coverage" NAME="Functions Coverage Results" MODIFIED="1705383915879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_real__1_.coverage" NAME="pytest for test.test_backwards_real (1) Coverage Results" MODIFIED="1707287053286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$BackTrackingProblems.coverage" NAME="BackTrackingProblems Coverage Results" MODIFIED="1705481936221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Student.coverage" NAME="Student Coverage Results" MODIFIED="1705286247192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/oops" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_dynamics.coverage" NAME="car_dynamics Coverage Results" MODIFIED="1706781525919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/6_009" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$LargestNumber.coverage" NAME="LargestNumber Coverage Results" MODIFIED="1706796725094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms_Revision" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_mix_real.coverage" NAME="pytest for test.test_mix_real Coverage Results" MODIFIED="1707288489544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$TreeOperations.coverage" NAME="TreeOperations Coverage Results" MODIFIED="1707425979923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/AlgoExpert" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Scraping.coverage" NAME="Scraping Coverage Results" MODIFIED="1705304341408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$MinHeap.coverage" NAME="MinHeap Coverage Results" MODIFIED="1705397751290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/Heaps" />
     <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_small__1_.coverage" NAME="pytest for test.test_backwards_small (1) Coverage Results" MODIFIED="1707287047801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Plots.coverage" NAME="Plots Coverage Results" MODIFIED="1705290830795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Revision.coverage" NAME="Revision Coverage Results" MODIFIED="1704144786776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Map_Filter_Reduce.coverage" NAME="Map_Filter_Reduce Coverage Results" MODIFIED="1705398729272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$main.coverage" NAME="main Coverage Results" MODIFIED="1704142329942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Iterator_Classes.coverage" NAME="Iterator_Classes Coverage Results" MODIFIED="1705395920780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/oops" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_random__1_.coverage" NAME="pytest for test.test_backwards_random (1) Coverage Results" MODIFIED="1707287057692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$MinHeap.coverage" NAME="MinHeap Coverage Results" MODIFIED="1705397751290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/Heaps" />
     <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Unzip.coverage" NAME="Unzip Coverage Results" MODIFIED="1707285911185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$video.coverage" NAME="video Coverage Results" MODIFIED="1706780436321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/lib/python3.11/site-packages/pygame/examples" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$DP.coverage" NAME="DP Coverage Results" MODIFIED="1707423223023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML/Revision/DSA" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$MinPathSum.coverage" NAME="MinPathSum Coverage Results" MODIFIED="1707423571552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_backwards_small.coverage" NAME="pytest for test.test_backwards_small Coverage Results" MODIFIED="1705289798679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
     <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$MinConnectionsToBeAdded.coverage" NAME="MinConnectionsToBeAdded Coverage Results" MODIFIED="1707423636354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/graphs" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_mix_random.coverage" NAME="pytest for test.test_mix_random Coverage Results" MODIFIED="1705289844599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
     <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_small.coverage" NAME="pytest for test.test_backwards_small Coverage Results" MODIFIED="1707286669965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab1/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_racing.coverage" NAME="car_racing Coverage Results" MODIFIED="1706782107500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/box2d" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Person.coverage" NAME="Person Coverage Results" MODIFIED="1705284134232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/oops" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Chatgpt.coverage" NAME="Chatgpt Coverage Results" MODIFIED="1706783894725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Vector.coverage" NAME="Vector Coverage Results" MODIFIED="1705641733729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/basics" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Plots.coverage" NAME="Plots Coverage Results" MODIFIED="1705290830795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_racing__1_.coverage" NAME="car_racing (1) Coverage Results" MODIFIED="1706781564783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/6_009" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Map_Filter_Reduce.coverage" NAME="Map_Filter_Reduce Coverage Results" MODIFIED="1705398729272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_real.coverage" NAME="pytest for test.test_backwards_real Coverage Results" MODIFIED="1707286848284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab1/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_mix_small.coverage" NAME="pytest for test.test_mix_small Coverage Results" MODIFIED="1707288319268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_backwards_real.coverage" NAME="pytest for test.test_backwards_real Coverage Results" MODIFIED="1705290020750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_mix_random.coverage" NAME="pytest for test.test_mix_random Coverage Results" MODIFIED="1707288496303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Student.coverage" NAME="Student Coverage Results" MODIFIED="1705286247192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/oops" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Python$pytest_for_test_test_load.coverage" NAME="pytest for test.test_load Coverage Results" MODIFIED="1708607361674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab2/image_processing" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Threading.coverage" NAME="Threading Coverage Results" MODIFIED="1705300818297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009" />
+    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$video.coverage" NAME="video Coverage Results" MODIFIED="1706780436321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/lib/python3.11/site-packages/pygame/examples" />
   </component>
 </project>

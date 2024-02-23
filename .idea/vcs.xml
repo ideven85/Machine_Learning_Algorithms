@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/data" vcs="" />
+    <mapping directory="$PROJECT_DIR$/example-code-2e" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/handson-ml3" vcs="" />
   </component>
 </project>

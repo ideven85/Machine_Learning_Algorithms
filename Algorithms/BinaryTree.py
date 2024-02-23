@@ -1,9 +1,8 @@
 # This is an input class. Do not edit.
 from collections import deque
-from queue import Queue
 from typing import Optional, List
 
-from Interview_Algorithms.HundredDaysOfCode.GraphProblems import Node
+from Algorithms.GraphProblems import Node
 
 
 class TreeNode:
