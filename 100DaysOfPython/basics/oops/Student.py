@@ -4,7 +4,7 @@ from revision.oops.StudentSubjects import StudentSubjects
 class Student:
     # this is a class variable
     n = 0
-    def __init__(self,name='.',marks=0,subjects='Maths'):
+    def __init__(self,name='.',marks=0,subjects='Python_Weekend_Projects'):
         self.name = name
         self.marks =marks
         self.subjects =subjects
@@ -35,7 +35,7 @@ class Sample:
         e.display()
 
 class TestStudent(Student):
-    def __init__(self,name='.',marks=0,subjects='Maths'):
+    def __init__(self,name='.',marks=0,subjects='Python_Weekend_Projects'):
         super().__init__(name,marks,subjects)
 
 

@@ -4,3 +4,4 @@ venv/
 ml-25m.zip
 ml-25m
 datasets/
+virtualenv/

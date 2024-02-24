@@ -19,9 +19,9 @@ class Sentence:
     def __repr__(self):
         return 'Sentence {}'.format(reprlib.repr(self.text))
 
-s= Sentence("Hi My name is Deven () {} %s, 234")
+s= Sentence("Hi My name is Deven  %s, 234")
 for word in s:
-    print(word)
+    print(word,end=' ')
 print(list(s))
 print(len(s))
 
