@@ -217,25 +217,25 @@ class BinaryTree:
             return parentNode.left
         return parentNode.right
 
-    def bfsOfNodesAtDistanceKFromTarget(self,targetNode,parents,k):
-        output = []
-        seen = set()
-        seen.add(targetNode)
-        distance = 0
-        queue = deque()
-        queue.append([0,targetNode])
-        while queue:
-            [current_distance,current_node]=queue.popleft()
-            if current_node:
-                if current_distance ==k:
-                    output.append(current_node.val)
-                if current_distance > k:
-                    break
-                seen.add(current_node)
-                node = parents[current_node.val]
-                if node not in seen:
-                    queue.append([distance+1,node])
-        return output
+    # def bfsOfNodesAtDistanceKFromTarget(self,targetNode,parents,k):
+    #     output = []
+    #     seen = set()
+    #     seen.add(targetNode)
+    #     distance = 0
+    #     queue = deque()
+    #     queue.append([0,targetNode])
+    #     while queue:
+    #         [current_distance,current_node]=queue.popleft()
+    #         if current_node:
+    #             if current_distance ==k:
+    #                 output.append(current_node.val)
+    #             if current_distance > k:
+    #                 break
+    #             seen.add(current_node)
+    #             node = parents[current_node.val]
+    #             if node not in seen:
+    #                 queue.append([distance+1,node])
+    #     return output
 
 
 
