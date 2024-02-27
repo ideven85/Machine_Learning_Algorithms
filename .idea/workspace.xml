@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="846e98b3-3911-4544-982f-b0717cda9b23" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/50DaysOfLeetCode/GraphTheory/EventualSafeStates.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/50DaysOfLeetCode/GraphTheory/NodesDistanceK.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/50DaysOfLeetCode/GraphTheory/TownJudge.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Python_Weekend_Projects/MultipleFacesRecognition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Machine_Learning_Algorithms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Machine_Learning_Algorithms.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithms/Arrays/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/50DaysOfLeetCode/Dynamic_Programming/LongestPalindromicSubsequence.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithms/Trees.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/Trees.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithms/dynamicProgramming/FallingTriangle.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/example-code-2e" beforeDir="false" afterPath="$PROJECT_DIR$/example-code-2e" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-code-2e/21-async/mojifinder/bottle.py" beforeDir="false" afterPath="$PROJECT_DIR$/example-code-2e/21-async/mojifinder/bottle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-code-2e/21-async/mojifinder/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example-code-2e/21-async/mojifinder/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-code-2e/21-async/mojifinder/static/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/example-code-2e/21-async/mojifinder/static/form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,11 +118,11 @@
       <recent name="$PROJECT_DIR$/revision/6_009" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/HundredDaysOfCode" />
+      <recent name="$PROJECT_DIR$/6_001" />
+      <recent name="$PROJECT_DIR$/Algorithms" />
+      <recent name="$PROJECT_DIR$/100DaysOfPython" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/100DaysOfML/Revision/DSA/Trees" />
-      <recent name="$PROJECT_DIR$/100DaysOfML/Revision/DSA" />
-      <recent name="$PROJECT_DIR$/100DaysOfML/Revision" />
+      <recent name="$PROJECT_DIR$/HundredDaysOfCode" />
     </key>
   </component>
   <component name="RunManager" selected="Python.IsGraphBiPartite">
@@ -312,7 +301,7 @@
       <workItem from="1708885173672" duration="599000" />
       <workItem from="1708903425041" duration="5633000" />
       <workItem from="1708965326617" duration="622000" />
-      <workItem from="1708981597032" duration="8551000" />
+      <workItem from="1708981597032" duration="10409000" />
     </task>
     <servers />
   </component>
@@ -334,27 +323,27 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/100DaysOfPython/Revision.py</url>
+          <url>file://$PROJECT_DIR$/Algorithms/100DaysOfPython/Revision.py</url>
           <line>21</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/100DaysOfPython/basics/oops/Student.py</url>
+          <url>file://$PROJECT_DIR$/6_001/basics/oops/Student.py</url>
           <line>28</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/100DaysOfPython/basics/oops/Student.py</url>
+          <url>file://$PROJECT_DIR$/6_001/basics/oops/Student.py</url>
           <line>10</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/100DaysOfPython/basics/Map_Filter_Reduce.py</url>
+          <url>file://$PROJECT_DIR$/6_001/basics/Map_Filter_Reduce.py</url>
           <line>10</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/100DaysOfPython/basics/Map_Filter_Reduce.py</url>
+          <url>file://$PROJECT_DIR$/6_001/basics/Map_Filter_Reduce.py</url>
           <line>54</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -369,17 +358,17 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/50DaysOfLeetCode/Arrays.py</url>
+          <url>file://$PROJECT_DIR$/Algorithms/100DaysOfPython/Arrays.py</url>
           <line>13</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/50DaysOfLeetCode/GraphTheory/NodesDistanceK.py</url>
+          <url>file://$PROJECT_DIR$/Algorithms/100DaysOfPython/GraphTheory/NodesDistanceK.py</url>
           <line>40</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/50DaysOfLeetCode/Dynamic_Programming/LongestPalindromicSubsequence.py</url>
+          <url>file://$PROJECT_DIR$/Algorithms/100DaysOfPython/Dynamic_Programming/LongestPalindromicSubsequence.py</url>
           <line>23</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>

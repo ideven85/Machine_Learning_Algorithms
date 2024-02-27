@@ -7,4 +7,4 @@
 # Weekend Projects Package contains important machine learning and automation codes
 
 # ALien Invasion is a pygame project
-# 6_001 package is completed code for MIT's  https://py.mit.edu/6.101
+# 6_001 package is completed code for MIT's  https://py.mit.edu/
