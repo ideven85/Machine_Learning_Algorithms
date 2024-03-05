@@ -7,3 +7,6 @@
 [submodule "course22"]
 	path = course22
 	url = https://github.com/fastai/course22
+[submodule "PyTorchStepByStep"]
+	path = PyTorchStepByStep
+	url = https://github.com/dvgodoy/PyTorchStepByStep

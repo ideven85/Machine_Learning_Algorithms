@@ -19,6 +19,13 @@ def get_pixel(image, row, col):
 def set_pixel(image, row, col, color):
     image["pixels"][row, col] = color
 
+def transform_pixels(image): # height means number of columns and width means number of row
+    # My brain is sleeping apparently it stops working when not doing Java
+    height, width,pixels = image["height"], image["width"], image["pixels"]
+    pixel2d = []
+    for row in range(height):
+        for col in range(width):
+            pixel2d.append(pixels[row+col])
 
 def apply_per_pixel(image, func):
     result = {
