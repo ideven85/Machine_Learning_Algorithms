@@ -1,0 +1,47 @@
+def variable_length_arguments(*args,**kwargs):
+    """Function to describe Variable length features of variable with * and ** operators.Variable is passed as reference"""
+    print("*Args is a tuple:")
+    #args[0] = "Khan"
+    for arg in args:
+        print(arg,end=' ')
+    print(args)
+    for key,value in kwargs.items():
+        print(key,value)
+    print("\n*Kwargs is a dictionary")
+
+
+summing = lambda x:x+x
+
+def compute_squares(numbers):
+    """
+    Object is passed by reference
+
+    """
+    numbers[0]=11
+    numbers.sort() # No Reassignment
+    return sorted(i*i for i in numbers)
+
+def swap(x,y):
+    temp=x
+    x=y
+    y=temp
+    print(x,y)
+
+
+
+
+if __name__ == '__main__':
+    l = ['Hi','I','am','an','example']
+    dictionary = dict(first='Geeks',mid='For',last='Geeks')
+    print(variable_length_arguments.__doc__)
+
+    variable_length_arguments(l,dictionary)
+    l = list(range(1,10))
+    print(summing(l))
+    print(l)
+    print(compute_squares(l))
+    print(l)
+    print(compute_squares.__doc__)
+    x=10;y=20
+    swap(x,y)
+    print(x,y)
