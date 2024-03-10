@@ -525,5 +525,5 @@ if __name__ == "__main__":
    print(nonConstructibleChange(b))
    nums = [1,12,-5,-6,50,3]; k = 4
    print(findMaxAverage(nums=nums,k=k))
-   print(majorityElement([3,3,3,1,2,2,2,2,1,1,1,1,1,1,2,2,2]))
+   #print(majorityElement([3,3,3,1,2,2,2,2,1,1,1,1,1,1,2,2,2]))
 

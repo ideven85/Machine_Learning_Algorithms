@@ -1,4 +1,7 @@
-# Snekoban Game
+"""
+6.1010 Lab 4:
+Snekoban Game
+"""
 
 import json
 import typing
@@ -14,7 +17,7 @@ direction_vector = {
 }
 
 
-def new_game(level_description):
+def make_new_game(level_description):
     """
     Given a description of a game state, create and return a game
     representation of your choice.
@@ -37,19 +40,20 @@ def new_game(level_description):
 
 def victory_check(game):
     """
-    Given a game representation (of the form returned from new_game), return
-    a Boolean: True if the given game satisfies the victory condition, and
-    False otherwise.
+    Given a game representation (of the form returned from make_new_game),
+    return a Boolean: True if the given game satisfies the victory condition,
+    and False otherwise.
     """
     raise NotImplementedError
 
 
 def step_game(game, direction):
     """
-    Given a game representation (of the form returned from new_game), return a
-    new game representation (of that same form), representing the updated game
-    after running one step of the game.  The user's input is given by
-    direction, which is one of the following: {'up', 'down', 'left', 'right'}.
+    Given a game representation (of the form returned from make_new_game),
+    return a new game representation (of that same form), representing the
+    updated game after running one step of the game.  The user's input is given
+    by direction, which is one of the following:
+        {'up', 'down', 'left', 'right'}.
 
     This function should not mutate its input.
     """
@@ -58,9 +62,9 @@ def step_game(game, direction):
 
 def dump_game(game):
     """
-    Given a game representation (of the form returned from new_game), convert
-    it back into a level description that would be a suitable input to new_game
-    (a list of lists of lists of strings).
+    Given a game representation (of the form returned from make_new_game),
+    convert it back into a level description that would be a suitable input to
+    make_new_game (a list of lists of lists of strings).
 
     This function is used by the GUI and the tests to see what your game
     implementation has done, and it can also serve as a rudimentary way to
@@ -72,8 +76,8 @@ def dump_game(game):
 
 def solve_puzzle(game):
     """
-    Given a game representation (of the form returned from new game), find a
-    solution.
+    Given a game representation (of the form returned from make_new_game), find
+    a solution.
 
     Return a list of strings representing the shortest sequence of moves ("up",
     "down", "left", and "right") needed to reach the victory condition.

@@ -386,9 +386,3 @@ def make_bacon_tree(L, n=10):
         id_set += 1
         n -= 1
     return [(i, j, 0) for i, j in out]
-
-
-if __name__ == "__main__":
-    import sys
-
-    res = pytest.main(["-k", " or ".join(sys.argv[1:]), "-v", __file__])

@@ -1,16 +1,20 @@
+"""
+6.1010 Snekoban Game Server
+"""
+
 import os
 import html
 import json
 import importlib
 import mimetypes
 import traceback
-from pathlib import Path
+
+from wsgiref.handlers import read_environ
 from wsgiref.simple_server import make_server
 
 import lab as lab
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-Location = Path
+LOCATION = os.path.realpath(os.path.dirname(__file__))
 CURRENT_GAME = None
 
 # Code for parsing ASCII level files
@@ -46,7 +50,7 @@ def new_game(params):
             level = json.load(f)
             if isinstance(level, dict) and "input" in level:
                 level = level["input"]
-    CURRENT_GAME = lab.new_game(level)
+    CURRENT_GAME = lab.make_new_game(level)
     return {
         "board": lab.dump_game(CURRENT_GAME),
         "victory": lab.victory_check(CURRENT_GAME),

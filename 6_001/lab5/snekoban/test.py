@@ -1,3 +1,8 @@
+"""
+6.101 Lab 4:
+Snekoban Game Test Cases
+"""
+
 #!/usr/bin/env python3
 import os
 import sys
@@ -33,7 +38,7 @@ def compare_simulation(filename):
         outputs = pickle.load(f)
     assert len(inputs) == len(outputs) != 0
 
-    game = lab.new_game(copy.deepcopy(level))
+    game = lab.make_new_game(copy.deepcopy(level))
     err_msg = compare_boards(lab.dump_game(game), level)
     if err_msg is not None:
         assert False, f"Unexpected results at setup: {err_msg}"
@@ -57,7 +62,6 @@ unit_test_cases = [
     for i in sorted(os.listdir(os.path.join(TEST_DIRECTORY, "test_levels")))
 ]
 unit_test_cases = filter(lambda x: x[:len("unit_")] == "unit_",unit_test_cases)
-print(unit_test_cases)
 @pytest.mark.parametrize('test', unit_test_cases)
 def test_units(test):
     compare_simulation(test)
@@ -75,6 +79,7 @@ def test_random(test_group):
 
 
 SOLVER_TEST_GROUPS = {
+    'tiny': ['tiny_001', 'tiny_002', 'tiny_003', 'tiny_004'],
     'small': ['m1_044', 'm1_001', 'm1_009', 'm2_002', 'm1_021', 'm2_007', 'm1_014', 'm1_056', 'm1_002', 'm1_015', 't_001', 't_002'],
     'small2': ['m1_046', 'm2_011', 'm1_023', 'm1_003', 'm2_001', 'm2_006', 'm1_027', 'm2_005', 'm1_012', 'm1_019'],
     'small3': ['m1_051', 'm1_028', 'm1_024', 'm2_003', 'm2_010', 'm1_154', 'm1_067', 'm1_057', 'm1_055', 'm1_008'],
@@ -89,6 +94,7 @@ SOLVER_TEST_GROUPS = {
 }
 
 SOLUTION_LENGTHS = {
+    'tiny': [1, 2, 3, 8],
     'small': [1, 33, 30, 27, 17, 47, 51, 23, 16, 37, None, 0],
     'small2': [47, 39, 56, 41, 44, 55, 50, 61, 49, 41],
     'small3': [34, 33, 35, 46, 23, 429, 37, 60, 64, 97],
@@ -107,7 +113,7 @@ def compare_solution(filename, solution):
     with open(os.path.join(TEST_DIRECTORY, "puzzles", f"{filename}.json")) as f:
         level = json.load(f)
 
-    game = lab.new_game(level)
+    game = lab.make_new_game(level)
     for ix, direction in enumerate(solution):
         game = lab.step_game(game, direction)
         if ix != len(solution) - 1:
@@ -121,16 +127,10 @@ def test_solver(test_group):
     for puzzle, elen in zip(SOLVER_TEST_GROUPS[test_group], SOLUTION_LENGTHS[test_group]):
         with open(os.path.join(TEST_DIRECTORY, "puzzles", f"{puzzle}.json")) as f:
             level = json.load(f)
-        result = lab.solve_puzzle(lab.new_game(level))
+        result = lab.solve_puzzle(lab.make_new_game(level))
         if elen is None:
             assert result is None, f"Expected no solution for {puzzle}, but got one."
         else:
             assert result is not None, f"Expected a solution for {puzzle}, got None."
             assert len(result) == elen, f"Expected a solution of length {elen} for {puzzle}, got {len(result)}."
             compare_solution(puzzle, result)
-
-
-if __name__ == "__main__":
-    import sys
-
-    res = pytest.main(["-k", " or ".join(sys.argv[1:]), "-v", __file__])
