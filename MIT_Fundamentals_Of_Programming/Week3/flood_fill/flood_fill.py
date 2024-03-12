@@ -1,3 +1,6 @@
+import time
+
+
 def flood_fill(image, location, new_color):
     """
     Given an image, replace the same-colored region around a given location
@@ -12,13 +15,49 @@ def flood_fill(image, location, new_color):
                    are between 0 and 255, inclusive
     """
     print(f"You clicked at row {location[0]} col {location[1]}")
-    print(new_color)
+    #print(new_color)
     #print(image.get_width(),image.get_height())
     #image[location[0]]=new_color[]
-    set_pixel(image, *location, new_color)
+    original_color = get_pixel(image, *location)
 
+    def get_neighbours(cell):
+        row, col = cell
+        potential_neighbours = [(row - 1, col), (row + 1, col), (row, col - 1), (row, col + 1)]
+        return [(nr,nc ) for (nr, nc) in potential_neighbours if 0<=nr<=get_height(image) and 0<=nc<=get_width(image)]
+
+    to_color=[location]
+    visited = set()
+    start = time.time()
+    visited.add(location)
+    while to_color:
+        this_cell = to_color.pop(0)
+        set_pixel(image, *this_cell, new_color)
+        for neighbour in get_neighbours(this_cell):
+            if neighbour not in visited and get_pixel(image, *neighbour) == original_color:
+                to_color.append(neighbour)
+                visited.add(neighbour)
+
+    #bfs(image, location, new_color)
+    #set_pixel(image,*location, new_color)
+    print("Time taken:", time.time()-start)
 
 ##### IMAGE REPRESENTATION WITH SIMILAR ABSTRACTIONS TO LAB 1 AND 2
+
+
+def bfs(new_image, cell, color):
+
+    this_cell = [cell[0],cell[1]]
+    visited = set()
+
+    while this_cell:
+        if this_cell in visited:
+            continue
+        visited.add(this_cell)
+        set_pixel(new_image, *this_cell, color)
+
+
+
+
 
 
 def get_width(image):
@@ -42,8 +81,8 @@ def set_pixel(image, row, col, color):
             image.set_at((loc[1] + i, loc[0] + j), c)
     ## comment out the two lines below to avoid redrawing the image every time
     ## we set a pixel
-    # screen.blit(image, (0, 0))
-    # pygame.display.flip()
+    screen.blit(image, (0, 0))
+    pygame.display.flip()
 
 
 ##### USER INTERFACE CODE
@@ -52,7 +91,7 @@ def set_pixel(image, row, col, color):
 import os
 import sys
 
-os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide"
+#os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide"
 import pygame
 
 from pygame.locals import *
@@ -95,7 +134,7 @@ screen = pygame.display.set_mode(dims)
 image = pygame.transform.scale(image, dims)
 screen.blit(image, (0, 0))
 pygame.display.flip()
-initial_color = pygame.K_b
+initial_color = pygame.K_p
 cur_color = COLORS[initial_color]
 print("current color:", COLOR_NAMES[initial_color])
 while True:
@@ -112,6 +151,6 @@ while True:
                 sys.exit(0)
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             flood_fill(image, (event.pos[1] // SCALE, event.pos[0] // SCALE), cur_color)
-            
+
             screen.blit(image, (0, 0))
             pygame.display.flip()
