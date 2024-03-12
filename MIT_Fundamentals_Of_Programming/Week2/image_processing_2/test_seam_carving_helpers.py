@@ -9,7 +9,7 @@ import collections
 
 import pytest
 
-from test import object_hash, compare_greyscale_images, compare_color_images, load_greyscale_image
+from .test import object_hash, compare_greyscale_images, compare_color_images, load_greyscale_image
 
 TEST_DIRECTORY = os.path.dirname(__file__)
 

@@ -5,7 +5,7 @@ from types import NoneType
 def can_log(x):
     """"
     Checks whether the log entry is valid or not
-    Valid entries are blah blah blah
+    Pythonic Coding
     """
     if isinstance(x,(str,float,int,bool,NoneType,complex)):
         return True
@@ -37,6 +37,7 @@ def sum_list(x):
 def sum_nested(x):
     """
     Sums a nested list
+    Nice Code By MIT
     >>> sum_nested([[1,2],3,[4,5],[[[6]]]])
     21
     """
@@ -115,26 +116,37 @@ def number_to_string(n, b):
     returns n represented as a string in base-b notation,
     without any unnecessary leading zeroes.
     >>> number_to_string(-829, 10)
-    "-829"
-    >>> number_to_string(5, 3)
-    "101"
+    '-829'
+    >>> number_to_string(-5, 2)
+    '-101'
     >>> number_to_string(0, 10)
-    "0"
+    '0'
     """
+    if n<0:
+        return "-"+ number_to_string(-n,b)
+    elif n==0:
+        return "0"
+    elif n<b:
+        return str(n)
+    else:
+        digits = "0123456789"
+        return number_to_string(n//b,b)+digits[n%b]
+
+
 
 import doctest
 if __name__ == '__main__':
-print(doctest.testmod(verbose=True))
-print(sum_list([]))
-print(sum_list([1,2,3,4,5]))
-a = [[[6]]]
-print(type(a[0][0][0]))
-print(type(a))
-print(len(a))
-#print(a[0]+1)
-print(productSum([[1,2],3,[4,5],[[[6]]]]))
-print(powerset([1,2,3]))
-print(subsequences([1,2,3]))
-print(count)
-b = [5, 2, [7, -1], 3, [6, [-13, 8], 4]]
-print(productSum(b))
+    print(doctest.testmod(verbose=True))
+    print(sum_list([]))
+    print(sum_list([1,2,3,4,5]))
+    a = [[[6]]]
+    print(type(a[0][0][0]))
+    print(type(a))
+    print(len(a))
+    #print(a[0]+1)
+    print(productSum([[1,2],3,[4,5],[[[6]]]]))
+    print(powerset([1,2,3]))
+    print(subsequences([1,2,3]))
+    print(count)
+    b = [5, 2, [7, -1], 3, [6, [-13, 8], 4]]
+    print(productSum(b))
