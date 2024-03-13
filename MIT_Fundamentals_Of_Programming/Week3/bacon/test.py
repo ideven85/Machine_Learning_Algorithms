@@ -386,3 +386,4 @@ def make_bacon_tree(L, n=10):
         id_set += 1
         n -= 1
     return [(i, j, 0) for i, j in out]
+setup_module(test_bacon_number_01())

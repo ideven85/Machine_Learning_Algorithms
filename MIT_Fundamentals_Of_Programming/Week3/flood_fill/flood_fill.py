@@ -27,6 +27,7 @@ def flood_fill(image, location, new_color):
 
     to_color=[location]
     visited = set()
+    #visited = []
     start = time.time()
     visited.add(location)
     while to_color:
@@ -44,16 +45,16 @@ def flood_fill(image, location, new_color):
 ##### IMAGE REPRESENTATION WITH SIMILAR ABSTRACTIONS TO LAB 1 AND 2
 
 
-def bfs(new_image, cell, color):
-
-    this_cell = [cell[0],cell[1]]
-    visited = set()
-
-    while this_cell:
-        if this_cell in visited:
-            continue
-        visited.add(this_cell)
-        set_pixel(new_image, *this_cell, color)
+# def bfs(new_image, cell, color):
+#
+#     this_cell = [cell[0],cell[1]]
+#     visited = set()
+#
+#     while this_cell:
+#         if this_cell in visited:
+#             continue
+#         visited.add(this_cell)
+#         set_pixel(new_image, *this_cell, color)
 
 
 
@@ -91,7 +92,7 @@ def set_pixel(image, row, col, color):
 import os
 import sys
 
-#os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide"
+os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide"
 import pygame
 
 from pygame.locals import *
@@ -154,3 +155,5 @@ while True:
 
             screen.blit(image, (0, 0))
             pygame.display.flip()
+# Time taken: 0.9041509628295898
+# Time taken: 0.8472549915313721

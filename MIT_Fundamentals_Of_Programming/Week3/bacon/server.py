@@ -11,16 +11,20 @@ from wsgiref.handlers import read_environ
 from wsgiref.simple_server import make_server
 
 import lab
-
+start = time.time()
 print('loading small data...', end='', flush=True)
 with open('./resources/small.pickle', 'rb') as f:
     small_data = lab.transform_data(pickle.load(f))
 print('done!')
-
+mid = time.time()
+print("Load Small data took", mid - start, "seconds.")
 print('loading large data...', end='', flush=True)
 with open('./resources/large.pickle', 'rb') as f:
     large_data = lab.transform_data(pickle.load(f))
 print('done!')
+end = time.time()
+print("Load large data took", end-mid, "seconds.")
+
 
 print()
 
@@ -100,11 +104,11 @@ def application(environ, start_response):
 
 
 if __name__ == '__main__':
-    PORT = 6101
+    PORT = 8000
     print(f'starting server.  navigate to http://localhost:{PORT}/')
     with make_server('', PORT, application) as httpd:
         try:
             httpd.serve_forever()
-        except KeyboardInterrupt:
-            print("Shutting down.")
+        except KeyboardInterrupt as e:
+            print("Shutting down.", e)
             httpd.server_close()

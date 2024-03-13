@@ -39,8 +39,15 @@ def actors_connecting_films(transformed_data, film1, film2):
 
 
 if __name__ == "__main__":
+    file_name = "db_small"
+    smalldb=None
     with open("resources/small.pickle", "rb") as f:
-        smalldb = pickle.load(f)
+        db_small = pickle.load(f)
+
+
+    with open(file_name,"w") as f:
+        f.write(str(db_small))
+
 
     # additional code here will be run only when lab.py is invoked directly
     # (not when imported from test.py), so this is a good place to put code
