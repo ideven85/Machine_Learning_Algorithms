@@ -4,11 +4,11 @@ import math
 from typing import TYPE_CHECKING, List, Optional
 
 import numpy as np
-
-import gym
-from gym import error, spaces
-from gym.error import DependencyNotInstalled
-from gym.utils import EzPickle
+import gymnasium
+from gymnasium import error,spaces
+#from gym import error, spaces
+from gymnasium.error import DependencyNotInstalled
+from gymnasium.utils import EzPickle
 
 try:
     import Box2D
@@ -98,7 +98,7 @@ class ContactDetector(contactListener):
                 leg.ground_contact = False
 
 
-class BipedalWalker(gym.Env, EzPickle):
+class BipedalWalker(gymnasium.Env, EzPickle):
     """
     ### Description
     This is a simple 4-joint walker robot environment.

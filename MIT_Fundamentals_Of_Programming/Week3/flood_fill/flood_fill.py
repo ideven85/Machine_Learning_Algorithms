@@ -23,10 +23,11 @@ def flood_fill(image, location, new_color):
     def get_neighbours(cell):
         row, col = cell
         potential_neighbours = [(row - 1, col), (row + 1, col), (row, col - 1), (row, col + 1)]
-        return [(nr,nc ) for (nr, nc) in potential_neighbours if 0<=nr<=get_height(image) and 0<=nc<=get_width(image)]
+        return [(nr,nc ) for (nr, nc) in potential_neighbours if 0<=nr<get_height(image) and 0<=nc<get_width(image)]
 
     to_color=[location]
     visited = set()
+    locations = [location]
     #visited = []
     start = time.time()
     visited.add(location)
@@ -35,8 +36,11 @@ def flood_fill(image, location, new_color):
         set_pixel(image, *this_cell, new_color)
         for neighbour in get_neighbours(this_cell):
             if neighbour not in visited and get_pixel(image, *neighbour) == original_color:
+                locations.append(neighbour)
                 to_color.append(neighbour)
                 visited.add(neighbour)
+        #to_color+=[neighbour for neighbour in get_neighbours(this_cell) if (neighbour not in visited and get_pixel(image,*neighbour)==original_color)]
+    print(locations)
 
     #bfs(image, location, new_color)
     #set_pixel(image,*location, new_color)
@@ -76,6 +80,9 @@ def get_pixel(image, row, col):
 
 def set_pixel(image, row, col, color):
     loc = row * SCALE, col * SCALE
+    # if get_width(image)>col or get_height(image)>row:
+    #     return
+
     c = pygame.Color(*color)
     for i in range(SCALE):
         for j in range(SCALE):
@@ -126,7 +133,7 @@ COLOR_NAMES = {
 }
 
 SCALE = 7
-IMAGE = "flood_input.png"
+IMAGE = "large_maze.png"
 
 pygame.init()
 image = pygame.image.load(IMAGE)

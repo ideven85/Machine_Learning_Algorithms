@@ -6,11 +6,11 @@ from typing import TYPE_CHECKING, Optional
 
 import numpy as np
 
-import gym
-from gym import error, spaces
-from gym.error import DependencyNotInstalled
-from gym.utils import EzPickle, colorize
-from gym.utils.step_api_compatibility import step_api_compatibility
+import gymnasium as gym
+from gymnasium import error, spaces
+from gymnasium.error import DependencyNotInstalled
+from gymnasium.utils import EzPickle, colorize
+from gymnasium.utils.step_api_compatibility import step_api_compatibility
 
 try:
     import Box2D

@@ -4,10 +4,4 @@
     <option name="sdkName" value="Python 3.12 (Machine_Learning_Algorithms)" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (Machine_Learning_Algorithms)" project-jdk-type="Python SDK" />
-  <component name="PyCharmDSProjectLayout">
-    <option name="id" value="JupyterRightHiddenStructureLayout" />
-  </component>
-  <component name="PythonCompatibilityInspectionAdvertiser">
-    <option name="version" value="3" />
-  </component>
 </project>

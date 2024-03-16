@@ -5,11 +5,11 @@ from typing import Optional, Union
 
 import numpy as np
 
-import gym
-from gym import spaces
-from gym.envs.box2d.car_dynamics import Car
-from gym.error import DependencyNotInstalled, InvalidAction
-from gym.utils import EzPickle
+import gymnasium
+from gymnasium import spaces
+from gymnasium.envs.box2d.car_dynamics import Car
+from gymnasium.error import DependencyNotInstalled, InvalidAction
+from gymnasium.utils import EzPickle
 
 try:
     import Box2D

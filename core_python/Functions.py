@@ -59,10 +59,10 @@ def compute_squares(numbers):
     return sorted(i*i for i in numbers)
 
 def swap(x,y):
-    temp=x
-    x=y
-    y=temp
-    print(x,y)
+    x=x+y
+    y = x-y
+    x=x-y
+    return x,y
 
 
 
@@ -80,5 +80,5 @@ if __name__ == '__main__':
     print(l)
     print(compute_squares.__doc__)
     x=10;y=20
-    swap(x,y)
+    x,y=swap(x,y)
     print(x,y)

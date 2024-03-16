@@ -1,5 +1,4 @@
 from collections import OrderedDict
-from types import NoneType
 
 
 def can_log(x):
@@ -7,7 +6,7 @@ def can_log(x):
     Checks whether the log entry is valid or not
     Pythonic Coding
     """
-    if isinstance(x,(str,float,int,bool,NoneType,complex)):
+    if isinstance(x,(str,float,int,bool,complex)):
         return True
     elif isinstance(x,(list,tuple,set,frozenset)):
         return all(can_log(v) for v in x)
@@ -17,10 +16,7 @@ def can_log(x):
     else:
         return False
 
-a = OrderedDict(a=1,b=2,c=3)
-print(can_log(a))
-for k in a.keys():
-    print(k,end=' ')
+
 
 def sum_list(x):
     """
@@ -86,7 +82,7 @@ def subsequences(seq):
     count+=1
     rest_seq = subsequences(rest)
     first_seq = {(first,)+sub_seq for sub_seq in rest_seq}
-    return first_seq|rest_seq
+    return first_seq|rest_seq # Union
     # answer= ({(first,) + subseq for subseq in subsequences(rest)} |
     #           {subseq for subseq in subsequences(rest)})
     # return answer
@@ -137,16 +133,16 @@ def number_to_string(n, b):
 import doctest
 if __name__ == '__main__':
     print(doctest.testmod(verbose=True))
-    print(sum_list([]))
-    print(sum_list([1,2,3,4,5]))
-    a = [[[6]]]
-    print(type(a[0][0][0]))
-    print(type(a))
-    print(len(a))
-    #print(a[0]+1)
-    print(productSum([[1,2],3,[4,5],[[[6]]]]))
-    print(powerset([1,2,3]))
-    print(subsequences([1,2,3]))
-    print(count)
-    b = [5, 2, [7, -1], 3, [6, [-13, 8], 4]]
-    print(productSum(b))
+    # print(sum_list([]))
+    # print(sum_list([1,2,3,4,5]))
+    # a = [[[6]]]
+    # print(type(a[0][0][0]))
+    # print(type(a))
+    # print(len(a))
+    # #print(a[0]+1)
+    # print(productSum([[1,2],3,[4,5],[[[6]]]]))
+    # print(powerset([1,2,3]))
+    # print(subsequences([1,2,3]))
+    # print(count)
+    # b = [5, 2, [7, -1], 3, [6, [-13, 8], 4]]
+    # print(productSum(b))

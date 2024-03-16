@@ -186,6 +186,6 @@ while True:
                 sys.exit(0)
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             flood_fill(image, (event.pos[1] // SCALE, event.pos[0] // SCALE), cur_color)
-            #find_path(image,(event.pos[1] // SCALE, event.pos[0] // SCALE), cur_color )
+            find_path(image,(event.pos[1] // SCALE, event.pos[0] // SCALE), cur_color )
             screen.blit(image, (0, 0))
             pygame.display.flip()

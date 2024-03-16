@@ -1,4 +1,4 @@
-from revision.oops.StudentSubjects import StudentSubjects
+from .StudentSubjects import StudentSubjects
 
 #todo Doubt Regarding super constructor,when passing self..Means Instance of itself..
 class Student:

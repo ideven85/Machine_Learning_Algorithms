@@ -4,8 +4,8 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/PyTorchStepByStep" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/course22" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/data" vcs="" />
     <mapping directory="$PROJECT_DIR$/example-code-2e" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/handson-ml3" vcs="" />
+    <mapping directory="$PROJECT_DIR$/fastbook" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/handson-ml3" vcs="Git" />
   </component>
 </project>

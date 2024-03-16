@@ -7,6 +7,7 @@ def clock(func):
         result = func(*args, **kwargs)
         elapsed = (time.perf_counter() - t0)*100000
         name = func.__name__
+
         arg_lst = [repr(arg) for arg in args]
         arg_lst.extend(f'{k}={v!r}' for k, v in kwargs.items())
         arg_str = ', '.join(arg_lst)
@@ -30,7 +31,7 @@ def clock_parametrised(fmt=DEFAULT_FMT):
         return clocked
     return decorate
 
-@clock
+@clock_parametrised(fmt=DEFAULT_FMT)
 def factorial(n):
     return 1 if n<2 else n*factorial(n-1)
 

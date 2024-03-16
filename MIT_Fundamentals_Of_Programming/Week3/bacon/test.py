@@ -15,7 +15,7 @@ def setup_module(module):
     This function loads the various databases.  It will be run once every time
     test.py is invoked.
     """
-    for i in ("tiny", "small", "large"):
+    for i in "tiny":
         filename = os.path.join(TEST_DIRECTORY, "resources", f"{i}.pickle")
         with open(filename, "rb") as f:
             raw = pickle.load(f)

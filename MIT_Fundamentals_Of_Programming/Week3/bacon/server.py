@@ -13,17 +13,17 @@ from wsgiref.simple_server import make_server
 import lab
 start = time.time()
 print('loading small data...', end='', flush=True)
-with open('./resources/small.pickle', 'rb') as f:
+with open('./resources/tiny.pickle', 'rb') as f:
     small_data = lab.transform_data(pickle.load(f))
 print('done!')
 mid = time.time()
 print("Load Small data took", mid - start, "seconds.")
-print('loading large data...', end='', flush=True)
-with open('./resources/large.pickle', 'rb') as f:
-    large_data = lab.transform_data(pickle.load(f))
-print('done!')
+# print('loading large data...', end='', flush=True)
+# with open('./resources/large.pickle', 'rb') as f:
+#     large_data = lab.transform_data(pickle.load(f))
+# print('done!')
 end = time.time()
-print("Load large data took", end-mid, "seconds.")
+# print("Load large data took", end-mid, "seconds.")
 
 
 print()

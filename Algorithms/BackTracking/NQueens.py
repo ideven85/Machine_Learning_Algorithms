@@ -47,6 +47,7 @@ class Solution:
 sol=Solution()
 print(time.time())
 a=sol.solveNQueensV1(9)
+print(a)
 print(time.time())
 b=sol.solveNQueens(9)
 print(time.time())

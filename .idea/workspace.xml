@@ -4,99 +4,85 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="846e98b3-3911-4544-982f-b0717cda9b23" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Games/Form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/README.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/aacircle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/aliens.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/arraydemo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/audiocapture.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/blend_fill.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/blit_blends.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/camera.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/chimp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/cursors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/BGR.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/alien1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/alien1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/alien1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/alien2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/alien2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/alien3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/alien3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/arraydemo.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/asprite.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/background.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/black.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/blue.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/blue.mpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/bomb.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/boom.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/brick.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/car_door.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/chimp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/city.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/crimson.pnm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/cursor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/danger.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/explosion1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/fist.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/green.pcx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/grey.pgm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/house_lo.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/house_lo.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/house_lo.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/laplacian.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/liquid.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/midikeys.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/player1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/punch.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/purple.xpm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/red.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/sans.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/scarlet.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/secosmic_lo.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/shot.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/static.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/teal.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/turquoise.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/whiff.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/data/yellow.tga" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/dropevent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/eventlist.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/font_viewer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/fonty.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/freetype_misc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/glcube.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/go_over_there.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/grid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/headless_no_windows_needed.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/joystick.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/liquid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/mask.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/midi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/moveit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/music_drop_fade.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/pixelarray.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/playmus.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/resizing_new.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/scaletest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/scrap_clipboard.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/scroll.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/setmodescale.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/sound.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/sound_array_demos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/sprite_texture.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/stars.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/testsprite.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/textinput.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/vgrade.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/examples/video.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/camera.py" afterDir="false" />
+    <list default="true" id="f455ae16-873a-4f36-a2a1-5414551981af" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/LeetCode/Algorithms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/acted_together.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/names.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/relationships.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/flood_fill/shortest_path.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/names.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/sets_and_dictionaries.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week4/snekoban/a.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Machine_Learning_Algorithms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Machine_Learning_Algorithms.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/Flood_Fill.py" beforeDir="false" afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/Flood_Fill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithms/100DaysOfPython/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/100DaysOfPython/Game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithms/100DaysOfPython/bipedal_walker.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/100DaysOfPython/bipedal_walker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithms/100DaysOfPython/car_dynamics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/100DaysOfPython/car_dynamics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithms/100DaysOfPython/car_racing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/100DaysOfPython/car_racing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithms/100DaysOfPython/lunar_lander.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/100DaysOfPython/lunar_lander.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithms/BackTracking/NQueens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/BackTracking/NQueens.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlienInvasion/alien_invasion.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlienInvasion/alien_invasion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deep_Learning_for_Coders/First.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Deep_Learning_for_Coders/First.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Games/Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/Games/Form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/db_small" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/lab.py" beforeDir="false" afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/lab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/smalldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/ui/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/ui/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/ui/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/bacon/ui/ui.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/flood_fill/flood_fill.py" beforeDir="false" afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/flood_fill/flood_fill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/mit_path_finding/q1_mit_flood_fill.py" beforeDir="false" afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/mit_path_finding/q1_mit_flood_fill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week4/snekoban/ui/builder.html" beforeDir="false" afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week4/snekoban/ui/builder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week4/snekoban/ui/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week4/snekoban/ui/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week4/words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week4/snekoban/words.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week5/Week6.py" beforeDir="false" afterPath="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week5/Recursion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0000.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0001.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0002.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0003.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0004.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0005.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0006.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0008.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0009.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0010.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0011.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0012.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0013.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0015.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0016.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0018.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0019.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0020.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0021.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0022.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0023.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0025.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0026.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0028.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Folder With Items/MET-ART_err_22_0029.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notebooks/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notebooks/Bored.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Notebooks/Bored.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notebooks/Test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Notebooks/Test.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notebooks/Titanic.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Notebooks/Titanic.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyTorchStepByStep" beforeDir="false" afterPath="$PROJECT_DIR$/PyTorchStepByStep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyTorchStepByStep/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyTorchStepByStep/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyTorchStepByStep/tensorboardserverextension.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyTorchStepByStep/tensorboardserverextension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python_Weekend_Projects/DuckDuckgo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python_Weekend_Projects/DuckDuckgo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_python/ClockDeco.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_python/ClockDeco.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_python/Functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_python/Functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_python/Map_Filter_Reduce.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_python/Map_Filter_Reduce.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_python/oops/Student.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_python/oops/Student.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course22" beforeDir="false" afterPath="$PROJECT_DIR$/course22" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course22/clean/00-is-it-a-bird-creating-a-model-from-your-own-data.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/course22/clean/00-is-it-a-bird-creating-a-model-from-your-own-data.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fastbook/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fastbook/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,168 +92,52 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="Jupyter Notebook" />
         <option value="Python Script" />
       </list>
     </option>
   </component>
-  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
-    <envs>
-      <env key="FLASK_APP" value="app" />
-    </envs>
-    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
-    <option name="myEnvs">
-      <map>
-        <entry key="FLASK_APP" value="app" />
-      </map>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/flood_fill/flood_fill.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="2aMvwbi0itVFAasucGEN5m2g5ZT" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectId" id="2dfVIN9Yi4XYPJyaBfghKbLC7RN" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Doctest subsequences.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Doctests in R6.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for classic_strategy_test.test_fidelity_promo_no_discount.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for image_processing_2.test_seam_carving_helpers.test_pattern_greyscale.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test.test_backwards_random.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test.test_backwards_real.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test.test_backwards_small.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test.test_convolve_small.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test.test_load.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test.test_mix_random.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test.test_mix_real.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test.test_mix_small.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in test_packages.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.2dVector.executor&quot;: &quot;Run&quot;,
-    &quot;Python.AlienDictionary.executor&quot;: &quot;Run&quot;,
-    &quot;Python.AllPathsSourceTarget.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Arrays.executor&quot;: &quot;Run&quot;,
-    &quot;Python.BackTrackingProblems.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Checking.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ClockDeco.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ConvertHexToImage.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ConvertImageToHex.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DP.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DiskUsage.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Environment_Model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.EventualSafeStates.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Functions.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Game.executor&quot;: &quot;Run&quot;,
-    &quot;Python.GeneratePermutations.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Hashing.executor&quot;: &quot;Run&quot;,
-    &quot;Python.IsGraphBiPartite.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Iterator_Classes.executor&quot;: &quot;Run&quot;,
-    &quot;Python.KeysAndRooms.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ListProblems.executor&quot;: &quot;Run&quot;,
-    &quot;Python.LongestPalindromeProblems.executor&quot;: &quot;Run&quot;,
-    &quot;Python.LongestPalindromicSubsequence.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Map_Filter_Reduce.executor&quot;: &quot;Run&quot;,
-    &quot;Python.MinConnectionsToBeAdded.executor&quot;: &quot;Run&quot;,
-    &quot;Python.MinCostToConnectPoints.executor&quot;: &quot;Run&quot;,
-    &quot;Python.MinHeap.executor&quot;: &quot;Run&quot;,
-    &quot;Python.MinPathSum.executor&quot;: &quot;Run&quot;,
-    &quot;Python.NumberOfProvinces.executor&quot;: &quot;Run&quot;,
-    &quot;Python.OOPS.executor&quot;: &quot;Run&quot;,
-    &quot;Python.PalindromePartioning.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Person.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Plots.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ProblemOfTheDay.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Problems.executor&quot;: &quot;Run&quot;,
-    &quot;Python.R6.executor&quot;: &quot;Run&quot;,
-    &quot;Python.REVERSE.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Readin3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Reading3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Register.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Revision.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Scraping.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Sentence.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Student.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Threading.executor&quot;: &quot;Run&quot;,
-    &quot;Python.TopologicalSorting.executor&quot;: &quot;Run&quot;,
-    &quot;Python.TownJudge.executor&quot;: &quot;Run&quot;,
-    &quot;Python.TreeOperations.executor&quot;: &quot;Run&quot;,
-    &quot;Python.TreeProblems.executor&quot;: &quot;Run&quot;,
-    &quot;Python.UniqueBinarySearchTrees.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Vector.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Weapon.executor&quot;: &quot;Run&quot;,
-    &quot;Python.__main__.executor&quot;: &quot;Run&quot;,
-    &quot;Python.alien_invasion.executor&quot;: &quot;Run&quot;,
-    &quot;Python.aliens.executor&quot;: &quot;Run&quot;,
-    &quot;Python.application.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bottle.executor&quot;: &quot;Run&quot;,
-    &quot;Python.camera (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.camera (2).executor&quot;: &quot;Run&quot;,
-    &quot;Python.camera.executor&quot;: &quot;Run&quot;,
-    &quot;Python.eventlist.executor&quot;: &quot;Run&quot;,
-    &quot;Python.flood_fill.executor&quot;: &quot;Run&quot;,
-    &quot;Python.lab.executor&quot;: &quot;Run&quot;,
-    &quot;Python.listcomp_speed.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.moveit.executor&quot;: &quot;Run&quot;,
-    &quot;Python.server.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sound.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.testsprite.executor&quot;: &quot;Run&quot;,
-    &quot;Python.vgrade.executor&quot;: &quot;Run&quot;,
-    &quot;Python.video.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ankster/Developer/Machine_Learning_Algorithms/Games&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Doctests in Algorithms.executor": "Run",
+    "Python.Algorithms.executor": "Run",
+    "Python.Game.executor": "Run",
+    "Python.NQueens.executor": "Run",
+    "Python.bipedal_walker.executor": "Run",
+    "Python.flood_fill.executor": "Run",
+    "Python.lunar_lander.executor": "Run",
+    "Python.q1_mit_flood_fill.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/ankster/Developer/Machine_Learning_Algorithms",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Games" />
-      <recent name="$PROJECT_DIR$/Maths" />
-      <recent name="$PROJECT_DIR$/100DaysOfPython" />
-      <recent name="$PROJECT_DIR$/100DaysOfPython/rev" />
-      <recent name="$PROJECT_DIR$/revision/6_009/lab3" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/basics" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/6_001/Week0" />
-      <recent name="$PROJECT_DIR$/6_001/lab5" />
-      <recent name="$PROJECT_DIR$/Design_Patterns" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Python.eventlist">
-    <configuration name="camera (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager" selected="Python.Algorithms">
+    <configuration name="Algorithms" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Machine_Learning_Algorithms" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -276,12 +146,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LeetCode" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/camera.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LeetCode/Algorithms.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -290,7 +160,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="camera" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="NQueens" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Machine_Learning_Algorithms" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -299,35 +169,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/pygame/examples" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithms/BackTracking" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/pygame/examples/camera.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="eventlist" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Machine_Learning_Algorithms" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Games/examples" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Games/examples/eventlist.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithms/BackTracking/NQueens.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -359,7 +206,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="moveit" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="lunar_lander" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Machine_Learning_Algorithms" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -368,12 +215,35 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Games/examples" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithms/100DaysOfPython" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Games/examples/moveit.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithms/100DaysOfPython/lunar_lander.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="q1_mit_flood_fill" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Machine_Learning_Algorithms" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/mit_path_finding" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/mit_path_finding/q1_mit_flood_fill.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -384,11 +254,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.eventlist" />
-        <item itemvalue="Python.moveit" />
+        <item itemvalue="Python.Algorithms" />
+        <item itemvalue="Python.q1_mit_flood_fill" />
         <item itemvalue="Python.flood_fill" />
-        <item itemvalue="Python.camera (2)" />
-        <item itemvalue="Python.camera" />
+        <item itemvalue="Python.NQueens" />
+        <item itemvalue="Python.lunar_lander" />
       </list>
     </recent_temporary>
   </component>
@@ -402,302 +272,46 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="846e98b3-3911-4544-982f-b0717cda9b23" name="Changes" comment="" />
-      <created>1704141438553</created>
+      <changelist id="f455ae16-873a-4f36-a2a1-5414551981af" name="Changes" comment="" />
+      <created>1710399040436</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1704141438553</updated>
-      <workItem from="1704141439568" duration="63000" />
-      <workItem from="1704141503800" duration="6641000" />
-      <workItem from="1705279233100" duration="6588000" />
-      <workItem from="1705287870142" duration="10778000" />
-      <workItem from="1705374813354" duration="40000" />
-      <workItem from="1705375198082" duration="1187000" />
-      <workItem from="1705380379186" duration="18410000" />
-      <workItem from="1705478195665" duration="3580000" />
-      <workItem from="1705492195126" duration="599000" />
-      <workItem from="1705622056193" duration="764000" />
-      <workItem from="1705631410113" duration="7397000" />
-      <workItem from="1705639204045" duration="3417000" />
-      <workItem from="1705651000563" duration="655000" />
-      <workItem from="1706154862949" duration="1747000" />
-      <workItem from="1706291188258" duration="1849000" />
-      <workItem from="1706414752221" duration="242000" />
-      <workItem from="1706415005508" duration="371000" />
-      <workItem from="1706415387713" duration="479000" />
-      <workItem from="1706415925612" duration="630000" />
-      <workItem from="1706427286827" duration="338000" />
-      <workItem from="1706428013571" duration="3424000" />
-      <workItem from="1707323547196" duration="1214000" />
-      <workItem from="1707416814015" duration="10708000" />
-      <workItem from="1707430158897" duration="4661000" />
-      <workItem from="1708605319952" duration="958000" />
-      <workItem from="1708606297362" duration="4140000" />
-      <workItem from="1708610489456" duration="1805000" />
-      <workItem from="1708647128905" duration="1130000" />
-      <workItem from="1708774525982" duration="1810000" />
-      <workItem from="1708786384579" duration="12880000" />
-      <workItem from="1708813141238" duration="727000" />
-      <workItem from="1708814160872" duration="669000" />
-      <workItem from="1708885173672" duration="599000" />
-      <workItem from="1708903425041" duration="5633000" />
-      <workItem from="1708965326617" duration="622000" />
-      <workItem from="1708981597032" duration="11518000" />
-      <workItem from="1708995424903" duration="5498000" />
-      <workItem from="1709113583153" duration="1208000" />
-      <workItem from="1709125329876" duration="599000" />
-      <workItem from="1709126173705" duration="599000" />
-      <workItem from="1709148772539" duration="1352000" />
-      <workItem from="1709233997914" duration="3058000" />
-      <workItem from="1709247183433" duration="3245000" />
-      <workItem from="1709250752991" duration="4382000" />
-      <workItem from="1709255796805" duration="2679000" />
-      <workItem from="1709259582681" duration="2265000" />
-      <workItem from="1709414378462" duration="90000" />
-      <workItem from="1709414475179" duration="6613000" />
-      <workItem from="1709564881339" duration="4020000" />
-      <workItem from="1709592956964" duration="1869000" />
-      <workItem from="1709744012255" duration="8467000" />
-      <workItem from="1709754725516" duration="406000" />
-      <workItem from="1709786027160" duration="6412000" />
-      <workItem from="1709840619703" duration="12743000" />
-      <workItem from="1709965718843" duration="967000" />
-      <workItem from="1709967844939" duration="1817000" />
-      <workItem from="1710068463167" duration="13926000" />
-      <workItem from="1710242913133" duration="18015000" />
-      <workItem from="1710263219056" duration="620000" />
-      <workItem from="1710265156018" duration="20000" />
+      <updated>1710399040436</updated>
+      <workItem from="1710399041681" duration="415000" />
+      <workItem from="1710465557447" duration="1776000" />
+      <workItem from="1710469266604" duration="1304000" />
+      <workItem from="1710471109066" duration="672000" />
+      <workItem from="1710476702685" duration="5230000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/core_python/oops/Student.py</url>
-          <line>28</line>
+          <url>file://$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/flood_fill/flood_fill.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/mit_path_finding/q1_mit_flood_fill.py</url>
+          <line>32</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/core_python/oops/Student.py</url>
-          <line>10</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/core_python/Map_Filter_Reduce.py</url>
-          <line>10</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/core_python/Map_Filter_Reduce.py</url>
-          <line>54</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Algorithms/Arrays.py</url>
-          <line>218</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Algorithms/SlidingWindow.py</url>
-          <line>36</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Algorithms/100DaysOfPython/GraphTheory/NodesDistanceK.py</url>
-          <line>40</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Algorithms/100DaysOfPython/Arrays.py</url>
-          <line>5</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Algorithms/100DaysOfPython/Arrays.py</url>
-          <line>49</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Algorithms/dynamicProgramming/LongestPalindromeProblems.py</url>
-          <line>55</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Design_Patterns/strategy/Order.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week5/Week6.py</url>
-          <line>36</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week5/Week6.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week5/Week6.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/Reading3.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
-          <url>notebook:///Users/deven/Desktop/Machine_Learning_Algorithms/revision/Decorators_Closures.ipynb</url>
-          <line>72</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
-          <url>notebook:///Users/deven/Desktop/Machine_Learning_Algorithms/revision/decorators_closures/Decorators_Closures.ipynb</url>
-          <line>221</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
-          <url>notebook:///Users/deven/Desktop/Machine_Learning_Algorithms/100DaysOfPython/basics/Map_Filter_Reduce.ipynb</url>
-          <line>47</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$moveit.coverage" NAME="moveit Coverage Results" MODIFIED="1710262682550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Games/examples" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$lab.coverage" NAME="lab Coverage Results" MODIFIED="1709247983732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_001/bacon" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$DP.coverage" NAME="DP Coverage Results" MODIFIED="1707423223023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML/Revision/DSA" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$alien_invasion.coverage" NAME="alien_invasion Coverage Results" MODIFIED="1705638619146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/AlienInvasion" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$UniqueBinarySearchTrees.coverage" NAME="UniqueBinarySearchTrees Coverage Results" MODIFIED="1708647836303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/graphs" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$vgrade.coverage" NAME="vgrade Coverage Results" MODIFIED="1710261229346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Games/examples" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$2dVector.coverage" NAME="2dVector Coverage Results" MODIFIED="1708608577476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab2/image_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$BackTrackingProblems.coverage" NAME="BackTrackingProblems Coverage Results" MODIFIED="1710080336057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Readin3.coverage" NAME="Reading3 Coverage Results" MODIFIED="1710247629277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Register.coverage" NAME="Register Coverage Results" MODIFIED="1705633189164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/basics/decorators_closures" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Functions.coverage" NAME="Functions Coverage Results" MODIFIED="1709747288887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Revision" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$camera.coverage" NAME="camera Coverage Results" MODIFIED="1706780471834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/lib/python3.11/site-packages/pygame/examples" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$TopologicalSorting.coverage" NAME="TopologicalSorting Coverage Results" MODIFIED="1708988148328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/graphs" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Game.coverage" NAME="Game Coverage Results" MODIFIED="1706781497423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$Arrays.coverage" NAME="Arrays Coverage Results" MODIFIED="1709415431084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/100DaysOfPython" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$DiskUsage.coverage" NAME="DiskUsage Coverage Results" MODIFIED="1705631653432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Revision.coverage" NAME="Revision Coverage Results" MODIFIED="1704144786776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$ConvertImageToHex.coverage" NAME="ConvertImageToHex Coverage Results" MODIFIED="1708804247014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Maths" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$Sentence.coverage" NAME="Sentence Coverage Results" MODIFIED="1708801101643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML/Revision" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$alien_invasion.coverage" NAME="alien_invasion Coverage Results" MODIFIED="1709001138475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AlienInvasion" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$bipedal_walker__1_.coverage" NAME="bipedal_walker (1) Coverage Results" MODIFIED="1706782097558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/box2d" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$DiskUsage.coverage" NAME="DiskUsage Coverage Results" MODIFIED="1707324125787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/HundredDaysOfCode" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$lab.coverage" NAME="lab Coverage Results" MODIFIED="1707291508518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$bottle.coverage" NAME="bottle Coverage Results" MODIFIED="1708775738893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example-code-2e/21-async/mojifinder" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_racing.coverage" NAME="car_racing Coverage Results" MODIFIED="1706782107500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/box2d" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$eventlist.coverage" NAME="eventlist Coverage Results" MODIFIED="1710262871820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Games/examples" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$ConvertHexToImage.coverage" NAME="ConvertHexToImage Coverage Results" MODIFIED="1708804413941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Maths" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Test.coverage" NAME="Test Coverage Results" MODIFIED="1709870879991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Revision" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$lab.coverage" NAME="lab Coverage Results" MODIFIED="1705290143404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$LargestNumber.coverage" NAME="LargestNumber Coverage Results" MODIFIED="1706796725094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms_Revision" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$IsGraphBiPartite.coverage" NAME="IsGraphBiPartite Coverage Results" MODIFIED="1708988420492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/graphs" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$ListProblems.coverage" NAME="ListProblems Coverage Results" MODIFIED="1709256398056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/100DaysOfPython/Lists" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$server.coverage" NAME="server Coverage Results" MODIFIED="1710085037468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_001/lab5/snekoban" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$pytest_in_test_packages_py.coverage" NAME="pytest in test_packages.py Coverage Results" MODIFIED="1709258154861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_001/ps0" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Iterator_Classes.coverage" NAME="Iterator_Classes Coverage Results" MODIFIED="1705395920780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/oops" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_random__1_.coverage" NAME="pytest for test.test_backwards_random (1) Coverage Results" MODIFIED="1707287057692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$REVERSE.coverage" NAME="REVERSE Coverage Results" MODIFIED="1708648166990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/graphs" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$MinHeap.coverage" NAME="MinHeap Coverage Results" MODIFIED="1709787851695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/Heaps" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Unzip.coverage" NAME="Unzip Coverage Results" MODIFIED="1707285911185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$server.coverage" NAME="server Coverage Results" MODIFIED="1709248459248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_001/bacon" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$flood_fill.coverage" NAME="flood_fill Coverage Results" MODIFIED="1710262136474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/flood_fill" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_backwards_small.coverage" NAME="pytest for test.test_backwards_small Coverage Results" MODIFIED="1705289798679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$MinConnectionsToBeAdded.coverage" NAME="MinConnectionsToBeAdded Coverage Results" MODIFIED="1707423636354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/graphs" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$R6.coverage" NAME="R6 Coverage Results" MODIFIED="1710246002260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_001/lab6" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_mix_random.coverage" NAME="pytest for test.test_mix_random Coverage Results" MODIFIED="1705289844599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$video.coverage" NAME="video Coverage Results" MODIFIED="1710261034621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/pygame/examples" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Person.coverage" NAME="Person Coverage Results" MODIFIED="1705284134232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/oops" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Vector.coverage" NAME="Vector Coverage Results" MODIFIED="1705641733729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/basics" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$sound.coverage" NAME="sound Coverage Results" MODIFIED="1710261207071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Games/examples" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_real.coverage" NAME="pytest for test.test_backwards_real Coverage Results" MODIFIED="1707286848284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab1/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_backwards_real.coverage" NAME="pytest for test.test_backwards_real Coverage Results" MODIFIED="1705290020750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Student.coverage" NAME="Student Coverage Results" MODIFIED="1705286247192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/oops" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$pytest_for_test_test_load.coverage" NAME="pytest for test.test_load Coverage Results" MODIFIED="1708607361674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab2/image_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Threading.coverage" NAME="Threading Coverage Results" MODIFIED="1705300818297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Hashing.coverage" NAME="Hashing Coverage Results" MODIFIED="1709861602842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Arrays.coverage" NAME="Arrays Coverage Results" MODIFIED="1710075242083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_image_processing_2_test_seam_carving_helpers_test_pattern_greyscale.coverage" NAME="pytest for image_processing_2.test_seam_carving_helpers.test_pattern_greyscale Coverage Results" MODIFIED="1710248394310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week2" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$KeysAndRooms.coverage" NAME="KeysAndRooms Coverage Results" MODIFIED="1709751608724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/graphs" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_mix_real.coverage" NAME="pytest for test.test_mix_real Coverage Results" MODIFIED="1705289838635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$GeneratePermutations.coverage" NAME="GeneratePermutations Coverage Results" MODIFIED="1705482885433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/BackTracking" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$walker2d_v4.coverage" NAME="walker2d_v4 Coverage Results" MODIFIED="1706782195859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/mujoco" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Checking.coverage" NAME="Checking Coverage Results" MODIFIED="1707298950899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$EventualSafeStates.coverage" NAME="EventualSafeStates Coverage Results" MODIFIED="1708997155169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/100DaysOfPython/GraphTheory" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Weapon.coverage" NAME="Weapon Coverage Results" MODIFIED="1709864551563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Design_Patterns/bridgePattern" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$test.coverage" NAME="test Coverage Results" MODIFIED="1710084493936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_001/lab5/snekoban" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$MinPathSum.coverage" NAME="MinPathSum Coverage Results" MODIFIED="1707423571552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$bipedal_walker.coverage" NAME="bipedal_walker Coverage Results" MODIFIED="1706780957911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gym/envs/box2d" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$camera__1_.coverage" NAME="camera (1) Coverage Results" MODIFIED="1710261942698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Games/examples" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Environment_Model.coverage" NAME="Environment_Model Coverage Results" MODIFIED="1707431390728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab1" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$MinCostToConnectPoints.coverage" NAME="MinCostToConnectPoints Coverage Results" MODIFIED="1709862195314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/graphs" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$aliens.coverage" NAME="aliens Coverage Results" MODIFIED="1710260037834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/pygame/examples" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_mix_small.coverage" NAME="pytest for test.test_mix_small Coverage Results" MODIFIED="1705289831634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_classic_strategy_test_test_fidelity_promo_no_discount.coverage" NAME="pytest for classic_strategy_test.test_fidelity_promo_no_discount Coverage Results" MODIFIED="1709871030872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example-code-2e/10-dp-1class-func" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$ClockDeco.coverage" NAME="ClockDeco Coverage Results" MODIFIED="1705634649472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/basics" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Game.coverage" NAME="Game Coverage Results" MODIFIED="1710252261898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$pytest_for_test_test_backwards_random.coverage" NAME="pytest for test.test_backwards_random Coverage Results" MODIFIED="1705289811787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_random.coverage" NAME="pytest for test.test_backwards_random Coverage Results" MODIFIED="1707286876459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab1/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$application.coverage" NAME="application Coverage Results" MODIFIED="1709789735377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Design_Patterns/priority_queue_pattern" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$LongestPalindromeProblems.coverage" NAME="LongestPalindromeProblems Coverage Results" MODIFIED="1709417037113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/dynamicProgramming" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$AllPathsSourceTarget.coverage" NAME="AllPathsSourceTarget Coverage Results" MODIFIED="1708984674369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/graphs" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$PalindromePartioning.coverage" NAME="PalindromePartioning Coverage Results" MODIFIED="1705389976657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/dynamicProgramming" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_real__1_.coverage" NAME="pytest for test.test_backwards_real (1) Coverage Results" MODIFIED="1707287053286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_dynamics__1_.coverage" NAME="car_dynamics (1) Coverage Results" MODIFIED="1706782102902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.9/site-packages/gymnasium/envs/box2d" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Problems.coverage" NAME="Problems Coverage Results" MODIFIED="1707311536741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_convolve_small.coverage" NAME="pytest for test.test_convolve_small Coverage Results" MODIFIED="1707434809622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$ProblemOfTheDay.coverage" NAME="ProblemOfTheDay Coverage Results" MODIFIED="1709860704909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/LeetCode" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$listcomp_speed.coverage" NAME="listcomp_speed Coverage Results" MODIFIED="1708609320432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example-code-2e/02-array-seq" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$camera.coverage" NAME="camera Coverage Results" MODIFIED="1710261964422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/pygame/examples" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$SlidingWindow.coverage" NAME="SlidingWindow Coverage Results" MODIFIED="1706794368717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms_Revision" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$TownJudge.coverage" NAME="TownJudge Coverage Results" MODIFIED="1708984684991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/50DaysOfLeetCode/GraphTheory" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$TreeProblems.coverage" NAME="TreeProblems Coverage Results" MODIFIED="1707432545724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML/Revision/DSA/Trees" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Sentence.coverage" NAME="Sentence Coverage Results" MODIFIED="1707300797576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfML/Revision" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$OOPS.coverage" NAME="OOPS Coverage Results" MODIFIED="1709866056179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Design_Patterns/bridgePattern" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_dynamics.coverage" NAME="car_dynamics Coverage Results" MODIFIED="1706781525919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/6_009" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$Main.coverage" NAME="Main Coverage Results" MODIFIED="1709261265773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/100DaysOfPython/Trees" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_mix_real.coverage" NAME="pytest for test.test_mix_real Coverage Results" MODIFIED="1707288489544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$TreeOperations.coverage" NAME="TreeOperations Coverage Results" MODIFIED="1707425979923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview_Algorithms/AlgoExpert" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Scraping.coverage" NAME="Scraping Coverage Results" MODIFIED="1705304341408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_small__1_.coverage" NAME="pytest for test.test_backwards_small (1) Coverage Results" MODIFIED="1707287047801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$main.coverage" NAME="main Coverage Results" MODIFIED="1704142329942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$LongestPalindromicSubsequence.coverage" NAME="LongestPalindromicSubsequence Coverage Results" MODIFIED="1709249647686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/100DaysOfPython/Dynamic_Programming" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_backwards_small.coverage" NAME="pytest for test.test_backwards_small Coverage Results" MODIFIED="1707286669965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/lab1/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$AlienDictionary.coverage" NAME="AlienDictionary Coverage Results" MODIFIED="1709000396033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/100DaysOfPython/GraphTheory" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$Chatgpt.coverage" NAME="Chatgpt Coverage Results" MODIFIED="1706783894725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Doctests_in_R6.coverage" NAME="Doctests in R6 Coverage Results" MODIFIED="1710245676295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_001/lab6" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$pytest_for_classic_strategy_test_test_fidelity_promo_no_discount.coverage" NAME="pytest for classic_strategy_test.test_fidelity_promo_no_discount Coverage Results" MODIFIED="1708994127780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example-code-2e/10-dp-1class-func" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Plots.coverage" NAME="Plots Coverage Results" MODIFIED="1705290830795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision/6_009" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Python$NumberOfProvinces.coverage" NAME="NumberOfProvinces Coverage Results" MODIFIED="1709593627172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/graphs" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$camera__2_.coverage" NAME="camera (2) Coverage Results" MODIFIED="1710262001077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$car_racing__1_.coverage" NAME="car_racing (1) Coverage Results" MODIFIED="1706781564783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/100DaysOfPython/6_009" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Map_Filter_Reduce.coverage" NAME="Map_Filter_Reduce Coverage Results" MODIFIED="1705398729272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/revision" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_mix_small.coverage" NAME="pytest for test.test_mix_small Coverage Results" MODIFIED="1707288319268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$pytest_for_test_test_mix_random.coverage" NAME="pytest for test.test_mix_random Coverage Results" MODIFIED="1707288496303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_009/audio_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Doctest_subsequences.coverage" NAME="Doctest subsequences Coverage Results" MODIFIED="1710078359929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_001/lab6" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$testsprite.coverage" NAME="testsprite Coverage Results" MODIFIED="1710261129216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/pygame/examples" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$2dVector.coverage" NAME="2dVector Coverage Results" MODIFIED="1709870774364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6_001/lab2/image_processing" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1710260826081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/pygame/docs" />
-    <SUITE FILE_PATH="coverage/Machine_Learing_Algorithms$video.coverage" NAME="video Coverage Results" MODIFIED="1706780436321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/lib/python3.11/site-packages/pygame/examples" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$flood_fill.coverage" NAME="flood_fill Coverage Results" MODIFIED="1710479146544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/flood_fill" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$bipedal_walker.coverage" NAME="bipedal_walker Coverage Results" MODIFIED="1710469786517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/100DaysOfPython" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$lunar_lander.coverage" NAME="lunar_lander Coverage Results" MODIFIED="1710469961057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/100DaysOfPython" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$NQueens.coverage" NAME="NQueens Coverage Results" MODIFIED="1710470054022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/BackTracking" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Game.coverage" NAME="Game Coverage Results" MODIFIED="1710469856403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Algorithms/100DaysOfPython" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Doctests_in_Algorithms.coverage" NAME="Doctests in Algorithms Coverage Results" MODIFIED="1710466703999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$q1_mit_flood_fill.coverage" NAME="q1_mit_flood_fill Coverage Results" MODIFIED="1710480422933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MIT_Fundamentals_Of_Programming/Week3/mit_path_finding" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Algorithms$Algorithms.coverage" NAME="Algorithms Coverage Results" MODIFIED="1710543913687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/LeetCode" />
   </component>
 </project>

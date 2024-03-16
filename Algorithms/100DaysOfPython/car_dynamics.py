@@ -12,7 +12,7 @@ import math
 import Box2D
 import numpy as np
 
-from gym.error import DependencyNotInstalled
+from gymnasium.error import DependencyNotInstalled
 
 try:
     from Box2D.b2 import fixtureDef, polygonShape, revoluteJointDef

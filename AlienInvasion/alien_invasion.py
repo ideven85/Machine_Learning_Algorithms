@@ -23,7 +23,7 @@ class AlienVasion:
             self._action_listener()
             self._repaint()
 
-            self.clock.tick(120)
+            self.clock.tick(60)
     def _action_listener(self):
         for event in pygame.event.get():
             #print(pygame.QUIT.real)
