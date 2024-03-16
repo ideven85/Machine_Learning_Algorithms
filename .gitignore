@@ -5,3 +5,5 @@ ml-25m.zip
 ml-25m
 datasets/
 virtualenv/
+.idea/
+.vscode/
