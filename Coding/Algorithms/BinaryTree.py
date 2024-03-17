@@ -2,7 +2,7 @@
 from collections import deque
 from typing import Optional, List
 
-from Algorithms.GraphProblems import Node
+from Coding.Algorithms.GraphProblems import Node
 
 
 class TreeNode:
