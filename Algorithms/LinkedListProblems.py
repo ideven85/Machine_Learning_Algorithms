@@ -237,6 +237,24 @@ def removeKthNodeFromEnd(head, k):
         else:
             head = None
     return head
+def removeKthNodeFromEndV2(head, k):
+    pass
+
+class Node:
+    def __init__(self, data):   # data -> value stored in node
+        self.data = data
+        self.next = None
+
+
+def countPair( head1, head2, n1, n2, x):
+        """
+        Counts the number of Pairs whose sum is equal to x
+        head1:  head of linkedList 1
+        head2:  head of linkedList 2
+        n1:  len of  linkedList 1
+        n2:  len of linkedList 1
+        x:   given sum
+        """
 
 
 if __name__ == '__main__':

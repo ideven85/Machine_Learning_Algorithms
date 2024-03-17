@@ -8,7 +8,8 @@ class UnionFind:
     Union-Find: Three variants-> Quick Union, Quick Find, Union Find By Rank(optimised version)
     All applications of disjoint sets
     """
-    
+    root=None
+    rank=None
     def init(self, size) -> None:
         self.root = [0]*size
         self.rank = [i for i in range(size)]

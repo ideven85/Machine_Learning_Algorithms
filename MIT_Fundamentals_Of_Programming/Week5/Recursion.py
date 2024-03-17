@@ -63,6 +63,8 @@ def productSum(array,multiplier=1):
     # return total*multiplier
 
 count=0
+
+#todo Redo with Lists
 def subsequences(seq):
 
     """

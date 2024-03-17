@@ -32,7 +32,13 @@ def powerset(array):
             subSets.append(currentSubSet + [element])
     return subSets
 
-
+def subsequences(seq):
+    if not seq: return []
+    first = seq[0]
+    rest = seq[1:]
+    rest_seq = subsequences(rest)
+    first_seq = [[first]+sub_seq for sub_seq in rest_seq]
+    return first_seq+rest_seq
 
 count = 0
 sol = ""
@@ -214,3 +220,5 @@ if __name__ == '__main__':
     s = 3
     print(getPermutations1([1,2,1]))
     print(getPermutations([1,2,1],3))
+    print("Binary K Strings:",binaryKStrings(5,2))
+    print("Subsequences",subsequences([1,2,3]))

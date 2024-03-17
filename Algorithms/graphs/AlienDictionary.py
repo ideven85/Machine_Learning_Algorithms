@@ -1,7 +1,7 @@
 from collections import defaultdict
 from typing import List
 
-
+#todo
 class AlienDictionary:
 
     graph = defaultdict(list)
