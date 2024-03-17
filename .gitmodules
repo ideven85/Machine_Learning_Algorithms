@@ -1,13 +1,13 @@
 [submodule "example-code-2e"]
-	path = example-code-2e
+	path = revision/example-code-2e
 	url = https://github.com/fluentpython/example-code-2e
 
 [submodule "course22"]
-	path = course22
+	path = Machine_Learning/course22
 	url = https://github.com/fastai/course22
 [submodule "PyTorchStepByStep"]
-	path = PyTorchStepByStep
+	path = Machine_Learning/PyTorchStepByStep
 	url = https://github.com/dvgodoy/PyTorchStepByStep
 [submodule "fastbook"]
-	path = fastbook
+	path = Machine_Learning/fastbook
 	url = https://github.com/ideven85/fastbook
