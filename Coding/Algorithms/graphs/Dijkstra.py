@@ -3,7 +3,7 @@ def dijstrasAlgorithm(start,edges):
 
     minDistances = [float('inf') for _ in range(V)]
     minDistances[start]=0
-
+    vertices = []
     visited = set()
 
     while len(visited) != V:
@@ -11,16 +11,17 @@ def dijstrasAlgorithm(start,edges):
         if minDistance == float('inf'):
             break
         visited.add(vertex)
+        vertices.append(vertex)
         for edge in edges[vertex]:
-            destination, distanceToDestination = edge
+            destination, distance_to_destination = edge
             if destination in visited:
                 continue
 
-            newDistance = minDistance + distanceToDestination
+            newDistance = minDistance + distance_to_destination
             currentNewDistance = minDistances[destination]
             if newDistance < currentNewDistance:
                 minDistances[destination]=newDistance
-
+    print(vertices)
     return list(map(lambda x: -1 if x==float('inf') else x,minDistances))
 
 

@@ -48,13 +48,45 @@ def get_neighbours(image,cell):
     neighbors = [(row - 1, col), (row + 1, col), (row,col-1),(row,col+1)]
     return [(r,c) for (r,c) in neighbors if 0<=r<get_height(image) and 0<=c<get_width(image)]
 
-def find_path(image,start_location):
-    original_color = get_pixel(image, *start_location)
+def find_path(image,start_location,goal_color):
+    path_color = get_pixel(image, *start_location)
+
     found = False
     final_path = None
 
 
     possible_paths = [(start_location,)]
+    print(f"You clicked at row {start_location[0]} col {start_location[1]}, {path_color}")
+    def get_neighbors(cell):
+        row, col = cell
+        neighbors = [(row+1, col), (row-1, col), (row, col+1), (row, col-1)]
+        return [(r, c) for (r, c) in neighbors if 0 <= r < get_height(image) and 0 <= c < get_width(image)]
+
+    paths = [(start_location,)]
+    visited = {start_location}
+    #print("before loop")
+    final_path = None
+    while paths:
+        this_path = paths.pop(0)
+        if get_pixel(image, *this_path[-1]) == goal_color:
+            print("found!", this_path)
+            final_path = this_path
+            break # found solution
+
+        for neighbor in get_neighbors(this_path[-1]):
+            if neighbor not in visited and get_pixel(image, *neighbor) in {path_color, goal_color}:
+                paths.append(this_path + (neighbor,))
+                #print(paths[-1])
+                visited.add(neighbor)
+    print(len(paths))
+    if final_path:
+        print(len(final_path))
+        for cell in final_path:
+            set_pixel(image, *cell, goal_color)
+    else:
+        print("No path found, explored", len(visited))
+    
+
 
 
 
@@ -154,7 +186,7 @@ while True:
                 pygame.quit()
                 sys.exit(0)
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-            flood_fill(image, (event.pos[1] // SCALE, event.pos[0] // SCALE), cur_color)
+            find_path(image, (event.pos[1] // SCALE, event.pos[0] // SCALE), "green")
 
             screen.blit(image, (0, 0))
             pygame.display.flip()

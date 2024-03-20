@@ -38,6 +38,6 @@ while running:
             if keys[pygame.K_d]:
                 player_pos.x += 300 * dt
         pygame.display.flip()
-        dt=clock.tick(0)/1000
+        dt=clock.tick(60)/1000
 
 pygame.quit()

@@ -1,3 +1,4 @@
+import collections
 import time
 
 
@@ -25,41 +26,28 @@ def flood_fill(image, location, new_color):
         potential_neighbours = [(row - 1, col), (row + 1, col), (row, col - 1), (row, col + 1)]
         return [(nr,nc ) for (nr, nc) in potential_neighbours if 0<=nr<get_height(image) and 0<=nc<get_width(image)]
 
-    to_color=[location]
+    to_color= collections.deque()
     visited = set()
-    locations = [location]
+    to_color.append(location)
+    visited.add(location)
+
     #visited = []
     start = time.time()
-    visited.add(location)
     while to_color:
-        this_cell = to_color.pop(0)
+        this_cell = to_color.popleft()
         set_pixel(image, *this_cell, new_color)
         for neighbour in get_neighbours(this_cell):
             if neighbour not in visited and get_pixel(image, *neighbour) == original_color:
-                locations.append(neighbour)
                 to_color.append(neighbour)
                 visited.add(neighbour)
         #to_color+=[neighbour for neighbour in get_neighbours(this_cell) if (neighbour not in visited and get_pixel(image,*neighbour)==original_color)]
-    print(locations)
 
     #bfs(image, location, new_color)
     #set_pixel(image,*location, new_color)
     print("Time taken:", time.time()-start)
 
-##### IMAGE REPRESENTATION WITH SIMILAR ABSTRACTIONS TO LAB 1 AND 2
-
-
-# def bfs(new_image, cell, color):
-#
-#     this_cell = [cell[0],cell[1]]
-#     visited = set()
-#
-#     while this_cell:
-#         if this_cell in visited:
-#             continue
-#         visited.add(this_cell)
-#         set_pixel(new_image, *this_cell, color)
-
+def get_shortest_path(image,start_location,goal_color):
+    
 
 
 
@@ -133,7 +121,7 @@ COLOR_NAMES = {
 }
 
 SCALE = 7
-IMAGE = "large_maze.png"
+IMAGE = "flood_input.png"
 
 pygame.init()
 image = pygame.image.load(IMAGE)
@@ -163,4 +151,5 @@ while True:
             screen.blit(image, (0, 0))
             pygame.display.flip()
 # Time taken: 0.9041509628295898
-# Time taken: 0.8472549915313721
+# Time taken: 0.8100771903991699
+# Time taken: 0.7933170795440674

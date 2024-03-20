@@ -229,23 +229,18 @@ def rotateByK(arr:List[int],n:int,k:int)->None:
 
 
 def merge( nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-
-        length = len(nums1)
-        """
-        Do not return anything, modify nums1 in-place instead.
-        """
-        if nums2[0] > nums1[m - n]:
-            nums1[length-m:] = nums2
-            return
-        elif nums2[n - 1] > nums1[m - n - 1]:
-            nums1[length-m - n] = nums2[n - 1]
-            merge(nums1, m, nums2, n - 1)
-        elif nums2[n] == nums1[m - n - 1]:
-             insert(nums1, nums2, n, m, m - n - 1)
-             merge(nums1, m, nums2, n - 1)
+    first=m-1
+    second=n-1
+    total=first+second+1
+    while second>=0:
+        if first>=0 and nums1[first]>nums2[second]:
+            nums[total]=nums1[first]
+            first-=1
         else:
-             insert(nums1, nums2, n, m, m - n)
-             merge(nums1, m, nums2, n)
+            nums[total]=nums2[second]
+            second-=1
+        total-=1
+
 
 def binarySearch(nums, low, high, target,answer):
         if low>=high:

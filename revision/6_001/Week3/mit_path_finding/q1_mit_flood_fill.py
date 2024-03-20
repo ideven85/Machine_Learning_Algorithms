@@ -93,6 +93,7 @@ def find_path(image, start_location, goal_color):
 ##### IMAGE REPRESENTATION WITH SIMILAR ABSTRACTIONS TO LAB 1 AND 2
 
 
+
 def get_width(image):
     return image.get_width() // SCALE
 
@@ -157,8 +158,8 @@ COLOR_NAMES = {
     pygame.K_e: "grey",
 }
 
-SCALE = 1 #7
-IMAGE = "mit.png"
+SCALE = 7 #7
+IMAGE = "large_maze.png"
 
 pygame.init()
 image = pygame.image.load(IMAGE)
