@@ -223,7 +223,7 @@
                         image.onload = image.onerror = done;
                         image.setAttribute('href', obj + '.gif');
                     }));
-                    if (! images[here]) images[here] = [];
+                    if (!images[here]) images[here] = [];
                     images[here].push(image);
                     svg.appendChild(image);
                 }
@@ -336,7 +336,7 @@
                 if (response.error) {
                     return status(`<h2>Server error during <code>new_game</code>:</h2><pre>${response.error}</pre>`, "red");
                 }
-                if (! isUndo) {
+                if (!isUndo) {
                     undoQueue = [response.board];
                 }
                 render(response.board);
@@ -385,15 +385,15 @@
         //console.log('keydown', key);
         if (key === "R" || key === 'r') { // reset
             e.preventDefault();
-            if (! KEYPRESS_READY) return;
+            if (!KEYPRESS_READY) return;
             reload();
         } else if (key === "Z" || key === 'z') {
             e.preventDefault();
-            if (! KEYPRESS_READY) return;
+            if (!KEYPRESS_READY) return;
             undo();
         } else if (DIRECTIONS.hasOwnProperty(key)) {
             e.preventDefault();
-            if (! KEYPRESS_READY) return;
+            if (!KEYPRESS_READY) return;
             if (GAME_OVER) return;
             KEYPRESS_READY = false; // no movement once the game is done;
             myFetch('/step_game', {"direction": DIRECTIONS[key]})
@@ -455,7 +455,7 @@
             .replace(/<svg/, '<svg xmlns="http://www.w3.org/2000/svg" version="2" style="background:black"')
             .replace(/(<image[^<>]*)><\/image>/g, '$1/>')
             .replace(/(<image[^<>]*href=")([^"]*)("[^<>]*>)/g, (match, left, url, right) => {
-                if (! urls[url]) {
+                if (!urls[url]) {
                     urls[url] = true;
                     const promise = load_image(url)
                         .then((image) =>

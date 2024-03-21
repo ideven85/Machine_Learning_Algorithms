@@ -6,6 +6,7 @@ of the get_neighbors function below.
 You may test your function by running `pytest -v q3_neighbors.py`
 (no quotes) in your terminal.
 """
+from collections import defaultdict
 
 
 def get_neighbors(transformed_data, actor):
@@ -13,7 +14,15 @@ def get_neighbors(transformed_data, actor):
     Gets a set of all of the actors that the provided actor id
     has acted with (not including the given actor).
     """
+    db = defaultdict(set)
+    if actor in transformed_data:
+        for actor_id,acted in transformed_data.items():
 
+            for neighbor in acted:
+                if neighbor == actor:
+                    continue
+                db[actor_id].add(neighbor)
+    return db[actor]
 
 def test_get_neighbors():
     tiny_db = {

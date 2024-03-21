@@ -13,6 +13,15 @@ def get_neighbors(transformed_data, actor):
     Gets a set of all of the actors that the provided actor id
     has acted with (not including the given actor).
     """
+    neighbors = set()
+    for actor1,actor2,_ in transformed_data:
+        if actor1 == actor2:
+            continue
+        if actor1==actor:
+            neighbors.add(actor2)
+        elif actor2==actor:
+            neighbors.add(actor1)
+    return neighbors
 
 
 def test_get_neighbors():

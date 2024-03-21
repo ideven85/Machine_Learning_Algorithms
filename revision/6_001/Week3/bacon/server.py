@@ -23,7 +23,7 @@ with open('./resources/large.pickle', 'rb') as f:
     large_data = lab.transform_data(pickle.load(f))
 print('done!')
 end = time.time()
-# print("Load large data took", end-mid, "seconds.")
+print("Load large data took", end-mid, "seconds.")
 
 
 print()
@@ -109,6 +109,8 @@ if __name__ == '__main__':
     with make_server('', PORT, application) as httpd:
         try:
             httpd.serve_forever()
+            print("Reloading...")
+            importlib.reload(lab)
         except KeyboardInterrupt as e:
             print("Shutting down.", e)
             httpd.server_close()

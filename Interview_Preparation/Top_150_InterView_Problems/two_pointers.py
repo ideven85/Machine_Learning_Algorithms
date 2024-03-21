@@ -1,25 +1,11 @@
 def isPalindrome( s: str) -> bool:
 
-    # def isPalindrome_helper(inp:str,first:int,last:int) -> bool:
-    #
-    #
-    #     if first == last:
-    #         return True
-    #     return inp[first] == inp[last-1] and isPalindrome_helper(inp,first+1,last-1)
-
     s=s.lower()
-    inp = ""
-    for char in s:
-        if chr(97) <= char <= chr(122):
-            inp+=char
+    inp = [x for x in s if 97<=ord(x)<=122]
 
-    if not inp:
-        return True
-    if len(inp)==1:
-        return False
-    return inp == inp[::-1]
+    return not inp or not len(inp) == 1 and (len(inp)> 1 and inp==inp[::-1])
 
 
-a = "nitin0123"
+a = "0P"
 print(isPalindrome(a))
 

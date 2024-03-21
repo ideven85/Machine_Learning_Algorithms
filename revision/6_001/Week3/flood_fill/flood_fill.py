@@ -46,8 +46,9 @@ def flood_fill(image, location, new_color):
     #set_pixel(image,*location, new_color)
     print("Time taken:", time.time()-start)
 
+#todo "Implement me"
 def get_shortest_path(image,start_location,goal_color):
-    
+    pass
 
 
 
