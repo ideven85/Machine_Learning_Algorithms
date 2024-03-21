@@ -6,7 +6,7 @@ import pickle
 
 import pytest
 
-import lab
+from . import lab
 
 TEST_DIRECTORY = os.path.dirname(__file__)
 
@@ -45,7 +45,7 @@ def compare_sounds(result, expected, eps=1e-6):
 
 
 def compare_against_file(x, fname, stereo=False):
-    compare_sounds(x, lab.load_wav(fname, stereo=stereo), eps=(2 / (2 ** 15 - 1)))
+    compare_sounds(x, lab.load_wav(fname, stereo=stereo), eps=(2 / (2**15 - 1)))
 
 
 def load_pickle_pair(name):
@@ -134,7 +134,6 @@ def test_mix_random(test_number):
     inps, exp = load_pickle_pair("mix_%02d.pickle" % test_number)
     inps2 = copy.deepcopy(inps)
     compare_sounds(lab.mix(*inps), exp)
-    print(compare_sounds)
     assert inps == inps2, "be careful not to modify the inputs!"
 
 

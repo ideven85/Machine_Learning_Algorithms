@@ -3,81 +3,24 @@
 Audio Processing
 """
 
-import copy
 import wave
 import struct
-
 # No Additional Imports Allowed!
 
 
 def backwards(sound):
-    reversed_sound = copy.deepcopy(sound)
-    reversed_sound["samples"] = reversed_sound["samples"][::-1]
+
+    reversed_sound=sound.copy()
+    reversed_sound['samples']=reversed_sound['samples'][::-1]
     return reversed_sound
 
 
 def mix(sound1, sound2, p):
-    # if (("rate" in sound1) == False or ("rate" in sound2) == False
-    #         or (sound1["rate"] == sound2["rate"]) == False):
-    #     print("no")
-    #     return None
-    #
-    # r = sound1["rate"]  # get rate
-    # sound1 = sound1["samples"]
-    # sound2 = sound2["samples"]
-    # if len(sound1) < len(sound2):
-    #     l = len(sound1)
-    # else:
-    #     l = len(sound2)
-    #
-    # s = []
-    # x = 0
-    # while x <= l:
-    #     s1,s2 = p * sound1[x], sound2[x] * (1 - p)
-    #     s.append(s1 + s2)  # add sounds
-    #     x += 1
-    #     if x == l:  # end
-    #         break
-    #
-    # return {"rate": r, "samples": s}  # return new sound
-    first = copy.deepcopy(sound1)
-    second = copy.deepcopy(sound2)
-    if first["rate"] != second["rate"]:
-        return None
-    output = []
-    for i in range(max(len(first["samples"]), len(second["samples"]))):
-        if i >= len(first["samples"]):
-            output.append(second["samples"][i] * (1 - p))
-        elif i >= len(second["samples"]):
-            output.append(first["samples"][i] * p)
-        else:
-            output.append(first["samples"][i] * p + (second["samples"][i] * (1 - p)))
-    return {"rate": first["rate"], "samples": output}
+    raise NotImplementedError
 
 
 def convolve(sound, kernel):
-    # y[n]=(x*h)[n]
-    samples = sound["samples"]
-    l1 = len(samples)
-    l2 = len(kernel)
-    output =[]
-    print(output)
-    m = 0
-    for i in range(l1):
-        j=0
-        output.append([])
-        for j in range(i):
-            output[i].append(0)
-        for _ in range(l2):
-            output[i].append(kernel[j]*samples[i])
-
-    # assert output == [1, 0, -1, -6]
-    expected_output = [0 for _ in range(len(output))]
-    for i in range(len(output)):
-        for j in range(len(output[i])):
-            expected_output[i]+=output[i][j]
-    print(expected_output)
-    return {"rate": sound["rate"], "samples": expected_output}
+    raise NotImplementedError
 
 
 def echo(sound, num_echoes, delay, scale):
@@ -201,10 +144,5 @@ if __name__ == "__main__":
     # sounds/hello.wav, rather than just as hello.wav, to account for the
     # sound files being in a different directory than this file)
     hello = load_wav("sounds/hello.wav")
-    synth = load_wav("sounds/synth.wav")
-    water = load_wav("sounds/water.wav")
-    write_wav(mix(synth, water, 0.2), "synth_water.wav")
-    write_wav(backwards(hello), "test_outputs/hello_reversed.wav")
-    sound = {"rate": 7, "samples": [1, 2, 3]}
-    kernel = [1, -2]
-    print(convolve(sound, kernel))
+
+    # write_wav(backwards(hello), 'hello_reversed.wav')
