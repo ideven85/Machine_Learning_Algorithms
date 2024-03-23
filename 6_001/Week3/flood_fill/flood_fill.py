@@ -1,7 +1,7 @@
 import collections
 import time
 
-
+count=0
 def flood_fill(image, location, new_color):
     """
     Given an image, replace the same-colored region around a given location
@@ -21,19 +21,20 @@ def flood_fill(image, location, new_color):
     #image[location[0]]=new_color[]
     original_color = get_pixel(image, *location)
 
-    def get_neighbours(cell):
-        row, col = cell
-        potential_neighbours = [(row - 1, col), (row + 1, col), (row, col - 1), (row, col + 1)]
-        return [(nr,nc ) for (nr, nc) in potential_neighbours if 0<=nr<get_height(image) and 0<=nc<get_width(image)]
+    # def get_neighbours(cell):
+    #     row, col = cell
+    #     potential_neighbours = [(row - 1, col), (row + 1, col), (row, col - 1), (row, col + 1)]
+    #     return [(nr,nc ) for (nr, nc) in potential_neighbours if 0<=nr<get_height(image) and 0<=nc<get_width(image)]
 
     to_color= collections.deque()
     visited = set()
     to_color.append(location)
     visited.add(location)
-
+    global count
     #visited = []
     start = time.time()
     while to_color:
+        count+=1
         this_cell = to_color.popleft()
         set_pixel(image, *this_cell, new_color)
         for neighbour in get_neighbours(this_cell):
@@ -45,10 +46,14 @@ def flood_fill(image, location, new_color):
     #bfs(image, location, new_color)
     #set_pixel(image,*location, new_color)
     print("Time taken:", time.time()-start)
+    print(len(visited))
+def get_neighbours(cell):
+        row, col = cell
+        potential_neighbours = [(row - 1, col), (row + 1, col), (row, col - 1), (row, col + 1)]
+        return [(nr,nc ) for (nr, nc) in potential_neighbours if 0<=nr<get_height(image) and 0<=nc<get_width(image)]
 
-#todo "Implement me"
-def get_shortest_path(image,start_location,goal_color):
-    pass
+
+
 
 
 
@@ -125,6 +130,8 @@ SCALE = 7
 IMAGE = "flood_input.png"
 
 pygame.init()
+pygame.display.set_caption("Flood Fill BFS")
+
 image = pygame.image.load(IMAGE)
 dims = (image.get_width() * SCALE, image.get_height() * SCALE)
 screen = pygame.display.set_mode(dims)
@@ -147,10 +154,16 @@ while True:
                 pygame.quit()
                 sys.exit(0)
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+
             flood_fill(image, (event.pos[1] // SCALE, event.pos[0] // SCALE), cur_color)
+            print(count)
+            #print((end - start) * 10)
 
             screen.blit(image, (0, 0))
             pygame.display.flip()
 # Time taken: 0.9041509628295898
 # Time taken: 0.8100771903991699
 # Time taken: 0.7933170795440674
+
+# You clicked at row 63 col 40
+# Time taken: 0.8618607521057129

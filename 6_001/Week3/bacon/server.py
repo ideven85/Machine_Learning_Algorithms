@@ -104,7 +104,7 @@ def application(environ, start_response):
 
 
 if __name__ == '__main__':
-    PORT = 8000
+    PORT = 8080
     print(f'starting server.  navigate to http://localhost:{PORT}/')
     with make_server('', PORT, application) as httpd:
         try:

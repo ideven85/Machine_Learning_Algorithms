@@ -10,28 +10,38 @@ from collections import defaultdict
 
 # NO ADDITIONAL IMPORTS ALLOWED!
 
-bacon_numbers = defaultdict(str)
+bacon_numbers = list(dict)
 
 def transform_data(raw_data):
-    return raw_data
+    #bacon_numbers=[defaultdict(list) for _ in range(len(raw_data))]
+    print(type(raw_data))
+    for i in range(len(raw_data)):
+        bacon_numbers.append(raw_data[i][0])
+        bacon_numbers[raw_data[i][0]].append(raw_data[i][1])
+        bacon_numbers[raw_data[i][0]].append(raw_data[i][2])
+        bacon_numbers[raw_data[i][1]].append(raw_data[i][0])
+        bacon_numbers[raw_data[i][1]].append(raw_data[i][2])
+    return bacon_numbers
 def get_names_with_bacon_numbers(transformed_data):
     pass
 
-def get_names(raw_data):
-    names = [{}]
-    for line in raw_data:
-        temp = set()
-        temp.add(bacon_numbers.get(line[0]))
-        temp.add(bacon_numbers.get(line[1]))
-        temp.add(line[2])
-        names.append(temp)
-    return names
+# def get_names(raw_data):
+#     names = [{}]
+#     for line in raw_data:
+#         temp = set()
+#         temp.add(bacon_numbers.get(line[0]))
+#         temp.add(bacon_numbers.get(line[1]))
+#         temp.add(line[2])
+#         names.append(temp)
+#     return names
 
 
 
 
 def acted_together(transformed_data, actor_id_1, actor_id_2):
-    pass
+    actor1 = bacon_numbers[actor_id_1]
+    actor2 = bacon_numbers[actor_id_2]
+
 
 
 def actors_with_bacon_number(transformed_data, n):
@@ -59,9 +69,11 @@ if __name__ == "__main__":
     smalldb=None
     with open("resources/small.pickle", "rb") as f:
         db_small = pickle.load(f)
-    with open(file_name,'w') as f:
-        for actor in db_small:
-            f.write(str(actor[0])+ ',' + str(actor[1])+','+str(actor[2])+'\n')
+    a=transform_data(db_small)
+    print(a)
+    # with open(file_name,'w') as f:
+    #     for actor in db_small:
+    #         f.write(str(actor[0])+ ',' + str(actor[1])+','+str(actor[2])+'\n')
 
 
 

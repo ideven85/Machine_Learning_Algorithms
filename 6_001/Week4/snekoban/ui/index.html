@@ -1,9 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Snekoban</title>
-</head>
-<body>
-<style>
+    <style>
     image, img {
         -ms-interpolation-mode: nearest-neighbor;
         image-rendering: pixelated;
@@ -146,6 +145,9 @@
         }
     }
 </style>
+</head>
+<body>
+
 <div id="other">
     <div id="header">
         <img src="6101.gif" width=100>
@@ -183,6 +185,7 @@
     var undoQueue = [];
 
     function render(grid) {
+        console.log(grid);
         const thisRender = ++currentRender;
         const SVGNS = 'http://www.w3.org/2000/svg';
         const IMAGE_SIZE = 50;

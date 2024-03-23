@@ -38,6 +38,7 @@ function load_resource(name, on_done) {
     xhr.onloadend = function () {
         if (xhr.status === 200) {
             var result = JSON.parse(xhr.responseText);
+            console.log(result);
             on_done(result);
         }
     }
