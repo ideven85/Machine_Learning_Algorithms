@@ -271,17 +271,17 @@ class Node:
         self.left = left
         self.right = right
         self.next = next
-def connect(self, root: Optional[Node]) -> Optional[Node]:
-    if not root:
-        return None
-    queue=deque()
-    queue.append([root,0])
-    queue.append(None)
-
-    while len(queue):
-        current = queue.popleft()
-        if current:
-            node,depth = current
+# def connect(self, root: Optional[Node]) -> Optional[Node]:
+#     if not root:
+#         return None
+#     queue=deque()
+#     queue.append([root,0])
+#     queue.append(None)
+#
+#     while len(queue):
+#         current = queue.popleft()
+#         if current:
+#             node,depth = current
 
 
 

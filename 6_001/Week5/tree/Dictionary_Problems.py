@@ -51,6 +51,8 @@ def tree_sum(tree):
     else:
         return val+children
 
+count=0
+@show_recursive_structure
 def tree_list(tree):
     """
     Given tree as a dict { 'value': number,
@@ -58,16 +60,22 @@ def tree_list(tree):
     return a sorted list of all the values found in the tree (from
     smallest to largest) sorted only once.
     """
+    global count
     if len(tree)==0:
         return None
     val = tree['value']
     children = tree['children']
+    count+=1
     if len(children)==0:
-        return val
+        if count==1:
+            return sorted([val])
+        else:
+            return val
+
     elif type(children) is list and len(children):
-        return val,[tree_list(x) for x in children]
+        return [tree_list(x) for x in children],val
     else:
-        return val,children
+        return sorted([val]+[children])
 
 
 
@@ -121,7 +129,7 @@ def test_tree_sum():
 #
 def test_tree_list():
     assert tree_list(t1) ==  [3]
-    #assert tree_list(t2) ==  [2,3,7,9]
+    assert tree_list(t2) ==  [2,3,7,9]
     assert tree_list(t3) ==  [2,3,7,9,16,42,99]
     print("correct!")
 #

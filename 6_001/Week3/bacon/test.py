@@ -10,6 +10,7 @@ import pytest
 TEST_DIRECTORY = os.path.dirname(__file__)
 
 
+@pytest.fixture
 def setup_module(module):
     """
     This function loads the various databases.  It will be run once every time
@@ -24,11 +25,11 @@ def setup_module(module):
             setattr(module, f"fset_{i}", {frozenset(i[:-1]) for i in raw})
 
 
-def test_acted_together_01():
+def test_acted_together_01(setup_module):
     # Simple test, two actors who acted together
     actor1 = 4724
     actor2 = 9210
-    assert lab.acted_together(db_small, actor1, actor2) is True
+    assert lab.acted_together(setup_module.db_small, actor1, actor2) is True
 
 
 def test_acted_together_02():

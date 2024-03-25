@@ -7,9 +7,7 @@ import json
 import typing
 
 # NO ADDITIONAL IMPORTS!
-"""
-Remember at least 10 hours per lab
-"""
+
 
 direction_vector = {
     "up": (-1, 0),
@@ -37,7 +35,7 @@ def make_new_game(level_description):
     The exact choice of representation is up to you; but note that what you
     return will be used as input to the other functions.
     """
-    return level_description
+    raise NotImplementedError
 
 
 def victory_check(game):
@@ -46,7 +44,7 @@ def victory_check(game):
     return a Boolean: True if the given game satisfies the victory condition,
     and False otherwise.
     """
-    return make_new_game(game)
+    raise NotImplementedError
 
 
 def step_game(game, direction):
@@ -73,7 +71,7 @@ def dump_game(game):
     print out the current state of your game for testing and debugging on your
     own.
     """
-    return json.dumps(game)
+    raise NotImplementedError
 
 
 def solve_puzzle(game):
