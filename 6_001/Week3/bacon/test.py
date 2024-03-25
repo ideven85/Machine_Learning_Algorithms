@@ -25,11 +25,11 @@ def setup_module(module):
             setattr(module, f"fset_{i}", {frozenset(i[:-1]) for i in raw})
 
 
-def test_acted_together_01(setup_module):
+def test_acted_together_01():
     # Simple test, two actors who acted together
     actor1 = 4724
     actor2 = 9210
-    assert lab.acted_together(setup_module.db_small, actor1, actor2) is True
+    assert lab.acted_together(db_small, actor1, actor2) is True
 
 
 def test_acted_together_02():

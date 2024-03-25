@@ -35,27 +35,30 @@ with open('resources/movies.pickle','rb') as f:
 
 def transform_data(raw_data):
 
-    return raw_data
+    return set(raw_data)
 
 
 
 
-acted_together_data = defaultdict(list)
+acted_together_data = defaultdict(set)
 
-def acted_together_names(raw_data):
+def acted_together_ids(raw_data):
     for actor1, actor2, movie_id in raw_data:
-        acted_together_data[actor1].append([actor2,movie_id])
-        acted_together_data[actor2].append([actor1,movie_id])
+        acted_together_data[actor1].add((actor2,movie_id))
+        acted_together_data[actor2].add((actor1,movie_id))
     return acted_together_data
 
 def acted_together(transformed_data, actor_id_1, actor_id_2):
     if actor_id_1 == actor_id_2:
         return False
-    acted_together_names(transformed_data)
-    if actor_id_2 in acted_together_data[actor_id_1][0]:
-        return True
-    if actor_id_1 in acted_together_data[actor_id_2][0]:
-        return True
+    acted_together_ids(transformed_data)
+    #todo Redo
+    for actor2,_ in acted_together_data[actor_id_1]:#Incorrect, will check only the first value
+        if actor2==actor_id_1 and actor2!=actor_id_1:
+            return True
+    for actor1,_ in acted_together_data[actor_id_2]:  # Incorrect, will check only the first value
+        if actor1 == actor_id_2 and actor1 != actor_id_2:
+            return True
 
     return False
 
@@ -99,10 +102,10 @@ def actors_with_bacon_number(transformed_data, n):
     #             degree_of_separation[actor1].add(current_degree)
     #         current_degree+=1
     bacon_ids = set()
-    acted_together_names(transformed_data)
+    acted_together_ids(transformed_data)
     l = {x[0] for x in acted_together_data[center]}
 
-    l = dict((0,)+x for x in l)
+    l = dict((0,)+(x,) for x in l)
     print(l)
 
 
@@ -164,11 +167,19 @@ def actors_connecting_films(transformed_data, film1, film2):
 if __name__ == "__main__":
     with open("resources/small.pickle", "rb") as f:
         smalldb = pickle.load(f)
-    acted_together_names(smalldb)
+    print(len(smalldb))
+    s = set(smalldb)
+    print(len(s))
+    acted_together_ids(smalldb)
+    print(acted_together_data[4724])
+    a=acted_together_data[4724]
+    for (a1,a2) in a:
+        if a1==9207:
+            print(a1,a2)
     # print(acted_together_data[center])
     # print(acted_together_data[center][0][0])
     # print([x[0] for x in acted_together_data[center]])
     #print(acted_together(smalldb,4724,9211))
-    print(actors_with_bacon_number(smalldb,2))
+    #print(actors_with_bacon_number(smalldb,2))
 
 
