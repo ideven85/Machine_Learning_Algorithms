@@ -1,6 +1,7 @@
 from collections import defaultdict, deque
 from typing import List
 
+
 class Solution:
     def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
         """
@@ -19,20 +20,19 @@ class Solution:
             current = queue.popleft()
             if visited[current]:
                 continue
-            visited[current]=True
-            count+=1
-            if count>=n:
+            visited[current] = True
+            count += 1
+            if count >= n:
                 return True
             keys = roomMap[current]
-            if len(keys)>0:
+            if len(keys) > 0:
                 for e in keys:
                     queue.append(e)
-        return count>=n
+        return count >= n
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     rooms = [[1], [2], [3], []]
     rooms1 = [[1, 3], [3, 0, 1], [2], [0]]
     print(Solution().canVisitAllRooms(rooms))
     print(Solution().canVisitAllRooms(rooms1))
-
-

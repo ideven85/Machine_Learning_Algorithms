@@ -19,13 +19,17 @@ def get_pixel(image, row, col):
 def set_pixel(image, row, col, color):
     image["pixels"][row, col] = color
 
-def transform_pixels(image): # height means number of columns and width means number of row
+
+def transform_pixels(
+    image,
+):  # height means number of columns and width means number of row
     # My brain is sleeping apparently it stops working when not doing Java
-    height, width,pixels = image["height"], image["width"], image["pixels"]
+    height, width, pixels = image["height"], image["width"], image["pixels"]
     pixel2d = []
     for row in range(height):
         for col in range(width):
-            pixel2d.append(pixels[row+col])
+            pixel2d.append(pixels[row + col])
+
 
 def apply_per_pixel(image, func):
     result = {
@@ -42,10 +46,11 @@ def apply_per_pixel(image, func):
 
 
 def inverted(image):
-    return apply_per_pixel(image, lambda color: 256-color)
+    return apply_per_pixel(image, lambda color: 256 - color)
 
 
 # HELPER FUNCTIONS
+
 
 def correlate(image, kernel, boundary_behavior):
     """
@@ -87,6 +92,7 @@ def round_and_clip_image(image):
 
 # FILTERS
 
+
 def blurred(image, kernel_size):
     """
     Return a new image representing the result of applying a box blur (with the
@@ -105,8 +111,8 @@ def blurred(image, kernel_size):
     raise NotImplementedError
 
 
-
 # HELPER FUNCTIONS FOR LOADING AND SAVING IMAGES
+
 
 def load_greyscale_image(filename):
     """
@@ -120,8 +126,9 @@ def load_greyscale_image(filename):
         img = Image.open(img_handle)
         img_data = img.getdata()
         if img.mode.startswith("RGB"):
-            pixels = [round(.299 * p[0] + .587 * p[1] + .114 * p[2])
-                      for p in img_data]
+            pixels = [
+                round(0.299 * p[0] + 0.587 * p[1] + 0.114 * p[2]) for p in img_data
+            ]
         elif img.mode == "LA":
             pixels = [p[0] for p in img_data]
         elif img.mode == "L":

@@ -9,7 +9,6 @@ Is there a way you can write this function that requires
 sorting the result only once?
 """
 
-
 from debug_recursion import show_recursive_structure
 
 
@@ -23,30 +22,38 @@ def tree_list(tree):
     """
 
 
+t1 = {"value": 3, "children": []}
 
-t1 = {'value': 3,
-      'children': []}
+t2 = {
+    "value": 9,
+    "children": [
+        {"value": 2, "children": []},
+        {"value": 3, "children": []},
+        {"value": 7, "children": []},
+    ],
+}
 
-t2 = {'value': 9,
-      'children': [{'value': 2, 'children': []},
-                   {'value': 3, 'children': []},
-                   {'value': 7, 'children': []}]}
-
-t3 = {'value': 9,
-      'children': [{'value': 2, 'children': []},
-                   {'value': 3,
-                    'children': [{'value': 99, 'children': []},
-                                 {'value': 16,
-                                  'children': [{'value': 7, 'children': []}]},
-                                 {'value': 42, 'children': []}]}]}
+t3 = {
+    "value": 9,
+    "children": [
+        {"value": 2, "children": []},
+        {
+            "value": 3,
+            "children": [
+                {"value": 99, "children": []},
+                {"value": 16, "children": [{"value": 7, "children": []}]},
+                {"value": 42, "children": []},
+            ],
+        },
+    ],
+}
 
 
 def test_tree_list():
-    assert tree_list(t1) ==  [3]
-    assert tree_list(t2) ==  [2,3,7,9]
-    assert tree_list(t3) ==  [2,3,7,9,16,42,99]
+    assert tree_list(t1) == [3]
+    assert tree_list(t2) == [2, 3, 7, 9]
+    assert tree_list(t3) == [2, 3, 7, 9, 16, 42, 99]
     print("correct!")
-
 
 
 if __name__ == "__main__":

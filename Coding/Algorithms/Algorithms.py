@@ -18,8 +18,8 @@ def numSubarraysWithSum(nums: List[int], goal: int) -> int:
     """
     mapping = defaultdict(int)
     n = len(nums)
-    if n==1:
-        if nums[0]==goal:
+    if n == 1:
+        if nums[0] == goal:
             return 1
         else:
             return 0
@@ -31,17 +31,16 @@ def numSubarraysWithSum(nums: List[int], goal: int) -> int:
         if not nums[i]:
             continue
         total += nums[i]
-        if mapping[goal-total]:
-            count+=1
-            total -=nums[left]
-            left+=1
+        if mapping[goal - total]:
+            count += 1
+            total -= nums[left]
+            left += 1
 
-        mapping[total]=i
+        mapping[total] = i
         if total > goal:
             while total > goal:
-                total -=nums[left]
-                left+=1
-
+                total -= nums[left]
+                left += 1
 
 
 def productExceptSelf(nums: List[int]) -> List[int]:
@@ -52,19 +51,19 @@ def productExceptSelf(nums: List[int]) -> List[int]:
     [24,12,8,6]
     """
     answer = [0 for _ in range(len(nums))]
-    answer[0]=1
+    answer[0] = 1
     n = len(nums)
     for i in range(1, len(nums)):
-        answer[i] = answer[i-1]*nums[i-1]
+        answer[i] = answer[i - 1] * nums[i - 1]
     right = 1
-    for i in range(n-1,-1,-1):
-        answer[i]*=right
+    for i in range(n - 1, -1, -1):
+        answer[i] *= right
         right *= nums[i]
 
     return answer
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     n = 4
     while n != 1:
@@ -73,4 +72,4 @@ if __name__ == '__main__':
         else:
             n = 3 * n + 1
         print(n)
-    print(productExceptSelf([1,2,3,4]))
+    print(productExceptSelf([1, 2, 3, 4]))

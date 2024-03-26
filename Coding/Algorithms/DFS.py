@@ -24,92 +24,123 @@ from typing import List
 # ]
 # startingAirport="LGA"
 
+
 def airportConnections(airports, routes, startingAirport):
     # Write your code here.
     airportGraph = createAirPortGraph(airports, routes)
-    unReachableAirPortNodes = getUnReachableAirPortNodes(airportGraph,airports,startingAirport)
-    markUnReachableConnections(airportGraph,unReachableAirPortNodes)
-    return getMinimumConnections(airportGraph,unReachableAirPortNodes)
-
-
+    unReachableAirPortNodes = getUnReachableAirPortNodes(
+        airportGraph, airports, startingAirport
+    )
+    markUnReachableConnections(airportGraph, unReachableAirPortNodes)
+    return getMinimumConnections(airportGraph, unReachableAirPortNodes)
 
 
 def createAirPortGraph(airports, routes):
     airportGraph = {}
     for e in airports:
-        airportGraph[e]=AirPortNode(e)
+        airportGraph[e] = AirPortNode(e)
     for route in routes:
-        origin,destination = route
+        origin, destination = route
         airportGraph[origin].connections.append(destination)
     return airportGraph
 
-def getUnReachableAirPortNodes(airPortGraph,airPorts,startingAirPort):
+
+def getUnReachableAirPortNodes(airPortGraph, airPorts, startingAirPort):
     visitedAirPorts = {}
-    depthFirstSearch(airPortGraph,startingAirPort,visitedAirPorts)
+    depthFirstSearch(airPortGraph, startingAirPort, visitedAirPorts)
     unReachableAirPortNodes = []
     for airPort in airPorts:
         if airPort in visitedAirPorts:
             continue
         airPortNode = airPortGraph[airPort]
-        airPortNode.isReachable=False
+        airPortNode.isReachable = False
         unReachableAirPortNodes.append(airPortNode)
     return unReachableAirPortNodes
 
 
-def depthFirstSearch(airPortGraph,startingAirPort,visitedAirPort):
+def depthFirstSearch(airPortGraph, startingAirPort, visitedAirPort):
     if startingAirPort:
         if startingAirPort in visitedAirPort:
             return
-        visitedAirPort[startingAirPort]=True
+        visitedAirPort[startingAirPort] = True
         connections = airPortGraph[startingAirPort].connections
         for connection in connections:
-            depthFirstSearch(airPortGraph,connection,visitedAirPort)
+            depthFirstSearch(airPortGraph, connection, visitedAirPort)
 
-def markUnReachableConnections(airPortGraph,unReachableAirPortNodes):
+
+def markUnReachableConnections(airPortGraph, unReachableAirPortNodes):
     for airPortNode in unReachableAirPortNodes:
         airPort = airPortNode.airport
         unReachableConnections = []
-        depthFirstSearchUnReachableConnections(airPortGraph,airPort,unReachableConnections,{})
+        depthFirstSearchUnReachableConnections(
+            airPortGraph, airPort, unReachableConnections, {}
+        )
         airPortNode.unReachableAirPorts = unReachableConnections
 
-def depthFirstSearchUnReachableConnections(airPortGraph,airPort,unReachableConnections,visitedAirPorts):
+
+def depthFirstSearchUnReachableConnections(
+    airPortGraph, airPort, unReachableConnections, visitedAirPorts
+):
     if airPortGraph[airPort].isReachable:
         return
     if airPort in visitedAirPorts:
         return
-    visitedAirPorts[airPort]=True
+    visitedAirPorts[airPort] = True
     unReachableConnections.append(airPort)
     connections = airPortGraph[airPort].connections
     for connection in connections:
-        depthFirstSearchUnReachableConnections(airPortGraph,connection,unReachableConnections,visitedAirPorts)
+        depthFirstSearchUnReachableConnections(
+            airPortGraph, connection, unReachableConnections, visitedAirPorts
+        )
 
-def getMinimumConnections(airportGraph,unReachableAirPortNodes):
-    unReachableAirPortNodes.sort(key= lambda airPort:len(airPort.unReachableAirPorts),reverse=True)
+
+def getMinimumConnections(airportGraph, unReachableAirPortNodes):
+    unReachableAirPortNodes.sort(
+        key=lambda airPort: len(airPort.unReachableAirPorts), reverse=True
+    )
     numberOfNewConnections = 0
     for airPortNode in unReachableAirPortNodes:
         if airPortNode.isReachable:
             continue
-        numberOfNewConnections+=1
+        numberOfNewConnections += 1
         for connection in airPortNode.unReachableAirPorts:
-            airportGraph[connection].isReachable=True
+            airportGraph[connection].isReachable = True
     return numberOfNewConnections
 
+
 class AirPortNode:
-    def __init__(self,airport):
+    def __init__(self, airport):
         self.airport = airport
         self.connections = []
         self.isReachable = True
         self.unReachableAirPorts = []
 
 
-
-def findItinerary( tickets: List[List[str]]) -> List[str]:
+def findItinerary(tickets: List[List[str]]) -> List[str]:
     pass
 
 
-
-if __name__ == '__main__':
-    airports=["BGI", "CDG", "DEL", "DOH", "DSM", "EWR", "EYW", "HND", "ICN", "JFK", "LGA", "LHR", "ORD", "SAN", "SFO", "SIN", "TLV", "BUD"]
+if __name__ == "__main__":
+    airports = [
+        "BGI",
+        "CDG",
+        "DEL",
+        "DOH",
+        "DSM",
+        "EWR",
+        "EYW",
+        "HND",
+        "ICN",
+        "JFK",
+        "LGA",
+        "LHR",
+        "ORD",
+        "SAN",
+        "SFO",
+        "SIN",
+        "TLV",
+        "BUD",
+    ]
     routes = [
         ["DSM", "ORD"],
         ["ORD", "BGI"],
@@ -129,7 +160,6 @@ if __name__ == '__main__':
         ["LHR", "SFO"],
         ["SFO", "SAN"],
         ["SFO", "DSM"],
-        ["SAN", "EYW"]
+        ["SAN", "EYW"],
     ]
-    print(airportConnections(airports,routes,"LGA"))
-
+    print(airportConnections(airports, routes, "LGA"))

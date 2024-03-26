@@ -1,7 +1,9 @@
 import collections
 import time
 
-count=0
+count = 0
+
+
 def flood_fill(image, location, new_color):
     """
     Given an image, replace the same-colored region around a given location
@@ -16,9 +18,9 @@ def flood_fill(image, location, new_color):
                    are between 0 and 255, inclusive
     """
     print(f"You clicked at row {location[0]} col {location[1]}")
-    #print(new_color)
-    #print(image.get_width(),image.get_height())
-    #image[location[0]]=new_color[]
+    # print(new_color)
+    # print(image.get_width(),image.get_height())
+    # image[location[0]]=new_color[]
     original_color = get_pixel(image, *location)
 
     # def get_neighbours(cell):
@@ -26,37 +28,45 @@ def flood_fill(image, location, new_color):
     #     potential_neighbours = [(row - 1, col), (row + 1, col), (row, col - 1), (row, col + 1)]
     #     return [(nr,nc ) for (nr, nc) in potential_neighbours if 0<=nr<get_height(image) and 0<=nc<get_width(image)]
 
-    to_color= collections.deque()
+    to_color = collections.deque()
     visited = set()
     to_color.append(location)
     visited.add(location)
     global count
-    #visited = []
+    # visited = []
     start = time.time()
     while to_color:
-        count+=1
+        count += 1
         this_cell = to_color.popleft()
         set_pixel(image, *this_cell, new_color)
         for neighbour in get_neighbours(this_cell):
-            if neighbour not in visited and get_pixel(image, *neighbour) == original_color:
+            if (
+                neighbour not in visited
+                and get_pixel(image, *neighbour) == original_color
+            ):
                 to_color.append(neighbour)
                 visited.add(neighbour)
-        #to_color+=[neighbour for neighbour in get_neighbours(this_cell) if (neighbour not in visited and get_pixel(image,*neighbour)==original_color)]
+        # to_color+=[neighbour for neighbour in get_neighbours(this_cell) if (neighbour not in visited and get_pixel(image,*neighbour)==original_color)]
 
-    #bfs(image, location, new_color)
-    #set_pixel(image,*location, new_color)
-    print("Time taken:", time.time()-start)
+    # bfs(image, location, new_color)
+    # set_pixel(image,*location, new_color)
+    print("Time taken:", time.time() - start)
     print(len(visited))
+
+
 def get_neighbours(cell):
-        row, col = cell
-        potential_neighbours = [(row - 1, col), (row + 1, col), (row, col - 1), (row, col + 1)]
-        return [(nr,nc ) for (nr, nc) in potential_neighbours if 0<=nr<get_height(image) and 0<=nc<get_width(image)]
-
-
-
-
-
-
+    row, col = cell
+    potential_neighbours = [
+        (row - 1, col),
+        (row + 1, col),
+        (row, col - 1),
+        (row, col + 1),
+    ]
+    return [
+        (nr, nc)
+        for (nr, nc) in potential_neighbours
+        if 0 <= nr < get_height(image) and 0 <= nc < get_width(image)
+    ]
 
 
 def get_width(image):
@@ -157,7 +167,7 @@ while True:
 
             flood_fill(image, (event.pos[1] // SCALE, event.pos[0] // SCALE), cur_color)
             print(count)
-            #print((end - start) * 10)
+            # print((end - start) * 10)
 
             screen.blit(image, (0, 0))
             pygame.display.flip()

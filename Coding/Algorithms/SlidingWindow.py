@@ -5,61 +5,63 @@ from typing import List
 
 def longestNiceSubstring(s: str) -> str:
     longest = {}
-    j=0;res=0
+    j = 0
+    res = 0
     count_characters = 0
     n = len(s)
     if n == 1:
         return ""
-    for i in range(n-1):
-        if s[i]==s[i+1] or abs(ord(s[i])-ord(s[i+1])==32):
-            if s[i] not in longest or longest[s[i]]==0:
-                longest[s[i]]=1
-                count_characters+=1
+    for i in range(n - 1):
+        if s[i] == s[i + 1] or abs(ord(s[i]) - ord(s[i + 1]) == 32):
+            if s[i] not in longest or longest[s[i]] == 0:
+                longest[s[i]] = 1
+                count_characters += 1
         else:
             nice = False
             while not nice:
                 if longest:
-                    longest[s[j]]-=1
-                    if longest[s[j]]==0:
-                        if ord(s[j])>=97:
-                            longest[(ord(s[j])-32)]=0
+                    longest[s[j]] -= 1
+                    if longest[s[j]] == 0:
+                        if ord(s[j]) >= 97:
+                            longest[(ord(s[j]) - 32)] = 0
                         else:
-                            longest[(ord(s[j])+32)]=0
+                            longest[(ord(s[j]) + 32)] = 0
 
-                    j+=1
+                    j += 1
                 else:
                     nice = True
-                    
-        res = max(res,i-j+1)
+
+        res = max(res, i - j + 1)
     return res
 
 
 def threeSum(nums: List[int]) -> List[List[int]]:
-        n = len(nums)
-        nums.sort()
-        answer = []
-        for i in range(n-2):
-            if i == 0 or (i>0 and nums[i]!=nums[i-1]):
-                ans = -nums[i]
-                low = i+1
-                high = n-1
-                while low<high:
-                    if nums[low]+nums[high]==ans:
-                        answer.append([nums[i],nums[low],nums[high]])
-                        print(answer,end=' ')
-                        while nums[low]==nums[low+1] and low<n-2:
-                            low+=1
+    n = len(nums)
+    nums.sort()
+    answer = []
+    for i in range(n - 2):
+        if i == 0 or (i > 0 and nums[i] != nums[i - 1]):
+            ans = -nums[i]
+            low = i + 1
+            high = n - 1
+            while low < high:
+                if nums[low] + nums[high] == ans:
+                    answer.append([nums[i], nums[low], nums[high]])
+                    print(answer, end=" ")
+                    while nums[low] == nums[low + 1] and low < n - 2:
+                        low += 1
 
-                        while nums[high]==nums[high-1] and high>1:
-                            high-=1
+                    while nums[high] == nums[high - 1] and high > 1:
+                        high -= 1
 
-                        low+=1;high-=1
+                    low += 1
+                    high -= 1
+                else:
+                    if nums[low] + nums[high] > ans:
+                        high -= 1
                     else:
-                        if nums[low]+nums[high]>ans:
-                            high-=1
-                        else:
-                            low+=1
-        return answer
+                        low += 1
+    return answer
 
 
 class Solution:
@@ -125,6 +127,8 @@ class Solution:
     #                     r -= 1
     #                 l += 1; r -= 1
     #     return res
+
+
 from collections import defaultdict
 from typing import List
 
@@ -135,29 +139,29 @@ class Solution1:
     which has sum equal to s
     """
 
-
     def subArraySum(self, arr, n, s):
-            curr = 0;
-            left = 0
-            for i in range(n):
+        curr = 0
+        left = 0
+        for i in range(n):
 
-                if arr[i] == s:
-                    return [i + 1, i + 1]
-                curr += arr[i]
-                # print(curr,end=' ')
-                if curr == s:
-                    return [left + 1, i + 1]
-                elif curr > s:
-                    if left < i:
-                        curr -= arr[left]
-                        left += 1
-                if curr == s:
-                    return [left + 1, i + 1]
-            while curr > s and left < n-1:
-                curr -= arr[left]
-                left += 1
-            # print("HI")
-            return [left + 1, n] if curr == s else [-1]
+            if arr[i] == s:
+                return [i + 1, i + 1]
+            curr += arr[i]
+            # print(curr,end=' ')
+            if curr == s:
+                return [left + 1, i + 1]
+            elif curr > s:
+                if left < i:
+                    curr -= arr[left]
+                    left += 1
+            if curr == s:
+                return [left + 1, i + 1]
+        while curr > s and left < n - 1:
+            curr -= arr[left]
+            left += 1
+        # print("HI")
+        return [left + 1, n] if curr == s else [-1]
+
     def maxLen(self, n, X):
         H = defaultdict(int)
         subArraySum = 0
@@ -171,6 +175,8 @@ class Solution1:
             else:
                 maxLength = max(maxLength, i - H[subArraySum])
         return maxLength
+
+
 def largestZeroSubarraySum(X: List[int]) -> int:
     H = defaultdict(int)
     subArraySum = 0
@@ -184,7 +190,8 @@ def largestZeroSubarraySum(X: List[int]) -> int:
         else:
             maxLength = max(maxLength, i - H[subArraySum])
     return maxLength
-a = [12,11,40,3];s=7
-print(Solution1().subArraySum(a,len(a),s))
 
 
+a = [12, 11, 40, 3]
+s = 7
+print(Solution1().subArraySum(a, len(a), s))

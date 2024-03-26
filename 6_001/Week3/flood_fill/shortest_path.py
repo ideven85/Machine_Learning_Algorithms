@@ -15,68 +15,84 @@ def flood_fill(image, location, new_color):
                    are between 0 and 255, inclusive
     """
     print(f"You clicked at row {location[0]} col {location[1]}")
-    #print(new_color)
-    #print(image.get_width(),image.get_height())
-    #image[location[0]]=new_color[]
+    # print(new_color)
+    # print(image.get_width(),image.get_height())
+    # image[location[0]]=new_color[]
     original_color = get_pixel(image, *location)
 
-
-    to_color=[location]
+    to_color = [location]
     visited = set()
     locations = [location]
-    #visited = []
+    # visited = []
     start = time.time()
     visited.add(location)
     while to_color:
         this_cell = to_color.pop(0)
         set_pixel(image, *this_cell, new_color)
-        for neighbour in get_neighbours(image,this_cell):
-            if neighbour not in visited and get_pixel(image, *neighbour) == original_color:
+        for neighbour in get_neighbours(image, this_cell):
+            if (
+                neighbour not in visited
+                and get_pixel(image, *neighbour) == original_color
+            ):
                 locations.append(neighbour)
                 to_color.append(neighbour)
                 visited.add(neighbour)
-        #to_color+=[neighbour for neighbour in get_neighbours(this_cell) if (neighbour not in visited and get_pixel(image,*neighbour)==original_color)]
+        # to_color+=[neighbour for neighbour in get_neighbours(this_cell) if (neighbour not in visited and get_pixel(image,*neighbour)==original_color)]
     print(locations)
 
-    #bfs(image, location, new_color)
-    #set_pixel(image,*location, new_color)
-    print("Time taken:", time.time()-start)
+    # bfs(image, location, new_color)
+    # set_pixel(image,*location, new_color)
+    print("Time taken:", time.time() - start)
 
 
-def get_neighbours(image,cell):
+def get_neighbours(image, cell):
     row, col = cell
-    neighbors = [(row - 1, col), (row + 1, col), (row,col-1),(row,col+1)]
-    return [(r,c) for (r,c) in neighbors if 0<=r<get_height(image) and 0<=c<get_width(image)]
+    neighbors = [(row - 1, col), (row + 1, col), (row, col - 1), (row, col + 1)]
+    return [
+        (r, c)
+        for (r, c) in neighbors
+        if 0 <= r < get_height(image) and 0 <= c < get_width(image)
+    ]
 
-def find_path(image,start_location,goal_color):
+
+def find_path(image, start_location, goal_color):
     path_color = get_pixel(image, *start_location)
 
     found = False
     final_path = None
 
-
     possible_paths = [(start_location,)]
-    print(f"You clicked at row {start_location[0]} col {start_location[1]}, {path_color}")
+    print(
+        f"You clicked at row {start_location[0]} col {start_location[1]}, {path_color}"
+    )
+
     def get_neighbors(cell):
         row, col = cell
-        neighbors = [(row+1, col), (row-1, col), (row, col+1), (row, col-1)]
-        return [(r, c) for (r, c) in neighbors if 0 <= r < get_height(image) and 0 <= c < get_width(image)]
+        neighbors = [(row + 1, col), (row - 1, col), (row, col + 1), (row, col - 1)]
+        return [
+            (r, c)
+            for (r, c) in neighbors
+            if 0 <= r < get_height(image) and 0 <= c < get_width(image)
+        ]
 
     paths = [(start_location,)]
     visited = {start_location}
-    #print("before loop")
+    # print("before loop")
     final_path = None
     while paths:
         this_path = paths.pop(0)
         if get_pixel(image, *this_path[-1]) == goal_color:
             print("found!", this_path)
             final_path = this_path
-            break # found solution
+            break  # found solution
 
         for neighbor in get_neighbors(this_path[-1]):
-            if neighbor not in visited and get_pixel(image, *neighbor) in {path_color, goal_color}:
+            if neighbor not in visited and get_pixel(image, *neighbor) in {
+                path_color,
+                goal_color,
+            }:
                 paths.append(this_path + (neighbor,))
-                #print(paths[-1])
+                # print(paths[-1])
                 visited.add(neighbor)
     print(len(paths))
     if final_path:
@@ -85,12 +101,6 @@ def find_path(image,start_location,goal_color):
             set_pixel(image, *cell, goal_color)
     else:
         print("No path found, explored", len(visited))
-    
-
-
-
-
-
 
 
 def get_width(image):

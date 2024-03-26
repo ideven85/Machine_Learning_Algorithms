@@ -4,7 +4,7 @@ class Person:
         self.dob = self.Dob()
 
     def display(self):
-        print('Name: ',self.name)
+        print("Name: ", self.name)
 
     class Dob:
         def __init__(self):
@@ -13,7 +13,8 @@ class Person:
             self.yy = 1997
 
         def display(self):
-            print('Dob: {}/{}/{}'.format(self.dd, self.mm, self.yy))
+            print("Dob: {}/{}/{}".format(self.dd, self.mm, self.yy))
+
 
 p = Person()
 p.display()

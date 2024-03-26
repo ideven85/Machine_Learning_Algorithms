@@ -10,7 +10,6 @@ class Employee(abc.ABC):
         self.department = None
         self.rank = None
 
-
     @abc.abstractmethod
     def getSalary(self):
         pass
@@ -18,14 +17,10 @@ class Employee(abc.ABC):
 
 class Manager(Employee):
 
-
-
     def __init__(self):
         super().__init__()
         self.rank = "Manager"
         self.salary = 100000
 
-
     def getSalary(self):
         return self.salary
-

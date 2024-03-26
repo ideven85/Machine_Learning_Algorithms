@@ -2,6 +2,7 @@
 6.101 Lab 7:
 Six Double-Oh Mines
 """
+
 #!/usr/bin/env python3
 
 import typing
@@ -11,6 +12,7 @@ import doctest
 """
 At least 10 hours per lab
 """
+
 
 def dump(game):
     """
@@ -201,7 +203,7 @@ def dig_2d(game, row, col):
             elif game["visible"][r][c] == False:
                 num_revealed_squares += 1
     if num_revealed_mines != 0:
-        # if num_revealed_mines is not equal to zero, set the game state to 
+        # if num_revealed_mines is not equal to zero, set the game state to
         # defeat and return 0
         game["state"] = "defeat"
         return 0

@@ -12,7 +12,7 @@ def flood_fill(image, location, new_color):
                    are between 0 and 255, inclusive
     """
     print(f"You clicked at row {location[0]} col {location[1]}")
-    pass # your code here
+    pass  # your code here
 
 
 ##### IMAGE REPRESENTATION WITH SIMILAR ABSTRACTIONS TO LAB 1 AND 2

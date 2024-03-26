@@ -13,7 +13,6 @@ import pytest
 from .debug_recursion import show_recursive_structure
 
 
-
 @show_recursive_structure
 def tree_max(tree):
     """
@@ -21,37 +20,41 @@ def tree_max(tree):
                            'children': list of trees },
     return the maximum value found in the tree.
     """
-    if len(tree)==0:
+    if len(tree) == 0:
         return 0
-    key = tree['value']
-    values = tree['children']
-    #print(values)
-    if len(values)==0:
+    key = tree["value"]
+    values = tree["children"]
+    # print(values)
+    if len(values) == 0:
         return key
     if type(values) is list and len(values):
-        return max(key,max(tree_max(x) for x in values))
+        return max(key, max(tree_max(x) for x in values))
     else:
-        return max(key,values)
-@show_recursive_structure
+        return max(key, values)
 
+
+@show_recursive_structure
 def tree_sum(tree):
     """
     Given tree as a dict { 'value': number,
                            'children': list of trees },
     return the sum of all the values found in the tree.
     """
-    if len(tree)==0:
+    if len(tree) == 0:
         return 0
-    val = tree['value']
-    children = tree['children']
-    if len(children)==0:
+    val = tree["value"]
+    children = tree["children"]
+    if len(children) == 0:
         return val
     elif type(children) is list and len(children):
-        return val+sum(tree_sum(x) for x in children)
+        return val + sum(tree_sum(x) for x in children)
     else:
-        return val+children
+        return val + children
 
-count=0
+
+count = 0
+
+
 @show_recursive_structure
 def tree_list(tree):
     """
@@ -61,22 +64,21 @@ def tree_list(tree):
     smallest to largest) sorted only once.
     """
     global count
-    if len(tree)==0:
+    if len(tree) == 0:
         return None
-    val = tree['value']
-    children = tree['children']
-    count+=1
-    if len(children)==0:
-        if count==1:
+    val = tree["value"]
+    children = tree["children"]
+    count += 1
+    if len(children) == 0:
+        if count == 1:
             return sorted([val])
         else:
             return val
 
     elif type(children) is list and len(children):
-        return [tree_list(x) for x in children],val
+        return [tree_list(x) for x in children], val
     else:
-        return sorted([val]+[children])
-
+        return sorted([val] + [children])
 
 
 # @show_recursive_structure
@@ -92,46 +94,58 @@ def tree_depth(tree, depth):
     """
 
 
+t1 = {"value": 3, "children": []}
 
+t2 = {
+    "value": 9,
+    "children": [
+        {"value": 2, "children": []},
+        {"value": 3, "children": []},
+        {"value": 7, "children": []},
+    ],
+}
 
-
-t1 = {'value': 3,
-      'children': []}
-
-t2 = {'value': 9,
-      'children': [{'value': 2, 'children': []},
-                   {'value': 3, 'children': []},
-                   {'value': 7, 'children': []}]}
-
-t3 = {'value': 9,
-      'children': [{'value': 2, 'children': []},
-                   {'value': 3,
-                    'children': [{'value': 99, 'children': []},
-                                 {'value': 16,
-                                  'children': [{'value': 7, 'children': []}]},
-                                 {'value': 42, 'children': []}]}]}
+t3 = {
+    "value": 9,
+    "children": [
+        {"value": 2, "children": []},
+        {
+            "value": 3,
+            "children": [
+                {"value": 99, "children": []},
+                {"value": 16, "children": [{"value": 7, "children": []}]},
+                {"value": 42, "children": []},
+            ],
+        },
+    ],
+}
 
 
 def test_tree_max():
-    assert tree_max(t1) ==  3
-    assert tree_max(t2) ==  9
-    assert tree_max(t3) ==  99
+    assert tree_max(t1) == 3
+    assert tree_max(t2) == 9
+    assert tree_max(t3) == 99
     print("correct!")
 
+
 def test_tree_sum():
-    assert tree_sum(t1) ==  3
-    assert tree_sum(t2) ==  21
-    assert tree_sum(t3) ==  178
+    assert tree_sum(t1) == 3
+    assert tree_sum(t2) == 21
+    assert tree_sum(t3) == 178
     print("correct!")
+
+
 #
 #
 #
 #
 def test_tree_list():
-    assert tree_list(t1) ==  [3]
-    assert tree_list(t2) ==  [2,3,7,9]
-    assert tree_list(t3) ==  [2,3,7,9,16,42,99]
+    assert tree_list(t1) == [3]
+    assert tree_list(t2) == [2, 3, 7, 9]
+    assert tree_list(t3) == [2, 3, 7, 9, 16, 42, 99]
     print("correct!")
+
+
 #
 #
 # def test_tree_depth():
@@ -153,4 +167,3 @@ if __name__ == "__main__":
     # uncomment the @show_recursive_structure line
     # above the function to see some detailed function output
     tree_sum(t3)
-

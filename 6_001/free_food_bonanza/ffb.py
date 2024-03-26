@@ -5,17 +5,18 @@ adding additional helper functions.
 Test your code by running this file.
 """
 
-
 """
 Note that using different versions
 of find_path may have result in better performance on the test cases --
 only uncomment one version at a time though
 """
 from .find_path_visited_list import find_path
+
 # this is the last find_path() from the reading
 # from .find_path_visited_set import find_path
 # from .find_path_visited_dict import find_path
 import time
+
 
 def free_food_bonanza(board):
     """
@@ -34,18 +35,18 @@ def free_food_bonanza(board):
     """
 
     def make_state(board):
-        pass # some code here returns a new state
+        pass  # some code here returns a new state
 
     def get_neighbors(state):
-        pass # some code here returns a list of states
+        pass  # some code here returns a list of states
 
     def goal_check(state):
-        pass # some code here returns True/False
+        pass  # some code here returns True/False
         # depending on whether a state meets the goal conditions
 
     start = make_state(board)
     path = find_path(get_neighbors, start, goal_check)
-    return # your code here
+    return  # your code here
 
 
 def test_simple():
@@ -53,28 +54,20 @@ def test_simple():
     assert free_food_bonanza(board) == 0
     print("simple test works!")
 
+
 def test_direction():
-    board = [[" ", " ", " "],
-             [" ", "S", " "],
-             [" ", " ", " "]]
+    board = [[" ", " ", " "], [" ", "S", " "], [" ", " ", " "]]
     assert free_food_bonanza(board) == 0, "already solved"
-    board = [[" ", "F", " "],
-             [" ", "S", " "],
-             [" ", " ", " "]]
+    board = [[" ", "F", " "], [" ", "S", " "], [" ", " ", " "]]
     assert free_food_bonanza(board) == 1, "up"
-    board = [[" ", " ", " "],
-             [" ", "S", "F"],
-             [" ", " ", " "]]
+    board = [[" ", " ", " "], [" ", "S", "F"], [" ", " ", " "]]
     assert free_food_bonanza(board) == 1, "right"
-    board = [[" ", " ", " "],
-             ["F", "S", " "],
-             [" ", " ", " "]]
+    board = [[" ", " ", " "], ["F", "S", " "], [" ", " ", " "]]
     assert free_food_bonanza(board) == 1, "left"
-    board = [[" ", " ", " "],
-             [" ", "S", " "],
-             [" ", "F", " "]]
+    board = [[" ", " ", " "], [" ", "S", " "], [" ", "F", " "]]
     assert free_food_bonanza(board) == 1, "down"
     print("test direction works!")
+
 
 def test_all():
     ## Example boards

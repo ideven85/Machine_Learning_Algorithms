@@ -4,13 +4,14 @@ import time
 
 from Design_Patterns.priority_queue_pattern.queueManager import QueueManager
 
+
 class Worker:
     """
     Task of Worker Thread is to constantly poll Queue Manager for highest priority messages
     """
-    def __init__(self,queueManager: QueueManager):
-        self.queueManager = queueManager
 
+    def __init__(self, queueManager: QueueManager):
+        self.queueManager = queueManager
 
     def run(self):
         while True:
@@ -22,4 +23,3 @@ class Worker:
                 sys.exit("No messages left in queue")
             else:
                 print(task)
-

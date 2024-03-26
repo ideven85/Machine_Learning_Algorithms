@@ -4,16 +4,19 @@ import pygame
 from settings import Settings
 from ship import Ship
 
-#todo Add more Logic
+
+# todo Add more Logic
 class AlienVasion:
     def __init__(self):
         pygame.init()
         self.settings = Settings()
-        #self.screen = pygame.display.set_mode((1200, 800))
-        self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
+        # self.screen = pygame.display.set_mode((1200, 800))
+        self.screen = pygame.display.set_mode(
+            (self.settings.screen_width, self.settings.screen_height)
+        )
 
         pygame.display.set_caption("Alien Invasion")
-        #self.bg_color = (230, 230, 230)
+        # self.bg_color = (230, 230, 230)
         self.ship = Ship(self)
         self.clock = pygame.time.Clock()
 
@@ -24,9 +27,10 @@ class AlienVasion:
             self._repaint()
 
             self.clock.tick(60)
+
     def _action_listener(self):
         for event in pygame.event.get():
-            #print(pygame.QUIT.real)
+            # print(pygame.QUIT.real)
             if event.type == pygame.QUIT:
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
@@ -40,11 +44,11 @@ class AlienVasion:
                 elif event.key == pygame.K_LEFT:
                     self.ship.moving_left = False
 
-
     def _repaint(self):
         self.screen.fill(self.settings.bg_color)
         self.ship.repaint()
         pygame.display.flip()
+
 
 ai = AlienVasion()
 ai.run_game()

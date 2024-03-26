@@ -1,7 +1,7 @@
 from typing import List
 
 
-def merge(self,nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
     first = m - 1
     second = n - 1
     total = first + second + 1
@@ -13,10 +13,10 @@ def merge(self,nums1: List[int], m: int, nums2: List[int], n: int) -> None:
             nums1[total] = nums2[second]
             second -= 1
         total -= 1
-        #print(nums1)
+        # print(nums1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     a = [1, 2, 3, 0, 0, 0]
     b = [2, 4, 6]
     merge(a, 3, b, 3)

@@ -17,8 +17,10 @@ from typing import List
  * Return a list of all the people that have the secret after all the meetings have taken place. You may return the answer in any order.
  */
 """
-#//Input: n = 6, meetings = [[1,2,5],[2,3,8],[1,5,10]], firstPerson = 1
-#Output: [0,1,2,3,5]
+
+
+# //Input: n = 6, meetings = [[1,2,5],[2,3,8],[1,5,10]], firstPerson = 1
+# Output: [0,1,2,3,5]
 class PeopleWithSecrets:
 
     meetings = []
@@ -26,10 +28,10 @@ class PeopleWithSecrets:
     firstPerson = None
     root = None
 
-
-
-    def findAllPeople(self, n: int, meetings: List[List[int]], firstPerson: int) -> List[int]:
-        self.meetings=meetings
-        self.n=n
-        self.firstPerson=firstPerson
-        #self.root=[0 for _ in range(n)]
+    def findAllPeople(
+        self, n: int, meetings: List[List[int]], firstPerson: int
+    ) -> List[int]:
+        self.meetings = meetings
+        self.n = n
+        self.firstPerson = firstPerson
+        # self.root=[0 for _ in range(n)]

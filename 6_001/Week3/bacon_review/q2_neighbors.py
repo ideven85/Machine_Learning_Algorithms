@@ -14,12 +14,12 @@ def get_neighbors(transformed_data, actor):
     has acted with (not including the given actor).
     """
     neighbors = set()
-    for actor1,actor2,_ in transformed_data:
+    for actor1, actor2, _ in transformed_data:
         if actor1 == actor2:
             continue
-        if actor1==actor:
+        if actor1 == actor:
             neighbors.add(actor2)
-        elif actor2==actor:
+        elif actor2 == actor:
             neighbors.add(actor1)
     return neighbors
 
@@ -32,13 +32,15 @@ def test_get_neighbors():
         (1532, 4724, 617),
         (1532, 2876, 31932),
         (2876, 1640, 617),
-        (1640, 1640, 74881)
+        (1640, 1640, 74881),
     ]
 
     def check(actor, expected):
         # an example of a useful closure function!
         result = get_neighbors(tiny_db, actor)
-        assert result == expected, f"unexpected result for actor {actor}\n {result=} != {expected=}"
+        assert (
+            result == expected
+        ), f"unexpected result for actor {actor}\n {result=} != {expected=}"
 
     check(2876, {4724, 1532, 1640})
     check(4724, {2876, 1532})

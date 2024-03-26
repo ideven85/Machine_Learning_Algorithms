@@ -2,6 +2,7 @@
 6.101 Lab 6:
 Recipes
 """
+
 #!/usr/bin/env python3
 import os
 import sys
@@ -326,7 +327,7 @@ def test_lowest_cost_big_excluded(testnum):
 
 def test_lowest_cost_examples_forbidden():
     assert (
-            lab.lowest_cost.__defaults__ is not None
+        lab.lowest_cost.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     orig = copy.deepcopy(example_recipes)
@@ -353,7 +354,7 @@ def test_lowest_cost_examples_forbidden():
 
 def test_lowest_cost_more_examples_forbidden():
     assert (
-            lab.lowest_cost.__defaults__ is not None
+        lab.lowest_cost.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     with open(
@@ -371,7 +372,7 @@ def test_lowest_cost_more_examples_forbidden():
 @pytest.mark.parametrize("testnum", range(11))
 def test_lowest_cost_big_forbidden(testnum):
     assert (
-            lab.lowest_cost.__defaults__ is not None
+        lab.lowest_cost.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 5, (testnum + 1) * 5):
@@ -392,7 +393,7 @@ def test_lowest_cost_big_forbidden(testnum):
 @pytest.mark.parametrize("testnum", range(5))
 def test_lowest_cost_big_excluded_forbidden(testnum):
     assert (
-            lab.lowest_cost.__defaults__ is not None
+        lab.lowest_cost.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 11, (testnum + 1) * 11):
@@ -604,7 +605,7 @@ def test_cheapest_examples_all_included():
 
 def test_cheapest_examples_forbidden():
     assert (
-            lab.cheapest_flat_recipe.__defaults__ is not None
+        lab.cheapest_flat_recipe.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     orig = copy.deepcopy(example_recipes)
@@ -620,10 +621,10 @@ def test_cheapest_examples_forbidden():
         "cutting-edge laboratory": 11
     }
     assert (
-            lab.cheapest_flat_recipe(
+        lab.cheapest_flat_recipe(
             example_recipes, "cheese", ("milking stool", "cutting-edge laboratory")
         )
-            is None
+        is None
     )
 
     # more complex
@@ -695,7 +696,7 @@ def test_cheapest_big_excluded(testnum):
 
 def test_cheapest_more_examples_forbidden():
     assert (
-            lab.cheapest_flat_recipe.__defaults__ is not None
+        lab.cheapest_flat_recipe.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     with open(
@@ -713,7 +714,7 @@ def test_cheapest_more_examples_forbidden():
 @pytest.mark.parametrize("testnum", range(5))
 def test_cheapest_big_forbidden(testnum):
     assert (
-            lab.cheapest_flat_recipe.__defaults__ is not None
+        lab.cheapest_flat_recipe.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 11, (testnum + 1) * 11):
@@ -734,7 +735,7 @@ def test_cheapest_big_forbidden(testnum):
 @pytest.mark.parametrize("testnum", range(5))
 def test_cheapest_big_excluded_forbidden(testnum):
     assert (
-            lab.cheapest_flat_recipe.__defaults__ is not None
+        lab.cheapest_flat_recipe.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 11, (testnum + 1) * 11):
@@ -908,7 +909,7 @@ def test_all_recipes_examples_all_included():
 
 def test_all_recipes_examples_forbidden():
     assert (
-            lab.all_flat_recipes.__defaults__ is not None
+        lab.all_flat_recipes.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     orig = copy.deepcopy(example_recipes)
@@ -924,10 +925,10 @@ def test_all_recipes_examples_forbidden():
         {"cutting-edge laboratory": 11}
     ]
     assert (
-            lab.all_flat_recipes(
+        lab.all_flat_recipes(
             example_recipes, "cheese", ("milking stool", "cutting-edge laboratory")
         )
-            == []
+        == []
     )
 
     burgers2 = [
@@ -972,7 +973,7 @@ def test_all_recipes_examples_forbidden():
 @pytest.mark.parametrize("testnum", range(11))
 def test_all_recipes_big(testnum):
     assert (
-            lab.all_flat_recipes.__defaults__ is not None
+        lab.all_flat_recipes.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 5, (testnum + 1) * 5):

@@ -2,6 +2,7 @@
 # states don't have to be hashable but
 # large inputs are very slow!
 
+
 def find_path(neighbors_function, start, goal_test):
     """
     Return the shortest path through a graph from a given starting state to any

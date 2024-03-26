@@ -11,7 +11,7 @@ class BST:
     def insert(self, value):
         # Write your code here.
         # Do not edit the return statement of this method.
-        if value<self.value:
+        if value < self.value:
             if self.left is None:
                 self.left = BST(value)
             else:
@@ -26,12 +26,12 @@ class BST:
     def contains(self, value):
         # Write your code here.
 
-        if value<self.value:
+        if value < self.value:
             if not self.left:
                 return False
             return self.left.contains(value)
 
-        elif value>self.value:
+        elif value > self.value:
             if not self.right:
                 return False
             else:
@@ -39,20 +39,20 @@ class BST:
         else:
             return True
 
-    def remove(self, value,parent=None):
+    def remove(self, value, parent=None):
         # Write your code here.
         # Do not edit the return statement of this method.
-        if value<self.value:
+        if value < self.value:
             if self.left:
-                self.left.remove(value,self)
-        elif value>self.value:
+                self.left.remove(value, self)
+        elif value > self.value:
             if self.right:
 
-                self.right.remove(value,self)
+                self.right.remove(value, self)
         else:
             if self.left and self.right:
                 self.value = self.right.getMinValue()
-                self.right.remove(self.value,self)
+                self.right.remove(self.value, self)
             elif parent is None:
                 if self.left:
                     self.value = self.left.value
@@ -70,7 +70,6 @@ class BST:
                 parent.right = self.left if self.left else self.right
         return self
 
-
     def getMinValue(self):
         if not self.left:
             return self.value
@@ -78,11 +77,7 @@ class BST:
             return self.left.getMinValue()
 
 
-
-
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     root = BST(10)
     root.insert(15)
     root.insert(20)

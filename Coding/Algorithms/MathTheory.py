@@ -7,9 +7,10 @@ class Solution:
         n = len(nums)
         for i in range(n):
             if nums[i] not in duplicate:
-                duplicate[nums[i]]=1
+                duplicate[nums[i]] = 1
             else:
                 return nums[i]
+
     def findDuplicateV2(self, nums: List[int]) -> int:
         slow, fast = 0, 0
         while True:
@@ -23,22 +24,21 @@ class Solution:
             fast = nums[fast]
         return slow
 
-def isHappy( n: int) -> bool:
+
+def isHappy(n: int) -> bool:
     s = str(n)
     total = 0
     while True:
 
-        if total==1:
+        if total == 1:
             return True
         for e in s:
-            total += int(e)*int(e)
-
+            total += int(e) * int(e)
 
 
 print(isHappy(19))
 
 
 a = Solution()
-nums = [1,3,3,4,3]
-print(a.findDuplicateV2(nums=nums))    
-        
+nums = [1, 3, 3, 4, 3]
+print(a.findDuplicateV2(nums=nums))

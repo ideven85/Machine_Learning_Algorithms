@@ -6,7 +6,7 @@ class BinaryTree:
         self.parent = parent
 
 
-def findSuccessor(root:BinaryTree, node:BinaryTree):
+def findSuccessor(root: BinaryTree, node: BinaryTree):
     # Write your code here.
     if root is None:
         return None
@@ -15,15 +15,13 @@ def findSuccessor(root:BinaryTree, node:BinaryTree):
     else:
         q = node
         x = node.parent
-        while x and x.left!=q:
+        while x and x.left != q:
             q = x
             x = x.parent
         return x
 
 
-
-
-def findLeftMostNodeInRight(root:BinaryTree):
+def findLeftMostNodeInRight(root: BinaryTree):
     while root.left:
         root = root.left
     return root

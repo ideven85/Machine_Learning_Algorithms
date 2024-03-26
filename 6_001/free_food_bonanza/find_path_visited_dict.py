@@ -1,13 +1,14 @@
 def find_path(neighbors_function, start, goal_test):
     if goal_test(start):
-        return (start, )
+        return (start,)
 
     agenda = [start]
 
     # every visited state is a key in visited_from, whose value is the state that led us to it
     # That way we can reconstruct the path from the final state by a series of
     # visited_from[state] lookups.
-    visited_from = { start: None }
+    visited_from = {start: None}
+
     def reconstruct_path_to(state):
         path = (state,)
         while visited_from[state]:
@@ -26,4 +27,3 @@ def find_path(neighbors_function, start, goal_test):
                     return reconstruct_path_to(neighbor)
 
                 agenda.append(neighbor)
-

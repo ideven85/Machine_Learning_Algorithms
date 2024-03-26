@@ -1,9 +1,11 @@
 from typing import Optional
 
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
 
 class ListProblems:
 
@@ -13,25 +15,28 @@ class ListProblems:
             current = current.next
         current.next = ListNode(val)
         return head
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+
+    def addTwoNumbers(
+        self, l1: Optional[ListNode], l2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         output = ListNode(0)
         current = output
         carry = 0
         while l1 and l2:
-            total = l1.val + l2.val+carry
+            total = l1.val + l2.val + carry
             digit = total % 10
             carry = total // 10
             current.next = ListNode(digit)
             current = current.next
-            l1=l1.next
-            l2=l2.next
+            l1 = l1.next
+            l2 = l2.next
         while l1:
             total = l1.val + carry
-            digit = total%10
-            carry = total//10
+            digit = total % 10
+            carry = total // 10
             current.next = ListNode(digit)
             current = current.next
-            l1=l1.next
+            l1 = l1.next
         while l2:
             total = l2.val + carry
             digit = total % 10
@@ -43,12 +48,11 @@ class ListProblems:
             current.next = ListNode(carry)
         return output.next
 
-
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head or not head.next:
             return head
         temp = head.next
-        #next_node=head.next
+        # next_node=head.next
         prev = None
         while head and head.next:
             if prev:
@@ -60,13 +64,13 @@ class ListProblems:
             head.next = next_node  # Step 6
             head = next_node
 
-
         return temp
+
     def printList(self, head: Optional[ListNode]) -> None:
         current = head
         while current:
-            print(current.val,end=' ')
-            current=current.next
+            print(current.val, end=" ")
+            current = current.next
         print()
 
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
@@ -82,8 +86,7 @@ class ListProblems:
         head = last
         return head
 
-
-    def length(self,head: Optional[ListNode])->int:
+    def length(self, head: Optional[ListNode]) -> int:
         if not head:
             return 0
         return 1 + self.length(head.next)
@@ -120,30 +123,33 @@ class ListProblems:
             rev.next = h_next
             rev = r_next
             head = h_next
+
     def reorderListV2(self, head: Optional[ListNode]) -> None:
         """
-                  ou are given the head of a singly linked-list.
-                  The list can be represented as:
+                ou are given the head of a singly linked-list.
+                The list can be represented as:
 
-          L0 → L1 → … → Ln - 1 → Ln
-          Reorder the list to be on the following form:
+        L0 → L1 → … → Ln - 1 → Ln
+        Reorder the list to be on the following form:
 
-          L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
-          You may not modify the values in the list's nodes.
-           Only nodes themselves may be changed.
-                  """
+        L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
+        You may not modify the values in the list's nodes.
+         Only nodes themselves may be changed.
+        """
         if not head:
             return
-        reversed_list=self.reverseList(head)
-        #raise NotImplementedError("Please Implement me")
-        current=head
+        reversed_list = self.reverseList(head)
+        # raise NotImplementedError("Please Implement me")
+        current = head
 
-        length=self.length(head)
+        length = self.length(head)
         while head and head.next:
             head.next = reversed_list
-            head.next=head.next.next
-            reversed_list=reversed_list.next.next
-            head=head.next.next
+            head.next = head.next.next
+            reversed_list = reversed_list.next.next
+            head = head.next.next
+
+
 """
 /**
  * Definition for singly-linked list.
@@ -193,20 +199,20 @@ class Solution {
 """
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
-        head = ListNode(1)
+    head = ListNode(1)
 
-        l = ListProblems()
-        l.insert(head, 2)
-        l.insert(head,3)
-        l.insert(head,4)
+    l = ListProblems()
+    l.insert(head, 2)
+    l.insert(head, 3)
+    l.insert(head, 4)
 
-        l.printList(head)
-        # head=l.swapPairs(head)
-        # l.printList(head)
-        #reversed_list=l.reverseList(head)
-        #l.printList(reversed_list)
-        print()
-        l.reorderList(head)
-        l.printList(head)
+    l.printList(head)
+    # head=l.swapPairs(head)
+    # l.printList(head)
+    # reversed_list=l.reverseList(head)
+    # l.printList(reversed_list)
+    print()
+    l.reorderList(head)
+    l.printList(head)

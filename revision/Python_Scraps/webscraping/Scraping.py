@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import os
 from PIL import Image
+
 example_html = """
 <html>
 <head>
@@ -31,13 +32,12 @@ italics.</i></b>
 </body>
 </html>
 """
-response = requests.get('https://en.wikipedia.org/wiki/Margrethe_II')
+response = requests.get("https://en.wikipedia.org/wiki/Margrethe_II")
 print(response.status_code)
 if response.status_code == 200:
-    soup = BeautifulSoup(response.text, 'html.parser')
+    soup = BeautifulSoup(response.text, "html.parser")
     print(soup.prettify())
-    links = soup.find_all('a', href=True)
-    with open('../revision/6_001/revision/links.txt', 'w') as fp:
+    links = soup.find_all("a", href=True)
+    with open("../revision/6_001/revision/links.txt", "w") as fp:
         for link in links:
-            fp.write(link['href']+'\n')
-
+            fp.write(link["href"] + "\n")

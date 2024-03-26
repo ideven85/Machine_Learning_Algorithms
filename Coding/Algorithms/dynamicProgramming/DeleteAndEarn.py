@@ -25,13 +25,16 @@ class Solution:
             for i in range(1, len(elements)):
                 current_element = elements[i]
                 if current_element == elements[i - 1] + 1:
-                    two_back, one_back = one_back, max(one_back, two_back + points[current_element])
+                    two_back, one_back = one_back, max(
+                        one_back, two_back + points[current_element]
+                    )
                 else:
                     two_back, one_back = one_back, one_back + points[current_element]
 
         return one_back
 
-def deleteAndEarn( nums: List[int]) -> int:
+
+def deleteAndEarn(nums: List[int]) -> int:
     points = defaultdict(int)
     max_number = 0
     # Precompute how many points we gain from taking an element
@@ -40,6 +43,7 @@ def deleteAndEarn( nums: List[int]) -> int:
         max_number = max(max_number, num)
     print(points)
     print(max_number)
+
     @cache
     def max_points(num):
         # Check for base cases
@@ -54,39 +58,37 @@ def deleteAndEarn( nums: List[int]) -> int:
     return max_points(max_number)
 
 
-def deleteAndEarnMemoised( nums: List[int]) -> int:
+def deleteAndEarnMemoised(nums: List[int]) -> int:
     cacheMap = defaultdict(int)
 
     @cache
-    def dp(num:int)->int:
-        if num==0:
+    def dp(num: int) -> int:
+        if num == 0:
             return 0
-        if num==1:
+        if num == 1:
             return numMap[1]
-        if cacheMap[num]!=0:
+        if cacheMap[num] != 0:
             return cacheMap[num]
         gain = numMap[num]
-        cacheMap[num]=max(dp(num-2)+gain,dp(num-1))
+        cacheMap[num] = max(dp(num - 2) + gain, dp(num - 1))
         return cacheMap[num]
 
     numMap = defaultdict(int)
-    maxNum=0
+    maxNum = 0
     for e in nums:
-        numMap[e]+=e
-        maxNum=max(maxNum,e)
+        numMap[e] += e
+        maxNum = max(maxNum, e)
     return dp(maxNum)
 
 
-
-
-if __name__ == '__main__':
-    nums = [2,2,3,3,3,4]
-    sol=Solution()
+if __name__ == "__main__":
+    nums = [2, 2, 3, 3, 3, 4]
+    sol = Solution()
     a = time.time()
     print(sol.deleteAndEarn(nums))
-    b=time.time()
+    b = time.time()
     deleteAndEarn(nums)
-    c=time.time()
+    c = time.time()
     deleteAndEarnMemoised(nums)
-    d=time.time()
-    print(d-b)
+    d = time.time()
+    print(d - b)

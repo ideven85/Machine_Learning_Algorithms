@@ -5,62 +5,68 @@ from typing import Optional
 
 @dataclass
 class TreeNode:
-    val:int
-    left:'TreeNode'
-    right:'TreeNode'
-    def __init__(self,val:int=0,left:'TreeNode'=None,right:'TreeNode' = None):
+    val: int
+    left: "TreeNode"
+    right: "TreeNode"
+
+    def __init__(self, val: int = 0, left: "TreeNode" = None, right: "TreeNode" = None):
         self.val = val
         self.left = left
         self.right = right
 
 
+def insert(val: int, root: TreeNode) -> TreeNode:
+    if not root:
+        root = TreeNode(val)
+    elif val < root.val:
+        root.left = insert(val, root.left)
+    elif val > root.val:
+        root.right = insert(val, root.right)
+    return root
 
-def insert(val:int,root: TreeNode)->TreeNode:
-        if not root:
-            root = TreeNode(val)
-        elif val < root.val:
-            root.left = insert(val,root.left)
-        elif val > root.val:
-            root.right = insert(val,root.right)
-        return root
 
 def num_nodes(root: TreeNode) -> int:
-        if not root:
-            return 0
-        left = num_nodes(root.left)
-        right = num_nodes(root.right)
-        return 1+left+right
+    if not root:
+        return 0
+    left = num_nodes(root.left)
+    right = num_nodes(root.right)
+    return 1 + left + right
 
-def inOrder(root: TreeNode)->None:
-    if  root:
+
+def inOrder(root: TreeNode) -> None:
+    if root:
         inOrder(root.left)
-        print(root.val,end=' ')
+        print(root.val, end=" ")
         inOrder(root.right)
 
-def numLeaves(root: TreeNode)->int:
+
+def numLeaves(root: TreeNode) -> int:
     if not root:
         return 0
     if not root.left and not root.right:
         return 1
     return numLeaves(root.left) + numLeaves(root.right)
 
-def printAtDepthK(root: TreeNode,k:int)->None:
+
+def printAtDepthK(root: TreeNode, k: int) -> None:
     if not root:
         return
-    if k==0:
-        print(root.val,end=' ')
-    printAtDepthK(root.left,k-1)
-    printAtDepthK(root.right,k-1)
+    if k == 0:
+        print(root.val, end=" ")
+    printAtDepthK(root.left, k - 1)
+    printAtDepthK(root.right, k - 1)
 
-def largestValue(root: TreeNode)->int:
+
+def largestValue(root: TreeNode) -> int:
     if not root:
         return 0
     largestLeft = largestValue(root.left)
     largestRight = largestValue(root.right)
-    return max(root.val,max(largestLeft, largestRight))
+    return max(root.val, max(largestLeft, largestRight))
+
 
 # todo
-def maxPathSum( root: Optional[TreeNode]) -> int:
+def maxPathSum(root: Optional[TreeNode]) -> int:
     """
     A path in a binary tree is a sequence of nodes where each pair of adjacent nodes in the sequence has an edge connecting them.
     A node can only appear in the sequence at most once.
@@ -73,20 +79,23 @@ def maxPathSum( root: Optional[TreeNode]) -> int:
     Explanation: The optimal path is 15 -> 20 -> 7 with a path sum of 15 + 20 + 7 = 42.
     """
 
-    def dfs(node,is_left=True,left_path=None,right_path=None):
+    def dfs(node, is_left=True, left_path=None, right_path=None):
         if not node:
             return 0
         if is_left:
-            left_path[node.val] = node.val+max(dfs(node.left,True,left_path,right_path),
-                                               dfs(node.left,False,left_path,right_path))
+            left_path[node.val] = node.val + max(
+                dfs(node.left, True, left_path, right_path),
+                dfs(node.left, False, left_path, right_path),
+            )
             return left_path[node.val]
         else:
-            right_path[node.val] = node.val+max(dfs(node.right,True,left_path,right_path)
-                                                ,dfs(node.right,False,left_path,right_path))
+            right_path[node.val] = node.val + max(
+                dfs(node.right, True, left_path, right_path),
+                dfs(node.right, False, left_path, right_path),
+            )
             return right_path[node.val]
 
-        #return node.val + max(dfs(node.left),dfs(node.right))
-
+        # return node.val + max(dfs(node.left),dfs(node.right))
 
     if not root:
         return 0
@@ -98,11 +107,11 @@ def maxPathSum( root: Optional[TreeNode]) -> int:
     # max_path_sum = float('-inf')
     left_path = dict()
     right_path = dict()
-    dfs(root.left,True,left_path,right_path)
-    dfs(root.right,False,left_path,right_path)
+    dfs(root.left, True, left_path, right_path)
+    dfs(root.right, False, left_path, right_path)
     print(left_path)
     print(right_path)
-    path2sum  = dict((i, left_path[i]+right_path[i]) for i in left_path.keys() )
+    path2sum = dict((i, left_path[i] + right_path[i]) for i in left_path.keys())
     i = max(path2sum.values())
     return path2sum[i]
     # maxPathSum = {}
@@ -131,20 +140,18 @@ def maxPathSum( root: Optional[TreeNode]) -> int:
     """
 
 
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     root = TreeNode(6)
-    insert(-10,root)
-    insert(20,root)
-    insert(-8,root)
-    insert(9,root)
-    insert(15,root)
-    insert(7,root)
+    insert(-10, root)
+    insert(20, root)
+    insert(-8, root)
+    insert(9, root)
+    insert(15, root)
+    insert(7, root)
     print(num_nodes(root))
 
     inOrder(root)
-    print('\n',numLeaves(root))
-    printAtDepthK(root,2)
-    print('\n',largestValue(root))
-    #print(maxPathSum(root))
+    print("\n", numLeaves(root))
+    printAtDepthK(root, 2)
+    print("\n", largestValue(root))
+    # print(maxPathSum(root))

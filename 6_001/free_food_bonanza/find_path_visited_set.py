@@ -10,7 +10,7 @@ def find_path(neighbors_function, start, goal_test):
       * goal_test(state) is a function which returns True if the given state is
         a goal state for the search, and False otherwise.
 
-    Returns: 
+    Returns:
         A shortest path from start to a state satisfying goal_test(state)
         as a tuple of states, or None if no path exists.
 
@@ -22,7 +22,6 @@ def find_path(neighbors_function, start, goal_test):
 
     if goal_test(start):
         return (start,)
-
 
     while agenda:
         this_path = agenda.pop(0)

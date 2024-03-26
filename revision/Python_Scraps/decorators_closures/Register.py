@@ -2,7 +2,7 @@ registry = []
 
 
 def register(func):
-    print(f'running register({func})')
+    print(f"running register({func})")
     registry.append(func)
     return func
 
@@ -17,14 +17,13 @@ def foo2():
     print("foo2 Function")
 
 
-
-
 def foo3():
     print("foo3 Function")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     print("Inside Main")
-    print("Registry",registry)
+    print("Registry", registry)
     """
     Made a call to registry list calling foo1 function
     """

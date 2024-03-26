@@ -5,18 +5,21 @@ Audio Processing
 
 import wave
 import struct
+
 # No Additional Imports Allowed!
 
 
 def backwards(sound):
 
-    reversed_sound=sound.copy()
-    reversed_sound['samples']=reversed_sound['samples'][::-1]
+    reversed_sound = sound.copy()
+    reversed_sound["samples"] = reversed_sound["samples"][::-1]
     return reversed_sound
 
 
 def mix(sound1, sound2, p):
-    raise NotImplementedError
+    if sound1['samples']==sound2['samples']:
+        return None
+
 
 
 def convolve(sound, kernel):
@@ -145,4 +148,4 @@ if __name__ == "__main__":
     # sound files being in a different directory than this file)
     hello = load_wav("hello_reversed.wav")
 
-    write_wav(backwards(hello), 'hello.wav')
+    write_wav(backwards(hello), "hello.wav")

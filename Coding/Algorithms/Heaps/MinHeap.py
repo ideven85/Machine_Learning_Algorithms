@@ -19,14 +19,19 @@ class MinHeap:
         leftChild = currentIndex * 2 + 1
         childIndex = -1
         while leftChild <= endIndex:
-            rightChild = currentIndex * 2 + 2 if currentIndex * 2 + 2 <= endIndex else -1
+            rightChild = (
+                currentIndex * 2 + 2 if currentIndex * 2 + 2 <= endIndex else -1
+            )
 
             if rightChild != -1 and heap[rightChild] < heap[leftChild]:
                 childIndex = rightChild
             else:
                 childIndex = leftChild
             if heap[currentIndex] > heap[childIndex]:
-                heap[currentIndex], heap[childIndex] = heap[childIndex], heap[currentIndex]
+                heap[currentIndex], heap[childIndex] = (
+                    heap[childIndex],
+                    heap[currentIndex],
+                )
                 currentIndex = childIndex
                 leftChild = currentIndex * 2 + 1
             else:
@@ -39,7 +44,10 @@ class MinHeap:
         # Write your code here.
         parentIndex = (childIndex - 1) // 2
         while childIndex > 0 and self.heap[childIndex] < self.heap[parentIndex]:
-            self.heap[childIndex], self.heap[parentIndex] = self.heap[parentIndex], self.heap[childIndex]
+            self.heap[childIndex], self.heap[parentIndex] = (
+                self.heap[parentIndex],
+                self.heap[childIndex],
+            )
 
             childIndex = parentIndex
             parentIndex = (childIndex - 1) // 2
@@ -53,7 +61,7 @@ class MinHeap:
         # Write your code here.
         self.heap[0], self.heap[len(self) - 1] = self.heap[len(self) - 1], self.heap[0]
         answer = self.heap.pop()
-        self.siftDown(0, len(self) - 1, self.heap)#
+        self.siftDown(0, len(self) - 1, self.heap)  #
         return answer
 
     def insert(self, value):
@@ -62,19 +70,21 @@ class MinHeap:
         self.siftUp(len(self) - 1)
 
     def __getitem__(self, index):
-        if  index >= len(self):
+        if index >= len(self):
             raise IndexError("Index out of range")
         return self.heap[index]
 
     def __iter__(self):
         # raise AssertionError("Cannot iterate a heap only query")
         return HeapIterator(self.heap)
+
     def __repr__(self):
         # raise SyntaxError("Heaps can only be peeked")
         return str(self.heap)
 
+
 class HeapIterator:
-    def __init__(self,heap):
+    def __init__(self, heap):
         self.heap = heap
         self.index = 0
 
@@ -90,8 +100,8 @@ class HeapIterator:
         return self
 
 
-if __name__ == '__main__':
-    a=[48, 12, 24, 7, 8,  24, 391, 24, 56, 2, 6, 8, 41]
+if __name__ == "__main__":
+    a = [48, 12, 24, 7, 8, 24, 391, 24, 56, 2, 6, 8, 41]
     heap = MinHeap(a)
     print(a)
     print(heap.peek())
@@ -103,10 +113,10 @@ if __name__ == '__main__':
     print(heap[2])
     print(heap[-2])
     for e in heap:
-        print(e,end=' ')
+        print(e, end=" ")
     x = HeapIterator(heap)
     print(x)
-    print("\n",next(x))
+    print("\n", next(x))
     for e in x:
-        print(e,end=' ')
+        print(e, end=" ")
     print()

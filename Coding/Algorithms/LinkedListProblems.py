@@ -2,16 +2,20 @@
 import math
 from typing import Optional
 
+
 class ListNode:
-     def __init__(self, val=0, next=None):
-         self.val = val
-         self.next = next
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
 class LinkedList:
     def __init__(self, value):
         self.value = value
         self.next = None
 
-def middleNode( head: Optional[ListNode]) -> Optional[ListNode]:
+
+def middleNode(head: Optional[ListNode]) -> Optional[ListNode]:
     if head is None:
         return None
     start = head
@@ -19,16 +23,17 @@ def middleNode( head: Optional[ListNode]) -> Optional[ListNode]:
     count = 0
     while faster.next:
 
-            count+=1
-            faster=faster.next
+        count += 1
+        faster = faster.next
     starting = 0
-    middle =0
-    middle=count/2
+    middle = 0
+    middle = count / 2
 
-    while starting<middle:
+    while starting < middle:
         start = start.next
-        starting+=1
+        starting += 1
     return start
+
 
 def hasCycle(self, head: Optional[ListNode]) -> bool:
     faster = head
@@ -36,27 +41,27 @@ def hasCycle(self, head: Optional[ListNode]) -> bool:
     if faster.next == slower:
         return True
     while faster.next.next:
-        faster=faster.next.next
+        faster = faster.next.next
         slower = slower.next
         if faster == slower:
             return True
     return False
 
 
-def insert(node,element):
+def insert(node, element):
     head = node
     temp = head
     while head:
         temp = head
         head = head.next
-    head= LinkedList(value=element)
-    temp.next=head
+    head = LinkedList(value=element)
+    temp.next = head
 
 
 def printList(linkedList):
     head = linkedList
     while head:
-        print(head.value,end=' ')
+        print(head.value, end=" ")
         head = head.next
 
 
@@ -66,10 +71,11 @@ def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
     current = head
     while current:
         if current.next and current.val == current.next.val:
-            current.next=current.next.next
+            current.next = current.next.next
         else:
-            current=current.next
+            current = current.next
     return head
+
 
 class Solution:
     def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
@@ -78,17 +84,16 @@ class Solution:
         current = head
         temp = head
         while current:
-            temp=current
-            if current.val==val:
+            temp = current
+            if current.val == val:
                 if current.next:
-                    temp.next=current.next
-                    current=current.next
+                    temp.next = current.next
+                    current = current.next
 
                 else:
-                    current=None
-            current=current.next
+                    current = None
+            current = current.next
         return head
-
 
 
 def removeDuplicatesFromLinkedList(linkedList):
@@ -99,56 +104,58 @@ def removeDuplicatesFromLinkedList(linkedList):
 
     while current:
         if current.next and current.value == current.next.value:
-            current.next=current.next.next
+            current.next = current.next.next
 
         else:
-            current=current.next
+            current = current.next
 
     return linkedList
+
 
 def reverseLinkedList(head):
     last = None
     current = head
     while current:
         temp = current.next
-        current.next=last
-        last=current
-        current=temp
+        current.next = last
+        last = current
+        current = temp
     head = last
     return head
 
 
-def mergeTwoLists( list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-  if not list1 and not list2:
-      return None
-  elif not list1:
-      return list2
-  elif not list2:
-      return list1
-  else:
-      if list1.val<list2.val:
-          list1.next=mergeTwoLists(list1.next,list2)
-          return list1
-      else:
-          list2.next=mergeTwoLists(list1,list2.next)
-          return list2
+def mergeTwoLists(
+    list1: Optional[ListNode], list2: Optional[ListNode]
+) -> Optional[ListNode]:
+    if not list1 and not list2:
+        return None
+    elif not list1:
+        return list2
+    elif not list2:
+        return list1
+    else:
+        if list1.val < list2.val:
+            list1.next = mergeTwoLists(list1.next, list2)
+            return list1
+        else:
+            list2.next = mergeTwoLists(list1, list2.next)
+            return list2
+
 
 def deleteNode(node):
-        """
-        :type node: ListNode
-        :rtype: void Do not return anything, modify node in-place instead.
-        """
+    """
+    :type node: ListNode
+    :rtype: void Do not return anything, modify node in-place instead.
+    """
 
-        temp = node.next
-        node.val=temp.val
-        node.next=temp.next
-        temp.next=None
-        del temp
-
-
+    temp = node.next
+    node.val = temp.val
+    node.next = temp.next
+    temp.next = None
+    del temp
 
 
-def rearrangeLinkedList(head:LinkedList, k)->LinkedList:
+def rearrangeLinkedList(head: LinkedList, k) -> LinkedList:
     # Write your code here.
     if head is None:
         return head
@@ -160,7 +167,7 @@ def rearrangeLinkedList(head:LinkedList, k)->LinkedList:
         nextNode = head.next
         head.next = None
 
-        if head.value<k:
+        if head.value < k:
             if not beforeStart:
                 beforeStart = head
                 beforeEnd = beforeStart
@@ -168,8 +175,7 @@ def rearrangeLinkedList(head:LinkedList, k)->LinkedList:
                 beforeEnd.next = head
                 beforeEnd = head
 
-
-        if head.value>k:
+        if head.value > k:
             if not afterStart:
                 afterStart = head
                 afterEnd = afterStart
@@ -184,26 +190,21 @@ def rearrangeLinkedList(head:LinkedList, k)->LinkedList:
     beforeEnd.next = afterStart
     return beforeStart
 
-def rearrangeLinkedListV2(node:LinkedList,k):
+
+def rearrangeLinkedListV2(node: LinkedList, k):
     head = node
     tail = node
     while node is not None:
         nextNode = node.next
-        if node.value<k:
-           node.next = head
-           head = node
+        if node.value < k:
+            node.next = head
+            head = node
         else:
             tail.next = node
             tail = node
-        node=nextNode
+        node = nextNode
     tail.next = None
     return head
-
-
-
-
-
-
 
 
 def removeKthNodeFromEnd(head, k):
@@ -211,11 +212,10 @@ def removeKthNodeFromEnd(head, k):
     length = 0
     current = head
     while current:
-        current=current.next
-        length+=1
-    to_remove=length-k
-    i=1
-
+        current = current.next
+        length += 1
+    to_remove = length - k
+    i = 1
 
     current = head
     temp = current
@@ -237,33 +237,33 @@ def removeKthNodeFromEnd(head, k):
         else:
             head = None
     return head
+
+
 def removeKthNodeFromEndV2(head, k):
     pass
 
+
 class Node:
-    def __init__(self, data):   # data -> value stored in node
+    def __init__(self, data):  # data -> value stored in node
         self.data = data
         self.next = None
 
 
-def countPair( head1, head2, n1, n2, x):
-        """
-        Counts the number of Pairs whose sum is equal to x
-        head1:  head of linkedList 1
-        head2:  head of linkedList 2
-        n1:  len of  linkedList 1
-        n2:  len of linkedList 1
-        x:   given sum
-        """
+def countPair(head1, head2, n1, n2, x):
+    """
+    Counts the number of Pairs whose sum is equal to x
+    head1:  head of linkedList 1
+    head2:  head of linkedList 2
+    n1:  len of  linkedList 1
+    n2:  len of linkedList 1
+    x:   given sum
+    """
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     l = LinkedList(1)
-    insert(l,2)
-    insert(l,3)
-
-
-
+    insert(l, 2)
+    insert(l, 3)
 
     printList(l)
     printList(l)
@@ -273,5 +273,5 @@ if __name__ == '__main__':
     mid = middleNode(l)
     printList(l)
     print(mid.value)
-    l = removeKthNodeFromEnd(l,1)
+    l = removeKthNodeFromEnd(l, 1)
     printList(l)

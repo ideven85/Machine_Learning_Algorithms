@@ -41,14 +41,20 @@ def test_all_phrases_1():
 def test_all_phrases_2():
     expected = {("pigs",), ("professors",)}
     result = all_phrases(test_grammar_1, "noun")
-    assert result == expected, f'{result=} != {expected=}'
+    assert result == expected, f"{result=} != {expected=}"
 
 
 def test_all_phrases_3():
     result = all_phrases(test_grammar_1, "sentence")
     expected = {
-        ("pigs", "fly",),
-        ("pigs", "think",),
+        (
+            "pigs",
+            "fly",
+        ),
+        (
+            "pigs",
+            "think",
+        ),
         ("professors", "fly"),
         ("professors", "think"),
         ("pigs", "never", "fly"),

@@ -6,7 +6,6 @@ You may test this function by running
 without quotes.
 """
 
-
 from debug_recursion import show_recursive_structure
 
 
@@ -23,26 +22,36 @@ def tree_depth(tree, depth):
     """
 
 
-t1 = {'value': 3,
-      'children': []}
+t1 = {"value": 3, "children": []}
 
-t2 = {'value': 9,
-      'children': [{'value': 2, 'children': []},
-                   {'value': 3, 'children': []},
-                   {'value': 7, 'children': []}]}
+t2 = {
+    "value": 9,
+    "children": [
+        {"value": 2, "children": []},
+        {"value": 3, "children": []},
+        {"value": 7, "children": []},
+    ],
+}
 
-t3 = {'value': 9,
-      'children': [{'value': 2, 'children': []},
-                   {'value': 3,
-                    'children': [{'value': 99, 'children': []},
-                                 {'value': 16,
-                                  'children': [{'value': 7, 'children': []}]},
-                                 {'value': 42, 'children': []}]}]}
+t3 = {
+    "value": 9,
+    "children": [
+        {"value": 2, "children": []},
+        {
+            "value": 3,
+            "children": [
+                {"value": 99, "children": []},
+                {"value": 16, "children": [{"value": 7, "children": []}]},
+                {"value": 42, "children": []},
+            ],
+        },
+    ],
+}
 
 
 def test_tree_depth():
     assert tree_depth(t1, -1) is None
-    assert tree_depth(t1, 0) ==  [3]
+    assert tree_depth(t1, 0) == [3]
     assert tree_depth(t1, 1) is None
     assert tree_depth(t2, 0) == [9]
     assert tree_depth(t2, 1) == [2, 3, 7]
@@ -52,7 +61,6 @@ def test_tree_depth():
     assert tree_depth(t3, 2) == [16, 42, 99]
     assert tree_depth(t3, 3) == [7]
     print("correct!")
-
 
 
 if __name__ == "__main__":

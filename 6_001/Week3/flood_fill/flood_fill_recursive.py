@@ -4,17 +4,24 @@ import time
 count = 0
 
 
-
-
 def get_neighbours(cell):
     row, col = cell
-    potential_neighbours = [(row - 1, col), (row + 1, col), (row, col - 1), (row, col + 1)]
-    return [(nr, nc) for (nr, nc) in potential_neighbours if 0 <= nr < get_height(image) and 0 <= nc < get_width(image)]
+    potential_neighbours = [
+        (row - 1, col),
+        (row + 1, col),
+        (row, col - 1),
+        (row, col + 1),
+    ]
+    return [
+        (nr, nc)
+        for (nr, nc) in potential_neighbours
+        if 0 <= nr < get_height(image) and 0 <= nc < get_width(image)
+    ]
 
 
 def flood_fill(image, original_location, new_color):
     original_color = get_pixel(image, *original_location)
-    #visited = {original_location}
+    # visited = {original_location}
     print(f"You clicked at row {original_location[0]} col {original_location[1]}")
     if original_color == new_color:
         return
@@ -27,8 +34,8 @@ def flood_fill(image, original_location, new_color):
         count += 1
         set_pixel(image, *location, new_color)
         for neighbor in get_neighbours(location):
-            if  get_pixel(image, *neighbor) == original_color:
-                #visited.add(neighbor)
+            if get_pixel(image, *neighbor) == original_color:
+                # visited.add(neighbor)
                 fill_from(neighbor)
 
     fill_from(original_location)

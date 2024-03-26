@@ -9,7 +9,8 @@ by running `pytest test.py -v -x` (no quotes)
 
 from debug_recursion import show_recursive_structure
 
-#@show_recursive_structure
+
+# @show_recursive_structure
 def all_phrases(grammar, root):
     """
     Using rule lists in the grammar dict, expand root into all possible phrases.
@@ -19,7 +20,6 @@ def all_phrases(grammar, root):
     pass
 
 
-
 if __name__ == "__main__":
     # some small example test cases
     grammar = {
@@ -27,36 +27,41 @@ if __name__ == "__main__":
         "sentence": [["noun", "verb"], ["noun", "never", "verb"]],
         "noun": [["pigs"], ["professors"]],
         "verb": [["fly"], ["think"]],
-        "greeting": [["hi", "noun"]]
+        "greeting": [["hi", "noun"]],
     }
 
     # example
     expected = {("pigs",)}
     result = all_phrases(grammar, "pigs")
-    assert result == expected, f'Got {result=} but {expected=}'
+    assert result == expected, f"Got {result=} but {expected=}"
 
     # Q1
     expected = "TODO -- Insert expected result here"
     result = all_phrases(grammar, "greeting")
-    assert result == expected, f'Got {result=} but {expected=}'
+    assert result == expected, f"Got {result=} but {expected=}"
 
     expected = {
-                ("pigs", "fly"), ("pigs", "think"),
-                ("professors", "fly"), ("professors", "think"),
-                ("pigs", "never", "fly"), ("pigs", "never", "think"),
-                ("professors", "never", "fly"), ("professors", "never", "think"),
+        ("pigs", "fly"),
+        ("pigs", "think"),
+        ("professors", "fly"),
+        ("professors", "think"),
+        ("pigs", "never", "fly"),
+        ("pigs", "never", "think"),
+        ("professors", "never", "fly"),
+        ("professors", "never", "think"),
     }
     result = all_phrases(grammar, "sentence")
-    assert result == expected, f'Got {result=} but {expected=}'
+    assert result == expected, f"Got {result=} but {expected=}"
 
     expected = {
-                ("pigs", "fly", "?"), ("pigs", "think", "?"),
-                ("professors", "fly", "?"), ("professors", "think", "?"),
-                ("pigs", "never", "fly", "?"), ("pigs", "never", "think", "?"),
-                ("professors", "never", "fly", "?"), ("professors", "never", "think", "?"),
+        ("pigs", "fly", "?"),
+        ("pigs", "think", "?"),
+        ("professors", "fly", "?"),
+        ("professors", "think", "?"),
+        ("pigs", "never", "fly", "?"),
+        ("pigs", "never", "think", "?"),
+        ("professors", "never", "fly", "?"),
+        ("professors", "never", "think", "?"),
     }
     result = all_phrases(grammar, "question")
-    assert result == expected, f'Got {result=} but {expected=}'
-
-
-
+    assert result == expected, f"Got {result=} but {expected=}"

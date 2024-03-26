@@ -52,7 +52,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    graph = [[1,2],[3],[3],[]]
+    graph = [[1, 2], [3], [3], []]
     allpaths = Solution()
     print(allpaths.allPathsSourceTarget(graph=graph))
     print(allpaths.allPathsSourceTargetV2(graph))

@@ -4,7 +4,7 @@ from typing import get_args, get_origin, get_type_hints, Generic, Protocol, Type
 
 
 class Message:
-    def __init__(self,message,priority):
+    def __init__(self, message, priority):
         self.message = message
         self.priority = priority
 
@@ -12,4 +12,4 @@ class Message:
         return self.message + " has priority " + str(self.priority)
 
     def __cmp__(self, other):
-        return self.priority<other.priority
+        return self.priority < other.priority

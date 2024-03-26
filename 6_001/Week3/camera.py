@@ -69,8 +69,6 @@ class VideoCapturePlayer:
             path = "deven.jpg"
             pygame.image.save(self.snapshot, path)
 
-
-
         if 0:
             self.snapshot = self.camera.get_image(self.snapshot)
             # self.snapshot = self.camera.get_image()

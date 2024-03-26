@@ -1,6 +1,7 @@
 import heapq
 from typing import List
 
+
 class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
         if not points or len(points) == 0:
@@ -31,6 +32,7 @@ class Solution:
                 count -= 1
         return result
 
+
 class Edge:
     def __init__(self, point1, point2, cost):
         self.point1 = point1
@@ -39,6 +41,7 @@ class Edge:
 
     def __lt__(self, other):
         return self.cost < other.cost
+
 
 class UnionFind:
     def __init__(self, size):
@@ -66,8 +69,9 @@ class UnionFind:
     def connected(self, x, y):
         return self.find(x) == self.find(y)
 
+
 if __name__ == "__main__":
-    points = [[0,0],[2,2],[3,10],[5,2],[7,0]]
+    points = [[0, 0], [2, 2], [3, 10], [5, 2], [7, 0]]
     solution = Solution()
     print(f"points = {points}")
     print(f"Minimum Cost to Connect Points = {solution.minCostConnectPoints(points)}")

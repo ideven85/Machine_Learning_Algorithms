@@ -10,7 +10,6 @@ import pytest
 TEST_DIRECTORY = os.path.dirname(__file__)
 
 
-@pytest.fixture
 def setup_module(module):
     """
     This function loads the various databases.  It will be run once every time
@@ -23,6 +22,10 @@ def setup_module(module):
             setattr(module, f"raw_db_{i}", raw)
             setattr(module, f"db_{i}", lab.transform_data(raw))
             setattr(module, f"fset_{i}", {frozenset(i[:-1]) for i in raw})
+
+
+with open("resources/small.pickle", "rb") as f:
+    db_small = pickle.load(f)
 
 
 def test_acted_together_01():
@@ -57,8 +60,8 @@ def _run_pickled_together_test(n):
         tests = pickle.load(f)
     for a1, a2, v in tests:
         res = lab.acted_together(db_large, a1, a2)
-        assert (
-            res == v and isinstance(res, bool)
+        assert res == v and isinstance(
+            res, bool
         ), f"expected {bool(v)} for {a1} and {a2} acting together, got {res}"
 
 
@@ -70,12 +73,42 @@ def test_acted_together_additional(test_num):
 def test_bacon_number_01():
     # Actors with Bacon number of 2
     n = 2
-    expected = {1640, 1811, 2115, 2283, 2561, 2878, 3085, 4025, 4252, 4765,
-                6541, 9827, 11317, 14104, 16927, 16935, 19225, 33668, 66785,
-                90659, 183201, 550521, 1059002, 1059003, 1059004, 1059005,
-                1059006, 1059007, 1232763}
+    expected = {
+        1640,
+        1811,
+        2115,
+        2283,
+        2561,
+        2878,
+        3085,
+        4025,
+        4252,
+        4765,
+        6541,
+        9827,
+        11317,
+        14104,
+        16927,
+        16935,
+        19225,
+        33668,
+        66785,
+        90659,
+        183201,
+        550521,
+        1059002,
+        1059003,
+        1059004,
+        1059005,
+        1059006,
+        1059007,
+        1232763,
+    }
+    print(len(expected))
 
     first_result = lab.actors_with_bacon_number(db_small, n)
+    print(len(first_result))
+
     assert isinstance(first_result, set)
     assert first_result == expected
 
@@ -87,15 +120,73 @@ def test_bacon_number_01():
 def test_bacon_number_02():
     # Actors with Bacon number of 3
     n = 3
-    expected = {52, 1004, 1248, 2231, 2884, 4887, 8979, 10500, 12521,
-                14792, 14886, 15412, 16937, 17488, 19119, 19207, 19363,
-                20853, 25972, 27440, 37252, 37612, 38351, 44712, 46866,
-                46867, 48576, 60062, 75429, 83390, 85096, 93138, 94976,
-                109625, 113777, 122599, 126471, 136921, 141458, 141459,
-                141460, 141461, 141495, 146634, 168638, 314092, 349956,
-                558335, 572598, 572599, 572600, 572601, 572602, 572603,
-                583590, 931399, 933600, 1086299, 1086300, 1168416, 1184797,
-                1190297, 1190298, 1190299, 1190300}
+    expected = {
+        52,
+        1004,
+        1248,
+        2231,
+        2884,
+        4887,
+        8979,
+        10500,
+        12521,
+        14792,
+        14886,
+        15412,
+        16937,
+        17488,
+        19119,
+        19207,
+        19363,
+        20853,
+        25972,
+        27440,
+        37252,
+        37612,
+        38351,
+        44712,
+        46866,
+        46867,
+        48576,
+        60062,
+        75429,
+        83390,
+        85096,
+        93138,
+        94976,
+        109625,
+        113777,
+        122599,
+        126471,
+        136921,
+        141458,
+        141459,
+        141460,
+        141461,
+        141495,
+        146634,
+        168638,
+        314092,
+        349956,
+        558335,
+        572598,
+        572599,
+        572600,
+        572601,
+        572602,
+        572603,
+        583590,
+        931399,
+        933600,
+        1086299,
+        1086300,
+        1168416,
+        1184797,
+        1190297,
+        1190298,
+        1190299,
+        1190300,
+    }
 
     first_result = lab.actors_with_bacon_number(db_small, n)
     assert isinstance(first_result, set)
@@ -120,8 +211,22 @@ def test_bacon_number_04():
     # random graph, Bacon number with no people
     N = random.randint(5, 10)
     k = random.randint(4, 7)
-    assert len(lab.actors_with_bacon_number(lab.transform_data(make_bacon_tree(N, k)), 10**20)) == 0
-    assert len(lab.actors_with_bacon_number(lab.transform_data(make_bacon_tree(N, k)), 10**20)) == 0
+    assert (
+        len(
+            lab.actors_with_bacon_number(
+                lab.transform_data(make_bacon_tree(N, k)), 10**20
+            )
+        )
+        == 0
+    )
+    assert (
+        len(
+            lab.actors_with_bacon_number(
+                lab.transform_data(make_bacon_tree(N, k)), 10**20
+            )
+        )
+        == 0
+    )
 
 
 def test_bacon_path_01():
@@ -339,15 +444,15 @@ def random_number_list(L, i=1):
 
 
 def check_valid_path(f, p, s, e, l):
-    '''
+    """
     f : a set of frozenset actor pairs present in the data base
     p : result path found using lab function
     s : start actor
     e : end actor
     l : length of expected path - 1
-    '''
+    """
     lp = len(p) if p is not None else None
-    assert lp == l+1, f"expected a path of length {l+1} between {s} and {e}, got {lp}"
+    assert lp == l + 1, f"expected a path of length {l+1} between {s} and {e}, got {lp}"
     assert s is None or p[0] == s, f"path does not start with {s}"
     assert e is None or p[-1] == e, f"path does not end with {e}"
     assert all(frozenset(i) in f for i in zip(p, p[1:])), f"invalid path returned"
@@ -387,4 +492,6 @@ def make_bacon_tree(L, n=10):
         id_set += 1
         n -= 1
     return [(i, j, 0) for i, j in out]
+
+
 setup_module(test_bacon_number_01())
