@@ -49,7 +49,7 @@ def make_new_game(level_description):
     for row in range(rows):
         for col in range(columns):
             if level_description[row][col] and level_description[row][col] == ['player']:
-                player_position = [row, col]
+                player_position = (row, col)
                 print(player_position[0])
                 print(player_position[1])
                 level_description[row][col]='player'
@@ -67,12 +67,12 @@ def victory_check(game):
     pass
 
 
-def is_valid_move(game):
+def is_valid_move(game,direction):
     global player_position
-    position  = player_position
+    position  = (player_position[0]+direction[0],player_position[1]+direction[1])
     height = len(game[0])
     width = len(game)
-    if position[0] <= 0 or position[1] <= 0 or position[1] >= height-1 or position[0] >= width-1 or game[position[0]][position[1]] == 'wall' :
+    if position[0] <= 0 or position[1] <= 0 or position[1] >= height-1 or position[0] >= width-1 or game[position[0]][position[1]] == ['wall'] :
         return False
     return True
 def step_game(game, direction):
@@ -88,11 +88,11 @@ def step_game(game, direction):
     """
 
     if is_valid_move(game, direction_vector[direction]):
-        game[player_position[0]][player_position[1]] = ''
+        game[player_position[0]][player_position[1]] = []
         player_position[0]=player_position[0]+direction_vector[direction][0]
         player_position[1]=player_position[1]+direction_vector[direction][1]
-        game[player_position[0]][player_position[1]] = 'player'
-        return game
+        game[player_position[0]][player_position[1]]='player'
+        return make_new_game(game)
 
     #         if direction == 'up':
             #

@@ -20,41 +20,40 @@ def find_blank(board):
 
 
 def goal_test(state):
-    """
+    '''
     Helper function for solve puzzle.
-    Make a goal_test function that takes in a state from solve_puzzle and
+    Make a goal_test function that takes in a state from solve_puzzle and 
     returns True if the state represents a solved puzzle, False otherwise
-    """
+    '''
     return False
-
 
 def get_neighbors(state):
     """
     Helper function for solve_puzzle.
     Given a state from solve_puzzle, return a list of neighbor states.
     """
-    return []
-
+    return [] 
+    
 
 def solve_puzzle(board):
     """
     Given a puzzle board, return the boards needed to solve the puzzle
     move by move.
 
-    Parameters:
+    Parameters: 
         board: a list of row lists containing the board values.
-
+    
     Returns:
         A list of board states (either in tuple or list form) representing each
-        move needed to solve the puzzle. Returns None if there is no way to
+        move needed to solve the puzzle. Returns None if there is no way to 
         solve the puzzle from given start board.
     """
-    # start =
+    # start = 
     # how will you represent the state?
 
     if goal_test(start):
-        return  # what should we return?
-
+        return # what should we return?
+    
     agenda = []  # what will the agenda store?
     visited = set()
 
@@ -65,7 +64,7 @@ def solve_puzzle(board):
         for neighbor in neighbors_function(current_state):
             if neighbor not in visited:
                 if goal_test(neighbor):
-                    return  # return a list of board states
+                    return # return a list of board states
 
                 # new_agenda = ?
                 agenda.append(new_agenda)
@@ -116,12 +115,12 @@ if __name__ == "__main__":
     puzzle = ((1, 2, 8, 3), (5, 6, 7, 4), (13, 9, 12, None), (14, 11, 10, 15))
     puzzle_blank = (2, 3)
     puzzle2 = ((1, 2, 3, 4), (5, 6, 7, 8), (9, 10, 11, 12), (None, 13, 14, 15))
-    puzzle_blank2 = (3, 0)
+    puzzle_blank2 = (3,0)
     initial_board = ((1, 2, 3, 4), (5, 6, 7, 8), (9, 10, 11, 12), (13, 14, 15, None))
     initial_blank = (3, 3)
     print_board(puzzle)
     print("solving puzzle...")
-    path = []  # solve_puzzle(puzzle)
+    path = []#solve_puzzle(puzzle)
     for i, pboard in enumerate(path):
         print(f"Move {i}")
         print_board(pboard)
