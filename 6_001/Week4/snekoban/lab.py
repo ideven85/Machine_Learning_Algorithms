@@ -35,7 +35,7 @@ def make_new_game(level_description):
     The exact choice of representation is up to you; but note that what you
     return will be used as input to the other functions.
     """
-    raise NotImplementedError
+    return level_description
 
 
 def victory_check(game):
@@ -44,7 +44,7 @@ def victory_check(game):
     return a Boolean: True if the given game satisfies the victory condition,
     and False otherwise.
     """
-    raise NotImplementedError
+    pass
 
 
 def step_game(game, direction):
@@ -57,7 +57,7 @@ def step_game(game, direction):
 
     This function should not mutate its input.
     """
-    raise NotImplementedError
+    pass
 
 
 def dump_game(game):
@@ -71,7 +71,7 @@ def dump_game(game):
     print out the current state of your game for testing and debugging on your
     own.
     """
-    raise NotImplementedError
+    return make_new_game(game)
 
 
 def solve_puzzle(game):

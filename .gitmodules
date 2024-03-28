@@ -11,3 +11,6 @@
 [submodule "fastbook"]
 	path = Machine_Learning/fastbook
 	url = https://github.com/ideven85/fastbook
+[submodule "handson-ml3"]
+	path = handson-ml3
+	url = https://github.com/ageron/handson-ml3

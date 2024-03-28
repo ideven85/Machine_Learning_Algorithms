@@ -145,7 +145,7 @@ function init(){
     $("#betterTwo").immybox({ choices: actor_choices });
     $("#findingNemo").immybox({ choices: actor_choices });
   }
-  var args = { "path": "resources/small_names.pickle"}
+  var args = { "path": "./resources/small_names.pickle"}
   invoke_rpc( "/load_pickle", args, 0, names_callback);
 
   d3.json("resources/ui_graph_data.json", function (error, graph) {

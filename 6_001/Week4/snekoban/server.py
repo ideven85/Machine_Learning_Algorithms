@@ -25,7 +25,6 @@ character_map = {
     "w": "wall",
 }
 
-
 def parse_post(environ):
     try:
         body_size = int(environ.get("CONTENT_LENGTH", 0))
@@ -43,11 +42,11 @@ def new_game(params):
     global CURRENT_GAME
     print("[reloading lab.py in case you changed something]")
     importlib.reload(lab)
-    if "raw" in params:
-        level = json.loads(params["raw"])
+    if 'raw' in params:
+        level = json.loads(params['raw'])
     else:
         level = params["level"]
-        with open(os.path.join(LOCATION, "puzzles", level)) as f:
+        with open(os.path.join(LOCATION, 'puzzles', level)) as f:
             level = json.load(f)
             if isinstance(level, dict) and "input" in level:
                 level = level["input"]
@@ -115,7 +114,7 @@ def application(environ, start_response):
 
         test_fname = os.path.join(LOCATION, "ui", static_file)
         if not os.path.exists(test_fname) and test_fname.endswith(".gif"):
-            print("UNKNOWN WORD", test_fname)
+            print('UNKNOWN WORD', test_fname)
             test_fname = os.path.join(LOCATION, "ui", "_unknown_word.gif")
 
         try:

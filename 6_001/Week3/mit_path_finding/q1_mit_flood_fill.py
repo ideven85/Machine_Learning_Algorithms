@@ -8,6 +8,8 @@ from 36?
 """
 
 
+
+
 def flood_fill(image, location, new_color):
     """
     Given an image, replace the same-colored region around a given location
@@ -23,32 +25,24 @@ def flood_fill(image, location, new_color):
     """
     print(f"You clicked at row {location[0]} col {location[1]}")
     original_color = get_pixel(image, *location)
-
     def get_neighbors(cell):
         row, col = cell
-        neighbors = [(row + 1, col), (row - 1, col), (row, col + 1), (row, col - 1)]
-        return [
-            (r, c)
-            for (r, c) in neighbors
-            if 0 <= r < get_height(image) and 0 <= c < get_width(image)
-        ]
+        neighbors = [(row+1, col), (row-1, col), (row, col+1), (row, col-1)]
+        return [(r, c) for (r, c) in neighbors if 0 <= r < get_height(image) and 0 <= c < get_width(image)]
 
     def close(color1, color2):
-        return sum(abs(c1 - c2) for c1, c2 in zip(color1, color2)) <= 25
-
+        return sum(abs(c1-c2) for c1, c2 in zip(color1, color2)) <= 25
     to_color = [location]
     visited = {location}
-    # print("before loop")
+    #print("before loop")
     while to_color:
         this_cell = to_color.pop(0)
         set_pixel(image, *this_cell, new_color)
         for neighbor in get_neighbors(this_cell):
-            if neighbor not in visited and close(
-                get_pixel(image, *neighbor), original_color
-            ):
+            if neighbor not in visited and close(get_pixel(image, *neighbor), original_color):
                 to_color.append(neighbor)
                 visited.add(neighbor)
-    # print("after loop")
+    #print("after loop")
 
 
 def find_path(image, start_location, goal_color):
@@ -66,37 +60,27 @@ def find_path(image, start_location, goal_color):
     """
 
     path_color = get_pixel(image, *start_location)
-    print(
-        f"You clicked at row {start_location[0]} col {start_location[1]}, {path_color}"
-    )
-
+    print(f"You clicked at row {start_location[0]} col {start_location[1]}, {path_color}")
     def get_neighbors(cell):
         row, col = cell
-        neighbors = [(row + 1, col), (row - 1, col), (row, col + 1), (row, col - 1)]
-        return [
-            (r, c)
-            for (r, c) in neighbors
-            if 0 <= r < get_height(image) and 0 <= c < get_width(image)
-        ]
+        neighbors = [(row+1, col), (row-1, col), (row, col+1), (row, col-1)]
+        return [(r, c) for (r, c) in neighbors if 0 <= r < get_height(image) and 0 <= c < get_width(image)]
 
     paths = [(start_location,)]
     visited = {start_location}
-    # print("before loop")
+    #print("before loop")
     final_path = None
     while paths:
         this_path = paths.pop(0)
         if get_pixel(image, *this_path[-1]) == goal_color:
             print("found!", this_path)
             final_path = this_path
-            break  # found solution
+            break # found solution
 
         for neighbor in get_neighbors(this_path[-1]):
-            if neighbor not in visited and get_pixel(image, *neighbor) in {
-                path_color,
-                goal_color,
-            }:
+            if neighbor not in visited and get_pixel(image, *neighbor) in {path_color, goal_color}:
                 paths.append(this_path + (neighbor,))
-                # print(paths[-1])
+                #print(paths[-1])
                 visited.add(neighbor)
     print(len(paths))
     if final_path:
@@ -105,7 +89,6 @@ def find_path(image, start_location, goal_color):
             set_pixel(image, *cell, goal_color)
     else:
         print("No path found, explored", len(visited))
-
 
 ##### IMAGE REPRESENTATION WITH SIMILAR ABSTRACTIONS TO LAB 1 AND 2
 
@@ -131,8 +114,8 @@ def set_pixel(image, row, col, color):
             image.set_at((loc[1] + i, loc[0] + j), c)
     ## comment out the two lines below to avoid redrawing the image every time
     ## we set a pixel
-    # screen.blit(image, (0, 0))
-    # pygame.display.flip()
+    #screen.blit(image, (0, 0))
+    #pygame.display.flip()
 
 
 ##### USER INTERFACE CODE
@@ -174,8 +157,8 @@ COLOR_NAMES = {
     pygame.K_e: "grey",
 }
 
-SCALE = 7  # 7
-IMAGE = "large_maze.png"
+SCALE = 1 #7
+IMAGE = "mit.png"
 
 pygame.init()
 image = pygame.image.load(IMAGE)
@@ -203,6 +186,6 @@ while True:
                 sys.exit(0)
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             flood_fill(image, (event.pos[1] // SCALE, event.pos[0] // SCALE), cur_color)
-            find_path(image, (event.pos[1] // SCALE, event.pos[0] // SCALE), cur_color)
+            #find_path(image,(event.pos[1] // SCALE, event.pos[0] // SCALE), cur_color )
             screen.blit(image, (0, 0))
             pygame.display.flip()

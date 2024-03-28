@@ -6,15 +6,13 @@ functions below, discuss:
 - is there anything potentially buggy in these solutions?
 """
 
-
 def bacon_path(transformed_data, actor_id):
     """
     bacon path
     """
     agenda = [(4724,)]
     visited = [(4724,)]
-    ...  # 20 lines of path-finding code from reading, using actor_id as the goal
-
+    ... # 20 lines of path-finding code from reading, using actor_id as the goal
 
 def actor_to_actor_path(transformed_data, actor_id_1, actor_id_2):
     """
@@ -23,8 +21,7 @@ def actor_to_actor_path(transformed_data, actor_id_1, actor_id_2):
     """
     agenda = [(actor_id_1,)]
     visited = [(actor_id_1,)]
-    ...  # same 20 lines of path-finding code from reading, using actor_id_2 as the goal
-
+    ... # same 20 lines of path-finding code from reading, using actor_id_2 as the goal
 
 def actor_path(transformed_data, actor_id_1, goal_test_function):
     """
@@ -32,4 +29,6 @@ def actor_path(transformed_data, actor_id_1, goal_test_function):
     return a shortest path of actors starting from actor 1 until reaching an actor who
     satisfies goal_test_function (which takes an actor and returns a truthy value).
     """
-    ...  # path-finding code using actor_id_1 as start and goal_test_function(actor) as the stopping criterion
+    ... # path-finding code using actor_id_1 as start and goal_test_function(actor) as the stopping criterion
+
+
