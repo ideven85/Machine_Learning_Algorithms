@@ -5,6 +5,7 @@ Snekoban Game
 
 import json
 import typing
+from collections import defaultdict
 
 # NO ADDITIONAL IMPORTS!
 
@@ -16,8 +17,9 @@ direction_vector = {
     "right": (0, +1),
 }
 
-
+player_position = None
 def make_new_game(level_description):
+    global player_position
     """
     Given a description of a game state, create and return a game
     representation of your choice.
@@ -35,6 +37,24 @@ def make_new_game(level_description):
     The exact choice of representation is up to you; but note that what you
     return will be used as input to the other functions.
     """
+    #print(level_description)
+    if player_position:
+        level_description[player_position[0]][player_position[1]] = 'player'
+        return level_description
+    game = dict()
+    k = len(level_description)*len(level_description[0])
+    o=0
+    rows = len(level_description[0])
+    columns = len(level_description)
+    for row in range(rows):
+        for col in range(columns):
+            if level_description[row][col] and level_description[row][col] == ['player']:
+                player_position = [row, col]
+                print(player_position[0])
+                print(player_position[1])
+                level_description[row][col]='player'
+
+    print(game)
     return level_description
 
 
@@ -47,7 +67,16 @@ def victory_check(game):
     pass
 
 
+def is_valid_move(game):
+    global player_position
+    position  = player_position
+    height = len(game[0])
+    width = len(game)
+    if position[0] <= 0 or position[1] <= 0 or position[1] >= height-1 or position[0] >= width-1 or game[position[0]][position[1]] == 'wall' :
+        return False
+    return True
 def step_game(game, direction):
+    global player_position
     """
     Given a game representation (of the form returned from make_new_game),
     return a new game representation (of that same form), representing the
@@ -57,10 +86,53 @@ def step_game(game, direction):
 
     This function should not mutate its input.
     """
-    pass
+
+    if is_valid_move(game, direction_vector[direction]):
+        game[player_position[0]][player_position[1]] = ''
+        player_position[0]=player_position[0]+direction_vector[direction][0]
+        player_position[1]=player_position[1]+direction_vector[direction][1]
+        game[player_position[0]][player_position[1]] = 'player'
+        return game
+
+    #         if direction == 'up':
+            #
+            #             if is_valid_move(game,game[i][j+1],position):
+            #                 game[i][j]=''
+            #                 game[i+1][j]='player'
+            #
+            #
+            #         elif direction == 'down':
+            #
+            #                if is_valid_move(game,game[i][j-1],position):
+            #                    game[i][j]=''
+            #                    game[i][j-1]='player'
+            #                    flag = True
+            #                    break
+            #
+            #         elif direction == 'left':
+            #
+            #                if is_valid_move(game,game[i][j-1],position):
+            #                    game[i][j]=''
+            #                    game[i-1][j]='player'
+            #
+            #
+            #         elif direction == 'right':
+            #             if is_valid_move(game, game[i][j], position):
+            #                 game[i][j] = ''
+            #                 game[i+1][j] = 'player'
+            #     flag = True
+            #     break
+            # if flag:
+            #     break
+            #
+
+    return make_new_game(game)
+
+
 
 
 def dump_game(game):
+    global player_position
     """
     Given a game representation (of the form returned from make_new_game),
     convert it back into a level description that would be a suitable input to
@@ -71,7 +143,12 @@ def dump_game(game):
     print out the current state of your game for testing and debugging on your
     own.
     """
-    return make_new_game(game)
+    game = make_new_game(game)
+    row=player_position[0]
+    column=player_position[1]
+    game[row][column]='player'
+    return game
+
 
 
 def solve_puzzle(game):

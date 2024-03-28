@@ -60,6 +60,7 @@ def new_game(params):
 def step_game(params):
     global CURRENT_GAME
     direction = params["direction"]
+    print(direction)
     CURRENT_GAME = lab.step_game(CURRENT_GAME, direction)
     return {
         "board": lab.dump_game(CURRENT_GAME),

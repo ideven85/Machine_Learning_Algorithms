@@ -26,7 +26,7 @@ def compare_boards(your_board, expected_board):
             return  f"row {rn} had wrong size"
         for cn, (your_cell, expected_cell) in enumerate(zip(your_row, expected_row)):
             if sorted(your_cell) != sorted(expected_cell):
-                return f"objects at location ({rn},{cn}) don't match"
+                return f"objects at location ({rn},{cn},{your_cell},{sorted(expected_cell)}) don't match"
 
 
 def compare_simulation(filename):
