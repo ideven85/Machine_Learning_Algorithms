@@ -1,50 +1,46 @@
+#!/usr/bin/env python3
+
 """
 6.101 Lab 1:
 Image Processing
 """
 
-#!/usr/bin/env python3
-
 import math
 
+# 10 hours per lab
 from PIL import Image
 
 # NO ADDITIONAL IMPORTS ALLOWED!
 
 
 def get_pixel(image, row, col):
-    return image["pixels"][col, row]
+    return image["pixels"][row]
 
 
 def set_pixel(image, row, col, color):
-    image["pixels"][row, col] = color
 
-
-def transform_pixels(
-    image,
-):  # height means number of columns and width means number of row
-    # My brain is sleeping apparently it stops working when not doing Java
-    height, width, pixels = image["height"], image["width"], image["pixels"]
-    pixel2d = []
-    for row in range(height):
-        for col in range(width):
-            pixel2d.append(pixels[row + col])
+    image["pixels"][col + row] = color
 
 
 def apply_per_pixel(image, func):
     result = {
         "height": image["height"],
-        "widht": image["width"],
-        "pixels": [],
+        "width": image["width"],
+        "pixels": image["pixels"],
     }
-    for col in range(image["height"]):
-        for row in range(image["width"]):
-            color = get_pixel(image, col, row)
-            new_color = func(color)
-        set_pixel(result, row, col, new_color)
+
+    # for col in range(image["height"]):
+    #     for row in range(image["width"]):
+    #         color = get_pixel(image, col, row)
+    #         #print(color)
+    #         new_color = func(color)
+    #         result["pixels"]
+    for i in range(len(image["pixels"])):
+        result["pixels"][i] = 256 - result["pixels"][i]
     return result
 
 
+# Correct this
 def inverted(image):
     return apply_per_pixel(image, lambda color: 256 - color)
 
@@ -159,4 +155,7 @@ if __name__ == "__main__":
     # code in this block will only be run when you explicitly run your script,
     # and not when the tests are being run.  this is a good place for
     # generating images, etc.
-    pass
+    blue_gill = load_greyscale_image("test_images/bluegill.png")
+
+    chess_inverted = inverted(blue_gill)
+    save_greyscale_image(chess_inverted, "bluegill_inverted.png")

@@ -196,7 +196,7 @@ while True:
                 pygame.quit()
                 sys.exit(0)
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-            find_path(image, (event.pos[1] // SCALE, event.pos[0] // SCALE), "green")
+            find_path(image, (event.pos[1] // SCALE, event.pos[0] // SCALE), cur_color)
 
             screen.blit(image, (0, 0))
             pygame.display.flip()

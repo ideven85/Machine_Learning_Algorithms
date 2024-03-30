@@ -385,9 +385,3 @@ def test_edges_images(fname):
 def test_edges_centered_pixel():
     # REPLACE THIS with your test case from section 6
     assert False
-
-
-if __name__ == "__main__":
-    import sys
-
-    res = pytest.main(["-k", " or ".join(sys.argv[1:]), "-v", __file__])

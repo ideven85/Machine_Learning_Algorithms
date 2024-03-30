@@ -42,6 +42,7 @@ def parse_post(environ):
 
 
 def ls(params):
+
     path = os.path.join(cur_dir, params.get("path"))
     return [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
 
@@ -74,6 +75,8 @@ special_routes = {
 def application(environ, start_response):
     path = environ.get("PATH_INFO", "/") or "/"
     params = parse_post(environ)
+    for key,value in environ.items():
+        print(key,value)
 
     print(f"requested {path}, params: {params}")
 

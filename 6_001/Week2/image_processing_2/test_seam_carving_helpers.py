@@ -9,7 +9,7 @@ import collections
 
 import pytest
 
-from .test import (
+from test import (
     object_hash,
     compare_greyscale_images,
     compare_color_images,

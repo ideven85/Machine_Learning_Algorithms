@@ -7,7 +7,7 @@ import csv
 
 # no additional imports allowed
 
-
+#database = csv.reader('./resources/tiny_transactions.csv')
 def transform_list_pairs(database):
     """
     Transforms the database into a more concise format that only includes
@@ -27,8 +27,13 @@ def transform_list_pairs(database):
         A list where each element is a list of the form
             [origin_state (str), destination_state (str)].
     """
-    raise NotImplementedError
-
+    output = []
+    print(len(database))
+    for el in database:
+        output.append([el[0],el[1]])
+    print(output)
+    print(len(output))
+    return output
 
 def transform_set_pairs(database):
     """
@@ -49,7 +54,10 @@ def transform_set_pairs(database):
         A set where each element is a tuple of the form
             (origin_state (str), destination_state (str)).
     """
-    raise NotImplementedError
+    output = set()
+    for origin_state, destination_state in database:
+        output.add((origin_state, destination_state))
+    return output
 
 
 def transform_dict_list(database):
@@ -74,7 +82,10 @@ def transform_dict_list(database):
         list of strings of all destination states.
             {origin_state (str) : [destination_state (str), ...]}
     """
-    raise NotImplementedError
+    output = dict(list)
+    for origin_state,destination_state,*rest in database:
+        output[origin_state]=[destination_state,*rest]
+    return output
 
 
 def transform_dict_set(database):

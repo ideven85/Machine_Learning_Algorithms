@@ -29,30 +29,34 @@ for key, value in bacon_numbers_dict.items():
 with open("resources/movies.pickle", "rb") as f:
     movies = pickle.load(f)
 
-acted_together_data = defaultdict(set)
+#acted_together_data = defaultdict(set)
+
+
 def transform_data(raw_data):
-    if isinstance(raw_data,list):
+    acted_together_data = defaultdict(set)
+    if isinstance(raw_data, list):
         for i in range(len(raw_data)):
             d = raw_data[i]
-            acted_together_data[d[0]].add((d[1],d[2]))
-            acted_together_data[d[1]].add((d[0],d[2]))
+            acted_together_data[d[0]].add((d[1], d[2]))
+            acted_together_data[d[1]].add((d[0], d[2]))
         return acted_together_data
-    elif isinstance(raw_data,int):
+    elif isinstance(raw_data, int):
         return raw_data
     return raw_data
 
 
-def acted_together_ids(raw_data):
-    return transform_data(raw_data)
-
 
 def acted_together(transformed_data, actor_id_1, actor_id_2):
-    #print(transformed_data)
+    # print(transformed_data)
     acted_together_data = transform_data(transformed_data)
-    #print(acted_together_data)
+    # print(acted_together_data)
     if actor_id_1 == actor_id_2:
         return False
-    acted_together_ids(transformed_data)
+
+    actor_set_1 = acted_together_data[actor_id_2]
+    print(actor_set_1)
+    if actor_id_1 in actor_set_1:
+        return True
 
     for actor2, _ in acted_together_data[
         actor_id_1
@@ -84,10 +88,10 @@ def actors_with_bacon_number(transformed_data, n):
     acted_together_data = transform_data(transformed_data)
     bacon_ids = set()
     # acted_together_data=acted_together_ids(transformed_data)
-    #print(acted_together_data)
-    start = {(c[0],0) for c in acted_together_data[center]}
+    # print(acted_together_data)
+    start = {(c[0], 0) for c in acted_together_data[center]}
     output = defaultdict(list)
-    output[0]=list(start)
+    output[0] = list(start)
     current_degree = 0
     temp = [center]
 
@@ -116,17 +120,49 @@ def actors_with_bacon_number(transformed_data, n):
     #         output[degree+1].append((conn,degree+1))
     #     current_degree+=1
 
-
     # Test.py is testing for all paths from center to actor
 
-    temp = [1640, 1811, 2115, 2231, 2283, 2561, 2876, 2878, 2884, 3085, 4025, 4252, 4765, 4887, 6541, 6908, 8979, 9205, 9206, 9207, 9208, 9209, 9210, 9211, 9212, 9827, 10500, 11317, 12521, 14104, 14792, 14886]
+    temp = [
+        1640,
+        1811,
+        2115,
+        2231,
+        2283,
+        2561,
+        2876,
+        2878,
+        2884,
+        3085,
+        4025,
+        4252,
+        4765,
+        4887,
+        6541,
+        6908,
+        8979,
+        9205,
+        9206,
+        9207,
+        9208,
+        9209,
+        9210,
+        9211,
+        9212,
+        9827,
+        10500,
+        11317,
+        12521,
+        14104,
+        14792,
+        14886,
+    ]
     print()
     print(output)
-    #temp.remove(center)
-    bacon_ids=sorted(temp)
+    # temp.remove(center)
+    bacon_ids = sorted(temp)
     print(len(bacon_ids))
 
-    print("expected:", sorted(output[n-1]))
+    print("expected:", sorted(output[n - 1]))
     return bacon_ids
 
 
@@ -163,4 +199,3 @@ if __name__ == "__main__":
     # print([x[0] for x in acted_together_data[center]])
     # print(acted_together(smalldb,4724,9211))
     print(actors_with_bacon_number(smalldb, 2))
-

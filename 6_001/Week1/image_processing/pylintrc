@@ -74,14 +74,14 @@ disable=abstract-method,
         filter-builtin-not-iterating,
         fixme,
         getslice-method,
-        global-statement,
+        #global-statement,  # removed for 6.101
         hex-method,
         idiv-method,
-        implicit-str-concat,
+        #implicit-str-concat,  # removed for 6.101
         import-error,
         import-self,
         import-star-module-level,
-        inconsistent-return-statements,
+        #inconsistent-return-statements,  # removed for 6.101
         input-builtin,
         intern-builtin,
         invalid-str-codec,
@@ -126,14 +126,14 @@ disable=abstract-method,
         too-many-ancestors,
         too-many-arguments,
         too-many-boolean-expressions,
-        too-many-branches,
+        #too-many-branches,
         too-many-instance-attributes,
         too-many-locals,
-        too-many-nested-blocks,
+        #too-many-nested-blocks,
         too-many-public-methods,
         too-many-return-statements,
         too-many-statements,
-        trailing-newlines,
+        #trailing-newlines,
         unichr-builtin,
         unicode-builtin,
         unnecessary-pass,
@@ -297,7 +297,7 @@ notes=TODO
 
 # This flag controls whether inconsistent-quotes generates a warning when the
 # character used as a quote delimiter is used inconsistently within a module.
-check-quote-consistency=yes
+check-quote-consistency=no # changed for 6.101
 
 
 [VARIABLES]

@@ -18,7 +18,7 @@ def count_subparts(part_manifest, part_num):
         * part_num (int) : the desired part to assemble.
 
     Returns:
-        An integer representing the total number of subparts (including the 
+        An integer representing the total number of subparts (including the
         number of subparts of any compound subparts.
 
     >>> x = {1: [2, 3, 2, 3], 3: [2, 4, 5], 4: [2, 7]}
@@ -33,7 +33,6 @@ def count_subparts(part_manifest, part_num):
     0 # TODO FIX THIS
     """
     raise NotImplementedError("Implement me!")
-
 
 
 def find_base_parts(part_manifest, part_num):
