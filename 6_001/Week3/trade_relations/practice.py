@@ -7,7 +7,8 @@ import csv
 
 # no additional imports allowed
 
-#database = csv.reader('./resources/tiny_transactions.csv')
+
+# database = csv.reader('./resources/tiny_transactions.csv')
 def transform_list_pairs(database):
     """
     Transforms the database into a more concise format that only includes
@@ -30,10 +31,11 @@ def transform_list_pairs(database):
     output = []
     print(len(database))
     for el in database:
-        output.append([el[0],el[1]])
+        output.append([el[0], el[1]])
     print(output)
     print(len(output))
     return output
+
 
 def transform_set_pairs(database):
     """
@@ -83,8 +85,8 @@ def transform_dict_list(database):
             {origin_state (str) : [destination_state (str), ...]}
     """
     output = dict(list)
-    for origin_state,destination_state,*rest in database:
-        output[origin_state]=[destination_state,*rest]
+    for origin_state, destination_state, *rest in database:
+        output[origin_state] = [destination_state, *rest]
     return output
 
 

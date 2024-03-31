@@ -10,7 +10,7 @@ import copy
 import json
 import pickle
 
-import lab
+from . import lab
 
 sys.setrecursionlimit(10000)
 

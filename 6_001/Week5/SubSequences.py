@@ -2,7 +2,6 @@ import time
 from typing import List
 
 
-# todo Did not understand
 def subsequences(s: List[int]):
     if not s:
         return {()}

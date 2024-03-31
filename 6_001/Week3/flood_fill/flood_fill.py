@@ -93,8 +93,8 @@ def set_pixel(image, row, col, color):
             image.set_at((loc[1] + i, loc[0] + j), c)
     ## comment out the two lines below to avoid redrawing the image every time
     ## we set a pixel
-    screen.blit(image, (0, 0))
-    pygame.display.flip()
+    # screen.blit(image, (0, 0))
+    # pygame.display.flip()
 
 
 ##### USER INTERFACE CODE

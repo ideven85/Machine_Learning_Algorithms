@@ -32,7 +32,6 @@ def sum_list(x):
     return x[0] + sum_list(x[1:])
 
 
-# todo Redo
 def sum_nested(x):
     """
     Sums a nested list
@@ -72,7 +71,6 @@ def productSum(array, multiplier=1):
 count = 0
 
 
-# todo Redo with Lists
 @show_recursive_structure
 def subsequences(seq):
     """
@@ -92,9 +90,10 @@ def subsequences(seq):
     count += 1
     rest_seq = subsequences(rest)
     first_seq = {(first,) + sub_seq for sub_seq in rest_seq}
+
     return first_seq | rest_seq  # Union
-    # answer= ({(first,) + subseq for subseq in subsequences(rest)} |
-    #            {subseq for subseq in subsequences(rest)})
+    # answer = {subsequences(rest)| (first,)+sub_seq for sub_seq in subsequences(rest)}
+    # answer= ({(first,) + subseq for subseq in subsequences(rest)} | {subseq for subseq in subsequences(rest)})
     # return answer
 
 

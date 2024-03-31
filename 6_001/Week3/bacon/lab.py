@@ -29,7 +29,7 @@ for key, value in bacon_numbers_dict.items():
 with open("resources/movies.pickle", "rb") as f:
     movies = pickle.load(f)
 
-#acted_together_data = defaultdict(set)
+# acted_together_data = defaultdict(set)
 
 
 def transform_data(raw_data):
@@ -43,7 +43,6 @@ def transform_data(raw_data):
     elif isinstance(raw_data, int):
         return raw_data
     return raw_data
-
 
 
 def acted_together(transformed_data, actor_id_1, actor_id_2):

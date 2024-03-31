@@ -1,16 +1,16 @@
 from collections import defaultdict
 
 
-def find_path(graph,start,goal_test):
+def find_path(graph, start, goal_test):
     if goal_test(start):
         return (start,)
     agenda = [(start,)]
     visited = {start}
     while visited:
         this_path = agenda.pop(0)
-        terminal_state = this_path[-1] # Means?
+        terminal_state = this_path[-1]  # Means?
 
-        for neighbour in graph.get(terminal_state,[]):
+        for neighbour in graph.get(terminal_state, []):
             if neighbour not in visited:
                 new_path = this_path + (neighbour,)
 
@@ -23,8 +23,7 @@ def find_path(graph,start,goal_test):
 
 
 def findNumberOfProvinces(graph):
-    res=0
-
+    res = 0
 
     # def dfs(row,column):
     #     if row==n-1 and column==n-1:
@@ -52,29 +51,26 @@ def findNumberOfProvinces(graph):
                 visited.add(neighbor)
                 dfs(neighbor)
 
-
     n = len(graph)
     isConnected = defaultdict(list)
     for i in range(n):
-        for j in range(i+1,n):
-            if graph[i][j]==1:
+        for j in range(i + 1, n):
+            if graph[i][j] == 1:
                 isConnected[i].append(j)
                 isConnected[j].append(i)
 
-
-    res=0
+    res = 0
     visited = set()
     for i in range(n):
         if i not in visited:
             visited.add(i)
 
-
-            res+=1
+            res += 1
             dfs(i)
     print(visited)
     return res
 
-if __name__ == '__main__':
-    is_connected = [[1,1,0],[1,1,0],[0,0,1]]
-    print(findNumberOfProvinces(is_connected))
 
+if __name__ == "__main__":
+    is_connected = [[1, 1, 0], [1, 1, 0], [0, 0, 1]]
+    print(findNumberOfProvinces(is_connected))

@@ -1,3 +1,3 @@
-a = [[1,2],[3,4]]
+a = [[1, 2], [3, 4]]
 for el in a:
-    print(el[0],el[1])
+    print(el[0], el[1])

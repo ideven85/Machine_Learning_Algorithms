@@ -32,7 +32,7 @@ def add_n(n):
 
 
 def square(x):
-    return x + 10
+    return x * x
 
 
 cube = lambda x: x**3
@@ -73,3 +73,6 @@ if __name__ == "__main__":
         print(f(12))
     for f in f1:
         print(f(12), end=" ")
+
+    print()
+    print(add1.__closure__[0].cell_contents)

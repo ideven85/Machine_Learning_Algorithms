@@ -17,8 +17,21 @@ def backwards(sound):
 
 
 def mix(sound1, sound2, p):
-    if sound1["samples"] == sound2["samples"]:
+    if sound1["rate"] != sound2["rate"]:
         return None
+    length = max(sound1['samples'],sound2['samples'])
+    result = []
+    a=[p*x+(1-p)*y for x in sound1['samples'] for y in sound2['samples']]
+    for i in range(length):
+        if sound1['samples'][i] and sound2['samples'][i]:
+            result.append(p*sound1['samples'][i]+(1-p)*sound2['samples'][i])
+        elif sound1['samples'][i]:
+            result.append(p*sound1['samples'][i])
+        elif sound2['samples'][i]:
+            result.append((1-p)*sound2['samples'][i])
+    return {'rate':sound1['rate'],'samples':result}
+
+
 
 
 def convolve(sound, kernel):

@@ -10,7 +10,7 @@ app_root = os.path.join(cur_dir, "static")
 
 def parse_post(environ):
     try:
-        body_size = int(environ.get("CONTENT_LENGTH", 0) ) # Default 0
+        body_size = int(environ.get("CONTENT_LENGTH", 0))  # Default 0
     except:
         body_size = 0
 
@@ -20,13 +20,14 @@ def parse_post(environ):
     body = environ["wsgi.input"].read(body_size)
     return json.loads(body)
 
-def application(environ,start_response):
-    status = '200 OK'
-    path = environ.get("PATH_INFO","/") or "/"
+
+def application(environ, start_response):
+    status = "200 OK"
+    path = environ.get("PATH_INFO", "/") or "/"
     static_file = None
     params = parse_post(environ)
-    for key,value in environ.items():
-        print(key,value)
+    for key, value in environ.items():
+        print(key, value)
 
     print(params)
     print(f"Requested path {path}/{params}")
@@ -60,15 +61,13 @@ def application(environ,start_response):
     return [body]
 
 
-if __name__ == '__main__':
-    HOST = '0.0.0.0'
+if __name__ == "__main__":
+    HOST = "0.0.0.0"
     PORT = 8000
 
-    with(make_server('0.0.0.0',PORT,application)) as httpd:
+    with make_server("0.0.0.0", PORT, application) as httpd:
         try:
             httpd.serve_forever()
         except KeyboardInterrupt or OSError as e:
-            print("Shutting Down with error",e)
+            print("Shutting Down with error", e)
             httpd.shutdown()
-
-
