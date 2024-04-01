@@ -1,10 +1,11 @@
 import time
-
+from multiprocessing.pool import ThreadPool
+from threading import Thread
 
 with open("all_words.txt", "r") as f:
     ALL_WORDS = {i.strip() for i in f}
 # print(all_words[:20])
-print("sex" in ALL_WORDS)
+#print("" in ALL_WORDS)
 
 
 def generate_subsequences_slow(word):
@@ -12,9 +13,7 @@ def generate_subsequences_slow(word):
 
 
 def generate_subsequences_fast(word):
-    for w in generate_subsequences_fast_helper(word):
-        if w in ALL_WORDS:
-            print(w, end=" ")
+    return [w for w in generate_subsequences_fast_helper(word)]
     # return {w for w in generate_subsequences_fast_helper(word) if w in ALL_WORDS}
 
 
@@ -45,17 +44,37 @@ def generate_subsequences_slow_helper(word):
     return out
 
 
-start = time.time()
-print(generate_subsequences_slow("artichokes"))
-end = time.time()
-print(end - start)
 
-"""
-Using Generators
-"""
-start = time.time()
+if __name__ == '__main__':
+    words = ['fib','fie','fig','fin','fir','fit','fix','artichokeshelperfigure','cheer']
+    #[generate_subsequences_fast(w) for w in words]
+    start = time.time_ns()
+    with ThreadPool() as pool:
+        for result in pool.map(generate_subsequences_fast,[w for w in words]):
+            print(f'Got Result {result}')
+    end = time.time_ns()
+    print('\n\n\nDone', end - start)
+    # threads = [Thread(target=generate_subsequences_fast,args=(x,)) for x in words]
+    # start = time.time_ns()
+    # for t in threads:
+    #     t.start()
+    # for t in threads:
+    #     t.join()
+    # end = time.time_ns()
+    # print('\nDone',end-start)
 
-generate_subsequences_fast("artichokes")
-print()
-end = time.time()
-print(end - start)
+    #
+    # start = time.time()
+    # print(generate_subsequences_slow("artichokes"))
+    # end = time.time()
+    # print(end - start)
+    #
+    # """
+    # Using Generators
+    # """
+    # start = time.time()
+    #
+    # print(generate_subsequences_fast("artichokes"))
+    # print()
+    # end = time.time()
+    # print(end - start)

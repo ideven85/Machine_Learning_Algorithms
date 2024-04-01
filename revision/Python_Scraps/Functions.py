@@ -98,3 +98,4 @@ if __name__ == "__main__":
     y = 20
     x, y = swap(x, y)
     print(x, y)
+    print(target().__doc__)

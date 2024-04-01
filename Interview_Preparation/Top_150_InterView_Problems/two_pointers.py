@@ -8,3 +8,21 @@ def isPalindrome(s: str) -> bool:
 
 a = "0P"
 print(isPalindrome(a))
+def combine(arr1, arr2):
+    n = 3
+    m = len(arr2)-1
+    first=0;second=0
+    total=n+m+1
+    while first<=n and second<=m:
+        if arr1[first]<arr2[second]:
+            arr1[total]=arr2[second]
+            second+=1
+        else:
+            arr1[total]=arr1[first]
+            first+=1
+        total-=1
+        print(arr1)
+a=[1,4,7,20,0,0,0]
+b=[3,4,6]
+combine(a,b)
+print(a)

@@ -10,6 +10,7 @@ def register(func):
 @register
 def foo1():
     print("foo1 Function")
+    return 1
 
 
 @register
@@ -23,14 +24,14 @@ def foo3():
 
 if __name__ == "__main__":
     print("Inside Main")
-    print("Registry", registry)
+    #print("Registry", registry)
     """
     Made a call to registry list calling foo1 function
     """
-    print(registry[0])
-    print(registry[1])
+    print(registry[0]())
+    # registry[1]()
 
-    foo1()
-    foo2()
-    foo3()
-    # for e in registry: e()
+    # foo1()
+    # foo2()
+    # foo3()
+    #print(registry)

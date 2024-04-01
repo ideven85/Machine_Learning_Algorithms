@@ -250,18 +250,18 @@ def balancedHeightUtil(root, balanced):
 
 
 def maxPathSum(root: Optional[TreeNode]) -> int:
-    if not root:
-        return 0
-    current_sum = 0
-    max_sum = 0
-    queue = deque()
-    queue.append(root)
-    while queue:
-        current_node = queue.popleft()
-        current_sum += current_node.val
-        if max_sum <= current_sum:
-            max_sum = current_sum
+    max_path_sum=int('-inf')
 
+    def find_max_path_sum(root):
+        nonlocal max_path_sum
+        if not root:
+            return 0
+        left = max(root.left,0)
+        right = max(root.right,0)
+        max_path_sum = max(max_path_sum,left+right)
+        return max_path_sum
+    find_max_path_sum(root)
+    return max_path_sum
 
 def sumNumbers(root: Optional[TreeNode]) -> int:
     path_sum = 0
@@ -619,3 +619,4 @@ if __name__ == "__main__":
     print()
 
     print(zigzagLevelOrder(bt))
+    print(maxPathSum(bt))
