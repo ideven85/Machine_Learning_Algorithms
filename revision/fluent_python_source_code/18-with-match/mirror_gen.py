@@ -61,10 +61,10 @@ The decorated generator also works as a decorator:
 
 """
 
-
 # tag::MIRROR_GEN_EX[]
 import contextlib
 import sys
+
 
 @contextlib.contextmanager  # <1>
 def looking_glass():
@@ -74,6 +74,8 @@ def looking_glass():
         original_write(text[::-1])
 
     sys.stdout.write = reverse_write  # <4>
-    yield 'JABBERWOCKY'  # <5>
+    yield "JABBERWOCKY"  # <5>
     sys.stdout.write = original_write  # <6>
+
+
 # end::MIRROR_GEN_EX[]

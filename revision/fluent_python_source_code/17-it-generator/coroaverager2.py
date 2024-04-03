@@ -65,17 +65,22 @@ Using `yield from`:
 from collections.abc import Generator
 from typing import Union, NamedTuple
 
+
 class Result(NamedTuple):  # <1>
     count: int  # type: ignore  # <2>
     average: float
 
+
 class Sentinel:  # <3>
     def __repr__(self):
-        return f'<Sentinel>'
+        return f"<Sentinel>"
+
 
 STOP = Sentinel()  # <4>
 
 SendType = Union[float, Sentinel]  # <5>
+
+
 # end::RETURNING_AVERAGER_TOP[]
 # tag::RETURNING_AVERAGER[]
 def averager2(verbose: bool = False) -> Generator[None, SendType, Result]:  # <1>
@@ -85,12 +90,13 @@ def averager2(verbose: bool = False) -> Generator[None, SendType, Result]:  # <1
     while True:
         term = yield  # <2>
         if verbose:
-            print('received:', term)
+            print("received:", term)
         if isinstance(term, Sentinel):  # <3>
             break
         total += term  # <4>
         count += 1
         average = total / count
     return Result(count, average)  # <5>
+
 
 # end::RETURNING_AVERAGER[]

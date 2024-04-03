@@ -20,9 +20,10 @@ class BingoCage(Tombola):  # <1>
         try:
             return self._items.pop()
         except IndexError:
-            raise LookupError('pick from empty BingoCage')
+            raise LookupError("pick from empty BingoCage")
 
     def __call__(self):  # <6>
         self.pick()
+
 
 # end::TOMBOLA_BINGO[]

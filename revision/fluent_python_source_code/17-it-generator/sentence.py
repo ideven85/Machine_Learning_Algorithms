@@ -16,7 +16,7 @@ Sentence: access words by index
 import re
 import reprlib
 
-RE_WORD = re.compile(r'\w+')
+RE_WORD = re.compile(r"\w+")
 
 
 class Sentence:
@@ -32,6 +32,7 @@ class Sentence:
         return len(self.words)
 
     def __repr__(self):
-        return 'Sentence(%s)' % reprlib.repr(self.text)  # <4>
+        return "Sentence(%s)" % reprlib.repr(self.text)  # <4>
+
 
 # end::SENTENCE_SEQ[]

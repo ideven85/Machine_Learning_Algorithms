@@ -17,6 +17,7 @@ True
 
 import random
 
+
 class BingoCage:
 
     def __init__(self, items):
@@ -27,9 +28,10 @@ class BingoCage:
         try:
             return self._items.pop()
         except IndexError:
-            raise LookupError('pick from empty BingoCage')  # <4>
+            raise LookupError("pick from empty BingoCage")  # <4>
 
     def __call__(self):  # <5>
         return self.pick()
+
 
 # end::BINGO[]

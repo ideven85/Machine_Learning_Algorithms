@@ -26,7 +26,7 @@
 
 from collections import namedtuple
 
-Customer = namedtuple('Customer', 'name fidelity')
+Customer = namedtuple("Customer", "name fidelity")
 
 
 class LineItem:
@@ -48,7 +48,7 @@ class Order:  # the Context
         self.promotion = promotion
 
     def total(self):
-        if not hasattr(self, '__total'):
+        if not hasattr(self, "__total"):
             self.__total = sum(item.total() for item in self.cart)
         return self.__total
 
@@ -60,31 +60,36 @@ class Order:  # the Context
         return self.total() - discount
 
     def __repr__(self):
-        return f'<Order total: {self.total():.2f} due: {self.due():.2f}>'
+        return f"<Order total: {self.total():.2f} due: {self.due():.2f}>"
 
 
 def fidelity_promo(percent):
     """discount for customers with 1000 or more fidelity points"""
-    return lambda order: (order.total() * percent / 100
-                          if order.customer.fidelity >= 1000 else 0)
+    return lambda order: (
+        order.total() * percent / 100 if order.customer.fidelity >= 1000 else 0
+    )
 
 
 def bulk_item_promo(percent):
     """discount for each LineItem with 20 or more units"""
+
     def discounter(order):
         discount = 0
         for item in order.cart:
             if item.quantity >= 20:
                 discount += item.total() * percent / 100
         return discount
+
     return discounter
 
 
 def large_order_promo(percent):
     """discount for orders with 10 or more distinct items"""
+
     def discounter(order):
         distinct_items = {item.product for item in order.cart}
         if len(distinct_items) >= 10:
             return order.total() * percent / 100
         return 0
+
     return discounter

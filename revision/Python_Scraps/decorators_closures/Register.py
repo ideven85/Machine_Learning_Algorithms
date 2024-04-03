@@ -24,7 +24,7 @@ def foo3():
 
 if __name__ == "__main__":
     print("Inside Main")
-    #print("Registry", registry)
+    # print("Registry", registry)
     """
     Made a call to registry list calling foo1 function
     """
@@ -34,4 +34,4 @@ if __name__ == "__main__":
     # foo1()
     # foo2()
     # foo3()
-    #print(registry)
+    # print(registry)

@@ -6,11 +6,13 @@
     <coordinates.Coordinate object at 0x...>
 """
 
+
 # tag::COORDINATE[]
 class Coordinate:
 
     def __init__(self, lat, lon):
         self.lat = lat
         self.lon = lon
+
 
 # end::COORDINATE[]

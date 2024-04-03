@@ -27,8 +27,10 @@ Scalar multiplication::
     15.0
 
 """
+
 import doctest
 import math
+
 
 class Vector:
 
@@ -37,7 +39,7 @@ class Vector:
         self.y = y
 
     def __repr__(self):
-        return f'Vector({self.x!r}, {self.y!r})'
+        return f"Vector({self.x!r}, {self.y!r})"
 
     def __abs__(self):
         return math.hypot(self.x, self.y)
@@ -53,5 +55,6 @@ class Vector:
     def __mul__(self, scalar):
         return Vector(self.x * scalar, self.y * scalar)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     print(doctest.testmod(verbose=True))

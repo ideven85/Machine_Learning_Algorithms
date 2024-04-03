@@ -52,4 +52,5 @@ class StrKeyDict0(dict):  # <1>
     def __contains__(self, key):
         return key in self.keys() or str(key) in self.keys()  # <6>
 
+
 # end::STRKEYDICT0[]

@@ -53,6 +53,8 @@ public static boolean canFinish(int numCourses, int[][] prerequisites){
     }
 }
 """
+
+
 class CoursePreRequisites:
 
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
@@ -62,23 +64,23 @@ class CoursePreRequisites:
         in_degree = [0 for _ in range(numCourses)]
         for i in range(numCourses):
             for u in adj[i]:
-                in_degree[u]+=1
+                in_degree[u] += 1
         queue = deque()
         for i in range(numCourses):
-            if in_degree[i]==0:
+            if in_degree[i] == 0:
                 queue.append(i)
         count = 0
         while queue:
             current = queue.popleft()
-            count+=1
+            count += 1
             for adjacent in adj[current]:
-                in_degree[adjacent]-=1
-                if in_degree[adjacent]==0:
+                in_degree[adjacent] -= 1
+                if in_degree[adjacent] == 0:
                     queue.append(adjacent)
-        return count==numCourses
+        return count == numCourses
 
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        if numCourses==1:
+        if numCourses == 1:
             return [0]
         adj = defaultdict(list)
         for req in prerequisites:
@@ -86,21 +88,21 @@ class CoursePreRequisites:
         in_degree = [0 for _ in range(numCourses)]
         for i in range(numCourses):
             for adjacent in adj[i]:
-                in_degree[adjacent]+=1
+                in_degree[adjacent] += 1
         queue = deque()
         for i in range(numCourses):
-            if in_degree[i]==0:
+            if in_degree[i] == 0:
                 queue.append(i)
 
         courseOrdering = [0 for _ in range(numCourses)]
         count = 0
         while queue:
             current = queue.pop()
-            courseOrdering[count]=current
-            count+=1
+            courseOrdering[count] = current
+            count += 1
             for adjacent in adj[current]:
-                in_degree[adjacent]-=1
-                if in_degree[adjacent]==0:
+                in_degree[adjacent] -= 1
+                if in_degree[adjacent] == 0:
                     queue.append(adjacent)
 
-        return courseOrdering if count==numCourses else []
+        return courseOrdering if count == numCourses else []

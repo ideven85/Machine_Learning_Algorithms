@@ -1,12 +1,12 @@
 class HarshadNumber:
-    count=0
+    count = 0
 
-    def sum_of_digits(self,x):
-        self.count+=1
-        if x//10==0:
+    def sum_of_digits(self, x):
+        self.count += 1
+        if x // 10 == 0:
             return x
         else:
-            return (self.sum_of_digits(x//10+x%10))%10
+            return (self.sum_of_digits(x // 10 + x % 10)) % 10
 
     def sumOfTheDigitsOfHarshadNumber(self, x: int) -> int:
         sum_digits = self.sum_of_digits(x)

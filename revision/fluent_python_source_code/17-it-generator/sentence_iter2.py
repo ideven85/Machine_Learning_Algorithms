@@ -8,7 +8,7 @@ see: sentence_gen*.py.
 import re
 import reprlib
 
-RE_WORD = re.compile(r'\w+')
+RE_WORD = re.compile(r"\w+")
 
 
 class Sentence:
@@ -17,7 +17,7 @@ class Sentence:
         self.text = text
 
     def __repr__(self):
-        return f'Sentence({reprlib.repr(self.text)})'
+        return f"Sentence({reprlib.repr(self.text)})"
 
     def __iter__(self):
         word_iter = RE_WORD.finditer(self.text)  # <1>

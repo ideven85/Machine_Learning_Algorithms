@@ -1,11 +1,11 @@
 import time
 from multiprocessing.pool import ThreadPool
 from threading import Thread
-
-with open("all_words.txt", "r") as f:
+import functools
+with open("/Users/ankster/Developer/Machine_Learning_Algorithms/6_001/all_words.txt", "r") as f:
     ALL_WORDS = {i.strip() for i in f}
 # print(all_words[:20])
-#print("" in ALL_WORDS)
+# print("" in ALL_WORDS)
 
 
 def generate_subsequences_slow(word):
@@ -44,16 +44,25 @@ def generate_subsequences_slow_helper(word):
     return out
 
 
-
-if __name__ == '__main__':
-    words = ['fib','fie','fig','fin','fir','fit','fix','artichokeshelperfigure','cheer']
-    #[generate_subsequences_fast(w) for w in words]
+if __name__ == "__main__":
+    words = [
+        "fib",
+        "fie",
+        "fig",
+        "fin",
+        "fir",
+        "fit",
+        "fix",
+        
+        "cheer",
+    ]
+    # [generate_subsequences_fast(w) for w in words]
     start = time.time_ns()
     with ThreadPool() as pool:
-        for result in pool.map(generate_subsequences_fast,[w for w in words]):
-            print(f'Got Result {result}')
+        for result in pool.map(generate_subsequences_fast, [w for w in words]):
+            print(f"Got Result {result}")
     end = time.time_ns()
-    print('\n\n\nDone', end - start)
+    print("\n\n\nDone", end - start)
     # threads = [Thread(target=generate_subsequences_fast,args=(x,)) for x in words]
     # start = time.time_ns()
     # for t in threads:
@@ -72,9 +81,20 @@ if __name__ == '__main__':
     # """
     # Using Generators
     # """
-    # start = time.time()
+    start = time.time()
     #
-    # print(generate_subsequences_fast("artichokes"))
-    # print()
-    # end = time.time()
-    # print(end - start)
+    print(generate_subsequences_fast("artichokes"))
+    print()
+    end = time.time()
+    print(end - start)
+"""Step 1: Highlight the function below"""
+def add_one(x):
+    return lambda y: x + y + 1
+
+"""Step 2: Create a closure using `add_one` and store it in `plus_two`"""
+plus_two = add_one(2)
+
+# Factorial function using reduce
+def factorialV2(n):
+    return 1 if n<2 else functools.reduce(lambda a,b:a*b,range(2,n+1))
+print(factorialV2(5))

@@ -1,6 +1,6 @@
 from collections import OrderedDict
 
-from  debug_recursion import show_recursive_structure
+from debug_recursion import show_recursive_structure
 
 
 def can_log(x):
@@ -60,8 +60,6 @@ def productSum(array, multiplier=1):
         ) * multiplier + productSum(array[1:], multiplier=multiplier)
     else:
         return array[0] * multiplier + productSum(array[1:], multiplier=multiplier)
-
-
 
 
 count = 0
@@ -135,14 +133,16 @@ def number_to_string(n, b):
 
 import doctest
 
+
 def powerset_recursive(arr):
     if not arr:
         return []
     first = arr[0]
     rest = arr[1:]
     first_sequence = powerset_recursive(rest)
-    rest_sequence = [first],[sub_seq for sub_seq in rest]
-    return [first_sequence],[rest_sequence]
+    rest_sequence = [first], [sub_seq for sub_seq in rest]
+    return [first_sequence], [rest_sequence]
+
 
 if __name__ == "__main__":
 
@@ -154,10 +154,10 @@ if __name__ == "__main__":
     # print(len(a))
     # #print(a[0]+1)
     # print(productSum([[1,2],3,[4,5],[[[6]]]]))
-    print(powerset([1,2,3]))
+    print(powerset([1, 2, 3]))
     # print(subsequences([1, 2, 3]))
     # print(count)
     b = [5, 2, [7, 1], 3, [6, [13, 8], 4]]
-    b1 = [1,[2,3]]
-    #print(productSum(b1))
-    print(powerset_recursive([1,2]))
+    b1 = [1, [2, 3]]
+    # print(productSum(b1))
+    print(powerset_recursive([1, 2]))

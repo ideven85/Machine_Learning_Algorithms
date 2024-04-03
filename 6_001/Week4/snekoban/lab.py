@@ -41,12 +41,15 @@ def make_new_game(level_description):
     return will be used as input to the other functions.
     """
     print(level_description)
-    #level_description=level_description[1:-1]
+    # level_description=level_description[1:-1]
     game = dict()
-    player_position = [(r,c) for r in range(len(level_description)) for c in range(len(level_description[r])) if "player" in  level_description[r][c]][0]
+    player_position = [
+        (r, c)
+        for r in range(len(level_description))
+        for c in range(len(level_description[r]))
+        if "player" in level_description[r][c]
+    ][0]
     print(player_position)
-
-
 
     return level_description
 
@@ -57,21 +60,21 @@ def victory_check(game):
     return a Boolean: True if the given game satisfies the victory condition,
     and False otherwise.
     """
-    game=make_new_game(game)
+    game = make_new_game(game)
     for i in range(len(game)):
         for j in range(len(game[i])):
             if "target" in game[i][j] and "computer" not in game[i][j]:
                 return False
-    first="target"
+    first = "target"
     second = "computer"
 
     return True
 
 
-def is_valid_move(game,row,col, direction):
+def is_valid_move(game, row, col, direction):
     global player_position
-    #row,col = player_position
-    print(row,col)
+    # row,col = player_position
+    print(row, col)
     position = (row + direction[0], col + direction[1])
     height = len(game)
     width = len(game[0])
@@ -82,38 +85,38 @@ def is_valid_move(game,row,col, direction):
         or position[0] >= height
         or position[1] >= width
         or "wall" in game[position[0]][position[1]]
-
     ):
         return False
-    if  "computer" in game[position[0]][position[1]]:
-        if is_valid_move_helper(game,position[0],position[1],direction):
-            step_game_helper(game,position[0],position[1],direction)
+    if "computer" in game[position[0]][position[1]]:
+        if is_valid_move_helper(game, position[0], position[1], direction):
+            step_game_helper(game, position[0], position[1], direction)
         else:
             return False
 
-
             # We are moving computer in the same direction,
     #       # so if the cell is empty we have to make a helper function like step_game again with computer
-    player_position=position
+    player_position = position
     return True
 
-def is_valid_move_helper(game,row,column, direction):
+
+def is_valid_move_helper(game, row, column, direction):
     position = (row + direction[0], column + direction[1])
     height = len(game)
     width = len(game[0])
     print(position)
     if (
-            position[0] < 0
-            or position[1] < 0
-            or position[0] >= height
-            or position[1] >= width
-            or "wall" in game[position[0]][position[1]]
-            or "computer" in game[position[0]][position[1]]
-
+        position[0] < 0
+        or position[1] < 0
+        or position[0] >= height
+        or position[1] >= width
+        or "wall" in game[position[0]][position[1]]
+        or "computer" in game[position[0]][position[1]]
     ):
         return False
-    #player_position=position
+    # player_position=position
     return True
+
+
 def step_game(game, direction):
     global player_position
     """
@@ -125,27 +128,32 @@ def step_game(game, direction):
 
     This function should not mutate its input.
     """
-    game=make_new_game(game)
+    game = make_new_game(game)
     row, col = player_position
     print(direction_vector[direction])
-    if is_valid_move(game,row,col, direction_vector[direction]):
+    if is_valid_move(game, row, col, direction_vector[direction]):
 
         game[row][col].remove("player")
-        potential_row,potential_col = (row + direction_vector[direction][0],col+direction_vector[direction][1])
-        #player_position[1] = player_position[1] + direction_vector[direction][1]
-        #game[player_position[0]][player_position[1]].append("player")
+        potential_row, potential_col = (
+            row + direction_vector[direction][0],
+            col + direction_vector[direction][1],
+        )
+        # player_position[1] = player_position[1] + direction_vector[direction][1]
+        # game[player_position[0]][player_position[1]].append("player")
 
         game[potential_row][potential_col].append("player")
-        player_position=(potential_row,potential_col)
+        player_position = (potential_row, potential_col)
         return make_new_game(game)
     else:
         return make_new_game(game)
 
-def step_game_helper(game,row,column,direction):
+
+def step_game_helper(game, row, column, direction):
     game[row][column].remove("computer")
-    next_row,next_column = row+direction[0],column+direction[1]
+    next_row, next_column = row + direction[0], column + direction[1]
     game[next_row][next_column].append("computer")
     return make_new_game(game)
+
 
 def dump_game(game):
     global player_position
@@ -166,7 +174,8 @@ def dump_game(game):
     # game[row][column] = ["player"]
     return game
 
-#todo Estimated time to do: 3 hours
+
+# todo Estimated time to do: 3 hours
 def solve_puzzle(game):
     """
     Given a game representation (of the form returned from make_new_game), find
@@ -180,29 +189,26 @@ def solve_puzzle(game):
     raise NotImplementedError
 
 
-
 if __name__ == "__main__":
-    game =[
- [['wall'], [], [], [], [], [], ['wall']],
- [['wall'], [], [], [], [], [], ['wall']],
- [['wall'], [], ['target'], ['computer'], ['player'], [], ['wall']],
- [['wall'], [], [], [], [], [], ['wall']],
- [['wall'], [], [], [], [], [], ['wall']],
- ]
+    game = [
+        [["wall"], [], [], [], [], [], ["wall"]],
+        [["wall"], [], [], [], [], [], ["wall"]],
+        [["wall"], [], ["target"], ["computer"], ["player"], [], ["wall"]],
+        [["wall"], [], [], [], [], [], ["wall"]],
+        [["wall"], [], [], [], [], [], ["wall"]],
+    ]
     # w = len(level1[0])
     # h=len(level1)
     # print(level1[h-1][0][1])
     # with open('puzzles/m1_001.json','rb') as f:
     #     game = json.load(f)
 
-
     #
     # print(game)
-    game=make_new_game(game)
-    print("Starting Player Position:",player_position)
-    step_game(game,'left')
-    print("After Moving Left: ",player_position)
+    game = make_new_game(game)
+    print("Starting Player Position:", player_position)
+    step_game(game, "left")
+    print("After Moving Left: ", player_position)
     print("Current Status: ", game)
-    step_game(game,'left')
-    print("Left:",player_position[0],player_position[1])
-
+    step_game(game, "left")
+    print("Left:", player_position[0], player_position[1])

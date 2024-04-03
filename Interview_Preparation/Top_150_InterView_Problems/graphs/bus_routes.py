@@ -2,6 +2,7 @@ import doctest
 from collections import defaultdict, deque
 from typing import List
 
+
 # https://leetcode.com/problems/bus-routes/description/ LeetCode Hard
 def numBusesToDestination(routes: List[List[int]], source: int, target: int) -> int:
     """
@@ -20,26 +21,26 @@ def numBusesToDestination(routes: List[List[int]], source: int, target: int) -> 
     num_buses = len(routes)
     if source == target:
         return 0
-    paths=1
+    paths = 1
     min_paths = 0
     stations_to_buses = defaultdict(list)
     buses_to_stations = defaultdict(set)
     queue = deque()
     for i in range(num_buses):
         for j in range(len(routes[i])):
-            if routes[i][j]==source:
-                queue.append((i,source))
-            stations_to_buses[i].append((i,routes[i][j]))
-            #buses_to_stations[routes[i][j]].add(i)
-    #print(buses_to_stations)
+            if routes[i][j] == source:
+                queue.append((i, source))
+            stations_to_buses[i].append((i, routes[i][j]))
+            # buses_to_stations[routes[i][j]].add(i)
+    # print(buses_to_stations)
     visited = {source}
 
-    #print(stations_to_buses)
+    # print(stations_to_buses)
     while queue:
-        current_bus,current_station = queue.pop()
-        print(current_bus,current_station)
+        current_bus, current_station = queue.pop()
+        print(current_bus, current_station)
 
-        if current_station==target:
+        if current_station == target:
             return paths
         # for connected_bus,connected_station in stations_to_buses[current_bus]:
         #     if connected_station not in visited:
@@ -59,15 +60,7 @@ def numBusesToDestination(routes: List[List[int]], source: int, target: int) -> 
             for connected_station in stations_to_buses[current_station]:
                 pass
 
-
-
-
     return -1
-
-
-
-
-
 
 
 if __name__ == "__main__":

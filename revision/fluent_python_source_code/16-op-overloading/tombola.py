@@ -2,6 +2,7 @@
 
 import abc
 
+
 class Tombola(abc.ABC):  # <1>
 
     @abc.abstractmethod
@@ -30,5 +31,5 @@ class Tombola(abc.ABC):  # <1>
         self.load(items)  # <7>
         return tuple(sorted(items))
 
-# END TOMBOLA_ABC
 
+# END TOMBOLA_ABC

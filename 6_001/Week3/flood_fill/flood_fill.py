@@ -93,8 +93,8 @@ def set_pixel(image, row, col, color):
             image.set_at((loc[1] + i, loc[0] + j), c)
     ## comment out the two lines below to avoid redrawing the image every time
     ## we set a pixel
-    # screen.blit(image, (0, 0))
-    # pygame.display.flip()
+    screen.blit(image, (0, 0))
+    pygame.display.flip()
 
 
 ##### USER INTERFACE CODE
@@ -137,7 +137,7 @@ COLOR_NAMES = {
 }
 
 SCALE = 7
-IMAGE = "flood_input.png"
+IMAGE = "/Users/ankster/Developer/Machine_Learning_Algorithms/6_001/Week3/flood_fill/large_maze.png"
 
 pygame.init()
 pygame.display.set_caption("Flood Fill BFS")

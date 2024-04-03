@@ -250,18 +250,20 @@ def balancedHeightUtil(root, balanced):
 
 
 def maxPathSum(root: Optional[TreeNode]) -> int:
-    max_path_sum=int('-inf')
+    max_path_sum = int("-inf")
 
     def find_max_path_sum(root):
         nonlocal max_path_sum
         if not root:
             return 0
-        left = max(root.left,0)
-        right = max(root.right,0)
-        max_path_sum = max(max_path_sum,left+right)
+        left = max(root.left, 0)
+        right = max(root.right, 0)
+        max_path_sum = max(max_path_sum, left + right)
         return max_path_sum
+
     find_max_path_sum(root)
     return max_path_sum
+
 
 def sumNumbers(root: Optional[TreeNode]) -> int:
     path_sum = 0

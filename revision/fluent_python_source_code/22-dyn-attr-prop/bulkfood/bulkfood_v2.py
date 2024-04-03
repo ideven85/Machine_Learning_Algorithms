@@ -59,5 +59,7 @@ class LineItem:
         if value > 0:
             self.__weight = value  # <6>
         else:
-            raise ValueError('value must be > 0')  # <7>
+            raise ValueError("value must be > 0")  # <7>
+
+
 # end::LINEITEM_V2[]

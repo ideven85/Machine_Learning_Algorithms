@@ -9,12 +9,13 @@ import typing
 # NO ADDITIONAL IMPORTS!
 from collections import defaultdict
 
+
 class Sokoban:
 
     def __init__(self):
         self.game_state = defaultdict(set)
 
-    def find_path(self,graph, start, goal_test):
+    def find_path(self, graph, start, goal_test):
         if goal_test(start):
             return (start,)
         agenda = [(start,)]
@@ -34,7 +35,6 @@ class Sokoban:
 
         return None
 
-
     direction_vector = {
         "up": (-1, 0),
         "down": (+1, 0),
@@ -42,8 +42,7 @@ class Sokoban:
         "right": (0, +1),
     }
 
-
-    def make_new_game(self,level_description):
+    def make_new_game(self, level_description):
         """
         Given a description of a game state, create and return a game
         representation of your choice.
@@ -62,29 +61,27 @@ class Sokoban:
         return will be used as input to the other functions.
         """
         game_state = defaultdict(set)
-        #game_state = {'wall': (), 'player': (), 'computer':(), 'target': ()}
+        # game_state = {'wall': (), 'player': (), 'computer':(), 'target': ()}
         n = len(level_description)
         for i in range(n):
             for j in range(len(level_description[i])):
                 cell = level_description[i][j]
                 for k in range(len(cell)):
-                    game_state[cell[k]].add((i,j))
+                    game_state[cell[k]].add((i, j))
 
         return game_state
 
-
-    def victory_check(self,game):
+    def victory_check(self, game):
         """
         Given a game representation (of the form returned from make_new_game),
         return a Boolean: True if the given game satisfies the victory condition,
         and False otherwise.
         """
-        game=self.make_new_game(game)
+        game = self.make_new_game(game)
         print(game)
-        return game['computer']==game['target']
+        return game["computer"] == game["target"]
 
-
-    def step_game(self,game, direction):
+    def step_game(self, game, direction):
         """
         Given a game representation (of the form returned from make_new_game),
         return a new game representation (of that same form), representing the
@@ -96,8 +93,7 @@ class Sokoban:
         """
         raise NotImplementedError
 
-
-    def dump_game(self,game):
+    def dump_game(self, game):
         """
         Given a game representation (of the form returned from make_new_game),
         convert it back into a level description that would be a suitable input to
@@ -110,10 +106,7 @@ class Sokoban:
         """
         raise NotImplementedError
 
-
-
-
-    def solve_puzzle(self,game):
+    def solve_puzzle(self, game):
         """
         Given a game representation (of the form returned from make_new_game), find
         a solution.
@@ -124,15 +117,13 @@ class Sokoban:
         If the given level cannot be solved, return None.
         """
         game_state = self.make_new_game(game)
-        agenda = game_state['player']
-
-
+        agenda = game_state["player"]
 
 
 if __name__ == "__main__":
     l = [
-        [[], ['wall'], ['computer']],
-        [['target', 'player'], ['computer'], ['target']],
+        [[], ["wall"], ["computer"]],
+        [["target", "player"], ["computer"], ["target"]],
     ]
     game_state = make_new_game(l)
     print(game_state)

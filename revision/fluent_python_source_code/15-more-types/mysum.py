@@ -3,8 +3,9 @@ import operator
 from collections.abc import Iterable
 from typing import overload, Union, TypeVar
 
-T = TypeVar('T')
-S = TypeVar('S')  # <1>
+T = TypeVar("T")
+S = TypeVar("S")  # <1>
+
 
 @overload
 def sum(it: Iterable[T]) -> Union[T, int]: ...  # <2>

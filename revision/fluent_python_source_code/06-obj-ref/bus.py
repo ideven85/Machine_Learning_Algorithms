@@ -11,6 +11,7 @@
 
 """
 
+
 # tag::BUS_CLASS[]
 class Bus:
 
@@ -25,4 +26,6 @@ class Bus:
 
     def drop(self, name):
         self.passengers.remove(name)
+
+
 # end::BUS_CLASS[]

@@ -34,4 +34,6 @@ class LineItem:
 
     def subtotal(self):
         return self.weight * self.price
+
+
 # end::LINEITEM_V1[]

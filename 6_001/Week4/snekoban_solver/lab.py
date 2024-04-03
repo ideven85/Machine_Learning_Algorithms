@@ -58,15 +58,15 @@ def make_new_game(level_description):
     return will be used as input to the other functions.
     """
     game_state = defaultdict(set)
-    #game_state = {'wall': (), 'player': (), 'computer':(), 'target': ()}
+    # game_state = {'wall': (), 'player': (), 'computer':(), 'target': ()}
     n = len(level_description)
     for i in range(n):
         for j in range(len(level_description[i])):
             cell = level_description[i][j]
             if not cell:
-                game_state['empty'].add((i,j))
+                game_state["empty"].add((i, j))
             for k in range(len(cell)):
-                game_state[cell[k]].add((i,j))
+                game_state[cell[k]].add((i, j))
 
     return game_state
 
@@ -77,9 +77,9 @@ def victory_check(game):
     return a Boolean: True if the given game satisfies the victory condition,
     and False otherwise.
     """
-    game=make_new_game(game)
-    #print(game)
-    return game['computer']==game['target']
+    game = make_new_game(game)
+    # print(game)
+    return game["computer"] == game["target"]
 
 
 def step_game(game, direction):
@@ -108,14 +108,22 @@ def dump_game(game):
     """
     game_state = make_new_game(game)
     level_description = []
-    states = sorted(list(set((list(game_state['empty'])+list(game_state['wall'])+list(game_state['computer'])+list(game_state['target'])+list(game_state['player'])))))
-
+    states = sorted(
+        list(
+            set(
+                (
+                    list(game_state["empty"])
+                    + list(game_state["wall"])
+                    + list(game_state["computer"])
+                    + list(game_state["target"])
+                    + list(game_state["player"])
+                )
+            )
+        )
+    )
 
     level_description.append(states)
     return level_description
-
-
-
 
 
 def solve_puzzle(game):
@@ -129,16 +137,14 @@ def solve_puzzle(game):
     If the given level cannot be solved, return None.
     """
     game_state = make_new_game(game)
-    agenda = game_state['player']
+    agenda = game_state["player"]
     raise NotImplementedError
-
-
 
 
 if __name__ == "__main__":
     l = [
-        [[], ['wall'], ['computer']],
-        [['target', 'player'], ['computer'], ['target']],
+        [[], ["wall"], ["computer"]],
+        [["target", "player"], ["computer"], ["target"]],
     ]
     game_state = make_new_game(l)
     print(game_state)

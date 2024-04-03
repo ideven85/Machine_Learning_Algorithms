@@ -171,7 +171,7 @@ COLOR_NAMES = {
 }
 
 SCALE = 7
-IMAGE = "large_maze.png"
+IMAGE = "/Users/ankster/Developer/Machine_Learning_Algorithms/6_001/Week3/mit_path_finding/mit.png"
 
 pygame.init()
 image = pygame.image.load(IMAGE)

@@ -3,13 +3,13 @@
 	url = https://github.com/fluentpython/example-code-2e
 
 [submodule "course22"]
-	path = Machine_Learning/course22
+	path = course22
 	url = https://github.com/fastai/course22
 [submodule "PyTorchStepByStep"]
-	path = Machine_Learning/PyTorchStepByStep
+	path = PyTorchStepByStep
 	url = https://github.com/dvgodoy/PyTorchStepByStep
 [submodule "fastbook"]
-	path = Machine_Learning/fastbook
+	path = fastbook
 	url = https://github.com/ideven85/fastbook
 [submodule "handson-ml3"]
 	path = handson-ml3

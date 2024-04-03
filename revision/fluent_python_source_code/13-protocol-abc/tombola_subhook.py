@@ -17,7 +17,6 @@ Tests with simple classes::
 
 """
 
-
 from abc import ABC, abstractmethod
 from inspect import getmembers, isfunction
 

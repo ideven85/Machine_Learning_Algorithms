@@ -31,6 +31,7 @@ True
 
 """
 
+
 # tag::HAUNTED_BUS_CLASS[]
 class HauntedBus:
     """A bus model haunted by ghost passengers"""
@@ -43,5 +44,6 @@ class HauntedBus:
 
     def drop(self, name):
         self.passengers.remove(name)
-# end::HAUNTED_BUS_CLASS[]
 
+
+# end::HAUNTED_BUS_CLASS[]

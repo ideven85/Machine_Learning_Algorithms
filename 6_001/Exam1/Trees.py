@@ -3,9 +3,7 @@ from dataclasses import dataclass
 from typing import Optional
 
 
-
 class TreeNode:
-
 
     def __init__(self, val: int = 0, left: "TreeNode" = None, right: "TreeNode" = None):
         self.val = val
@@ -145,20 +143,18 @@ def maxPathSum(root: Optional[TreeNode]) -> int:
     # return max_path_sum
     # """
     max_path_sum = -1000000
+
     def find_max_path_sum(root):
         nonlocal max_path_sum
         if not root:
             return 0
         left = max(find_max_path_sum(root.left), 0)
         right = max(find_max_path_sum(root.right), 0)
-        max_path_sum = max(max_path_sum, root.val+left + right)
-        return root.val + max(left,right)
+        max_path_sum = max(max_path_sum, root.val + left + right)
+        return root.val + max(left, right)
 
     find_max_path_sum(root)
     return max_path_sum
-
-
-
 
 
 if __name__ == "__main__":

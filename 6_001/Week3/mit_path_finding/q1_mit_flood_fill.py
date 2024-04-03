@@ -35,7 +35,7 @@ def flood_fill(image, location, new_color):
 
     def close(color1, color2):
         return sum(abs(c1 - c2) for c1, c2 in zip(color1, color2)) <= 25
-
+    
     to_color = [location]
     visited = {location}
     # print("before loop")
