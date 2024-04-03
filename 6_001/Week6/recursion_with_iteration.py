@@ -1,4 +1,7 @@
 import time
+import sys
+
+sys.setrecursionlimit(10000)
 
 
 def original_sum_list(x):
@@ -15,6 +18,17 @@ def sum_list_iterative(x):
 
 
 count = 0
+
+
+def factorial_recursive(n):
+    return 1 if n < 2 else n * factorial_recursive(n - 1)
+
+
+def factorial_iterative(n):
+    out = 1
+    for i in range(1, n + 1):
+        out *= i
+    return out
 
 
 def sum_list(x):
@@ -68,41 +82,44 @@ def sum_nested_recursive(original_x):
 if __name__ == "__main__":
     l = list(range(1, 102))
 
-    print("Sum List V2")
-    start = time.time()
-    print(sum_listV2(l))
-    end = time.time()
-    print((end - start) * 1000000)
-    print("Sum List Iterative")
-
-    start = time.time()
-    print(sum_list_iterative(l))
-    end = time.time()
-    print((end - start) * 1000000)
-
-    print("Sum List Helper")
-    start = time.time()
-    print(sum_list(l))
-    end = time.time()
-    print((end - start) * 1000000)
-
-    print("Original Sum List")
-    start = time.time()
-    print(original_sum_list(l))
-    end = time.time()
-    print((end - start) * 1000000)
+    # print("Sum List V2")
+    # start = time.time()
+    # print(sum_listV2(l))
+    # end = time.time()
+    # print((end - start) * 1000000)
+    # print("Sum List Iterative")
+    #
+    # start = time.time()
+    # print(sum_list_iterative(l))
+    # end = time.time()
+    # print((end - start) * 1000000)
+    #
+    # print("Sum List Helper")
+    # start = time.time()
+    # print(sum_list(l))
+    # end = time.time()
+    # print((end - start) * 1000000)
+    #
+    # print("Original Sum List")
+    # start = time.time()
+    # print(original_sum_list(l))
+    # end = time.time()
+    # print((end - start) * 1000000)
 
     a = [1, [2, 3], [[list(range(4, 100))]], 101]
 
     print("Iterative Nested Sum List")
-    start = time.time()
+    start = time.time_ns()
     print(sum_nested(a))
-    end = time.time()
-    print((end - start) * 1000000)
+    end = time.time_ns()
+    print((end - start))
 
     print("Recursive Nested Sum List")
 
-    start = time.time()
+    start1 = time.time_ns()
     print(sum_nested_recursive(a))
-    end = time.time()
-    print((end - start) * 1000000)
+    end1 = time.time_ns()
+    print((end1 - start1))
+
+    # print(factorial_recursive(1001))
+    print(factorial_iterative(1001))

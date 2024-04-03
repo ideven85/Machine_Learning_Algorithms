@@ -2,7 +2,10 @@ import time
 from multiprocessing.pool import ThreadPool
 from threading import Thread
 import functools
-with open("/Users/ankster/Developer/Machine_Learning_Algorithms/6_001/all_words.txt", "r") as f:
+
+with open(
+    "all_words.txt", "r"
+) as f:
     ALL_WORDS = {i.strip() for i in f}
 # print(all_words[:20])
 # print("" in ALL_WORDS)
@@ -13,7 +16,7 @@ def generate_subsequences_slow(word):
 
 
 def generate_subsequences_fast(word):
-    return [w for w in generate_subsequences_fast_helper(word)]
+    return [w for w in generate_subsequences_fast_helper(word) if w in ALL_WORDS]
     # return {w for w in generate_subsequences_fast_helper(word) if w in ALL_WORDS}
 
 
@@ -53,7 +56,6 @@ if __name__ == "__main__":
         "fir",
         "fit",
         "fix",
-        
         "cheer",
     ]
     # [generate_subsequences_fast(w) for w in words]
@@ -88,13 +90,19 @@ if __name__ == "__main__":
     end = time.time()
     print(end - start)
 """Step 1: Highlight the function below"""
+
+
 def add_one(x):
     return lambda y: x + y + 1
+
 
 """Step 2: Create a closure using `add_one` and store it in `plus_two`"""
 plus_two = add_one(2)
 
+
 # Factorial function using reduce
 def factorialV2(n):
-    return 1 if n<2 else functools.reduce(lambda a,b:a*b,range(2,n+1))
+    return 1 if n < 2 else functools.reduce(lambda a, b: a * b, range(2, n + 1))
+
+
 print(factorialV2(5))
