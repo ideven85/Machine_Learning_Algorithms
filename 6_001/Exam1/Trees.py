@@ -75,86 +75,22 @@ def maxPathSum(root: Optional[TreeNode]) -> int:
     Explanation: The optimal path is 15 -> 20 -> 7 with a path sum of 15 + 20 + 7 = 42.
     """
 
-    # def dfs(node, is_left=True, left_path=None, right_path=None):
-    #     if not node:
-    #         return 0
-    #     if is_left:
-    #         if not node.left:
-    #             left_path[node.id]=0
-    #             return 0
-    #         left_path[node.id] = node.val + max(
-    #             dfs(node.left, True, left_path, right_path),
-    #             dfs(node.left, False, left_path, right_path),
-    #         )
-    #
-    #         return left_path[node.id]
-    #     else:
-    #         if not node.right:
-    #             right_path[node.id]=0
-    #             return 0
-    #
-    #         right_path[node.id] = node.val + max(
-    #             dfs(node.right, True, left_path, right_path),
-    #             dfs(node.right, False, left_path, right_path),
-    #         )
-    #         return right_path[node.id]
-    #
-    #     # return node.val + max(dfs(node.left),dfs(node.right))
-    #
-    # if not root:
-    #     return 0
-    # # queue = deque()
-    # # queue.append(root)
-    # # queue.append(None)
-    # # visited = {root.val}
-    # # current_sum = 0
-    # # max_path_sum = float('-inf')
-    # left_path = dict()
-    # right_path = dict()
-    # dfs(root, True, left_path, right_path)
-    # dfs(root, False, left_path, right_path)
-    # print(left_path)
-    # print(right_path)
-    # path2sum = dict((i, left_path[i] + right_path[i]) for i in left_path.keys())
-    # i = max(path2sum,key=path2sum.get)
-    # return path2sum[i]
-    # # maxPathSum = {}
-    # # return root.val+max(left_path_sum, right_path_sum)
-    # """
-    # while queue:
-    #     node = queue.popleft()
-    #     if node:
-    #         current_sum = node.val
-    #
-    #         if node.left:
-    #             queue.append(node.left)
-    #         if node.right:
-    #             queue.append(node.right)
-    #     else:
-    #         total = sum(node.val for node in queue)
-    #         print(current_sum,total)
-    #
-    #         if total > max_path_sum:
-    #             max_path_sum =total
-    #         if queue:
-    #             queue.append(None)
-    #
-    #
-    # return max_path_sum
-    # """
-    max_path_sum = -1000000
 
-    def find_max_path_sum(root):
-        nonlocal max_path_sum
-        if not root:
-            return 0
-        left = max(find_max_path_sum(root.left), 0)
-        right = max(find_max_path_sum(root.right), 0)
-        max_path_sum = max(max_path_sum, root.val + left + right)
-        return root.val + max(left, right)
 
-    find_max_path_sum(root)
-    return max_path_sum
+
+    return find_max_path_sum(root)
+
+
+def find_max_path_sum(root): # Memory Usage is how many frames that are at each recursive call
+    max_path_sum=0
+    if not root:
+        return 0
+    left = max(find_max_path_sum(root.left), 0)
+    right = max(find_max_path_sum(root.right), 0)
+    max_path_sum = max(max_path_sum, root.val + left + right)
+    print(max_path_sum,end=' ')
+    return root.val + max(left, right)
+
 
 
 if __name__ == "__main__":
