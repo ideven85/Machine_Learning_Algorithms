@@ -20,14 +20,14 @@ def gen_range(start, stop, step=1):  # Using Generators
 for i in gen_range(0, 1_000, step=1):
     if i > 100:
         break
-    print(i**2)
+    print(i**2,end=' ')
 
 for i in list_range(0, 1_000):
     if i > 100:
         break
-    print(i**2)
+    print(i**2,end=' ')
 
-
+print()
 def gen1():
     yield 1
     yield 2
@@ -36,6 +36,13 @@ def gen1():
 def gen2():
     yield 8
     yield 9
+
+
+def gen3():
+    for val in gen1():
+        yield val
+    for val in gen2():
+        yield val
 
 
 def get_generators():
@@ -47,7 +54,7 @@ for val in get_generators():
     print(val, end=" ")
 print()
 
-
+print(list(gen3()))
 def negate_elements(x):
     for val in x:
         yield -val

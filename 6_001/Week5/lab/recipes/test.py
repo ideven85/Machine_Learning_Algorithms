@@ -2,7 +2,6 @@
 6.101 Lab 6:
 Recipes
 """
-
 #!/usr/bin/env python3
 import os
 import sys
@@ -800,7 +799,7 @@ def test_combined_flat_recipes_small():
 
 
 def test_combined_flat_recipes_big():
-    with open("test_recipes/combined_flat_recipes.pickle", "rb") as f:
+    with open("../recipes/test_recipes/combined_flat_recipes.pickle", "rb") as f:
         cases = pickle.load(f)
 
     for title, inp, outp in cases:

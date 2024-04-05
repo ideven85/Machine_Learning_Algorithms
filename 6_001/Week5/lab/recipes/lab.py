@@ -5,6 +5,7 @@ Recipes
 
 import pickle
 import sys
+# 10 hours per lab
 
 sys.setrecursionlimit(20_000)
 # NO ADDITIONAL IMPORTS!
@@ -90,6 +91,72 @@ def all_flat_recipes(recipes, food_item):
 
 if __name__ == "__main__":
     # load example recipes from section 3 of the write-up
-    with open("test_recipes/example_recipes.pickle", "rb") as f:
-        example_recipes = pickle.load(f)
+
+    example_recipes = [
+        (
+            "compound",
+            "chili",
+            [
+                ("beans", 3),
+                ("cheese", 10),
+                ("chili powder", 1),
+                ("cornbread", 2),
+                ("protein", 1),
+            ],
+        ),
+        ("atomic", "beans", 5),
+        (
+            "compound",
+            "cornbread",
+            [("cornmeal", 3), ("milk", 1), ("butter", 5), ("salt", 1), ("flour", 2)],
+        ),
+        ("atomic", "cornmeal", 7.5),
+        (
+            "compound",
+            "burger",
+            [("bread", 2), ("cheese", 1), ("lettuce", 1), ("protein", 1), ("ketchup", 1)],
+        ),
+        (
+            "compound",
+            "burger",
+            [
+                ("bread", 2),
+                ("cheese", 2),
+                ("lettuce", 1),
+                ("protein", 2),
+            ],
+        ),
+        ("atomic", "lettuce", 2),
+        ("compound", "butter", [("milk", 1), ("butter churn", 1)]),
+        ("atomic", "butter churn", 50),
+        ("compound", "milk", [("cow", 1), ("milking stool", 1)]),
+        ("compound", "cheese", [("milk", 1), ("time", 1)]),
+        ("compound", "cheese", [("cutting-edge laboratory", 11)]),
+        ("atomic", "salt", 1),
+        ("compound", "bread", [("yeast", 1), ("salt", 1), ("flour", 2)]),
+        ("compound", "protein", [("cow", 1)]),
+        ("atomic", "flour", 3),
+        ("compound", "ketchup", [("tomato", 30), ("vinegar", 5)]),
+        ("atomic", "chili powder", 1),
+        (
+            "compound",
+            "ketchup",
+            [("tomato", 30), ("vinegar", 3), ("salt", 1), ("sugar", 2), ("cinnamon", 1)],
+        ),  # the fancy ketchup
+        ("atomic", "cow", 100),
+        ("atomic", "milking stool", 5),
+        ("atomic", "cutting-edge laboratory", 1000),
+        ("atomic", "yeast", 2),
+        ("atomic", "time", 10000),
+        ("atomic", "vinegar", 20),
+        ("atomic", "sugar", 1),
+        ("atomic", "cinnamon", 7),
+        ("atomic", "tomato", 13),
+    ]
+
+    for recipe in example_recipes:
+        if recipe[0]=='compound':
+            print(*recipe)
+        else:
+            print(*recipe)
     # you are free to add additional testing code here!

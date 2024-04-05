@@ -100,8 +100,8 @@ def application(environ, start_response):
 
 
 if __name__ == "__main__":
-    print("starting server.  navigate to http://localhost:6101/")
-    with make_server("", 6101, application) as httpd:
+    print("starting server.  navigate to http://localhost:8000/")
+    with make_server("", 8000, application) as httpd:
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:

@@ -56,7 +56,7 @@ def tree_sum(tree):
 count = 0
 
 
-@show_recursive_structure
+#@show_recursive_structure
 def tree_list(tree):
     """
     Given tree as a dict { 'value': number,
@@ -78,9 +78,10 @@ def tree_list(tree):
 
 
     elif type(children) is list and len(children):
-        return [tree_list(x) for x in children], val
+        children=sorted(tree_list(children))
+        return children+[val]
     else:
-        return sorted([val]+children)
+        return [val+children]
 
 
 # @show_recursive_structure
@@ -168,4 +169,4 @@ def test_tree_list():
 if __name__ == "__main__":
     # uncomment the @show_recursive_structure line
     # above the function to see some detailed function output
-    tree_sum(t3)
+    print(tree_sum(t3))

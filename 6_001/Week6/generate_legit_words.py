@@ -59,12 +59,12 @@ if __name__ == "__main__":
         "cheer",
     ]
     # [generate_subsequences_fast(w) for w in words]
-    start = time.time_ns()
-    with ThreadPool() as pool:
-        for result in pool.map(generate_subsequences_fast, [w for w in words]):
-            print(f"Got Result {result}")
-    end = time.time_ns()
-    print("\n\n\nDone", end - start)
+    # start = time.time_ns()
+    # with ThreadPool() as pool:
+    #     for result in pool.map(generate_subsequences_fast, [w for w in words]):
+    #         print(f"Got Result {result}")
+    # end = time.time_ns()
+    # print("\n\n\nDone", end - start)
     # threads = [Thread(target=generate_subsequences_fast,args=(x,)) for x in words]
     # start = time.time_ns()
     # for t in threads:
