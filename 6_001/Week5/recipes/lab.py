@@ -5,6 +5,7 @@ Recipes
 
 import pickle
 import sys
+
 # 10 hours per lab
 
 sys.setrecursionlimit(20_000)
@@ -114,7 +115,13 @@ if __name__ == "__main__":
         (
             "compound",
             "burger",
-            [("bread", 2), ("cheese", 1), ("lettuce", 1), ("protein", 1), ("ketchup", 1)],
+            [
+                ("bread", 2),
+                ("cheese", 1),
+                ("lettuce", 1),
+                ("protein", 1),
+                ("ketchup", 1),
+            ],
         ),
         (
             "compound",
@@ -141,7 +148,13 @@ if __name__ == "__main__":
         (
             "compound",
             "ketchup",
-            [("tomato", 30), ("vinegar", 3), ("salt", 1), ("sugar", 2), ("cinnamon", 1)],
+            [
+                ("tomato", 30),
+                ("vinegar", 3),
+                ("salt", 1),
+                ("sugar", 2),
+                ("cinnamon", 1),
+            ],
         ),  # the fancy ketchup
         ("atomic", "cow", 100),
         ("atomic", "milking stool", 5),
@@ -155,7 +168,7 @@ if __name__ == "__main__":
     ]
 
     for recipe in example_recipes:
-        if recipe[0]=='compound':
+        if recipe[0] == "compound":
             print(*recipe)
         else:
             print(*recipe)

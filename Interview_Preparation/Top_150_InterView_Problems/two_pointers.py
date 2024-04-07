@@ -10,24 +10,22 @@ a = "0P"
 print(isPalindrome(a))
 
 
-def combine(arr1,n, arr2,m):
+def combine(arr1, n, arr2, m):
 
-    first = n-1
-    second = m-1
-    total = first+second+ 1
-    while second>=0:
-        if first>=0 and arr1[first]<arr2[second]:
-            arr1[total]=arr2[second]
-            second-=1
+    first = n - 1
+    second = m - 1
+    total = first + second + 1
+    while second >= 0:
+        if first >= 0 and arr1[first] < arr2[second]:
+            arr1[total] = arr2[second]
+            second -= 1
         else:
-            arr1[total]=arr1[first]
-            first-=1
-        total-=1
-
-
+            arr1[total] = arr1[first]
+            first -= 1
+        total -= 1
 
 
 a = [1, 4, 7, 20, 0, 0, 0]
 b = [3, 4, 6]
-combine(a,4, b,3)
+combine(a, 4, b, 3)
 print(a)

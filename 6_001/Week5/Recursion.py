@@ -83,8 +83,9 @@ def subsequences(seq):
     rest = seq[1:]
     count += 1
     rest_seq = subsequences(rest)
+    #print(rest_seq)
     first_seq = {(first,) + sub_seq for sub_seq in rest_seq}
-
+    #print(first_seq)
     return first_seq | rest_seq  # Union
     # answer = {subsequences(rest)| (first,)+sub_seq for sub_seq in subsequences(rest)}
     # answer= ({(first,) + subseq for subseq in subsequences(rest)} | {subseq for subseq in subsequences(rest)})
@@ -134,14 +135,19 @@ def number_to_string(n, b):
 import doctest
 
 
+#todo 25th March,2024
 def powerset_recursive(arr):
     if not arr:
-        return []
+        return [[]]
+    # if len(arr)==1:
+    #     return [arr]
     first = arr[0]
     rest = arr[1:]
-    first_sequence = powerset_recursive(rest)
-    rest_sequence = [first], [sub_seq for sub_seq in rest]
-    return [first_sequence], [rest_sequence]
+    rest_sequence= powerset_recursive(rest)
+    #print(first_sequence)
+    first_sequence = [first]+[sub_seq for sub_seq in rest_sequence]
+    #print(rest_sequence)
+    return first_sequence+rest_sequence
 
 
 if __name__ == "__main__":
@@ -154,10 +160,10 @@ if __name__ == "__main__":
     # print(len(a))
     # #print(a[0]+1)
     # print(productSum([[1,2],3,[4,5],[[[6]]]]))
-    print(powerset([1, 2, 3]))
-    # print(subsequences([1, 2, 3]))
+    #print(powerset([1, 2, 3]))
+    print(subsequences([1, 2, 3]))
     # print(count)
     b = [5, 2, [7, 1], 3, [6, [13, 8], 4]]
     b1 = [1, [2, 3]]
     # print(productSum(b1))
-    print(powerset_recursive([1, 2]))
+    #print(powerset_recursive([1, 2,3]))

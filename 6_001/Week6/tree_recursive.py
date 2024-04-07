@@ -1,12 +1,10 @@
 def sum_nested_list(tree):
     if not tree:
         return 0
-    elif isinstance(tree[0],list):
-        return sum_nested_list(tree[0])+sum_nested_list(tree[1:])
+    elif isinstance(tree[0], list):
+        return sum_nested_list(tree[0]) + sum_nested_list(tree[1:])
     else:
-        return tree[0]+sum_nested_list(tree[1:])
-
-
+        return tree[0] + sum_nested_list(tree[1:])
 
 
 t1 = {"value": 3, "children": []}
@@ -34,9 +32,9 @@ t3 = {
         },
     ],
 }
-nested_tree1=[3,[]]
-nested_tree2=[[9,[[2,[]],[3,[]],[7,[]]]]]
-nested_tree3 =[9,[[2,[]],[3,[99,[]],[16,[7,[]]],[42,[]]]]]
+nested_tree1 = [3, []]
+nested_tree2 = [[9, [[2, []], [3, []], [7, []]]]]
+nested_tree3 = [9, [[2, []], [3, [99, []], [16, [7, []]], [42, []]]]]
 print(sum_tree(nested_tree1))
 print(sum_tree(nested_tree2))
 print(sum_tree(nested_tree3))

@@ -3,15 +3,17 @@ def flatten(x):
     for elt in x:
         if isinstance(elt, list):
             out.extend(flatten(elt))
-            yield out
-
+            #print(out)
 
         else:
-            yield elt
+            out.append(elt)
+            print(out)
 
+    return out
 
 
 x = [1, [2, [3, [4]]]]
 y = [[[[[[[1, 2, 3]]]]], 4], 5]
-print(list(flatten(x)))
+# print(list(flatten(x)))
+print(flatten(y))
 #print(flatten(y))

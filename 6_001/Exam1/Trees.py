@@ -75,22 +75,20 @@ def maxPathSum(root: Optional[TreeNode]) -> int:
     Explanation: The optimal path is 15 -> 20 -> 7 with a path sum of 15 + 20 + 7 = 42.
     """
 
-
-
-
     return find_max_path_sum(root)
 
 
-def find_max_path_sum(root): # Memory Usage is how many frames that are at each recursive call
-    max_path_sum=0
+def find_max_path_sum(
+    root,
+):  # Memory Usage is how many frames that are at each recursive call
+    max_path_sum = 0
     if not root:
         return 0
     left = max(find_max_path_sum(root.left), 0)
     right = max(find_max_path_sum(root.right), 0)
     max_path_sum = max(max_path_sum, root.val + left + right)
-    print(max_path_sum,end=' ')
+    print(max_path_sum, end=" ")
     return root.val + max(left, right)
-
 
 
 if __name__ == "__main__":
