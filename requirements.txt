@@ -21,6 +21,7 @@ cffi==1.16.0
 charset-normalizer==3.3.2
 click==8.1.7
 cloudpathlib==0.16.0
+codegen
 comm==0.2.2
 confection==0.1.4
 contourpy==1.2.1
@@ -187,3 +188,9 @@ widgetsnbextension==3.6.6
 wrapt==1.16.0
 xxhash==3.4.1
 yarl==1.9.4
+
+pytest~=8.1.1
+seaborn~=0.13.2
+pygame~=2.5.2
+tryalgo~=1.7.0
+docopt~=0.6.2

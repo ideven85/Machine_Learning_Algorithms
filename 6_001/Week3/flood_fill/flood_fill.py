@@ -102,7 +102,11 @@ def set_pixel(image, row, col, color):
 
 import os
 import sys
+from pathlib import Path
+import os
 
+file = os.path.dirname(__file__)
+BASE_DIR = Path(__file__).resolve().parent
 # os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide"
 import pygame
 
@@ -137,7 +141,7 @@ COLOR_NAMES = {
 }
 
 SCALE = 7
-IMAGE = "/Users/ankster/Developer/Machine_Learning_Algorithms/6_001/Week3/flood_fill/large_maze.png"
+IMAGE = BASE_DIR/'large_maze.png'
 
 pygame.init()
 pygame.display.set_caption("Flood Fill BFS")

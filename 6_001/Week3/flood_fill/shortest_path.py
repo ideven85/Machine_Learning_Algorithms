@@ -1,6 +1,9 @@
 import time
+from pathlib import Path
+import os
 
-
+file = os.path.dirname(__file__)
+BASE_DIR = Path(__file__).resolve().parent
 def flood_fill(image, location, new_color):
     """
     Given an image, replace the same-colored region around a given location
@@ -28,6 +31,7 @@ def flood_fill(image, location, new_color):
     visited.add(location)
     while to_color:
         this_cell = to_color.pop(0)
+        
         set_pixel(image, *this_cell, new_color)
         for neighbour in get_neighbours(image, this_cell):
             if (
@@ -81,12 +85,13 @@ def find_path(image, start_location, goal_color):
     final_path = None
     while paths:
         this_path = paths.pop(0)
-        if get_pixel(image, *this_path[-1]) == goal_color:
+        terminal_state = this_path[-1]
+        if get_pixel(image, *terminal_state) == goal_color:
             print("found!", this_path)
             final_path = this_path
             break  # found solution
 
-        for neighbor in get_neighbors(this_path[-1]):
+        for neighbor in get_neighbors(terminal_state):
             if neighbor not in visited and get_pixel(image, *neighbor) in {
                 path_color,
                 goal_color,
@@ -171,7 +176,7 @@ COLOR_NAMES = {
 }
 
 SCALE = 7
-IMAGE = "/Users/ankster/Developer/Machine_Learning_Algorithms/6_001/Week3/mit_path_finding/mit.png"
+IMAGE = BASE_DIR/'large_maze.png'
 
 pygame.init()
 image = pygame.image.load(IMAGE)

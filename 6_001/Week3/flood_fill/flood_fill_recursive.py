@@ -3,7 +3,11 @@ import time
 
 count = 0
 
+from pathlib import Path
+import os
 
+file = os.path.dirname(__file__)
+BASE_DIR = Path(__file__).resolve().parent
 def get_neighbours(cell):
     row, col = cell
     potential_neighbours = [
@@ -111,7 +115,7 @@ COLOR_NAMES = {
 }
 
 SCALE = 7
-IMAGE = "flood_input.png"
+IMAGE = BASE_DIR/"flood_input.png"
 
 pygame.init()
 pygame.display.set_caption("Flood Fill DFS")

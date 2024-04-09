@@ -6,7 +6,11 @@ connected to building 36? (run this file to find out!)
 What if we wanted to know if we could reach a particular building
 from 36?
 """
+from pathlib import Path
+import os
 
+file = os.path.dirname(__file__)
+BASE_DIR = Path(__file__).resolve().parent
 
 def flood_fill(image, location, new_color):
     """

@@ -19,7 +19,7 @@ TEST_DIR = os.path.join(LAB_DIR, "test_inputs")
 
 def load_json(fname):
     with open(os.path.join(TEST_DIR, fname), "r") as f:
-        return (fname.removesuffix(".json"), json.load(f))
+        return fname.removesuffix(".json"), json.load(f)
 
 
 tests = filter(

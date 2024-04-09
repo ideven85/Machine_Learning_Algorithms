@@ -7,9 +7,10 @@ in the terminal.
 
 #todo
 def my_zip(x, y):
-    i=0
-    for val1,val2 in enumerate(list(x),y):
-        yield val1,val2
+    yield x[0]
+
+
+
 
 
 def test_my_zip():
