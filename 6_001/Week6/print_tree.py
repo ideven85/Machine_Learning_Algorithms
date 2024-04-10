@@ -1,4 +1,13 @@
-tree1 = [13, [7], [8, [99], [16, [77]], [42]]]
+tree1 = [13,
+         [7],
+         [8,
+          [99],
+          [16
+              , [77]
+          ],
+          [42]
+          ]
+         ]
 
 
 def all_values(tree):
@@ -7,6 +16,8 @@ def all_values(tree):
 
     parent = tree[0]
     children = tree[1:]
+    if not children:
+        return parent
     if len(children) == 1:
         yield parent, children[0]
 

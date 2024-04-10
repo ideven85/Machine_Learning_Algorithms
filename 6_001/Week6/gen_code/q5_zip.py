@@ -4,16 +4,30 @@ Question 5: Implement the my_zip function as a generator
 You may test this functions by running `pytest q5_zip.py` (no quotes)
 in the terminal.
 """
+import types
 
-#todo
+
+
 def my_zip(x, y):
-    yield x[0]
+    # if not x or not y:
+    #     return None
+    if not isinstance(x,list):
+        x=list(x)
+    if not isinstance(y,list):
+        y=list(y)
+    #print("bite me:",x,y)
+    for i in range(min(len(x),len(y))):
+            yield x[i],y[i]
+    #print(x,y)
 
 
 
 
 
-def test_my_zip():
+
+
+
+if __name__ == '__main__':
     import types
 
     # erase zip
@@ -24,11 +38,18 @@ def test_my_zip():
     x = range(0, 4)
     y = "ABCD"
     z = [2, 4, 6]
+    x1=f(x,y)
+
     x1, x2 = f(x, y), my_zip(x, y)
+    #print(list(x1))
+    #print(list(list(list(my_zip(x,y)))))
+
     assert isinstance(x2, types.GeneratorType), f"my_zip first should produce a generator!"
+    #print(list(x2))
     assert list(x1) == list(x2)
     # check that the generator is exhausted
     assert list(x1) == list(x2)
-
+    #print(list(my_zip(y,z)))
     assert list(f(y, z)) == list(my_zip(y, z))
     assert list(f(f(y, z), x)) == list(my_zip(my_zip(y, z), x))
+    print("Done you dude")

@@ -1,52 +1,74 @@
 #!/usr/bin/env python3
 
 """
-6.101 Lab 1:
+6.101 Lab:
 Image Processing
 """
 
 import math
 
-# 10 hours per lab
 from PIL import Image
 
 # NO ADDITIONAL IMPORTS ALLOWED!
 
+WIDTH, HEIGHT, PIXELS = "width", "height", "pixels"
 
+def get_width(image):
+    return image[WIDTH]
+
+def get_height(image):
+    return image[HEIGHT]
+def get_index(image,row,col):
+    return row*image[WIDTH]+col
 def get_pixel(image, row, col):
-    return image["pixels"][row]
+    return image[PIXELS][get_index(image,row,col)]
 
 
 def set_pixel(image, row, col, color):
+    image[PIXELS][get_index(image,row,col)]=color
 
-    image["pixels"][col + row] = color
 
-
-def apply_per_pixel(image, func):
-    result = {
-        "height": image["height"],
-        "width": image["width"],
-        "pixels": image["pixels"],
+def blank_image(image):
+    return {
+        HEIGHT:image[HEIGHT],
+        WIDTH:image[WIDTH],
+        PIXELS:[0]*image[HEIGHT]*image[WIDTH]
     }
 
-    # for col in range(image["height"]):
-    #     for row in range(image["width"]):
-    #         color = get_pixel(image, col, row)
-    #         #print(color)
-    #         new_color = func(color)
-    #         result["pixels"]
-    for i in range(len(image["pixels"])):
-        result["pixels"][i] = 256 - result["pixels"][i]
+def apply_per_pixel(image, func):
+    result = blank_image(image)
+    for col in range(get_width(image)):
+        for row in range(get_height(image)):
+            color = get_pixel(image,row,col)
+            new_color = func(color)
+            set_pixel(result, row, col, new_color)
     return result
 
 
-# Correct this
-def inverted(image):
-    return apply_per_pixel(image, lambda color: 256 - color)
 
+def inverted(image):
+    if image is None:
+        return image
+
+    return apply_per_pixel(image, lambda color: 255-color)
+w, h, p = 'width', 'height', 'pixels'
+# def inverted(image):
+#     if not image:
+#         assert False
+#
+#
+#     i = image
+#     out = {h: i[h],
+#     w: i[w],
+#     p: i[p].copy()}
+#     for r in range(i[h]):
+#         for c in range(i[w]):
+#             x = i[p][r * i[w] + c]
+#             x = 255 - x
+#             out[p][r * i[w] + c] = x
+#     return out
 
 # HELPER FUNCTIONS
-
 
 def correlate(image, kernel, boundary_behavior):
     """
@@ -83,11 +105,10 @@ def round_and_clip_image(image):
     255 in the output; and any locations with values lower than 0 in the input
     should have value 0 in the output.
     """
-    raise NotImplementedError
+    return apply_per_pixel(image,lambda pixel:max(0,min(255,round(pixel))))
 
 
 # FILTERS
-
 
 def blurred(image, kernel_size):
     """
@@ -107,8 +128,8 @@ def blurred(image, kernel_size):
     raise NotImplementedError
 
 
-# HELPER FUNCTIONS FOR LOADING AND SAVING IMAGES
 
+# HELPER FUNCTIONS FOR LOADING AND SAVING IMAGES
 
 def load_greyscale_image(filename):
     """
@@ -122,9 +143,8 @@ def load_greyscale_image(filename):
         img = Image.open(img_handle)
         img_data = img.getdata()
         if img.mode.startswith("RGB"):
-            pixels = [
-                round(0.299 * p[0] + 0.587 * p[1] + 0.114 * p[2]) for p in img_data
-            ]
+            pixels = [round(.299 * p[0] + .587 * p[1] + .114 * p[2])
+                      for p in img_data]
         elif img.mode == "LA":
             pixels = [p[0] for p in img_data]
         elif img.mode == "L":
@@ -155,7 +175,4 @@ if __name__ == "__main__":
     # code in this block will only be run when you explicitly run your script,
     # and not when the tests are being run.  this is a good place for
     # generating images, etc.
-    blue_gill = load_greyscale_image("test_images/bluegill.png")
-
-    chess_inverted = inverted(blue_gill)
-    save_greyscale_image(chess_inverted, "bluegill_inverted.png")
+    pass

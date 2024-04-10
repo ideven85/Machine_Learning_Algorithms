@@ -11,7 +11,7 @@ if __name__ == "__main__": block of code at the bottom of the file.
 
 import doctest
 import sys
-
+import debug_recursion
 sys.setrecursionlimit(25)
 # this is a very small recursion limit (normally 1000)
 # but the test cases are tiny, setting a small recursion limit will help
@@ -39,9 +39,13 @@ def first(ll):
     >>> first( (5, (10, (15, None))) )
     5
     """
-    raise NotImplementedError
+    if not ll:
+        return None
+    if isinstance(ll,int):
+        return ll
+    return ll[0] if ll[0]  else ll
 
-
+@debug_recursion.show_recursive_structure
 def rest(ll):
     """
     returns the rest of a nonempty linked list
@@ -50,7 +54,14 @@ def rest(ll):
     >>> rest( (5, (10, (15, None))) )
     (10, (15, None))
     """
-    raise NotImplementedError
+    if not ll:
+        return None
+    # if isinstance(ll,int):
+    #     return ll
+    if len(ll)==1:
+         return ll[0],None
+
+    return ll[1] if ll[1] else None
 
 
 def ll_len(ll):
@@ -62,7 +73,13 @@ def ll_len(ll):
     >>> ll_len(None)
     0
     """
-    raise NotImplementedError
+    if ll is None:
+        return 0
+    if isinstance(ll,int):
+        return 1
+
+
+    return ll_len(first(ll))+ll_len(rest(ll))
 
 
 def ll_get(ll, i):
@@ -72,7 +89,7 @@ def ll_get(ll, i):
     >>> ll_get( ('a',('b',None)), 1)
     'b'
     """
-    raise NotImplementedError
+    return ll[i][0]
 
 
 def make_ll(*elements):
@@ -83,7 +100,11 @@ def make_ll(*elements):
     >>> make_ll( 1,2,3 )
     (1, (2, (3, None)))
     """
-    raise NotImplementedError
+    if not elements:
+        return ()
+
+    return make_ll(first(elements))+make_ll(rest(elements))
+
 
 
 def ll_elements(ll):
@@ -95,7 +116,10 @@ def ll_elements(ll):
     >>> list(ll_gen)
     [2, 3]
     """
-    raise NotImplementedError
+    for val in ll:
+        yield val
+
+
 
 
 def ll_plus(ll1, ll2):
@@ -123,8 +147,8 @@ def ll_reverse(ll):
 
 
 if __name__ == "__main__":
-    _doctest_flags = doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
-    doctest.testmod(optionflags=_doctest_flags, verbose=True)  # runs ALL doctests
+    # _doctest_flags = doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
+    # doctest.testmod(optionflags=_doctest_flags, verbose=True)  # runs ALL doctests
 
     # Alternatively, can run the doctests JUST for specified function/methods,
     # e.g., for render_2d_locations or any other function you might want.  To
@@ -139,3 +163,8 @@ if __name__ == "__main__":
     #    optionflags=_doctest_flags,
     #    verbose=False
     # )
+    ll=(1,(2,None))
+    print(first((1,(2,None))))
+    print(rest(ll))
+    print(ll_len(ll))
+    print(make_ll( 1))
