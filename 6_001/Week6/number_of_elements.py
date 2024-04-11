@@ -11,4 +11,6 @@ def sine(period):
 
 
 
-sine(1)
+a=sine(5)
+for val in a:
+    print(val)

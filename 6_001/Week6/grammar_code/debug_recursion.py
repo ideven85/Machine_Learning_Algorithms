@@ -38,7 +38,7 @@ def show_recursive_structure(f):
                 "   " * wrapper._depth + f.__name__ + " returns: " + res_str + "\n"
             )
         return result
-
+# Hi
     wrapper._count = 0
     wrapper._depth = 0
     wrapper._max_depth = 0

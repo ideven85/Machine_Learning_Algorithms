@@ -50,7 +50,7 @@ def gen3():
 def get_generators():
     # yield from gen1()
     # yield from gen2()
-    yield  gen3()
+    yield from gen3() # Yield From a function who returns a generator
 
 
 for val in get_generators():
@@ -61,8 +61,10 @@ print(list(gen3()))
 
 
 def negate_elements(x):
-    for val in x:
-        yield -val
+    if not x:
+        return
+    yield -x[0]
+    yield from negate_elements(x[1:])
 
 
 a = [1, 2, 3]
