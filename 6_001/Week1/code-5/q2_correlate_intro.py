@@ -16,8 +16,7 @@ in "q2_kernel_representations.py"
 
 # version 1: no helper functions
 def correlate(image, kernel, boundary_behavior):
-    result = {.... # make new image
-              }
+    result = {} # make new image
     if boundary_behavior == "zero":
         ... # 30 lines of correlation algorithm, but using zero boundary behavior
         """

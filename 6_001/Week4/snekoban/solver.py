@@ -18,13 +18,15 @@ direction_vector = {
 }
 board_pieces = ["wall", "player", "computer", "target"]
 player_position = None
-rows=[0]
-columns=[0]
+rows = [0]
+columns = [0]
 game_state = defaultdict(list)
+
+
 def make_new_game(level_description):
-    if isinstance(level_description,defaultdict):
+    if isinstance(level_description, defaultdict):
         return level_description
-    
+
     """
     Given a description of a game state, create and return a game
     representation of your choice.
@@ -42,7 +44,7 @@ def make_new_game(level_description):
     The exact choice of representation is up to you; but note that what you
     return will be used as input to the other functions.
     """
-    #print(level_description)
+    # print(level_description)
     # level_description=level_description[1:-1]
     # game = dict()
     # player_position = [
@@ -52,15 +54,15 @@ def make_new_game(level_description):
     #     if "player" in level_description[r][c]
     # ][0]
     # print(player_position)
-    rows[0]=len(level_description)
-    columns[0]=rows[0]
+    rows[0] = len(level_description)
+    columns[0] = rows[0]
     for i in range(len(level_description)):
-        
+
         for j in range(len(level_description[i])):
-            
+
             for val in level_description[i][j]:
-                game_state[val].append((i,j))
-    #print(game_state['player'][0])
+                game_state[val].append((i, j))
+    # print(game_state['player'][0])
 
     return game_state
 
@@ -74,12 +76,13 @@ def victory_check(game):
     """
     if not game_state:
         game_state = make_new_game(game)
-    print(sorted(game_state['target']))
-    print(sorted(game_state['computer']))
-    return sorted(game_state['target'])==sorted(game_state['computer'])
-    
-        # game_state=make_new_game(game)
-        # return 
+    print(sorted(game_state["target"]))
+    print(sorted(game_state["computer"]))
+    return sorted(game_state["target"]) == sorted(game_state["computer"])
+
+    # game_state=make_new_game(game)
+    # return
+
 
 # def is_valid_move(game, row, col, direction):
 #     global player_position
@@ -109,13 +112,17 @@ def victory_check(game):
 #     return True
 #
 
-def is_valid_move_helper( row, column, direction):
-    new_position = row+direction_vector[direction][0],column+direction_vector[direction][1]
-    if new_position in game_state['wall'] or new_position in game_state['computer']:
+
+def is_valid_move_helper(row, column, direction):
+    new_position = (
+        row + direction_vector[direction][0],
+        column + direction_vector[direction][1],
+    )
+    if new_position in game_state["wall"] or new_position in game_state["computer"]:
         return False
 
-    game_state["computer"].remove((row,column))
-    game_state['computer'].append(new_position)
+    game_state["computer"].remove((row, column))
+    game_state["computer"].append(new_position)
     print("Hi")
     return True
 
@@ -135,25 +142,28 @@ def step_game(game, direction):
         _type_: dict(set)
     """
     if not game_state:
-       game_state=make_new_game(game)
+        game_state = make_new_game(game)
     print(game_state)
-    player_position = game_state['player'][0]
+    player_position = game_state["player"][0]
     print(player_position)
-    potential_position = (player_position[0]+ direction_vector[direction][0],player_position[1]+direction_vector[direction][1])
+    potential_position = (
+        player_position[0] + direction_vector[direction][0],
+        player_position[1] + direction_vector[direction][1],
+    )
     print(potential_position)
-    if potential_position in game_state['wall']:
+    if potential_position in game_state["wall"]:
         return make_new_game(game_state)
-    elif potential_position in game_state['computer']:
-        if is_valid_move_helper(*potential_position,direction=direction):
-            game_state['player'].remove(player_position)
-            game_state['player'].append(potential_position)
+    elif potential_position in game_state["computer"]:
+        if is_valid_move_helper(*potential_position, direction=direction):
+            game_state["player"].remove(player_position)
+            game_state["player"].append(potential_position)
             return make_new_game(game_state)
     else:
-        game_state['player'].remove(player_position)
-        game_state['player'].append(potential_position)
+        game_state["player"].remove(player_position)
+        game_state["player"].append(potential_position)
 
         return make_new_game(game_state)
-           
+
 
 def step_game_helper(game, row, column, direction):
     game[row][column].remove("computer")
@@ -175,38 +185,35 @@ def dump_game(game):
     print out the current state of your game for testing and debugging on your
     own.
     """
-    global rows,columns
+    global rows, columns
 
     global game_state
     if not game_state:
-        game_state=make_new_game(game)
-    #print(rows, columns)
-    game = [[[] for _ in range(rows[0]+2)] for _ in range(columns[0]+1)]
+        game_state = make_new_game(game)
+    # print(rows, columns)
+    game = [[[] for _ in range(rows[0] + 2)] for _ in range(columns[0] + 1)]
 
+    # print(game)
+    walls = game_state["wall"]
+    # print(walls[0])
+    target = game_state["target"]
+    player = game_state["player"]
+    computer = game_state["computer"]
+    for row, col in walls:
+        game[row][col] = ["wall"]
+    for row, col in target:
+        game[row][col] = ["target"]
+    for row, col in player:
+        game[row][col] = ["player"]
+    for row, col in computer:
+        game[row][col] = ["computer"]
 
-    #print(game)
-    walls = game_state['wall']
-    #print(walls[0])
-    target = game_state['target']
-    player = game_state['player']
-    computer = game_state['computer']
-    for row,col in walls:
-        game[row][col]=['wall']
-    for row,col in target:
-        game[row][col]=['target']
-    for row,col in player:
-        game[row][col]=['player']
-    for row,col in computer:
-        game[row][col]=['computer']
-        
-    #print(game)
+    # print(game)
     return game
-
-        
 
 
 def solve_puzzle(game):
-   
+
     raise NotImplementedError
 
 

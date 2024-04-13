@@ -57,9 +57,9 @@ def transform_set_pairs(database):
             (origin_state (str), destination_state (str)).
     """
     output = set()
-    for origin_state, destination_state,*args in database:
-        if origin_state!=destination_state:
-            output.add((origin_state, destination_state,*args))
+    for origin_state, destination_state, *args in database:
+        if origin_state != destination_state:
+            output.add((origin_state, destination_state, *args))
     return output
 
 
@@ -87,7 +87,7 @@ def transform_dict_list(database):
     """
     output = dict(list)
     for origin_state, destination_state, *rest in database:
-        if origin_state!=destination_state:
+        if origin_state != destination_state:
             output[origin_state].append([destination_state, *rest])
     return output
 

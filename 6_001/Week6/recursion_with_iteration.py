@@ -32,7 +32,8 @@ def factorial_iterative(n):
 
 
 def sum_list(x):
-    count=0
+    count = 0
+
     def sum_list_helper(sum_so_far, lst):
         nonlocal count
         if not lst:
@@ -40,13 +41,12 @@ def sum_list(x):
 
         first = lst[0]
         rest = lst[1:]
-        count+=1
+        count += 1
         return sum_list_helper(sum_so_far + first, rest)
 
-    a=sum_list_helper(0, x)
+    a = sum_list_helper(0, x)
     print(count)
     return a
-
 
 
 def sum_listV2(x, i=0, sum_so_far=0):
@@ -82,12 +82,15 @@ def sum_nested_recursive(original_x):
     else:
         return original_x[0] + sum_nested_recursive(original_x[1:])
 
+
 def sum_list2(x):
     if not x:
         return 0
     else:
-        m=len(x)//2
-        return sum_list2(x[0:m])+sum_list2(x[m:])
+        m = len(x) // 2
+        return sum_list2(x[0:m]) + sum_list2(x[m:])
+
+
 if __name__ == "__main__":
     l = list(range(1, 102))
 
@@ -122,7 +125,7 @@ if __name__ == "__main__":
     print(sum_nested(a))
     end = time.time_ns()
     print((end - start))
-    print(sum_list([1,2,3,4]))
+    print(sum_list([1, 2, 3, 4]))
 
     print("Recursive Nested Sum List")
 

@@ -12,6 +12,8 @@ sorting the result only once?
 from debug_recursion import show_recursive_structure
 
 count = 0
+
+
 @show_recursive_structure
 def tree_list(tree):
     """
@@ -24,27 +26,28 @@ def tree_list(tree):
     if not tree:
         return []
     if type(tree) is list:
-        print("Hi1",tree)
+        print("Hi1", tree)
         return tree[0]
-    count+=1
-    value = tree['value']
-    children = tree['children']
+    count += 1
+    value = tree["value"]
+    children = tree["children"]
 
     if len(children) == 0:
         return value
 
     if type(children) is list and len(children):
-        #print("Hi",[tree_list(x) for x in children])
+        # print("Hi",[tree_list(x) for x in children])
         mid_operation = tree_list(children)
         if type(mid_operation) is list:
-            print("Hi",mid_operation)
-            mid_operation= mid_operation.append(value)
+            print("Hi", mid_operation)
+            mid_operation = mid_operation.append(value)
             return mid_operation
         else:
             print("Hi3")
-            return [mid_operation]+[value]
+            return [mid_operation] + [value]
     print("Hi2")
-    return value+children
+    return value + children
+
 
 t1 = {"value": 3, "children": []}
 
@@ -65,7 +68,7 @@ t3 = {
             "value": 3,
             "children": [
                 {"value": 99, "children": []},
-                {"value": 16, "children": []},#{"value": 7, "children": []}
+                {"value": 16, "children": []},  # {"value": 7, "children": []}
                 {"value": 42, "children": []},
             ],
         },

@@ -10,7 +10,6 @@ def sine(period):
         n = (n + 1) % period
 
 
-
-a=sine(5)
+a = sine(5)
 for val in a:
     print(val)

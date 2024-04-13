@@ -141,7 +141,7 @@ COLOR_NAMES = {
 }
 
 SCALE = 7
-IMAGE = BASE_DIR/'large_maze.png'
+IMAGE = BASE_DIR / "large_maze.png"
 
 pygame.init()
 pygame.display.set_caption("Flood Fill BFS")

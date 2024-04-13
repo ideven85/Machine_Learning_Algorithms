@@ -8,20 +8,26 @@ Question 1: Given the two versions of inverted and round_and_clip_image below,
 # VERSION 1:
 WIDTH, HEIGHT, PIXELS = "width", "height", "pixels"
 
+
 def get_width(image):
     return image[WIDTH]
+
 
 def get_height(image):
     return image[HEIGHT]
 
+
 def get_index(image, row, col):
     return row * image[WIDTH] + col
+
 
 def get_pixel(image, row, col):
     return image[PIXELS][get_index(image, row, col)]
 
+
 def set_pixel(image, row, col, color):
     image[PIXELS][get_index(image, row, col)] = color
+
 
 def blank_image(image):
     return {
@@ -40,8 +46,10 @@ def apply_per_pixel(image, func):
             set_pixel(result, row, col, new_color)
     return result
 
+
 def inverted(image):
     return apply_per_pixel(image, lambda color: 255 - color)
+
 
 def round_and_clip_image(image):
     clip = lambda pixel: max(0, min(255, round(pixel)))
@@ -49,12 +57,12 @@ def round_and_clip_image(image):
 
 
 # VERSION 2:
-w, h, p = 'width', 'height', 'pixels'
-def inverted(image):
+w, h, p = "width", "height", "pixels"
+
+
+def invertedV2(image):
     i = image
-    out = {h: i[h],
-           w: i[w],
-           p: i[p].copy()}
+    out = {h: i[h], w: i[w], p: i[p].copy()}
     for r in range(i[h]):
         for c in range(i[w]):
             x = i[p][r * i[w] + c]
@@ -62,11 +70,10 @@ def inverted(image):
             out[p][r * i[w] + c] = x
     return out
 
-def round_and_clip(image):
+
+def round_and_clipV2(image):
     i = image
-    out = {h: i[h],
-           w: i[w],
-           p: i[p].copy()}
+    out = {h: i[h], w: i[w], p: i[p].copy()}
     for r in range(i[h]):
         for c in range(i[w]):
             x = round(i[p][r * i[w] + c])

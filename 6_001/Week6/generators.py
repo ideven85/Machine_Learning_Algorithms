@@ -50,7 +50,7 @@ def gen3():
 def get_generators():
     # yield from gen1()
     # yield from gen2()
-    yield from gen3() # Yield From a function who returns a generator
+    yield from gen3()  # Yield From a function who returns a generator
 
 
 for val in get_generators():

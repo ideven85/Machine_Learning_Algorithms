@@ -12,6 +12,7 @@ if __name__ == "__main__": block of code at the bottom of the file.
 import doctest
 import sys
 import debug_recursion
+
 sys.setrecursionlimit(25)
 # this is a very small recursion limit (normally 1000)
 # but the test cases are tiny, setting a small recursion limit will help
@@ -41,9 +42,10 @@ def first(ll):
     """
     if not ll:
         return None
-    if isinstance(ll,int):
+    if isinstance(ll, int):
         return ll
-    return ll[0] if ll[0]  else ll
+    return ll[0] if ll[0] else ll
+
 
 @debug_recursion.show_recursive_structure
 def rest(ll):
@@ -58,8 +60,8 @@ def rest(ll):
         return None
     # if isinstance(ll,int):
     #     return ll
-    if len(ll)==1:
-         return ll[0],None
+    if len(ll) == 1:
+        return ll[0], None
 
     return ll[1] if ll[1] else None
 
@@ -75,11 +77,10 @@ def ll_len(ll):
     """
     if ll is None:
         return 0
-    if isinstance(ll,int):
+    if isinstance(ll, int):
         return 1
 
-
-    return ll_len(first(ll))+ll_len(rest(ll))
+    return ll_len(first(ll)) + ll_len(rest(ll))
 
 
 def ll_get(ll, i):
@@ -103,8 +104,7 @@ def make_ll(*elements):
     if not elements:
         return ()
 
-    return make_ll(first(elements))+make_ll(rest(elements))
-
+    return make_ll(first(elements)) + make_ll(rest(elements))
 
 
 def ll_elements(ll):
@@ -118,8 +118,6 @@ def ll_elements(ll):
     """
     for val in ll:
         yield val
-
-
 
 
 def ll_plus(ll1, ll2):
@@ -163,8 +161,8 @@ if __name__ == "__main__":
     #    optionflags=_doctest_flags,
     #    verbose=False
     # )
-    ll=(1,(2,None))
-    print(first((1,(2,None))))
+    ll = (1, (2, None))
+    print(first((1, (2, None))))
     print(rest(ll))
     print(ll_len(ll))
-    print(make_ll( 1))
+    print(make_ll(1))

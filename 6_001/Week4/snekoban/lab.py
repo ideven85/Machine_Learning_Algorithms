@@ -40,7 +40,7 @@ def make_new_game(level_description):
     The exact choice of representation is up to you; but note that what you
     return will be used as input to the other functions.
     """
-   # print(level_description)
+    # print(level_description)
     # level_description=level_description[1:-1]
     game = dict()
     player_position = [

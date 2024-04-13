@@ -33,7 +33,7 @@ def tree_max(tree):
         return max(key, values)
 
 
-#@show_recursive_structure
+# @show_recursive_structure
 def tree_sum(tree):
     """
     Given tree as a dict { 'value': number,
@@ -68,7 +68,7 @@ def tree_list(tree):
     if len(tree) == 0:
         return None
     if len(tree) == 1:
-        return tree['value']
+        return tree["value"]
     val = tree["value"]
     children = tree["children"]
     count += 1
@@ -104,7 +104,6 @@ t2 = {
     "value": 9,
     "children": [
         {"value": 2, "children": []},
-
     ],
 }
 
@@ -143,9 +142,9 @@ t3 = {
 #
 #
 def test_tree_list():
-    #assert tree_list(t1) == [3]
+    # assert tree_list(t1) == [3]
     assert tree_list(t2) == [2, 9]
-    #assert tree_list(t3) == [2, 3, 7, 9, 16, 42, 99]
+    # assert tree_list(t3) == [2, 3, 7, 9, 16, 42, 99]
     print("correct!")
 
 

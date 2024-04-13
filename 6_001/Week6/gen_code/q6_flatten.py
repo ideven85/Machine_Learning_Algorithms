@@ -11,11 +11,10 @@ def flatten(x):
         yield []
         return
     for el in x:
-        if isinstance(el,list):
-            yield from flatten(el) # When calling a generator function use yield from
+        if isinstance(el, list):
+            yield from flatten(el)  # When calling a generator function use yield from
         else:
             yield el
-
 
 
 def test_my_flatten():

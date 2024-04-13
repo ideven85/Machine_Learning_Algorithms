@@ -13,10 +13,9 @@ def my_enumerate(x):
     """
 
     i = 0
-    for i  in range(len(x)):
+    for i in range(len(x)):
         yield ((i, x[i]))
         i += 1
-
 
 
 def test_my_enumerate():

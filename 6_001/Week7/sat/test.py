@@ -19,13 +19,16 @@ sys.setrecursionlimit(10000)
 TEST_DIRECTORY = os.path.join(os.path.dirname(__file__), "test_inputs")
 
 has_been_set = True
+
+
 def set_limit_only_once(x):
     global has_been_set
     if has_been_set:
         raise Exception("can't repeatedly change the recursion limit")
     sys.setrecursionlimit(x)
 
-lab.sys = types.ModuleType('fakesys')
+
+lab.sys = types.ModuleType("fakesys")
 lab.sys.setrecursionlimit = set_limit_only_once
 
 ## HELPER FUNCTIONS
@@ -211,6 +214,7 @@ def test_unit_clause():
     sys.setrecursionlimit(1000)
     _test_from_file("R", _satisfiable)
     sys.setrecursionlimit(old_limit)
+
 
 # These three tests use your satisfying_assignment code to solve sudoku
 # puzzles (formulated as Boolean formulas).

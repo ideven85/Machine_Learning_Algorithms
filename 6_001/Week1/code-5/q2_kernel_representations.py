@@ -7,9 +7,9 @@ How would you implement correlate_pixel with each kernel representation?
 
 # a.	Image dictionary kernel
 kernel = {
-"height": 3,
-	"width": 3,
-	"pixels": [0, 0, 0, 0, 0, 0, 0, 1, 0],
+    "height": 3,
+    "width": 3,
+    "pixels": [0, 0, 0, 0, 0, 0, 0, 1, 0],
 }
 
 # b.	Flat-list kernel
@@ -17,20 +17,25 @@ kernel = [0, 0, 0, 0, 0, 0, 0, 1, 0]
 
 # c.	Nested-list kernel
 kernel = [
-	[0, 0, 0],
-	[0, 0, 0],
-	[0, 1, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 1, 0],
 ]
 
 # d.	Image coordinate offsets to kernel value dictionary
 kernel = {
-	(-1, -1): 0, (-1, 0): 0, (-1, 1): 0,
-	(0,  -1): 1, (0,  0): 0, (0,  1): 0,
-	(1,  -1): 0, (1,  0): 0, (1,  1): 0,
+    (-1, -1): 0,
+    (-1, 0): 0,
+    (-1, 1): 0,
+    (0, -1): 1,
+    (0, 0): 0,
+    (0, 1): 0,
+    (1, -1): 0,
+    (1, 0): 0,
+    (1, 1): 0,
 }
 # keys are (row, col) tuples for the corresponding
 # kernel value, and the kernel is centered at (0, 0)
-
 
 
 def correlate_pixel(image, row, col, kernel, behavior):
@@ -43,6 +48,7 @@ def correlate_pixel(image, row, col, kernel, behavior):
             k_val = _________
             color += k_val * get_pixel(image, im_row, im_col, behavior)
     return color
+
 
 def correlate(image, kernel, boundary_behavior="extend"):
     result = copy_image(image)

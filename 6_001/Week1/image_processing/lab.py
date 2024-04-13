@@ -13,45 +13,53 @@ from PIL import Image
 
 WIDTH, HEIGHT, PIXELS = "width", "height", "pixels"
 
+
 def get_width(image):
     return image[WIDTH]
 
+
 def get_height(image):
     return image[HEIGHT]
-def get_index(image,row,col):
-    return row*image[WIDTH]+col
+
+
+def get_index(image, row, col):
+    return row * image[WIDTH] + col
+
+
 def get_pixel(image, row, col):
-    return image[PIXELS][get_index(image,row,col)]
+    return image[PIXELS][get_index(image, row, col)]
 
 
 def set_pixel(image, row, col, color):
-    image[PIXELS][get_index(image,row,col)]=color
+    image[PIXELS][get_index(image, row, col)] = color
 
 
 def blank_image(image):
     return {
-        HEIGHT:image[HEIGHT],
-        WIDTH:image[WIDTH],
-        PIXELS:[0]*image[HEIGHT]*image[WIDTH]
+        HEIGHT: image[HEIGHT],
+        WIDTH: image[WIDTH],
+        PIXELS: [0] * image[HEIGHT] * image[WIDTH],
     }
+
 
 def apply_per_pixel(image, func):
     result = blank_image(image)
     for col in range(get_width(image)):
         for row in range(get_height(image)):
-            color = get_pixel(image,row,col)
+            color = get_pixel(image, row, col)
             new_color = func(color)
             set_pixel(result, row, col, new_color)
     return result
-
 
 
 def inverted(image):
     if image is None:
         return image
 
-    return apply_per_pixel(image, lambda color: 255-color)
-w, h, p = 'width', 'height', 'pixels'
+    return apply_per_pixel(image, lambda color: 255 - color)
+
+
+w, h, p = "width", "height", "pixels"
 # def inverted(image):
 #     if not image:
 #         assert False
@@ -69,6 +77,7 @@ w, h, p = 'width', 'height', 'pixels'
 #     return out
 
 # HELPER FUNCTIONS
+
 
 def correlate(image, kernel, boundary_behavior):
     """
@@ -105,10 +114,11 @@ def round_and_clip_image(image):
     255 in the output; and any locations with values lower than 0 in the input
     should have value 0 in the output.
     """
-    return apply_per_pixel(image,lambda pixel:max(0,min(255,round(pixel))))
+    return apply_per_pixel(image, lambda pixel: max(0, min(255, round(pixel))))
 
 
 # FILTERS
+
 
 def blurred(image, kernel_size):
     """
@@ -128,8 +138,8 @@ def blurred(image, kernel_size):
     raise NotImplementedError
 
 
-
 # HELPER FUNCTIONS FOR LOADING AND SAVING IMAGES
+
 
 def load_greyscale_image(filename):
     """
@@ -143,8 +153,9 @@ def load_greyscale_image(filename):
         img = Image.open(img_handle)
         img_data = img.getdata()
         if img.mode.startswith("RGB"):
-            pixels = [round(.299 * p[0] + .587 * p[1] + .114 * p[2])
-                      for p in img_data]
+            pixels = [
+                round(0.299 * p[0] + 0.587 * p[1] + 0.114 * p[2]) for p in img_data
+            ]
         elif img.mode == "LA":
             pixels = [p[0] for p in img_data]
         elif img.mode == "L":

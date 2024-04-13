@@ -4,6 +4,8 @@ import os
 
 file = os.path.dirname(__file__)
 BASE_DIR = Path(__file__).resolve().parent
+
+
 def flood_fill(image, location, new_color):
     """
     Given an image, replace the same-colored region around a given location
@@ -31,7 +33,7 @@ def flood_fill(image, location, new_color):
     visited.add(location)
     while to_color:
         this_cell = to_color.pop(0)
-        
+
         set_pixel(image, *this_cell, new_color)
         for neighbour in get_neighbours(image, this_cell):
             if (
@@ -176,7 +178,7 @@ COLOR_NAMES = {
 }
 
 SCALE = 7
-IMAGE = BASE_DIR/'large_maze.png'
+IMAGE = BASE_DIR / "large_maze.png"
 
 pygame.init()
 image = pygame.image.load(IMAGE)
