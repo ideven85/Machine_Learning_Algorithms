@@ -7,6 +7,7 @@ def summation(num1: int, num2: int) -> int:
     """
     Calculate the summation of two number
     """
+    print("hi")
     return num1 + num2
 
 

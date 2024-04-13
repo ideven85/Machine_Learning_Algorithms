@@ -1,3 +1,5 @@
+import pytest
+
 from src.calculator import summation, subtraction, multiplication, division
 
 
@@ -5,6 +7,7 @@ def test_summation():
     """
     Testing Summation function
     """
+    print(summation(1,2))
     assert summation(2, 10) == 12
     assert summation(3, 5) == 8
     assert summation(4, 6) == 10
@@ -35,3 +38,7 @@ def test_Division():
     assert division(5, 5) == 1
     assert division(70, 10) == 7
     assert division(16, 4) == 4
+
+
+if __name__ == '__main__':
+   print(test_multiplication())

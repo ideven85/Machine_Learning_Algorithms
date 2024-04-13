@@ -43,4 +43,4 @@ def mixtape(songs: dict, target_duration: int):
 
 if __name__ == "__main__":
     song = {"A": 5, "B": 10, "C": 6, "D": 1}
-    print(mixtape(song, 11))
+    print(mixtape(song, 1000))

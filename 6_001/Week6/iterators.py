@@ -21,6 +21,13 @@ run until we see a yield, pause the execution again, and give us the value that 
 Object is already iterable... either by implementing __iter__ or "__getitem_- which fetches bu in index"
  
 """
+# class LinkedStack:
+#     class Node:
+#         slots = '_element','_next'
+#         def __init__(self,value):
+#             self._element = value
+#             self._next = None
+#
 
 
 class Stack:
@@ -54,7 +61,10 @@ class Stack:
 
     def __iter__(self):
         if len(self):
-            return self._stack[-1]
+           temp=self._stack[:]
+           for t in temp:
+               yield t
+
         else:
             raise StopIteration("Add more elements to me please")
 
@@ -74,6 +84,8 @@ if __name__ == "__main__":
     obj = Stack()
     obj.push(1)
     obj.push(2)
+    obj.push(3)
+    obj.push(4)
     # obj+=[2]
     print(obj)
 
@@ -81,7 +93,8 @@ if __name__ == "__main__":
         print(obj[i], end=" ")
     print()
     for val in obj:
-        print(val)
+        print(val,end=' ')
+    print("\nIteration over")
     print(obj.pop())
     print(obj.pop())
     print(obj.pop())  # Error

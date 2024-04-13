@@ -62,7 +62,7 @@ def make_new_game(level_description):
 
             for val in level_description[i][j]:
                 game_state[val].append((i, j))
-    # print(game_state['player'][0])
+    print(game_state['player'][0])
 
     return game_state
 
@@ -211,7 +211,7 @@ def dump_game(game):
     # print(game)
     return game
 
-
+#todo {}
 def solve_puzzle(game):
 
     raise NotImplementedError
