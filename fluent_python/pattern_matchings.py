@@ -6,8 +6,8 @@ def duplicate_characters(string):
             duplicates.append(char)
         else:
             visited.add(char)
-    return ' '.join(duplicates)
-string= "DavidaD"
+    return " ".join(duplicates)
+
+
+string = "DavidaD"
 print(duplicate_characters(string))
-
-

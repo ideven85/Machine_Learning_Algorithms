@@ -12,18 +12,18 @@ from heapq import heappop, heappush
 def a_star(graph, start, lower_bound):
     """single source shortest path by A* on an unweighted graph
 
-       :param graph: iterator on adjacent vertices
-       :param source: source vertex
-       :param lower_bound: lb function on distance to target,
-                must return 0 on target and only there.
+    :param graph: iterator on adjacent vertices
+    :param source: source vertex
+    :param lower_bound: lb function on distance to target,
+             must return 0 on target and only there.
 
-       :returns: distance or -1 (target unreachable)
-       :complexity: `O(|V| + |E|log|V|)`
+    :returns: distance or -1 (target unreachable)
+    :complexity: `O(|V| + |E|log|V|)`
     """
     closedset = set()
-    openset   = set([start])
-    g         = {start: 0 }
-    Q         = [(lower_bound(start), start)]
+    openset = set([start])
+    g = {start: 0}
+    Q = [(lower_bound(start), start)]
     while Q:
         (val, x) = heappop(Q)
         if lower_bound(x) == 0:

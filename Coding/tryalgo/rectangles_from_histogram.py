@@ -16,9 +16,9 @@ def rectangles_from_histogram(H):
     :returns: area, left, height, right, rect. is [0, height] * [left, right)
     :complexity: linear
     """
-    best = (float('-inf'), 0, 0, 0)
+    best = (float("-inf"), 0, 0, 0)
     S = []
-    H2 = H + [float('-inf')]  # extra element to empty the queue
+    H2 = H + [float("-inf")]  # extra element to empty the queue
     for right, _ in enumerate(H2):
         x = H2[right]
         left = right
@@ -30,4 +30,6 @@ def rectangles_from_histogram(H):
                 best = rect
         S.append((left, x))
     return best
+
+
 # snip}

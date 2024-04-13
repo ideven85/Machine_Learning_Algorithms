@@ -15,13 +15,13 @@ t9 = "22233344455566677778889999"
 
 def letter_to_digit(x):
     """:returns: the digit correspondence for letter x"""
-    assert 'a' <= x <= 'z'
-    return t9[ord(x) - ord('a')]
+    assert "a" <= x <= "z"
+    return t9[ord(x) - ord("a")]
 
 
 def code_word(word):
     """:returns: the digit correspondence for given word"""
-    return ''.join(map(letter_to_digit, word))
+    return "".join(map(letter_to_digit, word))
 
 
 def predictive_text(dic):
@@ -46,8 +46,7 @@ def predictive_text(dic):
     prop = {}
     for prefix in total_weight:
         code = code_word(prefix)
-        if (code not in prop
-                or total_weight[prop[code]] < total_weight[prefix]):
+        if code not in prop or total_weight[prop[code]] < total_weight[prefix]:
             prop[code] = prefix
     return prop
 
@@ -57,4 +56,6 @@ def propose(prop, seq):
     if seq in prop:
         return prop[seq]
     return None
+
+
 # snip}

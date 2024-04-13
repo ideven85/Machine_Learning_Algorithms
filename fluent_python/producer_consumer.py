@@ -3,7 +3,8 @@ import asyncio
 
 async def main():
     await asyncio.sleep(1)
-    print('hello')
+    print("hello")
+
 
 async def main():
     async with asyncio.TaskGroup() as tg:

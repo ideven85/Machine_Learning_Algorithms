@@ -9,7 +9,7 @@ christoph dürr et jill-jênn vie - 2015-2019
 
 # snip{
 class OurHeap:
-    """ min heap
+    """min heap
 
     * heap: is the actual heap, heap[1] = index of the smallest element
     * rank: inverse of heap with rank[x]=i iff heap[i]=x
@@ -19,6 +19,7 @@ class OurHeap:
                 other operations O(log n) in expectation
                 and O(n) in worst case, due to the usage of a dictionary
     """
+
     def __init__(self, items):
         self.heap = [None]  # index 0 will be ignored
         self.rank = {}
@@ -30,23 +31,24 @@ class OurHeap:
 
     def push(self, x):
         """Insert new element x in the heap.
-           Assumption: x is not already in the heap"""
+        Assumption: x is not already in the heap"""
         assert x not in self.rank
         i = len(self.heap)
-        self.heap.append(x)    # add a new leaf
+        self.heap.append(x)  # add a new leaf
         self.rank[x] = i
-        self.up(i)             # maintain heap order
+        self.up(i)  # maintain heap order
 
     def pop(self):
         """Remove and return smallest element"""
         root = self.heap[1]
         del self.rank[root]
-        x = self.heap.pop()    # remove last leaf
-        if self:               # if heap is not empty
-            self.heap[1] = x    # move the last leaf
-            self.rank[x] = 1    # to the root
-            self.down(1)        # maintain heap order
+        x = self.heap.pop()  # remove last leaf
+        if self:  # if heap is not empty
+            self.heap[1] = x  # move the last leaf
+            self.rank[x] = 1  # to the root
+            self.down(1)  # maintain heap order
         return root
+
     # snip}
 
     # snip{ our_heap_up_down
@@ -57,7 +59,7 @@ class OurHeap:
             self.heap[i] = self.heap[i // 2]
             self.rank[self.heap[i // 2]] = i
             i //= 2
-        self.heap[i] = x       # insertion index found
+        self.heap[i] = x  # insertion index found
         self.rank[x] = i
 
     def down(self, i):
@@ -65,31 +67,35 @@ class OurHeap:
         x = self.heap[i]
         n = len(self.heap)
         while True:
-            left = 2 * i       # climb down the tree
+            left = 2 * i  # climb down the tree
             right = left + 1
-            if (right < n and self.heap[right] < x and
-                    self.heap[right] < self.heap[left]):
+            if (
+                right < n
+                and self.heap[right] < x
+                and self.heap[right] < self.heap[left]
+            ):
                 self.heap[i] = self.heap[right]
-                self.rank[self.heap[right]] = i   # move right child up
+                self.rank[self.heap[right]] = i  # move right child up
                 i = right
             elif left < n and self.heap[left] < x:
                 self.heap[i] = self.heap[left]
-                self.rank[self.heap[left]] = i    # move left child up
+                self.rank[self.heap[left]] = i  # move left child up
                 i = left
             else:
-                self.heap[i] = x   # insertion index found
+                self.heap[i] = x  # insertion index found
                 self.rank[x] = i
                 return
 
     def update(self, old, new):
-        """Replace an element in the heap
-        """
-        i = self.rank[old]     # change value at index i
+        """Replace an element in the heap"""
+        i = self.rank[old]  # change value at index i
         del self.rank[old]
         self.heap[i] = new
         self.rank[new] = i
-        if old < new:          # maintain heap order
+        if old < new:  # maintain heap order
             self.down(i)
         else:
             self.up(i)
+
+
 # snip}

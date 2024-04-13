@@ -30,11 +30,11 @@ def dinic(graph, capacity, source, target):
     Q = deque()
     total = 0
     n = len(graph)
-    flow = [[0] * n for u in range(n)]   # flow initially empty
-    while True:                   # repeat while we can increase
+    flow = [[0] * n for u in range(n)]  # flow initially empty
+    while True:  # repeat while we can increase
         Q.appendleft(source)
-        level = [None] * n          # build levels, None = inaccessible
-        level[source] = 0           # by BFS
+        level = [None] * n  # build levels, None = inaccessible
+        level[source] = 0  # by BFS
         while Q:
             u = Q.pop()
             for v in graph[u]:
@@ -42,17 +42,15 @@ def dinic(graph, capacity, source, target):
                     level[v] = level[u] + 1
                     Q.appendleft(v)
 
-        if level[target] is None:   # stop if sink is not reachable
+        if level[target] is None:  # stop if sink is not reachable
             return flow, total
         up_bound = sum(capacity[source][v] for v in graph[source]) - total
-        total += _dinic_step(graph, capacity, level, flow, source, target,
-                             up_bound)
+        total += _dinic_step(graph, capacity, level, flow, source, target, up_bound)
 
 
 # pylint: disable=too-many-arguments
 def _dinic_step(graph, capacity, level, flow, u, target, limit):
-    """ tenter de pousser le plus de flot de u à target, sans dépasser limit
-    """
+    """tenter de pousser le plus de flot de u à target, sans dépasser limit"""
     if limit <= 0:
         return 0
     if u == target:
@@ -68,6 +66,8 @@ def _dinic_step(graph, capacity, level, flow, u, target, limit):
             val += aug
             limit -= aug
     if val == 0:
-        level[u] = None         # remove unreachable node
+        level[u] = None  # remove unreachable node
     return val
+
+
 # snip}

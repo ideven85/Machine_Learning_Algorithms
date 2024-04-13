@@ -15,13 +15,16 @@ from sys import stdin
 from tryalgo.floyd_warshall import floyd_warshall
 
 
-def readstr(): return stdin.readline().strip()
+def readstr():
+    return stdin.readline().strip()
 
 
-def readints(): return map(int, stdin.readline().split())
+def readints():
+    return map(int, stdin.readline().split())
 
 
-def readint(): return int(stdin.readline())
+def readint():
+    return int(stdin.readline())
 
 
 __all__ = ["shortest_cycle", "powergraph"]
@@ -39,12 +42,12 @@ def bfs(graph, root, prune_level):
     :complexity: O(V + E)
     """
     n = len(graph)
-    level = [-1] * n                      # -1 == not seen
-    tree = [None] * n                     # pointers to predecessors
-    to_visit = deque([root])              # queue for BFS
+    level = [-1] * n  # -1 == not seen
+    tree = [None] * n  # pointers to predecessors
+    to_visit = deque([root])  # queue for BFS
     level[root] = 0
     tree[root] = root
-    best_cycle = float('inf')             # start with infinity
+    best_cycle = float("inf")  # start with infinity
     best_u = None
     best_v = None
     while to_visit:
@@ -52,13 +55,13 @@ def bfs(graph, root, prune_level):
         if level[u] > prune_level:
             break
         for v in graph[u]:
-            if tree[u] == v:              # ignore the tree edge
+            if tree[u] == v:  # ignore the tree edge
                 continue
-            if level[v] == -1:            # new vertex - tree edge
+            if level[v] == -1:  # new vertex - tree edge
                 level[v] = level[u] + 1
                 to_visit.append(v)
                 tree[v] = u
-            else:                        # vertex already seen - traversal edge
+            else:  # vertex already seen - traversal edge
                 prune_level = level[v] - 1
                 cycle_len = level[u] + 1 + level[v]
                 if cycle_len < best_cycle:  # footnote (1)
@@ -80,13 +83,13 @@ def path(tree, v):
 
 
 def shortest_cycle(graph):
-    """ Finding a shortest cycle in an undirected unweighted graph
+    """Finding a shortest cycle in an undirected unweighted graph
 
     :param graph: undirected graph in listlist or listdict format
     :returns: None or a list C describing a shortest cycle
     :complexity: `O(|V|*|E|)`
     """
-    best_cycle = float('inf')
+    best_cycle = float("inf")
     best_u = None
     best_v = None
     best_tree = None
@@ -98,12 +101,12 @@ def shortest_cycle(graph):
             best_u = u
             best_v = v
             best_tree = tree
-    if best_cycle == float('inf'):
-        return None                   # no cycle found
-    Pu = path(best_tree, best_u)      # combine path to make a cycle
+    if best_cycle == float("inf"):
+        return None  # no cycle found
+    Pu = path(best_tree, best_u)  # combine path to make a cycle
     Pv = path(best_tree, best_v)
-    cycle = Pu[::-1] + Pv   # last vertex equals first vertex
-    return cycle[1:]        # remove duplicate vertex
+    cycle = Pu[::-1] + Pv  # last vertex equals first vertex
+    return cycle[1:]  # remove duplicate vertex
 
 
 def powergraph(graph, k):
@@ -118,7 +121,7 @@ def powergraph(graph, k):
     """
     V = range(len(graph))
     # create weight matrix for paths of length 1
-    M = [[float('inf') for v in V] for u in V]
+    M = [[float("inf") for v in V] for u in V]
     for u in V:
         for v in graph[u]:
             M[u][v] = M[v][u] = 1

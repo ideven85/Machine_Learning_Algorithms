@@ -20,12 +20,13 @@ def floyd_warshall(weight):
     for k in V:
         for u in V:
             for v in V:
-                weight[u][v] = min(weight[u][v],
-                                   weight[u][k] + weight[k][v])
+                weight[u][v] = min(weight[u][v], weight[u][k] + weight[k][v])
     for v in V:
-        if weight[v][v] < 0:      # negative cycle found
+        if weight[v][v] < 0:  # negative cycle found
             return True
     return False
+
+
 # snip}
 
 
@@ -45,6 +46,6 @@ def floyd_warshall2(weight):
                 if alt < Wuv:
                     Wu[v] = alt
     for v, Wv in enumerate(weight):
-        if Wv[v] < 0:      # negative cycle found
+        if Wv[v] < 0:  # negative cycle found
             return True
     return False

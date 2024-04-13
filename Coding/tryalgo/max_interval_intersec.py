@@ -16,8 +16,7 @@ def max_interval_intersec(S):
     :param S: list of half open intervals
     :complexity: O(n log n), where n = len(S)
     """
-    B = ([(left,  +1) for left, right in S] +
-         [(right, -1) for left, right in S])
+    B = [(left, +1) for left, right in S] + [(right, -1) for left, right in S]
     B.sort()
     c = 0
     best = (c, None)
@@ -26,4 +25,6 @@ def max_interval_intersec(S):
         if best[0] < c:
             best = (c, x)
     return best
+
+
 # snip}
