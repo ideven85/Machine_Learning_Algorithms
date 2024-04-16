@@ -149,15 +149,16 @@ def powerset_recursive(arr):
     # print(rest_sequence)
     return first_sequence + rest_sequence
 
+
 def powerset_backtracking(arr):
 
-    def dfs(output,current=list(),start=0):
-        if len(current)>=1:
+    def dfs(output, current=list(), start=0):
+        if len(current) >= 1:
             output.append(current[:])
 
-        for index in range(start,len(arr)):
+        for index in range(start, len(arr)):
             current.append(arr[index])
-            dfs(output,current,index+1)
+            dfs(output, current, index + 1)
             current.remove(arr[index])
 
     output = [[]]
@@ -182,4 +183,4 @@ if __name__ == "__main__":
     b1 = [1, [2, 3]]
     # print(productSum(b1))
     # print(powerset_recursive([1, 2,3]))
-    print(powerset_backtracking([1,2,3]))
+    print(powerset_backtracking([1, 2, 3]))

@@ -1,5 +1,5 @@
-#todo Date: 14th April,2024
-def feed(preferences:dict, quantities:dict)->dict:
+# todo Date: 14th April,2024
+def feed(preferences: dict, quantities: dict) -> dict:
     """
     >>> out1 = {'alex': 'pickles', 'billie': 'ketchup'}
     >>> feed({'alex': ['pickles'], 'billie': ['ketchup']},
@@ -37,4 +37,3 @@ def feed(preferences:dict, quantities:dict)->dict:
     >>> sorted((res['cameron'], res['devin'], res['emery']))
     ['cake', 'cake', 'cheese']
     """
-

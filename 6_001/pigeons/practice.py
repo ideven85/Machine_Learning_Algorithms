@@ -54,7 +54,7 @@ def lottery(prairie_dogs, capacities):
           can be assigned to the burrow at that index.
 
     Returns:
-        A list of burrow indices, where the element at index i represents 
+        A list of burrow indices, where the element at index i represents
         the burrow that prairie_dogs[i] was assigned to live in.
 
     For example:

@@ -5,6 +5,7 @@ Recipes
 
 import pickle
 import sys
+from collections import defaultdict
 
 # 10 hours per lab
 
@@ -17,7 +18,12 @@ def atomic_ingredient_costs(recipes):
     Given a recipes list, make and return a dictionary mapping each atomic food item
     name to its cost.
     """
-    raise NotImplementedError
+    atomic_dictionary = dict()
+    for recipe in recipes:
+        if recipe[0] == "atomic":
+            atomic_dictionary[recipe[1]] = recipe[2]
+
+    return atomic_dictionary
 
 
 def compound_ingredient_possibilities(recipes):
@@ -26,7 +32,11 @@ def compound_ingredient_possibilities(recipes):
     return a dictionary that maps each compound food item name to a list
     of all the ingredient lists associated with that name.
     """
-    raise NotImplementedError
+    compound_dictionary = defaultdict(list)
+    for r in recipes:
+        if r[0] == "compound":
+            compound_dictionary[r[1]].append(r[2])
+    return compound_dictionary
 
 
 def lowest_cost(recipes, food_item):
@@ -34,7 +44,24 @@ def lowest_cost(recipes, food_item):
     Given a recipes list and the name of a food item, return the lowest cost of
     a full recipe for the given food item.
     """
-    raise NotImplementedError
+    atomic_dictionary = atomic_ingredient_costs(recipes)
+    compound_dictionary = compound_ingredient_possibilities(recipes)
+
+    def lowest_cost_helper():
+        cost1 = 10000000000
+        cost2 = 10000000
+        if food_item in atomic_dictionary:
+            cost1 = atomic_dictionary[food_item]
+        if food_item in compound_dictionary:
+            compounds = compound_dictionary[food_item]
+
+            current = 0
+
+            cost2 = min(current, cost2)
+        print(cost1, cost2)
+        return min(cost1, cost2)
+
+    return lowest_cost_helper()
 
 
 def scaled_flat_recipe(flat_recipe, n):
@@ -167,9 +194,23 @@ if __name__ == "__main__":
         ("atomic", "tomato", 13),
     ]
 
-    for recipe in example_recipes:
-        if recipe[0] == "compound":
-            print(*recipe)
-        else:
-            print(*recipe)
+    # for recipe in example_recipes:
+    #     if recipe[0] == "compound":
+    #         print(*recipe)
+    #     else:
+    #         print(*recipe)
     # you are free to add additional testing code here!
+    a = atomic_ingredient_costs(example_recipes)
+    print(sum(a.values()))
+    b = compound_ingredient_possibilities(example_recipes)
+    print(b)
+    dairy_recipes = [
+        ("compound", "milk", [("cow", 2), ("milking stool", 1)]),
+        ("compound", "cheese", [("milk", 1), ("time", 1)]),
+        ("compound", "cheese", [("cutting-edge laboratory", 11)]),
+        ("atomic", "milking stool", 5),
+        ("atomic", "cutting-edge laboratory", 1000),
+        ("atomic", "time", 10000),
+        ("atomic", "cow", 100),
+    ]
+    print(lowest_cost(dairy_recipes, "cheese"))

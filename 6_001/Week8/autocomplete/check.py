@@ -1,9 +1,58 @@
-"""
-6.101 Lab:
-Autocomplete
-"""
+import pytest
+import pickle
+import lab
+import os
 
-# NO ADDITIONAL IMPORTS!
+TEST_DIRECTORY = os.path.dirname(__file__)
+
+
+# convert prefix tree into a dictionary...
+def dictify(t):
+    assert set(t.__dict__) == {
+        "value",
+        "children",
+    }, "PrefixTree instances should only contain the two instance attributes mentioned in the lab writeup."
+    out = {"value": t.value, "children": {}}
+    for ch, child in t.children.items():
+        out["children"][ch] = dictify(child)
+    return out
+
+
+# ...and back
+def from_dict(d):
+    t = lab.PrefixTree()
+    for k, v in d.items():
+        t[k] = v
+    return t
+
+
+# make sure the keys are not explicitly stored in any node
+def any_key_stored(tree, keys):
+    keys = [tuple(k) for k in keys]
+    for i in dir(tree):
+        try:
+            val = tuple(getattr(tree, i))
+        except:
+            continue
+        for j in keys:
+            if j == val:
+                return repr(i), repr(j)
+    for child in tree.children:
+        if len(child) != 1:
+            return repr(child), repr(child)
+    for child in tree.children.values():
+        key_stored = any_key_stored(child, keys)
+        if key_stored:
+            return key_stored
+    return None
+
+
+# read in expected result
+def read_expected(fname):
+    with open(os.path.join(TEST_DIRECTORY, "testing_data", fname), "rb") as f:
+        return pickle.load(f)
+
+
 import doctest
 from text_tokenize import tokenize_sentences
 
@@ -56,10 +105,10 @@ class PrefixTree:
 
             if key[i] in self.children:
                 continue
-            self.children[key[i]].setdefault()
+            self.children[key[i]] = self.value
         # todo Reassign value of bark to 3 and bar to 3
 
-        self.children.setdefault(current, self._Node(value))
+        self.children.setdefault(key[n - 1], value)
 
     def __getitem__(self, key):
         """
@@ -69,7 +118,7 @@ class PrefixTree:
         """
         if not isinstance(key, str):
             raise TypeError("The given word must be a string")
-        if self.children[key].value is None:
+        if self.children[key] is None:
 
             raise KeyError("Given word not found")
         else:
@@ -99,53 +148,13 @@ class PrefixTree:
         raise NotImplementedError
 
 
-def word_frequencies(text):
-    """
-    Given a piece of text as a single string, create a prefix tree whose keys
-    are the words in the text, and whose values are the number of times the
-    associated word appears in the text.
-    """
-    raise NotImplementedError
-
-
-def autocomplete(tree, prefix, max_count=None):
-    """
-    Return the list of the most-frequently occurring elements that start with
-    the given prefix.  Include only the top max_count elements if max_count is
-    specified, otherwise return all.
-
-    Raise a TypeError if the given prefix is not a string.
-    """
-    raise NotImplementedError
-
-
-def autocorrect(tree, prefix, max_count=None):
-    """
-    Return the list of the most-frequent words that start with prefix or that
-    are valid words that differ from prefix by a small edit.  Include up to
-    max_count elements from the autocompletion.  If autocompletion produces
-    fewer than max_count elements, include the most-frequently-occurring valid
-    edits of the given word as well, up to max_count total elements.
-    """
-    raise NotImplementedError
-
-
-def word_filter(tree, pattern):
-    """
-    Return list of (word, freq) for all words in the given prefix tree that
-    match pattern.  pattern is a string, interpreted as explained below:
-         * matches any sequence of zero or more characters,
-         ? matches any single character,
-         otherwise char in pattern char must equal char in word.
-    """
-    raise NotImplementedError
-
-
-# you can include test cases of your own in the block below.
 if __name__ == "__main__":
+
     t = PrefixTree()
-    t["bat"] = 7
-    t["bark"] = "-)"
-    t["bar"] = 3
-    print(t["bark"])
-    print(t["ba"])
+    t["cat"] = 0
+    t["car"] = 1
+    t["carpet"] = 2
+
+    expect = read_expected("2.pickle")
+
+    print(expect)

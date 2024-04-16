@@ -61,9 +61,9 @@ class Stack:
 
     def __iter__(self):
         if len(self):
-           temp=self._stack[:]
-           for t in temp:
-               yield t
+            temp = self._stack[:]
+            for t in temp:
+                yield t
 
         else:
             raise StopIteration("Add more elements to me please")
@@ -93,7 +93,7 @@ if __name__ == "__main__":
         print(obj[i], end=" ")
     print()
     for val in obj:
-        print(val,end=' ')
+        print(val, end=" ")
     print("\nIteration over")
     print(obj.pop())
     print(obj.pop())

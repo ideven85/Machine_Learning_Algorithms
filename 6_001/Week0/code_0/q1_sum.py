@@ -1,6 +1,6 @@
 def sum_lists(lists):
     """
-    Given a list of lists of numbers, return a new list where each list 
+    Given a list of lists of numbers, return a new list where each list
     is replaced by the sum of its elements without modifying the input list.
     """
     output = [0] * len(lists)
@@ -11,7 +11,8 @@ def sum_lists(lists):
         output[i] = total
     return output
 
-#inp = [ [# some numbers], ... ]
-#exp = [ ... # some numbers ]
-#out = sum_lists(inp)
-#print(out)
+
+# inp = [ [# some numbers], ... ]
+# exp = [ ... # some numbers ]
+# out = sum_lists(inp)
+# print(out)

@@ -4,8 +4,10 @@ import pickle
 TEST_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "test_data")
 
 import poly
+
 # run `pytest test_poly.py` (no quotes)
 # in your terminal to see the test results!
+
 
 def test_add_tiny():
     """
@@ -49,6 +51,7 @@ def test_sparse_mul():
     with open(os.path.join(TEST_DIR, "sparse_multiply_tests.pickle"), "rb") as f:
         for p1, p2, out in pickle.load(f):
             assert poly.poly_mul(p1, p2) == out
+
 
 def test_subtract_tiny():
     """

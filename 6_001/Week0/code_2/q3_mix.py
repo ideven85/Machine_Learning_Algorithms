@@ -9,6 +9,7 @@ c)	Are there any bugs? If so, what changes could you make to fix them.
 Test function by running "pytest q3_mix.py" in the terminal (no quotes)
 """
 
+
 def mix(sound1, sound2, p):
     # initialize a new sound
     new_sound = {}
@@ -19,7 +20,7 @@ def mix(sound1, sound2, p):
         sound1_scaled.append(s * p)
     sound2_scaled = []
     for s in sound1["samples"]:
-        sound2_scaled.append(s * 1-p)
+        sound2_scaled.append(s * 1 - p)
 
     # combine the scaled sounds
     if len(sound1_scaled) > len(sound2_scaled):
@@ -38,6 +39,7 @@ def mix(sound1, sound2, p):
 
     # return the mixed sound
     return new_sound
+
 
 def test_mix_small():
     s1 = {

@@ -10,6 +10,7 @@ Write code in the functions below to perform operations
 on any two polynomials in list form, p1 and p2.
 """
 
+
 def poly_add(p1, p2):
     """
     Takes two single variable polynomials as input and returns a
@@ -29,12 +30,9 @@ def poly_mul(p1, p2):
     raise NotImplementedError
 
 
-
 def poly_subtract(p1, p2):
     """
     Takes two single variable polynomials as input and returns a
     new polynomial representing their p1 - p2. Does not modify inputs.
     """
     raise NotImplementedError
-
-

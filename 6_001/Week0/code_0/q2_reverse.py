@@ -7,13 +7,12 @@ def reverse_all(inp):
     # some hidden code below...
     output = []
     for el in inp:
-        if isinstance(el,list):
+        if isinstance(el, list):
             el.reverse()
             output.append(el)
         else:
             output.append(el)
     return output
-
 
 
 def test_reverse_all():
@@ -23,6 +22,6 @@ def test_reverse_all():
     assert result == expected
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test_reverse_all()
     print("done!")

@@ -61,8 +61,11 @@ def make_new_game(level_description):
         for j in range(len(level_description[i])):
 
             for val in level_description[i][j]:
-                game_state[val].append((i, j))
-    print(game_state['player'][0])
+                if not val:
+                    game_state["empty"].append((i, j))
+                else:
+                    game_state[val].append((i, j))
+    print(game_state["player"][0])
 
     return game_state
 
@@ -185,6 +188,7 @@ def dump_game(game):
     print out the current state of your game for testing and debugging on your
     own.
     """
+
     global rows, columns
 
     global game_state
@@ -199,6 +203,8 @@ def dump_game(game):
     target = game_state["target"]
     player = game_state["player"]
     computer = game_state["computer"]
+    empty = game_state["empty"]
+
     for row, col in walls:
         game[row][col] = ["wall"]
     for row, col in target:
@@ -211,9 +217,12 @@ def dump_game(game):
     # print(game)
     return game
 
-#todo {}
-def solve_puzzle(game):
 
+# todo {}
+def solve_puzzle(game):
+    global game_state
+    if not game_state:
+        game_state = make_new_game(game)
     raise NotImplementedError
 
 

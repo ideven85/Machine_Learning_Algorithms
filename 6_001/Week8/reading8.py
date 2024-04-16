@@ -23,7 +23,9 @@ v.y = 4
 
 
 def magnitude(vec):
-    return (vec.x ** 2 + vec.y ** 2) ** 0.5
+    return (vec.x**2 + vec.y**2) ** 0.5
+
+
 print(magnitude(v))
 
 

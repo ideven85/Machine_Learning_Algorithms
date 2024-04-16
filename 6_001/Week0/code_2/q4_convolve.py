@@ -13,6 +13,7 @@ Hit 'ctrl+c' on your keyboard to stop the execution of the
 current test and move on to the next one!
 """
 
+
 def convolve1(sound, kernel):
     samples = [0] * (len(sound["samples"]) + len(kernel) - 1)
     for i, scale in enumerate(kernel):
@@ -20,6 +21,7 @@ def convolve1(sound, kernel):
             for j, ss in enumerate(sound["samples"]):
                 samples[i + j] += ss * scale
     return {"rate": sound["rate"], "samples": samples}
+
 
 def convolve2(sound, kernel):
     samples = [0] * (len(sound["samples"]) + len(kernel) - 1)
@@ -30,9 +32,9 @@ def convolve2(sound, kernel):
     return {"rate": sound["rate"], "samples": samples}
 
 
-
 def test_convolve_tiny(convolve):
     import time
+
     start = time.perf_counter_ns()
 
     inp = {
@@ -59,13 +61,14 @@ def test_convolve_tiny(convolve):
     compare_sounds(convolve(inp, [2, 5, 0, 4]), exp)
     assert inp == inp2, "be careful not to modify the inputs!"
     end = time.perf_counter_ns()
-    return f'correct! {(end-start)/(10**9)} s'
+    return f"correct! {(end-start)/(10**9)} s"
 
 
 def test_sparse_kernel(convolve, limit=10 * 10**9):
     import time
     import os
     import pickle
+
     fname = os.path.join(os.path.dirname(__file__), "sparse_kernel.pickle")
     with open(fname, "rb") as f:
         test_data = pickle.load(f)
@@ -76,16 +79,17 @@ def test_sparse_kernel(convolve, limit=10 * 10**9):
             compare_sounds(result, expected)
     except KeyboardInterrupt:
         end = time.perf_counter_ns()
-        return f'too slow-- execution stopped after {(end-start)/(10**9)} s'
-
+        return f"too slow-- execution stopped after {(end-start)/(10**9)} s"
 
     end = time.perf_counter_ns()
-    return f'correct! {(end-start)/(10**9)} s'
+    return f"correct! {(end-start)/(10**9)} s"
+
 
 def test_sparse_sound(convolve, limit=10 * 10**9):
     import time
     import os
     import pickle
+
     fname = os.path.join(os.path.dirname(__file__), "sparse_sound.pickle")
     with open(fname, "rb") as f:
         test_data = pickle.load(f)
@@ -99,10 +103,10 @@ def test_sparse_sound(convolve, limit=10 * 10**9):
             compare_sounds(result, expected)
     except KeyboardInterrupt:
         end = time.perf_counter_ns()
-        return f'incorrect! execution stopped after {(end-start)/(10**9)} s'
+        return f"incorrect! execution stopped after {(end-start)/(10**9)} s"
 
     end = time.perf_counter_ns()
-    return f'correct! {(end-start)/(10**9)} s'
+    return f"correct! {(end-start)/(10**9)} s"
 
 
 def compare_sounds(result, expected, eps=1e-6):
@@ -141,7 +145,6 @@ def compare_sounds(result, expected, eps=1e-6):
 if __name__ == "__main__":
     convolve_funcs = [convolve1, convolve2]
     for test in [test_convolve_tiny, test_sparse_kernel, test_sparse_sound]:
-        print(f'\n{test.__name__} results:')
-        print(f'convolve1: {test(convolve1)}')
-        print(f'convolve2: {test(convolve2)}')
-
+        print(f"\n{test.__name__} results:")
+        print(f"convolve1: {test(convolve1)}")
+        print(f"convolve2: {test(convolve2)}")

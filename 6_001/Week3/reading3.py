@@ -16,7 +16,7 @@ if __name__ == "__main__":
     b = [2]
     d = [3, 4]
     c = zip(a, b, d)
-    print(type(c))
+    # print(list(c))
     print(*c)
     x = list(range(-10, 10))
-    print([-val for val in x if val < 0])
+    print({-val for val in x if val < 0})

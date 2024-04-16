@@ -8,6 +8,7 @@ def subtract_lists(nums1, nums2):
         output.append(nums1[i] - nums2[i])
     return output
 
+
 def test_subtract_lists():
     assert subtract_lists([1, 2], [3, 5]) == [-2, -3]
     assert subtract_lists([325, 64, 66], [1, 2, 3]) == [324, 62, 63]

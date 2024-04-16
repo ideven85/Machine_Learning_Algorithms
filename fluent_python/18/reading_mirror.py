@@ -1,5 +1,5 @@
 try:
-    with open('mirror1.py', 'r') as f:
+    with open("mirror1.py", "r") as f:
         src = f.read(60)
 except FileNotFoundError as e:
     print("File Not Found, mirror1.py")
@@ -10,10 +10,10 @@ finally:
 try:
     print(f.closed, f.encoding)
 except NameError as e:
-    print("f not defined",e)
+    print("f not defined", e)
 else:
-    with open('mirror.py','r') as f:
-        src=f.read(60)
+    with open("mirror.py", "r") as f:
+        src = f.read(60)
 
 # import ast
 # print(src)
