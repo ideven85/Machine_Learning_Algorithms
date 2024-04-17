@@ -73,4 +73,5 @@ table = {}
 # get or setdefault will find that value)
 table.setdefault(32, []).append(1)
 table.setdefault(32, []).append(1)
-table.setdefault(32, []).append(1)
+table.setdefault(33, []).append(1)
+print(table)

@@ -18,11 +18,20 @@ sys.setrecursionlimit(10_000)
 
 def satisfying_assignment(formula):
     """
+
+    Args:
+        formula (): list
+
+    Returns: dictionary
+
+
+
         Find a satisfying assignment for a given CNF formula.
         Returns that assignment if one exists, or None otherwise.
 
         >>> satisfying_assignment([])
         {}
+
         >>> x = satisfying_assignment([[('a', True), ('b', False), ('c', True)]])
         >>> x.get('a', None) is True or x.get('b', None) is False or x.get('c', None) is True
         True

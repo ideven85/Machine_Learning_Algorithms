@@ -1,35 +1,27 @@
 """
-6.101 Lab 0:
+6.101 Lab:
 Audio Processing
 """
-
+import copy
 import wave
 import struct
-
 # No Additional Imports Allowed!
 
 
+def sound_representation(sound):
+    sound_copy=copy.deepcopy(sound)
+    rate=sound_copy['rate']
+    samples = sound_copy['samples']
+    return rate,samples
 def backwards(sound):
+    result = {'rate':sound['rate'],'samples':sound['samples']}
 
-    reversed_sound = sound.copy()
-    reversed_sound["samples"] = reversed_sound["samples"][::-1]
-    return reversed_sound
+    result['samples']=result['samples'][::-1]
+    return result
 
 
 def mix(sound1, sound2, p):
-    if sound1["rate"] != sound2["rate"]:
-        return None
-    length = max(sound1["samples"], sound2["samples"])
-    result = []
-    a = [p * x + (1 - p) * y for x in sound1["samples"] for y in sound2["samples"]]
-    for i in range(length):
-        if sound1["samples"][i] and sound2["samples"][i]:
-            result.append(p * sound1["samples"][i] + (1 - p) * sound2["samples"][i])
-        elif sound1["samples"][i]:
-            result.append(p * sound1["samples"][i])
-        elif sound2["samples"][i]:
-            result.append((1 - p) * sound2["samples"][i])
-    return {"rate": sound1["rate"], "samples": result}
+    raise NotImplementedError
 
 
 def convolve(sound, kernel):
@@ -156,6 +148,6 @@ if __name__ == "__main__":
     # here is an example of loading a file (note that this is specified as
     # sounds/hello.wav, rather than just as hello.wav, to account for the
     # sound files being in a different directory than this file)
-    hello = load_wav("hello_reversed.wav")
+    hello = load_wav("sounds/hello.wav")
 
-    write_wav(backwards(hello), "hello.wav")
+    # write_wav(backwards(hello), 'hello_reversed.wav')

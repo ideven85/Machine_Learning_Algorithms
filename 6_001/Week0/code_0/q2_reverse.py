@@ -8,7 +8,7 @@ def reverse_all(inp):
     output = []
     for el in inp:
         if isinstance(el, list):
-            el.reverse()
+            el=el[::-1]
             output.append(el)
         else:
             output.append(el)
@@ -16,9 +16,9 @@ def reverse_all(inp):
 
 
 def test_reverse_all():
-    x = [[1, 2], [3, 4]]
+    x = [[1, 2], [3, 4],5]
     result = reverse_all(x)
-    expected = [[2, 1], [4, 3]]
+    expected = [[2, 1], [4, 3],5]
     assert result == expected
 
 

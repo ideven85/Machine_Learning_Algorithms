@@ -23,7 +23,7 @@ def mixtape(songs, target_duration):
         return None
 
 
-#
-if __name__ == "__main__":
-    songs = {"A": 5, "B": 10, "C": 6, "D": 1}
-    print(mixtape(songs, 1))
+# #
+# if __name__ == "__main__":
+#     songs = {"A": 5, "B": 10, "C": 6, "D": 1}
+#     print(mixtape(songs, 1))

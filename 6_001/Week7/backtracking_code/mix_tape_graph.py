@@ -16,7 +16,7 @@ def mixtape(songs: dict, target_duration: int):
 
         duration = sum(songs[s] for s in this_path)
         if duration == target_duration:
-            total_paths.add(this_path)
+            return this_path
         if duration > target_duration:
             continue
         for song, duration in songs.items():
@@ -28,7 +28,7 @@ def mixtape(songs: dict, target_duration: int):
                 agenda.add(new_path)
     print(count)
     # print(visited)
-    return total_paths
+    return None
 
 
 if __name__ == "__main__":
