@@ -10,6 +10,7 @@ from text_tokenize import tokenize_sentences
 
 # Basic Huffman Encoding Technique customised
 # Started 15th April: 1:15 AM
+#Map<
 class PrefixTree:
 
     # class _Node:
@@ -34,13 +35,24 @@ class PrefixTree:
 
         """
         self.value = None
-        self.children = dict()
+        self.children = None
 
     # def _get_node(self, index, value):
     #     if index==0:
     #         self.element=value
     #     else:
     #         self.children._get_node(index-1,value)=
+
+
+    def set(self,index,key,value):
+        if index == 0:
+            self.children[index]=PrefixTree()
+            self.children[index].value=value
+        else:
+            self.children.set(index-1,key,value)
+
+
+
 
     def __setitem__(self, key, value):
         """
@@ -51,15 +63,12 @@ class PrefixTree:
         if not isinstance(key, str):
             raise TypeError("The given key must be a string")
         n = len(key)
+        flag = False
+        for i in range(n):
+            self.children.set(i,key[i],value)
 
-        for i in range(n - 1):
 
-            if key[i] in self.children:
-                continue
-            self.children[key[i]].setdefault()
-        # todo Reassign value of bark to 3 and bar to 3
 
-        self.children.setdefault(current, self._Node(value))
 
     def __getitem__(self, key):
         """

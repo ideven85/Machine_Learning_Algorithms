@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import os
-import lab
+from . import lab
 import sys
 import pickle
 import random

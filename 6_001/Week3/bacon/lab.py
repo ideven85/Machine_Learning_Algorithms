@@ -11,35 +11,34 @@ Do all labs
 #!/usr/bin/env python3
 
 import pickle
-from collections import defaultdict, deque
+#from collections import defaultdict, deque
 
 # NO ADDITIONAL IMPORTS ALLOWED!
-
-center = 4724
-center_actor = "Kevin Bacon"
-names = [set()]
-
-with open("resources/names.pickle", "rb") as f:
-    bacon_numbers_dict = pickle.load(f)
-bacon_numbers = dict()
-for key, value in bacon_numbers_dict.items():
-    bacon_numbers[value] = key
-
-# acted_together_names = defaultdict(list)
-with open("resources/movies.pickle", "rb") as f:
-    movies = pickle.load(f)
-
-# acted_together_data = defaultdict(set)
-
+#
+# center = 4724
+# center_actor = "Kevin Bacon"
+# names = [set()]
+#
+# with open("resources/names.pickle", "rb") as f:
+#     bacon_numbers_dict = pickle.load(f)
+# bacon_numbers = dict()
+# for key, value in bacon_numbers_dict.items():
+#     bacon_numbers[value] = key
+#
+# # acted_together_names = defaultdict(list)
+# with open("resources/movies.pickle", "rb") as f:
+#     movies = pickle.load(f)
+#
+# # acted_together_data = defaultdict(set)
+#
 
 def transform_data(raw_data):
-    acted_together_data = defaultdict(set)
+    data = dict()
     if isinstance(raw_data, list):
-        for i in range(len(raw_data)):
-            d = raw_data[i]
-            acted_together_data[d[0]].add((d[1], d[2]))
-            acted_together_data[d[1]].add((d[0], d[2]))
-        return acted_together_data
+        for actor1, actor2, film in  raw_data:
+            data.setdefault(actor1, set()).add((actor2, film))
+            data.setdefault(actor2, set()).add((actor1, film))
+        return data
     elif isinstance(raw_data, int):
         return raw_data
     return raw_data
@@ -50,21 +49,21 @@ def acted_together(transformed_data, actor_id_1, actor_id_2):
     acted_together_data = transform_data(transformed_data)
     # print(acted_together_data)
     if actor_id_1 == actor_id_2:
-        return False
+        return True
 
     actor_set_1 = acted_together_data[actor_id_2]
-    print(actor_set_1)
+    #print(actor_set_1)
     if actor_id_1 in actor_set_1:
         return True
 
     for actor2, _ in acted_together_data[
         actor_id_1
-    ]:  # Incorrect, will check only the first value
+    ]:
         if actor2 == actor_id_2:
             return True
     for actor1, _ in acted_together_data[
         actor_id_2
-    ]:  # Incorrect, will check only the first value
+    ]:
         if actor1 == actor_id_1:
             return True
 
@@ -84,84 +83,30 @@ def dfs_for_bacon_ids(acted_together_data, actor, visited, degree, output, n):
 
 
 def actors_with_bacon_number(transformed_data, n):
+    """
+    n is the smallest number of films separating the actors from center 4724
+    """
     acted_together_data = transform_data(transformed_data)
     bacon_ids = set()
+    center=4724
     # acted_together_data=acted_together_ids(transformed_data)
     # print(acted_together_data)
     start = {(c[0], 0) for c in acted_together_data[center]}
-    output = defaultdict(list)
+    output =dict()
     output[0] = list(start)
     current_degree = 0
     temp = [center]
 
     visited = {center}
 
-    i = 0
+
+    for i in range(n):
+        df
 
     temp = list()
-    # Incorrect Do by Something else...
-    # while current_degree <= n+1:
-    #     if not start:
-    #         print("Hi")
-    #         break
-    #
-    #     current,degree = start.pop()
-    #     #print(current,degree,end=' ')
-    #     connections = acted_together_data[current]
-    #     #print(connections)
-    #
-    #     for conn,_ in connections:
-    #
-    #         start.add((conn,degree+1))
-    #         visited.add(conn)
-    #         temp.append(conn)
-    #
-    #         output[degree+1].append((conn,degree+1))
-    #     current_degree+=1
 
-    # Test.py is testing for all paths from center to actor
 
-    temp = [
-        1640,
-        1811,
-        2115,
-        2231,
-        2283,
-        2561,
-        2876,
-        2878,
-        2884,
-        3085,
-        4025,
-        4252,
-        4765,
-        4887,
-        6541,
-        6908,
-        8979,
-        9205,
-        9206,
-        9207,
-        9208,
-        9209,
-        9210,
-        9211,
-        9212,
-        9827,
-        10500,
-        11317,
-        12521,
-        14104,
-        14792,
-        14886,
-    ]
-    print()
-    print(output)
-    # temp.remove(center)
-    bacon_ids = sorted(temp)
-    print(len(bacon_ids))
 
-    print("expected:", sorted(output[n - 1]))
     return bacon_ids
 
 
@@ -184,17 +129,23 @@ def actors_connecting_films(transformed_data, film1, film2):
 if __name__ == "__main__":
     with open("resources/small.pickle", "rb") as f:
         smalldb = pickle.load(f)
-    # print(len(smalldb))
-    # s = set(smalldb)
-    # print(len(s))
-    # acted_together_ids(smalldb)
-    # print(acted_together_data[4724])
-    # a = acted_together_data[4724]
-    # for a1, a2 in a:
-    #     if a1 == 9207:
-    #         print(a1, a2)
-    # print(acted_together_data[center])
-    # print(acted_together_data[center][0][0])
-    # print([x[0] for x in acted_together_data[center]])
-    # print(acted_together(smalldb,4724,9211))
-    print(actors_with_bacon_number(smalldb, 2))
+
+    with open('resources/tiny.pickle',"rb") as f:
+        tiny_data = pickle.load(f)
+
+    # print(tiny_data)
+    # print(acted_together(tiny_data,4724,1640))
+    #print(actors_with_bacon_number(tiny_data, 0))
+    data = {}
+    for actor1, actor2,film in tiny_data:
+        data.setdefault(actor1,set()).add((actor2,film))
+        data.setdefault(actor2,set()).add((actor1,film))
+
+    # print(data)
+
+    bacon_id_0 =  {x for x,y in data[4724]}
+    # center = 4724
+    # for actor,_ in data[4724]:
+    #     bacon_id_0.add(actor)
+    # print(bacon_id_0)
+
