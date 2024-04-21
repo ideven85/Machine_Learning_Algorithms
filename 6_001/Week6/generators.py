@@ -17,7 +17,7 @@ def gen_range(start, stop, step=1):  # Using Generators
         current += step
 
 
-for i in gen_range(0, 1_000, step=1):
+for i in gen_range(0, 1_000_000, step=1):
     if i > 100:
         break
     print(i**2, end=" ")

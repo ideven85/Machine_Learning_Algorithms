@@ -62,7 +62,7 @@ def sum_nested(original_x):
     while agenda:
         x = agenda.pop(-1)
         if not x:
-            sum_so_far += 0
+            continue
         elif isinstance(x[0], list):
             agenda.append(x[0])
             agenda.append(x[1:])

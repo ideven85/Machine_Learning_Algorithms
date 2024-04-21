@@ -6,16 +6,37 @@ You may test this function by running
 without quotes.
 """
 
-from debug_recursion import show_recursive_structure
+# from debug_recursion import show_recursive_structure
 
 
-# @show_recursive_structure
+
 def tree_sum(tree):
     """
     Given tree as a dict { 'value': number,
                            'children': list of trees },
     return the sum of all the values found in the tree.
     """
+
+    sum_so_far=0
+    if not tree:
+        return sum_so_far
+    # Convert tree to List
+
+    agenda = [tree]
+    while agenda:
+        x=agenda.pop(-1)
+        print(x)
+        if not x:
+            sum_so_far+=0
+
+        elif isinstance(x[0],dict):
+            sum_so_far+=x[0]['value']
+            agenda.append(x[0]['children'])
+
+        else:
+            sum_so_far+=x['value']
+    return sum_so_far
+
 
 
 t1 = {"value": 3, "children": []}

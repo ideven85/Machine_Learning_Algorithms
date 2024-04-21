@@ -7,23 +7,15 @@ def all_values(tree):
     if not tree:
         return
 
-    parent = tree[0]
-    children = tree[1:]
-    if not children:
-        return parent
-    if len(children) == 1:
-        yield parent, children[0]
-
-    elif isinstance(children[0], list):
-        yield from all_values(children[0])
-        yield from all_values(children[1:])
-    else:
-
-        yield children[0]
-        yield from all_values(children[1:])
+    for el in tree:
+        if isinstance(el,list):
+            yield from all_values(el)
+        else:
+            yield el
 
 
-print(list(all_values(tree1)))
+
+print("Words:",list(all_values(tree1)))
 
 out = []
 
@@ -32,12 +24,11 @@ def fib_gen(n):
     a = 0
     b = 1
     for i in range(n):
-        yield b
-        b += a
-        a = b - a
+        yield a
+        a,b=b,a+b
 
 
-x1 = fib_gen(1000)
+x1 = fib_gen(10)
 s1 = time.time_ns()
 for val in x1:
     out.append(val)
@@ -45,7 +36,7 @@ s2 = time.time_ns()
 
 print(s2 - s1)
 
-# print(out)
+print(out)
 
 
 def fib(n):
@@ -53,9 +44,8 @@ def fib(n):
     b = 1
     out1 = []
     for i in range(n):
-        out1.append(b)
-        b += a
-        a = b - a
+        out1.append(a)
+        a,b=b,a+b
 
     return out1
 

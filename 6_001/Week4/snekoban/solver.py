@@ -46,9 +46,11 @@ def make_new_game(level_description):
     """
 
     rows[0] = len(level_description)
-    columns[0] = rows[0]
+    columns = []
+    print(rows,columns)
+    i=0;j=0
     for i in range(len(level_description)):
-
+        columns.append(len(level_description[i]))
         for j in range(len(level_description[i])):
 
             for val in level_description[i][j]:
@@ -92,20 +94,23 @@ def is_valid_move(game, row, col, direction):
     #print(position,end=' ')
     if "wall" in game[position]:
         print("Wall",game[position])
+        make_new_game(game)
         return False
     if "computer" in game[position]:
 
            if is_valid_move_helper(game,position[0], position[1], direction):
 
-               print(game_state['player'])
-               game_state['player']=[]
+               print(game['player'])
+               game['player']=[]
 
-               game_state['player'].append((position[0],position[1]))
+               game['player'].append((position[0],position[1]))
+               make_new_game(game_state)
 
                return True
 
-    game['player'].clear()
+    game['player']=[]
     game['player'].append((position[0],position[1]))
+    make_new_game(game)
     return True
 
 
@@ -116,12 +121,14 @@ def is_valid_move_helper(game_state,row, column, direction):
         row + direction_vector[direction][0],
         column + direction_vector[direction][1],
     )
-    input("What?")
+    #input("What?")
     if new_position in game_state["wall"] or new_position in game_state["computer"]:
+        make_new_game(game_state)
         return False
 
     game_state["computer"].remove((row, column))
-    game_state["computer"].append(new_position)
+    game_state["computer"].append((new_position[0],new_position[1]))
+    make_new_game(game_state)
     print("Hi")
     return True
 
@@ -153,7 +160,7 @@ def step_game(game, direction):
     if potential_position in game_state["wall"]:
         return make_new_game(game_state)
     elif potential_position in game_state["computer"]:
-        if is_valid_move_helper(*potential_position, direction=direction):
+        if is_valid_move_helper(game_state,potential_position[0],potential_position[1], direction=direction):
             game_state["player"].remove(player_position)
             game_state["player"].append(potential_position)
             return make_new_game(game_state)
@@ -185,8 +192,9 @@ def dump_game(game):
     own.
     """
 
-    global rows, columns
-
+    rows1=len(game);columns1=len(game)
+    print(rows1,columns1)
+    print(rows,columns)
     global game_state
     if not game_state:
         game_state = make_new_game(game)

@@ -45,6 +45,18 @@ def generate_subsequences_slow_helper(word):
     return out
 
 
+def subsequences(word):
+    out = [[]]
+    for char in word:
+        # I need more practice here
+        for i in range(len(out)):
+            current=out[i]
+            out.append(current+[char])
+    return out
+
+
+
+
 if __name__ == "__main__":
     words = [
         "fib",
@@ -56,6 +68,7 @@ if __name__ == "__main__":
         "fix",
         "cheer",
     ]
+    print(subsequences("ArcticHokes"))
     # [generate_subsequences_fast(w) for w in words]
     # start = time.time_ns()
     # with ThreadPool() as pool:

@@ -59,6 +59,7 @@ def findNumberOfProvinces(graph):
                 isConnected[i].append(j)
                 isConnected[j].append(i)
 
+    print(isConnected)
     res = 0
     visited = set()
     for i in range(n):
@@ -72,5 +73,5 @@ def findNumberOfProvinces(graph):
 
 
 if __name__ == "__main__":
-    is_connected = [[1, 1, 0], [1, 1, 0], [0, 0, 1]]
+    is_connected = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
     print(findNumberOfProvinces(is_connected))

@@ -171,7 +171,7 @@ class BinaryTree:
         seen = {startingNode}
         output = []
         while len(queue) > 0:
-            [currentDistance, currentNode] = queue.popleft()
+            currentDistance, currentNode = queue.popleft()
 
             if currentDistance == k:
                 for k, v in queue:

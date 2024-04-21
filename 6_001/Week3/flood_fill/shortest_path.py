@@ -33,7 +33,7 @@ def flood_fill(image, location, new_color):
     visited.add(location)
     while to_color:
         this_cell = to_color.pop(0)
-
+        terminal_state=this_cell[-1]
         set_pixel(image, *this_cell, new_color)
         for neighbour in get_neighbours(image, this_cell):
             if (

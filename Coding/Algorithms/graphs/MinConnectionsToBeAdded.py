@@ -158,4 +158,5 @@ if __name__ == "__main__":
         ["SFO", "DSM"],
         ["SAN", "EYW"],
     ]
-    print(airportConnections(airports, routes, "LGA"))
+
+    print(airportConnections(airports, routes, "JFK"))
