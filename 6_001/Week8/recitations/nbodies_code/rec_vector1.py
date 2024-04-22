@@ -20,7 +20,7 @@ class Vector:
         >>> v.coords == (2, 3)
         True
         """
-        pass
+        self.coords=(coords[0],coords[1])
 
     def __repr__(self):
         """
@@ -28,21 +28,24 @@ class Vector:
         >>> repr(v)
         'Vector((0, -4))'
         """
-        pass
+        return f"Vector{(self.coords)}"
+
 
     def add(self, other):
         """
         >>> Vector([1, 2]).add(Vector([1, 0]))
         Vector((2, 2))
         """
-        pass
+        self.coords=self.coords[0]+other.coords[0],self.coords[1]+other.coords[1]
+        return self.__repr__()
 
     def sub(self, other):
         """
         >>> Vector([1, 2]).sub(Vector([1, 0]))
         Vector((0, 2))
         """
-        pass
+        self.coords = self.coords[0] - other.coords[0], self.coords[1] - other.coords[1]
+        return self.__repr__()
 
     def scale(self, other):
         """
@@ -79,6 +82,7 @@ class Vector:
 if __name__ == "__main__":
     doctest_flags = doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
     doctest.testmod(optionflags=doctest_flags)
+
 
 
     # doctest.run_docstring_examples(

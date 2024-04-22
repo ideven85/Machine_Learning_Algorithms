@@ -14,7 +14,7 @@ from debug_recursion import show_recursive_structure
 count = 0
 
 
-@show_recursive_structure
+# @show_recursive_structure
 def tree_list(tree):
     """
     Given tree as a dict { 'value': number,
@@ -25,28 +25,31 @@ def tree_list(tree):
     global count
     if not tree:
         return []
-    if type(tree) is list:
-        print("Hi1", tree)
-        return tree[0]
+
+    print(tree)
+
     count += 1
+
     value = tree["value"]
     children = tree["children"]
 
-    if len(children) == 0:
-        return value
+    if len(children) == 0 :
 
-    if type(children) is list and len(children):
+        return [value]
+
+
+
         # print("Hi",[tree_list(x) for x in children])
-        mid_operation = tree_list(children)
-        if type(mid_operation) is list:
-            print("Hi", mid_operation)
-            mid_operation = mid_operation.append(value)
-            return mid_operation
-        else:
-            print("Hi3")
-            return [mid_operation] + [value]
-    print("Hi2")
-    return value + children
+
+    first=children[0]
+    rest=children[1:]
+    print(first,'\n',rest)
+    return tree_list(rest[0])
+
+
+
+
+
 
 
 t1 = {"value": 3, "children": []}
@@ -86,4 +89,6 @@ t3 = {
 if __name__ == "__main__":
     # uncomment the @show_recursive_structure line
     # above the function to see some detailed function output
+    print(tree_list(t1))
+    print(tree_list(t2))
     print(tree_list(t3))

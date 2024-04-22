@@ -1,29 +1,26 @@
 """
-6.101 Lab 5:
+6.101 Lab:
 Recipes
 """
 
 import pickle
 import sys
-from collections import defaultdict
-
-# 10 hours per lab
 
 sys.setrecursionlimit(20_000)
 # NO ADDITIONAL IMPORTS!
-
+# Min 10 hours per lab, Don't get disheartened in one day
 
 def atomic_ingredient_costs(recipes):
     """
     Given a recipes list, make and return a dictionary mapping each atomic food item
     name to its cost.
     """
-    atomic_dictionary = dict()
+    atomic_recipes=dict()
     for recipe in recipes:
-        if recipe[0] == "atomic":
-            atomic_dictionary[recipe[1]] = recipe[2]
 
-    return atomic_dictionary
+        if recipe[0]=="atomic":
+            atomic_recipes[recipe[1]]=recipe[2]
+    return atomic_recipes
 
 
 def compound_ingredient_possibilities(recipes):
@@ -32,11 +29,14 @@ def compound_ingredient_possibilities(recipes):
     return a dictionary that maps each compound food item name to a list
     of all the ingredient lists associated with that name.
     """
-    compound_dictionary = defaultdict(list)
+    #raise NotImplementedError
+    cmpd = dict()
     for r in recipes:
-        if r[0] == "compound":
-            compound_dictionary[r[1]].append(r[2])
-    return compound_dictionary
+        if r[0]=="compound":
+            cmpd.setdefault(r[1],[]).append(r[2])
+    #print("In upper:",cmpd['cheese'][0],cmpd['cheese'][1])
+    return cmpd
+
 
 
 def lowest_cost(recipes, food_item):
@@ -44,24 +44,57 @@ def lowest_cost(recipes, food_item):
     Given a recipes list and the name of a food item, return the lowest cost of
     a full recipe for the given food item.
     """
-    atomic_dictionary = atomic_ingredient_costs(recipes)
-    compound_dictionary = compound_ingredient_possibilities(recipes)
+    #raise NotImplementedError
 
-    def lowest_cost_helper():
-        cost1 = 10000000000
-        cost2 = 10000000
-        if food_item in atomic_dictionary:
-            cost1 = atomic_dictionary[food_item]
-        if food_item in compound_dictionary:
-            compounds = compound_dictionary[food_item]
 
-            current = 0
+    def lowest_cost_helper(lst,cost,current_cost):
+        print(lst)
+        elements = lst[:]
+        for element,quantity in lst:
+            if element in costs:
 
-            cost2 = min(current, cost2)
-        print(cost1, cost2)
-        return min(cost1, cost2)
+                current_cost[0]+=costs[element]*quantity
+                elements.remove((element,quantity))
+        print("Current Cost:",current_cost)
+        print("Current elements:",elements)
+        cost[0]+=current_cost[0]
 
-    return lowest_cost_helper()
+        if elements:
+            print("ELements Left:",elements)
+            current_cost=[0]
+            for el,q in elements:
+                lowest_cost_helper(compound_list[el],cost,current_cost)
+                cost[0]+=current_cost[0]*q
+
+        return cost[0]
+
+
+
+            # Now we are left wi
+
+
+
+
+
+    costs = atomic_ingredient_costs(recipes)
+    if food_item in costs:
+        return costs[food_item]
+
+    compound_list= compound_ingredient_possibilities(recipes)
+    compounds = list(compound_list[food_item])[:]
+    length=len(compounds)
+
+    print(compounds,length)
+    print(compounds)
+    min_cost=10000000
+    cost=[0]
+
+    for i in range(length):
+        current=[0]
+        min_cost=min(lowest_cost_helper(compounds[i],cost,current),min_cost)
+
+    return min_cost
+
 
 
 def scaled_flat_recipe(flat_recipe, n):
@@ -119,98 +152,49 @@ def all_flat_recipes(recipes, food_item):
 
 if __name__ == "__main__":
     # load example recipes from section 3 of the write-up
-
-    example_recipes = [
-        (
-            "compound",
-            "chili",
-            [
-                ("beans", 3),
-                ("cheese", 10),
-                ("chili powder", 1),
-                ("cornbread", 2),
-                ("protein", 1),
-            ],
-        ),
-        ("atomic", "beans", 5),
-        (
-            "compound",
-            "cornbread",
-            [("cornmeal", 3), ("milk", 1), ("butter", 5), ("salt", 1), ("flour", 2)],
-        ),
-        ("atomic", "cornmeal", 7.5),
-        (
-            "compound",
-            "burger",
-            [
-                ("bread", 2),
-                ("cheese", 1),
-                ("lettuce", 1),
-                ("protein", 1),
-                ("ketchup", 1),
-            ],
-        ),
-        (
-            "compound",
-            "burger",
-            [
-                ("bread", 2),
-                ("cheese", 2),
-                ("lettuce", 1),
-                ("protein", 2),
-            ],
-        ),
-        ("atomic", "lettuce", 2),
-        ("compound", "butter", [("milk", 1), ("butter churn", 1)]),
-        ("atomic", "butter churn", 50),
-        ("compound", "milk", [("cow", 1), ("milking stool", 1)]),
-        ("compound", "cheese", [("milk", 1), ("time", 1)]),
-        ("compound", "cheese", [("cutting-edge laboratory", 11)]),
-        ("atomic", "salt", 1),
-        ("compound", "bread", [("yeast", 1), ("salt", 1), ("flour", 2)]),
-        ("compound", "protein", [("cow", 1)]),
-        ("atomic", "flour", 3),
-        ("compound", "ketchup", [("tomato", 30), ("vinegar", 5)]),
-        ("atomic", "chili powder", 1),
-        (
-            "compound",
-            "ketchup",
-            [
-                ("tomato", 30),
-                ("vinegar", 3),
-                ("salt", 1),
-                ("sugar", 2),
-                ("cinnamon", 1),
-            ],
-        ),  # the fancy ketchup
-        ("atomic", "cow", 100),
-        ("atomic", "milking stool", 5),
-        ("atomic", "cutting-edge laboratory", 1000),
-        ("atomic", "yeast", 2),
-        ("atomic", "time", 10000),
-        ("atomic", "vinegar", 20),
-        ("atomic", "sugar", 1),
-        ("atomic", "cinnamon", 7),
-        ("atomic", "tomato", 13),
-    ]
-
-    # for recipe in example_recipes:
-    #     if recipe[0] == "compound":
-    #         print(*recipe)
-    #     else:
-    #         print(*recipe)
+    # with open("test_recipes/example_recipes.pickle", "rb") as f:
+    #     example_recipes = pickle.load(f)
     # you are free to add additional testing code here!
-    a = atomic_ingredient_costs(example_recipes)
-    print(sum(a.values()))
-    b = compound_ingredient_possibilities(example_recipes)
-    print(b)
-    dairy_recipes = [
-        ("compound", "milk", [("cow", 2), ("milking stool", 1)]),
-        ("compound", "cheese", [("milk", 1), ("time", 1)]),
-        ("compound", "cheese", [("cutting-edge laboratory", 11)]),
-        ("atomic", "milking stool", 5),
-        ("atomic", "cutting-edge laboratory", 1000),
-        ("atomic", "time", 10000),
-        ("atomic", "cow", 100),
+    example_recipes = [
+        ('compound', 'chili', [('beans', 3), ('cheese', 10), ('chili powder', 1), ('cornbread', 2), ('protein', 1)]),
+        ('atomic', 'beans', 5),
+        ('compound', 'cornbread', [('cornmeal', 3), ('milk', 1), ('butter', 5), ('salt', 1), ('flour', 2)]),
+        ('atomic', 'cornmeal', 7.5),
+        ('compound', 'burger', [('bread', 2), ('cheese', 1), ('lettuce', 1), ('protein', 1), ('ketchup', 1)]),
+        ('compound', 'burger', [('bread', 2), ('cheese', 2), ('lettuce', 1), ('protein', 2), ]),
+        ('atomic', 'lettuce', 2),
+        ('compound', 'butter', [('milk', 1), ('butter churn', 1)]),
+        ('atomic', 'butter churn', 50),
+        ('compound', 'milk', [('cow', 1), ('milking stool', 1)]),
+        ('compound', 'cheese', [('milk', 1), ('time', 1)]),
+        ('compound', 'cheese', [('cutting-edge laboratory', 11)]),
+        ('atomic', 'salt', 1),
+        ('compound', 'bread', [('yeast', 1), ('salt', 1), ('flour', 2)]),
+        ('compound', 'protein', [('cow', 1)]),
+        ('atomic', 'flour', 3),
+        ('compound', 'ketchup', [('tomato', 30), ('vinegar', 5)]),
+        ('atomic', 'chili powder', 1),
+        ('compound', 'ketchup', [('tomato', 30), ('vinegar', 3), ('salt', 1), ('sugar', 2), ('cinnamon', 1)]),
+        # the fancy ketchup
+        ('atomic', 'cow', 100),
+        ('atomic', 'milking stool', 5),
+        ('atomic', 'cutting-edge laboratory', 1000),
+        ('atomic', 'yeast', 2),
+        ('atomic', 'time', 10000),
+        ('atomic', 'vinegar', 20),
+        ('atomic', 'sugar', 1),
+        ('atomic', 'cinnamon', 7),
+        ('atomic', 'tomato', 13),
     ]
-    print(lowest_cost(dairy_recipes, "cheese"))
+    dairy_recipes = [
+        ('compound', 'milk', [('cow', 2), ('milking stool', 1)]),
+        ('compound', 'cheese', [('milk', 1), ('time', 1)]),
+        ('compound', 'cheese', [('cutting-edge laboratory', 11)]),
+        ('atomic', 'milking stool', 5),
+        ('atomic', 'cutting-edge laboratory', 1000),
+        ('atomic', 'time', 10000),
+        ('atomic', 'cow', 100),
+    ]
+    print(atomic_ingredient_costs(dairy_recipes))
+    print(compound_ingredient_possibilities(dairy_recipes))
+    print(lowest_cost(dairy_recipes,'cheese'))

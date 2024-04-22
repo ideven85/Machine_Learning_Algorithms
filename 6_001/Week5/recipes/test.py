@@ -2,7 +2,6 @@
 6.101 Lab 6:
 Recipes
 """
-
 #!/usr/bin/env python3
 import os
 import sys

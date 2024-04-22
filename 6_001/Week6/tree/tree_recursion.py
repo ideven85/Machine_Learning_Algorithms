@@ -55,8 +55,14 @@ def tree_sum(tree):
 
 count = 0
 
+def flatten(lst):
+    if not lst:
+        return []
+    if isinstance(lst[0],list):
+        yield from flatten(lst[0])
+    yield lst[1:]
 
-@show_recursive_structure
+
 def tree_list(tree):
     """
     Given tree as a dict { 'value': number,
@@ -66,23 +72,19 @@ def tree_list(tree):
     """
     global count
     if len(tree) == 0:
-        return None
-    if len(tree) == 1:
-        return tree["value"]
+        return []
+    if type(tree)==list:
+        return tree_list(tree[0])
     val = tree["value"]
     children = tree["children"]
     count += 1
-    if len(children) == 0:
-        if count == 1:
-            return [val]
-        else:
-            return val
 
-    elif type(children) is list and len(children):
+    if type(children) is list:
 
-        return [tree_list(x) for x in children] + [val]
-    else:
-        return [val + children]
+        return tree_list(children)
+    return [val]
+
+
 
 
 @show_recursive_structure

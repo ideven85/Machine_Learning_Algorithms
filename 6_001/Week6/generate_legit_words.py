@@ -3,7 +3,7 @@ from multiprocessing.pool import ThreadPool
 from threading import Thread
 import functools
 
-with open("all_words.txt", "r") as f:
+with open("../Week4/all_words.txt", "r") as f:
     ALL_WORDS = {i.strip() for i in f}
 # print(all_words[:20])
 # print("" in ALL_WORDS)
