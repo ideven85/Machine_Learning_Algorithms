@@ -1,23 +1,30 @@
-x="Global Object"
+x = "Global Object"
+
+
 class A:
-   x="A Instance Variable"
+    x = "A Instance Variable"
+
 
 class B(A):
-    x="B instance variable"
+    x = "B instance variable"
+
     def __init__(self):
-        self.x=x
+        self.x = x
+
 
 class C(B):
-   x="C instance variable"
-   def __init__(self):
-       pass
+    x = "C instance variable"
 
-a=A()
+    def __init__(self):
+        pass
+
+
+a = A()
 print(a.x)
 print(A.x)
-b=B()
-print("B Object:",b.x)
-print("B Class:",B.x)
-c=C()
-print("C Object:",c.x)
-print("C class",C.x)
+b = B()
+print("B Object:", b.x)
+print("B Class:", B.x)
+c = C()
+print("C Object:", c.x)
+print("C class", C.x)

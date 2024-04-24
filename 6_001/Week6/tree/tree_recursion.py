@@ -55,10 +55,11 @@ def tree_sum(tree):
 
 count = 0
 
+
 def flatten(lst):
     if not lst:
         return []
-    if isinstance(lst[0],list):
+    if isinstance(lst[0], list):
         yield from flatten(lst[0])
     yield lst[1:]
 
@@ -73,7 +74,7 @@ def tree_list(tree):
     global count
     if len(tree) == 0:
         return []
-    if type(tree)==list:
+    if type(tree) == list:
         return tree_list(tree[0])
     val = tree["value"]
     children = tree["children"]
@@ -83,8 +84,6 @@ def tree_list(tree):
 
         return tree_list(children)
     return [val]
-
-
 
 
 @show_recursive_structure

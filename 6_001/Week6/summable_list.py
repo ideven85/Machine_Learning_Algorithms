@@ -5,11 +5,16 @@ sys.setrecursionlimit(1000)
 
 
 class SumList(list):
+
     def sum(self):
-        s = 0
-        for v in self:
-            s += v
-        return s
+        if not self:
+            return 0
+        return self[0] + SumList(self[1:]).sum()
+
+
+import doctest
+
+print(doctest.testmod())
 
 
 def sum_right(seq, sum_so_far=0, count=0):
@@ -58,9 +63,13 @@ def sum_list(x):
     return sum_list_helper(0, x, 0)
 
 
-s = list(range(998))
-print(len(s))
+s = list(range(6))
+
+a = [1, 2, 3]
 sum_list1 = SumList(s)
+print("a:", a, SumList(a).sum())
+for val in sum_list1:
+    print(val)
 print(sum_list1.sum())
 # print(sum_right(s))
 

@@ -1,32 +1,30 @@
-def number_to_string(n:int,b:int)->str:
+def number_to_string(n: int, b: int) -> str:
     digits = "0123456789"
-    print(n,digits[n%b],end=' ')
+    print(n, digits[n % b], end=" ")
 
-    if n<0:
-        return number_to_string(-n,b)
+    if n < 0:
+        return number_to_string(-n, b)
     if n == 0:
         return "0"
-    if n<b:
-        print("\nHi",n)
+    if n < b:
+        print("\nHi", n)
         return str(n)
     string_rep = "n"
     length = len(string_rep)
 
     print(n)
-    return number_to_string(n//b,b)+digits[n%b] # How on earth?
-
+    return number_to_string(n // b, b) + digits[n % b]  # How on earth?
 
 
 def myAtoi(s: str) -> int:
-    if len(s)==1 and not s.isdigit():
+    if len(s) == 1 and not s.isdigit():
         return -myAtoi(s)
 
-
-    if s[0]=='-':
-        sign='-'
+    if s[0] == "-":
+        sign = "-"
         myAtoi(s[1:])
 
-    return int(s[-1])%10+myAtoi(s[:-1])*10
+    return int(s[-1]) % 10 + myAtoi(s[:-1]) * 10
 
 
 #
@@ -34,4 +32,4 @@ def myAtoi(s: str) -> int:
 # print('\n',number_to_string(15,10))
 
 print(myAtoi("-829"))
-#print(int("829"))
+# print(int("829"))

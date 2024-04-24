@@ -5,7 +5,6 @@ Vector methods, rewrite the necessary methods in the Body class.
 What do you notice about the resulting code?
 """
 
-
 from rec_vector2 import Vector
 
 GRAVITATIONAL_CONSTANT = 6.67e-11
@@ -34,7 +33,7 @@ class Body:
         Computes the net force applied to self by all other bodies.
         """
         # F = sum of G * m1 m2 / |r|^2  * r^
-        F = Vector([0,0])
+        F = Vector([0, 0])
         for other in bodies:
             if other is self:  # note the is keyword!
                 continue
@@ -72,39 +71,39 @@ if __name__ == "__main__":
     # ]
 
     ## two bodies, erratic motion
-    #bodies = [
+    # bodies = [
     #    Body(1e25, Vector((0, 0.91e9)), Vector((200, 0))),
     #    Body(1e25, Vector((0, -0.91e9)), Vector((-300, 0))),
-    #]
+    # ]
 
     ## three bodies
-    #bodies = [
+    # bodies = [
     #    Body(1e25, Vector((0, 0.91e9)), Vector((400, 0))),
     #    Body(1e25, Vector((0, -0.91e9)), Vector((-400, 0))),
     #    Body(5e8, Vector((0, 0)), Vector((25, 0))),
-    #]
+    # ]
 
     ## four bodies
-    #bodies = [
+    # bodies = [
     #    Body(1e25, Vector((0, 0.91e9)), Vector((400, 0))),
     #    Body(1e25, Vector((0, -0.91e9)), Vector((-400, 0))),
     #    Body(5e8, Vector((50, 0)), Vector((25, 0))),
     #    Body(5e8, Vector((-50, 0)), Vector((-25, 0))),
-    #]
+    # ]
 
     ## seven bodies, stable motion
     bodies = [
-       Body(1e25, Vector((0, 0.91e9)), Vector((400, 0))),
-       Body(1e25, Vector((0, -0.91e9)), Vector((-400, 0))),
-       Body(5e8, Vector((1e5, 0)), Vector((25, 25))),
-       Body(5e8, Vector((-1e5, 0)), Vector((-25, -25))),
-       Body(1e20, Vector((1e8, 1e8)), Vector((0, 100))),
-       Body(1e20, Vector((-1e8, -1e8)), Vector((0, -100))),
-       Body(1e10, Vector((0, 0)), Vector((0, 0))),
+        Body(1e25, Vector((0, 0.91e9)), Vector((400, 0))),
+        Body(1e25, Vector((0, -0.91e9)), Vector((-400, 0))),
+        Body(5e8, Vector((1e5, 0)), Vector((25, 25))),
+        Body(5e8, Vector((-1e5, 0)), Vector((-25, -25))),
+        Body(1e20, Vector((1e8, 1e8)), Vector((0, 100))),
+        Body(1e20, Vector((-1e8, -1e8)), Vector((0, -100))),
+        Body(1e10, Vector((0, 0)), Vector((0, 0))),
     ]
 
     ## seven bodies, erratic motion
-    #bodies = [
+    # bodies = [
     #    Body(1e25, Vector((0, 0.91e9)), Vector((400, 0))),
     #    Body(1e25, Vector((0, -0.91e9)), Vector((-400, 0))),
     #    Body(5e8, Vector((1e5, 0)), Vector((25, 25))),
@@ -112,7 +111,7 @@ if __name__ == "__main__":
     #    Body(1e20, Vector((1e8, 1e8)), Vector((0, 150))),
     #    Body(1e20, Vector((-1e8, -1e8)), Vector((0, -100))),
     #    Body(1e10, Vector((0, 0)), Vector((0, 0))),
-    #]
+    # ]
 
     import pygame
     import sys

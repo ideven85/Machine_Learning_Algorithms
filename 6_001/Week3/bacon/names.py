@@ -15,8 +15,8 @@ import pickle
 #         file.write('"'+str(key) + '":' + str(value) + '\n')
 
 movie_mapping = dict()
-with open('resources/movies.pickle','rb') as f:
+with open("resources/movies.pickle", "rb") as f:
     movies = pickle.load(f)
-for movie_name,movie_id in movies.items():
-    movie_mapping[movie_id]=movie_name
+for movie_name, movie_id in movies.items():
+    movie_mapping[movie_id] = movie_name
 print(movie_mapping)

@@ -70,7 +70,6 @@ def test_acted_together_additional(test_num):
     _run_pickled_together_test(test_num)
 
 
-
 def test_bacon_path_01():
     # Bacon path, small database, path does not exist
     actor_id = 2876669
@@ -131,6 +130,7 @@ def test_bacon_path_06():
     expected = None
     result = lab.bacon_path(db_large, actor_id)
     assert result == expected
+
 
 def test_bacon_number_01():
     # Actors with Bacon number of 2

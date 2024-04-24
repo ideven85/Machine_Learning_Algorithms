@@ -13,22 +13,24 @@ def sum_lists(lists):
         output.append(total)
     return output
 
+
 def sum_nested_lists(lists):
-    out=[]
-    current=0
+    out = []
+    current = 0
     if not lists:
         return 0
     elif isinstance(lists[0], list):
-        return sum_nested_lists(lists[0])+sum_nested_lists(lists[1:])
+        return sum_nested_lists(lists[0]) + sum_nested_lists(lists[1:])
     else:
-        return lists[0]+sum_nested_lists(lists[1:])
+        return lists[0] + sum_nested_lists(lists[1:])
+
 
 # inp = [ [# some numbers], ... ]
 # exp = [ ... # some numbers ]
 # out = sum_lists(inp)
 # print(out)
 
-lst = [[1,2],[3,4],[5,6],7]
+lst = [[1, 2], [3, 4], [5, 6], 7]
 print(sum_lists(lst))
 
 print(sum_nested_lists(lst))

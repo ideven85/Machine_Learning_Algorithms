@@ -2,21 +2,25 @@
 6.101 Lab:
 Audio Processing
 """
+
 import copy
 import wave
 import struct
+
 # No Additional Imports Allowed!
 
 
 def sound_representation(sound):
-    sound_copy=copy.deepcopy(sound)
-    rate=sound_copy['rate']
-    samples = sound_copy['samples']
-    return rate,samples
-def backwards(sound):
-    result = {'rate':sound['rate'],'samples':sound['samples']}
+    sound_copy = copy.deepcopy(sound)
+    rate = sound_copy["rate"]
+    samples = sound_copy["samples"]
+    return rate, samples
 
-    result['samples']=result['samples'][::-1]
+
+def backwards(sound):
+    result = {"rate": sound["rate"], "samples": sound["samples"]}
+
+    result["samples"] = result["samples"][::-1]
     return result
 
 

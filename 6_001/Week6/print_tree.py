@@ -8,14 +8,13 @@ def all_values(tree):
         return
 
     for el in tree:
-        if isinstance(el,list):
+        if isinstance(el, list):
             yield from all_values(el)
         else:
             yield el
 
 
-
-print("Words:",list(all_values(tree1)))
+print("Words:", list(all_values(tree1)))
 
 out = []
 
@@ -25,7 +24,7 @@ def fib_gen(n):
     b = 1
     for i in range(n):
         yield a
-        a,b=b,a+b
+        a, b = b, a + b
 
 
 x1 = fib_gen(10)
@@ -45,7 +44,7 @@ def fib(n):
     out1 = []
     for i in range(n):
         out1.append(a)
-        a,b=b,a+b
+        a, b = b, a + b
 
     return out1
 

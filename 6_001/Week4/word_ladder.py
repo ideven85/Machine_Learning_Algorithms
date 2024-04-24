@@ -1,10 +1,12 @@
 # ALL_WORDS is a set containing all strings that should be considered valid
 # words (all in lower-case)
-with open('words.txt') as f:
+with open("words.txt") as f:
     ALL_WORDS = {i.strip() for i in f}
 
 # replace the following with the starting state
 start_state = ":)"
+
+
 def find_path(graph, start, goal_test):
     if goal_test(start):
         return (start,)
@@ -25,6 +27,7 @@ def find_path(graph, start, goal_test):
 
     return None
 
+
 # replace this neighbors function:
 def word_ladder_neighbors(state):
     """
@@ -33,6 +36,7 @@ def word_ladder_neighbors(state):
     """
     return []
 
+
 # replace this goal test function:
 def goal_test_function(state):
     """
@@ -40,6 +44,7 @@ def goal_test_function(state):
     returns True if and only if state matches the goal (the target word)
     """
     return False
+
 
 # ultimately, these variables will be passed as arguments to the find_path
 # function to solve for the path between "patties" and "foaming"

@@ -31,7 +31,7 @@ def magnitude(vec):
 #
 # print(v.__class__.__base__)
 
-x=20
+x = 20
 """
 To look up an attribute inside of an object:
 
@@ -42,8 +42,11 @@ if not found, look in that class's superclass
  (keep following that process, looking in superclasses)
 if not found and no more superclasses, raise an AttributeError
 """
-class A:
-    x="cat"
 
-a=A()
+
+class A:
+    x = "cat"
+
+
+a = A()
 print(a.x)

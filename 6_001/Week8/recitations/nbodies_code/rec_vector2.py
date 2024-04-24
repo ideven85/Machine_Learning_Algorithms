@@ -9,6 +9,7 @@ implementation.
 
 import doctest
 
+
 class Vector:
     """
     Nd Vector object; has immutable tuple of coords
@@ -74,12 +75,9 @@ class Vector:
         pass
 
 
-
-
 if __name__ == "__main__":
     doctest_flags = doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
     doctest.testmod(optionflags=doctest_flags)
-
 
     # doctest.run_docstring_examples(
     #    Vector.normalize,

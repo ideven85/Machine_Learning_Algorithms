@@ -27,8 +27,7 @@ def sum_list(x):
     """
     if len(x) == 0:
         return 0
-    if len(x) == 1:
-        return x[0]
+
     return x[0] + sum_list(x[1:])
 
 
@@ -39,7 +38,7 @@ def sum_nested(x):
     >>> sum_nested([[1,2],3,[4,5],[[[6]]]])
     21
     """
-    if not x or len(x) == 0:
+    if not x:
         return 0
     if type(x[0]) is list:
         return sum_nested(x[0]) + sum_nested(x[1:])

@@ -50,11 +50,9 @@ def subsequences(word):
     for char in word:
         # I need more practice here
         for i in range(len(out)):
-            current=out[i]
-            out.append(current+[char])
+            current = out[i]
+            out.append(current + [char])
     return out
-
-
 
 
 if __name__ == "__main__":

@@ -10,6 +10,7 @@ def substract_lists(list1: List, list2: List) -> List:
     assert len(list1) == len(list2)
     return [(x - y) for x, y in zip(list1, list2)]
 
+
 def first_occurrence(data):
     """
     Given a list of integers or strings, return a new list with the same
@@ -28,7 +29,9 @@ def first_occurrence(data):
             visited.add(val)
     return out
 
+
 import doctest
+
 if __name__ == "__main__":
     print(doctest.testmod(verbose=True))
     a = [1]

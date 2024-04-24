@@ -33,23 +33,16 @@ def tree_list(tree):
     value = tree["value"]
     children = tree["children"]
 
-    if len(children) == 0 :
+    if len(children) == 0:
 
         return [value]
 
-
-
         # print("Hi",[tree_list(x) for x in children])
 
-    first=children[0]
-    rest=children[1:]
-    print(first,'\n',rest)
+    first = children[0]
+    rest = children[1:]
+    print(first, "\n", rest)
     return tree_list(rest[0])
-
-
-
-
-
 
 
 t1 = {"value": 3, "children": []}

@@ -35,6 +35,6 @@ t3 = {
 nested_tree1 = [3, []]
 nested_tree2 = [[9, [[2, []], [3, []], [7, []]]]]
 nested_tree3 = [9, [[2, []], [3, [99, []], [16, [7, []]], [42, []]]]]
-print(sum_tree(nested_tree1))
-print(sum_tree(nested_tree2))
-print(sum_tree(nested_tree3))
+print(sum_nested_list(nested_tree1))
+print(sum_nested_list(nested_tree2))
+print(sum_nested_list(nested_tree3))

@@ -4,7 +4,7 @@ import ast
 import types
 import pytest
 
-from . import  mix_tape_graph as mixtape
+from . import mix_tape_graph as mixtape
 
 TEST_DIRECTORY = os.path.dirname(__file__)
 

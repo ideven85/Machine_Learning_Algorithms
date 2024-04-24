@@ -15,6 +15,7 @@ def first_occurrence(data):
         output.append(val)
     return output
 
+
 def how_old(data):
     """
     Given a list of integers or strings, returns a list of the same length
@@ -26,20 +27,20 @@ def how_old(data):
     """
     mapping = dict()
     output = []
-    for index,value in enumerate(data):
+    for index, value in enumerate(data):
         if value not in mapping:
-            #print(index,value)
-            mapping[value]=index
+            # print(index,value)
+            mapping[value] = index
             output.append(None)
         else:
             last_index = mapping[value]
-            #print(last_index,index)
-            output.append((index-last_index))
-            mapping[value]=index
+            # print(last_index,index)
+            output.append((index - last_index))
+            mapping[value] = index
     return output
 
 
-
 import doctest
-if __name__ == '__main__':
-   print(how_old([1, 2, 1, 1, 2]))
+
+if __name__ == "__main__":
+    print(how_old([1, 2, 1, 1, 2]))

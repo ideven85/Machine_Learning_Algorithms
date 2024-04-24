@@ -39,7 +39,7 @@ cube = lambda x: x**3
 
 
 def make_adder(n):
-    return lambda x: cube(x+n)
+    return lambda x: cube(x + n)
 
 
 functions = []

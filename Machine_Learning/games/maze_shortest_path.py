@@ -21,7 +21,7 @@ while running:
             if event.key == pygame.K_q or event.key == pygame.K_ESCAPE:
                 # pygame.quit()
                 # sys.exit(0)
-                running=False
+                running = False
     # fill the screen with a color to wipe away anything from last frame
     screen.fill("purple")
 

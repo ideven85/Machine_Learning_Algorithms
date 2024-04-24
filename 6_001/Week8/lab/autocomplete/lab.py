@@ -10,7 +10,7 @@ from text_tokenize import tokenize_sentences
 
 # Basic Huffman Encoding Technique customised
 # Started 15th April: 1:15 AM
-#Map<
+# Map<
 class PrefixTree:
 
     # class _Node:
@@ -37,34 +37,13 @@ class PrefixTree:
         self.value = None
         self.children = dict()
 
-    # def _get_node(self, index, value):
-    #     if index==0:
-    #         self.element=value
-    #     else:
-    #         self.children._get_node(index-1,value)=
-
-
-    def set(self,index,key,value):
-        character=ord(key[index])-ord('a')
-        if index == len(key)-1:
-            self.children[index]=PrefixTree()
-            self.children[ord(key[index])-ord('a')]=value
-
-
+    def _get_node(self, index, key, value):
+        if index == 0:
+            return self
+        elif not self.children:
+            raise KeyError("Key not found")
         else:
-            if character not in self.children:
-                self.children[character]=PrefixTree()
-                self.children[character].value=None
-
-            #self.children.setdefault(key[index],PrefixTree())
-
-            #print(self.children)
-            #self.children=self.children.children
-
-            self.set(index+1,key,value)
-
-
-
+            self.children._get_node(index - 1, key, value)
 
     def __setitem__(self, key, value):
         """
@@ -74,15 +53,14 @@ class PrefixTree:
         """
         if not isinstance(key, str):
             raise TypeError("The given key must be a string")
-        n = len(key)
-        flag = False
-        self.set(0,key,value)
-
-
-
+        elif not key:
+            self.value = value
+        else:
+            if key[0] not in self.children:
+                self.children[key[0]] = PrefixTree()
+            self.children[key[0]].__setitem__(key[1:], value)
 
     def __getitem__(self, key):
-        print(self.children)
         """
         Return the value for the specified prefix.
         Raise a KeyError if the given key is not in the prefix tree.
@@ -90,13 +68,14 @@ class PrefixTree:
         """
         if not isinstance(key, str):
             raise TypeError("The given word must be a string")
-        character = ord(key[len(key)-1])-ord('a')
-        if self.children[character] is None:
-
-            raise KeyError("Given word not found")
+        elif not key:
+            if self.value is None:
+                raise KeyError("Key not found")
+            return self.value
+        elif key[0] not in self.children:
+            raise KeyError("Key not found")
         else:
-            # print(self.children[key])
-            return self.children[ord(key[len(key)-1])-ord('a')]
+            return self.children[key[0]].__getitem__(key[1:])
 
     def __delitem__(self, key):
         """
@@ -120,8 +99,10 @@ class PrefixTree:
         """
         raise NotImplementedError
 
-    def __str__(self):
-        return str(self.value)
+    # def __str__(self):
+    #     return str(self.value)
+
+
 def word_frequencies(text):
     """
     Given a piece of text as a single string, create a prefix tree whose keys
@@ -168,9 +149,14 @@ def word_filter(tree, pattern):
 if __name__ == "__main__":
     t = PrefixTree()
     t["bat"] = 7
-    t["bark"] = "-)"
-    print(len(t.children))
     t["bar"] = 3
-    # print(t["bark"])
-    # print(t["bat"])
-    # print(t['bark'])
+    t["bark"] = "-)"
+
+    t["bank"] = 4
+    t["ban"] = 7
+    print(t["bark"])
+    print(t["bat"])
+    # print(t['ba'])
+    print(t["bar"])
+    print(t["ban"])
+    print(t["bank"])

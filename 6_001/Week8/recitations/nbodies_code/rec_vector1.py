@@ -9,6 +9,7 @@ implementation.
 
 import doctest
 
+
 class Vector:
     """
     Nd Vector object; has immutable tuple of coords
@@ -20,7 +21,7 @@ class Vector:
         >>> v.coords == (2, 3)
         True
         """
-        self.coords=(coords[0],coords[1])
+        self.coords = (coords[0], coords[1])
 
     def __repr__(self):
         """
@@ -30,13 +31,12 @@ class Vector:
         """
         return f"Vector{(self.coords)}"
 
-
     def add(self, other):
         """
         >>> Vector([1, 2]).add(Vector([1, 0]))
         Vector((2, 2))
         """
-        self.coords=self.coords[0]+other.coords[0],self.coords[1]+other.coords[1]
+        self.coords = self.coords[0] + other.coords[0], self.coords[1] + other.coords[1]
         return self.__repr__()
 
     def sub(self, other):
@@ -77,13 +77,9 @@ class Vector:
         pass
 
 
-
-
 if __name__ == "__main__":
     doctest_flags = doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
     doctest.testmod(optionflags=doctest_flags)
-
-
 
     # doctest.run_docstring_examples(
     #    Vector.normalize,

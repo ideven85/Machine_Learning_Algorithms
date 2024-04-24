@@ -12,7 +12,8 @@ from PIL import Image
 
 
 # VARIOUS FILTERS
-#todo Date Not Yet Started
+# todo Date Not Yet Started
+
 
 def color_filter_from_greyscale_filter(filt):
     """
