@@ -22,12 +22,14 @@ class PrefixTree:
         if not isinstance(key, str):
             raise TypeError("Dumbo")
         n = len(key)
-        for i in range(n - 1):
-            self.children[key[i]] = PrefixTree()
-            # self.children[key[i]].value=None
-        # Apparently if not key means after the last character
-        self.children[key[n - 1]] = PrefixTree()
-        self.value = value
+        for i in range(n-1):
+            if key[i] not in self.children:
+                self.children[key[i]] = PrefixTree()
+                # self.children[key[i]].value=None
+                # Apparently if not key means after the last character
+                print(self.value)
+        self.children[key[n-1]]=PrefixTree()
+        self.children[key[n-1]].value=value
 
     def __getitem__(self, key):
         """
@@ -122,7 +124,7 @@ def word_filter(tree, pattern):
 if __name__ == "__main__":
     t = PrefixTree()
     t["bat"] = 7
-    t["bar"] = 3
-    t["bark"] = ":)"
-    print(t._count)
+    #t["bar"] = 3
+    #t["bark"] = ":)"
+    #print(t._count)
     print(t["bat"])

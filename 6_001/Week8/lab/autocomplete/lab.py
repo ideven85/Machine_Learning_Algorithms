@@ -5,21 +5,24 @@ Autocomplete
 
 # NO ADDITIONAL IMPORTS!
 import doctest
+import pickle
+
 from text_tokenize import tokenize_sentences
 
+class TrieNode:
+    def __init__(self,data=None):
+        self.data=data
+        self.is_terminating=False
+        self.children=[TrieNode() for _ in range(26)]
+        self.child_count=0
 
-# Basic Huffman Encoding Technique customised
+
+# Basic Trie data structure customised without using TrieNode
 # Started 15th April: 1:15 AM
 # Map<
 class PrefixTree:
 
-    # class _Node:
-    #     def __init__(self,value=None,next_node=None):
-    #         self.value=value
-    #         self.next_node=next_node
-    #
-    #     def __str__(self):
-    #         return f"{self.value}"
+
     def __init__(self):
         """
                 The __init__ method takes no arguments. It should set up exactly two instance variables:
@@ -36,6 +39,8 @@ class PrefixTree:
         """
         self.value = None
         self.children = dict()
+        #self.is_terminating=False
+        #self.data = []
 
     def _get_node(self, index, key, value):
         if index == 0:
@@ -83,21 +88,47 @@ class PrefixTree:
         Raise a KeyError if the given key is not in the prefix tree.
         Raise a TypeError if the given key is not a string.
         """
-        raise NotImplementedError
+        if not isinstance(key, str):
+            raise TypeError("The given word must be a string")
+        elif not key:
+            if self.value is None:
+                raise KeyError("Key not found")
+            self.value=None
+        elif key[0] not in self.children:
+            raise KeyError("Key not found")
+        else:
+            self.children[key[0]].__delitem__(key[1:])
 
     def __contains__(self, key):
         """
         Is key a key in the prefix tree?  Return True or False.
         Raise a TypeError if the given key is not a string.
         """
-        raise NotImplementedError
+        if not isinstance(key, str):
+            raise TypeError("The given word must be a string")
+        elif not key:
+            return self.value is not None
+        elif key[0] not in self.children:
+            return False
+        else:
+            return self.children[key[0]].__contains__(key[1:])
 
-    def __iter__(self):
-        """
-        Generator of (key, value) pairs for all keys/values in this prefix tree
-        and its children.  Must be a generator!
-        """
-        raise NotImplementedError
+    def __iter__(self):  # version B
+        for letter, subtree in self.children.items():
+            # if subtree.value==0 or letter=='' or self.value==0:
+            #     yield '',self.value
+            if letter=='':
+                yield letter,self.value
+            if  subtree.value is not None:
+                yield (letter+'', subtree.value)
+
+            yield from [(letter+word, val) for word, val in subtree.__iter__()]
+
+    # def __repr__(self):
+    #     return f"{self.value}, {self.children}" if self.children else " Prefix Tree"
+
+
+
 
     # def __str__(self):
     #     return str(self.value)
@@ -109,8 +140,17 @@ def word_frequencies(text):
     are the words in the text, and whose values are the number of times the
     associated word appears in the text.
     """
-    raise NotImplementedError
+    #raise NotImplementedError
+    tokenised=tokenize_sentences(text)
+    t=PrefixTree()
+    words=["" for _ in range(len(tokenised))]
+    for i in range(len(tokenised)):
+        words[i]=tokenised[i].split(" ")
+    for i in range(len(words)):
+        for word in words[i]:
+            t[word]=1 if word not in t else t[word]+1
 
+    return t
 
 def autocomplete(tree, prefix, max_count=None):
     """
@@ -120,7 +160,10 @@ def autocomplete(tree, prefix, max_count=None):
 
     Raise a TypeError if the given prefix is not a string.
     """
-    raise NotImplementedError
+    #raise NotImplementedError
+    if not isinstance(prefix,str):
+        raise TypeError("Prefix must be a string")
+    
 
 
 def autocorrect(tree, prefix, max_count=None):
@@ -144,7 +187,20 @@ def word_filter(tree, pattern):
     """
     raise NotImplementedError
 
-
+def dictify(t):
+    assert set(t.__dict__) == {
+        "value",
+        "children",
+    }, "PrefixTree instances should only contain the two instance attributes mentioned in the lab writeup."
+    out = {"value": t.value, "children": {}}
+    for ch, child in t.children.items():
+        out["children"][ch] = dictify(child)
+    return out
+def from_dict(d):
+    t = PrefixTree()
+    for k, v in d.items():
+        t[k] = v
+    return t
 # you can include test cases of your own in the block below.
 if __name__ == "__main__":
     t = PrefixTree()
@@ -154,9 +210,33 @@ if __name__ == "__main__":
 
     t["bank"] = 4
     t["ban"] = 7
-    print(t["bark"])
-    print(t["bat"])
+    t[""]=3
+    # print(t["bark"])
+    # print(t["bat"])
     # print(t['ba'])
-    print(t["bar"])
-    print(t["ban"])
-    print(t["bank"])
+    # print(t["bar"])
+    # print(t["ban"])
+    # print(t["bank"])
+    # #del t['ban']
+    # print(t['ban'])
+    # print('bank' in t)
+    # print('ba' in t)
+    # for key,value in t:
+    #     print(key,value)
+    print(list(t))
+    print(t[""])
+    children=t.children
+
+    with open('words.txt','r') as f:
+        ALL_WORDS=f.read()
+    print(ALL_WORDS.split("\n")[:5])
+
+    with open('testing_data/6.pickle','rb') as f:
+        first=pickle.load(f)
+
+    l=word_frequencies(
+        "toonces was a cat who could drive a car very fast until he crashed."
+    )
+    l1=word_frequencies("bat bat bark bar")
+    print(list(l1))
+

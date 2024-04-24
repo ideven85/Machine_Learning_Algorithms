@@ -22,14 +22,12 @@ class PrefixTree:
         """
         if not isinstance(key, str):
             raise TypeError("Key is not a string!")
-        elif not key:
-            self.value = value
-        else:
-            if key[0] not in self.children:
-                self.children[key[0]] = PrefixTree()
-            # self.children[key[0]][key[1:]] = value
-            return self.children[key[0]].__setitem__(key[1:], value)
-
+        curr=self
+        for char in key:
+            if char not in curr.children:
+                curr.children[char]=PrefixTree()
+            curr=curr.children[char]
+        curr.value=value
     def __getitem__(self, key):
         """
         Return the value for the specified prefix.
@@ -38,16 +36,22 @@ class PrefixTree:
         """
         if not isinstance(key, str):
             raise TypeError("Key is not a string!")
-        elif not key:
-            if self.value is None:
-                raise KeyError("Key does not have a value!")
-            return self.value
-        elif key[0] not in self.children:
-            raise KeyError("Key does not have a value!")
-        else:
-            # return self.children[key[0]][key[1:]]
-            return self.children[key[0]].__getitem__(key[1:])
-
+        # elif not key:
+        #     if self.value is None:
+        #         raise KeyError("Key does not have a value!")
+        #     return self.value
+        # elif key[0] not in self.children:
+        #     raise KeyError("Key does not have a value!")
+        # else:
+        #     # return self.children[key[0]][key[1:]]
+        #     return self.children[key[0]].__getitem__(key[1:])
+        #
+        curr=self
+        for char in key:
+            if char not in curr.children:
+                raise KeyError("Key does not have a value")
+            curr=curr.children[char]
+        return curr.value
 
 def test_tiny():
     import time
@@ -99,3 +103,22 @@ def test_large():
 if __name__ == "__main__":
     test_tiny()
     test_large()
+
+
+"""
+Recursive:
+q1_get_set.py::test_tiny PASSED                                          [ 50%]test_tiny passed in 1.2749998859362677e-05 seconds
+
+q1_get_set.py::test_large PASSED                                         [100%]test_large passed in 0.15881274999992456 seconds
+
+
+"""
+
+
+"""
+Iterative:
+q1_get_set.py::test_tiny PASSED                                          [ 50%]test_tiny passed in 7.542003004346043e-06 seconds
+
+q1_get_set.py::test_large PASSED                                         [100%]test_large passed in 0.09988620899821399 seconds
+
+"""
