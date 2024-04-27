@@ -6,7 +6,9 @@ Autocomplete
 # NO ADDITIONAL IMPORTS!
 import doctest
 import pickle
+import os
 
+LOCATION = os.path.realpath(os.path.dirname(__file__))
 from text_tokenize import tokenize_sentences
 
 class TrieNode:
@@ -42,13 +44,13 @@ class PrefixTree:
         #self.is_terminating=False
         #self.data = []
 
-    def _get_node(self, index, key, value):
-        if index == 0:
-            return self
-        elif not self.children:
-            raise KeyError("Key not found")
-        else:
-            self.children._get_node(index - 1, key, value)
+    # def _get_node(self, index, key, value):
+    #     if index == 0:
+    #         return self
+    #     elif not self.children:
+    #         raise KeyError("Key not found")
+    #     else:
+    #         self.children._get_node(index - 1, key, value)
 
     def __setitem__(self, key, value):
         """
@@ -58,12 +60,18 @@ class PrefixTree:
         """
         if not isinstance(key, str):
             raise TypeError("The given key must be a string")
-        elif not key:
-            self.value = value
-        else:
-            if key[0] not in self.children:
-                self.children[key[0]] = PrefixTree()
-            self.children[key[0]].__setitem__(key[1:], value)
+        # elif not key:
+        #     self.value = value
+        # else:
+        #     if key[0] not in self.children:
+        #         self.children[key[0]] = PrefixTree()
+        #     self.children[key[0]].__setitem__(key[1:], value)
+        curr=self
+        for char in key:
+            if char not in curr.children:
+                curr.children[char]=PrefixTree()
+            curr=curr.children[char]
+        curr.value=value
 
     def __getitem__(self, key):
         """
@@ -113,10 +121,16 @@ class PrefixTree:
         else:
             return self.children[key[0]].__contains__(key[1:])
 
+    # def print(self):
+    #     current = self
+    #     for letter,subtree in current.children.items():
+    #
+    #             print(letter,subtree.value)
     def __iter__(self):  # version B
         for letter, subtree in self.children.items():
             # if subtree.value==0 or letter=='' or self.value==0:
             #     yield '',self.value
+
             if letter=='':
                 yield letter,self.value
             if  subtree.value is not None:
@@ -163,8 +177,10 @@ def autocomplete(tree, prefix, max_count=None):
     #raise NotImplementedError
     if not isinstance(prefix,str):
         raise TypeError("Prefix must be a string")
-    
-
+    pass
+    # children=tree.children
+    # for char in prefix:
+    #     children[char]
 
 def autocorrect(tree, prefix, max_count=None):
     """
@@ -211,22 +227,11 @@ if __name__ == "__main__":
     t["bank"] = 4
     t["ban"] = 7
     t[""]=3
-    # print(t["bark"])
-    # print(t["bat"])
-    # print(t['ba'])
-    # print(t["bar"])
-    # print(t["ban"])
-    # print(t["bank"])
-    # #del t['ban']
-    # print(t['ban'])
-    # print('bank' in t)
-    # print('ba' in t)
-    # for key,value in t:
-    #     print(key,value)
+    #t.print()
     print(list(t))
     print(t[""])
     children=t.children
-
+    file = curr_dir.
     with open('words.txt','r') as f:
         ALL_WORDS=f.read()
     print(ALL_WORDS.split("\n")[:5])
@@ -239,4 +244,5 @@ if __name__ == "__main__":
     )
     l1=word_frequencies("bat bat bark bar")
     print(list(l1))
+    t.print()
 

@@ -55,6 +55,9 @@ def rest(ll):
 
     >>> rest( (5, (10, (15, None))) )
     (10, (15, None))
+    >>> rest((5,None))
+    (5.None)
+
     """
     if not ll:
         return None

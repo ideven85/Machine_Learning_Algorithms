@@ -32,4 +32,16 @@ function fib1(n){
     return b;
 }
 
-console.log(fib1(100))
+function memoisedFib(fn){
+    let cache={};
+    return function (...args) {
+        if (cache[args])
+        return cache[args];
+    const res = fn.apply(this,args);
+    cache[args]=res;
+    return  res;
+    }
+    
+}
+const f1 = memoisedFib((n) => fib1(n));
+console.log(f1(40));

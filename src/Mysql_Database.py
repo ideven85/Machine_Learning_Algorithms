@@ -1,4 +1,5 @@
 import MySQLdb
+import sqlite3
 
 # Open database connection
 db = MySQLdb.connect("localhost", "root", "root@123")

@@ -1,3 +1,4 @@
+import importlib
 import json
 import mimetypes
 import os
@@ -26,8 +27,8 @@ def application(environ, start_response):
     path = environ.get("PATH_INFO", "/") or "/"
     static_file = None
     params = parse_post(environ)
-    for key, value in environ.items():
-        print(key, value)
+    # for key, value in environ.items():
+    #     print(key, value)
 
     print(params)
     print(f"Requested path {path}/{params}")
@@ -58,15 +59,18 @@ def application(environ, start_response):
     len_ = str(len(body))
     headers = [("Content-type", type_), ("Content-length", len_)]
     start_response(status, headers)
+    print(body)
     return [body]
 
 
 if __name__ == "__main__":
-    HOST = "0.0.0.0"
+    HOST = "localhost"
     PORT = 8000
 
-    with make_server("0.0.0.0", PORT, application) as httpd:
+    with make_server(HOST, PORT, application) as httpd:
         try:
+            print(f"Server started on {HOST}:{PORT}")
+
             httpd.serve_forever()
         except KeyboardInterrupt or OSError as e:
             print("Shutting Down with error", e)

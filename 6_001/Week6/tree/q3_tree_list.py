@@ -44,6 +44,17 @@ def tree_list(tree):
     print(first, "\n", rest)
     return tree_list(rest[0])
 
+def gen_tree_list(tree):
+    if not tree:
+        return []
+    out = []
+    value=tree['value']
+    children=tree['children']
+    out.append(value)
+    if children:
+            temp=[gen_tree_list(x) for x in children]
+            out.extend(temp)
+    return out
 
 t1 = {"value": 3, "children": []}
 
@@ -82,6 +93,7 @@ t3 = {
 if __name__ == "__main__":
     # uncomment the @show_recursive_structure line
     # above the function to see some detailed function output
-    print(tree_list(t1))
-    print(tree_list(t2))
-    print(tree_list(t3))
+    # print(tree_list(t1))
+    # print(tree_list(t2))
+    # print(tree_list(t3))
+    print(gen_tree_list(t2))

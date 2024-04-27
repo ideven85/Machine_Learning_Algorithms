@@ -14,7 +14,7 @@ def find_path(graph, start, goal_test):
     visited = {start}
     while visited:
         this_path = agenda.pop(0)
-        terminal_state = this_path[-1]  # Means?
+        terminal_state = this_path[-1]
 
         for neighbour in graph.get(terminal_state, []):
             if neighbour not in visited:

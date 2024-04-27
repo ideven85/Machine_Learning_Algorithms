@@ -32,10 +32,11 @@ class PrefixTree:
     #     helper( "")
 
     def __iter__(self):  # version B
-        if self.value==0:
-            yield 'ad',self.value
-        else:
+
+
             for letter, subtree in self.children.items():
+                if letter is None:
+                    yield '',subtree.value
                 if subtree.value is not None:
                     yield (letter + '', subtree.value)
 

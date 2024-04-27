@@ -29,5 +29,38 @@ def disk_usage2(path):
     print("{0:<7}".format(total), path)
     return total
 
+folder=os.path.expanduser("~/Developer")
+def ends_with_suffix(suffix):
+    return lambda x:x.endswith(suffix)
 
-print(disk_usage2("../../"))
+def list_files(path):
+    files = []
+    if not path:
+        return
+    if not os.access(path,700):
+        return
+    if os.path.isfile(path):
+        # files.append(path)
+        yield path
+    elif os.path.isdir(path):
+        for f in os.listdir(path):
+            children = os.path.join(path,f)
+            if os.path.isdir(children):
+                yield from list_files(children)
+            else:
+                yield children
+
+
+
+
+
+
+#words=[list_files(y) for y in folder ]
+#print(words)
+
+
+    
+
+#print(disk_usage2(folder))
+for val in list_files(folder):
+    print(val)
