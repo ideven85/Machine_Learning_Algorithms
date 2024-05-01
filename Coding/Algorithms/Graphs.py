@@ -96,6 +96,7 @@ def dfsUtil(matrix, row, col, visited):
     return count
 
 
+# 99-29=70
 class DjiskstraAlgorithm:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         adj = dict()

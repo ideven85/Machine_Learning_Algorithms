@@ -16,7 +16,10 @@ class C(B):
     x = "C instance variable"
 
     def __init__(self):
-        pass
+        super().__init__()
+        self.x=self.x
+
+
 
 
 a = A()

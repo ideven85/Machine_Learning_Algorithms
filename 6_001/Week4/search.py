@@ -74,4 +74,12 @@ def findNumberOfProvinces(graph):
 
 if __name__ == "__main__":
     is_connected = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+    matrix = [
+        [1, 0, 0, 1, 0],
+        [1, 0, 1, 0, 0],
+        [0, 0, 1, 0, 1],
+        [1, 0, 1, 0, 1],
+        [1, 0, 1, 1, 0],
+    ]
     print(findNumberOfProvinces(is_connected))
+    print(findNumberOfProvinces(matrix))

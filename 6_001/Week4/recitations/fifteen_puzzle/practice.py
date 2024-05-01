@@ -17,9 +17,12 @@ def find_blank(board):
         The (row, column) tuple of the blank space location.
     """
 
-
-    return [(r,c) for r in range(len(board)) for c in range(len(board[r])) if board[r][c] is None][0]
-
+    return [
+        (r, c)
+        for r in range(len(board))
+        for c in range(len(board[r]))
+        if board[r][c] is None
+    ][0]
 
 
 def goal_test(state):
@@ -66,13 +69,12 @@ def solve_puzzle(board):
         # what is the current_state?
         current_state = current[-1]
 
-
         for neighbor in get_neighbors(current_state):
             if neighbor not in visited:
                 if goal_test(neighbor):
                     return  # return a list of board states
-                #this_path =
-                #new_agenda = ?
+                # this_path =
+                # new_agenda = ?
                 agenda.append(new_agenda)
                 visited.add(neighbor)
 
@@ -130,7 +132,7 @@ if __name__ == "__main__":
     assert find_blank(puzzle) == puzzle_blank
     print("solving fifteen_puzzle...")
     path = []
-    #solve_puzzle(fifteen_puzzle)
+    # solve_puzzle(fifteen_puzzle)
     for i, pboard in enumerate(path):
         print(f"Move {i}")
         print_board(pboard)

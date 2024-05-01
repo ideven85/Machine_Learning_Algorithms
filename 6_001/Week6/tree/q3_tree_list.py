@@ -44,17 +44,19 @@ def tree_list(tree):
     print(first, "\n", rest)
     return tree_list(rest[0])
 
+
 def gen_tree_list(tree):
     if not tree:
         return []
     out = []
-    value=tree['value']
-    children=tree['children']
+    value = tree["value"]
+    children = tree["children"]
     out.append(value)
     if children:
-            temp=[gen_tree_list(x) for x in children]
-            out.extend(temp)
+        temp = [gen_tree_list(x) for x in children]
+        out.extend(temp)
     return out
+
 
 t1 = {"value": 3, "children": []}
 

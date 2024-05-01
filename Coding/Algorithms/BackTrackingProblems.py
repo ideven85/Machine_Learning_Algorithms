@@ -239,12 +239,12 @@ if __name__ == "__main__":
     print(productSum(b))
     print(powerset(["1", "2", "3"]))
     s = ["n", "i", "t", "i", "n"]
-    print()
+    print("Palindrome Partitioning:")
     a1 = PalindromePartitioning().partition(s)
     print()
     print(a1)
     s = 3
-    print(getPermutations1([1, 2, 1]))
+    print(getPermutations1([]))
     print(getPermutations([1, 2, 1], 3))
     print("Binary K Strings:", binaryKStrings(5, 2))
     print("Subsequences", subsequences([1, 2, 3]))

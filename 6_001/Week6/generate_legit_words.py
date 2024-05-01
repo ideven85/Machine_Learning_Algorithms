@@ -66,7 +66,7 @@ if __name__ == "__main__":
         "fix",
         "cheer",
     ]
-    print(subsequences("ArcticHokes"))
+    print(subsequences("ABC"))
     # [generate_subsequences_fast(w) for w in words]
     # start = time.time_ns()
     # with ThreadPool() as pool:
