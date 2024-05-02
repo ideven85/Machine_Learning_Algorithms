@@ -9,25 +9,63 @@ from lab import PrefixTree, word_frequencies
 from test import read_expected
 
 
-def autocomplete(ptree, prefix, max_count=None):
-    if not isinstance(prefix, str):
-        raise TypeError
-
-    all_words = [i for i in ptree if i[0].startswith(prefix)]
-
-    if max_count is None:
-        max_count = len(all_words)
-
-    out_words = []
-    for _ in range(max_count):
-        best = (None, float("-inf"))
-        for i in all_words:
-            if i[1] > best[1] and i not in out_words:
-                best = i
-        if best != (None, float("-inf")):
-            out_words.append(best)
-
-    return [i[0] for i in out_words]
+# def autocomplete(tree, prefix, max_count=None):
+#     """
+#     Return the list of the most-frequently occurring elements that start with
+#     the given prefix.  Include only the top max_count elements if max_count is
+#     specified, otherwise return all.
+#
+#     Raise a TypeError if the given prefix is not a string.
+#     """
+#     #raise NotImplementedError
+#     if not isinstance(prefix,str):
+#         raise TypeError("Prefix must be a string")
+#     if max_count==0:
+#         return []
+#     # if prefix not in tree:
+#     #     raise KeyError("Prefix not present")
+#     #frequencies = list(word_frequencies(tree))
+#     # frequencies=list(tree)
+#     #print(prefix in tree)
+#     tree=list(tree)
+#
+#     frequencies = [w for w,_ in tree  if w.startswith(prefix)]
+#     #print(frequencies)
+#     frequencies.sort(key=lambda x:x[1],reverse=True)
+#
+#         #input("Check 1")
+#
+#
+#     out = frequencies
+#
+#     if not max_count:
+#         max_count=len(out)
+#     return out[:max_count]
+#
+#     # if max_count:
+#     #     while max_count!=0:
+#     #
+#     #
+#     #
+#     #             if not frequencies:
+#     #                 return out
+#     #             if not max_count:
+#     #                 break
+#     #             #input(word)
+#     #             if prefix in word:
+#     #                 #input("True")
+#     #                 out.append(word)
+#     #                 max_count-=1
+#     #
+#     #
+#     #         if not frequencies:
+#     #                 return out
+#     #
+#     # else:
+#     #     for word in frequencies:
+#     #         if prefix in word:
+#     #             out.append(word)
+#     # return out
 
 
 def test_autocomplete_small():

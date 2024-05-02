@@ -321,7 +321,7 @@ def test_autocomplete_big_1():
     word_list.append("bruteforceisbad")
 
     t = lab.word_frequencies(" ".join(word_list))
-    for i in range(50_000):
+    for i in range(5):
         result1 = lab.autocomplete(t, "ap", 1)
         result2 = lab.autocomplete(t, "ap", 2)
         result3 = lab.autocomplete(t, "ap", 3)

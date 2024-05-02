@@ -8,6 +8,7 @@ implementation.
 """
 
 import doctest
+import math
 
 
 class Vector:
@@ -21,7 +22,7 @@ class Vector:
         >>> v.coords == (2, 3)
         True
         """
-        pass
+        self.coords = tuple(coords)
 
     def __repr__(self):
         """
@@ -29,42 +30,57 @@ class Vector:
         >>> repr(v)
         'Vector((0, -4))'
         """
-        pass
+        return f"Vector({self.coords})"
 
     def __add__(self, other):
         """
         >>> Vector([1, 2]) + Vector([1, 0])
         Vector((2, 2))
         """
-        pass
+        x = list(self.coords)
+        x = [a + b for a, b in zip(x, list(other.coords))]
+        self.coords = tuple(x)
+        return self
 
     def __sub__(self, other):
         """
         >>> Vector([1, 2]) - Vector([1, 0])
         Vector((0, 2))
         """
-        pass
+        x = list(self.coords)
+        x = [a - b for a, b in zip(x, list(other.coords))]
+        self.coords = tuple(x)
+        return self
 
     def __mul__(self, other):
         """
         >>> Vector([1, 2]) * 5
         Vector((5, 10))
         """
-        pass
+        x = list(self.coords)
+        x = [n * other for n in x]
+        self.coords = tuple(x)
+        return self
 
     def __truediv__(self, other):
         """
         >>> Vector([4, 2]) / 2
         Vector((2.0, 1.0))
         """
-        pass
+        x = list(self.coords)
+        x = [n / other for n in x]
+        self.coords = tuple(x)
+        return self
 
     def __abs__(self):
         """
         >>> abs(Vector([3, 4]))
         5.0
         """
-        pass
+        total = 0
+        for x in self.coords:
+            total += x**2
+        return math.sqrt(total)
 
     def normalize(self):
         """
@@ -72,7 +88,10 @@ class Vector:
         >>> abs(.6 - v.coords[0]) <= 1e-4 and abs(.8 - v.coords[1]) <= 1e-4
         True
         """
-        pass
+        x = list(self.coords)
+        x = [n / abs(self) for n in x]
+        self.coords = tuple(x)
+        return self
 
 
 if __name__ == "__main__":

@@ -321,17 +321,17 @@ def test_autocomplete_big_1():
     word_list.append("bruteforceisbad")
 
     t = lab.word_frequencies(" ".join(word_list))
-    #print(list(t)[:50])
-    for i in range(50_000):
-        # result1 = lab.autocomplete(t, "ap", 1)
-        # result2 = lab.autocomplete(t, "ap", 2)
-        # result3 = lab.autocomplete(t, "ap", 3)
-        #result4 = lab.autocomplete(t, "ap")
+    # print(list(t)[:50])
+    for i in range(500):
+        result1 = lab.autocomplete(t, "ap", 1)
+        result2 = lab.autocomplete(t, "ap", 2)
+        result3 = lab.autocomplete(t, "ap", 3)
+        result4 = lab.autocomplete(t, "ap")
         result5 = lab.autocomplete(t, "brute")
 
-        # assert set(result1) == {"apple"}
-        # assert set(result2) == {"apple", "apricot"}
-        #assert set(result4)  == {"apple", "apricot", "application"}
+        assert set(result1) == {"apple"}
+        assert set(result2) == {"apple", "apricot"}
+        assert set(result4) == {"apple", "apricot", "application"}
         assert set(result5) == {"bruteforceisbad"}
 
 

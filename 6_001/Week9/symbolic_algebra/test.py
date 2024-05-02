@@ -71,7 +71,9 @@ def mix_precedence(sym, expected):
     except DisallowedFunctionException:
         raise
     except:
-        assert False, f"Unexpected error, which may be due to bug or unexpected type checking!"
+        assert (
+            False
+        ), f"Unexpected error, which may be due to bug or unexpected type checking!"
     finally:
         for c in cn:
             if c in cprec:
@@ -137,7 +139,9 @@ def with_mixed_up_symbols(test, do_symbols=True, do_names=True):
         except DisallowedFunctionException:
             raise
         except Exception as e:
-            assert False, f"Unexpected error, which may be due to bug or unexpected type checking!"
+            assert (
+                False
+            ), f"Unexpected error, which may be due to bug or unexpected type checking!"
         finally:
             for name, cls in oclasses.items():
                 setattr(lab, name, cls)

@@ -7,6 +7,7 @@ Autocomplete
 import doctest
 import pickle
 import os
+from collections import Counter
 
 LOCATION = os.path.realpath(os.path.dirname(__file__))
 from text_tokenize import tokenize_sentences
@@ -24,7 +25,6 @@ from text_tokenize import tokenize_sentences
 # Map<
 class PrefixTree:
 
-
     def __init__(self):
         """
                 The __init__ method takes no arguments. It should set up exactly two instance variables:
@@ -41,12 +41,12 @@ class PrefixTree:
         """
         self.value = None
         self.children = dict()
-        #self.is_terminating=False
-        #self.data = []
+        # self.is_terminating=False
+        # self.data = []
 
     # package default function
-    def _get_node(self, key,value=None):
-        if not isinstance(key,str):
+    def _get_node(self, key, value=None):
+        if not isinstance(key, str):
             raise TypeError("Word Must Be a string")
 
         if not key:
@@ -54,12 +54,12 @@ class PrefixTree:
                 raise KeyError("Key Not Found")
 
             return self
-        elif value is None and  key[0] not  in self.children:
+        elif value is None and key[0] not in self.children:
             raise KeyError("Key not found")
         elif value and key[0] not in self.children:
 
-            self.children[key[0]]=PrefixTree()
-        return self.children[key[0]]._get_node(key[1:],value)
+            self.children[key[0]] = PrefixTree()
+        return self.children[key[0]]._get_node(key[1:], value)
 
     def __setitem__(self, key, value):
         """
@@ -70,12 +70,12 @@ class PrefixTree:
         if not isinstance(key, str):
             raise TypeError("Word Must Be a string")
 
-        curr=self
+        curr = self
         for char in key:
             if char not in curr.children:
-                curr.children[char]=PrefixTree()
-            curr=curr.children[char]
-        curr.value=value
+                curr.children[char] = PrefixTree()
+            curr = curr.children[char]
+        curr.value = value
         # elif not key:
         #     self.value=value
         # else:
@@ -83,9 +83,7 @@ class PrefixTree:
         #         self.children[key[0]]=PrefixTree()
         #     self.children[key[0]].__setitem__(key[1:],value)
 
-
-        #self._get_node(key,value).value=value
-
+        # self._get_node(key,value).value=value
 
     def __getitem__(self, key):
         """
@@ -103,11 +101,7 @@ class PrefixTree:
             raise KeyError("Key not found")
         else:
             return self.children[key[0]][key[1:]]
-        #return self._get_node(key).value
-
-
-
-
+        # return self._get_node(key).value
 
     def __delitem__(self, key):
         """
@@ -115,7 +109,7 @@ class PrefixTree:
         Raise a KeyError if the given key is not in the prefix tree.
         Raise a TypeError if the given key is not a string.
         """
-        self._get_node(key).value=None
+        self._get_node(key).value = None
 
     def __contains__(self, key):
         """
@@ -124,7 +118,7 @@ class PrefixTree:
         """
         if not isinstance(key, str):
             raise TypeError("The given word must be a string")
-        if key=='' and self.value is not None:
+        if key == "" and self.value is not None:
             return True
 
         elif not key:
@@ -157,12 +151,10 @@ class PrefixTree:
             for letter, child in self.children.items():
                 yield from helper(child, prefix + letter)
 
-        return helper(self, '')
+        return helper(self, "")
+
     # def __repr__(self):
     #     return f"{self.value}, {self.children}" if self.children else " Prefix Tree"
-
-
-
 
     # def __str__(self):
     #     return str(self.value)
@@ -174,19 +166,41 @@ def word_frequencies(text):
     are the words in the text, and whose values are the number of times the
     associated word appears in the text.
     """
-    #raise NotImplementedError
-    tokenised=tokenize_sentences(text)
-    t=PrefixTree()
+    # raise NotImplementedError
+    tokenised = tokenize_sentences(text)
+    t = PrefixTree()
 
-    words=["" for _ in range(len(tokenised))]
+    words = ["" for _ in range(len(tokenised))]
     for i in range(len(tokenised)):
-        words[i]=tokenised[i].split(" ")
+        words[i] = tokenised[i].split(" ")
 
     for i in range(len(words)):
         for word in words[i]:
-            t[word]=1 if word not in t else t[word]+1
+            t[word] = 1 if word not in t else t[word] + 1
 
     return t
+
+
+def autocomplete2(ptree, prefix, max_count=None):
+    if not isinstance(prefix, str):
+        raise TypeError
+
+    all_words = [i for i in ptree if i[0].startswith(prefix)]
+
+    if max_count is None:
+        max_count = len(all_words)
+
+    out_words = []
+    for _ in range(max_count):
+        best = (None, float("-inf"))
+        for i in all_words:
+            if i[1] > best[1] and i not in out_words:
+                best = i
+        if best != (None, float("-inf")):
+            out_words.append(best)
+
+    return [i[0] for i in out_words]
+
 
 def autocomplete(tree, prefix, max_count=None):
     """
@@ -196,29 +210,27 @@ def autocomplete(tree, prefix, max_count=None):
 
     Raise a TypeError if the given prefix is not a string.
     """
-    #raise NotImplementedError
-    if not isinstance(prefix,str):
+    # raise NotImplementedError
+    if not isinstance(prefix, str):
         raise TypeError("Prefix must be a string")
-    if max_count==0:
+    if max_count == 0:
         return []
     # if prefix not in tree:
     #     raise KeyError("Prefix not present")
-    #frequencies = list(word_frequencies(tree))
+    # frequencies = list(word_frequencies(tree))
     # frequencies=list(tree)
-    #print(prefix in tree)
-    tree=list(tree)
+    # print(prefix in tree)
+    tree = list(tree)
 
-    frequencies = [w for w,_ in tree  if w.startswith(prefix)]
-    #print(frequencies)
-    frequencies.sort(key=lambda x:x[1],reverse=True)
+    frequencies = [w for w in tree if w[0].startswith(prefix)]
+    # print(frequencies)
+    frequencies.sort(key=lambda x: x[1], reverse=True)
 
-        #input("Check 1")
+    # input("Check 1")
 
-
-    out = frequencies
-
+    out = [w for w, _ in frequencies]
     if not max_count:
-        max_count=len(out)
+        max_count = len(out)
     return out[:max_count]
 
     # if max_count:
@@ -247,6 +259,38 @@ def autocomplete(tree, prefix, max_count=None):
     # return out
 
 
+def levenshteinDistance(str1, str2):
+    # Write your code here.
+    m = len(str1)
+    n = len(str2)
+    L = [[i for i in range(n + 1)] for j in range(m + 1)]
+    for i in range(1, m + 1):
+        L[i][0] = L[i - 1][0] + 1
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if str1[i - 1] == str2[j - 1]:
+                L[i][j] = L[i - 1][j - 1]
+            elif j < n and i < m and str1[i - 1] == str2[j] and str1[i] == str2[j - 1]:
+                L[i][j] = L[i - 1][j - 1]
+            else:
+                L[i][j] = 1 + min(L[i - 1][j], L[i - 1][j - 1], L[i][j - 1])
+
+    return L[-1][-1]
+
+
+# def edit_results(word1,word2):
+#     n = len(word1)
+#     m = len(word2)
+#
+#     if n-m>1:
+#         return False
+#     # Operations -> Insert,Delete,Edit,Transpose adjacent characters
+#     dp=[[0 for _ in range(n+1)] for _ in range(m+1)]
+#     for i in range(1,n+1):
+#         for j in range(1,m+1):
+#             diff = ord(word1[i])-ord(word2[j])
+#             dp[i][j]
+
 
 def autocorrect(tree, prefix, max_count=None):
     """
@@ -256,13 +300,37 @@ def autocorrect(tree, prefix, max_count=None):
     fewer than max_count elements, include the most-frequently-occurring valid
     edits of the given word as well, up to max_count total elements.
     """
-    #raise NotImplementedError
-    """
-    
-    """
-    return None
+    # raise NotImplementedError
+    if max_count == 0:
+        return []
+    completions = autocomplete(tree, prefix, max_count)
+    corpus = list(tree)
+    # print(corpus)
+    if max_count and len(completions) == max_count:
+        return completions
+    diff = 0
+    if max_count:
+        if len(completions) < max_count:
+            diff = max_count - len(completions)
+        else:
+            diff = 0
+    else:
+        diff = len(corpus) - len(completions)
+    print(diff)
+    corpus.sort(key=lambda x: x[1], reverse=True)
+
+    for word, _ in corpus:
+        if diff:
+            if levenshteinDistance(prefix, word) == 1:
+                if not diff:
+                    break
+                if word not in completions:
+                    completions.append(word)
+                diff -= 1
+    return completions
 
 
+# todo
 def word_filter(tree, pattern):
     """
     Return list of (word, freq) for all words in the given prefix tree that
@@ -273,6 +341,7 @@ def word_filter(tree, pattern):
     """
     raise NotImplementedError
 
+
 def dictify(t):
     assert set(t.__dict__) == {
         "value",
@@ -282,11 +351,15 @@ def dictify(t):
     for ch, child in t.children.items():
         out["children"][ch] = dictify(child)
     return out
+
+
 def from_dict(d):
     t = PrefixTree()
     for k, v in d.items():
         t[k] = v
     return t
+
+
 # you can include test cases of your own in the block below.
 if __name__ == "__main__":
     t = PrefixTree()
@@ -294,40 +367,61 @@ if __name__ == "__main__":
     t["bat"] = 7
     t["bar"] = 3
     t["bark"] = "-)"
-    t['bat']=2
+    t["bat"] = 2
 
     t["bank"] = 4
     t["ban"] = 7
-    for key,value in t.children.items():
-        print(key,value)
-    print(t['ban'])
 
-    #t.print()
+    # t.print()
+
+    # print(t[""])
+
+    # with open('texts/dracula.txt','r') as f:
+    #     ALL_WORDS=f.read()
+    # #print(ALL_WORDS.split("\n")[:5])
+    #
+    # with open('testing_data/6.pickle','rb') as f:
+    #     first=pickle.load(f)
+    # #print(type(first))
+    # #print(first)
+    # l=word_frequencies(
+    #     "toonces was a cat who could drive a car very fast until he crashed."
+    # )
+    #
+    # l1=word_frequencies(ALL_WORDS)
+    # words = "bat bat bark bar bank ban band"
+    # tree=word_frequencies(words)
+    #
+    #
+    # #print(list(l1)[:10])
+    # print("AutoComplete Test 1:")
+    # print(autocomplete(tree,"ban",2))
+    words = "cats cattle hat car act at chat crate act car act at car hat"
+    # print(Counter(words.split(' ')))
+    t = word_frequencies(words)
+    result1 = autocomplete(t, "cat", 4)
+    print(result1)
+    result = autocorrect(t, "cat", 4)
+    print(result)
+    # print(levenshteinDistance("cat","act"))
+    alphabet = a = "abcdefghijklmnopqrstuvwxyz"
+
+    word_list = [
+        "aa" + l1 + l2 + l3 + l4 for l1 in a for l2 in a for l3 in a for l4 in a
+    ]
+    word_list.extend(["apple", "application", "apple", "apricot", "apricot", "apple"])
+    word_list.append("bruteforceisbad")
+
+    t = word_frequencies(" ".join(word_list))
     print(list(t))
-
-    #print(t[""])
-
-    children=t.children
-
-    with open('texts/dracula.txt','r') as f:
-        ALL_WORDS=f.read()
-    #print(ALL_WORDS.split("\n")[:5])
-
-    with open('testing_data/6.pickle','rb') as f:
-        first=pickle.load(f)
-    #print(type(first))
-    #print(first)
-    l=word_frequencies(
-        "toonces was a cat who could drive a car very fast until he crashed."
-    )
-
-    l1=word_frequencies(ALL_WORDS)
-    words = "bat bat bark bar bank ban band"
-    tree=word_frequencies(words)
-
-
-    #print(list(l1)[:10])
-    print("AutoComplete Test 1:")
-    print(autocomplete(tree,"ban",2))
-
-
+    for i in range(50):
+        result1 = autocomplete2(t, "ap", 1)
+        result2 = autocomplete2(t, "ap", 2)
+        result3 = autocomplete2(t, "ap", 3)
+        result4 = autocomplete2(t, "ap")
+        result5 = autocomplete2(t, "b")
+    print(result1)
+    print(result2)
+    print(result3)
+    print(result4)
+    print(result5)

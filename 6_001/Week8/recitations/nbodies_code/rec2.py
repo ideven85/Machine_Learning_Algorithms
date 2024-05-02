@@ -25,6 +25,7 @@ class Body:
         delta = other.position.sub(self.position)
         dist = delta.magnitude()
         direction = delta.normalize()
+
         magnitude = (GRAVITATIONAL_CONSTANT * self.mass * other.mass) / (dist * dist)
         return direction.scale(magnitude)
 

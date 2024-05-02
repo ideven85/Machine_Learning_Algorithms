@@ -17,9 +17,7 @@ class C(B):
 
     def __init__(self):
         super().__init__()
-        self.x=self.x
-
-
+        self.x = self.x
 
 
 a = A()

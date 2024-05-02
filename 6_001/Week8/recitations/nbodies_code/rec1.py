@@ -28,10 +28,19 @@ class Body:
         Returns a vector representing both the strength and direction of the
         force.
         """
+
         delta = other.position.sub(self.position)
+
         dist = delta.magnitude()
+
         direction = delta.normalize()
-        magnitude = (GRAVITATIONAL_CONSTANT * self.mass * other.mass) / (dist * dist)
+        input(delta)
+        if dist:
+            magnitude = (GRAVITATIONAL_CONSTANT * self.mass * other.mass) / (
+                dist * dist
+            )
+        else:
+            magnitude = (GRAVITATIONAL_CONSTANT * self.mass * other.mass) / (2 * 2)
         return direction.scale(magnitude)
 
     def net_force(self, bodies):
@@ -52,8 +61,11 @@ class Body:
         position.  f is a vector, dt is a float.
         """
         acceleration = f.div(self.mass)
+        print(acceleration)
         self.velocity = self.velocity.add(acceleration.scale(dt))
         self.position = self.position.add(self.velocity.scale(dt))
+
+        print(self.position)
 
 
 class System:
@@ -71,10 +83,10 @@ class System:
 
 if __name__ == "__main__":
     # two bodies, stable motion
-    # bodies = [
-    #     Body(1e25, Vector((0, 0.91e9)), Vector((400, 0))),
-    #     Body(1e25, Vector((0, -0.91e9)), Vector((-400, 0))),
-    # ]
+    bodies = [
+        Body(1e25, Vector((0, 0.91e9)), Vector((400, 0))),
+        Body(1e25, Vector((0, -0.91e9)), Vector((-400, 0))),
+    ]
 
     ## two bodies, erratic motion
     # bodies = [
@@ -98,15 +110,15 @@ if __name__ == "__main__":
     # ]
 
     ## seven bodies, stable motion
-    bodies = [
-        Body(1e25, Vector((0, 0.91e9)), Vector((400, 0))),
-        Body(1e25, Vector((0, -0.91e9)), Vector((-400, 0))),
-        Body(5e8, Vector((1e5, 0)), Vector((25, 25))),
-        Body(5e8, Vector((-1e5, 0)), Vector((-25, -25))),
-        Body(1e20, Vector((1e8, 1e8)), Vector((0, 100))),
-        Body(1e20, Vector((-1e8, -1e8)), Vector((0, -100))),
-        Body(1e10, Vector((0, 0)), Vector((0, 0))),
-    ]
+    # bodies = [
+    #     Body(1e25, Vector((0, 0.91e9)), Vector((400, 0))),
+    #     Body(1e25, Vector((0, -0.91e9)), Vector((-400, 0))),
+    #     Body(5e8, Vector((1e5, 0)), Vector((25, 25))),
+    #     Body(5e8, Vector((-1e5, 0)), Vector((-25, -25))),
+    #     Body(1e20, Vector((1e8, 1e8)), Vector((0, 100))),
+    #     Body(1e20, Vector((-1e8, -1e8)), Vector((0, -100))),
+    #     Body(1e10, Vector((0, 0)), Vector((0, 0))),
+    # ]
 
     ## seven bodies, erratic motion
     # bodies = [

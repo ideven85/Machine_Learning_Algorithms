@@ -12,22 +12,30 @@ class B(A):
     def __init__(self):
         super().__init__()
         self.x = "bat"
+
+
 b = B()
 print(b.x)
 
+
 class C(B):
-    x="cat"
+    x = "cat"
+
     def __init__(self):
         pass
 
 
-c=C()
+c = C()
 print(c.x)
 print(C.x)
+
+
 class D(C):
-    x="dog"
+    x = "dog"
+
     def __init__(self):
         super().__init__()
 
-d=D()
+
+d = D()
 print(d.x)

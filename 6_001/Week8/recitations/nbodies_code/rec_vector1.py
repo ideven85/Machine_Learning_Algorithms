@@ -8,6 +8,7 @@ implementation.
 """
 
 import doctest
+import math
 
 
 class Vector:
@@ -21,7 +22,7 @@ class Vector:
         >>> v.coords == (2, 3)
         True
         """
-        self.coords = (coords[0], coords[1])
+        self.coords = tuple(coords)
 
     def __repr__(self):
         """
@@ -29,52 +30,79 @@ class Vector:
         >>> repr(v)
         'Vector((0, -4))'
         """
-        return f"Vector{(self.coords)}"
+
+        return f"Vector({self.coords})"
 
     def add(self, other):
         """
         >>> Vector([1, 2]).add(Vector([1, 0]))
         Vector((2, 2))
         """
-        self.coords = self.coords[0] + other.coords[0], self.coords[1] + other.coords[1]
-        return self.__repr__()
+        x = list(self.coords)
+        x = [a + b for a, b in zip(x, list(other.coords))]
+        self.coords = tuple(x)
+        return self
 
     def sub(self, other):
         """
         >>> Vector([1, 2]).sub(Vector([1, 0]))
         Vector((0, 2))
         """
-        self.coords = self.coords[0] - other.coords[0], self.coords[1] - other.coords[1]
-        return self.__repr__()
+        x = list(self.coords)  # Repeated Code
+        x = [a - b for a, b in zip(x, list(other.coords))]
+        self.coords = tuple(x)
+        return self
 
     def scale(self, other):
         """
         >>> Vector([1, 2]).scale(5)
         Vector((5, 10))
         """
-        pass
+        x = list(self.coords)
+        x = [n * other for n in x]
+        self.coords = tuple(x)
+        return self
 
     def div(self, other):
         """
         >>> Vector([4, 2]).div(2)
         Vector((2.0, 1.0))
         """
-        pass
+        if other == 0:
+            return self
+        x = list(self.coords)
+        x = [n / other for n in x]
+        self.coords = tuple(x)
+        return self
 
     def magnitude(self):
         """
         >>> Vector([3, 4]).magnitude()
         5.0
         """
-        pass
+        total = 0
+        a = list(self.coords)
+        a = math.sqrt(sum([x * x for x in a]))
+        return a
 
-    def normalize(self):
+    def normalize(self):  # Creates a unit vector in the same direction
         """
         >>> v = Vector([3, 4]).normalize()
         >>> abs(.6 - v.coords[0]) <= 1e-4 and abs(.8 - v.coords[1]) <= 1e-4
         True
         """
-        pass
+
+        x = list(self.coords)
+        magnitude = 0
+        for i in range(len(x)):
+            magnitude = x[i] * x[i]
+        magnitude = math.sqrt(magnitude)
+        if not magnitude:
+            return self
+
+        x = [n / self.magnitude() for n in x]
+        self.coords = tuple(x)
+        return self
 
 
 if __name__ == "__main__":
