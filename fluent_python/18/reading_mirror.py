@@ -1,8 +1,10 @@
 try:
-    with open("mirror1.py", "r") as f:
+    with open("mirror.py", "r") as f:
         src = f.read(60)
 except FileNotFoundError as e:
     print("File Not Found, mirror1.py")
+else:
+    print("Hello")
 finally:
     src = "Hi"
 
@@ -15,10 +17,10 @@ else:
     with open("mirror.py", "r") as f:
         src = f.read(60)
 
-# import ast
+import ast
 # print(src)
 try:
-    print(f.read())
+    ast.literal_eval(f.read())
 except ValueError as e:
     print("Read operation on a closed object", e)
 finally:
