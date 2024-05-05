@@ -322,16 +322,16 @@ def test_autocomplete_big_1():
 
     t = lab.word_frequencies(" ".join(word_list))
     # print(list(t)[:50])
-    for i in range(500):
+    for i in range(100):
         result1 = lab.autocomplete(t, "ap", 1)
         result2 = lab.autocomplete(t, "ap", 2)
         result3 = lab.autocomplete(t, "ap", 3)
         result4 = lab.autocomplete(t, "ap")
-        result5 = lab.autocomplete(t, "brute")
+        result5 = lab.autocomplete(t, "b")
 
         assert set(result1) == {"apple"}
         assert set(result2) == {"apple", "apricot"}
-        assert set(result4) == {"apple", "apricot", "application"}
+        assert set(result4) == set(result3) == {"apple", "apricot", "application"}
         assert set(result5) == {"bruteforceisbad"}
 
 

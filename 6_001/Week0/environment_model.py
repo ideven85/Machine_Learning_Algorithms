@@ -11,13 +11,10 @@ for f in functions:
 
 
 def sum_lists(l):
-    output = [0] * (len(l))
-    for i in range(len(l)):
-        total = 0
-        for i in l[i]:
-            total += i
-        output[i] = total
-    return output
+    total = 0
+    for x in l:
+        total += sum(x)
+    return total
 
 
 inp = [[0, 1], [1, 2]]

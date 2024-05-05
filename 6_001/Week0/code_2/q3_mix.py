@@ -32,7 +32,7 @@ def mix(sound1, sound2, p):
         new_samples[i] = sound1_scaled[i] + sound2_scaled[i]
 
     # fill in the new sound with the new samples
-    new_sound["rate"] = sound["rate"]
+    new_sound["rate"] = sound1["rate"]
     new_sound["samples"] = []
     for sample in new_samples:
         new_sound["samples"].append(sample)

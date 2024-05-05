@@ -25,7 +25,14 @@ def backwards(sound):
 
 
 def mix(sound1, sound2, p):
-    raise NotImplementedError
+    if sound1["rate"] != sound2["rate"]:
+        return None
+    result = {"rate": sound1["rate"], "samples": sound1["samples"]}
+    a1 = sound1["samples"]
+    a2 = sound2["samples"]
+    a = [x * p + (1 - p) * y for x, y in zip(a1, a2)]
+    result["samples"] = a
+    return result
 
 
 def convolve(sound, kernel):

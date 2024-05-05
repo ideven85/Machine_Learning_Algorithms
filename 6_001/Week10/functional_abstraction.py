@@ -1,4 +1,4 @@
-class Memoised_Function:
+class Memoized_Function:
     def __init__(self, func):
         self.func = func
         self.cache = {}
@@ -16,5 +16,7 @@ def fib(n):
         return fib(n - 1) + fib(n - 2)
 
 
-f = Memoised_Function(fib)
+f = Memoized_Function(fib)
+print(f.__call__(2))
 print(f(40))
+f1 = fib(2)

@@ -4,14 +4,13 @@ def sum_lists(lists):
     is replaced by the sum of its elements without modifying the input list.
     """
 
-    output = []
-    for i in range(len(lists)):
-        total = 0
+    def sum_list_helper(lst, i, sum_so_far):
+        if i >= len(lst):
+            return sum_so_far
+        sum_so_far += lst[i]
+        return sum_list_helper(lst, i + 1, sum_so_far)
 
-        for val in lists[i]:
-            total += val
-        output.append(total)
-    return output
+    return sum_list_helper(lists, 0, 0)
 
 
 def sum_nested_lists(lists):
@@ -31,6 +30,6 @@ def sum_nested_lists(lists):
 # print(out)
 
 lst = [[1, 2], [3, 4], [5, 6], 7]
-print(sum_lists(lst))
+print(sum_lists([1, 2, 3]))
 
 print(sum_nested_lists(lst))

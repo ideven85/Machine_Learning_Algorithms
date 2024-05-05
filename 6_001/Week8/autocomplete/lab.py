@@ -144,14 +144,24 @@ class PrefixTree:
     #             yield letter, subtree.value
     #
     #         yield from [(letter+word, val) for word, val in subtree.__iter__() ]
-    def __iter__(self):  # version A
-        def helper(self, prefix):
-            if self.value is not None:
-                yield (prefix, self.value)
-            for letter, child in self.children.items():
-                yield from helper(child, prefix + letter)
+    # def __iter__(self):  # version A
+    #     def helper(self, prefix):
 
-        return helper(self, "")
+    #         if self.value is not None:
+    #             yield prefix, self.value
+    #         for letter, child in self.children.items():
+    #             yield from helper(child, prefix + letter)
+
+    #     return helper(self, "")
+
+    def __iter__(self):
+        if self.value is not None:
+            yield "", self.value
+        for letter, subtree in self.children.items():
+            # print(letter,subtree.value)
+            # if subtree.value:
+            #     yield letter,subtree.value
+            yield from {(letter + word, val) for word, val in subtree}
 
     # def __repr__(self):
     #     return f"{self.value}, {self.children}" if self.children else " Prefix Tree"
@@ -374,7 +384,7 @@ if __name__ == "__main__":
 
     t["bank"] = 4
     t["ban"] = 7
-
+    print(list(t))
     # t.print()
 
     # print(t[""])

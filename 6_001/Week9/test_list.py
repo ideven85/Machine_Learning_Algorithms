@@ -17,13 +17,13 @@ def factorial(n: int) -> int:
     120
     """
     if n == 0:
-           return 1
-    return n*factorial(n-1)
+        return 1
+    return n * factorial(n - 1)
+
+
 if __name__ == "__main__":
     import doctest
 
-    __test__ = {
-        name: value for name, value in locals().items()
-    }
+    __test__ = {name: value for name, value in locals().items()}
     print(__test__)
     doctest.testmod(verbose=True)
