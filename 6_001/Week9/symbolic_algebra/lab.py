@@ -12,6 +12,10 @@ import doctest
 
 # Remember At Least 10 hours per lab
 class Symbol:
+    pass
+
+
+class Var(Symbol):
     def __init__(self, n):
         """
         Initializer.  Store an instance variable called `name`, containing the
@@ -20,137 +24,95 @@ class Symbol:
         self.name = n
 
     def __str__(self):
-        return str(self.name)
-
-
-class Var(Symbol):
+        return self.name
 
     def __repr__(self):
         return f"Var('{self.name}')"
 
 
 class Num(Symbol):
+    def __init__(self, n):
+        """
+        Initializer.  Store an instance variable called `n`, containing the
+        value passed in to the initializer.
+        """
+        self.n = n
+
+    def __str__(self):
+        return str(self.n)
 
     def __repr__(self):
-        return f"Num({self.name})"
+        return f"Num({self.n})"
 
 
-def match_num(var):
-    # print(var)
-    return True if isinstance(var, (float, int, Num)) else False
+class BinOp(Symbol):
 
-
-def match_str(var):
-    return True if isinstance(var, (str, Var)) else False
-
-
-class BinOp:
-
-    def temp(self, expr, values=None):
-        pass
+    wrap_right_at_same_precedence = False
 
     def __init__(self, left, right):
-        if isinstance(left, BinOp):
+        def match_symbol(temp):
+            match1 = isinstance(temp, (float, int, Num))
+            match2 = isinstance(temp, (str, Var))
+            match3 = isinstance(temp, BinOp)
+            if match3:
+                # precedence = temp.__class__.precedence
+                # precedenceRight = temp.right.__class__.precedence
 
-            print(left.left, left.right)
-            input("left")
-        if isinstance(right, BinOp):
-            print(right.left, right.right)
-            # left=right.left
-            # right=right.right
-            input("Right")
+                match_symbol(temp.left)
+                match_symbol(temp.right)
+            elif match1:
+                temp = Num(temp)
+            elif match2:
+                temp = Var(temp)
+            return temp
 
-        if match_num(left):
-            self.left = Num(left)
-        if match_str(left):
-            self.left = Var(left)
-        if match_num(right):
-            self.right = Num(right)
-        if match_str(right):
-            self.right = Var(right)
-        # else:
-        #     if left:
-        #         if match_num(left):
-        #             self.left=Num(left)
-        #         if match_str(left):
-        #             self.left=Var(left)
-        #         else:
-        #             self.__init__(left, right)
-        #     if right:
-        #         if match_num(right):
-        #             self.right=Num(right)
-        #         if match_str(right):
-        #             self.right=Var(right)
-        #         else:
-        #             self.__init__(left, right)
-        else:
-            self.left = left
-            self.right = right
+        self.left = match_symbol(left)
+        self.right = match_symbol(right)
+
+    def __repr__(self):
+        return f"{str(self.__class__.__name__)}({repr(self.left)},{repr(self.right)})"
+
+    def __str__(self):
+        # return self.__class__.__str__()
+        return f"{self.left} {self.__class__.operator} {self.right}"
 
 
 class Div(BinOp):
 
     precedence = 2
+    operator = "/"
 
-    def __repr__(self):
-        return f"Div({repr(self.left)},{repr(self.right)})"
-
-    def __str__(self):
-        return f"{self.left}/{self.right}"
+    # def __str__(self):
+    #     return f"{self.left} {self.operator} {self.right}"
 
 
 class Mul(BinOp):
-    precedence = 1
+    precedence = 2
+    operator = "*"
 
-    def __repr__(self):
-        return f"Mul({repr(self.left)},{repr(self.right)})"
-
-    def __str__(self):
-        return f"{self.left}*{self.right}"
-
-
-"""
-These constructors should also accept integers, floats, or strings as their arguments. Add(2, 'x'),
- for example, should create an instance Add(Num(2), Var('x')).
-  It is okay to use isinstance or type in this context, to check if the arguments passed to the constructor
-   are strings or numbers.
-"""
+    # def __str__(self):
+    #     return f"{self.left} {self.operator} {self.right}"
 
 
 class Add(BinOp):
 
-    precedence = 0
+    precedence = 1
+    operator = "+"
 
-    def __init__(self, left, right):
-
-        super().__init__(left, right)
-
-    # def __repr__(self):
-    #     return f"Add({repr(self.left)},{repr(self.right)})"
-
+    # def __init__(self, left, right):
+    #     super().__init__(left, right)
+    #
     # def __str__(self):
-    #     if isinstance(self.left,BinOp) and isinstance(self.right,BinOp):
-    #         return f"{self.left}+{self.right}"
-    #     elif isinstance(self.right,BinOp):
-    #         return f"Right{self.left}+({self.right})"
-    #     elif isinstance(self.left, BinOp):
-    #         return f"Left({self.left})+{self.right}"
-    #     else:
-    #         return f"Plain{self.left}+{self.right}"
-
-    # def __str__(self):
-    #     return f"{self.left}+{self.right}"
+    #     return f"{self.left} {self.operator} {self.right}"
 
 
 class Sub(BinOp):
 
-    precedence = 0
+    precedence = 1
+    operator = "-"
 
-    def __repr__(self):
-        return f"Sub({repr(self.left)},{repr(self.right)})"
-
-    def __str__(self):
-        return f"{self.left}-{self.right}"
+    # def __str__(self):
+    #     return f"{self.left} {self.operator} {self.right}"
 
 
 if __name__ == "__main__":
@@ -163,10 +125,11 @@ if __name__ == "__main__":
     # "Add(Var('x'), Sub(Var('y'), Num(2)))"
     # >> > str(z)  # this result cannot necessarily be fed back into Python, but it looks nicer.
     "x + y - 2"
-    x = Add(Add(Var("x"), Add(Num("y"), Num(2))), Var("z"))
+    # x = Add(Mul(Var("x"), Sub(Var("y"), Num(2))), Var("z"))
     # print(x)
-    print(x.right)
-    # z = Add(Var('x'), Sub(Var('y'), Num(2)))
+    # print(repr(x))
+
+    # z = Add(Var("x"), Sub(Var("y"), Num(2)))
     # print(repr(z))
     # print(z)
     # precedence Parentheses, Exponents, Multiplication/Division, Addition/Subtraction
@@ -186,16 +149,20 @@ In order to pass the test cases, your code will need to do this by storing a cou
 All symbols should have a class attribute called precedence, which should be a number representing precedence. Greater numbers should represent greater precedence. What classes should have the highest precedence? What classes should have the same precedence?
 All binary operations should have a class attribute called wrap_right_at_same_precedence, which should be a Boolean that indicates whether to add parentheses around the right side of the expression in the special case described above.
     """
-    # y=Add(3,Add(4,'x'))
-    # # print(y)
-    # print(repr(y))
+    y = Add(3, "x")
     # print(y)
-    # a=Add(2,'x')
-    # print(a)
-    # print(repr(a))
-    # a1=Mul(Var('x'), Add(Var('y'), Var('z')))
+    print(repr(y))
+    print(y)
+    print(y.__class__.__name__)
+
+    # a1 = Mul(Var("x"), Add(Var("y"), Var("z")))
     # print(a1)
     # print(repr(a1))
-    # print(a1.left)
-    # print(y.left)
-    # print(y.right)
+    # # print(a1.left)
+    # # print(y.left)
+    # # print(y.right)
+    # print("\n\n\n")
+    #
+    # a = Add(Add(2, 3), Sub(Mul(3, Div(4, 5)), Sub(4, 5)))
+    # print(a)
+    # print(repr(a))

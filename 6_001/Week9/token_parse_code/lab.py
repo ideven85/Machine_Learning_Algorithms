@@ -12,6 +12,10 @@ import doctest
 
 # Remember At Least 10 hours per lab
 class Symbol:
+    pass
+
+
+class Var(Symbol):
     def __init__(self, n):
         """
         Initializer.  Store an instance variable called `name`, containing the
@@ -19,27 +23,30 @@ class Symbol:
         """
         self.name = n
 
-    def __str__(self):
-        return str(self.name)
-
-
-class Var(Symbol):
-
     def __repr__(self):
         return f"Var('{self.name}')"
 
 
 class Num(Symbol):
+    def __init__(self, n):
+        """
+        Initializer.  Store an instance variable called `name`, containing the
+        value passed in to the initializer.
+        """
+        self.n = n
+
+    def __str__(self):
+        return str(self.n)
 
     def __repr__(self):
-        return f"Num({self.name})"
+        return f"Num({self.n})"
 
 
-class BinOp:
+class BinOp(Symbol):
     def __init__(self, left, right):
 
         def match_num(var):
-            print(var)
+            # print(var)
             return True if isinstance(var, (float, int, Num)) else False
 
         def match_str(var):
