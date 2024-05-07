@@ -4,10 +4,7 @@ Autocomplete
 """
 
 # NO ADDITIONAL IMPORTS!
-import doctest
-import pickle
 import os
-from collections import Counter
 
 LOCATION = os.path.realpath(os.path.dirname(__file__))
 from text_tokenize import tokenize_sentences
@@ -162,6 +159,11 @@ class PrefixTree:
             # if subtree.value:
             #     yield letter,subtree.value
             yield from {(letter + word, val) for word, val in subtree}
+
+    #
+    # def __next__(self):
+    #     for letter,subtree in self.children.items():
+    #
 
     # def __repr__(self):
     #     return f"{self.value}, {self.children}" if self.children else " Prefix Tree"

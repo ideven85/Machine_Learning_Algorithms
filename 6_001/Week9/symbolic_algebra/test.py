@@ -736,8 +736,9 @@ def _make_test_display_02(test=0, mangled=False):
 
 
 def test_display_repr_behavior():
-    # _make_test_display_00(0)()
-    # _make_test_display_01(0)()
+    _make_test_display_00(0)()
+
+    _make_test_display_01(0)()
     _make_test_display_02(0)()
 
 
