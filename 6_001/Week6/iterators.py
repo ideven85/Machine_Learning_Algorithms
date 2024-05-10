@@ -13,7 +13,6 @@ Iterator is an object which iterates over an iterable
 Generators are objects which yield the current element # Not clear Need practice
 """
 
-
 """
 2) How do you make an iterator "from an iterable object in Python?"
 Calling next with a generator passed in will cause Python to start running the body of the code, 
@@ -21,6 +20,8 @@ run until we see a yield, pause the execution again, and give us the value that 
 Object is already iterable... either by implementing __iter__ or "__getitem_- which fetches bu in index"
  
 """
+
+
 # class LinkedStack:
 #     class Node:
 #         slots = '_element','_next'
@@ -41,11 +42,12 @@ class Stack:
 
     def pop(self):
 
-        try:
+        if len(self) > 0:
             self._length -= 1
-            return str(self._stack.pop(0))
-        except IndexError as e:
-            print("Stack is empty, please add some more elements before pooping", e)
+            return self._stack[self._length]
+        else:
+            raise EmptyException("Stack Is Empty")
+            # print("Stack is empty, please add some more elements before pooping", e)
 
     def __iadd__(self, item):
         self.push(item)
@@ -59,14 +61,23 @@ class Stack:
         else:
             raise EmptyException("Stack is Empty")
 
-    def __iter__(self):
-        if len(self):
-            temp = self._stack[:]
-            for t in temp:
-                yield t
+    # def __iter__(self):
+    #     if len(self):
+    #         temp = self._stack[:]
+    #         for t in temp:
+    #             yield t
+    #
+    #     else:
+    #         raise StopIteration("Add more elements to me please")
 
-        else:
-            raise StopIteration("Add more elements to me please")
+    def __iter__(self):
+        yield self
+
+    def __next__(self):
+        if self._length == 0:
+            raise StopIteration("Stack is Empty")
+        self._length -= 1
+        return self._stack[self._length]
 
     def __repr__(self):
         return " ".join(str(x) for x in self._stack)
@@ -80,21 +91,23 @@ class EmptyException(Exception):
 
 
 if __name__ == "__main__":
-
     obj = Stack()
     obj.push(1)
     obj.push(2)
     obj.push(3)
     obj.push(4)
     # obj+=[2]
-    print(obj)
-
-    for i in range(len(obj)):
-        print(obj[i], end=" ")
+    # print(obj)
+    #
+    # for i in range(len(obj)):
+    #     print(obj[i], end=" ")
     print()
-    for val in obj:
-        print(val, end=" ")
-    print("\nIteration over")
+    print(list(obj))
+    # for val in obj:
+    #     print(val, end=" ")
+    # print("\nIteration over")
     print(obj.pop())
     print(obj.pop())
-    print(obj.pop())  # Error
+    print(obj.pop())
+    print(obj.pop())
+    # print(obj.pop())  # Error

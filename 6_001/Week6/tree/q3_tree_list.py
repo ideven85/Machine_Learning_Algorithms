@@ -9,8 +9,6 @@ Is there a way you can write this function that requires
 sorting the result only once?
 """
 
-from debug_recursion import show_recursive_structure
-
 count = 0
 
 
@@ -34,7 +32,6 @@ def tree_list(tree):
     children = tree["children"]
 
     if len(children) == 0:
-
         return [value]
 
         # print("Hi",[tree_list(x) for x in children])
@@ -42,7 +39,7 @@ def tree_list(tree):
     first = children[0]
     rest = children[1:]
     print(first, "\n", rest)
-    return tree_list(rest[0])
+    return tree_list(rest[0])  # Wrong
 
 
 def gen_tree_list(tree):
@@ -53,7 +50,7 @@ def gen_tree_list(tree):
     children = tree["children"]
     out.append(value)
     if children:
-        temp = [gen_tree_list(x) for x in children]
+        temp = (gen_tree_list(x) for x in children)
         out.extend(temp)
     return out
 
@@ -84,7 +81,6 @@ t3 = {
     ],
 }
 
-
 # def test_tree_list():
 #     assert tree_list(t1) == [3]
 #     assert tree_list(t2) == [2, 3, 7, 9]
@@ -99,3 +95,4 @@ if __name__ == "__main__":
     # print(tree_list(t2))
     # print(tree_list(t3))
     print(gen_tree_list(t2))
+    # print(tree_list(t1))

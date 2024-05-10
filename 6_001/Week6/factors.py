@@ -5,6 +5,7 @@ def factors(n):
     while i * i < n:
         if n % i == 0:
             yield i
+            yield n // i
 
             # print(i,n//i)
 
@@ -12,4 +13,4 @@ def factors(n):
     # yield n
 
 
-print(list(factors(16)))
+print(sorted(list(factors(16))))

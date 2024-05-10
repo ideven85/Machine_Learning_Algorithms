@@ -1,47 +1,49 @@
-function memoise(fn){
-    let cache={};
+function memoise(fn) {
+    let cache = {};
     return function (...args) {
         if (cache[args])
             return cache[args];
 
         const res = fn.apply(this, args);
-        cache[args]=res;
+        cache[args] = res;
         return res;
     }
 }
 
-function fib(n){
-    if(n<2)
+function fib(n) {
+    if (n < 2)
         return n;
     else
-        return fib(n-1)+fib(n-2);
+        return fib(n - 1) + fib(n - 2);
 
 }
 
-let f=memoise(fib);
-//console.log(f(40));
+let f = memoise(fib);
+console.log(f(40));
 
-function fib1(n){
-    if(n<2)
+function fib1(n) {
+    if (n < 2)
         return n;
-    let a=0,b=1;
+    let a = 0, b = 1;
     for (let i = 1; i < n; i++) {
-        b+=a;
-        a=b-a;
+
+        b += a;
+        a = b - a;
     }
     return b;
 }
 
-function memoisedFib(fn){
-    let cache={};
+function memoisedFib(fn) {
+    let cache = {};
     return function (...args) {
         if (cache[args])
-        return cache[args];
-    const res = fn.apply(this,args);
-    cache[args]=res;
-    return  res;
+            return cache[args];
+        const res = fn.apply(this, args);
+        cache[args] = res;
+        return res;
     }
-    
+
 }
+
 const f1 = memoisedFib((n) => fib1(n));
 console.log(f1(40));

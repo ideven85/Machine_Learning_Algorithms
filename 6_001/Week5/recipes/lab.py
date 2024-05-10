@@ -95,7 +95,7 @@ def compound_ingredient_possibilities(recipes):
 #     return current_cost
 
 
-def lowest_cost(recipes, food_item):
+def lowest_costV1(recipes, food_item):
     """
     Given a recipes list and the name of a food item, return the lowest cost of
     a full recipe for the given food item.
@@ -158,6 +158,25 @@ def lowest_cost(recipes, food_item):
 
                 lowest_cost_helper(compound_list[el],0,quantity,len(compound_list[el]))
         print()
+
+
+def lowest_cost(recipes, food_item):
+
+    def lowest_cost_helper(elements,current_cost,total_cost):
+        elements = compounds[elements]
+
+
+    costs = atomic_ingredient_costs(recipes)
+    if food_item in costs:
+        return costs[food_item]
+
+    compound_list = compound_ingredient_possibilities(recipes)
+    compounds = list(compound_list[food_item])[:]
+    length=len(compounds)
+    compound_cost=dict()
+    for i in range(length):
+        lowest_cost_helper(compounds[i],0,0)
+
 
 
 
@@ -305,7 +324,8 @@ if __name__ == "__main__":
         ("atomic", "cow", 100),
     ]
     atomic_ingredient_costs(dairy_recipes)
-    # compound_ingredient_possibilities(dairy_recipes)
+    compound_ingredient_possibilities(dairy_recipes)
+
     print("Burger:", lowest_cost(example_recipes, "burger"))  # Wrong
     # print("Bread:", lowest_cost(example_recipes, "bread"))
     # print("Lettuce:", lowest_cost(example_recipes, "lettuce"))

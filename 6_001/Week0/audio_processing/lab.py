@@ -4,8 +4,9 @@ Audio Processing
 """
 
 import copy
-import wave
 import struct
+import wave
+
 
 # No Additional Imports Allowed!
 
@@ -27,10 +28,19 @@ def backwards(sound):
 def mix(sound1, sound2, p):
     if sound1["rate"] != sound2["rate"]:
         return None
-    result = {"rate": sound1["rate"], "samples": sound1["samples"]}
-    a1 = sound1["samples"]
-    a2 = sound2["samples"]
+    result = {"rate": sound1["rate"], "samples": []}
+    a1 = sound1["samples"][:]
+    a2 = sound2["samples"][:]
+    first = len(a1) > len(a2)
+
+    temp = a1 if first else a2
+    min1 = min(len(a1), len(a2))
     a = [x * p + (1 - p) * y for x, y in zip(a1, a2)]
+    if not first:
+        p = 1 - p
+    temp = temp[min1:]
+    a += [x * p for x in temp]
+
     result["samples"] = a
     return result
 

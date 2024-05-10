@@ -3,13 +3,16 @@
 Symbolic Algebra
 """
 
-#!/usr/bin/env python3
-import os
-import lab
 import ast
-import pytest
-import random
 import builtins
+
+# !/usr/bin/env python3
+import os
+import random
+
+import pytest
+
+import lab
 
 ttype = type
 iisinstance = isinstance
@@ -255,45 +258,45 @@ def _make_test_display_00(test=0):
         if test == 0:
             assert symbol_rep(safe_eval(repr(exp))) == symbol_rep(
                 safe_eval(expected[0])
-            ), "Incorrect repr result!"
+            ), "0 Incorrect repr result!"
         else:
-            assert str(exp) == expected[1], "Incorrect str result!"
+            assert str(exp) == expected[1], "1 Incorrect str result!"
 
         exp = lab.Add(lab.Var("x"), lab.Num(0))
         expected = ("Add(Var('x'), Num(0))", "x + 0")
         if test == 0:
             assert symbol_rep(safe_eval(repr(exp))) == symbol_rep(
                 safe_eval(expected[0])
-            ), "Incorrect repr result!"
+            ), "2 Incorrect repr result!"
         else:
-            assert str(exp) == expected[1], "Incorrect str result!"
+            assert str(exp) == expected[1], "3 Incorrect str result!"
 
         exp = lab.Mul(lab.Num(1), lab.Var("x"))
         expected = ("Mul(Num(1), Var('x'))", "1 * x")
         if test == 0:
             assert symbol_rep(safe_eval(repr(exp))) == symbol_rep(
                 safe_eval(expected[0])
-            ), "Incorrect repr result!"
+            ), "4 Incorrect repr result!"
         else:
-            assert str(exp) == expected[1], "Incorrect str result!"
+            assert str(exp) == expected[1], "5 Incorrect str result!"
 
         exp = lab.Mul(lab.Var("x"), lab.Num(1))
         expected = ("Mul(Var('x'), Num(1))", "x * 1")
         if test == 0:
             assert symbol_rep(safe_eval(repr(exp))) == symbol_rep(
                 safe_eval(expected[0])
-            ), "Incorrect repr result!"
+            ), "6 Incorrect repr result!"
         else:
-            assert str(exp) == expected[1], "Incorrect str result!"
+            assert str(exp) == expected[1], "7 Incorrect str result!"
 
         exp = lab.Sub(lab.Var("x"), lab.Num(0))
         expected = ("Sub(Var('x'), Num(0))", "x - 0")
         if test == 0:
             assert symbol_rep(safe_eval(repr(exp))) == symbol_rep(
                 safe_eval(expected[0])
-            ), "Incorrect repr result!"
+            ), "8 Incorrect repr result!"
         else:
-            assert str(exp) == expected[1], "Incorrect str result!"
+            assert str(exp) == expected[1], "9 Incorrect str result!"
 
         exp = lab.Div(lab.Var("x"), lab.Num(1))
         expected = ("Div(Var('x'), Num(1))", "x / 1")
@@ -354,14 +357,19 @@ def _make_test_display_00(test=0):
 
 def _make_test_display_01(test=0, mangled=False):
     def the_test(*args):
+        print("Hello")
         exp = lab.Add(lab.Num(0), lab.Mul(lab.Var("y"), lab.Num(2)))
         expected = ("Add(Num(0), Mul(Var('y'), Num(2)))", "0 + y * 2")
+        print(exp)
         if test == 0:
+
             assert symbol_rep(safe_eval(repr(exp))) == symbol_rep(
                 safe_eval(expected[0])
-            ), "Incorrect repr result!"
+            ), f"0 Incorrect repr result!,{expected[0]}"
+
         else:
-            assert str(exp) == expected[1], "Incorrect str result!"
+            print("Hi")
+            assert str(exp) == expected[1], "1 Incorrect str result!"
         if mangled:
             mix_precedence(exp, expected)
 
@@ -370,9 +378,9 @@ def _make_test_display_01(test=0, mangled=False):
         if test == 0:
             assert symbol_rep(safe_eval(repr(exp))) == symbol_rep(
                 safe_eval(expected[0])
-            ), "Incorrect repr result!"
+            ), "2 Incorrect repr result!"
         else:
-            assert str(exp) == expected[1], "Incorrect str result!"
+            assert str(exp) == expected[1], "3 Incorrect str result!"
         if mangled:
             mix_precedence(exp, expected)
 
@@ -730,6 +738,7 @@ def _make_test_display_02(test=0, mangled=False):
 
 def test_display_repr_behavior():
     _make_test_display_00(0)()
+
     _make_test_display_01(0)()
     _make_test_display_02(0)()
 

@@ -9,6 +9,7 @@ import os
 LOCATION = os.path.realpath(os.path.dirname(__file__))
 from text_tokenize import tokenize_sentences
 
+
 # class TrieNode:
 #     def __init__(self,data=None):
 #         self.data=data
@@ -47,6 +48,7 @@ class PrefixTree:
             raise TypeError("Word Must Be a string")
 
         if not key:
+
             if not value and not self.value:
                 raise KeyError("Key Not Found")
 
@@ -73,14 +75,14 @@ class PrefixTree:
                 curr.children[char] = PrefixTree()
             curr = curr.children[char]
         curr.value = value
-        # elif not key:
-        #     self.value=value
-        # else:
-        #     if key[0] not in self.children:
-        #         self.children[key[0]]=PrefixTree()
-        #     self.children[key[0]].__setitem__(key[1:],value)
+        # # elif not key:
+        # #     self.value=value
+        # # else:
+        # #     if key[0] not in self.children:
+        # #         self.children[key[0]]=PrefixTree()
+        # #     self.children[key[0]].__setitem__(key[1:],value)
 
-        # self._get_node(key,value).value=value
+        # self._get_node(key, value).value = value
 
     def __getitem__(self, key):
         """
@@ -181,13 +183,19 @@ def word_frequencies(text):
     # raise NotImplementedError
     tokenised = tokenize_sentences(text)
     t = PrefixTree()
-
+    print(tokenised[:20])
     words = ["" for _ in range(len(tokenised))]
+
     for i in range(len(tokenised)):
         words[i] = tokenised[i].split(" ")
-
+    print(words[:200])
     for i in range(len(words)):
         for word in words[i]:
+            #     if word not in t:
+            #         t[word] = 1
+            #     else:
+            #         t[word] += 1
+
             t[word] = 1 if word not in t else t[word] + 1
 
     return t
@@ -198,7 +206,7 @@ def autocomplete2(ptree, prefix, max_count=None):
         raise TypeError
 
     all_words = [i for i in ptree if i[0].startswith(prefix)]
-
+    print(all_words)
     if max_count is None:
         max_count = len(all_words)
 
@@ -210,6 +218,7 @@ def autocomplete2(ptree, prefix, max_count=None):
                 best = i
         if best != (None, float("-inf")):
             out_words.append(best)
+    print(out_words[:20])
 
     return [i[0] for i in out_words]
 
@@ -241,37 +250,14 @@ def autocomplete(tree, prefix, max_count=None):
     # print(frequencies)
 
     frequencies.sort(key=lambda x: x[1], reverse=True)
+    print([c for c, _ in frequencies if c.startswith("mon")])
+
     frequencies = frequencies[:max_count]
     # input("Check 1")
 
     out = [w for w, _ in frequencies]
-
+    print(out[:20])
     return out
-
-    # if max_count:
-    #     while max_count!=0:
-    #
-    #
-    #
-    #             if not frequencies:
-    #                 return out
-    #             if not max_count:
-    #                 break
-    #             #input(word)
-    #             if prefix in word:
-    #                 #input("True")
-    #                 out.append(word)
-    #                 max_count-=1
-    #
-    #
-    #         if not frequencies:
-    #                 return out
-    #
-    # else:
-    #     for word in frequencies:
-    #         if prefix in word:
-    #             out.append(word)
-    # return out
 
 
 def levenshteinDistance(str1, str2):
@@ -293,20 +279,6 @@ def levenshteinDistance(str1, str2):
     return L[-1][-1]
 
 
-# def edit_results(word1,word2):
-#     n = len(word1)
-#     m = len(word2)
-#
-#     if n-m>1:
-#         return False
-#     # Operations -> Insert,Delete,Edit,Transpose adjacent characters
-#     dp=[[0 for _ in range(n+1)] for _ in range(m+1)]
-#     for i in range(1,n+1):
-#         for j in range(1,m+1):
-#             diff = ord(word1[i])-ord(word2[j])
-#             dp[i][j]
-
-
 def autocorrect(tree, prefix, max_count=None):
     """
     Return the list of the most-frequent words that start with prefix or that
@@ -318,7 +290,7 @@ def autocorrect(tree, prefix, max_count=None):
     # raise NotImplementedError
     if max_count == 0:
         return []
-    completions = autocomplete(tree, prefix, max_count)
+    completions = autocomplete2(tree, prefix, max_count)
     corpus = list(tree)
     # print(corpus)
     if max_count and len(completions) == max_count:
@@ -333,7 +305,7 @@ def autocorrect(tree, prefix, max_count=None):
         diff = len(corpus) - len(completions)
     print(diff)
     corpus.sort(key=lambda x: x[1], reverse=True)
-
+    print([c for c, _ in corpus if c.startswith("mon")])
     for word, _ in corpus:
         if diff:
             if levenshteinDistance(prefix, word) == 1:
@@ -391,8 +363,8 @@ if __name__ == "__main__":
 
     # print(t[""])
 
-    # with open('texts/dracula.txt','r') as f:
-    #     ALL_WORDS=f.read()
+    with open('testing_data/frankenstein.txt', 'r') as f:
+        ALL_WORDS = f.read()
     # #print(ALL_WORDS.split("\n")[:5])
     #
     # with open('testing_data/6.pickle','rb') as f:
@@ -411,11 +383,12 @@ if __name__ == "__main__":
     # #print(list(l1)[:10])
     # print("AutoComplete Test 1:")
     # print(autocomplete(tree,"ban",2))
-    words = "cats cattle hat car act at chat crate act car act at car hat"
+    words = "cats cattle hat car act cats cats chat chat at chat crate act car act at car hat"
     # print(Counter(words.split(' ')))
     t = word_frequencies(words)
-    result1 = autocomplete(t, "cat", 4)
+    t1 = word_frequencies(ALL_WORDS)
+    result1 = autocorrect(t, "cat", 4)
     print(result1)
-    result = autocorrect(t, "cat", 4)
-    print(result)
+
     # print(levenshteinDistance("cat","act"))
+    print(autocorrect(t1, "mon", 2))

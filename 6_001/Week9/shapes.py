@@ -1,5 +1,4 @@
 ## FRONT MATTER FOR DRAWING/SAVING IMAGES, ETC
-from dataclasses import dataclass
 
 from PIL import Image as PILImage
 
@@ -234,4 +233,3 @@ if __name__ == "__main__":
     rectangle.draw(img, COLORS["purple"])
     save_color_image(img, "rectangle_test.png")
     c2 = Circle((250, 250), 100)
-    c2 |= Circle()

@@ -23,3 +23,20 @@ b = Bank()
 b.deposit("John", 2)
 b.deposit("Dave", 3)
 print(b.get_balance("John"))
+
+
+def bank():
+    accounts = {}
+
+    def balance(account):
+        return accounts.get(account, 0)
+
+    def deposit(account, amount):
+        accounts[account] = balance(account) + amount
+
+    return balance, deposit
+
+
+balance, deposit = bank()
+deposit(123, 2)
+print(balance(123))

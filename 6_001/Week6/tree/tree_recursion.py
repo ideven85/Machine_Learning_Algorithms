@@ -9,8 +9,7 @@ For an extra challenge, try to write the function
 using list comprehensions.
 """
 
-import pytest
-from .debug_recursion import show_recursive_structure
+from debug_recursion import show_recursive_structure
 
 
 @show_recursive_structure
@@ -27,10 +26,8 @@ def tree_max(tree):
     # print(values)
     if len(values) == 0:
         return key
-    if type(values) is list and len(values):
-        return max(key, max(tree_max(x) for x in values))
     else:
-        return max(key, values)
+        return max(key, max(tree_max(x) for x in values))
 
 
 # @show_recursive_structure
@@ -49,8 +46,6 @@ def tree_sum(tree):
     elif type(children) is list and len(children):
         print(children)
         return val + sum(tree_sum(x) for x in children)
-    else:
-        return val + children
 
 
 count = 0
@@ -64,6 +59,7 @@ def flatten(lst):
     yield lst[1:]
 
 
+@show_recursive_structure
 def tree_list(tree):
     """
     Given tree as a dict { 'value': number,
@@ -72,18 +68,32 @@ def tree_list(tree):
     smallest to largest) sorted only once.
     """
     global count
-    if len(tree) == 0:
+    if not tree:
         return []
-    if type(tree) == list:
-        return tree_list(tree[0])
     val = tree["value"]
     children = tree["children"]
     count += 1
+    if not children:
+        return val
+    if children:
+        return [val] + [tree_list(x) for x in children]
 
-    if type(children) is list:
 
-        return tree_list(children)
-    return [val]
+def tree_list_iterative(tree):
+    if not tree:
+        return []
+    out = []
+    agenda = [tree]
+    while agenda:
+        x = agenda.pop(-1)
+        print(x)
+        if not x:
+            continue
+        else:
+            out.append(x['value'])
+            if x['children']:
+                agenda.append(x['children'])
+    return out
 
 
 @show_recursive_structure
@@ -105,6 +115,7 @@ t2 = {
     "value": 9,
     "children": [
         {"value": 2, "children": []},
+        {"value": 11, "children": []}
     ],
 }
 
@@ -123,10 +134,9 @@ t3 = {
     ],
 }
 
-
 # def test_tree_max():
-#     assert tree_max(t1) == 3
-#     assert tree_max(t2) == 9
+#     # assert tree_max(t1) == 3
+#     # assert tree_max(t2) == 11
 #     assert tree_max(t3) == 99
 #     print("correct!")
 
@@ -142,11 +152,11 @@ t3 = {
 #
 #
 #
-def test_tree_list():
-    # assert tree_list(t1) == [3]
-    assert tree_list(t2) == [2, 9]
-    # assert tree_list(t3) == [2, 3, 7, 9, 16, 42, 99]
-    print("correct!")
+# def test_tree_list():
+#     # assert tree_list(t1) == [3]
+#     # assert tree_list(t2) == [2, 9, 11]
+#     assert tree_list(t3) == [2, 3, 7, 9, 16, 42, 99]
+#     print("correct!")
 
 
 #
@@ -169,4 +179,4 @@ def test_tree_list():
 if __name__ == "__main__":
     # uncomment the @show_recursive_structure line
     # above the function to see some detailed function output
-    print(tree_sum(t3))
+    print(tree_list_iterative(t2))

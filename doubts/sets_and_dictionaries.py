@@ -30,7 +30,6 @@ contained = fruit3.issubset(fruit1)
 no_overlap = fruit3.isdisjoint(fruit2)
 subsumes = fruit1.issuperset(fruit3)
 
-
 # Some examples of using dictionaries:
 # (for more, see https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
 
@@ -53,7 +52,7 @@ for key, val in table.items():
 
 del table[27]
 
-cubes = {n: n**3 for n in range(8)}  # dictionary comprehension
+cubes = {n: n ** 3 for n in range(8)}  # dictionary comprehension
 xes = {n: "x" * n for n in range(8)}
 
 table = {}
@@ -67,6 +66,7 @@ table[32] = "hello"
 val = table.get(32, [])
 
 table = {}
+table.setdefault(34, 233)
 # "setdefault" works a lot like get, but it also has a side effect: if the
 # given key was not in the dictionary, setdefault will associate the given key
 # with the given default value inside the dictionary (such that future calls to

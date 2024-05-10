@@ -1,7 +1,3 @@
-from sympy import *
+import lab
 
-x, y = symbols("x y")
-expr = 2 * x + y
-a = diff(sin(x) * exp(x), x)
-print(a)
-print(repr(a))
+print(lab.Add(lab.Mul(lab.Num(40), lab.Num(20)), lab.Mul(lab.Var("z"), lab.Num(0))))

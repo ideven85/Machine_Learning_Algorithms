@@ -5,16 +5,12 @@ You may test this functions by running `pytest q5_zip.py` (no quotes)
 in the terminal.
 """
 
-import types
-
 
 def my_zip(x, y):
     # if not x or not y:
     #     return None
-    if not isinstance(x, list):
-        x = list(x)
-    if not isinstance(y, list):
-        y = list(y)
+    x = list(x)
+    y = list(y)
     # print("bite me:",x,y)
     for i in range(min(len(x), len(y))):
         yield x[i], y[i]
