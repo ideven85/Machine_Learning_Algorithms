@@ -7,7 +7,6 @@ def number_to_string(n: int, b: int) -> str:
     if n == 0:
         return "0"
     if n < b:
-        print("\nHi", n)
         return str(n)
     string_rep = "n"
     length = len(string_rep)
@@ -17,19 +16,20 @@ def number_to_string(n: int, b: int) -> str:
 
 
 def myAtoi(s: str) -> int:
-    if len(s) == 1 and not s.isdigit():
-        return -myAtoi(s)
+    #
+    # if len(s) == 1 and not s.isdigit():
+    #     return -myAtoi(s)
+    if not s:
+        return 0
+    if len(s) == 1:
+        return int(s[0])
 
-    if s[0] == "-":
-        sign = "-"
-        myAtoi(s[1:])
-
-    return int(s[-1]) % 10 + myAtoi(s[:-1]) * 10
+    return int(s[-1]) + myAtoi(s[:-1]) * 10
 
 
 #
-# print('\n',number_to_string(829,11))
+print('\n', number_to_string(829, 11))
 # print('\n',number_to_string(15,10))
 
-print(myAtoi("-829"))
+print(myAtoi("829"))
 # print(int("829"))

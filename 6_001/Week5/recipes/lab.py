@@ -3,10 +3,11 @@
 Recipes
 """
 
-import pickle
 import sys
 
 sys.setrecursionlimit(20_000)
+
+
 # NO ADDITIONAL IMPORTS!
 # Min 10 hours per lab, Don't get disheartened in one day
 
@@ -61,7 +62,7 @@ def compound_ingredient_possibilities(recipes):
 
                         current_cost[0]+=lowest_cost_helper(list(compound_list[element]),cost,current_cost)*quantity
                 print(current_cost)
-                input("type element")
+                #("type element")
                 #print(current_cost, "Recursive")
                 # return current_cost[0]+cost[0]
             #print(current_cost)
@@ -69,117 +70,167 @@ def compound_ingredient_possibilities(recipes):
 """
 
 
-# def lowest_cost_helper1(lst, current_cost, quantity):
-#     # print(lst,quantity)
-#     if isinstance(lst, tuple):
-#         el, q = lst
-#         if el in costs:
-#             current_cost[0] = current_cost[0] + costs[el] * q
-#         else:
-#
-#             elements = list(compound_list[el])
-#             for el in elements:
-#                 lowest_cost_helper1(el, current_cost, quantity)
-#     else:
-#         for elements in lst:
-#             for el in elements:
-#                 if type(el) == tuple:
-#                     el, q = el
-#                     if el in costs:
-#                         current_cost[0] += costs[el] * q
-#                     else:
-#                         lowest_cost_helper1(el, current_cost, q)
-#
-#     # print(visited)
-#     # print(current_cost)
-#     return current_cost
-
-
-def lowest_costV1(recipes, food_item):
+def lowest_cost(recipes, food_item):
     """
     Given a recipes list and the name of a food item, return the lowest cost of
     a full recipe for the given food item.
     """
+
     # raise NotImplementedError
 
+    def lowest_cost_helper1(lst, current_cost, quantity, compound_element, visited):
 
-    def lowest_cost_helper(element,cost,quantity,n):
-        print("N=",n)
-        if n==0:
+        flag = False
+        if quantity:
+            print("Compound:", compound_element, quantity)
+            # #(compound_element)
+
+            for elements in lst:
+
+                for el in elements:
+                    # if compound_element in cmpd_minimum_element_cost:
+                    #     return current_cost
+                    if type(el) == tuple:
+                        el, q = el
+                        # if el in visited:
+                        #     continue
+
+                        visited.add(el)
+                        # if el == "cutting-edge laboratory":
+                        #     continue
+                        # (el)
+                        if el in atomic_costs:
+                            current_cost += atomic_costs[el] * q
+                        elif el in cmpd_minimum_element_cost:
+                            current_cost += cmpd_minimum_element_cost[el] * q
+                            continue
+
+                        else:
+                            print("Inner:", el, end=' ')
+                            # #(el)
+                            lowest_cost_helper1(list(compound_list[el]), current_cost, q, el, visited)
+
+            cmpd_minimum_element_cost[compound_element] = current_cost
+            # if flag:
+            #     flag = False
+            #     break
+            # (cmpd_minimum_element_cost)
+            # (lst)
+
+            current_cost *= quantity
+            # (current_cost)
+            return current_cost
+        else:
+            for elements in lst:
+                for el in elements:
+                    # (compound_element)
+                    # if compound_element in cmpd_minimum_element_cost:
+                    #     continue
+                    if type(el) == tuple:
+                        el, q = el
+                        # if el in visited:
+                        #     continue
+                        visited.add(el)
+
+                        # (el)
+                        if el in atomic_costs:
+                            current_cost += atomic_costs[el] * q
+                            # (current_cost)
+                        elif el in cmpd_minimum_element_cost:
+                            current_cost += cmpd_minimum_element_cost[el] * q
+                            continue
+
+                        else:
+                            print("Inner else:", el)
+                            # (el)
+                            lowest_cost_helper1(list(compound_list[el]), current_cost, q, el, visited)
+
+                    # if flag:
+                    #     flag = False
+                    #     break
+            cmpd_minimum_element_cost[compound_element] = current_cost
+
+        # print(visited)
+
+        # #(quantity) if quantity else #(current_cost)
+
+        # (current_cost)
+        # #(visited)
+        return current_cost
+
+    def lowest_compound_cost_helper(elements, element, cost, length):
+        if not length:
+            cmpd_minimum_element_cost[element] = cost  # How does this guarantee min cost?
             return cost
-        elif n==1:
-            el,q=element
-            if el in costs:
-                cost+=costs[el]*q
-                return cost
-            elif el in visited:
-                return cost
-            else:
-                visited.add(el)
-                lowest_cost_helper(compound_list[el],cost,q,n)
+        for el in elements:
+            if isinstance(el, tuple):
+                if el[0] in atomic_costs:
+                    cost += atomic_costs[el[0]] * el[1]
+                    length -= 1
+                    continue
 
 
-        print()
-    costs = atomic_ingredient_costs(recipes)
-    if food_item in costs:
-        return costs[food_item]
+                else:
+                    new_elements = compound_list[el[0]]
+
+        return cost
+
+    atomic_costs = atomic_ingredient_costs(recipes)
+    if food_item in atomic_costs:
+        return atomic_costs[food_item]
 
     compound_list = compound_ingredient_possibilities(recipes)
     compounds = list(compound_list[food_item])[:]
+
     length = len(compounds)
-
-
+    cmpd_minimum_element_cost = dict()
+    min_cost = 100000000
+    for i in range(length):
+        print(compounds[i], '\n')
+        current_cost = 0
+        visited = set()
+        for element, quantity in compounds[i]:
+            # #(element)
+            if element in atomic_costs:
+                current_cost += atomic_costs[element] * quantity
+                continue
+            elif element in cmpd_minimum_element_cost:
+                current_cost += cmpd_minimum_element_cost[element] * quantity
+                input("Hi")
+                continue
+            else:
+                elements_in_current = list(compound_list[element])[:]
+                # current_cost += lowest_compound_cost_helper(elements_in_current, element, 0, len(elements_in_current))
+                current_cost += lowest_cost_helper1(elements_in_current, 0, 0, None, visited) * quantity
+            # (current_cost)
+            # #(quantity)
+        min_cost = min(current_cost, min_cost)
 
     # print(compounds,length)
     # print(compounds)
-    min_cost = 10000000
-
-    total = []
-    min_current_cost=dict()
-    for i in range(length):
-        visited = set()
-        cost = []
-        for el in compounds[i]:
-            el,quantity=el
-            if el in costs:
-                cost.append(costs[el]*quantity)
-            else:
-                if el in visited:
-                    cost.append(min_current_cost[el]*quantity)
-                    continue
-                visited.add(el)
-                elements=compound_list[el]
-                n=len(elements)
-                for j in range(n):
-                    for 
-
-
-
-
-                lowest_cost_helper(compound_list[el],0,quantity,len(compound_list[el]))
-        print()
-
-
-def lowest_cost(recipes, food_item):
-
-    def lowest_cost_helper(elements,current_cost,total_cost):
-        elements = compounds[elements]
-
-
-    costs = atomic_ingredient_costs(recipes)
-    if food_item in costs:
-        return costs[food_item]
-
-    compound_list = compound_ingredient_possibilities(recipes)
-    compounds = list(compound_list[food_item])[:]
-    length=len(compounds)
-    compound_cost=dict()
-    for i in range(length):
-        lowest_cost_helper(compounds[i],0,0)
-
-
-
-
+    # min_cost = 10000000
+    #
+    # total = []
+    # min_current_cost = dict()
+    # for i in range(length):
+    #     visited = set()
+    #     cost = []
+    #     for el in compounds[i]:
+    #         el, quantity = el
+    #         if el in atomic_costs:
+    #             cost.append(atomic_costs[el] * quantity)
+    #         else:
+    #             if el in visited:
+    #                 cost.append(min_current_cost[el] * quantity)
+    #                 continue
+    #             visited.add(el)
+    #             elements = compound_list[el]
+    #             n = len(elements)
+    #
+    #             # lowest_cost_helper(compound_list[el],0,quantity,len(compound_list[el]))
+    #     print()
+    print(cmpd_minimum_element_cost)
+    return min_cost
 
 
 def scaled_flat_recipe(flat_recipe, n):
@@ -262,13 +313,7 @@ if __name__ == "__main__":
         (
             "compound",
             "burger",
-            [
-                ("bread", 1),
-                ("cheese", 1),
-                ("lettuce", 1),
-                ("protein", 1),
-                ("ketchup", 1),
-            ],
+            [("bread", 2), ("cheese", 1), ("lettuce", 1), ("protein", 1), ("ketchup", 1)],
         ),
         (
             "compound",
@@ -285,7 +330,7 @@ if __name__ == "__main__":
         ("atomic", "butter churn", 50),
         ("compound", "milk", [("cow", 1), ("milking stool", 1)]),
         ("compound", "cheese", [("milk", 1), ("time", 1)]),
-        ("compound", "cheese", [("cutting-edge laboratory", 11)]),
+
         ("atomic", "salt", 1),
         ("compound", "bread", [("yeast", 1), ("salt", 1), ("flour", 2)]),
         ("compound", "protein", [("cow", 1)]),
@@ -295,13 +340,7 @@ if __name__ == "__main__":
         (
             "compound",
             "ketchup",
-            [
-                ("tomato", 30),
-                ("vinegar", 3),
-                ("salt", 1),
-                ("sugar", 2),
-                ("cinnamon", 1),
-            ],
+            [("tomato", 30), ("vinegar", 3), ("salt", 1), ("sugar", 2), ("cinnamon", 1)],
         ),  # the fancy ketchup
         ("atomic", "cow", 100),
         ("atomic", "milking stool", 5),
@@ -323,10 +362,26 @@ if __name__ == "__main__":
         ("atomic", "time", 10000),
         ("atomic", "cow", 100),
     ]
-    atomic_ingredient_costs(dairy_recipes)
-    compound_ingredient_possibilities(dairy_recipes)
-
-    print("Burger:", lowest_cost(example_recipes, "burger"))  # Wrong
+    atomic_ingredient_costs(example_recipes)
+    c = compound_ingredient_possibilities(example_recipes)
+    print(c['burger'])
+    print(lowest_cost(example_recipes, 'cheese'))
+    # print("Cheese:", lowest_cost(example_recipes, "cheese"))  # Correct
+    # assert lowest_cost(example_recipes, "time") == 10000
+    # assert lowest_cost(example_recipes, "salt") == 1
+    # assert abs(lowest_cost(example_recipes, "cornmeal") - 7.5) <= 1e-6
+    #
+    # # compound food items, only one layer deep
+    # assert lowest_cost(example_recipes, "protein") == 100
+    # assert lowest_cost(example_recipes, "cheese") == 10105
+    # assert lowest_cost(example_recipes, "milk") == 105
+    # # assert lowest_cost(example_recipes, "bread") == 9
+    # assert lowest_cost(example_recipes, "burger") == 10685
+    # two layers
+    # print(lowest_cost(example_recipes, "burger"))
+    # print(lowest_cost(dairy_recipes, "cheese"))
+    print(lowest_cost(example_recipes, 'burger'))
+    # assert lowest_cost(example_recipes, "burger") == 10685
     # print("Bread:", lowest_cost(example_recipes, "bread"))
     # print("Lettuce:", lowest_cost(example_recipes, "lettuce"))
     # print("Cheese:", lowest_cost(example_recipes, "cheese"))

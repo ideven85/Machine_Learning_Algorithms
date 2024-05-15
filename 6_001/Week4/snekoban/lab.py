@@ -3,8 +3,6 @@
 Snekoban Game
 """
 
-import json
-import typing
 from collections import defaultdict
 
 # NO ADDITIONAL IMPORTS!
@@ -82,7 +80,6 @@ def victory_check(game):
 
 
 def is_valid_move(game, row, col, direction):
-
     # row,col = player_position
     # print(row, col)
     # print(row,col)
@@ -103,7 +100,6 @@ def is_valid_move(game, row, col, direction):
     if "computer" in game[position]:
 
         if is_valid_move_helper(game, position[0], position[1], direction):
-
             print(game["player"])
             game["player"] = []
 
@@ -163,10 +159,10 @@ def step_game(game, direction):
         return make_new_game(game_state)
     elif potential_position in game_state["computer"]:
         if is_valid_move_helper(
-            game_state,
-            potential_position[0],
-            potential_position[1],
-            direction=direction,
+                game_state,
+                potential_position[0],
+                potential_position[1],
+                direction=direction,
         ):
             game_state["player"].remove(player_position)
             game_state["player"].append(potential_position)
@@ -207,7 +203,7 @@ def dump_game(game):
     if not game_state:
         game_state = make_new_game(game)
     # print(rows, columns)
-    game = [[[] for _ in range(rows[0] + 2)] for _ in range(columns[0] + 1)]
+    game = [[[] for _ in range(rows1 + 2)] for _ in range(columns1 + 1)]
 
     # print(game)
     walls = game_state["wall"]
@@ -232,7 +228,6 @@ def dump_game(game):
 
 # todo {}
 def solve_puzzle(game):
-
     global rows, columns
     # goal=game_state['target']
     # computer = game_state['computer']
@@ -252,7 +247,6 @@ def solve_puzzle(game):
         for move in direction_vector.keys():
             # print(move,end=' ')
             if is_valid_move(board, position[0], position[1], move):
-
                 # input()
 
                 positions.append(

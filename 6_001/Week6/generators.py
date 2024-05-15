@@ -1,3 +1,6 @@
+import time
+
+
 def list_range(start, stop, step=1):
     assert step >= 1
     out = []
@@ -17,17 +20,22 @@ def gen_range(start, stop, step=1):  # Using Generators
         current += step
 
 
-for i in gen_range(0, 1_000_000, step=1):
-    if i > 100:
+s1 = time.perf_counter()
+gen = gen_range(0, 1_000_000_000, step=1)
+for val in gen:
+    if val > 100:
         break
-    print(i**2, end=" ")
+    print(val ** 2, end=' ')
+s2 = time.perf_counter()
+print('\n', s2 - s1)  # 0.0001 seconds
 
-for i in list_range(0, 1_000):
-    if i > 100:
+a = list_range(0, 1_000_000_000, step=1)
+for val in a:
+    if val > 100:
         break
-    print(i**2, end=" ")
-
-print()
+    print(val ** 2, end=' ')
+s3 = time.perf_counter()
+print('\n', s3 - s2)  # 25 Seconds
 
 
 def gen1():
@@ -41,10 +49,8 @@ def gen2():
 
 
 def gen3():
-    for val in gen1():
-        yield val
-    for val in gen2():
-        yield val
+    yield from gen1()
+    yield from gen2()
 
 
 def get_generators():
