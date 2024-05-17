@@ -1,5 +1,6 @@
-import pygame
 import sys
+
+import pygame
 
 # Initialize Pygame
 pygame.init()
@@ -15,6 +16,9 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        elif event.key == pygame.K_q or event.key == pygame.K_ESCAPE:
+            pygame.quit()
+            sys.exit(0)
 
     # Update the game state
 

@@ -151,40 +151,8 @@ if __name__ == "__main__":
     print(x)
     print(repr(x))
 
-    # z = Add(Var("x"), Sub(Var("y"), Num(2)))
-    # print(repr(z))
-    # print(z)
-    # precedence Parentheses, Exponents, Multiplication/Division, Addition/Subtraction
-    """
-    If B.left and/or B.right themselves represent expressions with lower precedence than B, wrap their string representations in parentheses (here, precedence is defined using the standard "PEMDAS" ordering).
-As a special case, if B represents a subtraction or a division and B.right represents an expression with the same precedence as B, wrap B.right's string representation in parentheses.
-Individual numbers or variables should never be wrapped in parentheses.
-
-Check Yourself:
-Think about the rules for parenthesization described above in terms of algebraic expressions and work through parenthesizing some example expressions by hand to get a feel for how these rules work. Do these rules seem to work in a general sense -- will they always work across different operations and across different levels of expression complexity? Why do they work? Why are subtraction and division treated differently from addition and multiplication?
-
-Check Yourself:
-Importantly, you should implement the behavior for str and repr without explicitly checking the type of self, self.left, or self.right.
-
-In order to pass the test cases, your code will need to do this by storing a couple of additional class attributes:
-
-All symbols should have a class attribute called precedence, which should be a number representing precedence. Greater numbers should represent greater precedence. What classes should have the highest precedence? What classes should have the same precedence?
-All binary operations should have a class attribute called wrap_right_at_same_precedence, which should be a Boolean that indicates whether to add parentheses around the right side of the expression in the special case described above.
-    """
     y = Add(3, "x")
     # print(y)
     print(repr(y))
     print(y)
     print(y.__class__.__name__)
-
-    # a1 = Mul(Var("x"), Add(Var("y"), Var("z")))
-    # print(a1)
-    # print(repr(a1))
-    # # print(a1.left)
-    # # print(y.left)
-    # # print(y.right)
-    # print("\n\n\n")
-    #
-    # a = Add(Add(2, 3), Sub(Mul(3, Div(4, 5)), Sub(4, 5)))
-    # print(a)
-    # print(repr(a))

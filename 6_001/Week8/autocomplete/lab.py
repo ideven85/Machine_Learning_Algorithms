@@ -50,11 +50,11 @@ class PrefixTree:
         if not key:
 
             if not value and not self.value:
-                raise KeyError("Key Not Found")
+                return None
 
             return self
         elif value is None and key[0] not in self.children:
-            raise KeyError("Key not found")
+            return None
         elif value and key[0] not in self.children:
 
             self.children[key[0]] = PrefixTree()
@@ -69,12 +69,12 @@ class PrefixTree:
         if not isinstance(key, str):
             raise TypeError("Word Must Be a string")
 
-        curr = self
-        for char in key:
-            if char not in curr.children:
-                curr.children[char] = PrefixTree()
-            curr = curr.children[char]
-        curr.value = value
+        # curr = self
+        # for char in key:
+        #     if char not in curr.children:
+        #         curr.children[char] = PrefixTree()
+        #     curr = curr.children[char]
+        # curr.value = value
         # # elif not key:
         # #     self.value=value
         # # else:
@@ -82,7 +82,7 @@ class PrefixTree:
         # #         self.children[key[0]]=PrefixTree()
         # #     self.children[key[0]].__setitem__(key[1:],value)
 
-        # self._get_node(key, value).value = value
+        self._get_node(key, value).value = value
 
     def __getitem__(self, key):
         """
@@ -90,17 +90,17 @@ class PrefixTree:
         Raise a KeyError if the given key is not in the prefix tree.
         Raise a TypeError if the given key is not a string.
         """
-        if not isinstance(key, str):
-            raise TypeError("The given word must be a string")
-        elif not key:
-            if self.value is None:
-                raise KeyError("Key not found")
-            return self.value
-        elif key[0] not in self.children:
-            raise KeyError("Key not found")
-        else:
-            return self.children[key[0]][key[1:]]
-        # return self._get_node(key).value
+        # if not isinstance(key, str):
+        #     raise TypeError("The given word must be a string")
+        # elif not key:
+        #     if self.value is None:
+        #         raise KeyError("Key not found")
+        #     return self.value
+        # elif key[0] not in self.children:
+        #     raise KeyError("Key not found")
+        # else:
+        #     return self.children[key[0]][key[1:]]
+        return self._get_node(key).value
 
     def __delitem__(self, key):
         """
@@ -115,17 +115,18 @@ class PrefixTree:
         Is key a key in the prefix tree?  Return True or False.
         Raise a TypeError if the given key is not a string.
         """
-        if not isinstance(key, str):
-            raise TypeError("The given word must be a string")
-        if key == "" and self.value is not None:
-            return True
-
-        elif not key:
-            return self.value is not None
-        elif key[0] not in self.children:
-            return False
-        else:
-            return self.children[key[0]].__contains__(key[1:])
+        # if not isinstance(key, str):
+        #     raise TypeError("The given word must be a string")
+        # if key == "" and self.value is not None:
+        #     return True
+        #
+        # elif not key:
+        #     return self.value is not None
+        # elif key[0] not in self.children:
+        #     return False
+        # else:
+        #     return self.children[key[0]].__contains__(key[1:])
+        return self._get_node(key) is not None
 
     # def print(self):
     #     current = self
@@ -358,6 +359,7 @@ if __name__ == "__main__":
 
     t["bank"] = 4
     t["ban"] = 7
+    print("bat" in t)
     print(list(t))
     # t.print()
 

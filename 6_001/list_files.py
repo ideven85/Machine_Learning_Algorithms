@@ -30,7 +30,7 @@ def disk_usage2(path):
     return total
 
 
-folder = os.path.expanduser("~/Developer")
+folder = os.path.expanduser("~/Developer/Machine_Learning_Algorithms")
 
 
 def ends_with_suffix(suffix):
@@ -55,10 +55,12 @@ def list_files(path):
                 yield children
 
 
-# words=[list_files(y) for y in folder ]
-# print(words)
-
+words = list_files(folder)
+for val in words:
+    print(val)
 
 # print(disk_usage2(folder))
 for val in list_files(folder):
     print(val)
+
+print(disk_usage2(folder))

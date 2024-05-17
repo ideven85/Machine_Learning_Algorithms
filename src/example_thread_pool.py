@@ -13,8 +13,8 @@ def factorial(n):
 
 
 with ThreadPool() as pool:
-    start = time.time()
-    for result in pool.map(factorial, range(2, 1000)):
+    start = time.perf_counter_ns()
+    for result in pool.map(factorial, range(2, 100)):
         print(f"Got {result}")
-    end = time.time()
+    end = time.perf_counter_ns()
     print(end - start)
