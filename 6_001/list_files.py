@@ -64,3 +64,8 @@ for val in list_files(folder):
     print(val)
 
 print(disk_usage2(folder))
+
+
+def ls(params):
+    path = os.path.join(folder, params.get("path"))
+    return [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
