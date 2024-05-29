@@ -159,10 +159,10 @@ def step_game(game, direction):
         return make_new_game(game_state)
     elif potential_position in game_state["computer"]:
         if is_valid_move_helper(
-                game_state,
-                potential_position[0],
-                potential_position[1],
-                direction=direction,
+            game_state,
+            potential_position[0],
+            potential_position[1],
+            direction=direction,
         ):
             game_state["player"].remove(player_position)
             game_state["player"].append(potential_position)

@@ -195,8 +195,8 @@ def test_bacon_number_03():
     N = random.randint(50, 100)
     k = random.randint(7, 30)
     assert (
-            len(lab.actors_with_bacon_number(lab.transform_data(make_bacon_tree(N, k)), N))
-            == k
+        len(lab.actors_with_bacon_number(lab.transform_data(make_bacon_tree(N, k)), N))
+        == k
     )
 
 
@@ -205,20 +205,20 @@ def test_bacon_number_04():
     N = random.randint(5, 10)
     k = random.randint(4, 7)
     assert (
-            len(
-                lab.actors_with_bacon_number(
-                    lab.transform_data(make_bacon_tree(N, k)), 10 ** 20
-                )
+        len(
+            lab.actors_with_bacon_number(
+                lab.transform_data(make_bacon_tree(N, k)), 10**20
             )
-            == 0
+        )
+        == 0
     )
     assert (
-            len(
-                lab.actors_with_bacon_number(
-                    lab.transform_data(make_bacon_tree(N, k)), 10 ** 20
-                )
+        len(
+            lab.actors_with_bacon_number(
+                lab.transform_data(make_bacon_tree(N, k)), 10**20
             )
-            == 0
+        )
+        == 0
     )
 
 
@@ -445,7 +445,9 @@ def check_valid_path(f, p, s, e, l):
     l : length of expected path - 1
     """
     lp = len(p) if p is not None else None
-    assert lp == l + 1, f"expected a path of length {l + 1} between {s} and {e}, got {lp}"
+    assert (
+        lp == l + 1
+    ), f"expected a path of length {l + 1} between {s} and {e}, got {lp}"
     assert s is None or p[0] == s, f"path does not start with {s}"
     assert e is None or p[-1] == e, f"path does not end with {e}"
     assert all(frozenset(i) in f for i in zip(p, p[1:])), f"invalid path returned"

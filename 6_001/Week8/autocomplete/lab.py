@@ -365,7 +365,7 @@ if __name__ == "__main__":
 
     # print(t[""])
 
-    with open('testing_data/frankenstein.txt', 'r') as f:
+    with open("testing_data/frankenstein.txt", "r") as f:
         ALL_WORDS = f.read()
     # #print(ALL_WORDS.split("\n")[:5])
     #

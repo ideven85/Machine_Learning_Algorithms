@@ -52,7 +52,7 @@ for key, val in table.items():
 
 del table[27]
 
-cubes = {n: n ** 3 for n in range(8)}  # dictionary comprehension
+cubes = {n: n**3 for n in range(8)}  # dictionary comprehension
 xes = {n: "x" * n for n in range(8)}
 
 table = {}

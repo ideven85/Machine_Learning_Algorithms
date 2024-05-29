@@ -90,9 +90,9 @@ def tree_list_iterative(tree):
         if not x:
             continue
         else:
-            out.append(x['value'])
-            if x['children']:
-                agenda.append(x['children'])
+            out.append(x["value"])
+            if x["children"]:
+                agenda.append(x["children"])
     return out
 
 
@@ -113,10 +113,7 @@ t1 = {"value": 3, "children": []}
 
 t2 = {
     "value": 9,
-    "children": [
-        {"value": 2, "children": []},
-        {"value": 11, "children": []}
-    ],
+    "children": [{"value": 2, "children": []}, {"value": 11, "children": []}],
 }
 
 t3 = {

@@ -106,9 +106,11 @@ def lowest_cost(recipes, food_item):
                             continue
 
                         else:
-                            print("Inner:", el, end=' ')
+                            print("Inner:", el, end=" ")
                             # #(el)
-                            lowest_cost_helper1(list(compound_list[el]), current_cost, q, el, visited)
+                            lowest_cost_helper1(
+                                list(compound_list[el]), current_cost, q, el, visited
+                            )
 
             cmpd_minimum_element_cost[compound_element] = current_cost
             # if flag:
@@ -143,7 +145,9 @@ def lowest_cost(recipes, food_item):
                         else:
                             print("Inner else:", el)
                             # (el)
-                            lowest_cost_helper1(list(compound_list[el]), current_cost, q, el, visited)
+                            lowest_cost_helper1(
+                                list(compound_list[el]), current_cost, q, el, visited
+                            )
 
                     # if flag:
                     #     flag = False
@@ -160,7 +164,9 @@ def lowest_cost(recipes, food_item):
 
     def lowest_compound_cost_helper(elements, element, cost, length):
         if not length:
-            cmpd_minimum_element_cost[element] = cost  # How does this guarantee min cost?
+            cmpd_minimum_element_cost[element] = (
+                cost  # How does this guarantee min cost?
+            )
             return cost
         for el in elements:
             if isinstance(el, tuple):
@@ -168,7 +174,6 @@ def lowest_cost(recipes, food_item):
                     cost += atomic_costs[el[0]] * el[1]
                     length -= 1
                     continue
-
 
                 else:
                     new_elements = compound_list[el[0]]
@@ -186,7 +191,7 @@ def lowest_cost(recipes, food_item):
     cmpd_minimum_element_cost = dict()
     min_cost = 100000000
     for i in range(length):
-        print(compounds[i], '\n')
+        print(compounds[i], "\n")
         current_cost = 0
         visited = set()
         for element, quantity in compounds[i]:
@@ -201,7 +206,10 @@ def lowest_cost(recipes, food_item):
             else:
                 elements_in_current = list(compound_list[element])[:]
                 # current_cost += lowest_compound_cost_helper(elements_in_current, element, 0, len(elements_in_current))
-                current_cost += lowest_cost_helper1(elements_in_current, 0, 0, None, visited) * quantity
+                current_cost += (
+                    lowest_cost_helper1(elements_in_current, 0, 0, None, visited)
+                    * quantity
+                )
             # (current_cost)
             # #(quantity)
         min_cost = min(current_cost, min_cost)
@@ -313,7 +321,13 @@ if __name__ == "__main__":
         (
             "compound",
             "burger",
-            [("bread", 2), ("cheese", 1), ("lettuce", 1), ("protein", 1), ("ketchup", 1)],
+            [
+                ("bread", 2),
+                ("cheese", 1),
+                ("lettuce", 1),
+                ("protein", 1),
+                ("ketchup", 1),
+            ],
         ),
         (
             "compound",
@@ -330,7 +344,6 @@ if __name__ == "__main__":
         ("atomic", "butter churn", 50),
         ("compound", "milk", [("cow", 1), ("milking stool", 1)]),
         ("compound", "cheese", [("milk", 1), ("time", 1)]),
-
         ("atomic", "salt", 1),
         ("compound", "bread", [("yeast", 1), ("salt", 1), ("flour", 2)]),
         ("compound", "protein", [("cow", 1)]),
@@ -340,7 +353,13 @@ if __name__ == "__main__":
         (
             "compound",
             "ketchup",
-            [("tomato", 30), ("vinegar", 3), ("salt", 1), ("sugar", 2), ("cinnamon", 1)],
+            [
+                ("tomato", 30),
+                ("vinegar", 3),
+                ("salt", 1),
+                ("sugar", 2),
+                ("cinnamon", 1),
+            ],
         ),  # the fancy ketchup
         ("atomic", "cow", 100),
         ("atomic", "milking stool", 5),
@@ -364,8 +383,8 @@ if __name__ == "__main__":
     ]
     atomic_ingredient_costs(example_recipes)
     c = compound_ingredient_possibilities(example_recipes)
-    print(c['burger'])
-    print(lowest_cost(example_recipes, 'cheese'))
+    print(c["burger"])
+    print(lowest_cost(example_recipes, "cheese"))
     # print("Cheese:", lowest_cost(example_recipes, "cheese"))  # Correct
     # assert lowest_cost(example_recipes, "time") == 10000
     # assert lowest_cost(example_recipes, "salt") == 1
@@ -380,7 +399,7 @@ if __name__ == "__main__":
     # two layers
     # print(lowest_cost(example_recipes, "burger"))
     # print(lowest_cost(dairy_recipes, "cheese"))
-    print(lowest_cost(example_recipes, 'burger'))
+    print(lowest_cost(example_recipes, "burger"))
     # assert lowest_cost(example_recipes, "burger") == 10685
     # print("Bread:", lowest_cost(example_recipes, "bread"))
     # print("Lettuce:", lowest_cost(example_recipes, "lettuce"))

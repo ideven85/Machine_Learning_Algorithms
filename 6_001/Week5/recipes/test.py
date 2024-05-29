@@ -4,6 +4,7 @@ Recipes
 """
 
 import copy
+
 # !/usr/bin/env python3
 import os
 import pickle
@@ -90,7 +91,7 @@ def compare_recipe_list(expected, result):
             item, tuple
         ), f"Expected all items in recipes to be a tuple but got {item}"
         assert (
-                len(item) == 3
+            len(item) == 3
         ), f"Expected all items in recipes to have length 3 but got {len(item)} \n for {item}"
         a, b, c = item
         assert isinstance(a, str) and a in {
@@ -108,7 +109,7 @@ def compare_recipe_list(expected, result):
     exp = set((a, b, tuple(c) if a == "compound" else c) for a, b, c in expected)
     res = set((a, b, tuple(c) if a == "compound" else c) for a, b, c in result)
     assert (
-            res == exp
+        res == exp
     ), f"Found {len(res.intersection(exp))} matching recipes. Additional recipes: {len(res - exp)} \n {res - exp} \n Missing Recipes: {len(exp - res)} \n {exp - res}"
 
 
@@ -134,8 +135,8 @@ def canonize_flat_recipes(recipes):
 
 def _load_test(n):
     with open(
-            os.path.join(TEST_DIRECTORY, "test_recipes", f"big_recipes_{n:02d}.pickle"),
-            "rb",
+        os.path.join(TEST_DIRECTORY, "test_recipes", f"big_recipes_{n:02d}.pickle"),
+        "rb",
     ) as f:
         return pickle.load(f)
 
@@ -154,7 +155,7 @@ def check_recipe_book(result, expected):
         canonical_rep = sorted(sorted(rec) for rec in val)
         canonical_res = sorted(sorted(rec) for rec in result.get(ing, []))
         assert (
-                canonical_rep == canonical_res
+            canonical_rep == canonical_res
         ), f"recipes don't match for ingredient {ing}"
 
 
@@ -293,7 +294,7 @@ def test_lowest_cost_examples_excluded():
 
 def test_lowest_cost_more_examples_excluded():
     with open(
-            os.path.join(TEST_DIRECTORY, "test_recipes", "examples_filter.pickle"), "rb"
+        os.path.join(TEST_DIRECTORY, "test_recipes", "examples_filter.pickle"), "rb"
     ) as f:
         test_data = pickle.load(f)
 
@@ -324,7 +325,7 @@ def test_lowest_cost_big_excluded(testnum):
 
 def test_lowest_cost_examples_forbidden():
     assert (
-            lab.lowest_cost.__defaults__ is not None
+        lab.lowest_cost.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     orig = copy.deepcopy(example_recipes)
@@ -351,11 +352,11 @@ def test_lowest_cost_examples_forbidden():
 
 def test_lowest_cost_more_examples_forbidden():
     assert (
-            lab.lowest_cost.__defaults__ is not None
+        lab.lowest_cost.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     with open(
-            os.path.join(TEST_DIRECTORY, "test_recipes", "examples_filter.pickle"), "rb"
+        os.path.join(TEST_DIRECTORY, "test_recipes", "examples_filter.pickle"), "rb"
     ) as f:
         test_data = pickle.load(f)
 
@@ -369,7 +370,7 @@ def test_lowest_cost_more_examples_forbidden():
 @pytest.mark.parametrize("testnum", range(11))
 def test_lowest_cost_big_forbidden(testnum):
     assert (
-            lab.lowest_cost.__defaults__ is not None
+        lab.lowest_cost.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 5, (testnum + 1) * 5):
@@ -390,7 +391,7 @@ def test_lowest_cost_big_forbidden(testnum):
 @pytest.mark.parametrize("testnum", range(5))
 def test_lowest_cost_big_excluded_forbidden(testnum):
     assert (
-            lab.lowest_cost.__defaults__ is not None
+        lab.lowest_cost.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 11, (testnum + 1) * 11):
@@ -457,12 +458,12 @@ def test_scaled_flat_recipe_medium(scale_num):
         "time": 10000,
     }
     with open(
-            os.path.join(
-                TEST_DIRECTORY,
-                "test_recipes",
-                f"scaled_flat_recipe_medium_0{scale_num}.pickle",
-            ),
-            "rb",
+        os.path.join(
+            TEST_DIRECTORY,
+            "test_recipes",
+            f"scaled_flat_recipe_medium_0{scale_num}.pickle",
+        ),
+        "rb",
     ) as f:
         expected = pickle.load(f)
 
@@ -491,7 +492,7 @@ def test_grocery_list_small():
         "milk": 5,
     }
     assert (
-            flat_recipes == flat_recipes2
+        flat_recipes == flat_recipes2
     ), "Be careful not to modify the input to add_flat_recipes!"
 
 
@@ -515,7 +516,7 @@ def test_grocery_list_medium():
         "sugar": 3,
     }
     assert (
-            flat_recipes == flat_recipes2
+        flat_recipes == flat_recipes2
     ), "Be careful not to modify the input to add_flat_recipes!"
 
 
@@ -551,7 +552,7 @@ def test_grocery_list_random(num_ingredients):
     res = lab.add_flat_recipes(flat_recipes)
     assert res == original_totals
     assert (
-            flat_recipes == flat_recipes2
+        flat_recipes == flat_recipes2
     ), "Be careful not to modify the input to add_flat_recipes!"
 
 
@@ -602,7 +603,7 @@ def test_cheapest_examples_all_included():
 
 def test_cheapest_examples_forbidden():
     assert (
-            lab.cheapest_flat_recipe.__defaults__ is not None
+        lab.cheapest_flat_recipe.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     orig = copy.deepcopy(example_recipes)
@@ -618,10 +619,10 @@ def test_cheapest_examples_forbidden():
         "cutting-edge laboratory": 11
     }
     assert (
-            lab.cheapest_flat_recipe(
-                example_recipes, "cheese", ("milking stool", "cutting-edge laboratory")
-            )
-            is None
+        lab.cheapest_flat_recipe(
+            example_recipes, "cheese", ("milking stool", "cutting-edge laboratory")
+        )
+        is None
     )
 
     # more complex
@@ -662,7 +663,7 @@ def test_cheapest_big_all_included(testnum):
 
 def test_cheapest_more_examples_excluded():
     with open(
-            os.path.join(TEST_DIRECTORY, "test_recipes", "examples_filter.pickle"), "rb"
+        os.path.join(TEST_DIRECTORY, "test_recipes", "examples_filter.pickle"), "rb"
     ) as f:
         test_data = pickle.load(f)
 
@@ -693,11 +694,11 @@ def test_cheapest_big_excluded(testnum):
 
 def test_cheapest_more_examples_forbidden():
     assert (
-            lab.cheapest_flat_recipe.__defaults__ is not None
+        lab.cheapest_flat_recipe.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     with open(
-            os.path.join(TEST_DIRECTORY, "test_recipes", "examples_filter.pickle"), "rb"
+        os.path.join(TEST_DIRECTORY, "test_recipes", "examples_filter.pickle"), "rb"
     ) as f:
         test_data = pickle.load(f)
 
@@ -711,7 +712,7 @@ def test_cheapest_more_examples_forbidden():
 @pytest.mark.parametrize("testnum", range(5))
 def test_cheapest_big_forbidden(testnum):
     assert (
-            lab.cheapest_flat_recipe.__defaults__ is not None
+        lab.cheapest_flat_recipe.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 11, (testnum + 1) * 11):
@@ -732,7 +733,7 @@ def test_cheapest_big_forbidden(testnum):
 @pytest.mark.parametrize("testnum", range(5))
 def test_cheapest_big_excluded_forbidden(testnum):
     assert (
-            lab.cheapest_flat_recipe.__defaults__ is not None
+        lab.cheapest_flat_recipe.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 11, (testnum + 1) * 11):
@@ -906,7 +907,7 @@ def test_all_recipes_examples_all_included():
 
 def test_all_recipes_examples_forbidden():
     assert (
-            lab.all_flat_recipes.__defaults__ is not None
+        lab.all_flat_recipes.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     orig = copy.deepcopy(example_recipes)
@@ -922,10 +923,10 @@ def test_all_recipes_examples_forbidden():
         {"cutting-edge laboratory": 11}
     ]
     assert (
-            lab.all_flat_recipes(
-                example_recipes, "cheese", ("milking stool", "cutting-edge laboratory")
-            )
-            == []
+        lab.all_flat_recipes(
+            example_recipes, "cheese", ("milking stool", "cutting-edge laboratory")
+        )
+        == []
     )
 
     burgers2 = [
@@ -970,7 +971,7 @@ def test_all_recipes_examples_forbidden():
 @pytest.mark.parametrize("testnum", range(11))
 def test_all_recipes_big(testnum):
     assert (
-            lab.all_flat_recipes.__defaults__ is not None
+        lab.all_flat_recipes.__defaults__ is not None
     ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 5, (testnum + 1) * 5):
@@ -987,8 +988,8 @@ def test_all_recipes_big(testnum):
                 (_filter_graph(test_data["graph"], test_data[filt]), ()),
                 (test_data["graph"], test_data[filt]),
                 (
-                        _filter_graph(test_data["graph"], test_data[filt][1::2]),
-                        test_data[filt][::2],
+                    _filter_graph(test_data["graph"], test_data[filt][1::2]),
+                    test_data[filt][::2],
                 ),
             ]:
                 orig_graph = copy.deepcopy(graph)

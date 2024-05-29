@@ -21,6 +21,7 @@ def fib(n):
 # print(f(40))
 # f1 = fib(2)
 
+
 def words_upper(words):
     return [w.upper() for w in words]
 

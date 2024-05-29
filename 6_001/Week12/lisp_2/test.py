@@ -433,7 +433,7 @@ def test_file_repl():
             count += 1
             if count > 20:
                 return ""
-        return (b''.join(iter(lambda: f.read(1024), b''))).decode('utf-8')
+        return (b"".join(iter(lambda: f.read(1024), b""))).decode("utf-8")
 
     def try_clear_tempfile():
         try:
@@ -457,7 +457,6 @@ def test_file_repl():
         ("fib", lambda x: "EXCEPTION" in x),
         ("(fib 20)", lambda x: "EXCEPTION" in x),
     ]
-
 
     with open(t.name, "rb") as f:
         get_output()

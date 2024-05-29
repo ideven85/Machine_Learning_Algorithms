@@ -7,9 +7,9 @@ def riverSizes(matrix):
             (row + dx, column + dy)
             for dx, dy in directions
             if 0 <= (row + dx) < rows
-               and 0 <= (column + dy) < curr_column
-               and (row + dx, column + dy) not in visited
-               and matrix[row + dx][column + dy] == 1
+            and 0 <= (column + dy) < curr_column
+            and (row + dx, column + dy) not in visited
+            and matrix[row + dx][column + dy] == 1
         ]
         if not potential_neighbours:
             return 1

@@ -13,6 +13,8 @@ import doctest
 At least 10 hours per lab
 """
 
+directions = ((-1, 0), (-1, 1), (-1, -1), (0, 1), (0, -1), (1, 0), (1, -1), (1, 1))
+
 
 def dump(game):
     """
@@ -60,62 +62,25 @@ def new_game_2d(nrows, ncolumns, mines):
         [False, False, False, False]
         [False, False, False, False]
     """
-    board = []
-    for r in range(nrows):
-        row = []
-        for c in range(ncolumns):
-            if [r, c] in mines or (r, c) in mines:
-                row.append(".")
-            else:
-                row.append(0)
-        board.append(row)
-    visible = []
-    for r in range(nrows):
-        row = []
-        for c in range(ncolumns):
-            row.append(False)
-        visible.append(row)
+    board = [[0 for _ in range(ncolumns)] for _ in range(nrows)]
+    for x in mines:
+        board[x[0]][x[1]] = "."
+
+    visible = [[False for _ in range(ncolumns)] for _ in range(nrows)]
+
     for r in range(nrows):
         for c in range(ncolumns):
             if board[r][c] == 0:
-                neighbor_mines = 0
-                if 0 <= r - 1 < nrows:
-                    if 0 <= c - 1 < ncolumns:
-                        if board[r - 1][c - 1] == ".":
-                            neighbor_mines += 1
-                if 0 <= r < nrows:
-                    if 0 <= c - 1 < ncolumns:
-                        if board[r][c - 1] == ".":
-                            neighbor_mines += 1
-                if 0 <= r + 1 < nrows:
-                    if 0 <= c - 1 < ncolumns:
-                        if board[r + 1][c - 1] == ".":
-                            neighbor_mines += 1
-                if 0 <= r - 1 < nrows:
-                    if 0 <= c < ncolumns:
-                        if board[r - 1][c] == ".":
-                            neighbor_mines += 1
-                if 0 <= r < nrows:
-                    if 0 <= c < ncolumns:
-                        if board[r][c] == ".":
-                            neighbor_mines += 1
-                if 0 <= r + 1 < nrows:
-                    if 0 <= c < ncolumns:
-                        if board[r + 1][c] == ".":
-                            neighbor_mines += 1
-                if 0 <= r - 1 < nrows:
-                    if 0 <= c + 1 < ncolumns:
-                        if board[r - 1][c + 1] == ".":
-                            neighbor_mines += 1
-                if 0 <= r < nrows:
-                    if 0 <= c + 1 < ncolumns:
-                        if board[r][c + 1] == ".":
-                            neighbor_mines += 1
-                if 0 <= r + 1 < nrows:
-                    if 0 <= c + 1 < ncolumns:
-                        if board[r + 1][c + 1] == ".":
-                            neighbor_mines += 1
-                board[r][c] = neighbor_mines
+                board[r][c] = len(
+                    [
+                        ((r + dx), (c + dy))
+                        for dx, dy in directions
+                        if 0 <= r + dx < nrows
+                        and 0 <= c + dy < ncolumns
+                        and board[r + dx][c + dy] == "."
+                    ]
+                )
+
     return {
         "dimensions": (nrows, ncolumns),
         "board": board,
@@ -153,7 +118,9 @@ def dig_2d(game, row, col):
     ...                   ['.', '.', 1, 0]],
     ...         'visible': [[False, True, False, False],
     ...                  [False, False, False, False]],
-    ...         'state': 'ongoing'}
+    ...         'state': 'ongoing'
+
+                }
     >>> dig_2d(game, 0, 3)
     4
     >>> dump(game)
@@ -171,7 +138,10 @@ def dig_2d(game, row, col):
     ...                   ['.', '.', 1, 0]],
     ...         'visible': [[False, True, False, False],
     ...                  [False, False, False, False]],
-    ...         'state': 'ongoing'}
+    ...         'state': 'ongoing'
+
+
+    }
     >>> dig_2d(game, 0, 0)
     1
     >>> dump(game)
@@ -183,6 +153,7 @@ def dig_2d(game, row, col):
     visible:
         [True, True, False, False]
         [False, False, False, False]
+    'ascii_art': '.310\n..10'
     """
     if game["state"] == "defeat" or game["state"] == "victory":
         game["state"] = game["state"]  # keep the state the same
@@ -195,96 +166,50 @@ def dig_2d(game, row, col):
 
     num_revealed_mines = 0
     num_revealed_squares = 0
-    for r in range(game["dimensions"][0]):
-        for c in range(game["dimensions"][1]):
-            if game["board"][r][c] == ".":
-                if game["visible"][r][c] == True:
-                    num_revealed_mines += 1
-            elif game["visible"][r][c] == False:
-                num_revealed_squares += 1
-    if num_revealed_mines != 0:
-        # if num_revealed_mines is not equal to zero, set the game state to
-        # defeat and return 0
-        game["state"] = "defeat"
-        return 0
+    rows, columns = game["dimensions"]
+    num_revealed_squares = [
+        ((row + dx), (col + dy))
+        for dx, dy in directions
+        if 0 <= row + dx < rows
+        and 0 <= col + dy < columns
+        and not game["visible"][row + dx][col + dy]
+    ]
+
+
     if num_revealed_squares == 0:
         game["state"] = "victory"
         return 0
 
-    if game["visible"][row][col] != True:
+    if not game["visible"][row][col]:
         game["visible"][row][col] = True
         revealed = 1
     else:
         return 0
 
     if game["board"][row][col] == 0:
-        nrows, ncolumns = game["dimensions"]
-        if 0 <= row - 1 < nrows:
-            if 0 <= col - 1 < ncolumns:
-                if game["board"][row - 1][col - 1] != ".":
-                    if game["visible"][row - 1][col - 1] == False:
-                        revealed += dig_2d(game, row - 1, col - 1)
-        if 0 <= row < nrows:
-            if 0 <= col - 1 < ncolumns:
-                if game["board"][row][col - 1] != ".":
-                    if game["visible"][row][col - 1] == False:
-                        revealed += dig_2d(game, row, col - 1)
-        if 0 <= row + 1 < nrows:
-            if 0 <= col - 1 < ncolumns:
-                if game["board"][row + 1][col - 1] != ".":
-                    if game["visible"][row + 1][col - 1] == False:
-                        revealed += dig_2d(game, row + 1, col - 1)
-        if 0 <= row - 1 < nrows:
-            if 0 <= col < ncolumns:
-                if game["board"][row - 1][col] != ".":
-                    if game["visible"][row - 1][col] == False:
-                        revealed += dig_2d(game, row - 1, col)
-        if 0 <= row < nrows:
-            if 0 <= col < ncolumns:
-                if game["board"][row][col] != ".":
-                    if game["visible"][row][col] == False:
-                        revealed += dig_2d(game, row, col)
-        if 0 <= row + 1 < nrows:
-            if 0 <= col < ncolumns:
-                if game["board"][row + 1][col] != ".":
-                    if game["visible"][row + 1][col] == False:
-                        revealed += dig_2d(game, row + 1, col)
-        if 0 <= row - 1 < nrows:
-            if 0 <= col + 1 < ncolumns:
-                if game["board"][row - 1][col + 1] != ".":
-                    if game["visible"][row - 1][col + 1] == False:
-                        revealed += dig_2d(game, row - 1, col + 1)
-        if 0 <= row < nrows:
-            if 0 <= col + 1 < ncolumns:
-                if game["board"][row][col + 1] != ".":
-                    if game["visible"][row][col + 1] == False:
-                        revealed += dig_2d(game, row, col + 1)
-        if 0 <= row + 1 < nrows:
-            if 0 <= col + 1 < ncolumns:
-                if game["board"][row + 1][col + 1] != ".":
-                    if game["visible"][row + 1][col + 1] == False:
-                        revealed += dig_2d(game, row + 1, col + 1)
 
-    num_revealed_mines = 0  # set number of mines to 0
+        neighbours = (
+            ((row + dx), (col + dy))
+            for dx, dy in directions
+            if 0 <= row + dx < rows
+            and 0 <= col + dy < columns
+            and not game["visible"][row + dx][col + dy]
+            and game["board"][row + dx][col + dy] != "."
+        )
+        for r,c in neighbours:
+            revealed += dig_2d(game, r, c)
+
     num_revealed_squares = 0
-    for r in range(game["dimensions"][0]):
+    for r in range(rows):
         # for each r,
-        for c in range(game["dimensions"][1]):
+        for c in range(columns):
             # for each c,
-            if game["board"][r][c] == ".":
-                if game["visible"][r][c] == True:
-                    # if the game visible is True, and the board is '.',
-                    # add 1 to mines revealed
-                    num_revealed_mines += 1
-            elif game["visible"][r][c] == False:
+
+            if not game["visible"][r][c] and not game["board"][r][c] == ".":
                 num_revealed_squares += 1
-    bad_squares = num_revealed_mines + num_revealed_squares
-    if bad_squares > 0:
-        game["state"] = "ongoing"
-        return revealed
-    else:
-        game["state"] = "victory"
-        return revealed
+
+    game["state"] = "victory" if num_revealed_squares == 0 else "ongoing"
+    return revealed
 
 
 def render_2d_locations(game, all_visible=False):
@@ -317,7 +242,18 @@ def render_2d_locations(game, all_visible=False):
     >>> render_2d_locations(game, True)
     [['.', '3', '1', ' '], ['.', '.', '1', ' ']]
     """
-    raise NotImplementedError
+    #raise NotImplementedError
+    board = game['board']
+    visible = game['visible']
+    rows,columns = game['dimensions']
+    if all_visible:
+        out = [[str(board[r][c]) if board[r][c]!=0 else ' ' for c in range(columns)] for r in range(rows)]
+
+
+    else:
+        out = [['_' if not  visible[r][c] else str(board[r][c]) if board[r][c] else ' ' for c in range(columns)] for r in range(rows)]
+    return out
+
 
 
 def render_2d_board(game, all_visible=False):
@@ -344,7 +280,17 @@ def render_2d_board(game, all_visible=False):
     ...                            [False, False, True, False]]})
     '.31_\\n__1_'
     """
-    raise NotImplementedError
+    board = game['board']
+    visible = game['visible']
+    rows, columns = game['dimensions']
+    if all_visible:
+        out = [[str(board[r][c]) if board[r][c] != 0 else ' ' for c in range(columns)] for r in range(rows)]
+        return '\n'.join(''.join(out[r][c]  for c in range(columns)) for r in range(rows))
+
+    else:
+        out = [['_' if not visible[r][c] else str(board[r][c]) if board[r][c] else ' ' for c in range(columns)] for r in
+               range(rows)]
+        return '\n'.join(''.join(out[r][c]  for c in range(columns)) for r in range(rows))
 
 
 # N-D IMPLEMENTATION

@@ -25,17 +25,17 @@ gen = gen_range(0, 1_000_000_000, step=1)
 for val in gen:
     if val > 100:
         break
-    print(val ** 2, end=' ')
+    print(val**2, end=" ")
 s2 = time.perf_counter()
-print('\n', s2 - s1)  # 0.0001 seconds
+print("\n", s2 - s1)  # 0.0001 seconds
 
 a = list_range(0, 1_000_000_000, step=1)
 for val in a:
     if val > 100:
         break
-    print(val ** 2, end=' ')
+    print(val**2, end=" ")
 s3 = time.perf_counter()
-print('\n', s3 - s2)  # 25 Seconds
+print("\n", s3 - s2)  # 25 Seconds
 
 
 def gen1():

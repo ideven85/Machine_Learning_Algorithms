@@ -5,6 +5,7 @@ LISP Interpreter Part 2
 
 #!/usr/bin/env python3
 import sys
+
 sys.setrecursionlimit(20_000)
 
 # KEEP THE ABOVE LINES INTACT, BUT REPLACE THIS COMMENT WITH YOUR lab.py FROM
@@ -17,6 +18,10 @@ if __name__ == "__main__":
     # run (not when this module is imported)
 
     import os
+
     sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
     import schemerepl
-    schemerepl.SchemeREPL(sys.modules[__name__], use_frames=True, verbose=False, global_frame=None).cmdloop()
+
+    schemerepl.SchemeREPL(
+        sys.modules[__name__], use_frames=True, verbose=False, global_frame=None
+    ).cmdloop()
