@@ -44,7 +44,7 @@ def make_new_game(level_description):
     """
 
     rows[0] = len(level_description)
-    columns = []
+    
     print(rows, columns)
     i = 0
     j = 0
@@ -111,6 +111,7 @@ def is_valid_move(game, row, col, direction):
     game["player"] = []
     game["player"].append((position[0], position[1]))
     make_new_game(game)
+
     return True
 
 
@@ -194,7 +195,7 @@ def dump_game(game):
     print out the current state of your game for testing and debugging on your
     own.
     """
-
+    global rows,columns
     rows1 = len(game)
     columns1 = len(game)
     print(rows1, columns1)
@@ -203,7 +204,7 @@ def dump_game(game):
     if not game_state:
         game_state = make_new_game(game)
     # print(rows, columns)
-    game = [[[] for _ in range(rows1 + 2)] for _ in range(columns1 + 1)]
+    game = [[[] for _ in range(rows[0] + 2)] for _ in range(columns[1] + 1)]
 
     # print(game)
     walls = game_state["wall"]

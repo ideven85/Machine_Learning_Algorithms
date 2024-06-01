@@ -88,6 +88,7 @@ funcs = {
 
 
 def application(environ, start_response):
+    importlib.reload(lab)
     path = (environ.get("PATH_INFO", "") or "").lstrip("/")
     if path in funcs:
         try:

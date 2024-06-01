@@ -5,7 +5,7 @@
 # no imports allowed!
 
 
-def pascal(n):
+def pascal1(n):
     """
     Use recursion to create the first n rows of Pascal's Triangle.
 
@@ -16,6 +16,7 @@ def pascal(n):
         A list of length n, where the element at index i is a list of ints
         representing the ith row of Pascal's triangle.
 
+
     >>> pascal(1)
     [[1]]
     >>> pascal(2)
@@ -23,9 +24,60 @@ def pascal(n):
     >>> pascal(3)
     [[1], [1, 1], [1, 2, 1]]
     >>> pascal(4)
-    # TODO: fill in expected result
+    [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]
+    >>> pascal(5)
+    [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
     """
-    raise NotImplementedError
+
+    out = [[1]]
+
+    if n == 1:
+        return out
+    for i in range(n - 1):
+        temp = [1]
+        for j in range(i):
+            temp.append(out[i][j] + out[i][j + 1]) #Mathematical Combinatorial Formula.. simple
+        temp.append(1)
+        out.append(temp)
+
+    return out
+
+
+def pascal(n):
+    """
+       Use recursion to create the first n rows of Pascal's Triangle.
+
+       Parameters:
+           * n (int) : a positive integer, representing the number of rows in triangle.
+
+       Returns:
+           A list of length n, where the element at index i is a list of ints
+           representing the ith row of Pascal's triangle.
+
+
+       >>> pascal(1)
+       [[1]]
+       >>> pascal(2)
+       [[1], [1, 1]]
+       >>> pascal(3)
+       [[1], [1, 1], [1, 2, 1]]
+       >>> pascal(4)
+       [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]
+       >>> pascal(5)
+       [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
+       """
+    out = []
+    for i in range(1,n+1):
+        out.append(grow(i))
+    return out
+
+def grow(m):
+    temp = [1]
+    for i in range(1,m):
+        temp.append((temp[i-1]*(m-i)//i))
+
+    return temp
+
 
 
 def fill_n_cube(n):

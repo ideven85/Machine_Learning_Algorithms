@@ -2,10 +2,10 @@
 6.101 Lab 7:
 Six Double-Oh Mines
 """
-
+import pickle
 #!/usr/bin/env python3
 
-import typing
+from typing import List
 import doctest
 
 # NO ADDITIONAL IMPORTS ALLOWED!
@@ -13,14 +13,16 @@ import doctest
 At least 10 hours per lab
 """
 
+# For 2d Mine Sweeper 8 neighbours
 directions = ((-1, 0), (-1, 1), (-1, -1), (0, 1), (0, -1), (1, 0), (1, -1), (1, 1))
 
+# For n dimensional MineSweeper => 3^n-1 neighbours
 
 def dump(game):
     """
     Prints a human-readable version of a game (provided as a dictionary)
     """
-    keys = ("board", "dimensions", "state", "visible")
+    keys = ('board', 'dimensions', 'state', "visible")
     # ^ Uses only default game keys. If you modify this you will need
     # to update the docstrings in other functions!
     for key in keys:
@@ -84,8 +86,9 @@ def new_game_2d(nrows, ncolumns, mines):
     return {
         "dimensions": (nrows, ncolumns),
         "board": board,
-        "visible": visible,
         "state": "ongoing",
+        "visible": visible
+
     }
 
 
@@ -164,8 +167,6 @@ def dig_2d(game, row, col):
         game["state"] = "defeat"
         return 1
 
-    num_revealed_mines = 0
-    num_revealed_squares = 0
     rows, columns = game["dimensions"]
     num_revealed_squares = [
         ((row + dx), (col + dy))
@@ -174,7 +175,6 @@ def dig_2d(game, row, col):
         and 0 <= col + dy < columns
         and not game["visible"][row + dx][col + dy]
     ]
-
 
     if num_revealed_squares == 0:
         game["state"] = "victory"
@@ -196,7 +196,7 @@ def dig_2d(game, row, col):
             and not game["visible"][row + dx][col + dy]
             and game["board"][row + dx][col + dy] != "."
         )
-        for r,c in neighbours:
+        for r, c in neighbours:
             revealed += dig_2d(game, r, c)
 
     num_revealed_squares = 0
@@ -242,18 +242,25 @@ def render_2d_locations(game, all_visible=False):
     >>> render_2d_locations(game, True)
     [['.', '3', '1', ' '], ['.', '.', '1', ' ']]
     """
-    #raise NotImplementedError
-    board = game['board']
-    visible = game['visible']
-    rows,columns = game['dimensions']
+    # raise NotImplementedError
+    board = game["board"]
+    visible = game["visible"]
+    rows, columns = game["dimensions"]
     if all_visible:
-        out = [[str(board[r][c]) if board[r][c]!=0 else ' ' for c in range(columns)] for r in range(rows)]
-
+        out = [
+            [str(board[r][c]) if board[r][c] != 0 else " " for c in range(columns)]
+            for r in range(rows)
+        ]
 
     else:
-        out = [['_' if not  visible[r][c] else str(board[r][c]) if board[r][c] else ' ' for c in range(columns)] for r in range(rows)]
+        out = [
+            [
+                "_" if not visible[r][c] else str(board[r][c]) if board[r][c] else " "
+                for c in range(columns)
+            ]
+            for r in range(rows)
+        ]
     return out
-
 
 
 def render_2d_board(game, all_visible=False):
@@ -280,23 +287,61 @@ def render_2d_board(game, all_visible=False):
     ...                            [False, False, True, False]]})
     '.31_\\n__1_'
     """
-    board = game['board']
-    visible = game['visible']
-    rows, columns = game['dimensions']
+    board = game["board"]
+    visible = game["visible"]
+    rows, columns = game["dimensions"]
     if all_visible:
-        out = [[str(board[r][c]) if board[r][c] != 0 else ' ' for c in range(columns)] for r in range(rows)]
-        return '\n'.join(''.join(out[r][c]  for c in range(columns)) for r in range(rows))
+        out = [
+            [str(board[r][c]) if board[r][c] != 0 else " " for c in range(columns)]
+            for r in range(rows)
+        ]
+        return "\n".join(
+            "".join(out[r][c] for c in range(columns)) for r in range(rows)
+        )
 
     else:
-        out = [['_' if not visible[r][c] else str(board[r][c]) if board[r][c] else ' ' for c in range(columns)] for r in
-               range(rows)]
-        return '\n'.join(''.join(out[r][c]  for c in range(columns)) for r in range(rows))
+        out = [
+            [
+                "_" if not visible[r][c] else str(board[r][c]) if board[r][c] else " "
+                for c in range(columns)
+            ]
+            for r in range(rows)
+        ]
+        return "\n".join(
+            "".join(out[r][c] for c in range(columns)) for r in range(rows)
+        )
 
 
 # N-D IMPLEMENTATION
 
+def vector(dimensions:int)->List[int]:
+  """
+  Creates a vector in len(dimensions)
+  Args:
+      dimensions:
+
+  Returns:
+
+  """
+  pass
+
+def all_coords(dimensions):
+    """
+    A function that generates all possible coordinates in a given board.
+    """
+    if len(dimensions) == 1:
+        return [(x,) for x in range(dimensions[0])]
+    first = all_coords(dimensions[:1])
+    rest = all_coords(dimensions[1:])
+    result = []
+    for start in first:
+        for end in rest:
+             result.append(start + end)
+    return result
 
 def new_game_nd(dimensions, mines):
+
+
     """
     Start a new game.
 
@@ -304,9 +349,9 @@ def new_game_nd(dimensions, mines):
     'visible' fields adequately initialized.
 
     Args:
-       dimensions (tuple): Dimensions of the board
+       dimensions (tuple): Dimensions of the board a 3d (cube like) hypermine would like rows, columns and number of fields in each row, column i think what would a 4d look like?
        mines (list): mine locations as a list of tuples, each an
-                     N-dimensional coordinate
+                     N-dimensional coordinate Consider a vector position as a mine
 
     Returns:
        A game state dictionary
@@ -321,8 +366,48 @@ def new_game_nd(dimensions, mines):
     visible:
         [[False, False], [False, False], [False, False], [False, False]]
         [[False, False], [False, False], [False, False], [False, False]]
+    >>> game = new_game_nd((3,3,2),[(1,2,0)]) # 3 rows 3 columns 2 cells in each cell
+    >>> dump(game)
+    board:
+        [[0, 0], [1, 1], [1, 1]]
+        [[0, 0], [1, 1], ['.', 1]]
+        [[0, 0], [1, 1], [1, 1]]
+    dimensions: (3, 3, 2)
+    state: ongoing
+    visible:
+        [[False, False], [False, False], [False, False]]
+        [[False, False], [False, False], [False, False]]
+        [[False, False], [False, False], [False, False]]
     """
-    raise NotImplementedError
+
+
+
+    n = len(dimensions)
+    board=[]
+    count=0
+    for x in dimensions:
+        board.append([0]*x)
+    for x in mines:
+        pass
+
+    # board=[[0]*n for _ in range(n)]
+    # visible =[[False]*n for _ in range(n)]
+    # # If we can some how specify board dimensions with row and column we can make our game
+    # #todo
+    # for i in range(n):
+    #     for j in range(n):
+    #         if mines[i][j]:
+    #             board[i][j]="."
+    return {
+        "board": board,
+        "dimensions": dimensions,
+        "state": "ongoing"
+        #"visible": visible
+    }
+
+
+
+
 
 
 def dig_nd(game, coordinates):
@@ -425,8 +510,8 @@ def render_nd(game, all_visible=False):
 
 if __name__ == "__main__":
     # Test with doctests. Helpful to debug individual lab.py functions.
-    _doctest_flags = doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
-    doctest.testmod(optionflags=_doctest_flags)  # runs ALL doctests
+    # _doctest_flags = doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
+    # doctest.testmod(optionflags=_doctest_flags)  # runs ALL doctests
 
     # Alternatively, can run the doctests JUST for specified function/methods,
     # e.g., for render_2d_locations or any other function you might want.  To
@@ -441,3 +526,7 @@ if __name__ == "__main__":
     #    optionflags=_doctest_flags,
     #    verbose=False
     # )
+    with open('test_inputs/testnd_integration3.pickle','rb') as f:
+        small2d = pickle.load(f)
+    print(small2d['dimensions'])
+    print(len(all_coords(small2d['dimensions'])))
