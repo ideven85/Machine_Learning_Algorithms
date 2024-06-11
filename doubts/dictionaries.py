@@ -1,3 +1,5 @@
+import random
+
 table = dict()
 
 
@@ -16,3 +18,5 @@ for val in vals:
 
 
 print(table)
+print(list(table.keys())[0])
+random.seed(42)

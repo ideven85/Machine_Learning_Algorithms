@@ -45,5 +45,5 @@ function memoisedFib(fn) {
 
 }
 
-const f1 = memoisedFib((n) => fib1(n));
-console.log(f1(40));
+const f1 = memoisedFib((n) => fib(n));
+console.log(f1(10));

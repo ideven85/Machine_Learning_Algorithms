@@ -29,7 +29,5 @@ def myAtoi(s: str) -> int:
 
 #
 print("\n", number_to_string(829, 11))
-# print('\n',number_to_string(15,10))
 
 print(myAtoi("829"))
-# print(int("829"))

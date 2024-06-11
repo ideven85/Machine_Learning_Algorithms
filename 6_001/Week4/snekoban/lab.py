@@ -44,7 +44,7 @@ def make_new_game(level_description):
     """
 
     rows[0] = len(level_description)
-    
+
     print(rows, columns)
     i = 0
     j = 0
@@ -195,7 +195,7 @@ def dump_game(game):
     print out the current state of your game for testing and debugging on your
     own.
     """
-    global rows,columns
+    global rows, columns
     rows1 = len(game)
     columns1 = len(game)
     print(rows1, columns1)

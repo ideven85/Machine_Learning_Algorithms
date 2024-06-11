@@ -13,7 +13,7 @@ Card = namedtuple("Card", ["rank", "suit"])
 
 
 class FrenchDeck:
-    ranks = list(str(range(2, 11))) + ["J", "Q", "K", "A"]
+    ranks = [str(x) for x in range(2,11)] + ["Jack", "Queen", "King", "Ace"]
     suits = ["hearts", "spades", "clubs", "diamonds"]
 
     def __init__(self):
@@ -32,6 +32,8 @@ if __name__ == "__main__":
     >>> beer_card
     Card(rank='7', suit='diamonds')
     """
-    beer_card = Card("7", "diamonds")  # How??
+    beer_card = Card("7", "diamonds")
     print(beer_card)
+    deck = FrenchDeck()
+    print(deck[-10:])
     # doctest.testmod(verbose=True)

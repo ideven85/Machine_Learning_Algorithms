@@ -59,16 +59,16 @@ def sum_nested(original_x):
     sum_so_far = 0
     agenda = [original_x]
 
-    while agenda:#O(n)
+    while agenda:  # O(n)
         x = agenda.pop(-1)
         if not x:
             continue
         elif isinstance(x[0], list):
             agenda.append(x[0])
-            agenda.append(x[1:])#O(n)
+            agenda.append(x[1:])  # O(n)
         else:
             sum_so_far += x[0]
-            agenda.append(x[1:]) #O(n)
+            agenda.append(x[1:])  # O(n)
     return sum_so_far
 
 

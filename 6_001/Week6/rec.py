@@ -23,7 +23,7 @@ sys.setrecursionlimit(25)
 # otherwise length two tuple of (element, linked_list)
 
 # Python list vs. linked-list
-lst1 = [1, 2, 3,4]
+lst1 = [1, 2, 3, 4]
 ll1 = (1, (2, (3, (4, None))))
 
 lst2 = [3]
@@ -65,7 +65,6 @@ def rest(ll):
     # if isinstance(ll,int):
     #     return ll
 
-
     return ll[1]
 
 
@@ -83,11 +82,9 @@ def ll_len(ll):
     if ll is None:
         return 0
     if ll[1]:
-       return 1+ll_len(ll[1])
+        return 1 + ll_len(ll[1])
     else:
         return 0
-
-
 
 
 def ll_get(ll, i):
@@ -104,11 +101,9 @@ def ll_get(ll, i):
     if ll is None:
         return None
 
-
-    if i==0:
+    if i == 0:
         return ll[i]
-    return ll_get(ll[1],i-1)
-
+    return ll_get(ll[1], i - 1)
 
 
 @debug_recursion.show_recursive_structure
@@ -123,15 +118,12 @@ def make_ll(*elements):
     """
     if not elements:
         return None
-    first=elements[0]
-    rest=elements[1:]
+    first = elements[0]
+    rest = elements[1:]
 
     if not rest:
-        return first,None
-    return first,make_ll(*rest)
-
-
-
+        return first, None
+    return first, make_ll(*rest)
 
 
 def ll_elements(ll):
@@ -147,10 +139,9 @@ def ll_elements(ll):
     """
     if not ll:
         return
-    first=ll[0]
-    rest=ll[1:]
-    #print(first,*rest)
-
+    first = ll[0]
+    rest = ll[1:]
+    # print(first,*rest)
 
     yield first
     yield from ll_elements(*rest)
@@ -167,7 +158,7 @@ def ll_plus(ll1, ll2):
     >>> ll_plus(make_ll(2, 3), make_ll(5, 4))
     (2, (3, (5, (4, None))))
     """
-    return make_ll(ll1,ll2)
+    return make_ll(ll1, ll2)
 
 
 def ll_reverse(ll):
@@ -178,12 +169,10 @@ def ll_reverse(ll):
     (3, (2, (1, None)))
     """
     # Cheap Trick
-    l=list(ll_elements(ll))
-    l=l[::-1]
+    l = list(ll_elements(ll))
+    l = l[::-1]
 
     return make_ll(*l)
-
-
 
 
 if __name__ == "__main__":
@@ -205,6 +194,5 @@ if __name__ == "__main__":
     # )
     ll = (1, (2, None))
 
-    x=make_ll(1,2,3)
+    x = make_ll(1, 2, 3)
     print(x)
-

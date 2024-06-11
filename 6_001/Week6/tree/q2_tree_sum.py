@@ -9,6 +9,14 @@ without quotes.
 # from debug_recursion import show_recursive_structure
 
 
+def tree_sum_recursive(tree):
+    if not tree:
+        return 0
+    if not tree["children"]:
+        return tree["value"]
+    return tree["value"] + sum(tree_sum_recursive(x) for x in tree["children"])
+
+
 def tree_sum(tree):
     """
     Given tree as a dict { 'value': number,
@@ -28,12 +36,6 @@ def tree_sum(tree):
         if not x:
             sum_so_far += 0
 
-        elif isinstance(x[0], dict):
-            sum_so_far += x[0]["value"]
-            agenda.append(x[0]["children"])
-
-        else:
-            sum_so_far += x["value"]
     return sum_so_far
 
 
@@ -64,14 +66,11 @@ t3 = {
 }
 
 
-def test_tree_sum():
-    assert tree_sum(t1) == 3
-    assert tree_sum(t2) == 21
-    assert tree_sum(t3) == 178
-    print("correct!")
-
-
 if __name__ == "__main__":
     # uncomment the @show_recursive_structure line
     # above the function to see some detailed function output
-    print(tree_sum(t2))
+    print(tree_sum_recursive(t1))
+    print(tree_sum_recursive(t2))
+    print(tree_sum_recursive(t3))
+
+    print("\n\n", tree_sum(t1), "\n", tree_sum(t2), "\n", tree_sum(t3))

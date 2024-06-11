@@ -38,6 +38,8 @@ if response.status_code == 200:
     soup = BeautifulSoup(response.text, "html.parser")
     print(soup.prettify())
     links = soup.find_all("a", href=True)
-    with open("../revision/6_001/revision/links.txt", "w") as fp:
+    with open("../links1.txt", "w") as fp:
         for link in links:
-            fp.write(link["href"] + "\n")
+            fp.write(link['href']+ "\n")
+
+

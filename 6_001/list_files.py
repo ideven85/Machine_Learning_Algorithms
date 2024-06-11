@@ -30,7 +30,7 @@ def disk_usage2(path):
     return total
 
 
-folder = os.path.expanduser("~/Developer/Machine_Learning_Algorithms")
+folder = os.path.expanduser("~/Developer/Java_Projects/")
 
 
 def ends_with_suffix(suffix):
@@ -55,17 +55,21 @@ def list_files(path):
                 yield children
 
 
-words = list_files(folder)
-for val in words:
-    print(val)
+# words = list_files(folder)
+# for val in words:
+#     print(val)
 
 # print(disk_usage2(folder))
-for val in list_files(folder):
-    print(val)
+# for val in list_files(folder):
+#     print(val)
 
-print(disk_usage2(folder))
+# print(disk_usage2(folder))
 
 
 def ls(params):
     path = os.path.join(folder, params.get("path"))
-    return [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
+    return [f for f in os.listdir(path) if os.path.isdir(os.path.join(path, f))]
+
+
+params = {"path": folder}
+print(ls(params))

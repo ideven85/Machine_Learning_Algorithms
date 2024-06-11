@@ -1,26 +1,30 @@
 import random
 import numpy as np
 
+
 class CoordND1:
     def __init__(self, dimensions, coordinates):
         self.dimensions = dimensions
         self.coordinates = coordinates
 
+
 # def index_in_nD(n_d, n, coordinates):
 #     return np.sum(np.prod(np.indices(n)[np.indices(n)[:, :, np.newaxis]
 # == coordinates], axis=-1), axis=-1)
+
 
 class Cell:
     def __init__(self, value=0):
         self.value = value
         self.is_mined = False
         self.adjacent_mines = 0
+
+
 class Minefield:
     def __init__(self, width, height, mines):
         self.width = width
         self.height = height
-        self.cells = [[Cell() for _ in range(height)] for _ in
-range(width)]
+        self.cells = [[Cell() for _ in range(height)] for _ in range(width)]
         self.mines = mines
         self.place_mines()
         self.reveal_adjacent_mined_cells()
@@ -35,17 +39,20 @@ range(width)]
             for j in range(self.height):
                 if not self.cells[i][j].is_mined:
                     self.reveal_adjacent_mines(i, j)
+
     def is_valid_cell(self, x, y):
         return x >= 0 and x < self.width and y >= 0 and y < self.height
 
     def reveal_adjacent_mines(self, x, y):
         for dx in (-1, 0, 1):
             for dy in (-1, 0, 1):
-                if self.is_valid_cell(x+dx, y+dy) and self.cells[x+dx][y+dy].value > 0:
-                    self.cells[x+dx][y+dy].adjacent_mines += 1
-                    if self.cells[x+dx][y+dy].value == self.mines:
-                            self.cells[x][y].is_revealed = True
-
+                if (
+                    self.is_valid_cell(x + dx, y + dy)
+                    and self.cells[x + dx][y + dy].value > 0
+                ):
+                    self.cells[x + dx][y + dy].adjacent_mines += 1
+                    if self.cells[x + dx][y + dy].value == self.mines:
+                        self.cells[x][y].is_revealed = True
 
 
 class MinefieldND1:
@@ -89,9 +96,20 @@ class MinefieldND1:
         if np.all(cell == 0):
             for d in range(-1, 2):
                 for dimension in reversed(self.dimensions):
-                    c = coordinates[np.where([i == dimension for i in np.arange(len(coordinates))])][0] + d
-                    if (d == 0 or abs(c) >= len(dimension)) and self.is_valid_coordinate(*(coordinates + [c])):
-                        adjacently_mined_cell = index_in_nD(*([coordinates] + [(c,)]), *self.dimensions)
+                    c = (
+                        coordinates[
+                            np.where(
+                                [i == dimension for i in np.arange(len(coordinates))]
+                            )
+                        ][0]
+                        + d
+                    )
+                    if (
+                        d == 0 or abs(c) >= len(dimension)
+                    ) and self.is_valid_coordinate(*(coordinates + [c])):
+                        adjacently_mined_cell = index_in_nD(
+                            *([coordinates] + [(c,)]), *self.dimensions
+                        )
                         if np.any(self.cells[adjacently_mined_cell]):
                             self.reveal_cell(*coordinates)
                             break
@@ -108,23 +126,34 @@ class MinefieldND1:
         return True
 
     def revealable_cells(self):
-        valid_coords = np.indices(np.prod(self.dimensions)).reshape(-1,len(self.dimensions))
+        valid_coords = np.indices(np.prod(self.dimensions)).reshape(
+            -1, len(self.dimensions)
+        )
         result = []
         for coord in valid_coords:
             if self.is_valid_coordinate(*coord):
                 result.append(coord + (index_in_nD(*coord),))
         return result
+
+
 import random
+
 
 class CoordND:
     def __init__(self, dimensions, coordinates):
         self.dimensions = dimensions
         self.coordinates = coordinates
 
+
 def index_in_nD(n_d, n, coordinates):
     dimensions = [*list(n_d)]  # Unpacking list for easier access in this local scope
-    return sum([int(np.floor(i / d)) * np.prod(dimensions[:i+1]) + j for i, (d, j) in enumerate(zip(dimensions,
-dimensions[-len(coordinates):]))])
+    return sum(
+        [
+            int(np.floor(i / d)) * np.prod(dimensions[: i + 1]) + j
+            for i, (d, j) in enumerate(zip(dimensions, dimensions[-len(coordinates) :]))
+        ]
+    )
+
 
 class MinefieldND:
     def __init__(self, dimensions):
@@ -158,15 +187,27 @@ class MinefieldND:
                 for dimension, dimension_index in enumerate(dimensions):
                     coord = coordinates[dimension_index] + d
                     if 0 <= coord < dimension:
-                        x, y = np.divmod(index, [np.prod(dimensions[:dimension]), np.prod(dimensions[dimension:])])
-                        adjacent_index = index_in_nD(*dimensions, *np.array([x, y, coord]))
+                        x, y = np.divmod(
+                            index,
+                            [
+                                np.prod(dimensions[:dimension]),
+                                np.prod(dimensions[dimension:]),
+                            ],
+                        )
+                        adjacent_index = index_in_nD(
+                            *dimensions, *np.array([x, y, coord])
+                        )
                         if self.cells[adjacent_index][dimension_index] != 0:
                             self.cells[index] = [1] + [int(c) for c in cell[1:]]
-                            self.reveal_adjacent_mines(*np.split(np.array(coordinates), len(dimensions)))
+                            self.reveal_adjacent_mines(
+                                *np.split(np.array(coordinates), len(dimensions))
+                            )
                             break
 
     def revealable_cells(self):
-        valid_coords = np.indices(np.prod(self.dimensions)).reshape(-1, len(self.dimensions))
+        valid_coords = np.indices(np.prod(self.dimensions)).reshape(
+            -1, len(self.dimensions)
+        )
         result = []
         for coord in valid_coords:
             if self.is_valid_coordinate(*coord):
@@ -178,9 +219,15 @@ class MinefieldND:
             if coord < 0 or coord >= self.dimensions[d]:
                 return False
         return True
+
     def is_game_won(self):
-        return all([all([c != 0 for c in cell]) for cell in self.cells]) and sum([1 for cell in self.cells if all([c == -1 for c
-in cell])]) + sum([1 for cell in self.cells if all([c == 1 for c in cell])]) == self.mine_count
+        return (
+            all([all([c != 0 for c in cell]) for cell in self.cells])
+            and sum([1 for cell in self.cells if all([c == -1 for c in cell])])
+            + sum([1 for cell in self.cells if all([c == 1 for c in cell])])
+            == self.mine_count
+        )
+
 
 dimensions = [5, 3]
 minefield = MinefieldND(dimensions)

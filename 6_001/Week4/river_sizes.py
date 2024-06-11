@@ -3,16 +3,16 @@ def riverSizes(matrix):
     directions = [(1, 0), (-1, 0), (0, -1), (0, 1)]
 
     def dfsUtil(row, column):
-        potential_neighbours = [
+        potential_neighbours = (
             (row + dx, column + dy)
             for dx, dy in directions
             if 0 <= (row + dx) < rows
             and 0 <= (column + dy) < curr_column
             and (row + dx, column + dy) not in visited
             and matrix[row + dx][column + dy] == 1
-        ]
-        if not potential_neighbours:
-            return 1
+        )
+        # if not potential_neighbours:
+        #     return 1
         for r, c in potential_neighbours:
             visited.add((r, c))
             return 1 + dfsUtil(r, c)
@@ -40,6 +40,6 @@ m = [
     [1, 0, 1, 0, 0],
     [0, 0, 1, 0, 1],
     [1, 0, 1, 0, 1],
-    [1, 0, 0, 1, 0],
+    [1, 0, 1, 1, 0],
 ]
 print(riverSizes(m))

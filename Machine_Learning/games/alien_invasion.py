@@ -25,6 +25,7 @@ Controls
 
 import os
 import random
+import sys
 from typing import List
 
 # import basic pygame modules
@@ -36,7 +37,7 @@ if not pg.image.get_extended():
 
 
 # game constants
-MAX_SHOTS = 2  # most player bullets onscreen
+MAX_SHOTS = 4  # most player bullets onscreen
 ALIEN_ODDS = 22  # chances a new alien appears
 BOMB_ODDS = 60  # chances a new bomb will drop
 ALIEN_RELOAD = 12  # frames between new aliens
@@ -258,7 +259,7 @@ def main(winstyle=0):
     # decorate the game window
     icon = pg.transform.scale(Alien.images[0], (32, 32))
     pg.display.set_icon(icon)
-    pg.display.set_caption("Pygame Aliens")
+    pg.display.set_caption("Alien Invasion")
     pg.mouse.set_visible(0)
 
     # create the background, tile the bgd image
@@ -393,3 +394,4 @@ def main(winstyle=0):
 if __name__ == "__main__":
     main()
     pg.quit()
+    sys.exit(0)

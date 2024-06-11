@@ -2,7 +2,9 @@
 6.101 Lab 7:
 Six Double-Oh Mines
 """
+
 import pickle
+
 #!/usr/bin/env python3
 
 from typing import List
@@ -18,11 +20,12 @@ directions = ((-1, 0), (-1, 1), (-1, -1), (0, 1), (0, -1), (1, 0), (1, -1), (1, 
 
 # For n dimensional MineSweeper => 3^n-1 neighbours
 
+
 def dump(game):
     """
     Prints a human-readable version of a game (provided as a dictionary)
     """
-    keys = ('board', 'dimensions', 'state', "visible")
+    keys = ("board", "dimensions", "state", "visible")
     # ^ Uses only default game keys. If you modify this you will need
     # to update the docstrings in other functions!
     for key in keys:
@@ -87,8 +90,7 @@ def new_game_2d(nrows, ncolumns, mines):
         "dimensions": (nrows, ncolumns),
         "board": board,
         "state": "ongoing",
-        "visible": visible
-
+        "visible": visible,
     }
 
 
@@ -314,19 +316,22 @@ def render_2d_board(game, all_visible=False):
 
 # N-D IMPLEMENTATION
 
-def vector(dimensions:int)->List[int]:
-  """
-  Creates a vector in len(dimensions)
-  Args:
-      dimensions:
 
-  Returns:
+def vector(dimensions: int) -> List[int]:
+    """
+    Creates a vector in len(dimensions)
+    Args:
+        dimensions:
 
-  """
-  pass
+    Returns:
+
+    """
+    pass
+
 
 def all_coords(dimensions):
     """
+    Modify the code below to make this function into an efficient generator.
     A function that generates all possible coordinates in a given board.
     """
     if len(dimensions) == 1:
@@ -336,12 +341,11 @@ def all_coords(dimensions):
     result = []
     for start in first:
         for end in rest:
-             result.append(start + end)
+            result.append(start + end)
     return result
 
+
 def new_game_nd(dimensions, mines):
-
-
     """
     Start a new game.
 
@@ -380,34 +384,15 @@ def new_game_nd(dimensions, mines):
         [[False, False], [False, False], [False, False]]
     """
 
-
-
     n = len(dimensions)
-    board=[]
-    count=0
-    for x in dimensions:
-        board.append([0]*x)
-    for x in mines:
-        pass
+    board = all_coords(dimensions)
 
-    # board=[[0]*n for _ in range(n)]
-    # visible =[[False]*n for _ in range(n)]
-    # # If we can some how specify board dimensions with row and column we can make our game
-    # #todo
-    # for i in range(n):
-    #     for j in range(n):
-    #         if mines[i][j]:
-    #             board[i][j]="."
     return {
         "board": board,
         "dimensions": dimensions,
-        "state": "ongoing"
-        #"visible": visible
+        "state": "ongoing",
+        # "visible": visible
     }
-
-
-
-
 
 
 def dig_nd(game, coordinates):
@@ -526,7 +511,10 @@ if __name__ == "__main__":
     #    optionflags=_doctest_flags,
     #    verbose=False
     # )
-    with open('test_inputs/testnd_integration3.pickle','rb') as f:
-        small2d = pickle.load(f)
-    print(small2d['dimensions'])
-    print(len(all_coords(small2d['dimensions'])))
+    with open("test_inputs/testnd_integration3.pickle", "rb") as f:
+        smallnd = pickle.load(f)
+    print(smallnd["dimensions"])
+    # print(len(all_coords(small2d['dimensions'])))
+    dim = (3, 3, 2)
+    print(all_coords((dim)))  # 3^n-1 neighbours
+    print(len(all_coords(dim)))

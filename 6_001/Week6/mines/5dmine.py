@@ -13,6 +13,7 @@ for i in range(N):
             game_board[i][j] = -1
 print(game_board)
 
+
 # Define a function to check if a cell is safe or not
 def is_safe(row, col):
     # Check if the cell is within the bounds of the game board

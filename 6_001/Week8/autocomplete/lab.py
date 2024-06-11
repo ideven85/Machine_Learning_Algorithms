@@ -7,7 +7,7 @@ Autocomplete
 import os
 
 LOCATION = os.path.realpath(os.path.dirname(__file__))
-from text_tokenize import tokenize_sentences
+from .text_tokenize import tokenize_sentences
 
 
 # class TrieNode:

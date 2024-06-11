@@ -92,7 +92,7 @@ if __name__ == "__main__":
     # uncomment the @show_recursive_structure line
     # above the function to see some detailed function output
     # print(tree_list(t1))
-    # print(tree_list(t2))
+    print(tree_list(t2))
     # print(tree_list(t3))
     print(gen_tree_list(t2))
     # print(tree_list(t1))
