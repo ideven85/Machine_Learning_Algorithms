@@ -123,7 +123,7 @@ notebook==7.1.2
 notebook_shim==0.2.4
 numpy==1.26.4
 openai==1.19.0
-opencv-contrib-python==4.9.0.80
+opencv-contrib-python==4.10.0.82
 opt-einsum==3.3.0
 optree==0.11.0
 overrides==7.7.0
@@ -226,3 +226,5 @@ wrapt==1.16.0
 xgboost==2.0.3
 xxhash==3.4.1
 yarl==1.9.4
+
+tryalgo~=1.7.0

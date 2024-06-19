@@ -4,7 +4,7 @@ import ast
 import types
 import pytest
 
-import mixtape
+import mixtape_iterative as mixtape
 
 TEST_DIRECTORY = os.path.dirname(__file__)
 
