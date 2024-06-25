@@ -21,28 +21,29 @@ class RangeMinQuery:
     and query range_min(i,k) = min{ t[i], t[i + 1], ..., t[k - 1]}
     :complexity: all operations in O(log n), for n = len(t)
     """
-    def __init__(self, t, INF=float('inf')):
+
+    def __init__(self, t, INF=float("inf")):
         self.INF = INF
         self.N = 1
-        while self.N < len(t):                     # find size N
+        while self.N < len(t):  # find size N
             self.N *= 2
         self.s = [self.INF] * (2 * self.N)
-        for i in range(len(t)):                    # store values of t
-            self.s[self.N + i] = t[i]              # in the leaf nodes
-        for p in range(self.N - 1, 0, -1):         # fill inner nodes
+        for i in range(len(t)):  # store values of t
+            self.s[self.N + i] = t[i]  # in the leaf nodes
+        for p in range(self.N - 1, 0, -1):  # fill inner nodes
             self.s[p] = min(self.s[2 * p], self.s[2 * p + 1])
 
     def __getitem__(self, i):
         return self.s[self.N + i]
 
     def __setitem__(self, i, v):
-        """ sets t[i] to v.
-            :complexity: O(log len(t))
+        """sets t[i] to v.
+        :complexity: O(log len(t))
         """
         p = self.N + i
         self.s[p] = v
-        p //= 2                                    # climb up the tree
-        while p > 0:                               # update node
+        p //= 2  # climb up the tree
+        while p > 0:  # update node
             self.s[p] = min(self.s[2 * p], self.s[2 * p + 1])
             p //= 2
 
@@ -54,18 +55,18 @@ class RangeMinQuery:
 
     def _range_min(self, p, start, span, i, k):
         """returns the minimum in t in the indexes [i, k) intersected
-           with [start, start + span).
-           p is the node associated to the later interval.
+        with [start, start + span).
+        p is the node associated to the later interval.
         """
-        if start + span <= i or k <= start:        # disjoint intervals
+        if start + span <= i or k <= start:  # disjoint intervals
             return self.INF
-        if i <= start and start + span <= k:       # contained intervals
+        if i <= start and start + span <= k:  # contained intervals
             return self.s[p]
-        left = self._range_min(2 * p, start, span // 2,
-                               i, k)
-        right = self._range_min(2 * p + 1, start + span // 2, span // 2,
-                                i, k)
+        left = self._range_min(2 * p, start, span // 2, i, k)
+        right = self._range_min(2 * p + 1, start + span // 2, span // 2, i, k)
         return min(left, right)
+
+
 # snip}
 
 
@@ -93,6 +94,7 @@ class LazySegmentTree:
     values to the descents in the subtrees, and updating maxval,minval and
     sumval for that node.
     """
+
     def __init__(self, tab):
         """stores an integer table tab.
         will be padded to get a table with a size of a power of 2.
@@ -102,16 +104,16 @@ class LazySegmentTree:
         self.N = 1
         while self.N < len(tab):
             self.N *= 2
-        self.maxval = [float('-inf')] * 2 * self.N  # init with neutral values
-        self.minval = [float('+inf')] * 2 * self.N
+        self.maxval = [float("-inf")] * 2 * self.N  # init with neutral values
+        self.minval = [float("+inf")] * 2 * self.N
         self.sumval = [0] * 2 * self.N
         self.lazyset = [None] * 2 * self.N
         self.lazyadd = [0] * 2 * self.N
-        for i, tabi in enumerate(tab):            # initialize with given table
+        for i, tabi in enumerate(tab):  # initialize with given table
             j = self.N + i
             self.maxval[j] = self.minval[j] = self.sumval[j] = tabi
         for node in range(self.N - 1, 0, -1):
-            self._maintain(node)                    # maintain invariant
+            self._maintain(node)  # maintain invariant
 
     def _maintain(self, node):
         """maintains the invariant for the given node
@@ -141,18 +143,18 @@ class LazySegmentTree:
             self.maxval[node] = val
             self.sumval[node] = val * (right - left)
             self.lazyset[node] = None
-            if left < right - 1:            # not a leaf
+            if left < right - 1:  # not a leaf
                 self.lazyset[2 * node] = val  # propagate to direct childs
                 self.lazyadd[2 * node] = 0
                 self.lazyset[2 * node + 1] = val
                 self.lazyadd[2 * node + 1] = 0
-        if self.lazyadd[node] != 0:        # then do the pending add
+        if self.lazyadd[node] != 0:  # then do the pending add
             val = self.lazyadd[node]
             self.minval[node] += val
             self.maxval[node] += val
             self.sumval[node] += val * (right - left)
             self.lazyadd[node] = 0
-            if left < right - 1:            # not at a leaf
+            if left < right - 1:  # not at a leaf
                 self.lazyadd[2 * node] += val  # propagate to direct childs
                 self.lazyadd[2 * node + 1] += val
 
@@ -174,7 +176,7 @@ class LazySegmentTree:
     def _add(self, i, j, val, node, left, right):
         self._clear(node, left, right)
         if j <= left or right <= i:
-            return   # disjoint intervals, nothing to do
+            return  # disjoint intervals, nothing to do
         if i <= left and right <= j:
             self.lazyadd[node] += val
             self._clear(node, left, right)
@@ -187,7 +189,7 @@ class LazySegmentTree:
     def _set(self, i, j, val, node, left, right):
         self._clear(node, left, right)
         if j <= left or right <= i:
-            return   # disjoint intervals, nothing to do
+            return  # disjoint intervals, nothing to do
         if i <= left and right <= j:
             self.lazyset[node] = val
             self.lazyadd[node] = 0
@@ -200,7 +202,7 @@ class LazySegmentTree:
 
     def _max(self, i, j, node, left, right):
         if j <= left or right <= i:
-            return float('-inf')   # neutral value for max
+            return float("-inf")  # neutral value for max
         self._clear(node, left, right)
         if i <= left and right <= j:
             return self.maxval[node]
@@ -212,7 +214,7 @@ class LazySegmentTree:
 
     def _min(self, i, j, node, left, right):
         if j <= left or right <= i:
-            return float('+inf')   # neutral value for min
+            return float("+inf")  # neutral value for min
         self._clear(node, left, right)
         if i <= left and right <= j:
             return self.minval[node]
@@ -224,7 +226,7 @@ class LazySegmentTree:
 
     def _sum(self, i, j, node, left, right):
         if j <= left or right <= i:
-            return 0               # neutral value for sum
+            return 0  # neutral value for sum
         self._clear(node, left, right)
         if i <= left and right <= j:
             return self.sumval[node]
@@ -239,10 +241,15 @@ class LazySegmentTree:
         print("digraph G{", file=f)
         print('0 [label="lazyset/lazyadd/maxval/minval/sumval"]', file=f)
         for node in range(1, 2 * self.N):
-            s = '%i [label="%s/%i/%s/%s/%s"]' % \
-                (node, self.lazyset[node], self.lazyadd[node],
-                    self.maxval[node], self.minval[node], self.sumval[node])
-            print(s.replace('inf', '∞'), file=f)
+            s = '%i [label="%s/%i/%s/%s/%s"]' % (
+                node,
+                self.lazyset[node],
+                self.lazyadd[node],
+                self.maxval[node],
+                self.minval[node],
+                self.sumval[node],
+            )
+            print(s.replace("inf", "∞"), file=f)
         for node in range(1, self.N):
             print("%i -> %i" % (node, 2 * node), file=f)
             print("%i -> %i" % (node, 2 * node + 1), file=f)
@@ -251,26 +258,29 @@ class LazySegmentTree:
 
 
 # pylint: disable=protected-access
-if __name__ == '__main__':
+if __name__ == "__main__":
     # execute with: rlwrap python3 range_minimum_query.py
     import sys
-    tree = LazySegmentTree([0]*8)
+
+    tree = LazySegmentTree([0] * 8)
     print("open tmp.dot with graphviz")
     print("help: ")
     print("      2 7 ?      queries range[2, 7]")
     print("      2 7 + 4    adds 4 to range[2, 7]")
     print("      2 7 = 1    sets range[2, 7] to 1")
     while True:
-        print(">", end='')
+        print(">", end="")
         sys.stdout.flush()
         t = sys.stdin.readline().split()
         i = int(t[0])
         j = int(t[1])
-        if t[2] == '?':
-            print("[%i,%i] max=%s min=%s sum=%s" %
-                  (i, j, tree.max(i, j), tree.min(i, j), tree.sum(i, j)))
-        elif t[2] == '+':
+        if t[2] == "?":
+            print(
+                "[%i,%i] max=%s min=%s sum=%s"
+                % (i, j, tree.max(i, j), tree.min(i, j), tree.sum(i, j))
+            )
+        elif t[2] == "+":
             tree.add(i, j, int(t[3]))
-        elif t[2] == '=':
+        elif t[2] == "=":
             tree.set(i, j, int(t[3]))
         tree._dump()

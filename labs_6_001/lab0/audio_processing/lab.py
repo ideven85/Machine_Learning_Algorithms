@@ -15,24 +15,23 @@ def backwards(sound):
     return {"rate": sound["rate"], "samples": samples}
 
 
-
-
-
 def mix(sound1, sound2, p):
     if sound1["rate"] != sound2["rate"]:
         return None
     first = sound1["samples"][:]
     second = sound2["samples"][:]
-    n,m=len(first),len(second)
-    length = min(len(first),len(second))
+    n, m = len(first), len(second)
+    length = min(len(first), len(second))
 
-    out = [(first[x]*p + second[x]*(1-p)) for x in range(length)]
-    out.extend([first[x]*p if n>m else second[x]*(1-p) for x in range(length,max(m,n)) ])
+    out = [(first[x] * p + second[x] * (1 - p)) for x in range(length)]
+    out.extend(
+        [
+            first[x] * p if n > m else second[x] * (1 - p)
+            for x in range(length, max(m, n))
+        ]
+    )
 
-    return {
-        'rate': sound1['rate'],
-        'samples': out
-    }
+    return {"rate": sound1["rate"], "samples": out}
 
 
 def convolve(sound, kernel):

@@ -29,20 +29,22 @@ def knapsack(p, v, cmax):
     #                               --- induction case
     for i in range(1, n):
         for cap in range(cmax + 1):
-            if cap >= p[i] and opt[i-1][cap - p[i]] + v[i] > opt[i-1][cap]:
-                opt[i][cap] = opt[i-1][cap - p[i]] + v[i]
+            if cap >= p[i] and opt[i - 1][cap - p[i]] + v[i] > opt[i - 1][cap]:
+                opt[i][cap] = opt[i - 1][cap - p[i]] + v[i]
                 sel[i][cap] = True
             else:
-                opt[i][cap] = opt[i-1][cap]
+                opt[i][cap] = opt[i - 1][cap]
                 sel[i][cap] = False
     #                               --- reading solution
     cap = cmax
     solution = []
-    for i in range(n-1, -1, -1):
+    for i in range(n - 1, -1, -1):
         if sel[i][cap]:
             solution.append(i)
             cap -= p[i]
     return (opt[n - 1][cmax], solution)
+
+
 # snip}
 
 

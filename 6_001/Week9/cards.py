@@ -13,7 +13,7 @@ Card = namedtuple("Card", ["rank", "suit"])
 
 
 class FrenchDeck:
-    ranks = [str(x) for x in range(2,11)] + ["Jack", "Queen", "King", "Ace"]
+    ranks = [str(x) for x in range(2, 11)] + ["Jack", "Queen", "King", "Ace"]
     suits = ["hearts", "spades", "clubs", "diamonds"]
 
     def __init__(self):

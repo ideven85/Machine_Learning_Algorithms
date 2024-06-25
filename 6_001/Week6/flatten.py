@@ -43,14 +43,16 @@ def list_flatten(x):
     return out
 
 
-x = [1]
-y = [[[[[[[1, 2, 3]]]]], 4], 5]
-print(sum_nested(x))
-print(list(flatten(x)))
-print(list(flatten(y)))
-# print(flatten(y))
+def gen_flatten(x):
+    if not x:
 
-print(list_flatten(y))
+        return
+    elif isinstance(x[0], list):
+        yield from gen_flatten(x[0])
+        yield from gen_flatten(x[1:])
+    else:
+        yield x[0]
+        yield from gen_flatten(x[1:])
 
 
 def flatten_list(x):
@@ -85,6 +87,8 @@ def flatten_me(x):
         return out
 
 
+x = [1]
+y = [[[[[[[1, 2, 3]]]]], 4], 5]
 s1 = time.time_ns()
 print(flatten_me(y))
 s2 = time.time_ns()
@@ -102,3 +106,12 @@ print()
 print("First", s2 - s1)
 print("Second:", s3 - s2)
 print("Generator:", s4 - s3)
+
+print(sum_nested(x))
+print(list(flatten(x)))
+print(list(flatten(y)))
+# print(flatten(y))
+
+print(list_flatten(y))
+print("New x", list(gen_flatten(x)))
+print("New y", list(gen_flatten(y)))

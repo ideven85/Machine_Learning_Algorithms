@@ -26,24 +26,25 @@ def two_sat(formula):
     :complexity: linear
     """
     # num_variables is the number of variables
-    num_variables = max(abs(clause[p])
-                        for p in (0, 1) for clause in formula)
+    num_variables = max(abs(clause[p]) for p in (0, 1) for clause in formula)
     graph = [[] for node in range(2 * num_variables)]
-    for x_idx, y_idx in formula:                           # x_idx or y_idx
-        graph[_vertex(-x_idx)].append(_vertex(y_idx))     # -x_idx => y_idx
-        graph[_vertex(-y_idx)].append(_vertex(x_idx))     # -y_idx => x_idx
+    for x_idx, y_idx in formula:  # x_idx or y_idx
+        graph[_vertex(-x_idx)].append(_vertex(y_idx))  # -x_idx => y_idx
+        graph[_vertex(-y_idx)].append(_vertex(x_idx))  # -y_idx => x_idx
     sccp = tarjan(graph)
     comp_id = [None] * (2 * num_variables)  # each node's component ID
     assignment = [None] * (2 * num_variables)
     for component in sccp:
-        rep = min(component)             # representative of the component
+        rep = min(component)  # representative of the component
         for vtx in component:
             comp_id[vtx] = rep
             if assignment[vtx] is None:
                 assignment[vtx] = True
-                assignment[vtx ^ 1] = False    # complementary literal
+                assignment[vtx ^ 1] = False  # complementary literal
     for i in range(num_variables):
         if comp_id[2 * i] == comp_id[2 * i + 1]:
-            return None                        # insatisfiable formula
+            return None  # insatisfiable formula
     return assignment[::2]
+
+
 # snip}

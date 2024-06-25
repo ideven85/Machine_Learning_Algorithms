@@ -83,12 +83,12 @@ def sum_nested_recursive(original_x):
         return original_x[0] + sum_nested_recursive(original_x[1:])
 
 
-def sum_list2(x):
-    if not x:
-        return 0
-    else:
-        m = len(x) // 2
-        return sum_list2(x[0:m]) + sum_list2(x[m:])
+# def sum_list2(x):
+#     if not x:
+#         return 0
+#     else:
+#         m = len(x) // 2
+#         return sum_list2(x[0:m]) + sum_list2(x[m:])
 
 
 if __name__ == "__main__":

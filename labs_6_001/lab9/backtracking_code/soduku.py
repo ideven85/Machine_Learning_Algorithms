@@ -57,20 +57,24 @@ print(time.time())
 def valid_board(board):
     for row in board:
         for col in board:
-            if board[row][col]==0:
+            if board[row][col] == 0:
                 return False
     return True
+
+
 def solve_sudoku(board):
     for row in range(9):
         for col in range(9):
-            if board[row][col]!=0:
+            if board[row][col] != 0:
                 continue
-            for trial in range(1,10):
-                new_board = [[trial if (r,c)==(row,col) else board[r][c] for c in range(9)] for r in range(9)]
+            for trial in range(1, 10):
+                new_board = [
+                    [trial if (r, c) == (row, col) else board[r][c] for c in range(9)]
+                    for r in range(9)
+                ]
                 if valid_board(new_board):
-                    result=solve_sudoku(new_board)
+                    result = solve_sudoku(new_board)
                     if result is not None:
                         return result
         return None
     return board
-

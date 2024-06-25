@@ -20,7 +20,7 @@ def majority(L):
                  where n = len(L) and k = max(w for w in L)
                  :math:`O(n^2k)` in worst case due to the use of a dictionary
     """
-    assert L    # majority is undefined on the empty set
+    assert L  # majority is undefined on the empty set
     # snip{
     count = {}
     for word in L:
@@ -32,4 +32,6 @@ def majority(L):
     #   maximal count "for free"
     val_1st_max, arg_1st_max = min((-count[word], word) for word in count)
     return arg_1st_max
+
+
 # snip}

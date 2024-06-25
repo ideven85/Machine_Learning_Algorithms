@@ -78,13 +78,11 @@ class WordDictionary:
     def __init__(self):
         pass
 
-
     def addWord(self, word: str) -> None:
         pass
 
     def search(self, word: str) -> bool:
         pass
-
 
 
 # Your WordDictionary object will be instantiated and called as such:
@@ -93,8 +91,8 @@ class WordDictionary:
 # param_2 = obj.search(word)
 
 # Your Trie object will be instantiated and called as such:
-word = 'apple'
-prefix = 'apps'
+word = "apple"
+prefix = "apps"
 trie = Trie()
 trie.insert("apple")
 print(trie.search("apple"))  # return True

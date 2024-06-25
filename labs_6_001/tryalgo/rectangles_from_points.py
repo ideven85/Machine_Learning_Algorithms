@@ -18,7 +18,7 @@ def rectangles_from_points(S):
     answ = 0
     pairs = {}
     for j, _ in enumerate(S):
-        for i in range(j):      # loop over point pairs (p,q)
+        for i in range(j):  # loop over point pairs (p,q)
             px, py = S[i]
             qx, qy = S[j]
             center = (px + qx, py + qy)
@@ -30,4 +30,6 @@ def rectangles_from_points(S):
             else:
                 pairs[signature] = [(i, j)]
     return answ
+
+
 # snip}

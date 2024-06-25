@@ -9,12 +9,12 @@ christoph dürr - jill-jênn vie - 2022
 # https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm
 
 
-import math     # for pi
-import cmath    # for exp
+import math  # for pi
+import cmath  # for exp
 
 
 def pad(x):
-    """ pad array x with zeros to make its length a power of two
+    """pad array x with zeros to make its length a power of two
     :complexity: linear
     """
     n = 1
@@ -24,7 +24,7 @@ def pad(x):
 
 
 def fft(x):
-    """ Fast Fourier Transformation
+    """Fast Fourier Transformation
     :input x: list of coefficients. Length n has to be a power of 2.
     :returns: list of sample values.
     :complexity: O(n log n).
@@ -32,16 +32,15 @@ def fft(x):
     n2 = len(x) // 2
     if n2 == 0:
         return x
-    assert(2 * n2 == len(x))        # need to split evenly
+    assert 2 * n2 == len(x)  # need to split evenly
     even = fft(x[0::2])
-    odd  = fft(x[1::2])
+    odd = fft(x[1::2])
     T = [cmath.exp(-1j * math.pi * k / n2) * odd[k] for k in range(n2)]
-    return [even[k] + T[k] for k in range(n2)] + \
-           [even[k] - T[k] for k in range(n2)]
+    return [even[k] + T[k] for k in range(n2)] + [even[k] - T[k] for k in range(n2)]
 
 
 def inv_fft(y):
-    """ Inverse Fast Fourier Transformation
+    """Inverse Fast Fourier Transformation
     :input y: list of sample values. Length n has to be a power of 2.
     :returns: list of coefficients.
     :complexity: O(n log n).
@@ -55,7 +54,7 @@ def mul_poly_fft(p, q):
     """Multiply two polynomials in integer coefficient representation
     :complexity: O(n log n)
     """
-    n = (len(p) + len(q))   # make them of same and enough large size
+    n = len(p) + len(q)  # make them of same and enough large size
     p += [0] * (n - len(p))
     q += [0] * (n - len(q))
     pad(p)

@@ -17,8 +17,9 @@ __all__ = ["andrew"]
 # snip{ left-turn
 def left_turn(a, b, c):
     """function left-turn"""
-    return ((a[0] - c[0]) * (b[1] - c[1]) -
-            (a[1] - c[1]) * (b[0] - c[0]) > 0)
+    return (a[0] - c[0]) * (b[1] - c[1]) - (a[1] - c[1]) * (b[0] - c[0]) > 0
+
+
 # snip}
 
 
@@ -42,6 +43,8 @@ def andrew(S):
             bot.pop()
         bot.append(p)
     return bot[:-1] + top[:0:-1]
+
+
 # snip}
 
 
@@ -54,12 +57,12 @@ if __name__ == "__main__":
 
     def tikz_points(S):
         for p in S:
-            print('\\filldraw[black] (%f, %f) circle (1pt);' % p)
+            print("\\filldraw[black] (%f, %f) circle (1pt);" % p)
 
     def tikz_polygone(S):
         for i, _ in enumerate(S):
-            print('\\draw[blue] (%f, %f) -- (%f, %f);' % (S[i - 1] + S[i]))
+            print("\\draw[blue] (%f, %f) -- (%f, %f);" % (S[i - 1] + S[i]))
 
-    S = [(randint(0, 25)/10., randint(0, 25)/10.) for _ in range(32)]
+    S = [(randint(0, 25) / 10.0, randint(0, 25) / 10.0) for _ in range(32)]
     tikz_points(S)
     tikz_polygone(andrew(S))

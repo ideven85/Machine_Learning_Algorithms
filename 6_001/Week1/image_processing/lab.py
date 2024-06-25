@@ -186,6 +186,6 @@ if __name__ == "__main__":
     # code in this block will only be run when you explicitly run your script,
     # and not when the tests are being run.  this is a good place for
     # generating images, etc.
-    t_shirt = load_greyscale_image('test_images/Red-Plain-T-shirt-Mockup.jpg')
-    fileName = 'T_shirt.png'
-    save_greyscale_image(t_shirt,fileName)
+    t_shirt = load_greyscale_image("test_images/Red-Plain-T-shirt-Mockup.jpg")
+    fileName = "T_shirt.png"
+    save_greyscale_image(t_shirt, fileName)

@@ -8,10 +8,12 @@ jill-jênn vie et christoph dürr - 2014-2019
 
 # convert roman numbers
 # pylint: disable=bad-whitespace
-roman = [['', 'I', 'II', 'III', 'IV',  'V',   'VI',  'VII', 'VIII', 'IX'],
-         ['', 'X', 'XX', 'XXX', 'XL',  'L',   'LX',  'LXX', 'LXXX', 'XC'],
-         ['', 'C', 'CC', 'CCC', 'CD',  'D',   'DC',  'DCC', 'DCCC', 'CM'],
-         ['', 'M', 'MM', 'M'*3, 'M'*4, 'M'*5, 'M'*6, 'M'*7, 'M'*8,  'M'*9]]
+roman = [
+    ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"],
+    ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"],
+    ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"],
+    ["", "M", "MM", "M" * 3, "M" * 4, "M" * 5, "M" * 6, "M" * 7, "M" * 8, "M" * 9],
+]
 
 
 def roman2int(s):
@@ -33,6 +35,7 @@ def roman2int(s):
                 break
         pos10 //= 10
     return val
+
 
 # footnote 1:
 # in C one would write
@@ -59,7 +62,7 @@ def int2roman(val):
     :returns: the corresponding roman number
     :complexity: linear (if that makes sense for constant bounded input size)
     """
-    s = ''
+    s = ""
     pos10 = 1000
     for pos in range(3, -1, -1):
         digit = val // pos10

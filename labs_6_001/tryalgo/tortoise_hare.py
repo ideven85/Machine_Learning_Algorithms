@@ -9,18 +9,18 @@ jill-jenn vie et christoph durr - 2023
 
 # snip{
 def tortoise_hare(f, source=0):
-    """ Detect cycle for function f, starting from source
+    """Detect cycle for function f, starting from source
 
     :param f: function from finite domain to itself
     :param source: element in this domain
     :warning: if the function does not reach a cycle from source
               then this function loops forever
-    :returns: c, d such that after d iterations 
+    :returns: c, d such that after d iterations
               of f a cycle is reached, which has period c
     :complexity: `O(d+c)`
     """
-    t = f(source)       # tortoise
-    h = f(f(source))    # hare
+    t = f(source)  # tortoise
+    h = f(f(source))  # hare
 
     # move to some position in cycle
     while t != h:
@@ -40,6 +40,6 @@ def tortoise_hare(f, source=0):
         t = f(t)
         c += 1
     return c, d
+
+
 # snip}
-
-

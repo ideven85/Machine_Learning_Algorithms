@@ -20,7 +20,7 @@ def longest_increasing_subsequence(x):
     n = len(x)
     p = [None] * n
     h = [None]
-    b = [float('-inf')]  # - infinity
+    b = [float("-inf")]  # - infinity
     for i in range(n):
         if x[i] > b[-1]:
             p[i] = h[-1]
@@ -39,4 +39,6 @@ def longest_increasing_subsequence(x):
         s.append(x[q])
         q = p[q]
     return s[::-1]  # reverse the list to obtain the solution
+
+
 # snip}

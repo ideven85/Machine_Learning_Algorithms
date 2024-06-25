@@ -18,18 +18,21 @@ def mixtape(songs, target_duration):
     >>> mixtape(songs, 10)
     {'B'}
     """
-    #raise NotImplementedError
+    # raise NotImplementedError
     if target_duration == 0:
         return set()
     if not songs:
         return None
-    for song,duration in songs.items():
-        backtrack=mixtape({k:v for k,v in songs.items() if k!=song},target_duration-duration)
+    for song, duration in songs.items():
+        backtrack = mixtape(
+            {k: v for k, v in songs.items() if k != song}, target_duration - duration
+        )
         if backtrack is not None:
-            return {song}|backtrack
+            return {song} | backtrack
     return None
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

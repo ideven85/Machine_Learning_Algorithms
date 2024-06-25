@@ -104,21 +104,19 @@ class Solution:
 
     characters = [0 for _ in range(26)]
     mapping = defaultdict(list)
-    def distance(self,s1,s2):
-        count=0
-        for index,char in enumerate(s1):
-            temp = ord(char) - ord('a')
-            self.characters[temp]+=1
-        for char in s2:
-            temp = ord(char) - ord('a')
 
+    def distance(self, s1, s2):
+        count = 0
+        for index, char in enumerate(s1):
+            temp = ord(char) - ord("a")
+            self.characters[temp] += 1
+        for char in s2:
+            temp = ord(char) - ord("a")
 
             if self.characters[temp]:
-                self.characters[temp]-=1
-                count+=1
+                self.characters[temp] -= 1
+                count += 1
         return count
-
-
 
     def levenshteinDistance(self, str1, str2):
         # Write your code here.
@@ -139,8 +137,6 @@ class Solution:
 
     graph = defaultdict(list)
 
-
-
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
         """
         Given two words, beginWord and endWord,
@@ -154,32 +150,19 @@ class Solution:
         if endWord not in wordList:
             return 0
         for word in wordList:
-            distance = self.distance(beginWord,word)
-            self.graph[word].append((word,distance))
-
+            distance = self.distance(beginWord, word)
+            self.graph[word].append((word, distance))
 
         agenda = [(beginWord,)]
         count = 1
         while agenda:
             current = agenda.pop()
-            if self.distance(current,endWord)==1:
-                count+=1
+            if self.distance(current, endWord) == 1:
+                count += 1
                 return count
 
 
-
 # -*- coding: utf-8 -*-
-
-
-
-
-
-
-
-
-
-
-
 
 
 beginWord = "hit"

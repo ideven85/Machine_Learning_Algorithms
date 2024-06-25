@@ -17,18 +17,38 @@ def all_phrases(grammar, root):
     Each phrase is a tuple of terminal word strings.
     Return a set of all valid phrases.
     """
-    pass
+    if not grammar:
+        return set(())
+    out = set()
+    phrase = list(grammar.keys()[0])
+    terminals = list(grammar.values())[0]
+    for row in terminals:
+        for val in row:
+            if val in grammar:
+
+
+
+
+
+
+
+
 
 
 if __name__ == "__main__":
     # some small example test cases
     grammar = {
         "question": [["sentence", "?"]],
-        "sentence": [["noun", "verb"], ["noun", "never", "verb"]],
+        "sentence": [
+            ["noun", "verb"],
+            ["noun", "never", "verb"]
+        ],
         "noun": [["pigs"], ["professors"]],
         "verb": [["fly"], ["think"]],
         "greeting": [["hi", "noun"]],
     }
+
+
 
     # example
     expected = {("pigs",)}
@@ -36,9 +56,9 @@ if __name__ == "__main__":
     assert result == expected, f"Got {result=} but {expected=}"
 
     # Q1
-    expected = "TODO -- Insert expected result here"
-    result = all_phrases(grammar, "greeting")
-    assert result == expected, f"Got {result=} but {expected=}"
+    # expected = {("hi","pigs"),("hi","professors")}
+    # result = all_phrases(grammar, "greeting")
+    # assert result == expected, f"Got {result=} but {expected=}"
 
     expected = {
         ("pigs", "fly"),

@@ -2,7 +2,6 @@ from functools import wraps
 import sys
 
 
-
 def show_recursive_structure(f):
     """Show call entry/exits on stderr
 

@@ -11,6 +11,7 @@ jill-jênn vie et christoph dürr - 2015-2019
 # from __future__ import annotations
 from typing import List, Dict, Union, Any
 
+
 def readval(file, ty):
     """Reads a line from file with an item of type ty
 
@@ -48,10 +49,10 @@ def read_graph(filename, directed=False, weighted=False, default_weight=None):
     :complexity: O(n + m) for unweighted graph,
                  :math:`O(n^2)` for weighted graph
     """
-    with open(filename, 'r') as f:
+    with open(filename, "r") as f:
         while True:
-            line = f.readline()         # ignore leading comments
-            if line[0] != '#':
+            line = f.readline()  # ignore leading comments
+            if line[0] != "#":
                 break
         nb_nodes, nb_edges = tuple(map(int, line.split()))
         graph = [[] for u in range(nb_nodes)]
@@ -78,9 +79,16 @@ def read_graph(filename, directed=False, weighted=False, default_weight=None):
 
 
 # pylint: disable=too-many-arguments, singleton-comparison
-def write_graph(dotfile, graph, directed=False,
-                node_label=None, arc_label=None, comment="",
-                node_mark=set(), arc_mark=set()):
+def write_graph(
+    dotfile,
+    graph,
+    directed=False,
+    node_label=None,
+    arc_label=None,
+    comment="",
+    node_mark=set(),
+    arc_mark=set(),
+):
     """Writes a graph to a file in the DOT format
 
     :param dotfile: the filename.
@@ -94,7 +102,7 @@ def write_graph(dotfile, graph, directed=False,
     :param arc_marc: set of arcs to be shown in red
     :complexity: `O(|V| + |E|)`
     """
-    with open(dotfile, 'w') as f:
+    with open(dotfile, "w") as f:
         if directed:
             f.write("digraph G{\n")
         else:
@@ -107,7 +115,7 @@ def write_graph(dotfile, graph, directed=False,
             if node_mark and u in node_mark:
                 f.write('%d [style=filled, color="lightgrey", ' % u)
             else:
-                f.write('%d [' % u)
+                f.write("%d [" % u)
             if node_label:
                 f.write('label="%u [%s]"];\n' % (u, node_label[u]))
             else:
@@ -118,15 +126,16 @@ def write_graph(dotfile, graph, directed=False,
         for u in V:
             for v in graph[u]:
                 if not directed and u > v:
-                    continue   # don't show twice the edge
+                    continue  # don't show twice the edge
                 if arc_label and arc_label[u][v] is None:
-                    continue   # suppress arcs with no label
+                    continue  # suppress arcs with no label
                 if directed:
                     arc = "%d -> %d " % (u, v)
                 else:
                     arc = "%d -- %d " % (u, v)
-                if arc_mark and ((v, u) in arc_mark or
-                                 (not directed and (u, v) in arc_mark)):
+                if arc_mark and (
+                    (v, u) in arc_mark or (not directed and (u, v) in arc_mark)
+                ):
                     pen = 'color="red"'
                 else:
                     pen = ""
@@ -153,9 +162,9 @@ def tree_prec_to_adj(prec, root=0):
     :complexity: linear
     """
     n = len(prec)
-    graph = [[prec[u]] for u in range(n)]   # add predecessors
+    graph = [[prec[u]] for u in range(n)]  # add predecessors
     graph[root] = []
-    for u in range(n):                      # add successors
+    for u in range(n):  # add successors
         if u != root:
             graph[prec[u]].append(u)
     return graph
@@ -170,16 +179,18 @@ def tree_adj_to_prec(graph, root=0):
     :complexity: linear
     """
     prec = [None] * len(graph)
-    prec[root] = root            # mark to visit root only once
+    prec[root] = root  # mark to visit root only once
     to_visit = [root]
-    while to_visit:              # DFS
+    while to_visit:  # DFS
         node = to_visit.pop()
         for neighbor in graph[node]:
             if prec[neighbor] is None:
                 prec[neighbor] = node
                 to_visit.append(neighbor)
-    prec[root] = None            # put the standard mark for root
+    prec[root] = None  # put the standard mark for root
     return prec
+
+
 # snip}
 
 
@@ -207,6 +218,8 @@ def add_reverse_arcs(graph, capac=None):
                 else:
                     assert type(graph[v]) is dict
                     graph[v][u] = 0
+
+
 # snip}
 
 # -----------------------------------------------------------------------------
@@ -295,17 +308,18 @@ def dictdict_to_listdict(dictgraph):
     :returns: tuple with graph (listdict), name_to_node (dict),
         node_to_name (list)
     """
-    n = len(dictgraph)                            # vertices
-    node_to_name = list(dictgraph.keys())         # bijection indices <-> names
-    node_to_name.sort()                           # to make it more readable
+    n = len(dictgraph)  # vertices
+    node_to_name = list(dictgraph.keys())  # bijection indices <-> names
+    node_to_name.sort()  # to make it more readable
     name_to_node = {}
     for i in range(n):
         name_to_node[node_to_name[i]] = i
-    sparse = [{} for _ in range(n)]               # build sparse graph
+    sparse = [{} for _ in range(n)]  # build sparse graph
     for u in dictgraph:
         for v in dictgraph[u]:
             sparse[name_to_node[u]][name_to_node[v]] = dictgraph[u][v]
     return sparse, name_to_node, node_to_name
+
 
 # -----------------------------------------------------------------------------
 # for shortest paths
@@ -331,6 +345,7 @@ def extract_path(prec, v):
 # -----------------------------------------------------------------------------
 # for exporting flows in dot format
 
+
 def make_flow_labels(graph, flow, capac):
     """Generate arc labels for a flow in a graph with capacities.
 
@@ -346,8 +361,9 @@ def make_flow_labels(graph, flow, capac):
             if flow[u][v] >= 0:
                 arc_label[u][v] = "%s/%s" % (flow[u][v], capac[u][v])
             else:
-                arc_label[u][v] = None   # do not show negative flow arcs
+                arc_label[u][v] = None  # do not show negative flow arcs
     return arc_label
+
 
 # -----------------------------------------------------------------------------
 # for creating a graph using vertex names
@@ -381,7 +397,7 @@ class GraphNamedVertices:
         self.add_arc(name_v, name_u, weight_uv)
 
     def add_arc(self, name_u, name_v, weight_uv=None):
-        """Adds an arc between two given nodes, eventually with a given arc weight. 
+        """Adds an arc between two given nodes, eventually with a given arc weight.
         In case of multiple arcs between the same pairs of nodes, only the lightest one is kept.
         Adds the given nodes, if they are not already present.
         """
@@ -390,6 +406,8 @@ class GraphNamedVertices:
         self.neighbors[u].append(v)
         if v not in self.weight[u] or weight_uv < self.weight[u][v]:
             self.weight[u][v] = weight_uv
+
+
 # snip}
 
 Graph = Union[List[List[int]], List[Dict[int, Any]], GraphNamedVertices]

@@ -9,13 +9,13 @@ jill-jênn vie et christoph dürr - 2014-2019
 # Don't write a Trie class otherwise you cannot represent leaves with None
 
 # snip{
-from string import ascii_letters    # in Python 2 one would import letters
+from string import ascii_letters  # in Python 2 one would import letters
 
 
 # pylint: disable=missing-docstring, too-few-public-methods
 class TrieNode:
-    def __init__(self):                            # each node will have
-        self.is_word = False                       # 52 children -
+    def __init__(self):  # each node will have
+        self.is_word = False  # 52 children -
         self.s = {c: None for c in ascii_letters}  # most will remain empty
 
 
@@ -61,13 +61,12 @@ def spell_check(T, w):  # Spell check a word against the trie
         u = search(T, dist, w)
         if u is not None:  # Match at distance dist
             return u
-        dist += 1          # No match - try increasing the distance
+        dist += 1  # No match - try increasing the distance
 
 
 # pylint: disable=too-many-return-statements, no-else-return
 def search(T, dist, w, i=0):
-    """Searches for w[i:] in trie T with distance at most dist
-    """
+    """Searches for w[i:] in trie T with distance at most dist"""
     if i == len(w):
         if T is not None and T.is_word and dist == 0:
             return ""
@@ -75,17 +74,19 @@ def search(T, dist, w, i=0):
             return None
     if T is None:
         return None
-    f = search(T.s[w[i]], dist, w, i + 1)       # matching
+    f = search(T.s[w[i]], dist, w, i + 1)  # matching
     if f is not None:
         return w[i] + f
     if dist == 0:
         return None
     for c in ascii_letters:
-        f = search(T.s[c], dist - 1, w, i)      # insertion
+        f = search(T.s[c], dist - 1, w, i)  # insertion
         if f is not None:
             return c + f
         f = search(T.s[c], dist - 1, w, i + 1)  # substitution
         if f is not None:
             return c + f
-    return search(T, dist - 1, w, i + 1)        # deletion
+    return search(T, dist - 1, w, i + 1)  # deletion
+
+
 # snip}

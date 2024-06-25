@@ -16,6 +16,8 @@ def pgcd(a, b):
     :complexity: O(log a + log b)
     """
     return a if b == 0 else pgcd(b, a % b)
+
+
 # snip}
 
 
@@ -39,6 +41,8 @@ def inv(a, p):
     :complexity: O(log a + log p)
     """
     return bezout(a, p)[0] % p
+
+
 # snip}
 
 
@@ -53,6 +57,8 @@ def binom(n, k):
     for i in range(k):
         prod = (prod * (n - i)) // (i + 1)
     return prod
+
+
 # snip}
 
 
@@ -67,4 +73,6 @@ def binom_modulo(n, k, p):
     for i in range(k):
         prod = (prod * (n - i) * inv(i + 1, p)) % p
     return prod
+
+
 # snip}

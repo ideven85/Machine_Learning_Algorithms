@@ -24,7 +24,7 @@ import sys
 
 # To mock it, https://stackoverflow.com/a/44677646/827989
 def read(filename):
-    """ reads a Horn SAT formula from a text file
+    """reads a Horn SAT formula from a text file
 
     :file format:
         # comment
@@ -34,7 +34,7 @@ def read(filename):
         # variables are strings without spaces
     """
     formula = []
-    for line in open(filename, 'r'):
+    for line in open(filename, "r"):
         line = line.strip()
         if line[0] == "#":
             continue
@@ -45,9 +45,9 @@ def read(filename):
         else:
             assert len(lit) == 2
             posvar = lit[0].strip()
-            if posvar == '':
+            if posvar == "":
                 posvar = None
-            negvars = lit[1].split(',')
+            negvars = lit[1].split(",")
             for i, _ in enumerate(negvars):
                 negvars[i] = negvars[i].strip()
         formula.append((posvar, negvars))
@@ -56,7 +56,7 @@ def read(filename):
 
 # pylint: disable=line-too-long
 def horn_sat(formula):
-    """ Solving a HORN Sat formula
+    """Solving a HORN Sat formula
 
     :param formula: list of couple(posvar, negvars).
                     negvars is a list of the negative variables (can be empty)
@@ -79,24 +79,24 @@ def horn_sat(formula):
         posvar_in_clause[c] = posvar
         for v in negvars:
             clauses_with_negvar[v].add(c)
-    pool = [set() for s in range(max(score) + 1)]   # create the pool
+    pool = [set() for s in range(max(score) + 1)]  # create the pool
     for c in CLAUSES:
-        pool[score[c]].add(c)           # pool[s] = set of clauses with score s
+        pool[score[c]].add(c)  # pool[s] = set of clauses with score s
 
     # --- solve Horn SAT formula
-    solution = set()                    # contains all variables set to True
+    solution = set()  # contains all variables set to True
     while pool[0]:
-        curr = pool[0].pop()               # arbitrary zero score clause
+        curr = pool[0].pop()  # arbitrary zero score clause
         v = posvar_in_clause[curr]
-        if v is None:                      # formula is not satisfiable
+        if v is None:  # formula is not satisfiable
             return None
         if v in solution or curr in clauses_with_negvar[v]:
-            continue                       # clause is already satisfied
+            continue  # clause is already satisfied
         solution.add(v)
-        for c in clauses_with_negvar[v]:   # update score
+        for c in clauses_with_negvar[v]:  # update score
             pool[score[c]].remove(c)
             score[c] -= 1
-            pool[score[c]].add(c)          # change c to lower score in pool
+            pool[score[c]].add(c)  # change c to lower score in pool
     return solution
 
 

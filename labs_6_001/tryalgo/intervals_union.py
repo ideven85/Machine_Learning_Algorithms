@@ -30,4 +30,6 @@ def intervals_union(S):
             if nb_open == 0:
                 retval.append((last, x))
     return retval
+
+
 # snip}

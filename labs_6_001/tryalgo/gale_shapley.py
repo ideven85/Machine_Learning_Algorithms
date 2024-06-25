@@ -21,16 +21,16 @@ def gale_shapley(men, women):
     """
     n = len(men)
     assert n == len(women)
-    current_suitor = [0] * n            # nb of matchings so far
-    spouse = [None] * n                 # current matching
+    current_suitor = [0] * n  # nb of matchings so far
+    spouse = [None] * n  # current matching
     rank = [[0] * n for j in range(n)]  # build rank
     for j in range(n):
         for r in range(n):
             rank[j][women[j][r]] = r
-    singles = list(range(n))            # initially all men are single 
+    singles = list(range(n))  # initially all men are single
     while singles:
         i = singles.pop()
-        j = men[i][current_suitor[i]]   # propose matching (i,j)
+        j = men[i][current_suitor[i]]  # propose matching (i,j)
         current_suitor[i] += 1
         if spouse[j] is None:
             spouse[j] = i
@@ -40,4 +40,6 @@ def gale_shapley(men, women):
             singles.append(spouse[j])  # sorry for spouse[j]
             spouse[j] = i
     return spouse
+
+
 # snip}

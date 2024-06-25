@@ -25,12 +25,11 @@ def mixtape(songs, target_duration):
     if not songs:
         return None
     new_song = list(songs.keys())[0]
-    songs_rest={key:value for key,value in songs.items() if key!=new_song}
-    case1=mixtape(songs_rest,target_duration-songs[new_song])
+    songs_rest = {key: value for key, value in songs.items() if key != new_song}
+    case1 = mixtape(songs_rest, target_duration - songs[new_song])
     if case1 is not None:
-        return {new_song}|case1
-    case2 = mixtape(songs_rest,target_duration)
+        return {new_song} | case1
+    case2 = mixtape(songs_rest, target_duration)
     if case2 is not None:
         return case2
     return None
-
