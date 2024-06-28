@@ -14,3 +14,6 @@
 [submodule "handson-ml3"]
 	path = handson-ml3
 	url = https://github.com/ageron/handson-ml3
+[submodule "mlx-examples"]
+	path = mlx-examples
+	url = https://github.com/ml-explore/mlx-examples

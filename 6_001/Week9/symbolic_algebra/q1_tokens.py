@@ -3,7 +3,7 @@ Question 1: Implement the tokenize function below as a
 generator. Then, implement parse to work with this new tokenize
 function.
 
-Note: you will need to copy your lab.py file into this folder
+Note: you will need to copy your autocomplete_autocorrect.py file into this folder
 in order to get the tests to pass.
 """
 

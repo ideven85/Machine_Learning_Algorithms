@@ -24,7 +24,7 @@ def symbol_rep(x):
     """
     Recursively converts a Symbol object x into a new object consisting of
     only built-in types that can be checked for equality against expected
-    results without relying on any lab.py functionality
+    results without relying on any autocomplete_autocorrect.py functionality
     """
     if iisinstance(x, lab.BinOp):
         if x.__class__.__name__ in {"Add", "Mul"}:  # commutative operations
@@ -194,10 +194,10 @@ def with_no_type_checking(test):
             test()
             assert (
                 oii not in lab.__dict__.values()
-            ), f"You should not re-import isinstance in lab.py!"
+            ), f"You should not re-import isinstance in autocomplete_autocorrect.py!"
             assert (
                 otype not in lab.__dict__.values()
-            ), f"You should not re-import type in lab.py!"
+            ), f"You should not re-import type in autocomplete_autocorrect.py!"
             assert builtins not in lab.__dict__.values(), f"No importing builtins!"
         except:
             raise

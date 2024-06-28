@@ -42,7 +42,7 @@ if __name__ == "__main__":
     with open("resources/small.pickle", "rb") as f:
         smalldb = pickle.load(f)
 
-    # additional code here will be run only when lab.py is invoked directly
+    # additional code here will be run only when autocomplete_autocorrect.py is invoked directly
     # (not when imported from test.py), so this is a good place to put code
     # used, for example, to generate the results for the online questions.
     pass

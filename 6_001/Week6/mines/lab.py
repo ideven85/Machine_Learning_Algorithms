@@ -494,7 +494,7 @@ def render_nd(game, all_visible=False):
 
 
 if __name__ == "__main__":
-    # Test with doctests. Helpful to debug individual lab.py functions.
+    # Test with doctests. Helpful to debug individual autocomplete_autocorrect.py functions.
     # _doctest_flags = doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
     # doctest.testmod(optionflags=_doctest_flags)  # runs ALL doctests
 

@@ -2,7 +2,7 @@
 Question 4: Look at the correct implementation of autocomplete provided below.
 How could we refactor this code to increase efficiency?
 
-Note: you will have to copy / paste your lab into lab.py!
+Note: you will have to copy / paste your lab into autocomplete_autocorrect.py!
 """
 
 from lab import PrefixTree, word_frequencies

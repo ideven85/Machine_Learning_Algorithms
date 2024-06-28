@@ -26,7 +26,7 @@ list different ways an expression could be malformed. Make a plan for
 how you could detect various errors (preferably without using try/except)
 before you start implementing code.
 
-Note: you will need to copy your lab.py file into this folder
+Note: you will need to copy your autocomplete_autocorrect.py file into this folder
 in order to get the tests to pass.
 """
 

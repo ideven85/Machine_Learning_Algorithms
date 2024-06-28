@@ -18,7 +18,7 @@ except:
 
 spec = importlib.util.spec_from_file_location(
     "lab",
-    os.path.join(os.path.dirname(os.path.realpath(__file__)), "lab.py"),
+    os.path.join(os.path.dirname(os.path.realpath(__file__)), "autocomplete_autocorrect.py"),
 )
 lab = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(lab)

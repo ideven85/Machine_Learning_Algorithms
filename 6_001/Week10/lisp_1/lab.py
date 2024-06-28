@@ -131,7 +131,7 @@ def evaluate(tree):
 
 
 if __name__ == "__main__":
-    # code in this block will only be executed if lab.py is the main file being
+    # code in this block will only be executed if autocomplete_autocorrect.py is the main file being
     # run (not when this module is imported)
 
     import os

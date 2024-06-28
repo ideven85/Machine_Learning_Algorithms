@@ -17,6 +17,10 @@ def all_phrases(grammar, root):
     Each phrase is a tuple of terminal word strings.
     Return a set of all valid phrases.
     """
+
+    def phrases_helper():
+
+
     if not grammar:
         return set(())
     out = set()
@@ -24,7 +28,10 @@ def all_phrases(grammar, root):
     terminals = list(grammar.values())[0]
     for row in terminals:
         for val in row:
-            if val in grammar:
+            if val == root and val not in grammar:
+                return {(val,)}
+            elif val in grammar:
+                grammar[phrase]=
 
 
 

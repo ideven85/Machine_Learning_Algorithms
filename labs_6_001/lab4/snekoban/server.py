@@ -41,7 +41,7 @@ def parse_post(environ):
 
 def new_game(params):
     global CURRENT_GAME
-    print("[reloading lab.py in case you changed something]")
+    print("[reloading autocomplete_autocorrect.py in case you changed something]")
     importlib.reload(lab)
     if "raw" in params:
         level = json.loads(params["raw"])

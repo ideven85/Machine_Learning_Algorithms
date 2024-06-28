@@ -443,7 +443,7 @@ def test_file_repl():
 
     t = tempfile.NamedTemporaryFile(delete=False)
     p = subprocess.Popen(
-        [sys.executable, "lab.py"], cwd=TEST_DIRECTORY, stdin=subprocess.PIPE, stdout=t
+        [sys.executable, "autocomplete_autocorrect.py"], cwd=TEST_DIRECTORY, stdin=subprocess.PIPE, stdout=t
     )
     try:
         os.set_blocking(t.fileno(), False)
@@ -485,7 +485,7 @@ def test_file_repl():
     p = subprocess.Popen(
         [
             sys.executable,
-            "lab.py",
+            "autocomplete_autocorrect.py",
             os.path.join("test_files", "definitions.scm"),
             os.path.join("test_files", "small_test5.scm"),
         ],

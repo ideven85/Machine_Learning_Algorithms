@@ -21,7 +21,7 @@ TESTDOC_SKIP = ["lab"]
 
 
 def test_all_doc_strings_exist():
-    """Checking if docstrings have been written for everything in lab.py"""
+    """Checking if docstrings have been written for everything in autocomplete_autocorrect.py"""
     tests = doctest.DocTestFinder(exclude_empty=False).find(lab)
     for test in tests:
         if test.name in TESTDOC_SKIP:
