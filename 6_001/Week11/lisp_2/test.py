@@ -443,7 +443,10 @@ def test_file_repl():
 
     t = tempfile.NamedTemporaryFile(delete=False)
     p = subprocess.Popen(
-        [sys.executable, "autocomplete_autocorrect.py"], cwd=TEST_DIRECTORY, stdin=subprocess.PIPE, stdout=t
+        [sys.executable, "autocomplete_autocorrect.py"],
+        cwd=TEST_DIRECTORY,
+        stdin=subprocess.PIPE,
+        stdout=t,
     )
     try:
         os.set_blocking(t.fileno(), False)

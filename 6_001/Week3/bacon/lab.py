@@ -188,7 +188,8 @@ def acted_together(transformed_data, actor_id_1, actor_id_2):
 #
 #     return set(current_actors)
 
-#todo
+
+# todo
 def actors_with_bacon_number(transformed_data, n):
     transformed_data = transform_data(transformed_data)
     center = 4724

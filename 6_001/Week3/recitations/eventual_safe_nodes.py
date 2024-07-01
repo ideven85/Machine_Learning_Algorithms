@@ -4,10 +4,7 @@ from typing import List
 
 class Safe_Nodes:
 
-
-
     def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:
-
 
         adj = defaultdict(list)
         white = 0
@@ -26,11 +23,10 @@ class Safe_Nodes:
 
                 if safeNodeHelper(connection):
                     return True
-            visited[node]=False
+            visited[node] = False
             print(visited)
 
             return True
-
 
         terminalNodes = []
         out = []
@@ -38,14 +34,14 @@ class Safe_Nodes:
         if not graph:
             return out
         n = len(graph)
-        i=0
+        i = 0
         visited = [False for _ in range(n)]
         for nodes in graph:
             if not nodes:
                 terminalNodes.append(i)
-                visited[i]=True
+                visited[i] = True
             adj[i].extend([node for node in nodes])
-            i+=1
+            i += 1
 
         for i in range(n):
             if i in terminalNodes:
@@ -58,5 +54,5 @@ class Safe_Nodes:
 
 
 s = Safe_Nodes()
-graph = [[1,2],[2,3],[5],[0],[5],[],[]]
+graph = [[1, 2], [2, 3], [5], [0], [5], [], []]
 print(s.eventualSafeNodes(graph))

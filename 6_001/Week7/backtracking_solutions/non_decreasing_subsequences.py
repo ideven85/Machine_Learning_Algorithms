@@ -64,13 +64,14 @@ def non_decreasing_subsequences(nums):
 
     return out
 
-def lis( nums):
+
+def lis(nums):
     """
     @param nums: List of integers
     @return length of longest increasing subsequence
     """
     n = len(nums)
-    memo = {n-1:1}
+    memo = {n - 1: 1}
 
     @cache
     def dfs(i):
@@ -78,41 +79,42 @@ def lis( nums):
             return memo[i]
         res = 1
 
-        for j in range(i+1,n):
-            if nums[j]>nums[i]:
-                res = max(res,1+dfs(j))
-        memo[i]=res
+        for j in range(i + 1, n):
+            if nums[j] > nums[i]:
+                res = max(res, 1 + dfs(j))
+        memo[i] = res
         return memo[i]
+
     out = [dfs(i) for i in range(n)]
     print(memo)
     return max(out)
 
+
 def longest_subsequence(nums):
     n = len(nums)
-    dp = [0 for _ in range(n+1)]
-    dp[0]=1
+    dp = [0 for _ in range(n + 1)]
+    dp[0] = 1
     # for i in range(1,n):
     #     for j in range(n):
     #         if nums[i]>nums[j] and dp[j]>dp[i]:
     #             dp[i]=dp[j]
     #     dp[i]+=1
     #     print(dp)
-    for i in range(1,n):
-        dp[i]=1
+    for i in range(1, n):
+        dp[i] = 1
         for j in range(i):
-            if nums[j]<nums[i]:
-                dp[i]=max(dp[i],1+dp[j])
+            if nums[j] < nums[i]:
+                dp[i] = max(dp[i], 1 + dp[j])
         print(dp)
     return max(dp)
 
 
-
 if __name__ == "__main__":
-    nums = [2,4,3,8]
+    nums = [2, 4, 3, 8]
     import time
 
     s1 = time.perf_counter()
-    #result = increasing_subsequences(nums)
+    # result = increasing_subsequences(nums)
     s2 = time.perf_counter()
     # print(result)
     x = non_decreasing_subsequences(nums)
@@ -122,8 +124,8 @@ if __name__ == "__main__":
     print(s3 - s2)
     print(lis(nums))
     print(longest_subsequence(nums))
-    #print(result)
-    #print(x)
+    # print(result)
+    # print(x)
 #
 # if __name__ == "__main__":
 #     inp = [2, 4, 5, 4]

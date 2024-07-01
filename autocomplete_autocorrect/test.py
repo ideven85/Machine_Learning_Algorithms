@@ -300,7 +300,9 @@ def test_autocomplete_small():
     result = autocomplete_autocorrect.autocomplete(t, "a", 2)
     assert set(result) in [{"a", "an"}, {"a", "ant"}]
 
-    t = autocomplete_autocorrect.word_frequencies("man mat mattress map me met a man a a a map man met")
+    t = autocomplete_autocorrect.word_frequencies(
+        "man mat mattress map me met a man a a a map man met"
+    )
     result = autocomplete_autocorrect.autocomplete(t, "m", 3)
     assert set(result) == {"man", "map", "met"}
 
@@ -407,7 +409,9 @@ def test_autocomplete_big_3():
 
 def test_autocorrect_small():
     # Autocorrect on cat in small corpus
-    t = autocomplete_autocorrect.word_frequencies("cats cattle hat car act at chat crate act car act")
+    t = autocomplete_autocorrect.word_frequencies(
+        "cats cattle hat car act at chat crate act car act"
+    )
     result = autocomplete_autocorrect.autocorrect(t, "cat", 4)
     assert set(result) == {"act", "car", "cats", "cattle"}
 
@@ -448,7 +452,9 @@ def test_autocorrect_big():
 
 
 def test_filter_word():
-    t = autocomplete_autocorrect.word_frequencies("1 man mat mattress map me met a man a a a map man met")
+    t = autocomplete_autocorrect.word_frequencies(
+        "1 man mat mattress map me met a man a a a map man met"
+    )
     # select specific words from the prefix tree
     result = autocomplete_autocorrect.word_filter(t, "a")
     assert isinstance(result, list)
@@ -578,7 +584,9 @@ def test_filter_question():
 
 def test_filter_small():
     # Filter to select all words in prefix tree
-    t = autocomplete_autocorrect.word_frequencies("man mat mattress map me met a man a a a map man met")
+    t = autocomplete_autocorrect.word_frequencies(
+        "man mat mattress map me met a man a a a map man met"
+    )
     result = autocomplete_autocorrect.word_filter(t, "*")
     assert isinstance(result, list)
     result.sort()

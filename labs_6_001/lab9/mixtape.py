@@ -1,4 +1,4 @@
-from lab9.debug_recursion import show_recursive_structure
+from debug_recursion import show_recursive_structure
 
 
 @show_recursive_structure

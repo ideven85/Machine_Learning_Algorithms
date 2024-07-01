@@ -30,29 +30,32 @@ def disk_usage2(path):
     return total
 
 
-folder = os.path.expanduser("~/Developer/Java_Projects/")
+folder = os.path.expanduser("~/Developer/")
 
 
 def ends_with_suffix(suffix):
     return lambda x: x.endswith(suffix)
 
 
-def list_files(path):
-    files = []
+def list_files(path,ends_with_suffix):
+
     if not path:
+        yield []
         return
     if not os.access(path, 700):
+        yield []
         return
-    if os.path.isfile(path):
-        # files.append(path)
-        yield path
+
     elif os.path.isdir(path):
         for f in os.listdir(path):
             children = os.path.join(path, f)
             if os.path.isdir(children):
-                yield from list_files(children)
-            else:
+                yield from list_files(children,ends_with_suffix)
+            elif children.split(".")[-1] == ends_with_suffix:
                 yield children
+
+    elif path.split(".")[-1] == ends_with_suffix:
+        yield path
 
 
 # words = list_files(folder)
@@ -66,10 +69,15 @@ def list_files(path):
 # print(disk_usage2(folder))
 
 
-def ls(params):
-    path = os.path.join(folder, params.get("path"))
+def ls(params:dict):
+    path = os.path.join(folder, params.get("path","."))
     return [f for f in os.listdir(path) if os.path.isdir(os.path.join(path, f))]
 
 
-params = {"path": folder}
-print(ls(params))
+params = {"paths": folder}
+# print(ls(params))
+count=0
+for f in list_files(folder,"java"):
+    count+=1
+    print(f)
+print(count)
