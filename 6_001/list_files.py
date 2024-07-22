@@ -37,7 +37,7 @@ def ends_with_suffix(suffix):
     return lambda x: x.endswith(suffix)
 
 
-def list_files(path,ends_with_suffix):
+def list_files(path, ends_with_suffix):
 
     if not path:
         yield []
@@ -50,7 +50,7 @@ def list_files(path,ends_with_suffix):
         for f in os.listdir(path):
             children = os.path.join(path, f)
             if os.path.isdir(children):
-                yield from list_files(children,ends_with_suffix)
+                yield from list_files(children, ends_with_suffix)
             elif children.split(".")[-1] == ends_with_suffix:
                 yield children
 
@@ -69,15 +69,15 @@ def list_files(path,ends_with_suffix):
 # print(disk_usage2(folder))
 
 
-def ls(params:dict):
-    path = os.path.join(folder, params.get("path","."))
+def ls(params: dict):
+    path = os.path.join(folder, params.get("path", "."))
     return [f for f in os.listdir(path) if os.path.isdir(os.path.join(path, f))]
 
 
 params = {"paths": folder}
 # print(ls(params))
-count=0
-for f in list_files(folder,"java"):
-    count+=1
+count = 0
+for f in list_files(folder, "java"):
+    count += 1
     print(f)
 print(count)
