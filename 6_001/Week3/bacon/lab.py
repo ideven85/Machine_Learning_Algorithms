@@ -96,7 +96,7 @@ def acted_together(transformed_data, actor_id_1, actor_id_2):
     return False
 
 
-# todo Implement This Date_Started 21st April Actually Tougher than any
+# todo Implement This Date_Started 21st April Actually Degrees of seqparation
 """
  while current_degree!=n+1:
 
@@ -363,7 +363,7 @@ if __name__ == "__main__":
         data.setdefault(actor1, set()).add((actor2, film))
         data.setdefault(actor2, set()).add((actor1, film))
 
-    # print(data)
+    print(data)
     actors_0 = set()
     a = transform_data(smalldb)[4724]
     for actor, _ in a:

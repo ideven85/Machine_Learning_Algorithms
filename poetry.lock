@@ -934,6 +934,16 @@ graph = ["objgraph (>=1.7.2)"]
 profile = ["gprof2dot (>=2022.7.29)"]
 
 [[package]]
+name = "dlib"
+version = "19.24.4"
+description = "A toolkit for making real world machine learning and data analysis applications"
+optional = false
+python-versions = "*"
+files = [
+    {file = "dlib-19.24.4.tar.gz", hash = "sha256:f83dfdf6e85b91fc2b54ea5aad7932a5617cd61e9d13fc72055e22c7d9e264ff"},
+]
+
+[[package]]
 name = "executing"
 version = "2.0.1"
 description = "Get the currently executing AST node of a frame, and other information"
@@ -2716,6 +2726,25 @@ traitlets = ">=5.1"
 [package.extras]
 docs = ["myst-parser", "pydata-sphinx-theme", "sphinx", "sphinxcontrib-github-alt", "sphinxcontrib-spelling"]
 test = ["pep440", "pre-commit", "pytest", "testpath"]
+
+[[package]]
+name = "neo4j"
+version = "5.22.0"
+description = "Neo4j Bolt driver for Python"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "neo4j-5.22.0-py3-none-any.whl", hash = "sha256:8146755ac93d33cee594975172c15cffb68ab158e3358bb7a73b5e0b83367006"},
+    {file = "neo4j-5.22.0.tar.gz", hash = "sha256:199677239ce11fcecabce9962af515df271c1313ba110e737dd7d668fccd0c04"},
+]
+
+[package.dependencies]
+pytz = "*"
+
+[package.extras]
+numpy = ["numpy (>=1.7.0,<2.0.0)"]
+pandas = ["numpy (>=1.7.0,<2.0.0)", "pandas (>=1.1.0,<3.0.0)"]
+pyarrow = ["pyarrow (>=1.0.0)"]
 
 [[package]]
 name = "nest-asyncio"
@@ -5755,4 +5784,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "d5fa838063b997a816bcdf0f25609028599dd0632498a80d5cfbbd494d60c374"
+content-hash = "6cf68d500fd259eed199c697fd1bb1bda0c5fafe515af10334d6706df35e35ed"
