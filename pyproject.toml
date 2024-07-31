@@ -16,6 +16,7 @@ pylint = "^3.2.6"
 black = {extras = ["jupyter"], version = "^24.4.2"}
 dlib = "^19.24.4"
 neo4j = "^5.22.0"
+opencv-contrib-python = "^4.10.0.84"
 
 
 [build-system]
