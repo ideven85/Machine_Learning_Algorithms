@@ -4,6 +4,22 @@ Let’s represent the vector database using a 2D grid
  and the other axis represents the size (small, medium, large).
 """
 import pandas as pd
+import psycopg2
+conn = psycopg2.connect("dbname=lms user=deven password=728000")
+# db.run("CREATE TABLE foo (bar text, baz int)")
+# db.run("INSERT INTO foo VALUES ('buz', 42)")
+# db.run("INSERT INTO foo VALUES ('bit', 537)")
+
+curr = conn.cursor()
+curr.execute("CREATE TABLE foo (bar text, baz int)")
+curr.execute("INSERT INTO foo VALUES ('buz', 42)")
+conn.commit()
+
+curr.close()
+conn.close()
+
+import pgvector as Vector
+v = Vector
 from collections import namedtuple
 animals_normal=namedtuple('Animals',('color','size'))
 animals_normal1 = [{'color':['brown','black','white']},{'size': ['small','medium','large']}]
