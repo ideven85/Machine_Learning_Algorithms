@@ -18,5 +18,3 @@ for first,second in friendships:
     friendship_pairs[second].append(first)
 
 print(friendship_pairs)
-
-
