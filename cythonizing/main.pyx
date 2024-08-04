@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(100000000)
+sys.set_int_max_str_digits(1000000)
 def prime_list(total):
     number=2
     primes = []
@@ -28,3 +31,17 @@ def prime_number_optimised(int amount):
         number+=1
     answer = [p for p in primes[:found]]
     return answer
+
+
+def factorial(n):
+    return 1 if n<2 else n*factorial(n-1)
+
+def factorial_optimal(long n)->str:
+    if n<=1:
+        return "1"
+    else:
+        a=0;b=1
+        for i in range(n):
+            b+=a
+            a=b-a
+        return str(b)

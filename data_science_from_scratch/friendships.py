@@ -12,7 +12,10 @@ users = [
 ]
 friendships = [(0, 1), (0, 2), (1, 2), (1, 3), (2, 3), (3, 4),(4, 5), (5, 6), (5, 7), (6, 8), (7, 8), (8, 9)]
 
-friendship_pairs = {user["id"]:[] for user in users}
+# Adjacency List
+# Can do better...
+
+friendship_pairs = {x:[] for x in range(10)}
 for first,second in friendships:
     friendship_pairs[first].append(second)
     friendship_pairs[second].append(first)
