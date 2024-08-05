@@ -3,7 +3,7 @@ import redis
 # Connect to Redis
 client = redis.Redis(host='localhost', port=6379, db=0)
 
-# Ensure RediSearch module is loaded and create index
+#Ensure RediSearch module is loaded and create index
 try:
     client.execute_command('FT.CREATE', 'myIndex1', 'SCHEMA', 'vector', 'VECTOR', 'HNSW', '6', 'TYPE', 'FLOAT32', 'DIM', '3', 'DISTANCE_METRIC', 'COSINE')
 except redis.exceptions.ResponseError as e:

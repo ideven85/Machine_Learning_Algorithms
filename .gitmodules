@@ -17,3 +17,6 @@
 [submodule "mlx-examples"]
 	path = mlx-examples
 	url = https://github.com/ml-explore/mlx-examples
+[submodule "data-science-from-scratch"]
+	path = data-science-from-scratch
+	url = https://github.com/joelgrus/data-science-from-scratch

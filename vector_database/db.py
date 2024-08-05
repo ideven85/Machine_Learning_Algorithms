@@ -17,13 +17,3 @@ conn.commit()
 
 curr.close()
 conn.close()
-
-import pgvector as Vector
-v = Vector
-from collections import namedtuple
-animals_normal=namedtuple('Animals',('color','size'))
-animals_normal1 = [{'color':['brown','black','white']},{'size': ['small','medium','large']}]
-#animals = pd.DataFrame()
-
-for animal in animals_normal1:
-    print(animal)

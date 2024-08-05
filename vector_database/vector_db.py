@@ -9,10 +9,11 @@ cur = conn.cursor()
 
 # Use pgvector extension (if not already created)
 cur.execute("CREATE EXTENSION IF NOT EXISTS vector")
-
+cur.execute("create table foo1(")
+conn.commit()
 # Insert a vector into a table
 vector = np.array([0.1, 0.2, 0.3])
-cur.execute("INSERT INTO foo1 (vector_column) VALUES (%s)", (vector.tolist(),))
+cur.execute("INSERT INTO foo1(vector_column) VALUES (%s)", (vector.tolist(),))
 
 # Commit the transaction
 conn.commit()
