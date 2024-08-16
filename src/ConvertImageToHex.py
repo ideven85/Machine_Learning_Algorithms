@@ -4,7 +4,7 @@ import re
 hexValNew = ""
 placeHolder = "0"
 
-file = open("bluegill", "w")
+file = open("bluegill.hex", "w")
 
 with open("bluegill.png", "rb") as f:
     binVal = f.read(1)
