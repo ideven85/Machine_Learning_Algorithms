@@ -11,7 +11,7 @@ except redis.exceptions.ResponseError as e:
 
 # Add a vector to the index
 vector = [0.1, 0.2, 0.3]
-client.hmset('vec', {'vector': str(vector)})
+client.hset('vec', {'vector': str(vector)})
 
 # Search for the nearest vector
 query = "KNN 1 @vector $vec PARAMS 2 vec [0.1,0.2,0.3] DIALECT 2"

@@ -13,7 +13,6 @@ from wsgiref.handlers import read_environ
 from wsgiref.simple_server import make_server
 
 import lab
-import socketio
 
 
 LOCATION = os.path.realpath(os.path.dirname(__file__))

@@ -2,7 +2,7 @@ import logging
 import sys
 import time
 
-from Design_Patterns.priority_queue_pattern.queueManager import QueueManager
+from .queueManager import QueueManager
 
 
 class Worker:

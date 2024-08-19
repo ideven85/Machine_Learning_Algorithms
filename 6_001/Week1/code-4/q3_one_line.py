@@ -39,7 +39,7 @@ def nondecreasing(numbers):
     Given a list of numbers,
     return True if and only if the numbers are in nondecreasing order
     """
-    return sorted(numbers) == numbers
+    return sorted(numbers)==numbers
 
 
 def above_threshold(numbers, thresh_val):

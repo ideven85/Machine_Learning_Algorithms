@@ -369,22 +369,6 @@ def factorial(n):
     return 1 if n < 2 else n * factorial(n - 1)
 
 
-# todo
-def threeSumClosest(nums: List[int], target: int) -> int:
-    """
-
-
-    :param nums:  Given an integer array nums of length n
-    :param target: an integer target,
-    :return:  find three integers in nums such that the sum is closest to target.
-    """
-    nums.sort()
-    low = 0
-    n = len(nums)
-    high = n - 1
-    total = 0
-    return 0
-
 
 def isSortedIncreasing(array):
     if len(array) <= 1:

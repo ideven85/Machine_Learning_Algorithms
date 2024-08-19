@@ -17,6 +17,7 @@ def show_recursive_structure(f):
             show_recursive_structure.TRIM_ARGS is not None
             and len(arg_str) > show_recursive_structure.TRIM_ARGS
         ):
+            # Trim the output if more than given lines
             arg_str = arg_str[: show_recursive_structure.TRIM_ARGS] + " ..."
         if show_recursive_structure.SHOW_CALL:
             sys.stderr.write(

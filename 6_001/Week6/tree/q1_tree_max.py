@@ -23,7 +23,7 @@ def tree_max(tree):
         return 0
     value = tree["value"]
     children = tree["children"]
-    if len(children) == 0:
+    if not children:
         return value
 
     else:

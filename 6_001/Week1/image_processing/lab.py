@@ -54,7 +54,7 @@ def apply_per_pixel(image, func):
 
 def inverted(image):
     if image is None:
-        return image
+        return None
 
     return apply_per_pixel(image, lambda color: 255 - color)
 

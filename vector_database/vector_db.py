@@ -1,5 +1,6 @@
 import psycopg2
 import numpy as np
+import sqlalchemy
 
 # Connect to PostgreSQL
 conn = psycopg2.connect("dbname=lms user=deven password=728000")
@@ -9,7 +10,7 @@ cur = conn.cursor()
 
 # Use pgvector extension (if not already created)
 cur.execute("CREATE EXTENSION IF NOT EXISTS vector")
-cur.execute("create table foo1(")
+
 conn.commit()
 # Insert a vector into a table
 vector = np.array([0.1, 0.2, 0.3])

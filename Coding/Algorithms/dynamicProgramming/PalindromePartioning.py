@@ -28,3 +28,5 @@ if __name__ == "__main__":
     s = "aab"
     x = PalindromePartioning().partition(s)
     dis(PalindromePartioning().partition)
+
+    print(x)

@@ -1,4 +1,2 @@
-# todo Today
-class Solution:
-    def myAtoi(self, s: str) -> int:
+def myAtoi( s: str) -> int:
         pass
