@@ -1,3 +1,6 @@
+# todo
+# To Do, Make Directories with Images of Faces and Names, and make a neural network to predict face
+# Using OpenCV only
 import face_recognition
 import docopt
 from sklearn import svm
