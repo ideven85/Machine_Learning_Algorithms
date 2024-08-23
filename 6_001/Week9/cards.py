@@ -30,10 +30,10 @@ class FrenchDeck:
             yield c
 
     def __str__(self):
-        out = ''
+        out = ""
         for rank in self.ranks:
             for suit in self.suits:
-                out+=f"Card {rank}:{suit}\n"
+                out += f"Card {rank}:{suit}\n"
         return out
 
 

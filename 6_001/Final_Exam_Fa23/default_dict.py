@@ -1,22 +1,26 @@
-
-
-
 class DefaultDict(dict):
     def __init__(self, default_factory=None):
         super().__init__()
         if not default_factory:
-            self.dd=dict()
+            self.dd = dict()
         else:
-            self.dd=default_factory
+            self.dd = default_factory()
 
+    def __contains__(self, item):
+        return item in self.dd
 
     def __getitem__(self, key):
+        if self.__contains__(key):
+            return self.dd[key]
+        else:
+            return None
 
-            return self.
+    def __setitem__(self, key, value):
+        self.dd[key] = value
 
 
 """
->>> dd = DefaultDict(lambda : "my default")
+>>> dd = DefaultDict(lambda 5: "my default")
 >>> dd[5]
 "my default"
 >>> dd
@@ -45,4 +49,5 @@ class DefaultDict(dict):
 KeyError: 5
 """
 import doctest
+
 doctest.testmod(verbose=True)

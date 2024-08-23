@@ -61,7 +61,7 @@ def compare_simulation(filename):
         win = lab.victory_check(game)
         assert original_game == game, "be careful not to modify the input game!"
         assert (
-                lab.victory_check(game) == exp_win
+            lab.victory_check(game) == exp_win
         ), f"Incorrect victory check in step {ix} for the following board (expected {exp_win}):\n\n{original_dump}\n\nYou can copy/paste this representation into the GUI to test."
 
 

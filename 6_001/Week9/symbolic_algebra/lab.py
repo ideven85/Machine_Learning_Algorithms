@@ -61,7 +61,7 @@ class BinOp(Symbol):
         temp = None
 
         # print(left, right)
-        #incorrect
+        # incorrect
         def match_symbol(temp):
             match1 = isinstance(temp, (float, int))
             match2 = isinstance(temp, str)

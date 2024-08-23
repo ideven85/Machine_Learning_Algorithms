@@ -207,7 +207,7 @@ def test_bacon_number_04():
     assert (
         len(
             lab.actors_with_bacon_number(
-                lab.transform_data(make_bacon_tree(N, k)), 10 ** 20
+                lab.transform_data(make_bacon_tree(N, k)), 10**20
             )
         )
         == 0
@@ -215,7 +215,7 @@ def test_bacon_number_04():
     assert (
         len(
             lab.actors_with_bacon_number(
-                lab.transform_data(make_bacon_tree(N, k)), 10 ** 20
+                lab.transform_data(make_bacon_tree(N, k)), 10**20
             )
         )
         == 0

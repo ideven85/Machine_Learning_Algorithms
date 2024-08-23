@@ -3,7 +3,8 @@ import logging
 import sys
 
 from duckduckgo_search import AsyncDDGS
-#Incorrect, Don't even remember
+
+# Incorrect, Don't even remember
 # bypass curl-cffi NotImplementedError in windows https://curl-cffi.readthedocs.io/en/latest/faq/
 if sys.platform.lower().startswith("win"):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())

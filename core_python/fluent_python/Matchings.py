@@ -12,7 +12,6 @@ for city, state, x, (lat, lon) in metro_areas:
     print("City:", city, " State:", state, x, "Lat/lon", lat, ":", lon)
 
 
-
 def main():
     print(f'{"":15} | {"latititude":<9} | {"longitude":>9}"')
 
@@ -20,9 +19,8 @@ def main():
         match record:
             case [city, _, _, (lat, lon)] if lon >= 0:
                 print(f"{city:15} | {lat : 4.9f} |  {lon:9.4f}")
-            case [city,_,_,(lat,lon)] if city == "Mexico City":
+            case [city, _, _, (lat, lon)] if city == "Mexico City":
                 print(f"{city:15} | {lat : 4.9f} |  {lon:9.4f}")
-
 
 
 main()
