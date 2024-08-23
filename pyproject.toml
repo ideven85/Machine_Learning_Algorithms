@@ -19,6 +19,7 @@ neo4j = "^5.22.0"
 opencv-contrib-python = "^4.10.0.84"
 postgres = "^4.0"
 pgvector = "^0.3.2"
+plotly = "^5.23.0"
 
 
 [build-system]

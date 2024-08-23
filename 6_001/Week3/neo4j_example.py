@@ -1,5 +1,6 @@
 from neo4j import GraphDatabase
 
+
 class HelloWorldExample:
 
     def __init__(self, uri, user, password):
@@ -15,9 +16,12 @@ class HelloWorldExample:
 
     @staticmethod
     def _create_and_return_greeting(tx, message):
-        result = tx.run("CREATE (a:Greeting) "
-                        "SET a.message = $message "
-                        "RETURN a.message + ', from node ' + id(a)", message=message)
+        result = tx.run(
+            "CREATE (a:Greeting) "
+            "SET a.message = $message "
+            "RETURN a.message + ', from node ' + id(a)",
+            message=message,
+        )
         return result.single()[0]
 
 

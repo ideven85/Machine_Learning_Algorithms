@@ -1,7 +1,7 @@
 import cv2
 
 
-with open("bluegill.hex",'r') as f:
+with open("bluegill.hex", "r") as f:
     data = f.read()
 
 data = bytes.fromhex(data)

@@ -1,2 +1,2 @@
-def myAtoi( s: str) -> int:
-        pass
+def myAtoi(s: str) -> int:
+    pass

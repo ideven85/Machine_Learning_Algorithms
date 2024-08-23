@@ -4,6 +4,8 @@ from typing import List
 """
 Write Proper Documentation
 """
+
+
 def generatePermutations(array):
 
     def helper(array):

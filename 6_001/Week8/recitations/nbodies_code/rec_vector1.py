@@ -106,9 +106,12 @@ class Vector:
 
 
 if __name__ == "__main__":
-    doctest_flags = doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
-    doctest.testmod(optionflags=doctest_flags)
-
+    # doctest_flags = doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
+    # doctest.testmod(optionflags=doctest_flags)
+    v1 = Vector([1, 2, 3])
+    v2 = Vector([2, 3, 4])
+    print(v1.add(v2))
+    print(v1.normalize())
     # doctest.run_docstring_examples(
     #    Vector.normalize,
     #    globals(),

@@ -14,8 +14,8 @@ def generate_subsequences_slow(word):
 
 
 def generate_subsequences_fast(word):
-    #z=[w for w in generate_subsequences_fast_helper(word) if w in ALL_WORDS]
-    z=[w for w in generate_subsequences_fast_helper(word)]
+    # z=[w for w in generate_subsequences_fast_helper(word) if w in ALL_WORDS]
+    z = [w for w in generate_subsequences_fast_helper(word)]
     out = []
     for w in z:
         if w in ALL_WORDS:
@@ -73,10 +73,10 @@ if __name__ == "__main__":
         "fix",
         "cheer",
     ]
-    z=subsequences("ABC")
+    z = subsequences("ABC")
     sub = []
     for el in z:
-        sub.append(''.join(el))
+        sub.append("".join(el))
     print(sub)
     # [generate_subsequences_fast(w) for w in words]
     # start = time.time_ns()
@@ -98,13 +98,13 @@ if __name__ == "__main__":
     start = time.perf_counter()
     print(generate_subsequences_slow("artichokes"))
     end = time.perf_counter()
-    print(end-start)
+    print(end - start)
     # print(end - start)
     #
     # """
     # Using Generators
     # """
-    #start = time.time()
+    # start = time.time()
     #
     print(generate_subsequences_fast("artichokes"))
     print()

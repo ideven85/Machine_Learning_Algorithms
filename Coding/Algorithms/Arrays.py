@@ -369,7 +369,6 @@ def factorial(n):
     return 1 if n < 2 else n * factorial(n - 1)
 
 
-
 def isSortedIncreasing(array):
     if len(array) <= 1:
         return True

@@ -77,7 +77,7 @@ def compute_squares(numbers):
 
 def swap(x, y):
 
-    return y,x
+    return y, x
 
 
 if __name__ == "__main__":

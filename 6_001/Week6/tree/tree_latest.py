@@ -1,36 +1,32 @@
-
 def tree_max(tree):
     if not tree:
         return 0
-    maximum = float('-inf')
+    maximum = float("-inf")
     agenda = [tree]
     while agenda:
         current = agenda.pop(0)
         print(maximum)
         if not current:
             continue
-        if isinstance(current,list):
-            print("Length,",len(current),current[0],current)
-            current=current[0]
-
+        if isinstance(current, list):
+            print("Length,", len(current), current[0], current)
+            current = current[0]
 
             if current:
-                maximum = max(current['value'],maximum)
-                if current['children']:
+                maximum = max(current["value"], maximum)
+                if current["children"]:
                     print("Hello")
-                    agenda.append(current['children'])
+                    agenda.append(current["children"])
         else:
-            maximum = max(current['value'],maximum)
-            if current['children']:
-                print("Hi",current)
-                current=current['children'].pop()
-                maximum=max(current['value'],maximum)
+            maximum = max(current["value"], maximum)
+            if current["children"]:
+                print("Hi", current)
+                current = current["children"].pop()
+                maximum = max(current["value"], maximum)
 
-                agenda.append(current['children'])
+                agenda.append(current["children"])
     print(agenda)
     return maximum
-
-
 
 
 t1 = {"value": 3, "children": []}
@@ -59,9 +55,9 @@ t3 = {
     ],
 }
 
+
 def test_tree_max():
-    #assert tree_max(t1) == 3
-    #assert tree_max(t2) == 9
+    # assert tree_max(t1) == 3
+    # assert tree_max(t2) == 9
     assert tree_max(t3) == 160
     print("correct!")
-

@@ -5,9 +5,9 @@
 a = 7
 b = 8
 
-b+=a
-a=b-a
-b=b-a
+b += a
+a = b - a
+b = b - a
 
 
 assert a == 8 and b == 7
