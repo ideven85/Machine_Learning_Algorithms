@@ -2,7 +2,7 @@ import logging
 import sys
 import time
 
-from .queueManager import QueueManager
+from queueManager import QueueManager
 
 
 class Worker:

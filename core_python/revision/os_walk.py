@@ -1,7 +1,7 @@
 import os
 
 lst = []
-for dirName, x, fileNames in os.walk(".."):
+for dirName, x, fileNames in os.walk("../.."):
     # print(x,fileNames)
     for filename in fileNames:
         if filename.split(".")[-1] == "pyc":

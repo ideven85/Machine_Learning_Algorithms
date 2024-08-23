@@ -1,4 +1,4 @@
-from Design_Patterns.priority_queue_pattern.priorityMessageQueue import (
+from priorityMessageQueue import (
     PriorityMessageQueue,
 )
 
