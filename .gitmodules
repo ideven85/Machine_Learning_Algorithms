@@ -8,15 +8,11 @@
 [submodule "PyTorchStepByStep"]
 	path = PyTorchStepByStep
 	url = https://github.com/dvgodoy/PyTorchStepByStep
-[submodule "fastbook"]
-	path = fastbook
-	url = https://github.com/ideven85/fastbook
+
 [submodule "handson-ml3"]
-	path = handson-ml3
+	path = Machine_Learning/handson-ml3
 	url = https://github.com/ageron/handson-ml3
-[submodule "mlx-examples"]
-	path = mlx-examples
-	url = https://github.com/ml-explore/mlx-examples
+
 [submodule "data-science-from-scratch"]
 	path = data-science-from-scratch
 	url = https://github.com/joelgrus/data-science-from-scratch

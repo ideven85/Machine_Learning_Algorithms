@@ -1,7 +1,7 @@
 from functools import wraps
 import sys
 
-
+#todo Understand..
 def show_recursive_structure(f):
     """Show call entry/exits on stderr
 
@@ -18,6 +18,7 @@ def show_recursive_structure(f):
             and len(arg_str) > show_recursive_structure.TRIM_ARGS
         ):
             # Trim the output if more than given lines
+            #todo UnderStand the code..
             arg_str = arg_str[: show_recursive_structure.TRIM_ARGS] + " ..."
         if show_recursive_structure.SHOW_CALL:
             sys.stderr.write(

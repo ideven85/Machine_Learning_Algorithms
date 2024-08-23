@@ -5,10 +5,11 @@ This project I started for my own, I will be building it further, these are feat
 
 ## Features
 - **6_001**: Contains all code from [Mit's 6.101 course](https://py.mit.edu)
-- **Sample Projects**: Bacon similar to Neo4j's movie cypher dataset
+- **Projects**: Contain Projects with documentation
+- **resources**: Research Papers
+- **core_python**: Contains codes from Books, Fluent Python 2nd Edition, Functional Programming in Python, Mastering Object-Oriented Programming in Python, with documentation
 - **Coding**: More than 250 problems from leetcode and Algoexpert.io. 
-- **For algorithms in Java checkout [Java_Coding_Interview](https://github.com/ideven85/Java_Coding_Interview) containing more than 500 problems, LLD designs, and all Java features
+- **For algorithms in Java**: Checkout [Java_Coding_Interview](https://github.com/ideven85/Java_Coding_Interview) containing more than 500 problems, LLD designs, and all Java features
 - **Machine_Learning**: Many datasets and algorithms like sentiment analysis and many more
-- **Vector_Database**: A must checkout for building your own databases for real time searhc
 
 For any inquiries, please contact [Deven Kalra](mailto:ideven85@gmail.com).
