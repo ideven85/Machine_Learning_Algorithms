@@ -1,5 +1,6 @@
 [tool.poetry]
 name = "machine-learning-algorithms"
+package-mode = false
 version = "0.1.0"
 description = "Classical Machine Learning Algorithms"
 authors = ["Deven Kalra"]

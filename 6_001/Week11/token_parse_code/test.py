@@ -21,7 +21,7 @@ def symbol_rep(x):
     """
     Recursively converts a Symbol object x into a new object consisting of
     only built-in types that can be checked for equality against expected
-    results without relying on any autocomplete_autocorrect.py functionality
+    results without relying on any lab.py functionality
     """
     if iisinstance(x, lab.BinOp):
         if x.__class__.__name__ in {"Add", "Mul"}:  # commutative operations
@@ -40,7 +40,7 @@ def symbol_rep(x):
 
 
 def symbol_hash(x):
-    return hash(symbol_rep(x)) # da
+    return hash(symbol_rep(x))
 
 
 def mix_precedence(sym, expected):
@@ -71,9 +71,7 @@ def mix_precedence(sym, expected):
     except DisallowedFunctionException:
         raise
     except:
-        assert (
-            False
-        ), f"Unexpected error, which may be due to bug or unexpected type checking!"
+        assert False, f"Unexpected error, which may be due to bug or unexpected type checking!"
     finally:
         for c in cn:
             if c in cprec:
@@ -139,9 +137,7 @@ def with_mixed_up_symbols(test, do_symbols=True, do_names=True):
         except DisallowedFunctionException:
             raise
         except Exception as e:
-            assert (
-                False
-            ), f"Unexpected error, which may be due to bug or unexpected type checking!"
+            assert False, f"Unexpected error, which may be due to bug or unexpected type checking!"
         finally:
             for name, cls in oclasses.items():
                 setattr(lab, name, cls)
@@ -191,10 +187,10 @@ def with_no_type_checking(test):
             test()
             assert (
                 oii not in lab.__dict__.values()
-            ), f"You should not re-import isinstance in autocomplete_autocorrect.py!"
+            ), f"You should not re-import isinstance in lab.py!"
             assert (
                 otype not in lab.__dict__.values()
-            ), f"You should not re-import type in autocomplete_autocorrect.py!"
+            ), f"You should not re-import type in lab.py!"
             assert builtins not in lab.__dict__.values(), f"No importing builtins!"
         except:
             raise
