@@ -25,6 +25,7 @@ class MLP(nn.Module):
             for idim, odim in zip(layer_sizes[:-1], layer_sizes[1:])
         ]
 
+    # Call?
     def __call__(self, x):
         for l in self.layers[:-1]:
             x = nn.relu(l(x))
