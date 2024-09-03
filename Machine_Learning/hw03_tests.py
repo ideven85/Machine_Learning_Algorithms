@@ -146,7 +146,7 @@ def RunTestSuite(cases, fn=None, seed=None):
         * last element of each row is the expected answer
         * all elements before are the inputs to the function to check, in order
         * if the last element (expected answer) is a np array object, the
-          student's answer will also be checked for getting shape correct.
+          classroom's answer will also be checked for getting shape correct.
 
     fn is the function to check. if fn=None, only the first element of Cases
        will be checked to see if it is np.allclose() to the last element.

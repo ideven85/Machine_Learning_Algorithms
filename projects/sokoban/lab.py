@@ -24,7 +24,6 @@ game_state = defaultdict(list)
 def make_new_game(level_description):
     if isinstance(level_description, defaultdict):
         return level_description
-
     """
     Given a description of a game state, create and return a game
     representation of your choice.
@@ -44,12 +43,12 @@ def make_new_game(level_description):
     """
 
     rows[0] = len(level_description)
-    columns = []
-    print(rows, columns)
+    columns[0]=len(level_description)
+
     i = 0
     j = 0
     for i in range(len(level_description)):
-        columns.append(len(level_description[i]))
+        #columns.append(len(level_description[i]))
         for j in range(len(level_description[i])):
 
             for val in level_description[i][j]:
@@ -195,15 +194,13 @@ def dump_game(game):
     own.
     """
 
-    rows1 = len(game)
-    columns1 = len(game)
-    print(rows1, columns1)
+
     print(rows, columns)
     global game_state
     if not game_state:
         game_state = make_new_game(game)
     # print(rows, columns)
-    game = [[[] for _ in range(rows1 + 2)] for _ in range(columns1 + 1)]
+    game = [[[] for _ in range(rows[0] + 2)] for _ in range(columns[0] + 1)]
 
     # print(game)
     walls = game_state["wall"]

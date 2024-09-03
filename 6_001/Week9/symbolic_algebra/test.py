@@ -5,7 +5,7 @@ Symbolic Algebra
 
 #!/usr/bin/env python3
 import os
-import lab
+from . import lab
 import ast
 import pytest
 import random

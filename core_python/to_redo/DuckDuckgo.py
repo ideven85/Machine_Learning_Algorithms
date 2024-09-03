@@ -1,7 +1,7 @@
 import asyncio
 import logging
 import sys
-
+# Too much to remember, either just do python... Or just focus on django/react/node
 from duckduckgo_search import AsyncDDGS
 
 # Incorrect, Don't even remember
@@ -12,7 +12,7 @@ if sys.platform.lower().startswith("win"):
 
 async def aget_results(word):
     addgs = AsyncDDGS(proxies=None)
-    results = await addgs.text(word, max_results=100)
+    results = addgs.text(word, max_results=2)
     return results
 
 
@@ -20,7 +20,10 @@ async def main():
     words = ["sun", "earth", "moon"]
     tasks = [aget_results(w) for w in words]
     results = await asyncio.gather(*tasks)
-    print(results)
+
+    for result in results:
+        print(result)
+
 
 
 if __name__ == "__main__":

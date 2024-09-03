@@ -7,7 +7,7 @@ Autocomplete
 import os
 
 LOCATION = os.path.realpath(os.path.dirname(__file__))
-from .text_tokenize import tokenize_sentences
+from text_tokenize import tokenize_sentences
 
 
 # class TrieNode:
@@ -360,6 +360,7 @@ if __name__ == "__main__":
     t["bank"] = 4
     t["ban"] = 7
     print("bat" in t)
+    print(type(t._get_node("bat")))
     print(list(t))
     # t.print()
 

@@ -360,7 +360,7 @@ def _scheduling_satisfiable(casename=None, students=None, sessions=None):
             ), "Students should be assigned at most one session."
             unplaced_students.remove(student)
 
-            assert student in students, "This is not a valid student."
+            assert student in students, "This is not a valid classroom."
             assert session in sessions, "This is not a valid session."
 
             assert (

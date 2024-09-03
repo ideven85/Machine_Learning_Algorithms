@@ -21,13 +21,13 @@ import time
 def free_food_bonanza(board):
     """
     Given a starting board, calculate the minimum number of moves required
-    for the student to collect all the food on the board.
+    for the classroom to collect all the food on the board.
 
     Parameters:
         board: a list of lists of strings, where each cell holds one of:
-            - 'S' for student (exactly one on the board)
+            - 'S' for classroom (exactly one on the board)
             - 'F' for food (arbitrarily many on the board)
-            - 'W' for wall (arbitrarily many on the board, student may
+            - 'W' for wall (arbitrarily many on the board, classroom may
                     not walk through them)
             - ' ' for an empty square
     Returns:

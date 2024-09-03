@@ -193,9 +193,9 @@ var Student = function (name, preferences) {
   };
 
   var createStudentDomObject = function () {
-    domObject = $('<div class="student"></div>');
+    domObject = $('<div class="classroom"></div>');
 
-    studentBall = $('<div class="student-ball"></div>');
+    studentBall = $('<div class="classroom-ball"></div>');
     domObject.append(studentBall);
   };
 
@@ -282,7 +282,7 @@ var cleanup = function (students, rooms) {
   $('.no-assignments-found').css({
     visibility: 'hidden'
   });
-  $('.shadow-student-ball-container').remove();
+  $('.shadow-classroom-ball-container').remove();
   infoDisplay.reset();
 };
 
@@ -349,7 +349,7 @@ var assign = function (assignments) {
   }
 
   for (var studentName in students) {
-    // if there is any student unassigned, assign them to a preferred session
+    // if there is any classroom unassigned, assign them to a preferred session
     if (!(studentName in assigned)) {
       var student = students[studentName];
       var sessionName = student.getPreferredRooms[0];

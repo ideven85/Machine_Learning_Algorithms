@@ -49,8 +49,8 @@ def boolify_scheduling_problem(student_preferences, room_capacities):
     """
     Convert a quiz-room-scheduling problem into a Boolean formula.
 
-    student_preferences: a dictionary mapping a student name (string) to a set
-                         of room names (strings) that work for that student
+    student_preferences: a dictionary mapping a classroom name (string) to a set
+                         of room names (strings) that work for that classroom
 
     room_capacities: a dictionary mapping each room name to a positive integer
                      for how many students can fit in that room
@@ -58,7 +58,7 @@ def boolify_scheduling_problem(student_preferences, room_capacities):
     Returns: a CNF formula encoding the scheduling problem, as per the
              lab write-up
 
-    We assume no student or room names contain underscores.
+    We assume no classroom or room names contain underscores.
     """
     raise NotImplementedError
 

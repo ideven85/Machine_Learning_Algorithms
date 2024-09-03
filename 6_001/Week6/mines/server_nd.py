@@ -46,7 +46,7 @@ def handle_new_game_nd(params):
 
 
 def handle_restart(params):
-    # reload student code
+    # reload classroom code
     importlib.reload(lab)
 
 

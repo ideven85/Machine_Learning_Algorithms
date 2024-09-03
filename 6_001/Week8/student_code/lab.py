@@ -371,7 +371,8 @@ if __name__ == "__main__":
 
     t["bank"] = 4
     t["ban"] = 7
-
+    print(dir(t))
+    print(t.__dict__)
     # t.print()
 
     # print(t[""])
@@ -396,32 +397,32 @@ if __name__ == "__main__":
     # #print(list(l1)[:10])
     # print("AutoComplete Test 1:")
     # print(autocomplete(tree,"ban",2))
-    words = "cats cattle hat car act at chat crate act car act at car hat"
-    # print(Counter(words.split(' ')))
-    t = word_frequencies(words)
-    result1 = autocomplete(t, "cat", 4)
-    print(result1)
-    result = autocorrect(t, "cat", 4)
-    print(result)
-    # print(levenshteinDistance("cat","act"))
-    alphabet = a = "abcdefghijklmnopqrstuvwxyz"
-
-    word_list = [
-        "aa" + l1 + l2 + l3 + l4 for l1 in a for l2 in a for l3 in a for l4 in a
-    ]
-    word_list.extend(["apple", "application", "apple", "apricot", "apricot", "apple"])
-    word_list.append("bruteforceisbad")
-
-    t = word_frequencies(" ".join(word_list))
-    print(list(t))
-    for i in range(50):
-        result1 = autocomplete2(t, "ap", 1)
-        result2 = autocomplete2(t, "ap", 2)
-        result3 = autocomplete2(t, "ap", 3)
-        result4 = autocomplete2(t, "ap")
-        result5 = autocomplete2(t, "b")
-    print(result1)
-    print(result2)
-    print(result3)
-    print(result4)
-    print(result5)
+    # words = "cats cattle hat car act at chat crate act car act at car hat"
+    # # print(Counter(words.split(' ')))
+    # t = word_frequencies(words)
+    # result1 = autocomplete(t, "cat", 4)
+    # print(result1)
+    # result = autocorrect(t, "cat", 4)
+    # print(result)
+    # # print(levenshteinDistance("cat","act"))
+    # alphabet = a = "abcdefghijklmnopqrstuvwxyz"
+    #
+    # word_list = [
+    #     "aa" + l1 + l2 + l3 + l4 for l1 in a for l2 in a for l3 in a for l4 in a
+    # ]
+    # word_list.extend(["apple", "application", "apple", "apricot", "apricot", "apple"])
+    # word_list.append("bruteforceisbad")
+    #
+    # t = word_frequencies(" ".join(word_list))
+    # print(list(t))
+    # for i in range(50):
+    #     result1 = autocomplete2(t, "ap", 1)
+    #     result2 = autocomplete2(t, "ap", 2)
+    #     result3 = autocomplete2(t, "ap", 3)
+    #     result4 = autocomplete2(t, "ap")
+    #     result5 = autocomplete2(t, "b")
+    # print(result1)
+    # print(result2)
+    # print(result3)
+    # print(result4)
+    # print(result5)
