@@ -1,8 +1,0 @@
-left
-left
-left
-down
-left
-up
-up
-up
