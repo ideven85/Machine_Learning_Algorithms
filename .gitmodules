@@ -16,6 +16,3 @@
 [submodule "data-science-from-scratch"]
 	path = data-science-from-scratch
 	url = https://github.com/joelgrus/data-science-from-scratch
-[submodule "Machine_Learning/ffmpeg"]
-	path = Machine_Learning/ffmpeg
-	url = https://git.ffmpeg.org/ffmpeg.git
