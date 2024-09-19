@@ -10,8 +10,10 @@ in order to get the tests to pass.
 from lab import *
 from test import symbol_rep, read_expected
 
+
 def tokenize(x):
-    pass # implement me!
+    pass  # implement me!
+
 
 def parse(token_gen):
     def parse_helper():  # why is no argument needed?
@@ -26,34 +28,54 @@ def expression(inp):
 
 def test_tokenize_gen():
     import types
-    inputs = ["x", "20", "6.1010", "-4.9", "(0 + x)",
-              "(-101 * x)", "(x + (-.5 / x))",
-              "(0 + x)", "(-101 * x)", "(y * -2)",
-              "((z * 3) + 0)", "((7 * A) / 9)",
-              "(z + (x + 1))", "(A - (x + A))",
-              "(y / (x / z))","((x * y) * z)", "((x + A) * (y + z))"
+
+    inputs = [
+        "x",
+        "20",
+        "6.1010",
+        "-4.9",
+        "(0 + x)",
+        "(-101 * x)",
+        "(x + (-.5 / x))",
+        "(0 + x)",
+        "(-101 * x)",
+        "(y * -2)",
+        "((z * 3) + 0)",
+        "((7 * A) / 9)",
+        "(z + (x + 1))",
+        "(A - (x + A))",
+        "(y / (x / z))",
+        "((x * y) * z)",
+        "((x + A) * (y + z))",
     ]
-    expected_outputs = [['x'], ['20'], ['6.1010'], ['-4.9'],
-        ['(', '0', '+', 'x', ')'], ['(', '-101', '*', 'x', ')'],
-        ['(', 'x', '+', '(', '-.5', '/', 'x', ')', ')'],
-        ['(', '0', '+', 'x', ')'], ['(', '-101', '*', 'x', ')'],
-        ['(', 'y', '*', '-2', ')'], ['(', '(', 'z', '*', '3', ')', '+', '0', ')'],
-        ['(', '(', '7', '*', 'A', ')', '/', '9', ')'],
-        ['(', 'z', '+', '(', 'x', '+', '1', ')', ')'],
-        ['(', 'A', '-', '(', 'x', '+', 'A', ')', ')'],
-        ['(', 'y', '/', '(', 'x', '/', 'z', ')', ')'],
-        ['(', '(', 'x', '*', 'y', ')', '*', 'z', ')'],
-        ['(', '(', 'x', '+', 'A', ')', '*', '(', 'y', '+', 'z', ')', ')']
+    expected_outputs = [
+        ["x"],
+        ["20"],
+        ["6.1010"],
+        ["-4.9"],
+        ["(", "0", "+", "x", ")"],
+        ["(", "-101", "*", "x", ")"],
+        ["(", "x", "+", "(", "-.5", "/", "x", ")", ")"],
+        ["(", "0", "+", "x", ")"],
+        ["(", "-101", "*", "x", ")"],
+        ["(", "y", "*", "-2", ")"],
+        ["(", "(", "z", "*", "3", ")", "+", "0", ")"],
+        ["(", "(", "7", "*", "A", ")", "/", "9", ")"],
+        ["(", "z", "+", "(", "x", "+", "1", ")", ")"],
+        ["(", "A", "-", "(", "x", "+", "A", ")", ")"],
+        ["(", "y", "/", "(", "x", "/", "z", ")", ")"],
+        ["(", "(", "x", "*", "y", ")", "*", "z", ")"],
+        ["(", "(", "x", "+", "A", ")", "*", "(", "y", "+", "z", ")", ")"],
     ]
 
     for inp, exp_list in zip(inputs, expected_outputs):
         tgen = tokenize(inp)
         assert isinstance(tgen, types.GeneratorType)
         res_list = list(tokenize(inp))
-        assert res_list == exp_list, f'{res_list=} != {exp_list=}'
-        assert next(tgen) == exp_list[0], f'First token does not match!'
-        assert list(tgen) == exp_list[1:], f'Remaining tokens do not match!'
-        assert list(tgen) == [], f'Generator not exhausted!'
+        assert res_list == exp_list, f"{res_list=} != {exp_list=}"
+        assert next(tgen) == exp_list[0], f"First token does not match!"
+        assert list(tgen) == exp_list[1:], f"Remaining tokens do not match!"
+        assert list(tgen) == [], f"Generator not exhausted!"
 
     print("tokenize works as expected!")
 
@@ -136,6 +158,7 @@ def test_expression():
     assert symbol_rep(result) == symbol_rep(expected)
 
     print("expression works as expected!")
+
 
 if __name__ == "__main__":
     test_tokenize_gen()

@@ -105,4 +105,5 @@ __test__ = {name: value for name, value in locals().items() if name.startswith("
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod(verbose=False)

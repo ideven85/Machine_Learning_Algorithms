@@ -188,12 +188,10 @@ test_hand2 = """
 class Hand3:
 
     @overload
-    def __init__(self, arg1: "Hand3") -> None:
-        ...
+    def __init__(self, arg1: "Hand3") -> None: ...
 
     @overload
-    def __init__(self, arg1: Card, arg2: Card, arg3: Card) -> None:
-        ...
+    def __init__(self, arg1: Card, arg2: Card, arg3: Card) -> None: ...
 
     def __init__(
         self,
@@ -246,16 +244,13 @@ test_hand3 = """
 class Hand4:
 
     @overload
-    def __init__(self, arg1: "Hand4") -> None:
-        ...
+    def __init__(self, arg1: "Hand4") -> None: ...
 
     @overload
-    def __init__(self, arg1: "Hand4", arg2: Card, *, split: int) -> None:
-        ...
+    def __init__(self, arg1: "Hand4", arg2: Card, *, split: int) -> None: ...
 
     @overload
-    def __init__(self, arg1: Card, arg2: Card, arg3: Card) -> None:
-        ...
+    def __init__(self, arg1: Card, arg2: Card, arg3: Card) -> None: ...
 
     def __init__(
         self,
@@ -274,8 +269,8 @@ class Hand4:
             # Split an existing hand
             self.dealer_card = arg1.dealer_card
             self.cards = [arg1.cards[split], arg2]
-        elif isinstance(arg1, Card) and isinstance(arg2, Card) and isinstance(
-            arg3, Card
+        elif (
+            isinstance(arg1, Card) and isinstance(arg2, Card) and isinstance(arg3, Card)
         ):
             # Build a fresh, new hand from three cards
             self.dealer_card = arg1
@@ -451,10 +446,7 @@ class Table:
 class Player:
 
     def __init__(
-        self,
-        table: Table,
-        bet_strategy: BettingStrategy,
-        game_strategy: GameStrategy
+        self, table: Table, bet_strategy: BettingStrategy, game_strategy: GameStrategy
     ) -> None:
         self.bet_strategy = bet_strategy
         self.game_strategy = game_strategy
@@ -514,6 +506,7 @@ test_table_player2 = """
     Bet 1
     Deal Hand2(FaceCard(suit=<Suit.Club: '♣'>, rank='J'), *[Card(suit=<Suit.Spade: '♠'>, rank='2'), AceCard(suit=<Suit.Diamond: '♦'>, rank='A')])
 """
+
 
 class Player2x(Player):
 
@@ -630,8 +623,10 @@ class Player4:
         self.game_strategy = game_strategy
         self.table = table
 
+
 __test__ = {name: value for name, value in locals().items() if name.startswith("test_")}
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod(verbose=False)

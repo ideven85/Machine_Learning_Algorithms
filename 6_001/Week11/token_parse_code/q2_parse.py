@@ -34,16 +34,15 @@ from lab import *
 from test import symbol_rep
 
 
-
 def parse(tokens):  # tokens is a list of strings
     pass
-
 
 
 class SymbolSyntaxError(Exception):
     """
     Exception to be raised when trying to parse a malformed expression.
     """
+
     pass
 
 
@@ -52,23 +51,31 @@ def expression(inp):
 
 
 def test_long_expression():
-    result = expression('(x)')
-    expected = Var('x')
-    assert symbol_rep(result) == symbol_rep(expected), f'{repr(result)}  != {repr(expected)}'
+    result = expression("(x)")
+    expected = Var("x")
+    assert symbol_rep(result) == symbol_rep(
+        expected
+    ), f"{repr(result)}  != {repr(expected)}"
 
-    result = expression('(1 + 2 + 3)')
+    result = expression("(1 + 2 + 3)")
     expected = Add(Add(Num(1), Num(2)), Num(3))
-    assert symbol_rep(result) == symbol_rep(expected), f'{repr(result)}  != {repr(expected)}'
+    assert symbol_rep(result) == symbol_rep(
+        expected
+    ), f"{repr(result)}  != {repr(expected)}"
     assert result.eval({}) == 6
 
-    result = expression('(-1 - -2 + 3)')
+    result = expression("(-1 - -2 + 3)")
     expected = Add(Sub(Num(-1), Num(-2)), Num(3))
-    assert symbol_rep(result) == symbol_rep(expected), f'{repr(result)}  != {repr(expected)}'
+    assert symbol_rep(result) == symbol_rep(
+        expected
+    ), f"{repr(result)}  != {repr(expected)}"
     assert result.eval({}) == 4
 
-    result = expression('(-1 - (-2 / x * 5) + 3)')
-    expected = Add( Sub(Num(-1), Mul(Div(Num(-2), Var('x')), Num(5))), Num(3))
-    assert symbol_rep(result) == symbol_rep(expected), f'{repr(result)}  != {repr(expected)}'
+    result = expression("(-1 - (-2 / x * 5) + 3)")
+    expected = Add(Sub(Num(-1), Mul(Div(Num(-2), Var("x")), Num(5))), Num(3))
+    assert symbol_rep(result) == symbol_rep(
+        expected
+    ), f"{repr(result)}  != {repr(expected)}"
     assert result.eval({"x": 2}) == 7
 
     print("expression works as expected!")
@@ -81,11 +88,10 @@ def test_error_expression():
     except SymbolSyntaxError:
         assert True, "Yay!"
     except Exception as e:
-        assert False, f'Wrong error raised! {e}'
+        assert False, f"Wrong error raised! {e}"
 
     result = expression("(x)")
-    assert result == Var('x')
-
+    assert result == Var("x")
 
     try:
         result = expression("(x + 3 * 8)")
@@ -93,8 +99,7 @@ def test_error_expression():
     except SymbolSyntaxError:
         assert True, "Yay!"
     except Exception as e:
-        assert False, f'Wrong error raised! {e}'
-
+        assert False, f"Wrong error raised! {e}"
 
     try:
         result = expression("(x")
@@ -102,7 +107,7 @@ def test_error_expression():
     except SymbolSyntaxError:
         assert True, "Yay!"
     except Exception as e:
-        assert False, f'Wrong error raised! {e}'
+        assert False, f"Wrong error raised! {e}"
 
     try:
         result = expression("(x +")
@@ -110,8 +115,7 @@ def test_error_expression():
     except SymbolSyntaxError:
         assert True, "Yay!"
     except Exception as e:
-        assert False, f'Wrong error raised! {e}'
-
+        assert False, f"Wrong error raised! {e}"
 
     try:
         result = expression("(x + x")
@@ -119,7 +123,7 @@ def test_error_expression():
     except SymbolSyntaxError:
         assert True, "Yay!"
     except Exception as e:
-        assert False, f'Wrong error raised! {e}'
+        assert False, f"Wrong error raised! {e}"
 
     try:
         result = expression("(x + x))")
@@ -127,7 +131,7 @@ def test_error_expression():
     except SymbolSyntaxError:
         assert True, "Yay!"
     except Exception as e:
-        assert False, f'Wrong error raised! {e}'
+        assert False, f"Wrong error raised! {e}"
 
     try:
         result = expression("((x + x)")
@@ -135,7 +139,7 @@ def test_error_expression():
     except SymbolSyntaxError:
         assert True, "Yay!"
     except Exception as e:
-        assert False, f'Wrong error raised! {e}'
+        assert False, f"Wrong error raised! {e}"
 
     try:
         result = expression("(x - x")
@@ -143,7 +147,7 @@ def test_error_expression():
     except SymbolSyntaxError:
         assert True, "Yay!"
     except Exception as e:
-        assert False, f'Wrong error raised! {e}'
+        assert False, f"Wrong error raised! {e}"
 
 
 if __name__ == "__main__":

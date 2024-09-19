@@ -16,8 +16,11 @@ import sys
 
 from typing import Type
 
-from creating_packages.Chapter_19.some_algorithm.abstraction import AbstractSomeAlgorithm
-#todo Learn making packages..
+from creating_packages.Chapter_19.some_algorithm.abstraction import (
+    AbstractSomeAlgorithm,
+)
+
+# todo Learn making packages..
 SomeAlgorithm: Type[AbstractSomeAlgorithm]
 SomeAlgorithm1: Type[AbstractSomeAlgorithm]
 if sys.platform.endswith("32"):
@@ -33,6 +36,7 @@ else:
     print(f"{sys.platform}: LONG")
     from creating_packages.Chapter_19.some_algorithm.long_version import *
     from creating_packages.Chapter_19.some_algorithm.short_version import *
+
     SomeAlgorithm = Implementation_Long
     SomeAlgorithm1 = Implementation_Short
 
@@ -41,6 +45,6 @@ else:
 
 print(f"{__name__}: {SomeAlgorithm.__module__}\n{SomeAlgorithm.__doc__}")
 print(f"{__name__}: {SomeAlgorithm1.__module__}\n{SomeAlgorithm1.__doc__}")
-x=SomeAlgorithm1()
+x = SomeAlgorithm1()
 print(x.__class__)
 print(x.__module__)

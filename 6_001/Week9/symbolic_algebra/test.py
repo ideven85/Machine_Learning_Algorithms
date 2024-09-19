@@ -40,7 +40,7 @@ def symbol_rep(x):
 
 
 def symbol_hash(x):
-    return hash(symbol_rep(x)) # da
+    return hash(symbol_rep(x))  # da
 
 
 def mix_precedence(sym, expected):

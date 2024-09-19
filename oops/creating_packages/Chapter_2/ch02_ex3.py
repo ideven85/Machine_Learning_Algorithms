@@ -40,9 +40,7 @@ test_card = """
 deck = [
     card(rank, suit) for rank in range(1, 14) for suit in cast(Iterable[Suit], Suit)
 ]
-deck_l = [
-    card(rank, suit) for rank in range(1, 14) for suit in iter(Suit)
-]
+deck_l = [card(rank, suit) for rank in range(1, 14) for suit in iter(Suit)]
 
 
 # Here's a less desirable form of the factory function.
@@ -145,10 +143,11 @@ test_card5 = """
 
 def card6(rank: int, suit: Suit) -> Card:
     class_, rank_str = {
-        1: (AceCard, "A"), 11: (FaceCard, "J"), 12: (FaceCard, "Q"), 13: (FaceCard, "K")
-    }.get(
-        rank, (Card, str(rank))
-    )
+        1: (AceCard, "A"),
+        11: (FaceCard, "J"),
+        12: (FaceCard, "Q"),
+        13: (FaceCard, "K"),
+    }.get(rank, (Card, str(rank)))
     return class_(rank_str, suit)
 
 
@@ -180,9 +179,7 @@ def card7(rank: int, suit: Suit) -> Card:
         11: lambda suit: FaceCard("J", suit),
         12: lambda suit: FaceCard("Q", suit),
         13: lambda suit: FaceCard("K", suit),
-    }.get(
-        rank, lambda suit: Card(str(rank), suit)
-    )
+    }.get(rank, lambda suit: Card(str(rank), suit))
     return class_rank(suit)
 
 
@@ -209,9 +206,7 @@ class CardFactory:
             11: (FaceCard, "J"),
             12: (FaceCard, "Q"),
             13: (FaceCard, "K"),
-        }.get(
-            rank, (Card, str(rank))
-        )
+        }.get(rank, (Card, str(rank)))
         return self
 
     def suit(self, suit: Suit) -> Card:
@@ -233,6 +228,7 @@ __test__ = {name: value for name, value in locals().items() if name.startswith("
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod(verbose=False)
 
     deck = [

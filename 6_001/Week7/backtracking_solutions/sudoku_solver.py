@@ -81,12 +81,6 @@ def solve_sudoku(board):
     return board
 
 
-class Solution:
-    def solveSudoku(self, board: List[List[str]]) -> None:
-        """
-        Do not return anything, modify board in-place instead.
-        """
-        pass
 
 
 if __name__ == "__main__":

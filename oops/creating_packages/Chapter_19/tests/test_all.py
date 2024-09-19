@@ -19,7 +19,7 @@ class TestSomeAlgorithm(unittest.TestCase):
     def test_import_should_see_value(self):
         x = some_algorithm.SomeAlgorithm()
         x1 = some_algorithm.SomeAlgorithm1()
-        assert 2 ** 42 == x.value()
+        assert 2**42 == x.value()
         assert 42 == x1.value()
 
 

@@ -1,8 +1,8 @@
 class Student:
-    x=10
+    x = 10
+
     def __init__(self, id_=None):
         self.id_ = id_
-
 
     """
     Student object will have these attributes by default
@@ -36,15 +36,17 @@ class Student:
  ]
     """
 
+
 obj = Student(100)
-obj.__dict__['name']='John'
-print(type(obj) , len(obj.__dict__))
+obj.__dict__["name"] = "John"
+print(type(obj), len(obj.__dict__))
 s1 = Student()
 print(dir(s1))
 
 
 class S2:
-    x=1
+    x = 1
+
 
 s2 = S2()
 print(dir(s2))

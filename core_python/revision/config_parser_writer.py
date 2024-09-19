@@ -8,14 +8,14 @@ from datetime import datetime
 # such assignments to take place.
 config = configparser.RawConfigParser()
 config.add_section("Articles")
-config.set("Articles","blogs","f{datetime.day}")
-config.add_section('Section1')
-config.set('Section1', 'an_int', '15')
-config.set('Section1', 'a_bool', 'true')
-config.set('Section1', 'a_float', '3.1415')
-config.set('Section1', 'baz', 'fun')
-config.set('Section1', 'bar', 'Python')
-config.set('Section1', 'foo', '%(bar)s is %(baz)s!')
+config.set("Articles", "blogs", "f{datetime.day}")
+config.add_section("Section1")
+config.set("Section1", "an_int", "15")
+config.set("Section1", "a_bool", "true")
+config.set("Section1", "a_float", "3.1415")
+config.set("Section1", "baz", "fun")
+config.set("Section1", "bar", "Python")
+config.set("Section1", "foo", "%(bar)s is %(baz)s!")
 
-with open('example.cfg','w') as f:
+with open("example.cfg", "w") as f:
     config.write(f)

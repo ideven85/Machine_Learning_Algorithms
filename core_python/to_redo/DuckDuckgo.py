@@ -1,6 +1,7 @@
 import asyncio
 import logging
 import sys
+
 # Too much to remember, either just do python... Or just focus on django/react/node
 from duckduckgo_search import AsyncDDGS
 
@@ -23,7 +24,6 @@ async def main():
 
     for result in results:
         print(result)
-
 
 
 if __name__ == "__main__":

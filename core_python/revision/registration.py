@@ -13,7 +13,6 @@ def register_wrapper(func):
         print(f"Register: {func()}")
         registers.append(func)
 
-
     return inner
 
 

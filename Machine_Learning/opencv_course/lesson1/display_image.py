@@ -22,7 +22,7 @@ plt.show()
 # cv2.destroyWindow(window2)
 
 # Use OpenCV imshow(), display until any key is pressed
-name="w3"
+name = "w3"
 cv2.namedWindow(name)
 cv2.imshow(name, cb_img)
 cv2.waitKey(8000)
@@ -36,7 +36,7 @@ while Alive:
     # Use OpenCV imshow(), display until 'q' key is pressed
     cv2.imshow(window4, coke_img)
     keypress = cv2.waitKey(1)
-    if keypress == ord('q'):
+    if keypress == ord("q"):
         Alive = False
 cv2.destroyWindow(window4)
 

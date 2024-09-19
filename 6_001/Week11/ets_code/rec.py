@@ -1,6 +1,7 @@
 import random, sys
 from game_utils import *
 
+
 class GamePiece:
     """
     A piece in the ETS game. Each GamePiece has the following attributes:
@@ -11,6 +12,7 @@ class GamePiece:
     All game objects update every timestep, and render their current state at
     the end of every timestep.
     """
+
     symbol = "?"
     color = "white"
     alive = True
@@ -31,8 +33,10 @@ class GamePiece:
         """
         print_at_location(*self.position, self.symbol, self.color)
 
+
 class Wall(GamePiece):
     pass
+
 
 class Sock(GamePiece):
     pass
@@ -45,13 +49,13 @@ class Player(GamePiece):
     that increases when they intersect with a sock. Players move in their
     current set direction once every "steps_between_moves" game steps.
     """
+
     symbol = "@"
 
     def __init__(self, position):
         GamePiece.__init__(self, position)
         self.direction = None
         self.score = 0
-
 
     def update(self, game):
         delta = game.movement_deltas[self.direction]
@@ -75,8 +79,6 @@ class Human(Player):
     pass
 
 
-
-
 class Game:
     """
     Creates a game of the given dimensions surrounded by walls and two players
@@ -88,6 +90,7 @@ class Game:
 
     Declares winner at the end.
     """
+
     step_rate = 10  # game updates 10 times per second
     # constants used for movement / changing direction
     directions = "UP", "DOWN", "LEFT", "RIGHT"
@@ -119,19 +122,18 @@ class Game:
         self.time_steps = duration * self.step_rate
         self.steps_remaining = self.time_steps
         # make players in opposite corners
-        self.player = Human((height-1, 2)) # bottom-left (h-1, 2)
-        self.bot = Bot((2, width-1)) # top-right (2, w-1)
+        self.player = Human((height - 1, 2))  # bottom-left (h-1, 2)
+        self.bot = Bot((2, width - 1))  # top-right (2, w-1)
         self.all_pieces = [self.player, self.bot]
         # add players and walls to all_pieces
         # make walls left (r, 1) right (r, w)
-        for r in range(1, width+1):
+        for r in range(1, width + 1):
             self.all_pieces.append(Wall((r, 1)))
             self.all_pieces.append(Wall((r, width)))
         # make walls top (1, c), bottom (h, c)
-        for c in range(1, height+1):
+        for c in range(1, height + 1):
             self.all_pieces.append(Wall((1, c)))
             self.all_pieces.append(Wall((height, c)))
-
 
     def run(self):
         with keystrokes(sys.stdin) as keyb:
@@ -140,20 +142,19 @@ class Game:
                 self.keys = keyb.regioned_keys()
                 self.update()
                 self.render()
-                time.sleep(1/self.step_rate) # pause between each game step
+                time.sleep(1 / self.step_rate)  # pause between each game step
 
         # TODO after the game is over, display the winner
         text = "GAME OVER"
         color = "red"
-        print_at_location(5, self.width+2, text, color)
-
+        print_at_location(5, self.width + 2, text, color)
 
     def update(self):
         # randomly decide whether to add a sock
         if random.random() < 0.2:
             # generate a random position in bounds
-            r = random.randint(2, self.height-1)
-            c = random.randint(2, self.width-1)
+            r = random.randint(2, self.height - 1)
+            c = random.randint(2, self.width - 1)
             self.all_pieces.append(Sock((r, c)))
 
         # update positions of all the objects
@@ -162,14 +163,13 @@ class Game:
 
         # TODO remove socks that have disappeared
 
-
     def render(self):
-        clear_screen() # make new screen
+        clear_screen()  # make new screen
         # print remaining time below the board
         text = "Time: " + str(self.steps_remaining)
-        print_at_location(1, self.width+2, text, "white")
-        print_at_location(3, self.width+2, f'You: {self.player.score}', "white")
-        print_at_location(4, self.width+2, f'Bot: {self.player.score}', "white")
+        print_at_location(1, self.width + 2, text, "white")
+        print_at_location(3, self.width + 2, f"You: {self.player.score}", "white")
+        print_at_location(4, self.width + 2, f"Bot: {self.player.score}", "white")
 
         # display the objects on the board
         for piece in self.all_pieces:
@@ -181,8 +181,6 @@ class Game:
             for thing in self.all_pieces
             if thing.position == position and isinstance(thing, instance_of)
         ]
-
-
 
 
 if __name__ == "__main__":

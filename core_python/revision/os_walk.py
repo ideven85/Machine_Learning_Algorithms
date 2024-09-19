@@ -1,5 +1,7 @@
 import os
 from list_files import list_files
+
+
 def walk_os():
     lst = []
     for dirName, x, fileNames in os.walk("../.."):
@@ -11,13 +13,14 @@ def walk_os():
             lst.append(os.path.join(dirName, filename))
     return lst
 
+
 def main():
     l = walk_os()
     print(len(l))
     for e in l[:20]:
         print(e)
-    print(list(list_files(os.path.expanduser("~/Developer"),"py")))
+    print(list(list_files(os.path.expanduser("~/Developer"), "py")))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
-

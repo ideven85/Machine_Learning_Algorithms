@@ -19,4 +19,4 @@ class Implementation_Long(AbstractSomeAlgorithm):
     """
 
     def value(self) -> int:
-        return 2 ** 42
+        return 2**42

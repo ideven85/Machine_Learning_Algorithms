@@ -1,4 +1,6 @@
 x = 0
+
+
 def outer():
     # x = 1
     def inner():
@@ -7,6 +9,7 @@ def outer():
 
     inner()
     print("outer:", x)
+
 
 x = 3
 outer()

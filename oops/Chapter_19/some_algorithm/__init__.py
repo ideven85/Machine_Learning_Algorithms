@@ -41,6 +41,6 @@ SomeAlgorithm1 = Implementation_Short
 
 print(f"{__name__}: {SomeAlgorithm.__module__}\n{SomeAlgorithm.__doc__}")
 print(f"{__name__}: {SomeAlgorithm1.__module__}\n{SomeAlgorithm1.__doc__}")
-x=SomeAlgorithm1()
+x = SomeAlgorithm1()
 print(x.__class__)
 print(x.__module__)

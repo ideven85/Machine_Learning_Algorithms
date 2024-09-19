@@ -19,6 +19,8 @@ import pytest
 TEST_DIRECTORY = os.path.dirname(__file__)
 
 print(TEST_DIRECTORY)
+
+
 # convert prefix tree into a dictionary...
 def dictify(t):
     assert set(t.__dict__) == {
