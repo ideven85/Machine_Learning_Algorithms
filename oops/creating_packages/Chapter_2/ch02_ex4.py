@@ -18,7 +18,7 @@ from abc import abstractmethod
 
 
 class Card2:
-
+    #Did not know
     @abstractmethod
     def __init__(self, rank: int, suit: Suit) -> None:
         self.rank: str

@@ -10,7 +10,7 @@ Chapter 19. Example 1.
 import unittest
 
 # Import the test suite.
-from creating_packages.Chapter_19.tests import test_all
+from tests import test_all
 
 if __name__ == "__main__":
     # Execute all tests which can be discovered in the suite.
