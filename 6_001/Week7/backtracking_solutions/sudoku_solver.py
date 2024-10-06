@@ -81,8 +81,6 @@ def solve_sudoku(board):
     return board
 
 
-
-
 if __name__ == "__main__":
     grid1 = [
         [5, 1, 7, 6, 0, 0, 0, 3, 4],

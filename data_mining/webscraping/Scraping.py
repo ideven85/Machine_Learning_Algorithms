@@ -32,12 +32,17 @@ italics.</i></b>
 </body>
 </html>
 """
-response = requests.get("https://en.wikipedia.org/wiki/Margrethe_II")
+URL = "https://en.wikipedia.org/wiki/Margrethe_II"
+response = requests.get(URL)
 print(response.status_code)
 if response.status_code == 200:
-    soup = BeautifulSoup(response.text, "html.parser")
-    print(soup.prettify())
+    soup = BeautifulSoup(response.content, "html.parser")
+    # print(soup.prettify())
     links = soup.find_all("a", href=True)
-    with open("links.txt", "w") as fp:
+    out = []
+    with open("wiki_margaritha_links.txt", "w") as fp:
         for link in links:
-            fp.write(link["href"] + "\n")
+            if link["href"].startswith("http"):
+                fp.write(link["href"] + "\n")
+            else:
+                fp.write(URL + link["href"] + "\n")

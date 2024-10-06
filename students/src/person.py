@@ -30,4 +30,3 @@ class Person:
 
     def __str__(self):
         raise TypeError("Must be implemented by base class")
-

@@ -9,7 +9,7 @@ Chapter 2. Example 4.
 
 # Alternative Designs for the Initialization
 
-from creating_packages.Chapter_2.ch02_ex3 import Suit
+from .ch02_ex3 import Suit
 from typing import Any, cast, Iterator
 from abc import abstractmethod
 
@@ -18,7 +18,7 @@ from abc import abstractmethod
 
 
 class Card2:
-    #Did not know
+    # Did not know
     @abstractmethod
     def __init__(self, rank: int, suit: Suit) -> None:
         self.rank: str

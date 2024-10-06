@@ -83,7 +83,7 @@ if __name__ == "__main__":
     # print(doctest.testmod())
     songs = {"A": 5, "B": 10, "C": 6, "D": 1}
     print(mixtape(songs, 11))
-    songs2= {
+    songs2 = {
         "California Dreamin'": 303,
         "Achy Breaky Heart": 481,
         "Set Fire to the Rain": 513,
@@ -131,5 +131,4 @@ if __name__ == "__main__":
         "Build Me Up Buttercup": 485,
     }
     duration2 = 5105
-    print(mixtape(songs2,duration2))
-
+    print(mixtape(songs2, duration2))

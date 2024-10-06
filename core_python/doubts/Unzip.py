@@ -3,12 +3,13 @@ from pathlib import Path
 import os
 
 
-def unzip(fileName):
-    if not os.path.expanduser(fileName):
+def unzip(file_name):
+    if not os.path.expanduser(file_name):
         return
     BASE_DIR = Path(__name__).resolve().parent.parent.parent
-    directory_name = fileName[: fileName.find(".")]
-    with zipfile.ZipFile(fileName, "r") as zip_ref:
+    print(BASE_DIR)
+    directory_name = file_name[: file_name.find(".")]
+    with zipfile.ZipFile(file_name, "r") as zip_ref:
         zip_ref.extractall(os.path.expanduser("~/") + directory_name)
 
 

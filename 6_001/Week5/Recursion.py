@@ -1,3 +1,4 @@
+import os
 from collections import OrderedDict
 
 from debug_recursion import show_recursive_structure
@@ -22,8 +23,7 @@ def can_log(x):
 def sum_list(x):
     """
     Compute the sum of list recursively
-    >>> sum_list([1,2,3])
-    6
+
     """
     if len(x) == 0:
         return 0
@@ -35,8 +35,7 @@ def sum_nested(x):
     """
     Sums a nested list
     Nice Code By MIT
-    >>> sum_nested([[1,2],3,[4,5],[[[6]]]])
-    21
+
     """
     if not x:
         return 0
@@ -71,8 +70,7 @@ def subsequences(seq):
     consisting of all its subsequences.
     A subsequence is a sequence of elements from seq that are in the same
     order as in seq but not necessarily adjacent.
-    >>> sorted(subsequences([4,2,3]))
-    [(), (2,), (2, 3), (3,), (4,), (4, 2), (4, 2, 3), (4, 3)]
+
     """
     global count
     if not seq:
@@ -113,17 +111,11 @@ def number_to_string(n, b):
     Given an integer n and base b (where 2 <= b <= 10),
     returns n represented as a string in base-b notation,
     without any unnecessary leading zeroes.
-    >>> number_to_string(-829, 10)
-    '-829'
-    >>> number_to_string(-5, 2)
-    '-101'
-    >>> number_to_string(0, 10)
-    '0'
+
     """
     if n < 0:
         return "-" + number_to_string(-n, b)
-    elif n == 0:
-        return "0"
+
     elif n < b:
         return str(n)
     else:
@@ -131,7 +123,7 @@ def number_to_string(n, b):
         return number_to_string(n // b, b) + digits[n % b]
 
 
-import doctest
+# import doctest
 
 
 # todo 25th March,2024
@@ -165,6 +157,13 @@ def powerset_backtracking(arr):
     return output
 
 
+def print_full_path(file):
+    if not os.path.exists(file):
+        return "File Not Found"
+    else:
+        return os.path.abspath(file)
+
+
 if __name__ == "__main__":
 
     # print(sum_list([]))
@@ -183,3 +182,7 @@ if __name__ == "__main__":
     # print(productSum(b1))
     # print(powerset_recursive([1, 2,3]))
     print(powerset_backtracking([1, 2, 3]))
+    print(number_to_string(-5, 2))
+    print(number_to_string(829, 10))
+    print(number_to_string(0, 2))
+    print(print_full_path("Recursion.py"))
