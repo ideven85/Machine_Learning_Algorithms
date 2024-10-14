@@ -23,7 +23,7 @@ pgvector = "^0.3.2"
 plotly = "^5.23.0"
 pyqt5 = "^5.15.11"
 nltk = "^3.9.1"
-tensorflow = "^2.17.0"
+
 spacy = "^3.7.6"
 pygame = "^2.6.0"
 cython = "^3.0.11"
@@ -41,6 +41,8 @@ seaborn = "^0.13.2"
 dash = "^2.17.1"
 mypy = "^1.11.2"
 flair = "^0.14.0"
+python-imagesearch = "^1.3.0"
+coverage = "^7.6.2"
 
 
 [build-system]
