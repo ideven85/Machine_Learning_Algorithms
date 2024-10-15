@@ -1,5 +1,6 @@
 import os
 from collections import OrderedDict
+from types import NoneType
 
 from debug_recursion import show_recursive_structure
 
@@ -9,7 +10,7 @@ def can_log(x):
     Checks whether the log entry is valid or not
     Pythonic Coding
     """
-    if isinstance(x, (str, float, int, bool, complex)):
+    if isinstance(x, (str, float, int, bool, complex,NoneType)):
         return True
     elif isinstance(x, (list, tuple, set, frozenset)):
         return all(can_log(v) for v in x)
