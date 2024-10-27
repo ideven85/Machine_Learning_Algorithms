@@ -1,9 +1,0 @@
-[
-  {'ok': True, 'output': 3},
-  {'ok': True, 'output': 25},
-  {'ok': True, 'output': 2},
-  {'ok': True, 'output': 2},
-  {'ok': True, 'output': 3},
-  {'ok': True, 'output': 3},
-  {'ok': True, 'output': 2},
-]

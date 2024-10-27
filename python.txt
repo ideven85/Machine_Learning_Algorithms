@@ -1,0 +1,2084 @@
+├── .pytest_cache
+│   ├── combinations.py
+│   ├── pentomin.py
+│   └── test.py
+│   │   ├── Path.py
+│   │   ├── Program1.py
+│   │   ├── Trees.py
+│   │   └── spring_23.py
+│   │   ├── default_dict.py
+│   │   └── question1.py
+│   │   ├── __init__.py
+│   │   │   ├── __init__.py
+│   │   │   ├── lab.py
+│   │   │   ├── pylintrc
+│   │   │   ├── test.py
+│   │   │   ├── q1_sum.py
+│   │   │   ├── q2_reverse.py
+│   │   │   └── q3_subtract.py
+│   │   │   ├── poly.py
+│   │   │   └── test_poly.py
+│   │   │   ├── q1_data_representation.py
+│   │   │   ├── q2_backwards.py
+│   │   │   ├── q3_mix.py
+│   │   │   ├── q4_convolve.py
+│   │   ├── environment_model.py
+│   │       ├── __init__.py
+│   │       ├── ps0.py
+│   │       ├── test_packages.py
+│   │       └── test_python.py
+│   │   ├── __init__.py
+│   │   │   ├── goal.py
+│   │   │   ├── q1_loops.py
+│   │   │   ├── q2_poly.py
+│   │   │   ├── q3_one_line.py
+│   │   │   ├── q4_sorting.py
+│   │   │   └── q5_unpacking.py
+│   │   │   ├── q1_apply_per_pixel_0.py
+│   │   │   ├── q2_correlate_intro.py
+│   │   │   ├── q2_kernel_representations.py
+│   │   │   └── q3_get_pixel.py
+│   │   │   ├── lab.py
+│   │   │   ├── pylintrc
+│   │   │   ├── test.py
+│   │   │   │   ├── python.png
+│   │   ├── week1.ipynb
+│   │   └── week1.py
+│   │   ├── Bank.py
+│   │   ├── decorators.py
+│   │   ├── functional_abstraction.py
+│   │   ├── functional_programming.py
+│   │   │   ├── lab.py
+│   │   │   ├── pylintrc
+│   │   │   ├── schemerepl.py
+│   │   │   ├── test.py
+│   │   │   ├── q2scope.py
+│   │   │   ├── q3scopea.py
+│   │   │   ├── q3scopeb.py
+│   │   └── py.html
+│   │   │   ├── game_utils.py
+│   │   │   └── rec.py
+│   │   │   ├── lab.py
+│   │   │   ├── pylintrc
+│   │   │   ├── schemerepl.py
+│   │   │   ├── test.py
+│   │   │   ├── q2scope.py
+│   │   │   ├── q3scopea.py
+│   │   │   ├── q3scopeb.py
+│   │       ├── q1_tokens.py
+│   │       ├── q2_parse.py
+│   │       ├── test.py
+│   │           ├── 100_in.pyobj
+│   │           ├── 100_out.pyobj
+│   │           ├── 101_in.pyobj
+│   │           ├── 101_out.pyobj
+│   │           ├── 102_in.pyobj
+│   │           ├── 102_out.pyobj
+│   │           ├── 103_in.pyobj
+│   │           ├── 103_out.pyobj
+│   │           ├── 104_in.pyobj
+│   │           ├── 104_out.pyobj
+│   │           ├── 105_in.pyobj
+│   │           ├── 105_out.pyobj
+│   │           ├── 106_in.pyobj
+│   │           ├── 106_out.pyobj
+│   │           ├── 107_in.pyobj
+│   │           ├── 107_out.pyobj
+│   │           ├── 108_in.pyobj
+│   │           ├── 108_out.pyobj
+│   │           ├── 110_in.pyobj
+│   │           ├── 110_out.pyobj
+│   │           ├── 111_in.pyobj
+│   │           ├── 111_out.pyobj
+│   │           ├── 112_in.pyobj
+│   │           ├── 112_out.pyobj
+│   │           ├── 113_in.pyobj
+│   │           ├── 113_out.pyobj
+│   │           ├── 114_in.pyobj
+│   │           ├── 115_in.pyobj
+│   │           ├── 115_out.pyobj
+│   │           ├── 116_in.pyobj
+│   │           ├── 116_out.pyobj
+│   │           ├── 117_in.pyobj
+│   │           ├── 118_in.pyobj
+│   │           ├── 118_out.pyobj
+│   │           ├── 119_in.pyobj
+│   │           ├── 119_out.pyobj
+│   │           ├── 120_in.pyobj
+│   │           ├── 120_out.pyobj
+│   │           ├── 121_in.pyobj
+│   │           ├── 121_out.pyobj
+│   │           ├── 122_in.pyobj
+│   │           ├── 122_out.pyobj
+│   │           ├── 123_in.pyobj
+│   │           ├── 123_out.pyobj
+│   │           ├── 124_in.pyobj
+│   │           ├── 124_out.pyobj
+│   │           ├── 125_in.pyobj
+│   │           ├── 125_out.pyobj
+│   │           ├── 126_in.pyobj
+│   │           ├── 126_out.pyobj
+│   │           ├── 127_in.pyobj
+│   │           ├── 127_out.pyobj
+│   │           ├── 128_in.pyobj
+│   │           ├── 128_out.pyobj
+│   │           ├── 129_in.pyobj
+│   │           ├── 129_out.pyobj
+│   │           ├── 130_in.pyobj
+│   │           ├── 130_out.pyobj
+│   │           ├── 131_in.pyobj
+│   │           ├── 131_out.pyobj
+│   │           ├── 132_in.pyobj
+│   │           ├── 132_out.pyobj
+│   │           ├── 133_in.pyobj
+│   │           ├── 133_out.pyobj
+│   │           ├── 134_in.pyobj
+│   │           ├── 134_out.pyobj
+│   │           ├── 135_in.pyobj
+│   │           ├── 135_out.pyobj
+│   │           ├── 136_in.pyobj
+│   │           ├── 136_out.pyobj
+│   │           ├── 137_in.pyobj
+│   │           ├── 137_out.pyobj
+│   │           ├── 138_in.pyobj
+│   │           ├── 138_out.pyobj
+│   │           ├── 139_in.pyobj
+│   │           ├── 139_out.pyobj
+│   │           ├── 140_in.pyobj
+│   │           ├── 140_out.pyobj
+│   │           ├── 141_in.pyobj
+│   │           ├── 141_out.pyobj
+│   │           ├── 142_in.pyobj
+│   │           ├── 142_out.pyobj
+│   │           ├── 143_in.pyobj
+│   │           ├── 143_out.pyobj
+│   │           ├── 144_in.pyobj
+│   │           ├── 144_out.pyobj
+│   │           ├── 145_in.pyobj
+│   │           ├── 145_out.pyobj
+│   │           ├── 146_in.pyobj
+│   │           ├── 146_out.pyobj
+│   │           ├── 147_in.pyobj
+│   │           ├── 148_in.pyobj
+│   │           ├── 148_out.pyobj
+│   │           ├── 149_in.pyobj
+│   │           ├── 149_out.pyobj
+│   │           ├── 150_in.pyobj
+│   │           ├── 150_out.pyobj
+│   │           ├── 151_in.pyobj
+│   │           ├── 151_out.pyobj
+│   │           ├── 152_in.pyobj
+│   │           ├── 152_out.pyobj
+│   │           ├── 153_in.pyobj
+│   │           ├── 153_out.pyobj
+│   │           ├── 154_in.pyobj
+│   │           ├── 154_out.pyobj
+│   │           ├── 155_in.pyobj
+│   │           ├── 155_out.pyobj
+│   │           ├── 156_in.pyobj
+│   │           ├── 156_out.pyobj
+│   │           ├── 157_in.pyobj
+│   │           ├── 158_in.pyobj
+│   │           ├── 158_out.pyobj
+│   │           ├── 159_in.pyobj
+│   │           ├── 159_out.pyobj
+│   │           ├── 160_in.pyobj
+│   │           ├── 160_out.pyobj
+│   │           ├── 161_in.pyobj
+│   │           ├── 161_out.pyobj
+│   │           ├── 162_in.pyobj
+│   │           ├── 162_out.pyobj
+│   │           ├── 163_in.pyobj
+│   │           ├── 163_out.pyobj
+│   │           ├── 164_in.pyobj
+│   │           ├── 164_out.pyobj
+│   │           ├── 165_in.pyobj
+│   │           ├── 165_out.pyobj
+│   │           ├── 166_in.pyobj
+│   │           ├── 166_out.pyobj
+│   │           ├── 167_out.pyobj
+│   │           ├── 168_in.pyobj
+│   │           ├── 168_out.pyobj
+│   │           ├── 169_in.pyobj
+│   │           ├── 169_out.pyobj
+│   │           ├── 170_in.pyobj
+│   │           ├── 170_out.pyobj
+│   │           ├── 171_in.pyobj
+│   │           ├── 171_out.pyobj
+│   │           ├── 172_in.pyobj
+│   │           ├── 172_out.pyobj
+│   │           ├── 173_in.pyobj
+│   │           ├── 173_out.pyobj
+│   │           ├── 174_in.pyobj
+│   │           ├── 174_out.pyobj
+│   │           ├── 175_in.pyobj
+│   │           ├── 175_out.pyobj
+│   │           ├── 176_in.pyobj
+│   │           ├── 176_out.pyobj
+│   │           ├── 177_in.pyobj
+│   │           ├── 177_out.pyobj
+│   │           ├── 178_in.pyobj
+│   │           ├── 178_out.pyobj
+│   │           ├── 179_in.pyobj
+│   │           ├── 179_out.pyobj
+│   │           ├── 180_in.pyobj
+│   │           ├── 180_out.pyobj
+│   │           ├── 181_in.pyobj
+│   │           ├── 181_out.pyobj
+│   │           ├── 182_out.pyobj
+│   │           ├── 183_in.pyobj
+│   │           ├── 183_out.pyobj
+│   │           ├── 184_in.pyobj
+│   │           ├── 184_out.pyobj
+│   │           ├── 185_in.pyobj
+│   │           ├── 185_out.pyobj
+│   │           ├── 186_in.pyobj
+│   │           ├── 186_out.pyobj
+│   │           ├── 187_in.pyobj
+│   │           ├── 187_out.pyobj
+│   │           ├── 188_in.pyobj
+│   │           ├── 188_out.pyobj
+│   │           ├── 189_in.pyobj
+│   │           ├── 189_out.pyobj
+│   │           ├── 190_in.pyobj
+│   │           ├── 190_out.pyobj
+│   │           ├── 191_in.pyobj
+│   │           ├── 191_out.pyobj
+│   │           ├── 199_out.pyobj
+│   │           ├── 200_in.pyobj
+│   │           ├── 200_out.pyobj
+│   │           ├── 201_in.pyobj
+│   │           ├── 201_out.pyobj
+│   │           ├── 202_in.pyobj
+│   │           ├── 202_out.pyobj
+│   │           ├── 203_in.pyobj
+│   │           ├── 203_out.pyobj
+│   │           ├── 204_in.pyobj
+│   │           ├── 204_out.pyobj
+│   │           ├── 205_in.pyobj
+│   │           ├── 205_out.pyobj
+│   │           ├── 206_in.pyobj
+│   │           ├── 206_out.pyobj
+│   │           ├── 33_in.pyobj
+│   │           ├── 33_out.pyobj
+│   │           ├── 36_in.pyobj
+│   │           ├── 36_out.pyobj
+│   │           ├── 37_in.pyobj
+│   │           ├── 37_out.pyobj
+│   │           ├── 38_in.pyobj
+│   │           ├── 38_out.pyobj
+│   │           ├── 39_in.pyobj
+│   │           ├── 39_out.pyobj
+│   │           ├── 40_in.pyobj
+│   │           ├── 40_out.pyobj
+│   │           ├── 41_in.pyobj
+│   │           ├── 41_out.pyobj
+│   │           ├── 42_in.pyobj
+│   │           ├── 42_out.pyobj
+│   │           ├── 43_in.pyobj
+│   │           ├── 43_out.pyobj
+│   │           ├── 44_in.pyobj
+│   │           ├── 44_out.pyobj
+│   │           ├── 45_in.pyobj
+│   │           ├── 45_out.pyobj
+│   │           ├── 46_in.pyobj
+│   │           ├── 46_out.pyobj
+│   │           ├── 47_in.pyobj
+│   │           ├── 47_out.pyobj
+│   │           ├── 48_in.pyobj
+│   │           ├── 48_out.pyobj
+│   │           ├── 49_in.pyobj
+│   │           ├── 49_out.pyobj
+│   │           ├── 50_in.pyobj
+│   │           ├── 50_out.pyobj
+│   │           ├── 51_in.pyobj
+│   │           ├── 51_out.pyobj
+│   │           ├── 52_in.pyobj
+│   │           ├── 52_out.pyobj
+│   │           ├── 53_in.pyobj
+│   │           ├── 53_out.pyobj
+│   │           ├── 54_in.pyobj
+│   │           ├── 54_out.pyobj
+│   │           ├── 55_in.pyobj
+│   │           ├── 55_out.pyobj
+│   │           ├── 56_in.pyobj
+│   │           ├── 56_out.pyobj
+│   │           ├── 57_in.pyobj
+│   │           ├── 57_out.pyobj
+│   │           ├── 58_in.pyobj
+│   │           ├── 58_out.pyobj
+│   │           ├── 59_in.pyobj
+│   │           ├── 59_out.pyobj
+│   │           ├── 60_in.pyobj
+│   │           ├── 60_out.pyobj
+│   │           ├── 61_in.pyobj
+│   │           ├── 61_out.pyobj
+│   │           ├── 62_in.pyobj
+│   │           ├── 62_out.pyobj
+│   │           ├── 63_in.pyobj
+│   │           ├── 63_out.pyobj
+│   │           ├── 64_in.pyobj
+│   │           ├── 64_out.pyobj
+│   │           ├── 65_out.pyobj
+│   │           ├── 66_in.pyobj
+│   │           ├── 66_out.pyobj
+│   │           ├── 67_out.pyobj
+│   │           ├── 68_in.pyobj
+│   │           ├── 68_out.pyobj
+│   │           ├── 69_in.pyobj
+│   │           ├── 69_out.pyobj
+│   │           ├── 70_in.pyobj
+│   │           ├── 70_out.pyobj
+│   │           ├── 71_in.pyobj
+│   │           ├── 71_out.pyobj
+│   │           ├── 72_in.pyobj
+│   │           ├── 72_out.pyobj
+│   │           ├── 73_in.pyobj
+│   │           ├── 73_out.pyobj
+│   │           ├── 74_in.pyobj
+│   │           ├── 74_out.pyobj
+│   │           ├── 75_in.pyobj
+│   │           ├── 75_out.pyobj
+│   │           ├── 76_in.pyobj
+│   │           ├── 76_out.pyobj
+│   │           ├── 77_in.pyobj
+│   │           ├── 77_out.pyobj
+│   │           ├── 78_in.pyobj
+│   │           ├── 78_out.pyobj
+│   │           ├── 79_in.pyobj
+│   │           ├── 79_out.pyobj
+│   │           ├── 80_in.pyobj
+│   │           ├── 80_out.pyobj
+│   │           ├── 81_in.pyobj
+│   │           ├── 81_out.pyobj
+│   │           ├── 82_in.pyobj
+│   │           ├── 82_out.pyobj
+│   │           ├── 83_in.pyobj
+│   │           ├── 83_out.pyobj
+│   │           ├── 84_in.pyobj
+│   │           ├── 84_out.pyobj
+│   │           ├── 85_in.pyobj
+│   │           ├── 85_out.pyobj
+│   │           ├── 86_in.pyobj
+│   │           ├── 86_out.pyobj
+│   │           ├── 87_in.pyobj
+│   │           ├── 87_out.pyobj
+│   │           ├── 88_in.pyobj
+│   │           ├── 88_out.pyobj
+│   │           ├── 89_in.pyobj
+│   │           ├── 89_out.pyobj
+│   │           ├── 90_in.pyobj
+│   │           ├── 90_out.pyobj
+│   │           ├── 91_in.pyobj
+│   │           ├── 91_out.pyobj
+│   │           ├── 92_in.pyobj
+│   │           ├── 92_out.pyobj
+│   │           ├── 93_in.pyobj
+│   │           ├── 93_out.pyobj
+│   │           ├── 94_in.pyobj
+│   │           ├── 94_out.pyobj
+│   │           ├── 95_in.pyobj
+│   │           ├── 95_out.pyobj
+│   │           ├── 96_in.pyobj
+│   │           ├── 96_out.pyobj
+│   │           ├── 97_in.pyobj
+│   │           ├── 97_out.pyobj
+│   │           ├── 98_in.pyobj
+│   │           ├── 98_out.pyobj
+│   │           ├── 99_in.pyobj
+│   │           └── 99_out.pyobj
+│   │       ├── lab.py
+│   │       ├── pylintrc
+│   │       ├── schemerepl.py
+│   │       ├── test.py
+│   │   ├── __init__.py
+│   │       ├── lab.py
+│   │       ├── pylintrc
+│   │       ├── test.py
+│   │       │   ├── python.png
+│   │       └── test_seam_carving_helpers.py
+│   │   ├── __init__.py
+│   │   │   ├── __init__.py
+│   │   │   ├── acted_together_names.py
+│   │   │   ├── actors_with_bacon_numbers.py
+│   │   │   ├── lab.py
+│   │   │   ├── names.py
+│   │   │   ├── pylintrc
+│   │   │   ├── relationships.py
+│   │   │   ├── server.py
+│   │   │   ├── test.py
+│   │   │   ├── tiny.py
+│   │   │   ├── flood_fill.py
+│   │   │   ├── flood_fill_recursive.py
+│   │   │   ├── latest_flood_fill.py
+│   │   │   ├── shortest_path.py
+│   │   │   ├── shortest_path_in_maze.py
+│   │   ├── neo4j_example.py
+│   │   ├── patch_me.py
+│   │   ├── pylintrc
+│   │   ├── reading3.py
+│   │   │   ├── __init__.py
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── q2_neighbors.py
+│   │   │   │   ├── q3_neighbors.py
+│   │   │   │   ├── q5_paths.py
+│   │   │   │   └── q8_extra_paths.py
+│   │   │   ├── eventual_safe_nodes.py
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── q1_mit_flood_fill.py
+│   │   │   │   ├── q2_can_reach.py
+│   │   │   │   └── q3_find_path.py
+│   │   │   ├── rec3.py
+│   │   │   ├── sets_and_dictionaries.py
+│   │   │       ├── __init__.py
+│   │   │       ├── check.py
+│   │   │       ├── practice.py
+│   │   │       ├── pylintrc
+│   │   │       └── test.py
+│   │   ├── revision.ipynb
+│   │   └── test.py
+│   │   ├── __init__.py
+│   │   ├── hello.py
+│   │   │   ├── __init__.py
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── practice.py
+│   │   │   │   ├── pylintrc
+│   │   │   │   └── test.py
+│   │   │       ├── __init__.py
+│   │   │       ├── ffb.py
+│   │   │       ├── find_path_visited_dict.py
+│   │   │       ├── find_path_visited_list.py
+│   │   │       └── find_path_visited_set.py
+│   │   ├── river_sizes.py
+│   │   ├── search.py
+│   │   │   ├── __init__.py
+│   │   │   ├── lab.py
+│   │   │   ├── pylintrc
+│   │   │   ├── server.py
+│   │   │   ├── test.py
+│   │   └── word_ladder.py
+│   │   ├── Recursion.py
+│   │   ├── __init__.py
+│   │   ├── debug_recursion.py
+│   │   ├── maximise_happiness.py
+│   │   ├── number_to_string.py
+│   │   │   ├── __init__.py
+│   │   │   ├── debug_recursion.py
+│   │   │   ├── lab.py
+│   │   │   ├── pylintrc
+│   │   │   ├── test.py
+│   │   ├── recipes.ipynb
+│   │   │   ├── __init__.py
+│   │   │   ├── debug_recursion.py
+│   │   │   ├── practice.py
+│   │   │   ├── pylintrc
+│   │   │   └── test.py
+│   │   ├── remove_duplicates.py
+│   │   ├── sorting_using_custom_comparator.py
+│   │   └── sub_sequences.py
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-312.pyc
+│   │   │   └── rec.cpython-312-pytest-8.3.3.pyc
+│   │   ├── debug_recursion.py
+│   │   ├── factors.py
+│   │   ├── flatten.py
+│   │   │   ├── q4_enum.py
+│   │   │   ├── q5_zip.py
+│   │   │   └── q6_flatten.py
+│   │   ├── generate_legit_words.py
+│   │   ├── generators.py
+│   │   │   ├── __init__.py
+│   │   │   ├── debug_recursion.py
+│   │   │   ├── grammar.py
+│   │   │   └── test.py
+│   │   ├── iterators.py
+│   │   │   ├── 5dmine.py
+│   │   │   ├── NdMine.py
+│   │   │   ├── lab.py
+│   │   │   ├── pylintrc
+│   │   │   ├── server_2d.py
+│   │   │   ├── server_nd.py
+│   │   │   ├── test.py
+│   │   │   ├── practice.py
+│   │   │   └── test.py
+│   │   ├── number_of_elements.py
+│   │   ├── print_tree.py
+│   │   ├── rec.py
+│   │   ├── recursion_with_iteration.py
+│   │   ├── summable_list.py
+│   │   │   ├── __init__.py
+│   │   │   ├── debug_recursion.py
+│   │   │   ├── q1_tree_max.py
+│   │   │   ├── q2_tree_sum.py
+│   │   │   ├── q3_tree_list.py
+│   │   │   ├── q4_tree_depth.py
+│   │   │   ├── tree_latest.py
+│   │   │   ├── tree_recursion.py
+│   │   │   └── wrapper_demo.py
+│   │   └── tree_recursive.py
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   └── __init__.cpython-312.pyc
+│   │   │   ├── __pycache__
+│   │   │   │   ├── mix_tape_graph.cpython-312.pyc
+│   │   │   │   ├── mixtape.cpython-312.pyc
+│   │   │   │   └── test.cpython-312-pytest-8.3.3.pyc
+│   │   │   ├── backtracking_mixtape.py
+│   │   │   ├── iterative_solution.py
+│   │   │   ├── mix_tape_graph.py
+│   │   │   ├── mixtape.py
+│   │   │   ├── mixtape1.py
+│   │   │   ├── sudoku.py
+│   │   │   ├── sum_nested.py
+│   │   │   ├── test.py
+│   │   │       ├── songs_01.py
+│   │   │       ├── songs_02.py
+│   │   │       ├── songs_03.py
+│   │   │       ├── songs_04.py
+│   │   │       ├── songs_05.py
+│   │   │       ├── songs_06.py
+│   │   │       ├── songs_07.py
+│   │   │       ├── songs_08.py
+│   │   │       ├── songs_09.py
+│   │   │       ├── songs_10.py
+│   │   │       ├── songs_11.py
+│   │   │       ├── songs_12.py
+│   │   │       ├── songs_13.py
+│   │   │       ├── songs_14.py
+│   │   │       ├── songs_15.py
+│   │   │       ├── songs_16.py
+│   │   │       ├── songs_17.py
+│   │   │       ├── songs_18.py
+│   │   │       ├── songs_19.py
+│   │   │       ├── songs_20.py
+│   │   │       ├── songs_21.py
+│   │   │       ├── songs_22.py
+│   │   │       ├── songs_23.py
+│   │   │       ├── songs_24.py
+│   │   │       └── songs_25.py
+│   │   │   ├── __init__.py
+│   │   │   ├── all_solutions_mixtape.py
+│   │   │   ├── combination_sum.py
+│   │   │   ├── is_interleave.py
+│   │   │   ├── non_decreasing_subsequences.py
+│   │   │   ├── string_permutations.py
+│   │   │   └── sudoku_solver.py
+│   │   ├── example.py
+│   │   ├── functional_programming.ipynb
+│   │   ├── rules.py
+│   │   │   ├── lab.py
+│   │   │   ├── pylintrc
+│   │   │   ├── server.py
+│   │   │   ├── test.py
+│   │       ├── food_preferences.py
+│   │       ├── rec.py
+│   │       ├── test.py
+│   │   │   ├── autocomplete.ipynb
+│   │   │   ├── check.py
+│   │   │   ├── checking_tokenised.py
+│   │   │   ├── lab.py
+│   │   │   ├── pylintrc
+│   │   │   ├── test.py
+│   │   │   ├── text_tokenize.py
+│   │   ├── deck.py
+│   │   ├── ll.py
+│   │   ├── ll2.py
+│   │   ├── reading8.py
+│   │   │   │   ├── rec1.py
+│   │   │   │   ├── rec2.py
+│   │   │   │   ├── rec_vector1.py
+│   │   │   │   └── rec_vector2.py
+│   │   │       ├── practice.py
+│   │   │       │   ├── python.png
+│   │   │       └── test.py
+│   │   │   ├── lab.py
+│   │   │   ├── pylintrc
+│   │   │   ├── q1_get_set.py
+│   │   │   ├── q3_iter.py
+│   │   │   ├── q4_autocomplete.py
+│   │   │   ├── test.py
+│   │   │   ├── text_tokenize.py
+│   │   ├── trie.py
+│   │   ├── vector2d_1.py
+│   │   ├── vectors.ipynb
+│   │   └── word_ladder.py
+│   │   ├── Reverse.py
+│   │   ├── cards.py
+│   │   │   ├── game_utils.py
+│   │   │   └── rec.py
+│   │   ├── inheritance.py
+│   │   ├── inheritance_polymorphism.ipynb
+│   │   │       ├── check.py
+│   │   │       ├── lab.py
+│   │   │       ├── pylintrc
+│   │   │       ├── test.py
+│   │   │           ├── 100_in.pyobj
+│   │   │           ├── 100_out.pyobj
+│   │   │           ├── 101_in.pyobj
+│   │   │           ├── 101_out.pyobj
+│   │   │           ├── 102_in.pyobj
+│   │   │           ├── 102_out.pyobj
+│   │   │           ├── 103_in.pyobj
+│   │   │           ├── 103_out.pyobj
+│   │   │           ├── 104_in.pyobj
+│   │   │           ├── 104_out.pyobj
+│   │   │           ├── 105_in.pyobj
+│   │   │           ├── 105_out.pyobj
+│   │   │           ├── 106_in.pyobj
+│   │   │           ├── 106_out.pyobj
+│   │   │           ├── 107_in.pyobj
+│   │   │           ├── 107_out.pyobj
+│   │   │           ├── 108_in.pyobj
+│   │   │           ├── 108_out.pyobj
+│   │   │           ├── 110_in.pyobj
+│   │   │           ├── 110_out.pyobj
+│   │   │           ├── 111_in.pyobj
+│   │   │           ├── 111_out.pyobj
+│   │   │           ├── 112_in.pyobj
+│   │   │           ├── 112_out.pyobj
+│   │   │           ├── 113_in.pyobj
+│   │   │           ├── 113_out.pyobj
+│   │   │           ├── 114_in.pyobj
+│   │   │           ├── 115_in.pyobj
+│   │   │           ├── 115_out.pyobj
+│   │   │           ├── 116_in.pyobj
+│   │   │           ├── 116_out.pyobj
+│   │   │           ├── 117_in.pyobj
+│   │   │           ├── 118_in.pyobj
+│   │   │           ├── 118_out.pyobj
+│   │   │           ├── 119_in.pyobj
+│   │   │           ├── 119_out.pyobj
+│   │   │           ├── 120_in.pyobj
+│   │   │           ├── 120_out.pyobj
+│   │   │           ├── 121_in.pyobj
+│   │   │           ├── 121_out.pyobj
+│   │   │           ├── 122_in.pyobj
+│   │   │           ├── 122_out.pyobj
+│   │   │           ├── 123_in.pyobj
+│   │   │           ├── 123_out.pyobj
+│   │   │           ├── 124_in.pyobj
+│   │   │           ├── 124_out.pyobj
+│   │   │           ├── 125_in.pyobj
+│   │   │           ├── 125_out.pyobj
+│   │   │           ├── 126_in.pyobj
+│   │   │           ├── 126_out.pyobj
+│   │   │           ├── 127_in.pyobj
+│   │   │           ├── 127_out.pyobj
+│   │   │           ├── 128_in.pyobj
+│   │   │           ├── 128_out.pyobj
+│   │   │           ├── 129_in.pyobj
+│   │   │           ├── 129_out.pyobj
+│   │   │           ├── 130_in.pyobj
+│   │   │           ├── 130_out.pyobj
+│   │   │           ├── 131_in.pyobj
+│   │   │           ├── 131_out.pyobj
+│   │   │           ├── 132_in.pyobj
+│   │   │           ├── 132_out.pyobj
+│   │   │           ├── 133_in.pyobj
+│   │   │           ├── 133_out.pyobj
+│   │   │           ├── 134_in.pyobj
+│   │   │           ├── 134_out.pyobj
+│   │   │           ├── 135_in.pyobj
+│   │   │           ├── 135_out.pyobj
+│   │   │           ├── 136_in.pyobj
+│   │   │           ├── 136_out.pyobj
+│   │   │           ├── 137_in.pyobj
+│   │   │           ├── 137_out.pyobj
+│   │   │           ├── 138_in.pyobj
+│   │   │           ├── 138_out.pyobj
+│   │   │           ├── 139_in.pyobj
+│   │   │           ├── 139_out.pyobj
+│   │   │           ├── 140_in.pyobj
+│   │   │           ├── 140_out.pyobj
+│   │   │           ├── 141_in.pyobj
+│   │   │           ├── 141_out.pyobj
+│   │   │           ├── 142_in.pyobj
+│   │   │           ├── 142_out.pyobj
+│   │   │           ├── 143_in.pyobj
+│   │   │           ├── 143_out.pyobj
+│   │   │           ├── 144_in.pyobj
+│   │   │           ├── 144_out.pyobj
+│   │   │           ├── 145_in.pyobj
+│   │   │           ├── 145_out.pyobj
+│   │   │           ├── 146_in.pyobj
+│   │   │           ├── 146_out.pyobj
+│   │   │           ├── 147_in.pyobj
+│   │   │           ├── 148_in.pyobj
+│   │   │           ├── 148_out.pyobj
+│   │   │           ├── 149_in.pyobj
+│   │   │           ├── 149_out.pyobj
+│   │   │           ├── 150_in.pyobj
+│   │   │           ├── 150_out.pyobj
+│   │   │           ├── 151_in.pyobj
+│   │   │           ├── 151_out.pyobj
+│   │   │           ├── 152_in.pyobj
+│   │   │           ├── 152_out.pyobj
+│   │   │           ├── 153_in.pyobj
+│   │   │           ├── 153_out.pyobj
+│   │   │           ├── 154_in.pyobj
+│   │   │           ├── 154_out.pyobj
+│   │   │           ├── 155_in.pyobj
+│   │   │           ├── 155_out.pyobj
+│   │   │           ├── 156_in.pyobj
+│   │   │           ├── 156_out.pyobj
+│   │   │           ├── 157_in.pyobj
+│   │   │           ├── 158_in.pyobj
+│   │   │           ├── 158_out.pyobj
+│   │   │           ├── 159_in.pyobj
+│   │   │           ├── 159_out.pyobj
+│   │   │           ├── 160_in.pyobj
+│   │   │           ├── 160_out.pyobj
+│   │   │           ├── 161_in.pyobj
+│   │   │           ├── 161_out.pyobj
+│   │   │           ├── 162_in.pyobj
+│   │   │           ├── 162_out.pyobj
+│   │   │           ├── 163_in.pyobj
+│   │   │           ├── 163_out.pyobj
+│   │   │           ├── 164_in.pyobj
+│   │   │           ├── 164_out.pyobj
+│   │   │           ├── 165_in.pyobj
+│   │   │           ├── 165_out.pyobj
+│   │   │           ├── 166_in.pyobj
+│   │   │           ├── 166_out.pyobj
+│   │   │           ├── 167_out.pyobj
+│   │   │           ├── 168_in.pyobj
+│   │   │           ├── 168_out.pyobj
+│   │   │           ├── 169_in.pyobj
+│   │   │           ├── 169_out.pyobj
+│   │   │           ├── 170_in.pyobj
+│   │   │           ├── 170_out.pyobj
+│   │   │           ├── 171_in.pyobj
+│   │   │           ├── 171_out.pyobj
+│   │   │           ├── 172_in.pyobj
+│   │   │           ├── 172_out.pyobj
+│   │   │           ├── 173_in.pyobj
+│   │   │           ├── 173_out.pyobj
+│   │   │           ├── 174_in.pyobj
+│   │   │           ├── 174_out.pyobj
+│   │   │           ├── 175_in.pyobj
+│   │   │           ├── 175_out.pyobj
+│   │   │           ├── 176_in.pyobj
+│   │   │           ├── 176_out.pyobj
+│   │   │           ├── 177_in.pyobj
+│   │   │           ├── 177_out.pyobj
+│   │   │           ├── 178_in.pyobj
+│   │   │           ├── 178_out.pyobj
+│   │   │           ├── 179_in.pyobj
+│   │   │           ├── 179_out.pyobj
+│   │   │           ├── 180_in.pyobj
+│   │   │           ├── 180_out.pyobj
+│   │   │           ├── 181_in.pyobj
+│   │   │           ├── 181_out.pyobj
+│   │   │           ├── 182_out.pyobj
+│   │   │           ├── 183_in.pyobj
+│   │   │           ├── 183_out.pyobj
+│   │   │           ├── 184_in.pyobj
+│   │   │           ├── 184_out.pyobj
+│   │   │           ├── 185_in.pyobj
+│   │   │           ├── 185_out.pyobj
+│   │   │           ├── 186_in.pyobj
+│   │   │           ├── 186_out.pyobj
+│   │   │           ├── 187_in.pyobj
+│   │   │           ├── 187_out.pyobj
+│   │   │           ├── 188_in.pyobj
+│   │   │           ├── 188_out.pyobj
+│   │   │           ├── 189_in.pyobj
+│   │   │           ├── 189_out.pyobj
+│   │   │           ├── 190_in.pyobj
+│   │   │           ├── 190_out.pyobj
+│   │   │           ├── 191_in.pyobj
+│   │   │           ├── 191_out.pyobj
+│   │   │           ├── 199_out.pyobj
+│   │   │           ├── 200_in.pyobj
+│   │   │           ├── 200_out.pyobj
+│   │   │           ├── 201_in.pyobj
+│   │   │           ├── 201_out.pyobj
+│   │   │           ├── 202_in.pyobj
+│   │   │           ├── 202_out.pyobj
+│   │   │           ├── 203_in.pyobj
+│   │   │           ├── 203_out.pyobj
+│   │   │           ├── 204_in.pyobj
+│   │   │           ├── 204_out.pyobj
+│   │   │           ├── 205_in.pyobj
+│   │   │           ├── 205_out.pyobj
+│   │   │           ├── 206_in.pyobj
+│   │   │           ├── 206_out.pyobj
+│   │   │           ├── 33_in.pyobj
+│   │   │           ├── 33_out.pyobj
+│   │   │           ├── 36_in.pyobj
+│   │   │           ├── 36_out.pyobj
+│   │   │           ├── 37_in.pyobj
+│   │   │           ├── 37_out.pyobj
+│   │   │           ├── 38_in.pyobj
+│   │   │           ├── 38_out.pyobj
+│   │   │           ├── 39_in.pyobj
+│   │   │           ├── 39_out.pyobj
+│   │   │           ├── 40_in.pyobj
+│   │   │           ├── 40_out.pyobj
+│   │   │           ├── 41_in.pyobj
+│   │   │           ├── 41_out.pyobj
+│   │   │           ├── 42_in.pyobj
+│   │   │           ├── 42_out.pyobj
+│   │   │           ├── 43_in.pyobj
+│   │   │           ├── 43_out.pyobj
+│   │   │           ├── 44_in.pyobj
+│   │   │           ├── 44_out.pyobj
+│   │   │           ├── 45_in.pyobj
+│   │   │           ├── 45_out.pyobj
+│   │   │           ├── 46_in.pyobj
+│   │   │           ├── 46_out.pyobj
+│   │   │           ├── 47_in.pyobj
+│   │   │           ├── 47_out.pyobj
+│   │   │           ├── 48_in.pyobj
+│   │   │           ├── 48_out.pyobj
+│   │   │           ├── 49_in.pyobj
+│   │   │           ├── 49_out.pyobj
+│   │   │           ├── 50_in.pyobj
+│   │   │           ├── 50_out.pyobj
+│   │   │           ├── 51_in.pyobj
+│   │   │           ├── 51_out.pyobj
+│   │   │           ├── 52_in.pyobj
+│   │   │           ├── 52_out.pyobj
+│   │   │           ├── 53_in.pyobj
+│   │   │           ├── 53_out.pyobj
+│   │   │           ├── 54_in.pyobj
+│   │   │           ├── 54_out.pyobj
+│   │   │           ├── 55_in.pyobj
+│   │   │           ├── 55_out.pyobj
+│   │   │           ├── 56_in.pyobj
+│   │   │           ├── 56_out.pyobj
+│   │   │           ├── 57_in.pyobj
+│   │   │           ├── 57_out.pyobj
+│   │   │           ├── 58_in.pyobj
+│   │   │           ├── 58_out.pyobj
+│   │   │           ├── 59_in.pyobj
+│   │   │           ├── 59_out.pyobj
+│   │   │           ├── 60_in.pyobj
+│   │   │           ├── 60_out.pyobj
+│   │   │           ├── 61_in.pyobj
+│   │   │           ├── 61_out.pyobj
+│   │   │           ├── 62_in.pyobj
+│   │   │           ├── 62_out.pyobj
+│   │   │           ├── 63_in.pyobj
+│   │   │           ├── 63_out.pyobj
+│   │   │           ├── 64_in.pyobj
+│   │   │           ├── 64_out.pyobj
+│   │   │           ├── 65_out.pyobj
+│   │   │           ├── 66_in.pyobj
+│   │   │           ├── 66_out.pyobj
+│   │   │           ├── 67_out.pyobj
+│   │   │           ├── 68_in.pyobj
+│   │   │           ├── 68_out.pyobj
+│   │   │           ├── 69_in.pyobj
+│   │   │           ├── 69_out.pyobj
+│   │   │           ├── 70_in.pyobj
+│   │   │           ├── 70_out.pyobj
+│   │   │           ├── 71_in.pyobj
+│   │   │           ├── 71_out.pyobj
+│   │   │           ├── 72_in.pyobj
+│   │   │           ├── 72_out.pyobj
+│   │   │           ├── 73_in.pyobj
+│   │   │           ├── 73_out.pyobj
+│   │   │           ├── 74_in.pyobj
+│   │   │           ├── 74_out.pyobj
+│   │   │           ├── 75_in.pyobj
+│   │   │           ├── 75_out.pyobj
+│   │   │           ├── 76_in.pyobj
+│   │   │           ├── 76_out.pyobj
+│   │   │           ├── 77_in.pyobj
+│   │   │           ├── 77_out.pyobj
+│   │   │           ├── 78_in.pyobj
+│   │   │           ├── 78_out.pyobj
+│   │   │           ├── 79_in.pyobj
+│   │   │           ├── 79_out.pyobj
+│   │   │           ├── 80_in.pyobj
+│   │   │           ├── 80_out.pyobj
+│   │   │           ├── 81_in.pyobj
+│   │   │           ├── 81_out.pyobj
+│   │   │           ├── 82_in.pyobj
+│   │   │           ├── 82_out.pyobj
+│   │   │           ├── 83_in.pyobj
+│   │   │           ├── 83_out.pyobj
+│   │   │           ├── 84_in.pyobj
+│   │   │           ├── 84_out.pyobj
+│   │   │           ├── 85_in.pyobj
+│   │   │           ├── 85_out.pyobj
+│   │   │           ├── 86_in.pyobj
+│   │   │           ├── 86_out.pyobj
+│   │   │           ├── 87_in.pyobj
+│   │   │           ├── 87_out.pyobj
+│   │   │           ├── 88_in.pyobj
+│   │   │           ├── 88_out.pyobj
+│   │   │           ├── 89_in.pyobj
+│   │   │           ├── 89_out.pyobj
+│   │   │           ├── 90_in.pyobj
+│   │   │           ├── 90_out.pyobj
+│   │   │           ├── 91_in.pyobj
+│   │   │           ├── 91_out.pyobj
+│   │   │           ├── 92_in.pyobj
+│   │   │           ├── 92_out.pyobj
+│   │   │           ├── 93_in.pyobj
+│   │   │           ├── 93_out.pyobj
+│   │   │           ├── 94_in.pyobj
+│   │   │           ├── 94_out.pyobj
+│   │   │           ├── 95_in.pyobj
+│   │   │           ├── 95_out.pyobj
+│   │   │           ├── 96_in.pyobj
+│   │   │           ├── 96_out.pyobj
+│   │   │           ├── 97_in.pyobj
+│   │   │           ├── 97_out.pyobj
+│   │   │           ├── 98_in.pyobj
+│   │   │           ├── 98_out.pyobj
+│   │   │           ├── 99_in.pyobj
+│   │   │           └── 99_out.pyobj
+│   │   │   ├── practice.py
+│   │   │   ├── test.py
+│   │   ├── reading9.py
+│   │   ├── shapes.py
+│   │   │   ├── __init__.py
+│   │   │   ├── check.py
+│   │   │   ├── lab.py
+│   │   │   ├── q1_tokens.py
+│   │   │   ├── q2_parse.py
+│   │   │   ├── test.py
+│   │   │       ├── 100_in.pyobj
+│   │   │       ├── 100_out.pyobj
+│   │   │       ├── 101_in.pyobj
+│   │   │       ├── 101_out.pyobj
+│   │   │       ├── 102_in.pyobj
+│   │   │       ├── 102_out.pyobj
+│   │   │       ├── 103_in.pyobj
+│   │   │       ├── 103_out.pyobj
+│   │   │       ├── 104_in.pyobj
+│   │   │       ├── 104_out.pyobj
+│   │   │       ├── 105_in.pyobj
+│   │   │       ├── 105_out.pyobj
+│   │   │       ├── 106_in.pyobj
+│   │   │       ├── 106_out.pyobj
+│   │   │       ├── 107_in.pyobj
+│   │   │       ├── 107_out.pyobj
+│   │   │       ├── 108_in.pyobj
+│   │   │       ├── 108_out.pyobj
+│   │   │       ├── 110_in.pyobj
+│   │   │       ├── 110_out.pyobj
+│   │   │       ├── 111_in.pyobj
+│   │   │       ├── 111_out.pyobj
+│   │   │       ├── 112_in.pyobj
+│   │   │       ├── 112_out.pyobj
+│   │   │       ├── 113_in.pyobj
+│   │   │       ├── 113_out.pyobj
+│   │   │       ├── 114_in.pyobj
+│   │   │       ├── 115_in.pyobj
+│   │   │       ├── 115_out.pyobj
+│   │   │       ├── 116_in.pyobj
+│   │   │       ├── 116_out.pyobj
+│   │   │       ├── 117_in.pyobj
+│   │   │       ├── 118_in.pyobj
+│   │   │       ├── 118_out.pyobj
+│   │   │       ├── 119_in.pyobj
+│   │   │       ├── 119_out.pyobj
+│   │   │       ├── 120_in.pyobj
+│   │   │       ├── 120_out.pyobj
+│   │   │       ├── 121_in.pyobj
+│   │   │       ├── 121_out.pyobj
+│   │   │       ├── 122_in.pyobj
+│   │   │       ├── 122_out.pyobj
+│   │   │       ├── 123_in.pyobj
+│   │   │       ├── 123_out.pyobj
+│   │   │       ├── 124_in.pyobj
+│   │   │       ├── 124_out.pyobj
+│   │   │       ├── 125_in.pyobj
+│   │   │       ├── 125_out.pyobj
+│   │   │       ├── 126_in.pyobj
+│   │   │       ├── 126_out.pyobj
+│   │   │       ├── 127_in.pyobj
+│   │   │       ├── 127_out.pyobj
+│   │   │       ├── 128_in.pyobj
+│   │   │       ├── 128_out.pyobj
+│   │   │       ├── 129_in.pyobj
+│   │   │       ├── 129_out.pyobj
+│   │   │       ├── 130_in.pyobj
+│   │   │       ├── 130_out.pyobj
+│   │   │       ├── 131_in.pyobj
+│   │   │       ├── 131_out.pyobj
+│   │   │       ├── 132_in.pyobj
+│   │   │       ├── 132_out.pyobj
+│   │   │       ├── 133_in.pyobj
+│   │   │       ├── 133_out.pyobj
+│   │   │       ├── 134_in.pyobj
+│   │   │       ├── 134_out.pyobj
+│   │   │       ├── 135_in.pyobj
+│   │   │       ├── 135_out.pyobj
+│   │   │       ├── 136_in.pyobj
+│   │   │       ├── 136_out.pyobj
+│   │   │       ├── 137_in.pyobj
+│   │   │       ├── 137_out.pyobj
+│   │   │       ├── 138_in.pyobj
+│   │   │       ├── 138_out.pyobj
+│   │   │       ├── 139_in.pyobj
+│   │   │       ├── 139_out.pyobj
+│   │   │       ├── 140_in.pyobj
+│   │   │       ├── 140_out.pyobj
+│   │   │       ├── 141_in.pyobj
+│   │   │       ├── 141_out.pyobj
+│   │   │       ├── 142_in.pyobj
+│   │   │       ├── 142_out.pyobj
+│   │   │       ├── 143_in.pyobj
+│   │   │       ├── 143_out.pyobj
+│   │   │       ├── 144_in.pyobj
+│   │   │       ├── 144_out.pyobj
+│   │   │       ├── 145_in.pyobj
+│   │   │       ├── 145_out.pyobj
+│   │   │       ├── 146_in.pyobj
+│   │   │       ├── 146_out.pyobj
+│   │   │       ├── 147_in.pyobj
+│   │   │       ├── 148_in.pyobj
+│   │   │       ├── 148_out.pyobj
+│   │   │       ├── 149_in.pyobj
+│   │   │       ├── 149_out.pyobj
+│   │   │       ├── 150_in.pyobj
+│   │   │       ├── 150_out.pyobj
+│   │   │       ├── 151_in.pyobj
+│   │   │       ├── 151_out.pyobj
+│   │   │       ├── 152_in.pyobj
+│   │   │       ├── 152_out.pyobj
+│   │   │       ├── 153_in.pyobj
+│   │   │       ├── 153_out.pyobj
+│   │   │       ├── 154_in.pyobj
+│   │   │       ├── 154_out.pyobj
+│   │   │       ├── 155_in.pyobj
+│   │   │       ├── 155_out.pyobj
+│   │   │       ├── 156_in.pyobj
+│   │   │       ├── 156_out.pyobj
+│   │   │       ├── 157_in.pyobj
+│   │   │       ├── 158_in.pyobj
+│   │   │       ├── 158_out.pyobj
+│   │   │       ├── 159_in.pyobj
+│   │   │       ├── 159_out.pyobj
+│   │   │       ├── 160_in.pyobj
+│   │   │       ├── 160_out.pyobj
+│   │   │       ├── 161_in.pyobj
+│   │   │       ├── 161_out.pyobj
+│   │   │       ├── 162_in.pyobj
+│   │   │       ├── 162_out.pyobj
+│   │   │       ├── 163_in.pyobj
+│   │   │       ├── 163_out.pyobj
+│   │   │       ├── 164_in.pyobj
+│   │   │       ├── 164_out.pyobj
+│   │   │       ├── 165_in.pyobj
+│   │   │       ├── 165_out.pyobj
+│   │   │       ├── 166_in.pyobj
+│   │   │       ├── 166_out.pyobj
+│   │   │       ├── 167_out.pyobj
+│   │   │       ├── 168_in.pyobj
+│   │   │       ├── 168_out.pyobj
+│   │   │       ├── 169_in.pyobj
+│   │   │       ├── 169_out.pyobj
+│   │   │       ├── 170_in.pyobj
+│   │   │       ├── 170_out.pyobj
+│   │   │       ├── 171_in.pyobj
+│   │   │       ├── 171_out.pyobj
+│   │   │       ├── 172_in.pyobj
+│   │   │       ├── 172_out.pyobj
+│   │   │       ├── 173_in.pyobj
+│   │   │       ├── 173_out.pyobj
+│   │   │       ├── 174_in.pyobj
+│   │   │       ├── 174_out.pyobj
+│   │   │       ├── 175_in.pyobj
+│   │   │       ├── 175_out.pyobj
+│   │   │       ├── 176_in.pyobj
+│   │   │       ├── 176_out.pyobj
+│   │   │       ├── 177_in.pyobj
+│   │   │       ├── 177_out.pyobj
+│   │   │       ├── 178_in.pyobj
+│   │   │       ├── 178_out.pyobj
+│   │   │       ├── 179_in.pyobj
+│   │   │       ├── 179_out.pyobj
+│   │   │       ├── 180_in.pyobj
+│   │   │       ├── 180_out.pyobj
+│   │   │       ├── 181_in.pyobj
+│   │   │       ├── 181_out.pyobj
+│   │   │       ├── 182_out.pyobj
+│   │   │       ├── 183_in.pyobj
+│   │   │       ├── 183_out.pyobj
+│   │   │       ├── 184_in.pyobj
+│   │   │       ├── 184_out.pyobj
+│   │   │       ├── 185_in.pyobj
+│   │   │       ├── 185_out.pyobj
+│   │   │       ├── 186_in.pyobj
+│   │   │       ├── 186_out.pyobj
+│   │   │       ├── 187_in.pyobj
+│   │   │       ├── 187_out.pyobj
+│   │   │       ├── 188_in.pyobj
+│   │   │       ├── 188_out.pyobj
+│   │   │       ├── 189_in.pyobj
+│   │   │       ├── 189_out.pyobj
+│   │   │       ├── 190_in.pyobj
+│   │   │       ├── 190_out.pyobj
+│   │   │       ├── 191_in.pyobj
+│   │   │       ├── 191_out.pyobj
+│   │   │       ├── 199_out.pyobj
+│   │   │       ├── 200_in.pyobj
+│   │   │       ├── 200_out.pyobj
+│   │   │       ├── 201_in.pyobj
+│   │   │       ├── 201_out.pyobj
+│   │   │       ├── 202_in.pyobj
+│   │   │       ├── 202_out.pyobj
+│   │   │       ├── 203_in.pyobj
+│   │   │       ├── 203_out.pyobj
+│   │   │       ├── 204_in.pyobj
+│   │   │       ├── 204_out.pyobj
+│   │   │       ├── 205_in.pyobj
+│   │   │       ├── 205_out.pyobj
+│   │   │       ├── 206_in.pyobj
+│   │   │       ├── 206_out.pyobj
+│   │   │       ├── 33_in.pyobj
+│   │   │       ├── 33_out.pyobj
+│   │   │       ├── 36_in.pyobj
+│   │   │       ├── 36_out.pyobj
+│   │   │       ├── 37_in.pyobj
+│   │   │       ├── 37_out.pyobj
+│   │   │       ├── 38_in.pyobj
+│   │   │       ├── 38_out.pyobj
+│   │   │       ├── 39_in.pyobj
+│   │   │       ├── 39_out.pyobj
+│   │   │       ├── 40_in.pyobj
+│   │   │       ├── 40_out.pyobj
+│   │   │       ├── 41_in.pyobj
+│   │   │       ├── 41_out.pyobj
+│   │   │       ├── 42_in.pyobj
+│   │   │       ├── 42_out.pyobj
+│   │   │       ├── 43_in.pyobj
+│   │   │       ├── 43_out.pyobj
+│   │   │       ├── 44_in.pyobj
+│   │   │       ├── 44_out.pyobj
+│   │   │       ├── 45_in.pyobj
+│   │   │       ├── 45_out.pyobj
+│   │   │       ├── 46_in.pyobj
+│   │   │       ├── 46_out.pyobj
+│   │   │       ├── 47_in.pyobj
+│   │   │       ├── 47_out.pyobj
+│   │   │       ├── 48_in.pyobj
+│   │   │       ├── 48_out.pyobj
+│   │   │       ├── 49_in.pyobj
+│   │   │       ├── 49_out.pyobj
+│   │   │       ├── 50_in.pyobj
+│   │   │       ├── 50_out.pyobj
+│   │   │       ├── 51_in.pyobj
+│   │   │       ├── 51_out.pyobj
+│   │   │       ├── 52_in.pyobj
+│   │   │       ├── 52_out.pyobj
+│   │   │       ├── 53_in.pyobj
+│   │   │       ├── 53_out.pyobj
+│   │   │       ├── 54_in.pyobj
+│   │   │       ├── 54_out.pyobj
+│   │   │       ├── 55_in.pyobj
+│   │   │       ├── 55_out.pyobj
+│   │   │       ├── 56_in.pyobj
+│   │   │       ├── 56_out.pyobj
+│   │   │       ├── 57_in.pyobj
+│   │   │       ├── 57_out.pyobj
+│   │   │       ├── 58_in.pyobj
+│   │   │       ├── 58_out.pyobj
+│   │   │       ├── 59_in.pyobj
+│   │   │       ├── 59_out.pyobj
+│   │   │       ├── 60_in.pyobj
+│   │   │       ├── 60_out.pyobj
+│   │   │       ├── 61_in.pyobj
+│   │   │       ├── 61_out.pyobj
+│   │   │       ├── 62_in.pyobj
+│   │   │       ├── 62_out.pyobj
+│   │   │       ├── 63_in.pyobj
+│   │   │       ├── 63_out.pyobj
+│   │   │       ├── 64_in.pyobj
+│   │   │       ├── 64_out.pyobj
+│   │   │       ├── 65_out.pyobj
+│   │   │       ├── 66_in.pyobj
+│   │   │       ├── 66_out.pyobj
+│   │   │       ├── 67_out.pyobj
+│   │   │       ├── 68_in.pyobj
+│   │   │       ├── 68_out.pyobj
+│   │   │       ├── 69_in.pyobj
+│   │   │       ├── 69_out.pyobj
+│   │   │       ├── 70_in.pyobj
+│   │   │       ├── 70_out.pyobj
+│   │   │       ├── 71_in.pyobj
+│   │   │       ├── 71_out.pyobj
+│   │   │       ├── 72_in.pyobj
+│   │   │       ├── 72_out.pyobj
+│   │   │       ├── 73_in.pyobj
+│   │   │       ├── 73_out.pyobj
+│   │   │       ├── 74_in.pyobj
+│   │   │       ├── 74_out.pyobj
+│   │   │       ├── 75_in.pyobj
+│   │   │       ├── 75_out.pyobj
+│   │   │       ├── 76_in.pyobj
+│   │   │       ├── 76_out.pyobj
+│   │   │       ├── 77_in.pyobj
+│   │   │       ├── 77_out.pyobj
+│   │   │       ├── 78_in.pyobj
+│   │   │       ├── 78_out.pyobj
+│   │   │       ├── 79_in.pyobj
+│   │   │       ├── 79_out.pyobj
+│   │   │       ├── 80_in.pyobj
+│   │   │       ├── 80_out.pyobj
+│   │   │       ├── 81_in.pyobj
+│   │   │       ├── 81_out.pyobj
+│   │   │       ├── 82_in.pyobj
+│   │   │       ├── 82_out.pyobj
+│   │   │       ├── 83_in.pyobj
+│   │   │       ├── 83_out.pyobj
+│   │   │       ├── 84_in.pyobj
+│   │   │       ├── 84_out.pyobj
+│   │   │       ├── 85_in.pyobj
+│   │   │       ├── 85_out.pyobj
+│   │   │       ├── 86_in.pyobj
+│   │   │       ├── 86_out.pyobj
+│   │   │       ├── 87_in.pyobj
+│   │   │       ├── 87_out.pyobj
+│   │   │       ├── 88_in.pyobj
+│   │   │       ├── 88_out.pyobj
+│   │   │       ├── 89_in.pyobj
+│   │   │       ├── 89_out.pyobj
+│   │   │       ├── 90_in.pyobj
+│   │   │       ├── 90_out.pyobj
+│   │   │       ├── 91_in.pyobj
+│   │   │       ├── 91_out.pyobj
+│   │   │       ├── 92_in.pyobj
+│   │   │       ├── 92_out.pyobj
+│   │   │       ├── 93_in.pyobj
+│   │   │       ├── 93_out.pyobj
+│   │   │       ├── 94_in.pyobj
+│   │   │       ├── 94_out.pyobj
+│   │   │       ├── 95_in.pyobj
+│   │   │       ├── 95_out.pyobj
+│   │   │       ├── 96_in.pyobj
+│   │   │       ├── 96_out.pyobj
+│   │   │       ├── 97_in.pyobj
+│   │   │       ├── 97_out.pyobj
+│   │   │       ├── 98_in.pyobj
+│   │   │       ├── 98_out.pyobj
+│   │   │       ├── 99_in.pyobj
+│   │   │       └── 99_out.pyobj
+│   │   └── test_list.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-312.pyc
+│   ├── list_files.py
+│   │   ├── practice.py
+│   │   └── test.py
+│       ├── algorithms.py
+│       ├── generate.py
+│       ├── main.py
+│       ├── peak.py
+│       ├── problem.py
+│       ├── trace.py
+│       ├── utils.py
+│   ├── Algorithms.py
+│   ├── Arrays.py
+│   │   ├── GenerateParenthesis.py
+│   │   ├── GeneratePermutations.py
+│   │   ├── NQueens.py
+│   │   ├── StairCaseTraversal.py
+│   │   └── __init__.py
+│   ├── BackTrackingProblems.py
+│   ├── BinaryTree.py
+│   ├── BinaryTreeContruction.py
+│   ├── BinaryTreeProblems.py
+│   ├── DiskUsage.py
+│   ├── DynamicProgramming.py
+│   ├── EasyProblems.py
+│   ├── EditDistance.py
+│   ├── GraphProblems.py
+│   ├── Graphs.py
+│   ├── GreedyAlgorithms.py
+│   ├── Hashing.py
+│   │   ├── MinHeap.py
+│   │   ├── OurHeap.py
+│   │   └── __init__.py
+│   ├── InOrderSuccessor.py
+│   ├── LargestNumber.py
+│   ├── LinkedListProblems.py
+│   │   ├── ListProblems.py
+│   │   ├── Main.py
+│   │   ├── ReorderList.py
+│   │   └── __init__.py
+│   ├── MathTheory.py
+│   ├── MilkTea.py
+│   ├── MinMaxStack.py
+│   ├── MultiProcessing.py
+│   ├── MultiProcessingExamples.py
+│   ├── MultiThreading.py
+│   │   ├── Main.py
+│   │   ├── __init__.py
+│   │       ├── LargestBST.py
+│   │       └── __init__.py
+│   ├── NodesKDistance.py
+│   ├── Object_Oriented_Programming.py
+│   ├── Queues.py
+│   ├── Searching.py
+│   ├── SlidingWindow.py
+│   ├── Sortings.py
+│   ├── StacksAndQueues.py
+│   ├── StringProblems.py
+│   ├── Strings.py
+│   ├── Tree.py
+│   ├── TreeOperations.py
+│   ├── Trees.py
+│   ├── __init__.py
+│   │   ├── InversionCount.py
+│   │   ├── __init__.py
+│   │   └── hailstone_sequence.py
+│   │   ├── DeleteAndEarn.py
+│   │   ├── Dynamic.ipynb
+│   │   ├── LevhensteinDistance.py
+│   │   ├── LongestIncreasingSubsequence.py
+│   │   ├── LongestPalindromeProblems.py
+│   │   ├── LongestPalindromicSubsequence.py
+│   │   ├── MatrixMultiplications.py
+│   │   ├── MaxCombinationOfCoins.py
+│   │   ├── MinCostClimbingStairs.py
+│   │   ├── MinPathSum.py
+│   │   ├── PalindromePartioning.py
+│   │   ├── __init__.py
+│   │   └── unique_paths.py
+│   │   ├── AllPathsSourceTarget.py
+│   │   ├── Dijkstra.py
+│   │   ├── DisjointSets.py
+│   │   ├── EventualSafeStates.py
+│   │   ├── IsGraphBiPartite.py
+│   │   ├── KeysAndRooms.py
+│   │   ├── Main.py
+│   │   ├── MinConnectionsToBeAdded.py
+│   │   ├── MinCostToConnectPoints.py
+│   │   ├── MinimumPassesOfMatrix.py
+│   │   ├── NearestCell.py
+│   │   ├── NodesDistanceK.py
+│   │   ├── NumberOfProvinces.py
+│   │   ├── PeopleWithSecrets.py
+│   │   ├── RemoveIslands.py
+│   │   ├── TopologicalSorting.py
+│   │   ├── TownJudge.py
+│   │   ├── UnionFind.py
+│   │   ├── UniqueBinarySearchTrees.py
+│   │   ├── __init__.py
+│   │   └── finish_course_topological_sorting.py
+│   ├── local_testing_tool.py
+│   ├── lowest_cost_to_connect_airports.py
+│   │   ├── CommonCharacters.py
+│   │   ├── GroupAnarams.py
+│   │   ├── OneEditDistance.py
+│   │   └── __init__.py
+│   ├── transpose.py
+│       ├── PC_tree.py
+│       ├── Sequence.py
+│       ├── __init__.py
+│       ├── a_star.py
+│       ├── anagrams.py
+│       ├── arithm.py
+│       ├── arithm_expr_eval.py
+│       ├── arithm_expr_target.py
+│       ├── bellman_ford.py
+│       ├── bfs.py
+│       ├── biconnected_components.py
+│       ├── binary_search.py
+│       ├── bipartite_matching.py
+│       ├── bipartite_vertex_cover.py
+│       ├── closest_points.py
+│       ├── closest_values.py
+│       ├── convex_hull.py
+│       ├── dancing_links.py
+│       ├── dfs.py
+│       ├── dijkstra.py
+│       ├── dilworth.py
+│       ├── dinic.py
+│       ├── dist_grid.py
+│       ├── dyn_prog_tricks.py
+│       ├── edmonds_karp.py
+│       ├── eulerian_tour.py
+│       ├── fast_exponentiation.py
+│       ├── fenwick.py
+│       ├── fft.py
+│       ├── floyd_warshall.py
+│       ├── ford_fulkerson.py
+│       ├── freivalds.py
+│       ├── gale_shapley.py
+│       ├── gauss_jordan.py
+│       ├── graph.py
+│       ├── graph01.py
+│       ├── hamiltonian_cycle.py
+│       ├── horn_sat.py
+│       ├── huffman.py
+│       ├── interval_cover.py
+│       ├── interval_tree.py
+│       ├── intervals_union.py
+│       ├── karatsuba.py
+│       ├── knapsack.py
+│       ├── knuth_morris_pratt.py
+│       ├── kruskal.py
+│       ├── kuhn_munkres.py
+│       ├── kuhn_munkres_n4.py
+│       ├── laser_mirrors.py
+│       ├── left_right_inversions.py
+│       ├── levenshtein.py
+│       ├── longest_common_subsequence.py
+│       ├── longest_increasing_subsequence.py
+│       ├── lowest_common_ancestor.py
+│       ├── majority.py
+│       ├── manacher.py
+│       ├── matrix_chain_mult.py
+│       ├── max_interval_intersec.py
+│       ├── merge_ordered_lists.py
+│       ├── min_mean_cycle.py
+│       ├── next_permutation.py
+│       ├── our_heap.py
+│       ├── our_queue.py
+│       ├── our_std.py
+│       ├── pareto.py
+│       ├── partition_refinement.py
+│       ├── permutation_rank.py
+│       ├── polygon.py
+│       ├── predictive_text.py
+│       ├── primes.py
+│       ├── rabin_karp.py
+│       ├── range_minimum_query.py
+│       ├── rectangles_from_grid.py
+│       ├── rectangles_from_histogram.py
+│       ├── rectangles_from_points.py
+│       ├── roman_numbers.py
+│       ├── scalar.py
+│       ├── shortest_cycle.py
+│       ├── skip_list.py
+│       ├── strongly_connected_components.py
+│       ├── subsetsum.py
+│       ├── subsetsum_divide.py
+│       ├── sudoku.py
+│       ├── suffix_array.py
+│       ├── three_partition.py
+│       ├── topological_order.py
+│       ├── tortoise_hare.py
+│       ├── trie.py
+│       ├── two_sat.py
+│       ├── union_rectangles.py
+│       └── windows_k_distinct.py
+│   ├── .ipynb_checkpoints
+│   │   ├── beginner-checkpoint.ipynb
+│   │   └── boston_housing-checkpoint.ipynb
+│   ├── Deep_Learning_NLP_Sentiment_Analysis.ipynb
+│   ├── Face_Detection.ipynb
+│   │   ├── Algorithms.ipynb
+│   │   ├── Chess_Analysis.ipynb
+│   │   ├── Data_Science_Revision.ipynb
+│   │   │   └── First.ipynb
+│   │   ├── Learning_Torch.ipynb
+│   │   ├── Movie_Analysis.ipynb
+│   │   ├── Movie_Recommender.ipynb
+│   │   ├── Numpy1.ipynb
+│   │   │   ├── .ipynb_checkpoints
+│   │   │   │   └── Sentiment_Analysis-checkpoint.ipynb
+│   │   │   └── Sentiment_Analysis.ipynb
+│   │   ├── Sentiment_Analysis_Amazon.ipynb
+│   │   │   └── Movie_Classification.ipynb
+│   │   ├── Test.ipynb
+│   │   ├── Titanic.ipynb
+│   │   ├── Titanic1.ipynb
+│   │   ├── Torch.ipynb
+│   │   ├── farenheight_to_celsius.ipynb
+│   │   ├── tensorflow_multiprocessing_try1.py
+│   │   └── wordnet.ipynb
+│   ├── __init__.py
+│   ├── beginner.ipynb
+│   ├── boston_housing.ipynb
+│   ├── chat_gpt.ipynb
+│   │   └── chessgame.py
+│   │   ├── 03_Numpy_Notebook.ipynb
+│   │   ├── Satellite Image Analysis using numpy.ipynb
+│   ├── face.py
+│   │   ├── alien_invasion.py
+│   │   ├── car_racing.py
+│   │   └── maze_shortest_path.py
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   └── mnist.py
+│   │   ├── __init__.py
+│   │   │   ├── 01_Getting_Started_with_Images.ipynb
+│   │   │   ├── __init__.py
+│   │   │   ├── display_image.py
+│   │   │   ├── extract_code.py
+│   │   │   ├── lesson1.ipynb
+│   │   │   ├── quiz.ipynb
+│   │   │   ├── redoing.ipynb
+│   │   │   └── writing_images.py
+│   │       ├── 02_Basic_Image_Manipulations_Crop_Resize_Flip_and_Modify_Pixels.ipynb
+│   │       ├── face_recognition.ipynb
+│   │       └── image_manipulation.ipynb
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── connection.py
+│   │   ├── db.py
+│   │   ├── docker_table.py
+│   │   ├── fetching_from_db.py
+│   │   ├── redis_vector.py
+│   │   ├── vector_db.py
+│   │   └── voting.py
+├── __init__.py
+├── __pycache__
+│   └── __init__.cpython-312.pyc
+├── core_python
+│   ├── __init__.py
+│   │   │   ├── __init__.py
+│   │   │   ├── mirror.py
+│   │   │   └── reading_mirror.py
+│   │   ├── Matchings.py
+│   │   └── __init__.py
+│   │   ├── __init__.py
+│   │   ├── coroutines.py
+│   │   ├── date_and_time.py
+│   │   ├── hilarity.py
+│   │   ├── list_tuples.ipynb
+│   │   ├── mathematics.py
+│   │   ├── pattern_matchings.py
+│   │   ├── procs.py
+│   │   ├── recursive.ipynb
+│   │   ├── test1.py
+│   │   └── web_scraping.py
+│   │   ├── __init__.py
+│   │   ├── main.pyx
+│   │   ├── setup.py
+│   │   └── test.py
+│   │   ├── Mysql_Database.py
+│   │   └── __init__.py
+│   │   ├── ClockDeco.py
+│   │   └── __init__.py
+│   │   ├── Solid_Design_Principle.py
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   │   ├── __init__.py
+│   │   │   └── main.py
+│   │   │   ├── __init__.py
+│   │   │   ├── application.py
+│   │   │   ├── backgroundWorker.py
+│   │   │   ├── message.py
+│   │   │   ├── priorityMessageQueue.py
+│   │   │   └── queueManager.py
+│   │       ├── Order.py
+│   │       └── __init__.py
+│   │   ├── Functions.py
+│   │   ├── Iterator_Classes.py
+│   │   ├── Map_Filter_Reduce.ipynb
+│   │   ├── Unzip.py
+│   │   ├── __init__.py
+│   │   ├── classification_with_model_garden.ipynb
+│   │   ├── closures.py
+│   │   ├── code_modification_and_rewriting_files.ipynb
+│   │   │   ├── Decorators_Closures.ipynb
+│   │   │   ├── Register.py
+│   │   │   ├── __init__.py
+│   │   │   └── checking.py
+│   │   ├── dictionaries.py
+│   │   ├── example.py
+│   │   ├── exctract_zip.py
+│   │   ├── lambda_calculus.py
+│   │   ├── loggers.py
+│   │   ├── points.py
+│   │   │   ├── __init__.py
+│   │   │   ├── lab.py
+│   │   │   ├── pylintrc
+│   │   │   ├── test.py
+│   │   │   ├── __init__.py
+│   │   │   ├── app.py
+│   │   │   ├── main_window_ui.py
+│   │   │           ├── edit-copy.png
+│   │   └── sets_and_dictionaries.py
+│   │   ├── ConvertHexToImage.py
+│   │   ├── ConvertImageToHex.py
+│   │   ├── __init__.py
+│   ├── mastering_object_oriented_python
+│   │   ├── Ref.py
+│   │   ├── __init__.py
+│   │       ├── __init__.py
+│   │       ├── card_lambda.py
+│   │       └── cards.py
+│   │   ├── ServerSocket.py
+│   │   ├── __init__.py
+│   │   ├── device_ping.py
+│   │   └── server.py
+│   │   ├── demo.py
+│   │   │   ├── Vector.py
+│   │   │   └── coordinate.py
+│   │   │   └── Classes_dict_set.ipynb
+│   │       ├── Student.py
+│   │       ├── StudentSubjects.py
+│   │       └── person.py
+│   │   ├── __init__.py
+│   │   └── parsing_plib.py
+│   │   └── python-deepdive
+│   │       │   │   │   ├── the-python-type-hierarchyautogenerated.vtt
+│   │       │   │   │   ├── python-optimizations-interningautogenerated.vtt
+│   │       │   │   │   ├── python-optimizations-peepholeautogenerated.vtt
+│   │       │   │   │   ├── python-optimizations-string-interningautogenerated.vtt
+│   │       │   │   │   ├── how-does-python-import-modulesautogenerated.vtt
+│   │       │   │       ├── python-36-dictionary-orderingautogenerated.vtt
+│   │       │   │       ├── python-36-f-stringsautogenerated.vtt
+│   │       │   │       ├── python-36-highlightsautogenerated.vtt
+│   │       │   │       ├── python-36-preserved-order-of-kwargs-and-named-tuple-applicationautogenerated.vtt
+│   │       │   │       ├── python-36-underscores-in-numeric-literalsautogenerated.vtt
+│   │       │   │   ├── 01 - Multi-Line Statements and Strings.ipynb
+│   │       │   │   ├── 02 - Conditionals.ipynb
+│   │       │   │   ├── 03 - Functions.ipynb
+│   │       │   │   ├── 04 - The While Loop.ipynb
+│   │       │   │   ├── 05 - Break, Continue and the Try Statement.ipynb
+│   │       │   │   ├── 06 - The For Loop.ipynb
+│   │       │   │   └── 07 - Classes.ipynb
+│   │       │   │   ├── 01 - Variables are Memory References.ipynb
+│   │       │   │   ├── 02 - Reference Counting.ipynb
+│   │       │   │   ├── 03 - Garbage Collection.ipynb
+│   │       │   │   ├── 04 - Dynamic vs Static Typing.ipynb
+│   │       │   │   ├── 05 - Variable Re-Assignment.ipynb
+│   │       │   │   ├── 06 - Object Mutability.ipynb
+│   │       │   │   ├── 07 - Function Arguments and Mutability.ipynb
+│   │       │   │   ├── 08 - Shared References and Mutability.ipynb
+│   │       │   │   ├── 09 - Variable Equality.ipynb
+│   │       │   │   ├── 10 - Everything is an Object.ipynb
+│   │       │   │   ├── 11 - Python Optimizations - Interning.ipynb
+│   │       │   │   ├── 12 - Python Optimizations - String Interning.ipynb
+│   │       │   │   └── 13 - Python Optimizations - Peephole.ipynb
+│   │       │   │   ├── 01 - Integers - Data Type.ipynb
+│   │       │   │   ├── 02 - Integers - Operations.ipynb
+│   │       │   │   ├── 03 - Integers - Constructors and Bases.ipynb
+│   │       │   │   ├── 04 - Rational Numbers.ipynb
+│   │       │   │   ├── 05 - Floats - Internal Representation.ipynb
+│   │       │   │   ├── 06 - Floats - Equality Testing.ipynb
+│   │       │   │   ├── 07 - Floats - Coercing to Integers.ipynb
+│   │       │   │   ├── 08 - Floats - Rounding.ipynb
+│   │       │   │   ├── 09 - Decimals.ipynb
+│   │       │   │   ├── 10 - Decimals - Constructors and Contexts.ipynb
+│   │       │   │   ├── 11 - Decimals - Math Operations.ipynb
+│   │       │   │   ├── 12 - Decimals - Performance Considerations.ipynb
+│   │       │   │   ├── 13 - Complex Numbers.ipynb
+│   │       │   │   ├── 14 - Booleans.ipynb
+│   │       │   │   ├── 15 - Booleans - Truth Values.ipynb
+│   │       │   │   ├── 16 - Booleans - Precedence and Short-Circuiting.ipynb
+│   │       │   │   ├── 17 - Booleans - Boolean Operators.ipynb
+│   │       │   │   └── 18 - Comparison Operators.ipynb
+│   │       │   │   ├── 01 - Positional Arguments.ipynb
+│   │       │   │   ├── 02 - Unpacking Iterables.ipynb
+│   │       │   │   ├── 03 - Extended Unpacking.ipynb
+│   │       │   │   ├── 04 - Star-Args.ipynb
+│   │       │   │   ├── 05 - Keyword Arguments.ipynb
+│   │       │   │   ├── 06 - Kwargs.ipynb
+│   │       │   │   ├── 07 - Putting it all Together.ipynb
+│   │       │   │   ├── 08 - Simple Function Timer.ipynb
+│   │       │   │   ├── 09 - Parameter Defaults - Beware.ipynb
+│   │       │   │   └── 10 - Parameter Defaults - Beware Again.ipynb
+│   │       │   │   ├── 01 - Docstrings and Annotations.ipynb
+│   │       │   │   ├── 02 - Lambda Expressions.ipynb
+│   │       │   │   ├── 03 - Lambdas and Sorting.ipynb
+│   │       │   │   ├── 04 - Challenge - Randomizing using Sorted.ipynb
+│   │       │   │   ├── 05 - Function Introspection.ipynb
+│   │       │   │   ├── 06 - Callables.ipynb
+│   │       │   │   ├── 07 - Map, Filter, Zip and List Comprehensions.ipynb
+│   │       │   │   ├── 08 - Reducing Functions.ipynb
+│   │       │   │   ├── 09 - Partial Functions.ipynb
+│   │       │   │   └── 10 - The operator Module.ipynb
+│   │       │   │   ├── 01 - Global and Local Scopes.ipynb
+│   │       │   │   ├── 02 - Nonlocal Scopes.ipynb
+│   │       │   │   ├── 03 - Closures.ipynb
+│   │       │   │   ├── 04 - Closure Applications - Part 1.ipynb
+│   │       │   │   ├── 05 - Closure Applications - Part 2.ipynb
+│   │       │   │   ├── 06 - Decorators - Part 1.ipynb
+│   │       │   │   ├── 07 - Decorator Application - Timer.ipynb
+│   │       │   │   ├── 08 - Decorator Application - Logger, Stacked.ipynb
+│   │       │   │   ├── 09 - Decorator Application - Memoization.ipynb
+│   │       │   │   ├── 10 - Decorators - Part 2.ipynb
+│   │       │   │   ├── 11 - Decorator Application - Decorator Class.ipynb
+│   │       │   │   ├── 12 - Decorator Application (Decorating Classes).ipynb
+│   │       │   │   └── 13 - Decorator Application - Single Dispatch.ipynb
+│   │       │   │   ├── 01 - Tuples as Data Structures.ipynb
+│   │       │   │   ├── 02 - Named Tuples.ipynb
+│   │       │   │   ├── 03 - Named Tuples - Modifying, Extending.ipynb
+│   │       │   │   ├── 04 - Named Tuples - Docstrings, DefaultValues.ipynb
+│   │       │   │   ├── 05 - Named Tuples - Application - Alternative to Dictionaries.ipynb
+│   │       │   │   └── 06 - Named Tuples - Application - Returning Multiple Values.ipynb
+│   │       │   │   ├── 01 - What is a Module.ipynb
+│   │       │   │   │   ├── How does Python import Modules.ipynb
+│   │       │   │   │   │   ├── main.py
+│   │       │   │   │   │   └── module1.py
+│   │       │   │   │   │   ├── main.py
+│   │       │   │   │   │   └── module1.py
+│   │       │   │   │   │   ├── main.py
+│   │       │   │   │   │   └── module1_source.py
+│   │       │   │   │       ├── importer.py
+│   │       │   │   │       ├── main.py
+│   │       │   │   │       ├── module1_source.py
+│   │       │   │   │       └── module2.py
+│   │       │   │   ├── 03 - Imports and importlib.ipynb
+│   │       │   │   ├── 04 - Import Variants and Misconceptions.ipynb
+│   │       │   │   ├── 05 - Reloading Modules.ipynb
+│   │       │   │   │   ├── __main__.py
+│   │       │   │   │   ├── module1.py
+│   │       │   │   │   ├── run.py
+│   │       │   │   │   └── timing.py
+│   │       │   │   │   ├── module1.py
+│   │       │   │   │       ├── __init__.py
+│   │       │   │   │       ├── module1a.py
+│   │       │   │   │           ├── __init__.py
+│   │       │   │   │           ├── module1_1a.py
+│   │       │   │   │           └── module1_1b.py
+│   │       │   │   │   │   ├── __init__.py
+│   │       │   │   │   │   │   ├── __init__.py
+│   │       │   │   │   │   │   └── calculator.py
+│   │       │   │   │   │   │   ├── __init__.py
+│   │       │   │   │   │   │   │   ├── __init__.py
+│   │       │   │   │   │   │   │   ├── post.py
+│   │       │   │   │   │   │   │   └── posts.py
+│   │       │   │   │   │   │       ├── __init__.py
+│   │       │   │   │   │   │       └── user.py
+│   │       │   │   │   │       ├── __init__.py
+│   │       │   │   │   │       ├── boolean.py
+│   │       │   │   │   │       ├── date.py
+│   │       │   │   │   │       ├── json.py
+│   │       │   │   │   │       └── numeric.py
+│   │       │   │   │   └── main.py
+│   │       │   │       └── main.py
+│   │       │   │   ├── 01 - Relevant Python 3.10 Changes.ipynb
+│   │       │   │   ├── 02 - Relevant Python 3.9 Changes.ipynb
+│   │       │   │   ├── 03 - Python 3.8 - Assignment Expressions.ipynb
+│   │       │   │   ├── 04 - Relevant Python 3.8_3.7 Changes.ipynb
+│   │       │   │   ├── 05 - Python 3.6 Highlights.ipynb
+│   │       │   │   ├── 06 - Python 3.6 - Dictionary Ordering.ipynb
+│   │       │   │   ├── 07 - Python 3.6 - Preserved Order of kwargs - Named Tuple Application.ipynb
+│   │       │   │   ├── 08 - Python 3.6 - Underscores and Numeric Literals.ipynb
+│   │       │   │   └── 09 - Python 3.6 - f-Strings.ipynb
+│   │       │       ├── 09 - Random Seeds.ipynb
+│   │       │       ├── 10 - Random Choices.ipynb
+│   │       │       ├── 11 - Random Samples.ipynb
+│   │       │       ├── 12 - Timing code using timeit.ipynb
+│   │       │       ├── 13 - Don't Use args and kwargs Names Blindly.ipynb
+│   │       │       │   ├── example1.py
+│   │       │       │   ├── example10.py
+│   │       │       │   ├── example2.py
+│   │       │       │   ├── example3.py
+│   │       │       │   ├── example4.py
+│   │       │       │   ├── example5.py
+│   │       │       │   ├── example6.py
+│   │       │       │   ├── example7.py
+│   │       │       │   ├── example8.py
+│   │       │       │   └── example9.py
+│   │       │       ├── 15 - Sentinel Values for Parameter Defaults.ipynb
+│   │       │       └── 16 - Simulating a simple Switch in Python.ipynb
+│   │       │   │   ├── 01 - Sequence Types.ipynb
+│   │       │   │   ├── 02 - Mutable Sequence Types.ipynb
+│   │       │   │   ├── 03 - Lists vs Tuples.ipynb
+│   │       │   │   ├── 04 - Copying Sequences.ipynb
+│   │       │   │   ├── 05 - Slicing.ipynb
+│   │       │   │   ├── 06 - Custom Sequences - Part 1.ipynb
+│   │       │   │   ├── 07 - In-Place Concatenation and Repetition.ipynb
+│   │       │   │   ├── 08 - Assignments in Mutable Sequences.ipynb
+│   │       │   │   ├── 09 - Custom Sequences - Part 2a.ipynb
+│   │       │   │   ├── 10 - Custom Sequences - Part 2b_c.ipynb
+│   │       │   │   ├── 11- Sorting Sequences.ipynb
+│   │       │   │   └── 12 - List Comprehensions.ipynb
+│   │       │   │   ├── 01 - Project Description.ipynb
+│   │       │   │   ├── 02 - Project Solution - Goal 1.ipynb
+│   │       │   │   └── 03 - Project Solution - Goal 2.ipynb
+│   │       │   │   ├── 01 - Iterating Collections.ipynb
+│   │       │   │   ├── 02 - Iterators.ipynb
+│   │       │   │   ├── 03 - Iterators  and Iterables.ipynb
+│   │       │   │   ├── 04 - Example 1 - Consuming Iterators Manually.ipynb
+│   │       │   │   ├── 05 - Example 2 - Cyclic Iterators.ipynb
+│   │       │   │   ├── 06 - Lazy Iterables.ipynb
+│   │       │   │   ├── 07 - Python's Built-In Iterables and Iterators.ipynb
+│   │       │   │   ├── 08 - Sorting Iterables.ipynb
+│   │       │   │   ├── 09 - The iter() Function.ipynb
+│   │       │   │   ├── 10 - Iterating Callables.ipynb
+│   │       │   │   ├── 11 - Delegating Iterators.ipynb
+│   │       │   │   ├── 12 - Reversed Iteration.ipynb
+│   │       │   │   ├── 13 - Caveat Using Iterators as Function Arguments.ipynb
+│   │       │   │   ├── 01 - Project - Description.ipynb
+│   │       │   │   ├── 02 - Project Solution - Goal 1.ipynb
+│   │       │   │   └── 03 - Project Solution - Goal 2.ipynb
+│   │       │   │   ├── 01 - Yielding and Generators.ipynb
+│   │       │   │   ├── 02 - Example - Fibonacci Sequence.ipynb
+│   │       │   │   ├── 03 - Making an Iterable from a Generator.ipynb
+│   │       │   │   ├── 04 - Example - Card Deck.ipynb
+│   │       │   │   ├── 05 - Generator Expressions.ipynb
+│   │       │   │       ├── Yield From.ipynb
+│   │       │   │   ├── 01 - Project 3 - Description.ipynb
+│   │       │   │   ├── 02 - Project 3 - Solution - Goal 1.ipynb
+│   │       │   │   ├── 03 - Project 3 - Solution - Goal 2.ipynb
+│   │       │   │   │   ├── Aggregators.ipynb
+│   │       │   │   ├── 02 - Slicing Iterables.ipynb
+│   │       │   │   ├── 03 - Selecting and Filtering.ipynb
+│   │       │   │   ├── 04 - Infinite Iterators.ipynb
+│   │       │   │   ├── 05 - Chaining and Teeing Iterators.ipynb
+│   │       │   │   ├── 06 - Mapping and Reducing.ipynb
+│   │       │   │   ├── 07 - Zipping.ipynb
+│   │       │   │   │   ├── Grouping.ipynb
+│   │       │   │   └── 09 - Combinatorics.ipynb
+│   │       │   │   │   ├── Project - Description.ipynb
+│   │       │   │   │   ├── constants.py
+│   │       │   │   │   ├── parse_utils.py
+│   │       │   │   │   └── playground.py
+│   │       │   │   │   ├── constants.py
+│   │       │   │   │   ├── parse_utils.py
+│   │       │   │   │   └── playground.py
+│   │       │   │   │   ├── constants.py
+│   │       │   │   │   ├── parse_utils.py
+│   │       │   │   │   └── playground.py
+│   │       │   │       ├── constants.py
+│   │       │   │       ├── main.py
+│   │       │   │       ├── parse_utils.py
+│   │       │   │       └── playground.py
+│   │       │   │   ├── 01 - Context Managers in Python.ipynb
+│   │       │   │   │   ├── Caveat with Lazy Iterators.ipynb
+│   │       │   │   │   ├── Not Just a Context Manager.ipynb
+│   │       │   │   ├── 04 - Additional Uses.ipynb
+│   │       │   │   ├── 05 - Generators and Context Managers.ipynb
+│   │       │   │   ├── 06 - The contextmanager Decorator.ipynb
+│   │       │   │       ├── Nested Context Managers.ipynb
+│   │       │   │   │   ├── Project 5 - Description.ipynb
+│   │       │   │   │   ├── Project 5 - Goal 1.ipynb
+│   │       │   │       ├── Project 5 - Goal 2.ipynb
+│   │       │   │   ├── 01 - Coroutines.ipynb
+│   │       │   │   ├── 02 - Generator States.ipynb
+│   │       │   │   ├── 03 - Generator States.ipynb
+│   │       │   │   ├── 04 - Sending Data To Generators.ipynb
+│   │       │   │   │   ├── Closing Generators.ipynb
+│   │       │   │   ├── 06 - Sending Exceptions to Generators.ipynb
+│   │       │   │   ├── 07 - Using Decorators to Prime Coroutines.ipynb
+│   │       │   │   ├── 08 - Yield From - Two-Way Communications.ipynb
+│   │       │   │   ├── 09 - Yield From - Sending Data.ipynb
+│   │       │   │   ├── 10 - Yield From - Closing and Return.ipynb
+│   │       │   │   │   ├── Yield From - Throwing Exceptions.ipynb
+│   │       │   │   │   ├── Pipelines - Pulling Data.ipynb
+│   │       │   │   ├── 13 - Pipelines - Pushing Data.ipynb
+│   │       │   │       ├── Pipelines - Broadcasting.ipynb
+│   │       │   │   │   ├── Project 6 - Description.ipynb
+│   │       │   │       ├── Project 6 - Solution.ipynb
+│   │       │       ├── 01 - Relevant Python 3.10 Changes.ipynb
+│   │       │       ├── 02 - Relevant Python 3.9 Changes.ipynb
+│   │       │       ├── 03 - Python 3.8 - Assignment Expressions.ipynb
+│   │       │       └── 04 - Relevant Python 3.8_3.7 Changes.ipynb
+│   │       │   │   ├── 01 - Creating Python Dictionaries.ipynb
+│   │       │   │   ├── 02 - Common Operations.ipynb
+│   │       │   │   ├── 03 - Dictionary Views.ipynb
+│   │       │   │   ├── 04 - Updating, Merging and Copying.ipynb
+│   │       │   │   └── 05 - Custom Classes and Hashing.ipynb
+│   │       │   │   ├── 01 - Coding Exercises.ipynb
+│   │       │   │   ├── 02 - Coding Exercises - Solution 1.ipynb
+│   │       │   │   ├── 03 - Coding Exercises - Solution 2.ipynb
+│   │       │   │   ├── 04 - Coding Exercises - Solution 3.ipynb
+│   │       │   │   └── 05 - Coding Exercises - Solution 4.ipynb
+│   │       │   │   ├── 01 - Creating Sets.ipynb
+│   │       │   │   ├── 02 - Common Set Operations.ipynb
+│   │       │   │   ├── 03 - Set Operations.ipynb
+│   │       │   │   ├── 04 - Update Operations.ipynb
+│   │       │   │   ├── 05 - Copying Sets.ipynb
+│   │       │   │   ├── 06 - Frozen Sets.ipynb
+│   │       │   │   └── 07 - Dictionary Views.ipynb
+│   │       │   │   ├── 01 - Project 1.ipynb
+│   │       │   │   └── 02 - Project 1 - Solution.ipynb
+│   │       │   │   ├── 01 - Pickling.ipynb
+│   │       │   │   ├── 02 - JSON Serialization.ipynb
+│   │       │   │   ├── 03 - Custom JSON Encoding.ipynb
+│   │       │   │   ├── 04 - Custom Encoding using JSONEncoder.ipynb
+│   │       │   │   ├── 05 - Custom JSON Decoding.ipynb
+│   │       │   │   ├── 06 - Using JSONDecoder.ipynb
+│   │       │   │   ├── 07 - JSONSchema.ipynb
+│   │       │   │   ├── 08 - Marshmallow.ipynb
+│   │       │   │   ├── 09 - YAML.ipynb
+│   │       │   │   └── 10 - Serpy.ipynb
+│   │       │   │   ├── 01 - Coding Exercises.ipynb
+│   │       │   │   ├── 02 - Exercise 1 - Solution.ipynb
+│   │       │   │   ├── 03 - Exercise 2 - Solution.ipynb
+│   │       │   │   └── 04 - Exercise 3 - Solution.ipynb
+│   │       │   │   ├── 01 - defaultdict.ipynb
+│   │       │   │   ├── 02 - OrderedDict.ipynb
+│   │       │   │   ├── 03 - OrderedDict vs Plain Dict.ipynb
+│   │       │   │   ├── 04 - Counter.ipynb
+│   │       │   │   ├── 05 - ChainMap.ipynb
+│   │       │   │   └── 06 - UserDict.ipynb
+│   │       │   │   │   ├── Exercises.ipynb
+│   │       │   │   │   ├── Exercise 3 - Solution.ipynb
+│   │       │   │   ├── Exercise 1 - Solution.ipynb
+│   │       │   │   └── Exercise 2 - Solution.ipynb
+│   │       │   │   ├── 01 - Relevant Python 3.10 Changes.ipynb
+│   │       │   │   ├── 02 - Relevant Python 3.9 Changes.ipynb
+│   │       │   │   ├── 03 - Python 3.8 - Assignment Expressions.ipynb
+│   │       │   │   └── 04 - Relevant Python 3.8_3.7 Changes.ipynb
+│   │       │       └── 01 - MappingProxyType.ipynb
+│   │       │   │   ├── 01 - Objects and Classes.ipynb
+│   │       │   │   ├── 02 - Class Attributes.ipynb
+│   │       │   │   ├── 03 - Callable Class Attributes.ipynb
+│   │       │   │   ├── 04 - Classes are Callable.ipynb
+│   │       │   │   ├── 05 - Data Attributes.ipynb
+│   │       │   │   ├── 06 - Function Attributes.ipynb
+│   │       │   │   ├── 07 - Initializing Class Instances.ipynb
+│   │       │   │   ├── 08 - Creating Attributes at Run-Time.ipynb
+│   │       │   │   ├── 09 - Properties.ipynb
+│   │       │   │   ├── 10 - Property Decorators.ipynb
+│   │       │   │   ├── 11 - Read-Only and Computed Properties.ipynb
+│   │       │   │   ├── 12 - Deleting Properties.ipynb
+│   │       │   │   ├── 13 - Class and Static Methods.ipynb
+│   │       │   │   └── 14 - Class Body Scope.ipynb
+│   │       │   │   ├── 01 - Project 1.ipynb
+│   │       │   │   ├── 02 - TimeZone Class.ipynb
+│   │       │   │   ├── 03 - Transaction Numbers.ipynb
+│   │       │   │   ├── 04 - Account Number, First Name, Last Name.ipynb
+│   │       │   │   ├── 05 - Adding Preferred TimeZone Property.ipynb
+│   │       │   │   ├── 06 - Balance.ipynb
+│   │       │   │   ├── 07 - Interest Rate.ipynb
+│   │       │   │   ├── 08 - Transaction Codes.ipynb
+│   │       │   │   ├── 09 - Confirmation Code.ipynb
+│   │       │   │   ├── 10 - Transactions.ipynb
+│   │       │   │   └── 11 - Testing using unittest.ipynb
+│   │       │   │   ├── 01 - __str__ and __repr__ Methods.ipynb
+│   │       │   │   ├── 02 - Arithmetic Operators.ipynb
+│   │       │   │   ├── 03 - Rich Comparisons.ipynb
+│   │       │   │   ├── 04 - Hashing and Equality.ipynb
+│   │       │   │   ├── 05 - Booleans.ipynb
+│   │       │   │   ├── 06 - Callables.ipynb
+│   │       │   │   ├── 07 - The __del__ Method.ipynb
+│   │       │   │   └── 08 - The __format__ Method.ipynb
+│   │       │   │   └── Project 2 - Solution.ipynb
+│   │       │   │   ├── 01 - Single Inheritance.ipynb
+│   │       │   │   ├── 02 - The object Class.ipynb
+│   │       │   │   ├── 03 - Overriding.ipynb
+│   │       │   │   ├── 04 - Extending.ipynb
+│   │       │   │   ├── 05 - Delegating to Parent.ipynb
+│   │       │   │   ├── 06 - Slots.ipynb
+│   │       │   │   └── 07 - Slots and Single Inheritance.ipynb
+│   │       │   │   ├── Project 3 - Description.ipynb
+│   │       │   │   ├── Project 3 - Solution - Approach.ipynb
+│   │       │   │   │   │   └── inventory.py
+│   │       │   │   │       └── validators.py
+│   │       │   │           ├── test_cpu.py
+│   │       │   │           ├── test_hdd.py
+│   │       │   │           ├── test_resource.py
+│   │       │   │           ├── test_ssd.py
+│   │       │   │           ├── test_storage.py
+│   │       │   │           └── test_validators.py
+│   │       │   │   ├── 01 - Descriptors.ipynb
+│   │       │   │   ├── 02 - Getters and Setters.ipynb
+│   │       │   │   ├── 03 - Using as Instance Properties.ipynb
+│   │       │   │   ├── 04 - Strong and Weak References.ipynb
+│   │       │   │   ├── 05 - Back to Instance Properties.ipynb
+│   │       │   │   ├── 06 - The __set_name__ Method.ipynb
+│   │       │   │   ├── 07 - Property Lookup Resolution.ipynb
+│   │       │   │   ├── 08 - Properties and Descriptors.ipynb
+│   │       │   │   ├── 09 - Application - Example 1.ipynb
+│   │       │   │   ├── 10 - Application - Example 2.ipynb
+│   │       │   │   └── 11 - Functions and Descriptors.ipynb
+│   │       │   │   ├── 01 - Project 4 - Solution - Part 1.ipynb
+│   │       │   │   └── 02 - Project 4 - Solution - Part 2.ipynb
+│   │       │   │   ├── 01 - Enumerations.ipynb
+│   │       │   │   ├── 02 - Aliases.ipynb
+│   │       │   │   ├── 03 - Customizing and Extending Enumerations.ipynb
+│   │       │   │   └── 04 - Automatic Values.ipynb
+│   │       │   │   └── Solution.ipynb
+│   │       │   │   ├── 01 - Python Exceptions.ipynb
+│   │       │   │   ├── 02 - Handling Exceptions.ipynb
+│   │       │   │   ├── 03 - Raising Exceptions.ipynb
+│   │       │   │   └── 04 - Custom Exceptions.ipynb
+│   │       │   │   ├── Project 6 - Exceptions - Solution.ipynb
+│   │       │   │   └── Project 6 - Exceptions.ipynb
+│   │       │   │   ├── 01 - Decorators and Descriptors - Review.ipynb
+│   │       │   │   ├── 02 - The __new__ Method.ipynb
+│   │       │   │   ├── 03 - How Classes are Created.ipynb
+│   │       │   │   ├── 04 - Inheriting from type.ipynb
+│   │       │   │   ├── 05 - Metaclasses.ipynb
+│   │       │   │   ├── 06 - Class Decorators.ipynb
+│   │       │   │   ├── 07 - Decorator Classes.ipynb
+│   │       │   │   ├── 08 - Metaclasses vs Class Decorators.ipynb
+│   │       │   │   ├── 09 - Metaclass Parameters.ipynb
+│   │       │   │   ├── 10 - The __prepare__ Method.ipynb
+│   │       │   │   ├── 11 - Metaprogramming Application 1.ipynb
+│   │       │   │   ├── 12 - Metaprogramming - Application 2.ipynb
+│   │       │   │   ├── 13 - Metaprogramming - Application 3.ipynb
+│   │       │   │   ├── 14 - Attribute Read Accessors.ipynb
+│   │       │   │   ├── 15 - Attribute Write Accessors.ipynb
+│   │       │   │   └── 16 - Accessors - Application.ipynb
+│   │       │       ├── 01 - Relevant Python 3.10 Changes.ipynb
+│   │       │       ├── 02 - Relevant Python 3.9 Changes.ipynb
+│   │       │       ├── 03 - Python 3.8 - Assignment Expressions.ipynb
+│   │       │       └── 04 - Relevant Python 3.8_3.7 Changes.ipynb
+│   │   ├── Student.py
+│   │   ├── __init__.py
+│   │   ├── averager.py
+│   │   ├── cards.py
+│   │   ├── check.py
+│   │   ├── config_parser_reader.py
+│   │   ├── config_parser_writer.py
+│   │   ├── debug_recursion.py
+│   │   ├── fib.py
+│   │   ├── find_solution.py
+│   │   ├── first.py
+│   │   ├── inheritance.py
+│   │   ├── list_files.py
+│   │   ├── os_walk.py
+│   │   ├── registration.py
+│   │   ├── shapes.py
+│   │   ├── sorting_dictionary.py
+│   │   ├── variable_args.py
+│   │   ├── __init__.py
+│   │   ├── example_thread.py
+│   │   └── example_thread_pool.py
+│       ├── DuckDuckgo.py
+│       └── __init__.py
+│   ├── __init__.py
+│       ├── Scraping.py
+│       ├── Steam.py
+│       ├── __init__.py
+│   │   ├── __init__.py
+│   │   ├── ch19_ex1.py
+│   │   ├── ch19_ex2.py
+│   │   │   ├── __init__.py
+│   │   │   ├── abstraction.py
+│   │   │   ├── long_version.py
+│   │   │   └── short_version.py
+│   │       ├── __init__.py
+│   │       └── test_all.py
+│   ├── Project1.ipynb
+│   ├── __init__.py
+│   │   ├── __init__.py
+│   │   │   ├── Person.py
+│   │   │   └── __init__.py
+│   │   │   ├── Student.py
+│   │   │   └── __init__.py
+│   │   └── main.py
+│   │   │   ├── __init__.py
+│   │   │   ├── ch19_ex1.py
+│   │   │   ├── ch19_ex2.py
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── abstraction.py
+│   │   │   │   ├── long_version.py
+│   │   │   │   └── short_version.py
+│   │   │       ├── __init__.py
+│   │   │       └── test_all.py
+│   │       ├── ch02_ex1.py
+│   │       ├── ch02_ex2.py
+│   │       ├── ch02_ex3.py
+│   │       ├── ch02_ex4.py
+│   │       └── ch02_ex5.py
+│       ├── __init__.py
+│       │   ├── __init__.py
+│       │   ├── apples_client.py
+│       │   └── filtering_apples.py
+│       ├── main.py
+│       │   ├── __init__.py
+│       │   ├── app.py
+│       │   │   ├── __init__.py
+│       │   │   ├── college_database.py
+│       │   │   └── pattern.py
+│       │   ├── proxy_image.py
+│       │   └── real_image.py
+│   └── __init__.py
+├── pyproject.toml
+├── python.txt
+│   └── main.py
+    ├── __init__.py
+    │   ├── person.py
+    │   └── student.py
+        └── test_student.py

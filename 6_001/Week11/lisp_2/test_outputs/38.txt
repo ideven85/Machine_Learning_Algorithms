@@ -1,4 +1,0 @@
-[
-{'ok': True, 'output': 0},
-{'ok': True, 'output': 4},
-]

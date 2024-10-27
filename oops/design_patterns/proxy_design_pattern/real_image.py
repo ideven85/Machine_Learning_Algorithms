@@ -3,11 +3,9 @@ import abc
 
 class Image(abc.ABC):
 
-
     def display(self):
         raise NotImplementedError("Must be implemented by subclass")
-        #pass
-
+        # pass
 
 
 class RealImage(Image):
