@@ -11,7 +11,8 @@ if __name__ == "__main__": block of code at the bottom of the file.
 
 import doctest
 import sys
-#import debug_recursion
+
+# import debug_recursion
 
 # this is a very small recursion limit (normally 1000)
 # but the test cases are tiny, setting a small recursion limit will help
@@ -46,7 +47,7 @@ def first(ll):
     return ll[0]
 
 
-#@debug_recursion.show_recursive_structure
+# @debug_recursion.show_recursive_structure
 def rest(ll):
     """
     returns the rest of a nonempty linked list
@@ -100,7 +101,7 @@ def ll_get(ll, i):
     return ll_get(ll[1], i - 1)
 
 
-#@debug_recursion.show_recursive_structure
+# @debug_recursion.show_recursive_structure
 def make_ll(*elements):
     """
     given an arbitrary number of elements as arguments,

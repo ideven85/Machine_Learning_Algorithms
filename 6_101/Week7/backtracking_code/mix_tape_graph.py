@@ -39,5 +39,5 @@ if __name__ == "__main__":
     s1 = time.process_time_ns()
     print(mixtape(songs, 11))
     s2 = time.process_time_ns()
-    print(s2-s1)
+    print(s2 - s1)
     # 4^2=16 )

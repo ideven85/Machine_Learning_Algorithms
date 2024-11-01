@@ -38,7 +38,7 @@ def mixtape(songs: dict, target_duration: int):
 
     mixtape_helper(current1, target_duration, 0, number_of_songs, visited)
     print(visited)
-    return output
+    return set(output)
 
 
 if __name__ == "__main__":

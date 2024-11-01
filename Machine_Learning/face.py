@@ -67,7 +67,7 @@ def face_recognize(dir, test):
 
 def main():
     # args = docopt.docopt(__doc__)
-    train_dir = "../datasets/"
+    train_dir = "datasets/"
     test_image = "./Deven.jpeg"
     face_recognize(
         train_dir, test_image
