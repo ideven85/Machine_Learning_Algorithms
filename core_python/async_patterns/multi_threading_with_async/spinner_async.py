@@ -36,10 +36,11 @@ async def supervisor():
 
 async def main():
     result = await supervisor() # asyncio.run without async main or like this
-    print(f'\nAnswer: {result}')
+    return result
 
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    out=asyncio.run(main())
+    print(f'\nAnswer: {out}')
 

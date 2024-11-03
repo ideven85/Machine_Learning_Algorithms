@@ -1,24 +1,25 @@
+from functools import cache, lru_cache
 from typing import List
 
 
 class GenerateParenthesis:
-    def generateParenthesis(self, n: int) -> List[str]:
-        res = []
+    def generateParenthesis(self, n: int):
+        res = set()
         if n == 0:
             return res
-
-        def dfs(res, left, right, intermediate, n):
+        @lru_cache(maxsize=None)
+        def dfs(left, right, intermediate):
             if len(intermediate) == 2 * n:
-                res.append(intermediate)
+                res.add(intermediate)
             if left < n:
-                dfs(res, left + 1, right, intermediate + "(", n)
+                dfs(left + 1, right, intermediate + "(")
             if left > right:
-                dfs(res, left, right + 1, intermediate + ")", n)
+                dfs(left, right + 1, intermediate + ")")
 
-        dfs(res, 0, 0, "", n)
-        return res
+        dfs( 0, 0, "")
+        return list(res)
 
 
 if __name__ == "__main__":
     parenthesis = GenerateParenthesis()
-    print(parenthesis.generateParenthesis(5))
+    print(parenthesis.generateParenthesis(10))
