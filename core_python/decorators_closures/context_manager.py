@@ -12,12 +12,12 @@ class Manager:
 
 
 def main():
-    #try 1
+    # try 1
     Manager()
     print("Outside the context manager")
     with Manager() as manager:
         print("Inside the context manager")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -6,15 +6,14 @@ import itertools
 import time
 
 
-async def display_spinner(message: str)-> None:
+async def display_spinner(message: str) -> None:
     for char in itertools.cycle(r"\|/-"):
         status = f"\r{char} {message}"
         print(status, end="", flush=True)
         try:
-            await asyncio.sleep(.1)
+            await asyncio.sleep(0.1)
         except asyncio.CancelledError:
             break
-
 
         blanks = " " * len(status)
 
@@ -35,12 +34,10 @@ async def supervisor():
 
 
 async def main():
-    result = await supervisor() # asyncio.run without async main or like this
+    result = await supervisor()  # asyncio.run without async main or like this
     return result
 
 
-
 if __name__ == "__main__":
-    out=asyncio.run(main())
-    print(f'\nAnswer: {out}')
-
+    out = asyncio.run(main())
+    print(f"\nAnswer: {out}")

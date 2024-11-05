@@ -1,11 +1,12 @@
 from contextlib import contextmanager
 
+
 class Manager:
     def __init__(self):
         print("Init method")
 
     def __enter__(self):
-        #print("Enter method")
+        # print("Enter method")
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
@@ -21,6 +22,7 @@ def context_manager():
     yield "Enter Method"
     print("Exit method")
 
+
 def main():
     with context_manager() as manager:
         print(manager)
@@ -33,5 +35,5 @@ def main():
         print("custom manager")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
