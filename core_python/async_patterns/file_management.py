@@ -1,14 +1,16 @@
-def create_file(file_name):
-    f = open(file_name, "w")
-    text = "Hi my name is deven"
-    f.write(text)
-    # Not closing file
-    f.close()
+import asyncio
 
 
-def main():
-    create_file("test.txt")
+async def create_file(file_name):
+    text = ["Hi my name is Khan"]
+    with open(file_name, "w+") as f:
+        for t in 5*text:
+            f.write(t+"\n")
+    await asyncio.sleep(1)
+
+async def main():
+    await create_file("test.txt")
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

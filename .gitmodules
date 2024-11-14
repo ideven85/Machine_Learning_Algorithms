@@ -1,9 +1,6 @@
-[submodule "example-code-2e"]
-	path = revision/example-code-2e
-	url = https://github.com/fluentpython/example-code-2e
 
 [submodule "course22"]
-	path = course22
+	path = Machine_Learning/course22
 	url = https://github.com/fastai/course22
 [submodule "PyTorchStepByStep"]
 	path = PyTorchStepByStep

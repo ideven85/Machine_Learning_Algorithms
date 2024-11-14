@@ -1,6 +1,6 @@
 from threading import Event, Thread
 
-from core_python.async_patterns.multi_threading_with_async.blocking_code_display import (
+from core_python import (
     display_spinner,
     slow,
 )

@@ -1,0 +1,2 @@
+def mirror():
+    print("Hi")

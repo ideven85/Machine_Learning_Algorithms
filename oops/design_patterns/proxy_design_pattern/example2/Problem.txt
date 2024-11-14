@@ -1,4 +1,0 @@
-Consider the example of the College’s Database which takes care of all the student’s records.
-For e.g., we need to find the name of those students from Database whose balance fee if greater than 500.
- So, if we traverse the whole list of students and for each student object
- if we make a separate connection to the database  then it will be proved as an expensive task.
