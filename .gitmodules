@@ -1,15 +1,17 @@
-
-[submodule "course22"]
+[submodule "Machine_Learning/course22"]
 	path = Machine_Learning/course22
 	url = https://github.com/fastai/course22
-[submodule "PyTorchStepByStep"]
-	path = PyTorchStepByStep
+[submodule "Machine_Learning/PyTorchStepByStep"]
+	path = Machine_Learning/PyTorchStepByStep
 	url = https://github.com/dvgodoy/PyTorchStepByStep
 
-[submodule "handson-ml3"]
+[submodule "Machine_Learning/handson-ml3"]
 	path = Machine_Learning/handson-ml3
 	url = https://github.com/ageron/handson-ml3
 
-[submodule "data-science-from-scratch"]
-	path = data-science-from-scratch
+[submodule "Machine_Learning/data-science-from-scratch"]
+	path = Machine_Learning/data-science-from-scratch
 	url = https://github.com/joelgrus/data-science-from-scratch
+[submodule "Machine_Learning/Chess_AI"]
+	path = Machine_Learning/Chess_AI
+	url = https://github.com/ideven85/Chess_AI
