@@ -1,2 +1,0 @@
-Writing using own with open method of file..
- Pretty Basic

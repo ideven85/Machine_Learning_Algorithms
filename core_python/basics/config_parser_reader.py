@@ -57,8 +57,8 @@ def reader_with_interpolation(file_name):
 
 
 def main():
-    reader_normal("example.cfg")
-    reader_with_interpolation("interpolated.cfg")
+    reader_normal("data/example.cfg")
+    reader_with_interpolation("data/interpolated.cfg")
 
 
 if __name__ == "__main__":

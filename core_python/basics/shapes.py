@@ -227,7 +227,7 @@ if __name__ == "__main__":
         c1, Difference(Circle((250, 250), 80), Rectangle((0, 250), 500, 500))
     )
     c1.draw(smiley, COLORS["grey"])
-    save_color_image(smiley, "smiley.png")
+    save_color_image(smiley, "data/smiley.png")
     img = new_image(500, 500)
     rectangle = Rectangle((200, 300), 70, 20)
     rectangle.draw(img, COLORS["purple"])

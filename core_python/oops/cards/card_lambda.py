@@ -1,7 +1,6 @@
 from cards import Suit, Card, AceCard, FaceCard
 
 
-
 def card_lambda(rank: int, suit: Suit) -> Card:
     class_ranks = {
         1: lambda suit: AceCard("A", suit),

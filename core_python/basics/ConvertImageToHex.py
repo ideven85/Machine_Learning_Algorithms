@@ -4,9 +4,9 @@ import re
 hexValNew = ""
 placeHolder = "0"
 
-file = open("images/bluegill.hex", "w")
+file = open("data/images/bluegill.hex", "w")
 
-with open("images/bluegill.png", "rb") as f:
+with open("data/images/bluegill.png", "rb") as f:
     binVal = f.read(1)
     while len(binVal):
         hexVal = hex(ord(binVal))

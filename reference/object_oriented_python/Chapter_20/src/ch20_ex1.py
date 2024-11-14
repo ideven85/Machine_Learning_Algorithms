@@ -121,19 +121,19 @@ class AceCard(Card):
 
 def card(rank: int, suit: Suit) -> Card:
     """
-        Create a :py:class:`Card` instance from rank and suit.
-        Can raise :py:exc:`TypeError` for ranks out of the range 1 to 13, inclusive.
+    Create a :py:class:`Card` instance from rank and suit.
+    Can raise :py:exc:`TypeError` for ranks out of the range 1 to 13, inclusive.
 
-        :param suit: Suit object
-        :param rank: Numeric rank in the range 1-13
-        :returns: :py:class:`Card` instance
-        :raises TypeError: rank out of range
-    c
-        >>> from Chapter_20.ch20_ex1 import card
-        >>> str(card(3, Suit.Heart))
-        '3♥'
-        >>> str(card(1, Suit.Heart))
-        'A♥'
+    :param suit: Suit object
+    :param rank: Numeric rank in the range 1-13
+    :returns: :py:class:`Card` instance
+    :raises TypeError: rank out of range
+
+
+    >>> str(card(3, Suit.Heart))
+    '3♥'
+    >>> str(card(1, Suit.Heart))
+    'A♥'
     """
     if rank == 1:
         return AceCard(rank, suit, 1, 11)

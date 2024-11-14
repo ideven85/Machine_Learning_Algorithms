@@ -13,7 +13,7 @@ class FileManager:
 
 
 def main():
-    with FileManager("test.txt", "w") as f:
+    with FileManager("../data/test.txt", "w") as f:
         f.write("Writing using own with open method of file..\n Pretty Basic")
 
 

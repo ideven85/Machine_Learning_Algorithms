@@ -9,7 +9,7 @@ Chapter 2. Example 5.
 
 # Alternative Designs for the Initialization
 
-from creating_packages.Chapter_2.ch02_ex3 import Card, card, Suit
+from ch02_ex3 import Card, card, Suit
 from typing import List, Iterable, cast, Union, Tuple, Optional, overload
 
 import random

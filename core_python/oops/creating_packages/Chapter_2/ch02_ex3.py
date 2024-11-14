@@ -7,7 +7,7 @@ Code Examples for Mastering Object-Oriented Python 2nd Edition
 Chapter 2. Example 3.
 """
 
-from .ch02_ex2 import *
+from ch02_ex2 import *
 from typing import cast, Iterable
 
 

@@ -1,4 +1,4 @@
-#todo Refactor into readable code...
+# todo Refactor into readable code...
 
 import functools
 from functools import lru_cache, singledispatch
@@ -80,18 +80,36 @@ upper_letter_codes = dict(
     )
 )
 print(upper_letter_codes)
-#print(sorting_by_skills(list(data.items())))
+# print(sorting_by_skills(list(data.items())))
 print(list(data.items()))
-#print(sorted(data.items(),key=itemgetter(sorting_by_skills(data)),reverse=True))
+# print(sorted(data.items(),key=itemgetter(sorting_by_skills(data)),reverse=True))
 
-a=[('a',1),('b',2),('a',3),('d',4),('z',10),('g', 11)]
+a = [("a", 1), ("b", 2), ("a", 3), ("d", 4), ("z", 10), ("g", 11)]
 print(dict(a))
-print(dict(a).get('d',0))
-print(dict(sorted(data.items(),key=lambda x:x[1]["age"])))
+print(dict(a).get("d", 0))
+print(dict(sorted(data.items(), key=lambda x: x[1]["age"])))
 
-codes_sorted_by_value = dict(sorted({letter:number for letter,number in a if number <=10}.items(),key=itemgetter(1)))
-codes_sorted_by_country=dict(sorted({letter:number for letter,number in a if number <=10}.items(),reverse=True))
+codes_sorted_by_value = dict(
+    sorted(
+        {letter: number for letter, number in a if number <= 10}.items(),
+        key=itemgetter(1),
+    )
+)
+codes_sorted_by_country = dict(
+    sorted(
+        {letter: number for letter, number in a if number <= 10}.items(), reverse=True
+    )
+)
 print(codes_sorted_by_value)
 print(codes_sorted_by_country)
-upper_letter_codes = dict(sorted({code.upper():number for code,number in codes_sorted_by_country.items() if number<6}.items(),key=itemgetter(1)))
+upper_letter_codes = dict(
+    sorted(
+        {
+            code.upper(): number
+            for code, number in codes_sorted_by_country.items()
+            if number < 6
+        }.items(),
+        key=itemgetter(1),
+    )
+)
 print(upper_letter_codes)

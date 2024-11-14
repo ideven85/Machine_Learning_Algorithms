@@ -3,7 +3,8 @@ from collections.abc import Sequence
 from decimal import Decimal
 from typing import NamedTuple, Optional
 
-#todo Subclassing NamedTuple.. just revisit that
+
+# todo Subclassing NamedTuple.. just revisit that
 class Customer(NamedTuple):
     name: str
     fidelity: int

@@ -10,6 +10,7 @@ import mlx.optimizers as optim
 import numpy as np
 
 import mnist
+from mnist import fashion_mnist
 
 
 class MLP(nn.Module):
@@ -32,7 +33,7 @@ class MLP(nn.Module):
 
 
 def loss_fn(model, X, y):
-    return nn.losses.cross_entropy(model(X), y, reduction="mean")
+    return nn.losses.cross_entropy(model(X), y, reduction="sum")
 
 
 def batch_iterate(batch_size, X, y):
@@ -43,12 +44,12 @@ def batch_iterate(batch_size, X, y):
 
 
 def main(args):
-    seed = 0
+    seed = 42
     num_layers = 2
     hidden_dim = 32
     num_classes = 10
     batch_size = 256
-    num_epochs = 10
+    num_epochs = 100
     learning_rate = 1e-1
 
     np.random.seed(seed)

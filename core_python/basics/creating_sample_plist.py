@@ -12,5 +12,5 @@ pl = dict(
     someMoreData=b"<lots of binary gunk>" * 10,
     aDate=datetime.datetime.now(),
 )
-with open('reading_apple_plist/x.plist', 'w') as f:
+with open("reading_apple_plist/x.plist", "w") as f:
     f.write(plistlib.dumps(pl).decode())

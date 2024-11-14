@@ -11,4 +11,4 @@ import pytest
 
 if __name__ == "__main__":
     # Execute all tests which can be discovered in the suite.
-    pytest.(["-v", "tests"],verbose=True)
+    pytest.main(["-v", "tests"])

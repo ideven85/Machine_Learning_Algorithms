@@ -9,7 +9,7 @@ Chapter 2. Example 4.
 
 # Alternative Designs for the Initialization
 
-from .ch02_ex3 import Suit
+from ch02_ex3 import Suit
 from typing import Any, cast, Iterator
 from abc import abstractmethod
 

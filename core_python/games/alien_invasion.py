@@ -228,7 +228,7 @@ class Score(pg.sprite.Sprite):
         if SCORE != self.lastscore:
             self.lastscore = SCORE
             msg = f"Score: {SCORE}"
-            print(SCORE  )
+            print(SCORE)
             self.image = self.font.render(msg, 0, self.color)
 
 

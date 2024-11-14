@@ -17,5 +17,5 @@ config.set("Section1", "baz", "fun")
 config.set("Section1", "bar", "Python")
 config.set("Section1", "foo", "%(bar)s is %(baz)s!")
 
-with open("example.cfg", "w") as f:
+with open("data/example.cfg", "w") as f:
     config.write(f)
