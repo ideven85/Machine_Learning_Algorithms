@@ -15,13 +15,11 @@ def generate_subsequences_slow(word):
 
 def generate_subsequences_fast(word):
     # z=[w for w in generate_subsequences_fast_helper(word) if w in ALL_WORDS]
-    z = [w for w in generate_subsequences_fast_helper(word)]
-    out = []
-    for w in z:
-        if w in ALL_WORDS:
-            out.append(w)
-    print(len(out))
-    return out
+    return [w for w in generate_subsequences_fast_helper(word) if w in ALL_WORDS]
+
+
+    #print(len(out))
+    #return out
     # return {w for w in generate_subsequences_fast_helper(word) if w in ALL_WORDS}
 
 
@@ -73,11 +71,11 @@ if __name__ == "__main__":
         "fix",
         "cheer",
     ]
-    z = subsequences("ABC")
+    z = subsequences("artichokes")
     sub = []
     for el in z:
         sub.append("".join(el))
-    print(sub)
+    print(sub,len(sub),'\n',len([w for w in sub if w in ALL_WORDS]))
     # [generate_subsequences_fast(w) for w in words]
     # start = time.time_ns()
     # with ThreadPool() as pool:
@@ -95,21 +93,25 @@ if __name__ == "__main__":
     # print('\nDone',end-start)
 
     #
-    start = time.perf_counter()
-    print(generate_subsequences_slow("artichokes"))
-    end = time.perf_counter()
-    print(end - start)
+    # start = time.perf_counter()
+    # print(generate_subsequences_slow("artichokes"))
+    # end = time.perf_counter()
+    # print(end - start)
     # print(end - start)
     #
     # """
     # Using Generators
     # """
-    # start = time.time()
-    #
-    print(generate_subsequences_fast("artichokes"))
+    start = time.time()
+    s = set(sub)
+    sub2=generate_subsequences_fast("artichokes")
+    print(s.difference(sub2))
+    #input(len(sub2))
+    #assert len(z) == len(sub2)
+
     print()
-    # end = time.time()
-    # print(end - start)
+    end = time.time()
+    print(end - start)
 """Step 1: Highlight the function below"""
 
 

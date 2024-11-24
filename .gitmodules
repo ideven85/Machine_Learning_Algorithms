@@ -12,6 +12,6 @@
 [submodule "Machine_Learning/data-science-from-scratch"]
 	path = Machine_Learning/data-science-from-scratch
 	url = https://github.com/joelgrus/data-science-from-scratch
-[submodule "Machine_Learning/Chess_AI"]
-	path = Machine_Learning/Chess_AI
+[submodule "Chess_AI"]
+	path = Chess_AI
 	url = https://github.com/ideven85/Chess_AI
