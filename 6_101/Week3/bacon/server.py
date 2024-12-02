@@ -1,3 +1,4 @@
+import asyncio
 import os
 import sys
 import json
@@ -72,7 +73,7 @@ special_routes = {
 }
 
 
-def application(environ, start_response):
+async def application(environ, start_response):
     path = environ.get("PATH_INFO", "/") or "/"
     params = parse_post(environ)
     for key, value in environ.items():
@@ -110,12 +111,18 @@ def application(environ, start_response):
     return [body]
 
 
-if __name__ == "__main__":
+def main():
+    app = asyncio.run(application)
     PORT = 6101
+
     print(f"starting server.  navigate to http://localhost:{PORT}/")
-    with make_server("", PORT, application) as httpd:
+    with make_server("", PORT, app) as httpd:
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:
             print("Shutting down.")
             httpd.server_close()
+
+
+if __name__ == "__main__":
+    main()

@@ -1,13 +1,15 @@
 GRID_SIZE = 3
 
+
 def load_words(length):
-    file = 'all_words.txt'
-    with open(file,'r') as f:
-        return [w for w in f.read().split('\n') if len(w)==length]
+    file = "all_words.txt"
+    with open(file, "r") as f:
+        return [w for w in f.read().split("\n") if len(w) == length]
 
 
 WORDS = load_words(length=GRID_SIZE)  # list of English words of given length
-#print(WORDS)
+# print(WORDS)
+
 
 def format_data(grid_size):
     """
@@ -43,25 +45,41 @@ def format_data(grid_size):
         (2, 1): [((2, 'across'), 1), ((1, 'down'), 2)],
         (2, 2): [((2, 'across'), 2), ((2, 'down'), 2)]}}
     """
-    slot_to_word= {(0, 'across'): None, (0, 'down'): None, (1, 'across'): None,
-                     (1, 'down'): None, (2, 'across'): None, (2, 'down'): None}
+    slot_to_word = {
+        (0, "across"): None,
+        (0, "down"): None,
+        (1, "across"): None,
+        (1, "down"): None,
+        (2, "across"): None,
+        (2, "down"): None,
+    }
 
-    slot_to_cells= {(0, 'across'): [((0, 0), 0), ((0, 1), 1), ((0, 2), 2)],
-                      (0, 'down'): [((0, 0), 0), ((1, 0), 1), ((2, 0), 2)],
-                      (1, 'across'): [((1, 0), 0), ((1, 1), 1), ((1, 2), 2)],
-                      (1, 'down'): [((0, 1), 0), ((1, 1), 1), ((2, 1), 2)],
-                      (2, 'across'): [((2, 0), 0), ((2, 1), 1), ((2, 2), 2)],
-                      (2, 'down'): [((0, 2), 0), ((1, 2), 1), ((2, 2), 2)]},
-    cell_to_slots= {(0, 0): [((0, 'across'), 0), ((0, 'down'), 0)],
-                      (0, 1): [((0, 'across'), 1), ((1, 'down'), 0)],
-                      (0, 2): [((0, 'across'), 2), ((2, 'down'), 0)],
-                      (1, 0): [((1, 'across'), 0), ((0, 'down'), 1)],
-                      (1, 1): [((1, 'across'), 1), ((1, 'down'), 1)],
-                      (1, 2): [((1, 'across'), 2), ((2, 'down'), 1)],
-                      (2, 0): [((2, 'across'), 0), ((0, 'down'), 2)],
-                      (2, 1): [((2, 'across'), 1), ((1, 'down'), 2)],
-                      (2, 2): [((2, 'across'), 2), ((2, 'down'), 2)]}
-    return {"slot_to_word":slot_to_word,"slot_to_cells":slot_to_cells,"cell_to_slots":cell_to_slots}
+    slot_to_cells = (
+        {
+            (0, "across"): [((0, 0), 0), ((0, 1), 1), ((0, 2), 2)],
+            (0, "down"): [((0, 0), 0), ((1, 0), 1), ((2, 0), 2)],
+            (1, "across"): [((1, 0), 0), ((1, 1), 1), ((1, 2), 2)],
+            (1, "down"): [((0, 1), 0), ((1, 1), 1), ((2, 1), 2)],
+            (2, "across"): [((2, 0), 0), ((2, 1), 1), ((2, 2), 2)],
+            (2, "down"): [((0, 2), 0), ((1, 2), 1), ((2, 2), 2)],
+        },
+    )
+    cell_to_slots = {
+        (0, 0): [((0, "across"), 0), ((0, "down"), 0)],
+        (0, 1): [((0, "across"), 1), ((1, "down"), 0)],
+        (0, 2): [((0, "across"), 2), ((2, "down"), 0)],
+        (1, 0): [((1, "across"), 0), ((0, "down"), 1)],
+        (1, 1): [((1, "across"), 1), ((1, "down"), 1)],
+        (1, 2): [((1, "across"), 2), ((2, "down"), 1)],
+        (2, 0): [((2, "across"), 0), ((0, "down"), 2)],
+        (2, 1): [((2, "across"), 1), ((1, "down"), 2)],
+        (2, 2): [((2, "across"), 2), ((2, "down"), 2)],
+    }
+    return {
+        "slot_to_word": slot_to_word,
+        "slot_to_cells": slot_to_cells,
+        "cell_to_slots": cell_to_slots,
+    }
 
 
 def solve(puzzle):
@@ -71,7 +89,8 @@ def solve(puzzle):
         yield puzzle
         return
     next_slot = next(
-        slot for slot, slot_value in puzzle["slot_to_word"].items()
+        slot
+        for slot, slot_value in puzzle["slot_to_word"].items()
         if slot_value is None
     )
     for word in WORDS:
@@ -103,6 +122,7 @@ def check_puzzle(puzzle, slot):
             else:
                 return False
     return True
+
 
 def main():
     puzzle = load_words(format_data(3))

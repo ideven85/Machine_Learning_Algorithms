@@ -17,9 +17,8 @@ def generate_subsequences_fast(word):
     # z=[w for w in generate_subsequences_fast_helper(word) if w in ALL_WORDS]
     return [w for w in generate_subsequences_fast_helper(word) if w in ALL_WORDS]
 
-
-    #print(len(out))
-    #return out
+    # print(len(out))
+    # return out
     # return {w for w in generate_subsequences_fast_helper(word) if w in ALL_WORDS}
 
 
@@ -75,7 +74,7 @@ if __name__ == "__main__":
     sub = []
     for el in z:
         sub.append("".join(el))
-    print(sub,len(sub),'\n',len([w for w in sub if w in ALL_WORDS]))
+    print(sub, len(sub), "\n", len([w for w in sub if w in ALL_WORDS]))
     # [generate_subsequences_fast(w) for w in words]
     # start = time.time_ns()
     # with ThreadPool() as pool:
@@ -104,10 +103,10 @@ if __name__ == "__main__":
     # """
     start = time.time()
     s = set(sub)
-    sub2=generate_subsequences_fast("artichokes")
+    sub2 = generate_subsequences_fast("artichokes")
     print(s.difference(sub2))
-    #input(len(sub2))
-    #assert len(z) == len(sub2)
+    # input(len(sub2))
+    # assert len(z) == len(sub2)
 
     print()
     end = time.time()

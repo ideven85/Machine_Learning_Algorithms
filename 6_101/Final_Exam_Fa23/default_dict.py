@@ -1,5 +1,5 @@
 class DefaultDict(dict):
-    '''
+    """
     >>> dd = DefaultDict(lambda : 'my default')
     >>> dd[5]
     'my default'
@@ -28,21 +28,18 @@ class DefaultDict(dict):
     Traceback (most recent call last):
         ...
         KeyError: 5
-    '''
+    """
+
     def __init__(self, default_factory=None):
         super().__init__()
         self.default_factory = default_factory
-
-   
 
     def __getitem__(self, key):
         if key not in self:
             if not self.default_factory:
                 raise KeyError(key)
-            self[key]=self.default_factory()
+            self[key] = self.default_factory()
         return super().__getitem__(key)
-        
-
 
 
 import doctest
