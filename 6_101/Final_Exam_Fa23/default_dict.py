@@ -1,5 +1,10 @@
 class DefaultDict(dict):
     """
+    >>> ee = DefaultDict()
+    >>> ee[5]
+    Traceback (most recent call last):
+    ...
+    KeyError: 5
     >>> dd = DefaultDict(lambda : 'my default')
     >>> dd[5]
     'my default'
@@ -24,10 +29,7 @@ class DefaultDict(dict):
     >>> sorted(d.items())
     [('i', 4), ('m', 1), ('p', 2), ('s', 4)]
     >>> ee = DefaultDict()
-    >>> ee[5]
-    Traceback (most recent call last):
-        ...
-        KeyError: 5
+
     """
 
     def __init__(self, default_factory=None):

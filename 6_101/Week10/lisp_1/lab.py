@@ -4,6 +4,7 @@ LISP Interpreter Part 1
 """
 
 #!/usr/bin/env python3
+#10 hours Date: after 10th December, 2024
 
 import sys
 
