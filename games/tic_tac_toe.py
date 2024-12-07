@@ -4,6 +4,16 @@ import pygame, sys
 
 pygame.init()
 
+
+def exit_game():
+    if event.type == pygame.QUIT:
+        return True
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_q or event.key == pygame.K_ESCAPE:
+            return True
+    return False
+
+
 # ---------
 # CONSTANTS
 # ---------
@@ -210,13 +220,10 @@ player = 1
 game_over = False
 while True:
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+        if exit_game():
             pygame.quit()
-            sys.exit(0)
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_q or event.key == pygame.K_ESCAPE:
-                pygame.quit()
-                sys.exit(0)
+            sys.exit(1)
+
         if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
 
             mouseX = event.pos[0]  # x

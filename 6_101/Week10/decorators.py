@@ -2,8 +2,10 @@ def memoise(func):
     cache = {}
 
     def _mfunc(*args):
+
         if args not in cache:
             cache[args] = func(*args)
+            print(args, ":", cache[args])
         return cache[args]
 
     return _mfunc
@@ -13,7 +15,7 @@ def memoise(func):
 def fib(n):
     if n < 2:
         return n
-    print(n, end=" ")
+    # print(n, end=" ")
     return fib(n - 1) + fib(n - 2)
 
 
