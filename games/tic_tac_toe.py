@@ -39,7 +39,7 @@ CROSS_COLOR = (66, 66, 66)
 # SCREEN
 # ------
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("TIC TAC TOE")
+pygame.display.set_caption("TIC-TAC-TOE")
 screen.fill(BG_COLOR)
 
 # -------------
@@ -121,7 +121,7 @@ def available_square(row, col):
 
 def is_board_full():
     for row in range(BOARD_ROWS):
-        if 0 in row:
+        if 0 in board[row]:
             return False
 
     return True
@@ -209,6 +209,8 @@ def draw_desc_diagonal(player):
 def restart():
     screen.fill(BG_COLOR)
     draw_lines()
+
+    #board = [[0 for _ in range(BOARD_COLS)] for _ in range(BOARD_ROWS)]
     for row in range(BOARD_ROWS):
         for col in range(BOARD_COLS):
             board[row][col] = 0
@@ -239,6 +241,10 @@ while True:
                 player = player % 2 + 1
 
                 draw_figures()
+            if is_board_full():
+                restart()
+                player=1
+                game_over=False
         if event.type == pygame.KEYDOWN and event.key == pygame.K_r:
 
             restart()

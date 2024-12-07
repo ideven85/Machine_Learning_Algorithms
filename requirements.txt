@@ -71,7 +71,7 @@ gymnasium==1.0.0
 h11==0.14.0
 h5py==3.12.1
 httpcore==1.0.7
-httpx==0.28.0
+httpx~=0.28.1
 huggingface-hub==0.26.3
 humanize==4.11.0
 idna==3.10
@@ -175,7 +175,7 @@ pure_eval==0.2.3
 pyarrow==18.1.0
 pycodestyle==2.12.1
 pycparser==2.22
-pydantic==2.10.2
+pydantic~=2.10.3
 pydantic_core==2.27.1
 pyflakes==3.2.0
 pygame==2.6.1
@@ -258,3 +258,7 @@ xattr==1.1.0
 xxhash==3.5.0
 yarl==1.18.3
 zipp==3.21.0
+
+seaborn~=0.13.2
+Flask~=3.0.3
+nltk~=3.9.1

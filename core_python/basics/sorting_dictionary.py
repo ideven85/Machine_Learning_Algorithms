@@ -9,7 +9,7 @@ composers = {"Johann": 65, "Ludwig": 56, "Frederic": 39, "Wolfgang": 35}
 sorted_composers = dict(sorted(composers.items(), key=lambda x: x[1], reverse=True))
 print(sorted_composers)
 
-x = OrderedDict({"a": 1, "b": -1, "j": 0, "f": 4})
+x =dict({"a": 1, "b": -1, "j": 0, "f": 4})
 print(list(x.items()))
 print(dict(x.items()))
 print(dict(sorted(x.items())))
