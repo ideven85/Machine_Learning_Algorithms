@@ -17,6 +17,11 @@ opencv-contrib-python = "^4.10.0.84"
 matplotlib = "^3.9.3"
 seaborn = "^0.13.2"
 plotly = "^5.24.1"
+tqdm = "^4.67.1"
+h5py = "^3.12.1"
+redis = {extras = ["hiredis"], version = "^5.2.1"}
+scikit-learn = "^1.6.0"
+pygame = "^2.6.1"
 
 
 [build-system]

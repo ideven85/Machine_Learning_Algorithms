@@ -1,6 +1,40 @@
-# Datasets for Hands-On Machine Learning
-A collection of open datasets used in the book _Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow_ and its accompanying Jupyter notebooks, available at [https://github.com/ageron/handson-ml3](ageron/handson-ml3).
+### About the Repository?
+#### This repository has some essential datasets you can use in Data Science.
+-----
+### **Data Analysis**
+- Airbnb
+- Sneaker Sales
+- Cricket Players
+- Gaana
+- IMDB Movies
+- Job Postings
+- Myntra Products
+- OpenBook
+- Swiggy Restaurants
+-----
+### **Machine Learning**
+- Sherlock
+- Airbnb
+- IMDB Movies
+- Job Postings
+-----
+### **Deep Learning**
+- Airbnb
+- IMDB Movies
+-----  
+### **Computer Vision**
+- IMDB Celeb
+-----
+### **Natural Language Processing**
+- Gaana
+- Sherlock
+- Hindi Corpus
+- Cooking Labels
+- IMDB Movies
+- Job Postings
+- Myntra Products
+- OpenBook
+-----
 
-Each directory contains one dataset, along with information about its source and license.
 
-Enjoy!
+Stay updated with my latest content and projects! Your support helps me create more valuable resources for everyone.

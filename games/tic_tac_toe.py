@@ -210,7 +210,7 @@ def restart():
     screen.fill(BG_COLOR)
     draw_lines()
 
-    #board = [[0 for _ in range(BOARD_COLS)] for _ in range(BOARD_ROWS)]
+    # board = [[0 for _ in range(BOARD_COLS)] for _ in range(BOARD_ROWS)]
     for row in range(BOARD_ROWS):
         for col in range(BOARD_COLS):
             board[row][col] = 0
@@ -243,8 +243,8 @@ while True:
                 draw_figures()
             if is_board_full():
                 restart()
-                player=1
-                game_over=False
+                player = 1
+                game_over = False
         if event.type == pygame.KEYDOWN and event.key == pygame.K_r:
 
             restart()
