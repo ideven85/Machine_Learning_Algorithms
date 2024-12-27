@@ -19,21 +19,18 @@ def reverseStr(s: str, k: int) -> str:
 
 
 def lengthOfLongestSubstring(s: str) -> int:
-    res = 0
-    counts = {}
-    i = 0
-    j = 0
-    for i in range(len(s)):
-        if s[i] not in counts:
-            counts[s[i]] = 1
-        else:
-            counts[s[i]] = counts[s[i]] + 1
-        while counts[s[i]] > 1:
-            if s[j] in counts:
-                counts[s[j]] -= 1
-                j += 1
-        res = max(res, (i - j + 1))
-    return res
+    left = max_length = 0
+    char_set = set()
+
+    for right in range(len(s)):
+        while s[right] in char_set:
+            char_set.remove(s[left])
+            left += 1
+
+        char_set.add(s[right])
+        max_length = max(max_length, right - left + 1)
+
+    return max_length
 
 
 def lengthOfLongestSubstringV2(s: str) -> int:
@@ -150,3 +147,4 @@ k = 1
 print(lengthOfLongestSubstringKDistinct(s, k))
 print(containsNearbyDuplicate([1, 2, 3, 1], 2))
 print(addStrings("123", "11"))
+print(lengthOfLongestSubstring("aabaab!bb"))

@@ -6,7 +6,7 @@ with open("words.txt") as f:
 # replace the following with the starting state
 start_state = ":)"
 
-
+#Expanded form of LeetCode https://leetcode.com/problems/word-ladder/
 def find_path(graph, start, goal_test):
     if goal_test(start):
         return (start,)

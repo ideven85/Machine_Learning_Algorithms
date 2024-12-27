@@ -1,5 +1,9 @@
 from typing import Optional
 
+# Definition for singly-linked list.
+import copy
+from typing import Optional
+
 
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -7,46 +11,120 @@ class ListNode:
         self.next = next
 
 
-class ListProblems:
+def insert(head: Optional[ListNode], val: int) -> Optional[ListNode]:
+    current = head
+    while current.next:
+        current = current.next
+    current.next = ListNode(val)
+    return head
 
-    def insert(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+
+def create_list(head, val):
+    if head is None:
+        head = ListNode(val)
+        head.next = None
+    else:
+        head.next = ListNode(val)
+        head = head.next
+        # head.next=None
+    return head
+
+
+def reverseList(head: Optional[ListNode]) -> Optional[ListNode]:
+    if not head:
+        return None
+    last = None
+    current = head
+    while current:
+        temp = current.next
+        current.next = last
+        last = current
+        current = temp
+    head = last
+    return head
+
+
+def print_list(head: ListNode):
+    while head is not None:
+        print(head.val, end=",")
+        head = head.next
+    print()
+
+
+class Solution:
+
+    def reverse(self, head):
+        prev = None
         current = head
-        while current.next:
-            current = current.next
-        current.next = ListNode(val)
-        return head
+        while current:
+            prev, prev.next, current = current, prev, current.next
+        return prev
 
-    def addTwoNumbers(
+    # Ok, add from left to right, stupid question..
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        dummyHead = ListNode(0)
+        tail = dummyHead
+        carry = 0
+
+        while l1 is not None or l2 is not None or carry != 0:
+            digit1 = l1.val if l1 is not None else 0
+            digit2 = l2.val if l2 is not None else 0
+
+            sum = digit1 + digit2 + carry
+            digit = sum % 10
+            carry = sum // 10
+
+            newNode = ListNode(digit)
+            tail.next = newNode
+            tail = tail.next
+
+            l1 = l1.next if l1 is not None else None
+            l2 = l2.next if l2 is not None else None
+
+        result = dummyHead.next
+        dummyHead.next = None
+        return result
+
+    # Proper Adding of two numbers represented as lists
+    def add_two_numbers(
         self, l1: Optional[ListNode], l2: Optional[ListNode]
     ) -> Optional[ListNode]:
-        output = ListNode(0)
-        current = output
-        carry = 0
-        while l1 and l2:
-            total = l1.val + l2.val + carry
-            digit = total % 10
-            carry = total // 10
-            current.next = ListNode(digit)
-            current = current.next
-            l1 = l1.next
-            l2 = l2.next
-        while l1:
-            total = l1.val + carry
-            digit = total % 10
-            carry = total // 10
-            current.next = ListNode(digit)
-            current = current.next
-            l1 = l1.next
-        while l2:
-            total = l2.val + carry
-            digit = total % 10
-            carry = total // 10
-            current.next = ListNode(digit)
-            current = current.next
-            l2 = l2.next
-        if carry:
-            current.next = ListNode(carry)
-        return output.next
+        if l1 is None:
+            return l2
+        if l2 is None:
+            return l1
+        else:
+            l1 = self.reverse(l1)
+            l2 = self.reverse(l2)
+            output = ListNode(0)
+            current = output
+            carry = 0
+            while l1 and l2:
+                total = l1.val + l2.val + carry
+                digit = total % 10
+                carry = total // 10
+                current.next = ListNode(digit)
+                current = current.next
+                l1 = l1.next
+                l2 = l2.next
+            while l1:
+                total = l1.val + carry
+                digit = total % 10
+                carry = total // 10
+                current.next = ListNode(digit)
+                current = current.next
+                l1 = l1.next
+            while l2:
+                total = l2.val + carry
+                digit = total % 10
+                carry = total // 10
+                current.next = ListNode(digit)
+                current = current.next
+                l2 = l2.next
+            if carry:
+                current.next = ListNode(carry)
+
+            return self.reverse(output.next)
 
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head or not head.next:
