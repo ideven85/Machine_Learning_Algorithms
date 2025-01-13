@@ -15,3 +15,6 @@
 [submodule "Chess_AI"]
 	path = Chess_AI
 	url = https://github.com/ideven85/Chess_AI
+[submodule "Machine_Learning/introtodeeplearning"]
+	path = Machine_Learning/introtodeeplearning
+	url = https://github.com/MITDeepLearning/introtodeeplearning
