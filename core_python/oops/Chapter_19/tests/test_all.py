@@ -9,7 +9,7 @@ Requires some_algorithm package be on the PYTHONPATH.
 # Imports
 
 import unittest
-from Chapter_19 import some_algorithm
+import some_algorithm
 
 # Test Case
 
