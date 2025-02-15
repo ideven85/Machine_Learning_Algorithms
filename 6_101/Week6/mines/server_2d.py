@@ -70,6 +70,7 @@ def application(environ, start_response):
             body = str(e).encode("utf-8")
             status = "500 INTERNAL SERVER ERROR"
             type_ = "text/plain"
+            print(e)
     else:
         if path == "/":
             static_file = "/ui2d/index.html"

@@ -162,7 +162,6 @@ class Solution:
                 return count
 
 
-
 beginWord = "hit"
 endWord = "cog"
 

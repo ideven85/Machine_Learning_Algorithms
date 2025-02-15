@@ -69,15 +69,15 @@ special_routes = {
     ),
     "/bacon_number": lambda d: list(lab.actors_with_bacon_number(small_data, d["n"])),
     "/bacon_path": lambda d: lab.bacon_path(small_data, d["actor_name"]),
-    "/restart": lambda d: (importlib.reload(lab) and {"ok": True}),
+    "/restart": lambda d: (importlib.reload(lab) and {"ok": True} ),
 }
 
 
-async def application(environ, start_response):
+def application(environ, start_response):
     path = environ.get("PATH_INFO", "/") or "/"
     params = parse_post(environ)
-    for key, value in environ.items():
-        print(key, value)
+    # for key, value in environ.items():
+    #     print(key, value)
 
     print(f"requested {path}, params: {params}")
 
@@ -112,11 +112,11 @@ async def application(environ, start_response):
 
 
 def main():
-    app = asyncio.run(application)
+    #app = asyncio.run(awapplication)
     PORT = 6101
 
     print(f"starting server.  navigate to http://localhost:{PORT}/")
-    with make_server("", PORT, app) as httpd:
+    with make_server("", PORT, application) as httpd:
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:

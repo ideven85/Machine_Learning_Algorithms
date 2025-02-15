@@ -15,18 +15,20 @@ async def f(x):
 async def g(x):
     return x
 
+
 """
 Generating async fib
 """
-#async def fib(n):
+# async def fib(n):
 #     if n<2:
 #         return n
 #     return await(fib(n-1))+await(fib(n-2))
 
+
 async def main():
     #  # Not when coroutine is started I think
     return await f([1, 2, 3])
-    #return fib(100)
+    # return fib(100)
 
 
 if __name__ == "__main__":
