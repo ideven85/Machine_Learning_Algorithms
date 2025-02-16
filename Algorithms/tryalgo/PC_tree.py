@@ -1,8 +1,8 @@
-"""  Rami Benelmir, Christoph Dürr, Erisa Kohansal - 2023
+"""Rami Benelmir, Christoph Dürr, Erisa Kohansal - 2023
 
-The PC-tree is a dynamic datastructure which encodes permutations on the integers modulo n 
-satisfying constraints of the form: 
-- for a given set S the permutations need to keep the elements of S in consecutive order. 
+The PC-tree is a dynamic datastructure which encodes permutations on the integers modulo n
+satisfying constraints of the form:
+- for a given set S the permutations need to keep the elements of S in consecutive order.
 Here we consider a circular order, i.e. after n-1 comes 0, then 1 and so on.
 
 TODO:

@@ -59,6 +59,7 @@ eof_object = Symbol("#<eof-object>")  # Note: uninterned; can't be read
 
 class InPort:
     "An input port. Retains a line of chars."
+
     tokenizer = r"""\s*(,@|[('`,)]|"(?:[\\].|[^\\"])*"|;.*|[^\s('"`,;)]*)(.*)"""
 
     def __init__(self, file):

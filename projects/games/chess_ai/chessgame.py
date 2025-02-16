@@ -3,7 +3,8 @@
 # Can do in Django if pygame not possible...
 import pygame
 import sys
-#todo make chessai
+
+# todo make chessai
 pygame.init()
 
 

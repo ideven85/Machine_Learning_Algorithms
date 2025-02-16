@@ -1,4 +1,4 @@
-""" Example adapted from ``yield_delegate_fail.py``
+"""Example adapted from ``yield_delegate_fail.py``
 
 The following program performs a simple abstraction over the process of
 yielding.

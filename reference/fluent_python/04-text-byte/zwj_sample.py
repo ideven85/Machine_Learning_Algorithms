@@ -11,8 +11,8 @@ zwg_sample = """
 """
 
 markers = {
-    "\u200D": "ZWG",  # ZERO WIDTH JOINER
-    "\uFE0F": "V16",  # VARIATION SELECTOR-16
+    "\u200d": "ZWG",  # ZERO WIDTH JOINER
+    "\ufe0f": "V16",  # VARIATION SELECTOR-16
 }
 
 for line in zwg_sample.strip().split("\n"):

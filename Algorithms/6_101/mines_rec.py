@@ -1,5 +1,5 @@
 # 6.101 recitation: lab 7 wrapup
-#from solution import new_game_2d
+# from solution import new_game_2d
 import doctest
 
 ############################################ refactoring

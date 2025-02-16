@@ -23,7 +23,7 @@ class Blockchain:
             "proof": proof,
             "previous_hash": previous_hash,
         }
-        print("Created Block:",block)
+        print("Created Block:", block)
         self.chain.append(block)
         return block
 
@@ -47,8 +47,8 @@ class Blockchain:
         return new_proof
 
     def hash(self, block):
-        encoded_block = json.dumps(block, sort_keys=True).encode() # Sorted keys
-        print("Encoded Block",json.loads(encoded_block))
+        encoded_block = json.dumps(block, sort_keys=True).encode()  # Sorted keys
+        print("Encoded Block", json.loads(encoded_block))
         return hashlib.sha256(encoded_block).hexdigest()
 
     def is_chain_valid(self, chain):
@@ -91,22 +91,23 @@ def mine_block():
         "proof": block["proof"],
         "previous_hash": block["previous_hash"],
     }
-    return jsonify(response), 200 # json.dumps()
+    return jsonify(response), 200  # json.dumps()
 
-@app.route('/get_chain',methods=['GET'])
+
+@app.route("/get_chain", methods=["GET"])
 def display_chain():
-    response = {'chain': blockchain.chain,
-                'length': len(blockchain.chain)}
-    return jsonify(response),200
+    response = {"chain": blockchain.chain, "length": len(blockchain.chain)}
+    return jsonify(response), 200
 
-@app.route('/valid_chain',methods=['GET'])
+
+@app.route("/valid_chain", methods=["GET"])
 def valid_chain():
     valid = blockchain.is_chain_valid(blockchain.chain)
     if valid:
-        return jsonify({'message': 'The block chain is valid'}),200
+        return jsonify({"message": "The block chain is valid"}), 200
     else:
-        return  jsonify({'message': 'The block chain is corrupt'}),200
+        return jsonify({"message": "The block chain is corrupt"}), 200
 
 
-if __name__ == '__main__':
-    app.run('0.0.0.0',5000,debug=True)
+if __name__ == "__main__":
+    app.run("0.0.0.0", 5000, debug=True)

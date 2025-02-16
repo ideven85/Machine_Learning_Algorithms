@@ -1,5 +1,5 @@
 """
-Automatically generated stubfile of 
+Automatically generated stubfile of
 
 /home/luciano/flupy/priv/2e-atlas/code/10-dp-1class-func/pytypes/classic_strategy.py
 MD5-Checksum: a02fa3b98639f84a81b87d4f46007d51

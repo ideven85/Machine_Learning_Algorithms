@@ -1,7 +1,7 @@
 """
-Question 3: Given the implementation of get_pixel below, write a few bullet 
-points answering the following questions: What does the code do well? How 
-easy is it to understand what the code is doing? How would you refactor the 
+Question 3: Given the implementation of get_pixel below, write a few bullet
+points answering the following questions: What does the code do well? How
+easy is it to understand what the code is doing? How would you refactor the
 code to reduce repetition or make it simpler?
 """
 

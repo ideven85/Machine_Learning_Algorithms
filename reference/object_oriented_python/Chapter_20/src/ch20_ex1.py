@@ -9,7 +9,7 @@
 Blackjack Cards and Decks
 =========================
 
-This module contains a definition of :class:`Card`, 
+This module contains a definition of :class:`Card`,
 :class:`Deck` and :class:`Shoe` suitable for Blackjack.
 
 The :class:`Card` class hierarchy

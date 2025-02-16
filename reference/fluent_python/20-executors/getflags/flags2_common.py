@@ -1,5 +1,4 @@
-"""Utilities for second set of flag examples.
-"""
+"""Utilities for second set of flag examples."""
 
 import argparse
 import string

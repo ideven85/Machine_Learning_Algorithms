@@ -1,20 +1,20 @@
 """
-    >>> clip('banana ', 6)
-    'banana'
-    >>> clip('banana ', 7)
-    'banana'
-    >>> clip('banana ', 5)
-    'banana'
-    >>> clip('banana split', 6)
-    'banana'
-    >>> clip('banana split', 7)
-    'banana'
-    >>> clip('banana split', 10)
-    'banana'
-    >>> clip('banana split', 11)
-    'banana'
-    >>> clip('banana split', 12)
-    'banana split'
+>>> clip('banana ', 6)
+'banana'
+>>> clip('banana ', 7)
+'banana'
+>>> clip('banana ', 5)
+'banana'
+>>> clip('banana split', 6)
+'banana'
+>>> clip('banana split', 7)
+'banana'
+>>> clip('banana split', 10)
+'banana'
+>>> clip('banana split', 11)
+'banana'
+>>> clip('banana split', 12)
+'banana split'
 """
 
 

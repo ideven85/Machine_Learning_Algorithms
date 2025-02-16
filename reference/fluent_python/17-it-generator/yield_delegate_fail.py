@@ -1,4 +1,4 @@
-""" Example from `Python: The Full Monty`__ -- A Tested Semantics for the
+"""Example from `Python: The Full Monty`__ -- A Tested Semantics for the
 Python Programming Language
 
 __ http://cs.brown.edu/~sk/Publications/Papers/Published/pmmwplck-python-full-monty/

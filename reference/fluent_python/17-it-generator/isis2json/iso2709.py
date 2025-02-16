@@ -20,11 +20,11 @@
 
 from struct import unpack
 
-CR = "\x0D"  # \r
-LF = "\x0A"  # \n
-IS1 = "\x1F"  # ECMA-48 Unit Separator
-IS2 = "\x1E"  # ECMA-48 Record Separator / ISO-2709 field separator
-IS3 = "\x1D"  # ECMA-48 Group Separator / ISO-2709 record separator
+CR = "\x0d"  # \r
+LF = "\x0a"  # \n
+IS1 = "\x1f"  # ECMA-48 Unit Separator
+IS2 = "\x1e"  # ECMA-48 Record Separator / ISO-2709 field separator
+IS3 = "\x1d"  # ECMA-48 Group Separator / ISO-2709 record separator
 LABEL_LEN = 24
 LABEL_FORMAT = "5s c 4s c c 5s 3s c c c c"
 TAG_LEN = 3

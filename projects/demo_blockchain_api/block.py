@@ -3,8 +3,11 @@ import hashlib
 import json
 
 import os
-os.environ.setdefault('APPENGINE_RUNTIME',"0")
+
+os.environ.setdefault("APPENGINE_RUNTIME", "0")
 print(os.path.expanduser("~/Developer"))
+
+
 class Block:
     def __init__(self, data, previous_hash):
         # self.hash = self.calculate_hash()
