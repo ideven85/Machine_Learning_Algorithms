@@ -33,6 +33,7 @@ opencv-contrib-python = "^4.11.0.86"
 openai = "^1.60.1"
 gymnasium = {extras = ["all"], version = "^1.0.0"}
 pylint = "^3.3.4"
+chapyter = "^0.3.1"
 
 
 [build-system]

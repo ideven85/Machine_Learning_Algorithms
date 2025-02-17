@@ -23,6 +23,10 @@ ops = [
 
 
 def combinations_iterative(nums):
+    """
+    >>> combinations_iterative([1, 2, 3])
+    {0, 1, 2, 3, 5, 6, 9, -4, -3, -1}
+    """
     if len(nums) < 2:
         return set(nums)
     out = set()
