@@ -2,7 +2,7 @@ import math
 
 
 class FactorIter:
-    def __init__(self,n):
+    def __init__(self, n):
         self.n = n
         self.i = 0
 
@@ -14,19 +14,19 @@ class FactorIter:
             raise StopIteration("Overflow")
         else:
             result = math.factorial(self.i)
-            self.i+=1
+            self.i += 1
             return result
 
+
 def factorial(n):
-    if n<2:
+    if n < 2:
         yield n
         return
     else:
-        result=1
-        for i in range(1,n):
-            result*=i
+        result = 1
+        for i in range(1, n):
+            result *= i
             yield result
-
 
 
 def main():
@@ -36,5 +36,6 @@ def main():
     iterator1 = factorial(10)
     print(list(iterator1))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

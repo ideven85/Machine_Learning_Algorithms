@@ -1,6 +1,3 @@
-import time
-
-
 def apply_n_times(f, n, x):
     out = x
     for _ in range(n):

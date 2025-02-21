@@ -14,9 +14,9 @@ class Student(Person):  # Not a data class unless decorated with it
 
 
 def save_model():
-    dave = Person("Deven", 12)
-    ser = pickle.dumps(dave)
-    file = "dave.pkl"
+    person = Person("Deven", 12)
+    ser = pickle.dumps(person)
+    file = "person.pkl"
     with open(file, "wb") as f:
         f.write(ser)
     return file
@@ -31,10 +31,10 @@ def load_model(file):
 
 
 def main():
-    # file=save_model()
-    # load_model(file)
-    stu = Student("Deven", 12)
-    print(stu)
+    file = save_model()
+    load_model(file)
+    # stu = Student("Deven", 12)
+    # print(stu)
 
 
 if __name__ == "__main__":
