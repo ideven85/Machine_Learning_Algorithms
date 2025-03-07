@@ -3,8 +3,10 @@
 import time
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 
+
 def echo(data):
     return data
+
 
 if __name__ == "__main__":
     data = [complex(i, i) for i in range(15_000_000)]
