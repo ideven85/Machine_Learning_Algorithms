@@ -32,9 +32,11 @@ def tree_sum(tree):
     agenda = [tree]
     while agenda:
         x = agenda.pop(-1)
-        print(x)
+        #print(x)
         if not x:
             sum_so_far += 0
+        else:
+            sum_so_far+=x
 
     return sum_so_far
 

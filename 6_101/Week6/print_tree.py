@@ -14,28 +14,12 @@ def all_values(tree):
             yield el
 
 
-print("Words:", list(all_values(tree1)))
-
-out = []
-
-
 def fib_gen(n):
     a = 0
     b = 1
     for i in range(n):
         yield a
         a, b = b, a + b
-
-
-x1 = fib_gen(10)
-s1 = time.time_ns()
-for val in x1:
-    out.append(val)
-s2 = time.time_ns()
-
-print(s2 - s1)
-
-print(out)
 
 
 def fib(n):
@@ -49,9 +33,23 @@ def fib(n):
     return out1
 
 
-s3 = time.time_ns()
-a = fib(1000)
-s4 = time.time_ns()
-print(s4 - s3)
-print(a[:5])
-print(out[:5])
+def main():
+
+    x1 = fib_gen(10)
+    s1 = time.time_ns()
+    for val in x1:
+        print(val, end=" ")
+    s2 = time.time_ns()
+
+    print(s2 - s1)
+
+    for word in all_values(tree1):
+        print(word, end=" ")
+        print()
+    s3 = time.perf_counter_ns()
+    for i, val in fib_gen(1000):
+        if i == 100:
+            break
+        print(val, end=" ")
+    s4 = time.perf_counter_ns()
+    print(s4 - s3)

@@ -1,3 +1,4 @@
+import numpy as np
 class Averager:
     def __init__(self):
         self.series = []
@@ -40,6 +41,7 @@ def memoization(func):
 
 
 @memoization
+
 def fib(n):
     return n if n < 2 else fib(n - 1) + fib(n - 2)
 
@@ -66,6 +68,8 @@ def main():
     # print(avg_functional.__closure__[0].cell_contents)
     print(avg_functional.__code__.co_varnames)
     print(avg_functional.__code__.co_freevars)
+    f = np.vectorize(fib)
+    print(np.array(f(list(x for x in range(10)))))
     print([fib(i) for i in range(30)])
 
 

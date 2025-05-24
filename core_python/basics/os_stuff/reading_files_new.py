@@ -1,6 +1,5 @@
 import os.path
 
-import gymnasium.envs
 from pathlib import Path
 
 

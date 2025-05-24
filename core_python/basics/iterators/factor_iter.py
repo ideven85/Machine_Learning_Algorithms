@@ -33,8 +33,8 @@ def main():
     iterator = FactorIter(10)
     for x in iterator:
         print(x)
-    iterator1 = factorial(10)
-    print(list(iterator1))
+    for f in factorial(10):
+        print(f,end=' ')
 
 
 if __name__ == "__main__":
