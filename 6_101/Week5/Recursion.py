@@ -107,7 +107,6 @@ def powerset(array):
     return subSets
 
 
-
 def number_to_string(n, b):
     """
     Given an integer n and base b (where 2 <= b <= 10),

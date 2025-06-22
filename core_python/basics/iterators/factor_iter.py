@@ -34,7 +34,7 @@ def main():
     for x in iterator:
         print(x)
     for f in factorial(10):
-        print(f,end=' ')
+        print(f, end=" ")
 
 
 if __name__ == "__main__":

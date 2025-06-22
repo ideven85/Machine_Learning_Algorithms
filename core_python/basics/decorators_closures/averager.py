@@ -1,4 +1,6 @@
 import numpy as np
+
+
 class Averager:
     def __init__(self):
         self.series = []
@@ -41,7 +43,6 @@ def memoization(func):
 
 
 @memoization
-
 def fib(n):
     return n if n < 2 else fib(n - 1) + fib(n - 2)
 

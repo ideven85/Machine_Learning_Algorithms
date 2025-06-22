@@ -31,14 +31,19 @@ Object is already iterable... either by implementing __iter__ or "__getitem_- wh
 #
 
 
-class Stack:
+class StackList:
     def __init__(self):
         self._stack = []
         self._length = 0
 
     def push(self, item):
-        self._stack.append(item)
-        self._length += 1
+        n = 1
+        if type(item) in (str, int, float):
+            self._stack.append(item)
+        elif type(item) in (list, set, tuple):
+            self._stack.extend(item)
+            n = len(item)
+        self._length += n
 
     def pop(self):
 
@@ -61,15 +66,6 @@ class Stack:
         else:
             raise EmptyException("Stack is Empty")
 
-    # def __iter__(self):
-    #     if len(self):
-    #         temp = self._stack[:]
-    #         for t in temp:
-    #             yield t
-    #
-    #     else:
-    #         raise StopIteration("Add more elements to me please")
-
     def __iter__(self):
         yield self
 
@@ -80,7 +76,7 @@ class Stack:
         return self._stack[self._length]
 
     def __repr__(self):
-        return " ".join(str(x) for x in self._stack)
+        return ",".join(str(x) for x in self._stack)
 
     # def __str__(self):
     #     return self._stack
@@ -91,18 +87,21 @@ class EmptyException(Exception):
 
 
 if __name__ == "__main__":
-    obj = Stack()
+    obj = StackList()
     obj.push(1)
     obj.push(2)
     obj.push(3)
     obj.push(4)
+    obj.push((5, 6))
     # obj+=[2]
     # print(obj)
     #
     # for i in range(len(obj)):
     #     print(obj[i], end=" ")
+    print("Obj:", obj)
+    for val in obj:
+        print(val, end=",")
     print()
-    print(list(obj))
     # for val in obj:
     #     print(val, end=" ")
     # print("\nIteration over")
