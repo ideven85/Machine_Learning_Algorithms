@@ -31,6 +31,20 @@ def calc_avg_functional():
     return make_averager
 
 
+def make_averager():
+    count = 0
+    total = 0
+
+    def calc_average(new_value):
+        nonlocal count, total
+        total += new_value
+        count += 1
+        avg = total / count
+        return avg
+
+    return make_averager
+
+
 def memoization(func):
     cache = {}
 

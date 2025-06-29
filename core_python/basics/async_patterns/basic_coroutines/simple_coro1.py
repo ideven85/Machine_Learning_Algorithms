@@ -19,9 +19,13 @@ def simple_coro2(val):
 
 def main():
     f = simple_coro2(42)
-    print(next(f))
-    f.send(100)
-    print(next(f))
+    while f.__next__():
+        if f.__next__():
+            print(next(f))
+    f1 = f
+
+    # f.send(100)
+    # print(next(f))
 
 
 if __name__ == "__main__":

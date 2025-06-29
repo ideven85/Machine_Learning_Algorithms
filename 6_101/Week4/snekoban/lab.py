@@ -204,7 +204,7 @@ def dump_game(game):
     if not game_state:
         game_state = make_new_game(game)
     # print(rows, columns)
-    game = [[[] for _ in range(rows[0] + 2)] for _ in range(columns[1] + 1)]
+    game = [[[] for _ in range(rows[0])] for _ in range(columns[1] + 1)]
 
     # print(game)
     walls = game_state["wall"]
@@ -259,7 +259,7 @@ def solve_puzzle(game):
         # print("In neighbour positions",positions)
         return positions
 
-    def bfsUtil(board, path):
+    def bfs_util(board, path):
         while sorted(board["target"]) != sorted(board["computer"]):
             print("First", board["player"])
             row, col = path.pop(0)
@@ -297,7 +297,7 @@ def solve_puzzle(game):
     game_state = make_new_game(game)
     print(player_position)
     this_path = [(player_position[0][0], player_position[0][1])]
-    bfsUtil(game_state, player_position)
+    bfs_util(game_state, player_position)
     print("Visited:", visited)
     print(game_state["computer"])
     print(game_state["target"])

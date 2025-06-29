@@ -250,6 +250,7 @@ def compare_solution(filename, solution):
     assert lab.victory_check(game)
 
 
+# todo
 @pytest.mark.parametrize("test_group", list(SOLVER_TEST_GROUPS))
 def test_solver(test_group):
     assert len(SOLVER_TEST_GROUPS[test_group]) == len(SOLUTION_LENGTHS[test_group])

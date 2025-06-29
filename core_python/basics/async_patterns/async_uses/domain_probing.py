@@ -1,4 +1,5 @@
 import asyncio
+import logging
 import socket
 import sys
 from keyword import kwlist
@@ -25,7 +26,7 @@ async def main():
     for coro in asyncio.as_completed(coros):
         domain, found = await coro
         mark = "Exists: " if found else "Not found "
-        print(f"{mark}{domain}")
+        logging.log(1, f"{mark}{domain}")
 
 
 if __name__ == "__main__":

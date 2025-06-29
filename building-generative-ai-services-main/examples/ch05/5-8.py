@@ -28,7 +28,7 @@ app = FastAPI()
 
 @app.post("/upload")
 async def file_upload_controller(
-    file: Annotated[UploadFile, File(description="Uploaded PDF documents")]
+    file: Annotated[UploadFile, File(description="Uploaded PDF documents")],
 ):
     if file.content_type != "application/pdf":
         raise HTTPException(

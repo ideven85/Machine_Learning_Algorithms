@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aDate</key>
+	<date>2025-06-29T03:28:01Z</date>
+	<key>aDict</key>
+	<dict>
+		<key>aFalseValue</key>
+		<false/>
+		<key>aThirdString</key>
+		<data>
+		TeRzc2lnLCBNYd8=
+		</data>
+		<key>aTrueValue</key>
+		<true/>
+		<key>anotherString</key>
+		<string>&lt;hello &amp; hi there!&gt;</string>
+	</dict>
+	<key>someData</key>
+	<data>
+	PGJpbmFyeSBndW5rPg==
+	</data>
+	<key>someMoreData</key>
+	<data>
+	PGxvdHMgb2YgYmluYXJ5IGd1bms+PGxvdHMgb2YgYmluYXJ5IGd1bms+PGxvdHMgb2Yg
+	YmluYXJ5IGd1bms+PGxvdHMgb2YgYmluYXJ5IGd1bms+PGxvdHMgb2YgYmluYXJ5IGd1
+	bms+PGxvdHMgb2YgYmluYXJ5IGd1bms+PGxvdHMgb2YgYmluYXJ5IGd1bms+PGxvdHMg
+	b2YgYmluYXJ5IGd1bms+PGxvdHMgb2YgYmluYXJ5IGd1bms+PGxvdHMgb2YgYmluYXJ5
+	IGd1bms+
+	</data>
+</dict>
+</plist>

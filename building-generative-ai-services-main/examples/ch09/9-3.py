@@ -32,6 +32,6 @@ async def invoke_llm_with_guardrails(user_query: str) -> str:
 
 @router.post("/text/generate")
 async def generate_text_controller(
-    response: Annotated[str, Depends(invoke_llm_with_guardrails)]
+    response: Annotated[str, Depends(invoke_llm_with_guardrails)],
 ) -> str:
     return response

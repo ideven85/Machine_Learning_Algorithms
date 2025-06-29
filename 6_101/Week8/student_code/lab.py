@@ -41,8 +41,6 @@ class PrefixTree:
         """
         self.value = None
         self.children = dict()
-        # self.is_terminating=False
-        # self.data = []
 
     # package default function
     def _get_node(self, key, value=None):
@@ -76,14 +74,6 @@ class PrefixTree:
                 curr.children[char] = PrefixTree()
             curr = curr.children[char]
         curr.value = value
-        # elif not key:
-        #     self.value=value
-        # else:
-        #     if key[0] not in self.children:
-        #         self.children[key[0]]=PrefixTree()
-        #     self.children[key[0]].__setitem__(key[1:],value)
-
-        # self._get_node(key,value).value=value
 
     def __getitem__(self, key):
         """
@@ -145,19 +135,22 @@ class PrefixTree:
     #
     #         yield from [(letter+word, val) for word, val in subtree.__iter__() ]
     def __iter__(self):  # version A
-        def helper(self, prefix):
+        def inner(self, prefix):
             if self.value is not None:
                 yield (prefix, self.value)
             for letter, child in self.children.items():
-                yield from helper(child, prefix + letter)
+                yield from inner(child, prefix + letter)
 
-        return helper(self, "")
+        return inner(self, "")
 
-    # def __repr__(self):
-    #     return f"{self.value}, {self.children}" if self.children else " Prefix Tree"
+    def print(self):
+        print(str(self))
 
-    # def __str__(self):
-    #     return str(self.value)
+    def __str__(self):
+        return "\n".join(str(x) + ":" + str(y) for x, y in list(self))
+
+    def __repr__(self):
+        return "\n".join(str(x) + ":" + str(y) for x, y in list(self))
 
 
 def word_frequencies(text):
@@ -371,9 +364,9 @@ if __name__ == "__main__":
 
     t["bank"] = 4
     t["ban"] = 7
-    print(dir(t))
-    print(t.__dict__)
-    # t.print()
+    # print(list(t))
+    # print(t.__dict__)
+    print(t)
 
     # print(t[""])
 

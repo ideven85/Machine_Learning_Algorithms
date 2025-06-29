@@ -34,6 +34,7 @@ def deunicode(x):
     return re.sub(r"[^\x00-\x7F]+", "", x)
 
 
+# todo  do tomorrow 29th June, 2025
 def make_symbol(length=10):
     """
     Generate a random sequence of the given length

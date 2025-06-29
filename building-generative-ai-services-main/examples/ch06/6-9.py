@@ -10,7 +10,7 @@ app = FastAPI()
 
 @app.post("/generate/text/stream")
 async def serve_text_to_text_stream_controller(
-    prompt: Annotated[str, Body()]
+    prompt: Annotated[str, Body()],
 ) -> StreamingResponse:
     return StreamingResponse(
         azure_chat_client.chat_stream(prompt), media_type="text/event-stream"
