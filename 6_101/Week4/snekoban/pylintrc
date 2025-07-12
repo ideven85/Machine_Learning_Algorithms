@@ -347,7 +347,8 @@ ignore-imports=no
 [SPELLING]
 
 # Spelling dictionary name. Available dictionaries: none. To make it working
-# install python-enchant package.
+#
+install python-enchant package.
 spelling-dict=
 
 # List of comma separated words that should not be checked.
