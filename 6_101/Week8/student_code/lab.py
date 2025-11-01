@@ -4,7 +4,7 @@ Autocomplete
 """
 
 # NO ADDITIONAL IMPORTS!
-import doctest
+ simport doctest
 import pickle
 import os
 from collections import Counter
@@ -326,6 +326,7 @@ def autocorrect(tree, prefix, max_count=None):
 # todo
 def word_filter(tree, pattern):
     """
+    regex
     Return list of (word, freq) for all words in the given prefix tree that
     match pattern.  pattern is a string, interpreted as explained below:
          * matches any sequence of zero or more characters,

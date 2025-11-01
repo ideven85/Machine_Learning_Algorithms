@@ -9,7 +9,7 @@ For an extra challenge, try to write the function
 using list comprehensions.
 """
 
-from debug_recursion import show_recursive_structure
+from .debug_recursion import show_recursive_structure
 
 
 @show_recursive_structure
@@ -79,6 +79,20 @@ def tree_list(tree):
         return [val] + [tree_list(x) for x in children]
 
 
+def tree_list_v2(tree):
+    """
+    Returns a flat list of all values using a recursive one-liner.
+    """
+    if not tree:
+        return []
+
+    # [tree['value']] + sum([list_of_child_values_1],
+    #                       [list_of_child_values_2]],
+    #                      [])
+    # The sum(..., []) is a "trick" to flatten a list of lists.
+    return [tree['value']] + sum(
+        [tree_list(child) for child in tree['children']], []
+    )
 def tree_list_iterative(tree):
     if not tree:
         return []
@@ -131,11 +145,11 @@ t3 = {
     ],
 }
 
-# def test_tree_max():
-#     # assert tree_max(t1) == 3
-#     # assert tree_max(t2) == 11
-#     assert tree_max(t3) == 99
-#     print("correct!")
+def test_tree_max():
+    assert tree_max(t1) == 3
+    # assert tree_max(t2) == 11
+    assert tree_max(t3) == 99
+    print("correct!")
 
 
 # def test_tree_sum():
@@ -149,11 +163,11 @@ t3 = {
 #
 #
 #
-# def test_tree_list():
-#     # assert tree_list(t1) == [3]
-#     # assert tree_list(t2) == [2, 9, 11]
-#     assert tree_list(t3) == [2, 3, 7, 9, 16, 42, 99]
-#     print("correct!")
+def test_tree_list():
+    assert tree_list(t1) == [3]
+    assert tree_list(t2) == [2, 9, 11]
+    assert tree_list(t3) == [2, 3, 7, 9, 16, 42, 99]
+    print("correct!")
 
 
 #
