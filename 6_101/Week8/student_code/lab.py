@@ -4,7 +4,7 @@ Autocomplete
 """
 
 # NO ADDITIONAL IMPORTS!
- simport doctest
+import doctest
 import pickle
 import os
 from collections import Counter
@@ -43,7 +43,7 @@ class PrefixTree:
         self.children = dict()
 
     # package default function
-    def _get_node(self, key, value=None):
+    def get_node(self, key, value=None):
         if not isinstance(key, str):
             raise TypeError("Word Must Be a string")
 
@@ -57,7 +57,7 @@ class PrefixTree:
         elif value and key[0] not in self.children:
 
             self.children[key[0]] = PrefixTree()
-        return self.children[key[0]]._get_node(key[1:], value)
+        return self.children[key[0]].get_node(key[1:], value)
 
     def __setitem__(self, key, value):
         """

@@ -6,8 +6,6 @@ Autocomplete
 #!/usr/bin/env python3
 import os.path
 
-from jupyter_server.auth import passwd
-
 import lab
 import json
 import types

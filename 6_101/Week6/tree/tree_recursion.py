@@ -90,9 +90,9 @@ def tree_list_v2(tree):
     #                       [list_of_child_values_2]],
     #                      [])
     # The sum(..., []) is a "trick" to flatten a list of lists.
-    return [tree['value']] + sum(
-        [tree_list(child) for child in tree['children']], []
-    )
+    return [tree["value"]] + sum([tree_list(child) for child in tree["children"]], [])
+
+
 def tree_list_iterative(tree):
     if not tree:
         return []
@@ -144,6 +144,7 @@ t3 = {
         },
     ],
 }
+
 
 def test_tree_max():
     assert tree_max(t1) == 3

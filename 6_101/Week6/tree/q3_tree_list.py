@@ -8,7 +8,9 @@ without quotes.
 Is there a way you can write this function that requires
 sorting the result only once?
 """
+
 from .debug_recursion import show_recursive_structure
+
 count = 0
 
 
@@ -39,6 +41,7 @@ count = 0
 #     # --- 3. Sort the final list ONCE, just before returning ---
 #     return sorted(flat_list)
 
+
 def tree_list(tree):
     """
     Returns a FLAT, unsorted list of all values.
@@ -48,9 +51,11 @@ def tree_list(tree):
 
     # This sums all the child lists together into one flat list
     # and adds it to the current node's value list.
-    return sorted([tree['value']] + sum(
-        [tree_list(child) for child in tree['children']], []
-    ))
+    return sorted(
+        [tree["value"]] + sum([tree_list(child) for child in tree["children"]], [])
+    )
+
+
 def gen_tree_list(tree):
     if not tree:
         return []
@@ -83,12 +88,14 @@ t3 = {
             "value": 3,
             "children": [
                 {"value": 99, "children": []},
-                {"value": 16, "children": []},   {"value": 7, "children": []},
+                {"value": 16, "children": []},
+                {"value": 7, "children": []},
                 {"value": 42, "children": []},
             ],
         },
     ],
 }
+
 
 def test_tree_list():
     assert tree_list(t1) == [3]
