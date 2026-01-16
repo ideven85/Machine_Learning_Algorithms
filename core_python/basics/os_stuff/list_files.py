@@ -70,20 +70,20 @@ def main():
     # for val in words:
     #     print(val)
 
-    # l=disk_usage2(folder)
-    # print(f"\nTotal disk usage of {folder} : {l/1024/1024/1024}GB")
+    l = disk_usage2(folder)
+    print(f"\nTotal disk usage of {folder} : {l/1024/1024/1024}GB")
     # for val in list_files(folder):
     #     print(val)
 
     # print(disk_usage2(folder))
 
-    params = {"paths": folder}
-    print(ls(params, folder))
-    count = 0
-    for f in list_files(folder, "ipynb"):
-        count += 1
-        print(f)
-    print(count)
+    # params = {"paths": folder}
+    # print(ls(params, folder))
+    # count = 0
+    # for f in list_files(folder, "ipynb"):
+    #     count += 1
+    #     print(f)
+    # print(count)
 
 
 if __name__ == "__main__":
