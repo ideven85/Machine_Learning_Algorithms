@@ -1,0 +1,1483 @@
+{
+  "exhaustive": {
+    "nbHits": false,
+    "typo": false
+  },
+  "exhaustiveNbHits": false,
+  "exhaustiveTypo": false,
+  "hits": [
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "tracyhenry"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "Show HN: 40k HN comments mentioning books, extracted using <em>deep</em> <em>learning</em>"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://hacker-recommended-books.vercel.app/category/0/all-time/page/0/0"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_tracyhenry",
+        "story_28595967",
+        "show_hn"
+      ],
+      "author": "tracyhenry",
+      "children": [
+        28596207,
+        28596269,
+        28596339,
+        28596419,
+        28596436,
+        28596484,
+        28596488,
+        28596493,
+        28596520,
+        28596522,
+        28596648,
+        28596737,
+        28596762,
+        28596822,
+        28596882,
+        28596920,
+        28596956,
+        28596959,
+        28597052,
+        28597105,
+        28597114,
+        28597151,
+        28597176,
+        28597207,
+        28597261,
+        28597263,
+        28597279,
+        28597282,
+        28597303,
+        28597336,
+        28597397,
+        28597412,
+        28597506,
+        28597562,
+        28597604,
+        28597605,
+        28597793,
+        28597821,
+        28597909,
+        28598002,
+        28598008,
+        28598015,
+        28598179,
+        28598203,
+        28598444,
+        28598502,
+        28598518,
+        28598590,
+        28598628,
+        28598774,
+        28598841,
+        28598910,
+        28599009,
+        28599074,
+        28599090,
+        28599122,
+        28599302,
+        28599714,
+        28599748,
+        28600051,
+        28600221,
+        28600336,
+        28600377,
+        28600421,
+        28600738,
+        28600751,
+        28600825,
+        28600920,
+        28601001,
+        28601042,
+        28601220,
+        28601305,
+        28601334,
+        28601417,
+        28601482,
+        28601566,
+        28601667,
+        28601735,
+        28601741,
+        28601806,
+        28601829,
+        28601830,
+        28601847,
+        28601863,
+        28601881,
+        28601890,
+        28601929,
+        28601997,
+        28602115,
+        28602504,
+        28602615,
+        28602693,
+        28602797,
+        28602812,
+        28602824,
+        28603068,
+        28603091,
+        28603150,
+        28603202,
+        28603451,
+        28603747,
+        28603849,
+        28604086,
+        28604128,
+        28604394,
+        28604801,
+        28605001,
+        28605536,
+        28606065,
+        28606402,
+        28606750,
+        28633524,
+        28659213,
+        28660552
+      ],
+      "created_at": "2021-09-20T16:58:45Z",
+      "created_at_i": 1632157125,
+      "num_comments": 273,
+      "objectID": "28595967",
+      "points": 1359,
+      "story_id": 28595967,
+      "title": "Show HN: 40k HN comments mentioning books, extracted using deep learning",
+      "updated_at": "2025-10-25T10:10:37Z",
+      "url": "https://hacker-recommended-books.vercel.app/category/0/all-time/page/0/0"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "amardeep"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "Fast.ai releases new <em>deep</em> <em>learning</em> course, libraries, and book"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://www.fast.ai/2020/08/21/fastai2-launch/"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_amardeep",
+        "story_24237207"
+      ],
+      "author": "amardeep",
+      "children": [
+        24237406,
+        24237541,
+        24237621,
+        24237639,
+        24237682,
+        24237691,
+        24237857,
+        24237960,
+        24238829,
+        24238973,
+        24239102,
+        24239103,
+        24239208,
+        24239288,
+        24239781,
+        24240060,
+        24240302,
+        24240607,
+        24240995,
+        24241367,
+        24241375,
+        24241837,
+        24241896,
+        24242153,
+        24243939,
+        24244562,
+        24247380,
+        24251503
+      ],
+      "created_at": "2020-08-21T17:51:36Z",
+      "created_at_i": 1598032296,
+      "num_comments": 81,
+      "objectID": "24237207",
+      "points": 799,
+      "story_id": 24237207,
+      "title": "Fast.ai releases new deep learning course, libraries, and book",
+      "updated_at": "2025-04-14T15:35:09Z",
+      "url": "https://www.fast.ai/2020/08/21/fastai2-launch/"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "olivercameron"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "The Limitations of <em>Deep</em> <em>Learning</em>"
+        },
+        "url": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "https://blog.keras.io/the-limitations-of-<em>deep</em>-<em>learning</em>.html"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_olivercameron",
+        "story_14790251"
+      ],
+      "author": "olivercameron",
+      "children": [
+        14790512,
+        14790517,
+        14790521,
+        14790570,
+        14790665,
+        14790669,
+        14790672,
+        14790812,
+        14790814,
+        14790862,
+        14790908,
+        14790950,
+        14791005,
+        14791013,
+        14791019,
+        14791090,
+        14791152,
+        14791188,
+        14791272,
+        14791415,
+        14791427,
+        14791540,
+        14791547,
+        14791571,
+        14791609,
+        14791745,
+        14791801,
+        14791830,
+        14792046,
+        14792167,
+        14792169,
+        14792331,
+        14792619,
+        14792753,
+        14792977,
+        14793171,
+        14793899,
+        14794049,
+        14794097,
+        14794232,
+        14794335,
+        14794360,
+        14794362,
+        14794486,
+        14794893,
+        14795591,
+        14799076,
+        14803841
+      ],
+      "created_at": "2017-07-17T16:50:22Z",
+      "created_at_i": 1500310222,
+      "num_comments": 260,
+      "objectID": "14790251",
+      "points": 794,
+      "story_id": 14790251,
+      "title": "The Limitations of Deep Learning",
+      "updated_at": "2025-10-07T06:50:20Z",
+      "url": "https://blog.keras.io/the-limitations-of-deep-learning.html"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "ShanaM"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "Learn TensorFlow and <em>deep</em> <em>learning</em>, without a Ph.D."
+        },
+        "url": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "https://cloud.google.com/blog/big-data/2017/01/learn-tensorflow-and-<em>deep</em>-<em>learning</em>-without-a-phd"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_ShanaM",
+        "story_13464496"
+      ],
+      "author": "ShanaM",
+      "children": [
+        13465589,
+        13465829,
+        13465956,
+        13465961,
+        13466421,
+        13466448,
+        13466526,
+        13468074,
+        13468900,
+        13469222,
+        13469410,
+        13469803,
+        13469947,
+        13470485,
+        13470943,
+        13471186,
+        13471405,
+        13475208
+      ],
+      "created_at": "2017-01-23T18:27:11Z",
+      "created_at_i": 1485196031,
+      "num_comments": 43,
+      "objectID": "13464496",
+      "points": 720,
+      "story_id": 13464496,
+      "title": "Learn TensorFlow and deep learning, without a Ph.D.",
+      "updated_at": "2024-10-28T14:51:26Z",
+      "url": "https://cloud.google.com/blog/big-data/2017/01/learn-tensorflow-and-deep-learning-without-a-phd"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "jph00"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "<em>Deep</em> <em>Learning</em> for Coders \u2013 Launching <em>Deep</em> <em>Learning</em> Part 2"
+        },
+        "url": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "http://www.fast.ai/2017/07/28/<em>deep</em>-<em>learning</em>-part-two-launch/"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_jph00",
+        "story_14887414"
+      ],
+      "author": "jph00",
+      "children": [
+        14887619,
+        14887620,
+        14887722,
+        14887747,
+        14887764,
+        14887834,
+        14887849,
+        14888209,
+        14888256,
+        14888269,
+        14888358,
+        14888661,
+        14888681,
+        14888866,
+        14889408,
+        14889982,
+        14891080,
+        14891745,
+        14892498
+      ],
+      "created_at": "2017-07-30T19:35:42Z",
+      "created_at_i": 1501443342,
+      "num_comments": 91,
+      "objectID": "14887414",
+      "points": 716,
+      "story_id": 14887414,
+      "title": "Deep Learning for Coders \u2013 Launching Deep Learning Part 2",
+      "updated_at": "2024-09-20T01:12:25Z",
+      "url": "http://www.fast.ai/2017/07/28/deep-learning-part-two-launch/"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "jph00"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "Practical <em>Deep</em> <em>Learning</em> for Coders"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "http://course.fast.ai"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_jph00",
+        "story_13224588"
+      ],
+      "author": "jph00",
+      "children": [
+        13224673,
+        13224677,
+        13225171,
+        13225229,
+        13225583,
+        13225795,
+        13225860,
+        13226037,
+        13226070,
+        13226257,
+        13226380,
+        13227156,
+        13227735,
+        13227752,
+        13229720,
+        13229944,
+        13229945
+      ],
+      "created_at": "2016-12-20T22:06:13Z",
+      "created_at_i": 1482271573,
+      "num_comments": 91,
+      "objectID": "13224588",
+      "points": 683,
+      "story_id": 13224588,
+      "title": "Practical Deep Learning for Coders",
+      "updated_at": "2024-09-20T00:06:44Z",
+      "url": "http://course.fast.ai"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "jmillikin"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "Amazon sales of <em>Deep</em> <em>Learning</em> with Python are counterfeit"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://twitter.com/fchollet/status/1550930876183166976"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_jmillikin",
+        "story_32210256"
+      ],
+      "author": "jmillikin",
+      "children": [
+        32210265,
+        32210286,
+        32210409,
+        32210533,
+        32210573,
+        32210595,
+        32210601,
+        32210629,
+        32210782,
+        32210784,
+        32210837,
+        32210898,
+        32210924,
+        32210999,
+        32211004,
+        32211042,
+        32211043,
+        32211102,
+        32211116,
+        32211219,
+        32211253,
+        32211262,
+        32211276,
+        32211288,
+        32211373,
+        32211417,
+        32211503,
+        32211518,
+        32211649,
+        32211719,
+        32211877,
+        32212335,
+        32212417,
+        32212531,
+        32212535,
+        32212592,
+        32212731,
+        32212783,
+        32212967,
+        32213018,
+        32213024,
+        32213177,
+        32214344,
+        32214480,
+        32214832,
+        32215490,
+        32217449,
+        32218240,
+        32224247
+      ],
+      "created_at": "2022-07-24T04:10:04Z",
+      "created_at_i": 1658635804,
+      "num_comments": 193,
+      "objectID": "32210256",
+      "points": 665,
+      "story_id": 32210256,
+      "title": "Amazon sales of Deep Learning with Python are counterfeit",
+      "updated_at": "2026-01-02T10:11:12Z",
+      "url": "https://twitter.com/fchollet/status/1550930876183166976"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "varal7"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "Colorizing and restoring old images with <em>deep</em> <em>learning</em>"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://github.com/jantic/DeOldify"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_varal7",
+        "story_18363870"
+      ],
+      "author": "varal7",
+      "children": [
+        18364190,
+        18364213,
+        18364242,
+        18364256,
+        18364267,
+        18364284,
+        18364439,
+        18364503,
+        18364715,
+        18364887,
+        18364924,
+        18365242,
+        18365768,
+        18365913,
+        18365971,
+        18366012,
+        18366286,
+        18366348,
+        18366391,
+        18366459,
+        18366570,
+        18366796,
+        18366929,
+        18366950,
+        18367093,
+        18367180,
+        18367335,
+        18367429,
+        18367983,
+        18368075,
+        18368211,
+        18368678,
+        18369221,
+        18369354
+      ],
+      "created_at": "2018-11-02T15:48:25Z",
+      "created_at_i": 1541173705,
+      "num_comments": 104,
+      "objectID": "18363870",
+      "points": 665,
+      "story_id": 18363870,
+      "title": "Colorizing and restoring old images with deep learning",
+      "updated_at": "2024-09-20T03:19:56Z",
+      "url": "https://github.com/jantic/DeOldify"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "noob_eng"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "<em>Deep</em> <em>Learning</em> Foundations to Stable Diffusion"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://course.fast.ai/Lessons/part2.html"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_noob_eng",
+        "story_35449831"
+      ],
+      "author": "noob_eng",
+      "children": [
+        35449909,
+        35449950,
+        35449960,
+        35449999,
+        35450094,
+        35450143,
+        35450261,
+        35450402,
+        35450638,
+        35450742,
+        35450755,
+        35451402,
+        35451407,
+        35451424,
+        35451803,
+        35452022,
+        35452684,
+        35453054,
+        35453152,
+        35454836,
+        35454970,
+        35455795,
+        35458939,
+        35459852
+      ],
+      "created_at": "2023-04-05T05:47:31Z",
+      "created_at_i": 1680673651,
+      "num_comments": 113,
+      "objectID": "35449831",
+      "points": 615,
+      "story_id": 35449831,
+      "title": "Deep Learning Foundations to Stable Diffusion",
+      "updated_at": "2025-03-04T07:30:59Z",
+      "url": "https://course.fast.ai/Lessons/part2.html"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "olivercameron"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "Google's Free <em>Deep</em> <em>Learning</em> Course"
+        },
+        "url": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "https://udacity.com/course/<em>deep</em>-<em>learning</em>--ud730"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_olivercameron",
+        "story_10951276"
+      ],
+      "author": "olivercameron",
+      "children": [
+        10951858,
+        10951941,
+        10952103,
+        10952236,
+        10952393,
+        10952655,
+        10953115,
+        10953268,
+        10953744,
+        10953768,
+        10954005,
+        10954614,
+        10954927,
+        10955850,
+        10963529
+      ],
+      "created_at": "2016-01-22T07:19:41Z",
+      "created_at_i": 1453447181,
+      "num_comments": 62,
+      "objectID": "10951276",
+      "points": 614,
+      "story_id": 10951276,
+      "title": "Google's Free Deep Learning Course",
+      "updated_at": "2023-09-07T00:38:06Z",
+      "url": "https://udacity.com/course/deep-learning--ud730"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "lxm"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "The Matrix Calculus You Need for <em>Deep</em> <em>Learning</em>"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "http://explained.ai/matrix-calculus/index.html"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_lxm",
+        "story_17422770"
+      ],
+      "author": "lxm",
+      "children": [
+        17423043,
+        17423087,
+        17423299,
+        17423308,
+        17423480,
+        17423605,
+        17424093,
+        17424389,
+        17424984,
+        17425159,
+        17425753,
+        17426612,
+        17426616
+      ],
+      "created_at": "2018-06-29T06:23:11Z",
+      "created_at_i": 1530253391,
+      "num_comments": 77,
+      "objectID": "17422770",
+      "points": 610,
+      "story_id": 17422770,
+      "title": "The Matrix Calculus You Need for Deep Learning",
+      "updated_at": "2025-09-17T06:46:05Z",
+      "url": "http://explained.ai/matrix-calculus/index.html"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "vyuh"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "<em>Deep</em> <em>Learning</em> with PyTorch: A 60 Minute Blitz [video]"
+        },
+        "url": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "https://pytorch.org/tutorials/beginner/<em>deep</em>_<em>learning</em>_60min_blitz.html"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_vyuh",
+        "story_21240057"
+      ],
+      "author": "vyuh",
+      "children": [
+        21240174,
+        21240212,
+        21240215,
+        21240291,
+        21240380,
+        21240560,
+        21240798,
+        21240921,
+        21241683,
+        21242814,
+        21243016,
+        21245785
+      ],
+      "created_at": "2019-10-13T12:36:15Z",
+      "created_at_i": 1570970175,
+      "num_comments": 59,
+      "objectID": "21240057",
+      "points": 610,
+      "story_id": 21240057,
+      "title": "Deep Learning with PyTorch: A 60 Minute Blitz [video]",
+      "updated_at": "2026-01-06T19:24:12Z",
+      "url": "https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "chmaynard"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "<em>Deep</em> <em>learning</em> gets the glory, <em>deep</em> fact checking gets ignored"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://rachel.fast.ai/posts/2025-06-04-enzyme-ml-fails/index.html"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_chmaynard",
+        "story_44174965"
+      ],
+      "author": "chmaynard",
+      "children": [
+        44175302,
+        44175329,
+        44175337,
+        44175354,
+        44175406,
+        44175418,
+        44175424,
+        44175442,
+        44175474,
+        44175563,
+        44175680,
+        44175682,
+        44175864,
+        44175937,
+        44176545,
+        44176871,
+        44177153,
+        44177652,
+        44177738,
+        44177834,
+        44177878,
+        44177959,
+        44178029,
+        44178150,
+        44180317,
+        44180761,
+        44181460,
+        44182136,
+        44188162,
+        44268191
+      ],
+      "created_at": "2025-06-03T21:31:56Z",
+      "created_at_i": 1748986316,
+      "num_comments": 158,
+      "objectID": "44174965",
+      "points": 609,
+      "story_id": 44174965,
+      "title": "Deep learning gets the glory, deep fact checking gets ignored",
+      "updated_at": "2026-02-03T07:49:51Z",
+      "url": "https://rachel.fast.ai/posts/2025-06-04-enzyme-ml-fails/index.html"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "mbrundle"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "Free “<em>Deep</em> <em>Learning</em>” Textbook by Goodfellow and Bengio Now Finished"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://www.facebook.com/ia3n.goodfellow/posts/10102223910143043"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_mbrundle",
+        "story_11446164"
+      ],
+      "author": "mbrundle",
+      "children": [
+        11446318,
+        11446446,
+        11446531,
+        11446533,
+        11446537,
+        11446769,
+        11446782,
+        11447130,
+        11447961,
+        11448024,
+        11448163,
+        11448242,
+        11448414,
+        11448630,
+        11448785,
+        11448929,
+        11449044,
+        11449064,
+        11449065,
+        11449170,
+        11449354,
+        11452160
+      ],
+      "created_at": "2016-04-07T10:24:22Z",
+      "created_at_i": 1460024662,
+      "num_comments": 126,
+      "objectID": "11446164",
+      "points": 603,
+      "story_id": 11446164,
+      "title": "Free “Deep Learning” Textbook by Goodfellow and Bengio Now Finished",
+      "updated_at": "2024-09-19T23:03:16Z",
+      "url": "https://www.facebook.com/ia3n.goodfellow/posts/10102223910143043"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "capocannoniere"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "<em>Deep</em> <em>learning</em> algorithm diagnoses skin cancer as well as seasoned dermatologists"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "http://news.stanford.edu/2017/01/25/artificial-intelligence-used-identify-skin-cancer/"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_capocannoniere",
+        "story_13484372"
+      ],
+      "author": "capocannoniere",
+      "children": [
+        13484737,
+        13484766,
+        13484788,
+        13484805,
+        13484873,
+        13484903,
+        13484927,
+        13484940,
+        13484971,
+        13485095,
+        13485143,
+        13485172,
+        13485192,
+        13485193,
+        13485351,
+        13485381,
+        13485415,
+        13485456,
+        13485789,
+        13485815,
+        13485823,
+        13485938,
+        13485966,
+        13486035,
+        13486429,
+        13486600,
+        13486634,
+        13486854,
+        13486897,
+        13487034,
+        13487085,
+        13487523,
+        13487526,
+        13487724,
+        13487948,
+        13488075,
+        13490166,
+        13495377
+      ],
+      "created_at": "2017-01-25T18:35:26Z",
+      "created_at_i": 1485369326,
+      "num_comments": 279,
+      "objectID": "13484372",
+      "points": 596,
+      "story_id": 13484372,
+      "title": "Deep learning algorithm diagnoses skin cancer as well as seasoned dermatologists",
+      "updated_at": "2024-09-20T00:19:44Z",
+      "url": "http://news.stanford.edu/2017/01/25/artificial-intelligence-used-identify-skin-cancer/"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "piccogabriele"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "<em>Deep</em> <em>Learning</em> Interviews book: Hundreds of fully solved job interview questions"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://github.com/BoltzmannEntropy/interviews.ai"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_piccogabriele",
+        "story_29876742"
+      ],
+      "author": "piccogabriele",
+      "children": [
+        29877073,
+        29877291,
+        29877475,
+        29877512,
+        29877642,
+        29878002,
+        29878491,
+        29878682,
+        29879057,
+        29879085,
+        29879214,
+        29879402,
+        29879613,
+        29879738,
+        29880197,
+        29880239,
+        29882309,
+        29883655,
+        29883865,
+        29886380,
+        29887277,
+        29920167
+      ],
+      "created_at": "2022-01-10T15:57:03Z",
+      "created_at_i": 1641830223,
+      "num_comments": 147,
+      "objectID": "29876742",
+      "points": 582,
+      "story_id": 29876742,
+      "title": "Deep Learning Interviews book: Hundreds of fully solved job interview questions",
+      "updated_at": "2024-09-20T10:16:10Z",
+      "url": "https://github.com/BoltzmannEntropy/interviews.ai"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "narenst"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "Turning web design mockups into code with <em>Deep</em> <em>Learning</em>"
+        },
+        "url": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "https://blog.floydhub.com/turning-design-mockups-into-code-with-<em>deep</em>-<em>learning</em>/"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_narenst",
+        "story_16115353"
+      ],
+      "author": "narenst",
+      "children": [
+        16115432,
+        16115646,
+        16115721,
+        16117064,
+        16117067,
+        16117219,
+        16117251,
+        16117342,
+        16117343,
+        16117405,
+        16117418,
+        16117431,
+        16117466,
+        16117520,
+        16117569,
+        16117631,
+        16117695,
+        16117744,
+        16117769,
+        16117791,
+        16117813,
+        16117819,
+        16117995,
+        16118198,
+        16118209,
+        16118494,
+        16118527,
+        16118565,
+        16118913,
+        16118926,
+        16119628,
+        16120237,
+        16120433,
+        16121472,
+        16121532,
+        16121627,
+        16121960,
+        16122624,
+        16124986,
+        16143294
+      ],
+      "created_at": "2018-01-10T15:03:42Z",
+      "created_at_i": 1515596622,
+      "num_comments": 116,
+      "objectID": "16115353",
+      "points": 580,
+      "story_id": 16115353,
+      "title": "Turning web design mockups into code with Deep Learning",
+      "updated_at": "2025-10-10T03:24:49Z",
+      "url": "https://blog.floydhub.com/turning-design-mockups-into-code-with-deep-learning/"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "jph00"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "Matrix Calculus for <em>Deep</em> <em>Learning</em>"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "http://parrt.cs.usfca.edu/doc/matrix-calculus/index.html"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_jph00",
+        "story_16267178"
+      ],
+      "author": "jph00",
+      "children": [
+        16267494,
+        16267519,
+        16267593,
+        16268068,
+        16268227,
+        16268746,
+        16268809,
+        16268875,
+        16268892,
+        16269038,
+        16269040,
+        16269367,
+        16269581,
+        16270355,
+        16270739,
+        16271737,
+        16272073,
+        16273475
+      ],
+      "created_at": "2018-01-30T17:40:18Z",
+      "created_at_i": 1517334018,
+      "num_comments": 81,
+      "objectID": "16267178",
+      "points": 573,
+      "story_id": 16267178,
+      "title": "Matrix Calculus for Deep Learning",
+      "updated_at": "2024-09-20T02:00:43Z",
+      "url": "http://parrt.cs.usfca.edu/doc/matrix-calculus/index.html"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "jph00"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "Practical <em>Deep</em> <em>Learning</em> for Coders 2019"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://www.fast.ai/2019/01/24/course-v3/"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_jph00",
+        "story_19000027"
+      ],
+      "author": "jph00",
+      "children": [
+        19000298,
+        19000558,
+        19000638,
+        19000881,
+        19000944,
+        19000989,
+        19000996,
+        19001044,
+        19001058,
+        19001105,
+        19001202,
+        19001251,
+        19001413,
+        19001601,
+        19001852,
+        19002028,
+        19002268,
+        19002653,
+        19003250,
+        19003352,
+        19003421,
+        19003449,
+        19003665,
+        19004063,
+        19005255,
+        19005925,
+        19006871,
+        19028765
+      ],
+      "created_at": "2019-01-25T17:16:34Z",
+      "created_at_i": 1548436594,
+      "num_comments": 75,
+      "objectID": "19000027",
+      "points": 556,
+      "story_id": 19000027,
+      "title": "Practical Deep Learning for Coders 2019",
+      "updated_at": "2024-09-20T03:36:23Z",
+      "url": "https://www.fast.ai/2019/01/24/course-v3/"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "max_"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "deep",
+            "learning"
+          ],
+          "value": "Colorizing black and white photos with <em>deep</em> <em>learning</em>"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "http://www.tinyclouds.org/colorize/"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_max_",
+        "story_10864801"
+      ],
+      "author": "max_",
+      "children": [
+        10865061,
+        10865247,
+        10865258,
+        10865266,
+        10865324,
+        10865520,
+        10865585,
+        10865623,
+        10865877,
+        10865973,
+        10865979,
+        10866089,
+        10866227,
+        10866285,
+        10866295,
+        10866347,
+        10866464,
+        10866551,
+        10866600,
+        10866695,
+        10866739,
+        10866799,
+        10866969,
+        10867001,
+        10867032,
+        10867287,
+        10867576,
+        10868203,
+        10868447,
+        10869055,
+        10869331,
+        10869832,
+        10869852,
+        10870327,
+        10870386,
+        10870503,
+        10870702,
+        10870789,
+        10877265,
+        10878919
+      ],
+      "created_at": "2016-01-08T13:56:54Z",
+      "created_at_i": 1452261414,
+      "num_comments": 90,
+      "objectID": "10864801",
+      "points": 554,
+      "story_id": 10864801,
+      "title": "Colorizing black and white photos with deep learning",
+      "updated_at": "2024-09-19T22:43:27Z",
+      "url": "http://www.tinyclouds.org/colorize/"
+    }
+  ],
+  "hitsPerPage": 20,
+  "nbHits": 41416,
+  "nbPages": 50,
+  "page": 0,
+  "params": "query=deep+learning&advancedSyntax=true&analyticsTags=backend",
+  "processingTimeMS": 20,
+  "processingTimingsMS": {
+    "_request": {
+      "roundTrip": 18
+    },
+    "fetch": {
+      "query": 6,
+      "scanning": 12,
+      "total": 19
+    },
+    "total": 20
+  },
+  "query": "deep learning",
+  "serverTimeMS": 21
+}
