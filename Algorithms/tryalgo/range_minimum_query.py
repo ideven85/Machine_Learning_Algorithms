@@ -6,6 +6,7 @@ Minimum d'une plage --- range minimum query
 
 jill-jenn vie et christoph durr - 2014-2019
 """
+
 # pylint: disable=bad-continuation, bad-whitespace, redefined-outer-name
 # pylint: disable=too-many-arguments
 

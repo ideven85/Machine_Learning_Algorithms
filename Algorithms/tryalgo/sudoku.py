@@ -5,10 +5,10 @@ Solving Sudoku (nanpure)
 
 jill-jenn vie et christoph durr - 2014-2019
 """
+
 # pylint: disable=missing-docstring, multiple-statements, global-statement
 
 from tryalgo.dancing_links import dancing_links
-
 
 __all__ = ["sudoku"]
 

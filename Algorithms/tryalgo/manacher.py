@@ -50,7 +50,7 @@ def manacher(s):
         if i + p[i] > d:
             c = i
             d = i + p[i]
-    (k, i) = max((p[i], i) for i in range(1, len(t) - 1))
+    k, i = max((p[i], i) for i in range(1, len(t) - 1))
     return ((i - k) // 2, (i + k) // 2)  # extract solution
 
 

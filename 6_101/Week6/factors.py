@@ -14,3 +14,6 @@ def factors(n):
 
 
 print(sorted(list(factors(16))))
+
+class X:
+    def __call__(self, *args, **kwargs):

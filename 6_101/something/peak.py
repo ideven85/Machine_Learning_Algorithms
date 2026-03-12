@@ -18,7 +18,7 @@ class PeakProblem(object):
         RUNTIME: O(1)
         """
 
-        (startRow, startCol, numRow, numCol) = bounds
+        startRow, startCol, numRow, numCol = bounds
 
         self.array = array
         self.bounds = bounds
@@ -35,7 +35,7 @@ class PeakProblem(object):
         RUNTIME: O(1)
         """
 
-        (r, c) = location
+        r, c = location
         if not (0 <= r and r < self.numRow):
             return 0
         if not (0 <= c and c < self.numCol):
@@ -50,7 +50,7 @@ class PeakProblem(object):
         RUNTIME: O(1)
         """
 
-        (r, c) = location
+        r, c = location
         best = location
 
         if r - 1 >= 0 and self.get((r - 1, c)) > self.get(best):
@@ -74,11 +74,11 @@ class PeakProblem(object):
         RUNTIME: O(len(locations))
         """
 
-        (bestLoc, bestVal) = (None, 0)
+        bestLoc, bestVal = (None, 0)
 
         for loc in locations:
             if bestLoc is None or self.get(loc) > bestVal:
-                (bestLoc, bestVal) = (loc, self.get(loc))
+                bestLoc, bestVal = (loc, self.get(loc))
 
         if not trace is None:
             trace.getMaximum(locations, bestLoc)
@@ -102,7 +102,7 @@ class PeakProblem(object):
         RUNTIME: O(1)
         """
 
-        (sRow, sCol, nRow, nCol) = bounds
+        sRow, sCol, nRow, nCol = bounds
         newBounds = (self.startRow + sRow, self.startCol + sCol, nRow, nCol)
         return PeakProblem(self.array, newBounds)
 
@@ -115,7 +115,7 @@ class PeakProblem(object):
         RUNTIME: O(len(boundList))
         """
 
-        (row, col) = location
+        row, col = location
         for sRow, sCol, nRow, nCol in boundList:
             if sRow <= row and row < sRow + nRow:
                 if sCol <= col and col < sCol + nCol:
@@ -132,7 +132,7 @@ class PeakProblem(object):
         RUNTIME: O(1)
         """
 
-        (row, col) = location
+        row, col = location
         newRow = row + problem.startRow - self.startRow
         newCol = col + problem.startCol - self.startCol
         return (newRow, newCol)
@@ -172,5 +172,5 @@ def createProblem(array):
     RUNTIME: O(len(array))
     """
 
-    (rows, cols) = getDimensions(array)
+    rows, cols = getDimensions(array)
     return PeakProblem(array, (0, 0, rows, cols))

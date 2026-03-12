@@ -9,7 +9,6 @@ import os
 LOCATION = os.path.realpath(os.path.dirname(__file__))
 from text_tokenize import tokenize_sentences
 
-
 # class TrieNode:
 #     def __init__(self,data=None):
 #         self.data=data

@@ -5,6 +5,7 @@ Union of rectangles
 
 jill-jênn vie et christoph dürr - 2014-2019
 """
+
 # pylint: disable=too-many-arguments, too-many-locals
 
 
@@ -198,7 +199,7 @@ def union_rectangles_fastest(R):
     X = set()  # set of all x coordinates in the input
     events = []  # events for the sweep line
     for Rj in R:
-        (x1, y1, x2, y2) = Rj
+        x1, y1, x2, y2 = Rj
         assert x1 <= x2 and y1 <= y2
         X.add(x1)
         X.add(x2)

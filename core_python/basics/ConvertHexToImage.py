@@ -1,6 +1,5 @@
 import cv2
 
-
 with open("data/images/bluegill.hex", "r") as f:
     data = f.read()
 

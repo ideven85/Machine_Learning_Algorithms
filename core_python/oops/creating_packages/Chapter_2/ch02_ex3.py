@@ -10,7 +10,6 @@ Chapter 2. Example 3.
 from ch02_ex2 import *
 from typing import cast, Iterable
 
-
 # Factory Function
 
 

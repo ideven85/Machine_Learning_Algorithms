@@ -4,7 +4,6 @@ import mimetypes
 import os
 from wsgiref.simple_server import make_server
 
-
 cur_dir = os.path.realpath(os.path.dirname(__file__))
 app_root = os.path.join(cur_dir, "static")
 

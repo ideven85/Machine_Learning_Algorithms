@@ -10,7 +10,6 @@ from collections import deque
 from sys import setrecursionlimit
 from tryalgo.graph import add_reverse_arcs
 
-
 setrecursionlimit(5010)  # necessary for big graphs
 
 

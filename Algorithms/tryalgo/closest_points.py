@@ -6,12 +6,12 @@ trouver la paire de points la plus proche
 
 jill-jênn vie, christoph dürr et louis abraham - 2014-2019
 """
+
 # pylint: disable=missing-docstring, redefined-outer-name, redefined-outer-name
 # pylint: disable=no-name-in-module, ungrouped-imports
 
 
 from random import randint
-
 
 # snip{
 from math import hypot  # hypot(dx, dy) = sqrt(dx * dx + dy * dy)

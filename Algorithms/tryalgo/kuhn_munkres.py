@@ -83,7 +83,7 @@ def kuhn_munkres(G, TOLERANCE=1e-6):
                     if Av[v0] is not None:
                         lv[v0] += delta
                     else:
-                        (val, arg) = slack[v0]
+                        val, arg = slack[v0]
                         slack[v0] = (val - delta, arg)
             assert abs(lu[u] + lv[v] - G[u][v]) <= TOLERANCE  # equality
             Av[v] = u  # add (u, v) to A

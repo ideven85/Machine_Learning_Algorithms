@@ -65,7 +65,6 @@ def tokenize(string):
 # Assume that tokenize() is already implemented
 from solution import tokenize
 
-
 ############################################ Parsing
 
 

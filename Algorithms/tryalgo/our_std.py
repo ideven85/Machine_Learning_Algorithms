@@ -5,6 +5,7 @@ Our Standards
 
 Jill-Jênn Vie et Christoph Dürr - 2020
 """
+
 from sys import stdin
 
 

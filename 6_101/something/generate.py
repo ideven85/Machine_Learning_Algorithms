@@ -30,9 +30,9 @@ def main():
     if len(sys.argv) > 1:
         filename = sys.argv[1]
 
-    (rows, cols) = (10, 10)
+    rows, cols = (10, 10)
     if len(sys.argv) > 3:
-        (rows, cols) = (int(sys.argv[2]), int(sys.argv[3]))
+        rows, cols = (int(sys.argv[2]), int(sys.argv[3]))
 
     maximum = rows * cols * 2
     if len(sys.argv) > 4:

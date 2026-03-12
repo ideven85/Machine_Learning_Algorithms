@@ -25,7 +25,7 @@ def test_mixtape_examples():
 @pytest.mark.parametrize("n", list(range(1, 26)))
 def test_mixtape_from_file(n):
     with open(os.path.join(TEST_DIRECTORY, "test_data", "songs_%02d.py" % n), "r") as f:
-        (songs, target, valid) = ast.literal_eval(f.read())
+        songs, target, valid = ast.literal_eval(f.read())
 
     result = mixtape.mixtape(dict(songs), target)
     print(result)

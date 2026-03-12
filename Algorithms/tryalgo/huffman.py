@@ -23,8 +23,8 @@ def huffman(freq):
         heappush(forest, (freq[item], len(trees)))
         trees.append(item)  # this item will be at index len(trees)
     while len(forest) > 1:
-        (f_l, left) = heappop(forest)  # merge two trees
-        (f_r, right) = heappop(forest)
+        f_l, left = heappop(forest)  # merge two trees
+        f_r, right = heappop(forest)
         heappush(forest, (f_l + f_r, len(trees)))
         trees.append([trees[left], trees[right]])
     code = {}  # build code from unique tree

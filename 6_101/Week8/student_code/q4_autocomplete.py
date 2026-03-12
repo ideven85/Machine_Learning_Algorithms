@@ -8,7 +8,6 @@ Note: you will have to copy / paste your lab into autocomplete_autocorrect.py!
 from lab import PrefixTree, word_frequencies
 from test import read_expected
 
-
 # def autocomplete(tree, prefix, max_count=None):
 #     """
 #     Return the list of the most-frequently occurring elements that start with

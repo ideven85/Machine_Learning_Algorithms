@@ -8,7 +8,6 @@ import pytest
 
 from . import lab
 
-
 TEST_DIRECTORY = os.path.dirname(__file__)
 
 

@@ -4,7 +4,6 @@ import json
 
 from flask import Flask, jsonify
 
-
 # In java, I made Blockchain as an ArrayList, here blockchain is an object containing everything...
 # Something is not right...
 

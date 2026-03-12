@@ -25,7 +25,7 @@ def a_star(graph, start, lower_bound):
     g = {start: 0}
     Q = [(lower_bound(start), start)]
     while Q:
-        (val, x) = heappop(Q)
+        val, x = heappop(Q)
         if lower_bound(x) == 0:
             return g[x]
         closedset.add(x)

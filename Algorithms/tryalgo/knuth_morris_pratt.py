@@ -6,6 +6,7 @@ Find the length of maximal borders by Knuth-Morris-Pratt
 jill-jênn vie, christoph dürr et louis abraham - 2014-2019
 inspired from a practical lesson (TP) from Yves Lemaire
 """
+
 # pylint: disable=undefined-variable, unused-argument
 
 

@@ -31,7 +31,7 @@ def rectangles_from_grid(P, black=1):
                 t[j] += 1
             else:
                 t[j] = 0
-        (area, left, height, right) = rectangles_from_histogram(t)
+        area, left, height, right = rectangles_from_histogram(t)
         alt = (area, left, i, right, i - height)
         if best is None or alt > best:
             best = alt

@@ -5,6 +5,7 @@ arithmetic functions
 
 christoph dürr - jill-jênn vie - 2013-2019
 """
+
 # pylint: disable=anomalous-backslash-in-string
 
 

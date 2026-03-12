@@ -7,7 +7,6 @@ mesures polygone
 jill-jenn vie et christoph durr - 2014-2018
 """
 
-
 from tryalgo.range_minimum_query import RangeMinQuery
 
 

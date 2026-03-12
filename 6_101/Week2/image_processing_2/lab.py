@@ -10,7 +10,6 @@ Image Processing 2
 import math
 from PIL import Image
 
-
 # VARIOUS FILTERS
 # todo Date Not Yet Started
 

@@ -12,14 +12,12 @@ cur = conn.cursor()
 cur.execute("CREATE EXTENSION IF NOT EXISTS vector")
 
 # Create a table with a vector column
-cur.execute(
-    """
+cur.execute("""
 CREATE TABLE IF NOT EXISTS foo (
     id SERIAL PRIMARY KEY,
     vector_column VECTOR(3)
 )
-"""
-)
+""")
 
 # Commit the transaction
 conn.commit()

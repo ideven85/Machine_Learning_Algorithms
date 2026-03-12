@@ -9,7 +9,6 @@ log: 10/11/2016 modified to preserve class order after refinement
      15/11/2016 this was nonsense, moved back
 """
 
-
 __all__ = ["PartitionRefinement"]
 
 

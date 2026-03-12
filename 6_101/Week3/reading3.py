@@ -32,17 +32,18 @@ def first_occurrence(data):
 
 import doctest
 
+
 def can_log(item):
     """
     Check if can log
 
     """
-    if isinstance(item,(str,bool,float)):
+    if isinstance(item, (str, bool, float)):
         return True
-    elif isinstance(item,(list,tuple,set,frozenset)):
+    elif isinstance(item, (list, tuple, set, frozenset)):
         return all(can_log(x) for x in item)
-    elif isinstance(item,dict):
-        return all(can_log(x) and can_log(v) for x,v in item.values())
+    elif isinstance(item, dict):
+        return all(can_log(x) and can_log(v) for x, v in item.values())
     return False
 
 
@@ -54,7 +55,7 @@ def sum_list(x):
     if not x:
         return 0
     else:
-        return x[0]+sum_list(x[1:])
+        return x[0] + sum_list(x[1:])
 
 
 if __name__ == "__main__":

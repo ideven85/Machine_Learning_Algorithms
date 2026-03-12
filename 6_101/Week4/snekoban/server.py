@@ -14,7 +14,6 @@ from wsgiref.simple_server import make_server
 
 import lab
 
-
 LOCATION = os.path.realpath(os.path.dirname(__file__))
 CURRENT_GAME = None
 

@@ -5,6 +5,7 @@ Evaluate an arithmetic expression
 
 jill-jenn vie et christoph durr - 2014-2020
 """
+
 # IPCELLS
 # http://www.spoj.com/problems/IPCELLS/
 
@@ -26,7 +27,7 @@ def arithm_expr_eval(cell, expr):
     :complexity: linear
     """
     if isinstance(expr, tuple):
-        (left, operand, right) = expr
+        left, operand, right = expr
         lval = arithm_expr_eval(cell, left)
         rval = arithm_expr_eval(cell, right)
         if operand == "+":

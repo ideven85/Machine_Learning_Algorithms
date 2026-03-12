@@ -31,8 +31,7 @@ def reader_normal(file_name):
 
 def reader_with_interpolation(file_name):
     parser = ConfigParser(interpolation=ExtendedInterpolation)
-    parser.read_string(
-        """
+    parser.read_string("""
     [DEFAULT]
     hash = #
 
@@ -51,8 +50,7 @@ def reader_with_interpolation(file_name):
     even in multiline values = line #1
       line #2
       line #3
-    """
-    )
+    """)
     print(parser["hashes"]["shebang"])
 
 

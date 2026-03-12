@@ -15,9 +15,9 @@ def algorithm1(problem, trace=None):
     mid = problem.numCol // 2
 
     # information about the two subproblems
-    (subStartR, subNumR) = (0, problem.numRow)
-    (subStartC1, subNumC1) = (0, mid)
-    (subStartC2, subNumC2) = (mid + 1, problem.numCol - (mid + 1))
+    subStartR, subNumR = (0, problem.numRow)
+    subStartC1, subNumC1 = (0, mid)
+    subStartC2, subNumC2 = (mid + 1, problem.numCol - (mid + 1))
 
     subproblems = []
     subproblems.append((subStartR, subStartC1, subNumR, subNumC1))
@@ -77,10 +77,10 @@ def algorithm3(problem, bestSeen=None, trace=None):
     # first, get the list of all subproblems
     subproblems = []
 
-    (subStartR1, subNumR1) = (0, midRow)
-    (subStartR2, subNumR2) = (midRow + 1, problem.numRow - (midRow + 1))
-    (subStartC1, subNumC1) = (0, midCol)
-    (subStartC2, subNumC2) = (midCol + 1, problem.numCol - (midCol + 1))
+    subStartR1, subNumR1 = (0, midRow)
+    subStartR2, subNumR2 = (midRow + 1, problem.numRow - (midRow + 1))
+    subStartC1, subNumC1 = (0, midCol)
+    subStartC2, subNumC2 = (midCol + 1, problem.numCol - (midCol + 1))
 
     subproblems.append((subStartR1, subStartC1, subNumR1, subNumC1))
     subproblems.append((subStartR1, subStartC2, subNumR1, subNumC2))
@@ -132,9 +132,9 @@ def algorithm4(problem, bestSeen=None, rowSplit=True, trace=None):
         mid = problem.numRow // 2
 
         # information about the two subproblems
-        (subStartR1, subNumR1) = (0, mid)
-        (subStartR2, subNumR2) = (mid + 1, problem.numRow - (mid + 1))
-        (subStartC, subNumC) = (0, problem.numCol)
+        subStartR1, subNumR1 = (0, mid)
+        subStartR2, subNumR2 = (mid + 1, problem.numRow - (mid + 1))
+        subStartC, subNumC = (0, problem.numCol)
 
         subproblems.append((subStartR1, subStartC, subNumR1, subNumC))
         subproblems.append((subStartR2, subStartC, subNumR2, subNumC))
@@ -146,9 +146,9 @@ def algorithm4(problem, bestSeen=None, rowSplit=True, trace=None):
         mid = problem.numCol // 2
 
         # information about the two subproblems
-        (subStartR, subNumR) = (0, problem.numRow)
-        (subStartC1, subNumC1) = (0, mid)
-        (subStartC2, subNumC2) = (mid + 1, problem.numCol - (mid + 1))
+        subStartR, subNumR = (0, problem.numRow)
+        subStartC1, subNumC1 = (0, mid)
+        subStartC2, subNumC2 = (mid + 1, problem.numCol - (mid + 1))
 
         subproblems.append((subStartR, subStartC1, subNumR, subNumC1))
         subproblems.append((subStartR, subStartC2, subNumR, subNumC2))

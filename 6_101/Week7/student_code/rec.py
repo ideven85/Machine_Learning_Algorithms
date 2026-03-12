@@ -2,7 +2,6 @@
 import copy
 from collections import defaultdict
 
-
 ############################################ potluck
 
 # You are organizing a potluck for your friends, and you want to make sure that

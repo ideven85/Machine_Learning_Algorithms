@@ -85,11 +85,9 @@ def print_board(board):
     Given a board, print it out in aligned rows.
     """
     for row in board:
-        print(
-            f"{'  '.join([' '+str(num) if num is not None and num < 10 
+        print(f"{'  '.join([' '+str(num) if num is not None and num < 10 
                           else str(num) if num is not None 
-            else ' X' for num in row]):25}"
-        )
+            else ' X' for num in row]):25}")
 
 
 def move_board(blank_loc, board, direction):

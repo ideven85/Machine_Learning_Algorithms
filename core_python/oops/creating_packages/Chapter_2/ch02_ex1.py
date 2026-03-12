@@ -6,6 +6,7 @@ Code Examples for Mastering Object-Oriented Python 2nd Edition
 
 Chapter 2. Example 1.
 """
+
 from typing import Tuple
 
 

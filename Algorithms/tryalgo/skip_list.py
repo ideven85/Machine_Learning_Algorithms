@@ -8,6 +8,7 @@ Inspired by https://kunigami.blog/2012/09/25/skip-lists-in-python/
 count contains the gap between the positions
 (https://www.cs.bgu.ac.il/~ds112/wiki.files/ds112_ps7.pdf)
 """
+
 # pylint: disable=line-too-long, missing-docstring, redefined-outer-name
 # pylint: disable=fixme, super-init-not-called, notimplemented-raised
 # pylint: disable=raising-bad-type, no-member, line-too-long
@@ -16,7 +17,6 @@ count contains the gap between the positions
 from __future__ import print_function
 from collections import namedtuple
 from random import random
-
 
 # TODO: add order_of_key
 

@@ -11,7 +11,6 @@ import pickle
 import hashlib
 import pytest
 
-
 TEST_DIRECTORY = os.path.dirname(__file__)
 
 with open(os.path.join(TEST_DIRECTORY, "test_inputs", "hanson.txt"), "rb") as f:

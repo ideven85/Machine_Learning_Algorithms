@@ -9,7 +9,6 @@ import collections
 
 import pytest
 
-
 TEST_DIRECTORY = os.path.dirname(__file__)
 
 
