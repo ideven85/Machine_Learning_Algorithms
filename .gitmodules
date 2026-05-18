@@ -3,6 +3,3 @@
 	path = Machine_Learning/handson-ml3
 	url = https://github.com/ageron/handson-ml3
 
-[submodule "Machine_Learning/introtodeeplearning"]
-	path = Machine_Learning/introtodeeplearning
-	url = https://github.com/MITDeepLearning/introtodeeplearning

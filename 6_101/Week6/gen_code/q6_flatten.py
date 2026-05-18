@@ -7,9 +7,7 @@ in the terminal.
 
 
 def flatten(x):
-    if not x:
-        yield []
-        return
+
     for el in x:
         if isinstance(el, list):
             yield from flatten(el)  # When calling a generator function use yield from
