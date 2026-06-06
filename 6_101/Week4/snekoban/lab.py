@@ -227,7 +227,7 @@ def dump_game(game):
     return game
 
 
-# todo {}
+# todo when?
 def solve_puzzle(game):
     global rows, columns
     # goal=game_state['target']
