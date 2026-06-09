@@ -77,34 +77,34 @@ def compare_outputs(x, y, msg):
     if x["ok"]:
         assert y["ok"], (
             msg
-            + f'\n\nExpected an exception ({y.get("type", None)}), but got {x.get("output", None)!r}'
+            + f"\n\nExpected an exception ({y.get('type', None)}), but got {x.get('output', None)!r}"
         )
         if isinstance(x["output"], (int, float)):
             assert type(x["output"]) == type(y["output"]), (
                 msg
-                + f'\n\nOutput has incorrect type (expected {type(y.get("output", None))} but got {type(x.get("output", None))}'
+                + f"\n\nOutput has incorrect type (expected {type(y.get('output', None))} but got {type(x.get('output', None))}"
             )
             assert abs(x["output"] - y["output"]) <= 1e-6, (
                 msg
-                + f'\n\nOutput has incorrect value (expected {y.get("output", None)!r} but got {x.get("output", None)!r})'
+                + f"\n\nOutput has incorrect value (expected {y.get('output', None)!r} but got {x.get('output', None)!r})"
             )
         else:
             assert x["output"] == y["output"], (
                 msg
-                + f'\n\nOutput has incorrect value (expected {y.get("output", None)!r} but got {x.get("output", None)!r})'
+                + f"\n\nOutput has incorrect value (expected {y.get('output', None)!r} but got {x.get('output', None)!r})"
             )
     else:
         assert not y["ok"], (
             msg
-            + f'\n\nDid not expect an exception (got {x.get("type", None)}, expected {y.get("output", None)!r})'
+            + f"\n\nDid not expect an exception (got {x.get('type', None)}, expected {y.get('output', None)!r})"
         )
         assert x["type"] == y["type"], (
             msg
-            + f'\n\nExpected {y.get("type", None)} to be raised, not {x.get("type", None)}'
+            + f"\n\nExpected {y.get('type', None)} to be raised, not {x.get('type', None)}"
         )
         assert x.get("when", "eval") == y.get("when", "eval"), (
             msg
-            + f'\n\nExpected error to be raised at {y.get("when", "eval")} time, not at {x.get("when", "eval")} time.'
+            + f"\n\nExpected error to be raised at {y.get('when', 'eval')} time, not at {x.get('when', 'eval')} time."
         )
 
 
@@ -117,9 +117,9 @@ def do_continued_evaluations(n):
     msg = message(n)
     results = run_continued_evaluations(inp)
     for x, (result, expected) in enumerate(zip(results, out)):
-        m = f"\nevaluate input line {x+2}: \n\t{repr(inp[x])}"
-        m += f'\nexpected:\n\t{expected.get("output") if expected.get("output") else expected.get("type")}'
-        m += f'\nresult:\n\t{result.get("output") if result.get("output") else result.get("type")}'
+        m = f"\nevaluate input line {x + 2}: \n\t{repr(inp[x])}"
+        m += f"\nexpected:\n\t{expected.get('output') if expected.get('output') else expected.get('type')}"
+        m += f"\nresult:\n\t{result.get('output') if result.get('output') else result.get('type')}"
         compare_outputs(result, expected, msg + m)
 
 
@@ -159,7 +159,9 @@ def do_raw_continued_evaluations(n):
             out["expression"] = line.strip()
             results.append(out)
     for ix, (result, exp) in enumerate(zip(results, expected)):
-        msg = f"for line {ix+1} in test_inputs/{n:02d}.scm:\n    {result['expression']}"
+        msg = (
+            f"for line {ix + 1} in test_inputs/{n:02d}.scm:\n    {result['expression']}"
+        )
         compare_outputs(result, exp, msg=msg)
 
 
@@ -168,10 +170,10 @@ def run_test_number(n, func, fname=""):
     inp, out = load_test_values(n)
     msg = message(n)
     for x, (i, o) in enumerate(zip(inp, out)):
-        m = f"\n{func.__name__ if not fname else fname} input line {x+2}: \n\t{repr(i)}"
-        m += f'\nexpected:\n\t{o.get("output") if o.get("output") else o.get("type")}'
+        m = f"\n{func.__name__ if not fname else fname} input line {x + 2}: \n\t{repr(i)}"
+        m += f"\nexpected:\n\t{o.get('output') if o.get('output') else o.get('type')}"
         res = tester(i)
-        m += f'\nresult:\n\t{res.get("output") if res.get("output") else res.get("type")}'
+        m += f"\nresult:\n\t{res.get('output') if res.get('output') else res.get('type')}"
         compare_outputs(res, o, msg + m)
 
 

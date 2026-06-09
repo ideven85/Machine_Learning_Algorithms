@@ -54,7 +54,6 @@ def count_subparts(part_manifest: dict, part_num: int):
     if part_num not in part_manifest:
         return 0
     else:
-
         current = part_manifest[part_num]
         total = len(current)
         for el in current:
@@ -148,7 +147,6 @@ def maximum_steps(part_manifest):
     for el in part_manifest.keys():
         current = 0
         if el in part_manifest:
-
             max_depth = max(max_helper(el), max_depth)
 
     return 1 + max_depth

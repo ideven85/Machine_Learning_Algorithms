@@ -175,7 +175,7 @@ class LoRALinear(nn.Module):
         r: int = 8,
         lora_alpha: int = 8,
         lora_dropout: float = 0.1,
-        **kwargs
+        **kwargs,
     ):
         super(LoRALinear, self).__init__()
 

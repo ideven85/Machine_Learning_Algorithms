@@ -29,7 +29,6 @@ Formating and Printing Content to output
 
 
 class BookPrinter:
-
     def __init__(self, contents):
         self.contents = contents
 

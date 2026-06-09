@@ -16,7 +16,6 @@ img_rows, img_cols = 42, 28  # input image dimensions
 
 
 class MLP(nn.Module):
-
     def __init__(self, input_dimension):
         super(MLP, self).__init__()
         self.flatten = Flatten()

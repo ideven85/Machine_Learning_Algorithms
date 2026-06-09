@@ -15,7 +15,6 @@ from ..some_algorithm import *
 
 
 class TestSomeAlgorithm(unittest.TestCase):
-
     def test_import_should_see_value(self):
         x = SomeAlgorithm()
         x1 = SomeAlgorithm1()

@@ -64,7 +64,6 @@ def productExceptSelf(nums: List[int]) -> List[int]:
 
 
 if __name__ == "__main__":
-
     n = 4
     while n != 1:
         if n % 2 == 0:

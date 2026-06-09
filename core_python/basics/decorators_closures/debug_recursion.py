@@ -21,7 +21,7 @@ def show_recursive_structure(f):
             # Trim the output if more than given lines
             arg_str = arg_str[:show_recursive_structure] + " ..."
         if show_recursive_structure.SHOW_CALL:
-            tqdm.tqdm(f'{"   " * wrapper.depth}call to {f.__name__}: {arg_str}\n')
+            tqdm.tqdm(f"{'   ' * wrapper.depth}call to {f.__name__}: {arg_str}\n")
         wrapper.count += 1
         wrapper.depth += 1
         wrapper.max_depth = max(wrapper.depth, wrapper.max_depth)
@@ -35,7 +35,7 @@ def show_recursive_structure(f):
         #     res_str = res_str[: show_recursive_structure] + " ..."
         if show_recursive_structure.SHOW_RET:
             sys.stdout.write(
-                f'{"   " * wrapper.depth}call to {f.__name__} returns: {res_str}\n'
+                f"{'   ' * wrapper.depth}call to {f.__name__} returns: {res_str}\n"
             )
         return result
 

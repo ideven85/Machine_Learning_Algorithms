@@ -15,7 +15,6 @@ class LinkedList:
             self.element = value
 
         else:
-
             self.next_node.__setitem__(index - 1, value)
 
     def __getitem__(self, index):
@@ -30,7 +29,7 @@ class LinkedList:
 
     def __str__(self):
         return (
-            f"Linked List:{self.element}," f"{self.next_node}"
+            f"Linked List:{self.element},{self.next_node}"
             if self.next_node
             else f"{self.element}"
         )

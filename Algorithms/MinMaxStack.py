@@ -1,6 +1,5 @@
 # Feel free to add new properties and methods to the class.
 class MinMaxStack:
-
     root = []
 
     def peek(self):

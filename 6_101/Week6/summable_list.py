@@ -5,7 +5,6 @@ sys.setrecursionlimit(1000)
 
 
 class SumList(list):
-
     def sum(self):
         if not self:
             return 0
@@ -57,7 +56,6 @@ def sum_list(x):
             print("Count in sum_list with helper", count)
             return sum_so_far
         else:
-
             sum_list_helper(sum_so_far + lst[count], lst, count + 1)
 
     return sum_list_helper(0, x, 0)

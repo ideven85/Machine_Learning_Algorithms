@@ -52,7 +52,6 @@ def mixtape(songs, target_duration):
     visited = set()
     count = 0
     while agenda:
-
         this_path = agenda.pop()
 
         # this_path=tuple(sorted(this_path))

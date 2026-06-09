@@ -24,7 +24,6 @@ from text_tokenize import tokenize_sentences
 # Started 15th April: 1:15 AM
 # Map<
 class PrefixTree:
-
     def __init__(self):
         """
                 The __init__ method takes no arguments. It should set up exactly two instance variables:
@@ -55,7 +54,6 @@ class PrefixTree:
         elif value is None and key[0] not in self.children:
             raise KeyError("Key not found")
         elif value and key[0] not in self.children:
-
             self.children[key[0]] = PrefixTree()
         return self.children[key[0]].get_node(key[1:], value)
 
@@ -340,7 +338,9 @@ def dictify(t):
     assert set(t.__dict__) == {
         "value",
         "children",
-    }, "PrefixTree instances should only contain the two instance attributes mentioned in the lab writeup."
+    }, (
+        "PrefixTree instances should only contain the two instance attributes mentioned in the lab writeup."
+    )
     out = {"value": t.value, "children": {}}
     for ch, child in t.children.items():
         out["children"][ch] = dictify(child)

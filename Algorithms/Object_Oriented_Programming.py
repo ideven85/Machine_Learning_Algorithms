@@ -16,7 +16,6 @@ class Employee(abc.ABC):
 
 
 class Manager(Employee):
-
     def __init__(self):
         super().__init__()
         self.rank = "Manager"

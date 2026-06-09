@@ -8,7 +8,6 @@ class ListNode:
 
 
 class Main:
-
     def insert(self, head, val):
         current = head
         if not head:

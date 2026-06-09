@@ -49,7 +49,6 @@ audio = pyaudio.PyAudio()
 
 
 try:
-
     # Make a list of .mid files in the current directory and all subdirectories
     matches = []
     for root, dirnames, filenames in os.walk("./"):
@@ -58,7 +57,6 @@ try:
 
     # Play each song in the list
     for song in matches:
-
         # Create a filename with a .wav extension
         file_name = os.path.splitext(os.path.basename(song))[0]
         new_file = file_name + ".wav"

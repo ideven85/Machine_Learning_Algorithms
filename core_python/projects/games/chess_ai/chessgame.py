@@ -24,7 +24,6 @@ test_surface.fill((0, 0, 255))
 x_pos = 600
 y_pos = 500
 while True:
-
     for event in pygame.event.get():
         if exit_game():
             pygame.quit()

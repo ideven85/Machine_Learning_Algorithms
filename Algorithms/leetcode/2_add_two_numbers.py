@@ -50,7 +50,6 @@ def print_list(head: ListNode):
 
 
 class Solution:
-
     def reverse(self, head):
         prev = None
         current = head

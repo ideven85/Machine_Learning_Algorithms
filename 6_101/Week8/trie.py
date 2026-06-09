@@ -6,7 +6,6 @@ class TrieNode:
 
 
 class Trie:
-
     def __init__(self):
         self.is_terminating = False
         # self.prefix = TrieNode('\q')
@@ -74,7 +73,6 @@ class Trie:
 
 
 class WordDictionary:
-
     def __init__(self):
         pass
 

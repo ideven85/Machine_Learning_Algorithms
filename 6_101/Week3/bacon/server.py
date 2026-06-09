@@ -69,7 +69,7 @@ special_routes = {
     ),
     "/bacon_number": lambda d: list(lab.actors_with_bacon_number(small_data, d["n"])),
     "/bacon_path": lambda d: lab.bacon_path(small_data, d["actor_name"]),
-    "/restart": lambda d: (importlib.reload(lab) and {"ok": True}),
+    "/restart": lambda d: importlib.reload(lab) and {"ok": True},
 }
 
 

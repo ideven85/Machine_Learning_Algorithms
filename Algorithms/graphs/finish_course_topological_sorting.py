@@ -56,7 +56,6 @@ public static boolean canFinish(int numCourses, int[][] prerequisites){
 
 
 class CoursePreRequisites:
-
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         adj = dict(list)
         for req in prerequisites:

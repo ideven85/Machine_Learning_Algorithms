@@ -157,7 +157,6 @@ class DjiskstraAlgorithm:
         signalReceivedAt[source] = totalTime
 
         if connectedNodes:
-
             for adjacent, weight in connectedNodes:
                 if adjacent:
                     if adjacent in visited:

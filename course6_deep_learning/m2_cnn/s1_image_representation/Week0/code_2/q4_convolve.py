@@ -61,7 +61,7 @@ def test_convolve_tiny(convolve):
     compare_sounds(convolve(inp, [2, 5, 0, 4]), exp)
     assert inp == inp2, "be careful not to modify the inputs!"
     end = time.perf_counter_ns()
-    return f"correct! {(end-start)/(10**9)} s"
+    return f"correct! {(end - start) / (10**9)} s"
 
 
 def test_sparse_kernel(convolve, limit=10 * 10**9):
@@ -79,10 +79,10 @@ def test_sparse_kernel(convolve, limit=10 * 10**9):
             compare_sounds(result, expected)
     except KeyboardInterrupt:
         end = time.perf_counter_ns()
-        return f"too slow-- execution stopped after {(end-start)/(10**9)} s"
+        return f"too slow-- execution stopped after {(end - start) / (10**9)} s"
 
     end = time.perf_counter_ns()
-    return f"correct! {(end-start)/(10**9)} s"
+    return f"correct! {(end - start) / (10**9)} s"
 
 
 def test_sparse_sound(convolve, limit=10 * 10**9):
@@ -103,19 +103,19 @@ def test_sparse_sound(convolve, limit=10 * 10**9):
             compare_sounds(result, expected)
     except KeyboardInterrupt:
         end = time.perf_counter_ns()
-        return f"incorrect! execution stopped after {(end-start)/(10**9)} s"
+        return f"incorrect! execution stopped after {(end - start) / (10**9)} s"
 
     end = time.perf_counter_ns()
-    return f"correct! {(end-start)/(10**9)} s"
+    return f"correct! {(end - start) / (10**9)} s"
 
 
 def compare_sounds(result, expected, eps=1e-6):
     # well formed?
     assert isinstance(result["rate"], int), "Sampling rate should be an integer"
     if "left" in result:
-        assert len(result["left"]) == len(
-            result["right"]
-        ), "Left and Right channels do not have the same length"
+        assert len(result["left"]) == len(result["right"]), (
+            "Left and Right channels do not have the same length"
+        )
 
     # matches expected?
     assert result["rate"] == expected["rate"], "Sampling rates do not match"
@@ -130,14 +130,14 @@ def compare_sounds(result, expected, eps=1e-6):
                 zip(expected["left"], expected["right"]),
             )
         ):
-            assert (
-                abs(res_l - exp_l) <= eps and abs(res_r - exp_r) < eps
-            ), f"Values at index {ix} do not match."
+            assert abs(res_l - exp_l) <= eps and abs(res_r - exp_r) < eps, (
+                f"Values at index {ix} do not match."
+            )
     else:
         assert "samples" in expected, "Expected stereo sound, got mono"
-        assert len(result["samples"]) == len(
-            expected["samples"]
-        ), "Lengths do not match"
+        assert len(result["samples"]) == len(expected["samples"]), (
+            "Lengths do not match"
+        )
         for ix, (res, exp) in enumerate(zip(result["samples"], expected["samples"])):
             assert abs(res - exp) <= eps, f"Values at index {ix} do not match."
 

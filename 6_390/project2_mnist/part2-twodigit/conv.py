@@ -16,7 +16,6 @@ img_rows, img_cols = 42, 28  # input image dimensions
 
 
 class CNN(nn.Module):
-
     def __init__(self, input_dimension):
         super(CNN, self).__init__()
         # TODO initialize model layers here

@@ -11,7 +11,9 @@ def dictify(t):
     assert set(t.__dict__) == {
         "value",
         "children",
-    }, "PrefixTree instances should only contain the two instance attributes mentioned in the lab writeup."
+    }, (
+        "PrefixTree instances should only contain the two instance attributes mentioned in the lab writeup."
+    )
     out = {"value": t.value, "children": {}}
     for ch, child in t.children.items():
         out["children"][ch] = dictify(child)
@@ -60,7 +62,6 @@ from text_tokenize import tokenize_sentences
 # Basic Huffman Encoding Technique customised
 # Started 15th April: 1:15 AM
 class PrefixTree:
-
     # class _Node:
     #     def __init__(self,value=None,next_node=None):
     #         self.value=value
@@ -102,7 +103,6 @@ class PrefixTree:
         n = len(key)
 
         for i in range(n - 1):
-
             if key[i] in self.children:
                 continue
             self.children[key[i]] = self.value
@@ -119,7 +119,6 @@ class PrefixTree:
         if not isinstance(key, str):
             raise TypeError("The given word must be a string")
         if self.children[key] is None:
-
             raise KeyError("Given word not found")
         else:
             # print(self.children[key])
@@ -149,7 +148,6 @@ class PrefixTree:
 
 
 if __name__ == "__main__":
-
     t = PrefixTree()
     t["cat"] = 0
     t["car"] = 1

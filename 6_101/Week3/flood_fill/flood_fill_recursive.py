@@ -143,7 +143,6 @@ while True:
                 pygame.quit()
                 sys.exit(0)
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-
             flood_fill(image, (event.pos[1] // SCALE, event.pos[0] // SCALE), cur_color)
             print(count)
             # print((end - start) * 10)

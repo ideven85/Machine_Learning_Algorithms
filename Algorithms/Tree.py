@@ -69,7 +69,6 @@ class TreeNode:
 
 
 class RightSmallerBST:
-
     def __init__(self, value, index, smallerAtInsert):
         self.value = value
         self.index = index

@@ -25,7 +25,6 @@ def getArrivalTime(edges, start, parent, vertices, arrivalTime, arrivalTimes):
     arrivalTimes[start] = arrivalTime
     minArrivalTime = arrivalTime
     for destination in edges[start]:
-
         if arrivalTimes[destination] == -1:
             minArrivalTime = min(
                 minArrivalTime,

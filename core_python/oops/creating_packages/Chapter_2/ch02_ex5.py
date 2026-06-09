@@ -32,7 +32,6 @@ test_no_deck = """
 
 
 class Deck:
-
     def __init__(self) -> None:
         self._cards = [card(r + 1, s) for r in range(13) for s in iter(Suit)]
         random.shuffle(self._cards)
@@ -54,7 +53,6 @@ test_deck = """
 
 
 class Deck2(list):
-
     def __init__(self) -> None:
         super().__init__(
             card(r + 1, s) for r in range(13) for s in cast(Iterable[Suit], Suit)
@@ -76,7 +74,6 @@ test_deck2 = """
 
 
 class Deck3(list):
-
     def __init__(self, decks: int = 1) -> None:
         super().__init__()
         for i in range(decks):
@@ -97,7 +94,6 @@ test_deck3 = """
 
 
 class Deck3a(list):
-
     def __init__(self, decks: int = 1) -> None:
         super().__init__(
             card(r + 1, s) for r in range(13) for s in iter(Suit) for d in range(decks)
@@ -124,7 +120,6 @@ test_deck3a = """
 
 
 class Hand:
-
     def __init__(self, dealer_card: Card) -> None:
         self.dealer_card: Card = dealer_card
         self.cards: List[Card] = []
@@ -155,7 +150,6 @@ test_hand = """
 
 
 class Hand2:
-
     def __init__(self, dealer_card: Card, *cards: Card) -> None:
         self.dealer_card = dealer_card
         self.cards = list(cards)
@@ -186,7 +180,6 @@ test_hand2 = """
 
 
 class Hand3:
-
     @overload
     def __init__(self, arg1: "Hand3") -> None: ...
 
@@ -242,7 +235,6 @@ test_hand3 = """
 
 
 class Hand4:
-
     @overload
     def __init__(self, arg1: "Hand4") -> None: ...
 
@@ -297,7 +289,6 @@ test_hand4 = """
 
 
 class Hand5:
-
     def __init__(self, dealer_card: Card, *cards: Card) -> None:
         self.dealer_card = dealer_card
         self.cards = list(cards)
@@ -334,7 +325,6 @@ test_hand_5 = """
 
 
 class BettingStrategy:
-
     def bet(self) -> int:
         raise NotImplementedError("No bet method")
 
@@ -346,7 +336,6 @@ class BettingStrategy:
 
 
 class Flat(BettingStrategy):
-
     def bet(self) -> int:
         return 1
 
@@ -362,7 +351,6 @@ from abc import abstractmethod
 
 
 class BettingStrategy2(metaclass=abc.ABCMeta):
-
     @abstractmethod
     def bet(self) -> int:
         return 1
@@ -378,7 +366,6 @@ class BettingStrategy2(metaclass=abc.ABCMeta):
 
 
 class GameStrategy:
-
     def insurance(self, hand: Hand) -> bool:
         return False
 
@@ -417,7 +404,6 @@ test_game = """
 
 
 class Table:
-
     def __init__(self) -> None:
         self.deck = Deck()
 
@@ -444,7 +430,6 @@ class Table:
 
 
 class Player:
-
     def __init__(
         self, table: Table, bet_strategy: BettingStrategy, game_strategy: GameStrategy
     ) -> None:
@@ -480,7 +465,6 @@ test_table_player = """
 
 
 class Player2(Player):
-
     def __init__(self, **kw) -> None:
         """Must provide table, bet_strategy, game_strategy."""
         self.bet_strategy: BettingStrategy = kw["bet_strategy"]
@@ -509,7 +493,6 @@ test_table_player2 = """
 
 
 class Player2x(Player):
-
     def __init__(self, **kw) -> None:
         """Must provide table, bet_strategy, game_strategy."""
         self.bet_strategy: BettingStrategy = kw["bet_strategy"]
@@ -543,7 +526,6 @@ test_table_player2_extra = """
 
 
 class Player3(Player):
-
     def __init__(
         self,
         table: Table,
@@ -586,7 +568,6 @@ test_table_player3 = """
 
 
 class ValidPlayer:
-
     def __init__(self, table, bet_strategy, game_strategy):
         assert isinstance(table, Table)
         assert isinstance(bet_strategy, BettingStrategy)
@@ -608,7 +589,6 @@ test_table_valid_player = """
 
 
 class Player4:
-
     def __init__(
         self, table: Table, bet_strategy: BettingStrategy, game_strategy: GameStrategy
     ) -> None:

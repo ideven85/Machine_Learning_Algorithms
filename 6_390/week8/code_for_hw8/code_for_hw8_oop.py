@@ -23,7 +23,6 @@ class Sequential:
         num_updates = 0
         indices = np.arange(N)
         while num_updates < iters:
-
             np.random.shuffle(indices)
             X = None  # Your code
             Y = None  # Your code

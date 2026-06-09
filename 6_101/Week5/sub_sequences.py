@@ -33,7 +33,6 @@ def subsequences_alternative(seq):
     rest_subseq = subsequences_alternative(rest)
     result = ""
     for subseq in rest_subseq.split(" ", -1):
-
         result += " " + subseq
         result += " " + first + subseq
 

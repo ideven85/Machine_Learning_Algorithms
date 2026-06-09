@@ -19,7 +19,6 @@ def disk_usage2(path):
     total = os.path.getsize(path)
     if os.path.isdir(path):
         for filename in os.listdir(path):
-
             childpath = os.path.join(path, filename)
             if not childpath:
                 continue
@@ -71,7 +70,7 @@ def main():
     #     print(val)
 
     l = disk_usage2(folder)
-    print(f"\nTotal disk usage of {folder} : {l/1024/1024/1024}GB")
+    print(f"\nTotal disk usage of {folder} : {l / 1024 / 1024 / 1024}GB")
     # for val in list_files(folder):
     #     print(val)
 

@@ -36,7 +36,6 @@ class Graph:
         if source == destination:
             return count
         else:
-
             for u in self.adj[source]:
                 count += 1
                 self.dfsUtil(u, destination=destination, count=count)
@@ -217,7 +216,6 @@ def maximumSum(a, m):
     current = 0
     left = 0
     for i in range(len(a)):
-
         if a[i] % m == m - 1:
             return m - 1
         if max_so_far == m - 1:

@@ -22,7 +22,6 @@ from random import random
 
 
 class AbstractSkipList:
-
     def __init__(self):
         raise NotImplemented
 
@@ -144,7 +143,6 @@ class AbstractSkipList:
 
 
 class SortedSet(AbstractSkipList):
-
     Node = namedtuple("Node", "key next count")
 
     def __init__(self, iterable=()):
@@ -172,7 +170,6 @@ class SortedSet(AbstractSkipList):
 
 
 class SortedDict(AbstractSkipList):
-
     Node = namedtuple("Node", "key val next count")
 
     def __init__(self, iterable=()):

@@ -66,7 +66,6 @@ def getPermutations(array, k):
         return [array]
     for i in range(len(array)):
         for e in getPermutations(array[:i] + array[i + 1 :], k):
-
             answer.append([array[i]] + e)
     return answer
 
@@ -131,7 +130,6 @@ def productSum(array, multiplier=1):
 
 
 class PalindromePartitioning:
-
     answer = []
 
     def checkPalindrome(self, s, low, high):
@@ -146,7 +144,6 @@ class PalindromePartitioning:
         answer = []
         for element in s:
             for i in range(len(subSets)):
-
                 currentSubSet = subSets[i]
                 subSets.append(currentSubSet + [element])
 

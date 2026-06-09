@@ -212,7 +212,7 @@ def AssertRaisesErrorIO(expected_message, expected_output, fn, *args):
 INVALID_LINE_ERROR = "Couldn't read a valid line"
 TOO_LONG_LINE_ERROR = "Line too long: {} characters".format
 WRONG_NUM_TOKENS_ERROR = (
-    "Wrong number of tokens, expected between {} and {}, " "but got {}"
+    "Wrong number of tokens, expected between {} and {}, but got {}"
 ).format
 NOT_INTEGER_ERROR = "Not an integer: {}".format
 OUT_OF_BOUNDS_ERROR = "{} is out of bounds".format
@@ -226,7 +226,7 @@ EXCEPTION_AFTER_END_ERROR = (
 ADDITIONAL_INPUT_ERROR = "Additional input after all cases finish: {}".format
 QUERIES_USED = "Total Queries Used: {}/{}".format
 NUMBERS_ARE_NOT_UNIQUE = "Some provided numbers are not unique"
-NUMBER_NOT_FROM_THE_SET = "Some provided numbers are missing in the original " "set"
+NUMBER_NOT_FROM_THE_SET = "Some provided numbers are missing in the original set"
 WRONG_ANSWER = "Wrong answer"
 INVALID_OUTPUT = -1
 

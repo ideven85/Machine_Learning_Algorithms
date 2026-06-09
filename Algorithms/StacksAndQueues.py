@@ -3,7 +3,6 @@ import queue
 
 
 class MyQueue:
-
     def __init__(self):
         self.front = []
         self.rear = []
@@ -109,7 +108,6 @@ def longestBalancedBrackets(s):
             stack.append("(")
         else:
             if len(stack) == 0:
-
                 balanced = False
 
             else:
@@ -158,7 +156,6 @@ def nextGreaterElement(array):
 
 
 if __name__ == "__main__":
-
     s = "(a)"
     print(balancedBrackets(s))
     s1 = ")()()()(((((((()))"

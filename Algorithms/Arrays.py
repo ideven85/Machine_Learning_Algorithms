@@ -309,7 +309,6 @@ def searchInsert(nums: List[int], target: int) -> int:
         low = 0
         high = n - 1
         while low <= high:
-
             mid = math.floor((low + high) / 2)
 
             if (mid + 1 < n) and nums[mid] < target < nums[mid + 1]:

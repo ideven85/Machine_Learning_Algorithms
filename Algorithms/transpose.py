@@ -8,7 +8,6 @@ def transpose(matrix):
 def transpose_normal(matrix):
     transposed = [[]]
     for i in range(len(matrix)):
-
         for j in range(len(matrix[i])):
             if j < len(matrix) and i < len(matrix[j]):
                 transposed[i].append(matrix[j][i])

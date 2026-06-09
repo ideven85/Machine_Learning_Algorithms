@@ -320,7 +320,6 @@ def load_planar_dataset(randomness, seed):
     a = 2  # maximum ray of the flower
 
     for j in range(2):
-
         ix = range(N * j, N * (j + 1))
         if j == 0:
             t = np.linspace(

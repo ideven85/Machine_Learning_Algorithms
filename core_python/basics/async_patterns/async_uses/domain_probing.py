@@ -11,7 +11,6 @@ async def probe_domain(domain):
         address = await loop.getaddrinfo(domain, None)
 
     except socket.gaierror as e:
-
         return domain, False
     return address, True
 

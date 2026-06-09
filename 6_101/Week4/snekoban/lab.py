@@ -51,7 +51,6 @@ def make_new_game(level_description):
     for i in range(len(level_description)):
         columns.append(len(level_description[i]))
         for j in range(len(level_description[i])):
-
             for val in level_description[i][j]:
                 if not val:
                     game_state["empty"].append((i, j))
@@ -98,7 +97,6 @@ def is_valid_move(game, row, col, direction):
         make_new_game(game)
         return False
     if "computer" in game[position]:
-
         if is_valid_move_helper(game, position[0], position[1], direction):
             print(game["player"])
             game["player"] = []
@@ -285,7 +283,6 @@ def solve_puzzle(game):
             neighbours = get_neighbours(board, row, col)
             if neighbours is not None:
                 for neighbour in neighbours:
-
                     if neighbour in visited:
                         continue
                     if neighbour in path:

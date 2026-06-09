@@ -39,7 +39,6 @@ class Card2:
 
 
 class NumberCard2(Card2):
-
     def __init__(self, rank: int, suit: Suit) -> None:
         self.suit = suit
         self.rank = str(rank)
@@ -47,7 +46,6 @@ class NumberCard2(Card2):
 
 
 class AceCard2(Card2):
-
     def __init__(self, rank: int, suit: Suit) -> None:
         self.suit = suit
         self.rank = "A"
@@ -55,7 +53,6 @@ class AceCard2(Card2):
 
 
 class FaceCard2(Card2):
-
     def __init__(self, rank: int, suit: Suit) -> None:
         self.suit = suit
         self.rank = {11: "J", 12: "Q", 13: "K"}[rank]
@@ -89,7 +86,6 @@ test_compare_card9_with_card = """
 
 
 class Card3:
-
     def __init__(self, rank: str, suit: Suit, hard: int, soft: int) -> None:
         self.rank = rank
         self.suit = suit
@@ -106,19 +102,16 @@ class Card3:
 
 
 class NumberCard3(Card3):
-
     def __init__(self, rank: int, suit: Suit) -> None:
         super().__init__(str(rank), suit, rank, rank)
 
 
 class AceCard3(Card3):
-
     def __init__(self, rank: int, suit: Suit) -> None:
         super().__init__("A", suit, 1, 11)
 
 
 class FaceCard3(Card3):
-
     def __init__(self, rank: int, suit: Suit) -> None:
         rank_str = {11: "J", 12: "Q", 13: "K"}[rank]
         super().__init__(rank_str, suit, 10, 10)

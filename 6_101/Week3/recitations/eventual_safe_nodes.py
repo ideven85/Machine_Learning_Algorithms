@@ -3,7 +3,6 @@ from typing import List
 
 
 class Safe_Nodes:
-
     def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:
 
         adj = defaultdict(list)
@@ -17,7 +16,6 @@ class Safe_Nodes:
                 return False
             visited[node] = True
             for connection in adj[node]:
-
                 if visited[connection] and connection not in terminalNodes:
                     return False
 

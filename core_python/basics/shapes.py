@@ -177,7 +177,6 @@ class Union(Combination):
 
 
 class Intersection(Combination):
-
     def __and__(self, other):
         return other in self.shape1 and other in self.shape2
 
@@ -186,7 +185,6 @@ class Intersection(Combination):
 
 
 class Difference(Combination):
-
     def __ior__(self, item):
         return item in self.shape1 and item not in self.shape2
 
@@ -195,7 +193,6 @@ class Difference(Combination):
 
 
 if __name__ == "__main__":
-
     out_image = new_image(500, 500)
     shapes = [
         (Circle((100, 100), 30), COLORS["purple"]),

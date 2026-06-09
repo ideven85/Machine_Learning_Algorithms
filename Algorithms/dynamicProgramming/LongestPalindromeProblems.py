@@ -1,5 +1,4 @@
 class LongestPalindromicSubsequence:
-
     def isPalindrome(self, s: str) -> bool:
         pass
 
@@ -18,7 +17,6 @@ class LongestPalindromicSubsequence:
 
 
 class LongestIncreasingSubsequence:
-
     # todo Doubt
     def longestIncreasingSubseq(self, s: str) -> int:
         n = len(s)

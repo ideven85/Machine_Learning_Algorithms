@@ -227,7 +227,6 @@ while True:
             sys.exit(1)
 
         if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
-
             mouseX = event.pos[0]  # x
             mouseY = event.pos[1]  # y
 
@@ -246,7 +245,6 @@ while True:
                 player = 1
                 game_over = False
         if event.type == pygame.KEYDOWN and event.key == pygame.K_r:
-
             restart()
             player = 1
             game_over = False

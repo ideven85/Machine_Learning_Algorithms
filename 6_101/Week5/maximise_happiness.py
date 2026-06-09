@@ -2,7 +2,6 @@ from typing import List
 
 
 class Solution:
-
     @staticmethod
     def maximumHappinessSum(happiness: List[int], k: int) -> int:
         """

@@ -83,8 +83,7 @@ def main(args):
         accuracy = eval_fn(test_images, test_labels)
         toc = time.perf_counter()
         print(
-            f"Epoch {e}: Test accuracy {accuracy.item():.3f},"
-            f" Time {toc - tic:.3f} (s)"
+            f"Epoch {e}: Test accuracy {accuracy.item():.3f}, Time {toc - tic:.3f} (s)"
         )
 
 

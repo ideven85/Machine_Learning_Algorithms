@@ -99,7 +99,6 @@ def rnn_forward(X, Y, a0, parameters, vocab_size=71):
     loss = 0
 
     for t in range(len(X)):
-
         # Set x[t] to be the one-hot vector representation of the t'th character in X.
         x[t] = np.zeros((vocab_size, 1))
         x[t][X[t]] = 1

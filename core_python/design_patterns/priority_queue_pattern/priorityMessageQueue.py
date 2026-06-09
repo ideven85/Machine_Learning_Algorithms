@@ -46,7 +46,6 @@ class PriorityMessageQueue:
             self.queue[parentIndex].priority <= self.queue[childIndex1].priority
             or self.queue[parentIndex].priority <= self.queue[childIndex2].priority
         ):
-
             minIndex = None
             if self.queue[childIndex1].priority >= self.queue[childIndex2].priority:
                 minIndex = childIndex1

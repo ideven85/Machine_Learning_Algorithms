@@ -23,7 +23,6 @@ def sum_nested(x):
         if not current:
             sum_so_far += 0
         elif isinstance(current[0], list):
-
             agenda.append(current[0])
             agenda.append(current[1:])
         else:
@@ -45,7 +44,6 @@ def list_flatten(x):
 
 def gen_flatten(x):
     if not x:
-
         return
     elif isinstance(x[0], list):
         yield from gen_flatten(x[0])
@@ -75,7 +73,6 @@ def flatten_me(x):
     if is_flat(x):
         return x
     else:
-
         out = []
         for el in x:
             if isinstance(el, list):

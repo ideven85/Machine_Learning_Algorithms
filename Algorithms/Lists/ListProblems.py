@@ -52,7 +52,6 @@ def print_list(head: ListNode):
 
 
 class Solution:
-
     def reverse(self, head):
         prev = None
         current = head
@@ -278,7 +277,6 @@ class Solution {
 
 
 if __name__ == "__main__":
-
     head = ListNode(1)
 
     l = ListProblems()

@@ -60,7 +60,6 @@ def gries_misra(n):
 
 # pylint: disable=redefined-outer-name, missing-docstring
 if __name__ == "__main__":
-
     # compare the running times and show the ratio between the performances
 
     from time import time

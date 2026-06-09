@@ -22,7 +22,6 @@ from typing import List
 # //Input: n = 6, meetings = [[1,2,5],[2,3,8],[1,5,10]], firstPerson = 1
 # Output: [0,1,2,3,5]
 class PeopleWithSecrets:
-
     meetings = []
     n = None
     firstPerson = None

@@ -182,7 +182,7 @@ if __name__ == "__main__":
         start = time.perf_counter()
         test()
         end = time.perf_counter()
-        print(f"{test.__qualname__} took {end-start} seconds to complete")
+        print(f"{test.__qualname__} took {end - start} seconds to complete")
 
 
 ## word_frequencies

@@ -3,7 +3,6 @@ from typing import List
 
 
 class TownJudge(object):
-
     # todo
     def findJudgeIncorrect(self, n: int, trust: List[List[int]]) -> int:
 

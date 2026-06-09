@@ -56,7 +56,6 @@ def match_symbol(temp):
 
     match3 = isinstance(temp, BinOp)
     if match3:
-
         # precedence = temp.__class__.precedence
         # precedenceRight = temp.right.__class__.precedence
         # print(temp.left, temp.right)

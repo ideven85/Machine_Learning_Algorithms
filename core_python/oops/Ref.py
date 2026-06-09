@@ -2,7 +2,6 @@ from typing import Tuple
 
 
 class Card:
-
     def __init__(self, rank: str, suit: str) -> None:
         self.suit = suit
         self.rank = rank
@@ -13,13 +12,11 @@ class Card:
 
 
 class AceCard(Card):
-
     def _points(self) -> Tuple[int, int]:
         return 1, 11
 
 
 class FaceCard(Card):
-
     def _points(self) -> Tuple[int, int]:
         return 10, 10
 

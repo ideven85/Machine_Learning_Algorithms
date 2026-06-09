@@ -189,7 +189,6 @@ def dig_2d(game, row, col):
         return 0
 
     if game["board"][row][col] == 0:
-
         neighbours = (
             ((row + dx), (col + dy))
             for dx, dy in directions

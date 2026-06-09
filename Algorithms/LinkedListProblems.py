@@ -22,7 +22,6 @@ def middleNode(head: Optional[ListNode]) -> Optional[ListNode]:
     faster = head
     count = 0
     while faster.next:
-
         count += 1
         faster = faster.next
     starting = 0

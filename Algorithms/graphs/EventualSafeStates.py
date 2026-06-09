@@ -7,7 +7,6 @@ from typing import List
 
 
 class SafeNodes:
-
     graph = None
     safe_nodes = None
     WHITE = 0
@@ -40,7 +39,6 @@ class SafeNodes:
         # self.safe_nodes.extend(terminal_nodes)
 
         for i in range(n):
-
             if self.dfs_util(i):
                 self.safe_nodes.append(i)
         return sorted(self.safe_nodes)

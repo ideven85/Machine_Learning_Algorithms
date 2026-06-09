@@ -47,7 +47,6 @@ class BST:
                 self.left.remove(value, self)
         elif value > self.value:
             if self.right:
-
                 self.right.remove(value, self)
         else:
             if self.left and self.right:

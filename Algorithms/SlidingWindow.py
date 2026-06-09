@@ -80,7 +80,6 @@ class Solution:
         if number_of[0] > 1:
             number_of[0] = 1
         for key in keys:
-
             # key_is_even
             if not key % 2:
                 negative_key = -key // 2
@@ -143,7 +142,6 @@ class Solution1:
         curr = 0
         left = 0
         for i in range(n):
-
             if arr[i] == s:
                 return [i + 1, i + 1]
             curr += arr[i]

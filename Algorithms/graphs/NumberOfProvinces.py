@@ -22,7 +22,6 @@ class Solution:
 
 
 class NumberOfProvinces:
-
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
         """
         isConnected = [[1,1,0],[1,1,0],[0,0,1]]
@@ -44,7 +43,6 @@ class NumberOfProvinces:
         queue = deque()
         queue.append(1)
         for city in range(1, n + 1):
-
             print(self.dfsUtil(cityMap, city, visited, count), end=" ")
 
         print("\n", visited)
@@ -73,7 +71,6 @@ class NumberOfProvinces:
 
 
 class NumberOfProvincesUF:
-
     def init(self, n):
         self.root = [0 for _ in range(n + 1)]
         self.count = n

@@ -129,7 +129,6 @@ def containsNearbyDuplicate(nums: List[int], k: int) -> bool:
             if distinct[nums[i]] > 1 and num_of_distinct <= k:
                 return True
         while num_of_distinct > k:
-
             distinct[nums[j]] -= 1
             if distinct[nums[j]] == 0:
                 num_of_distinct -= 1

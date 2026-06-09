@@ -198,7 +198,6 @@ test_card7 = """
 
 
 class CardFactory:
-
     def rank(self, rank: int) -> "CardFactory":
         self.class_, self.rank_str = {
             1: (AceCard, "A"),

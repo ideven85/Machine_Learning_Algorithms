@@ -164,7 +164,6 @@ def perceptron(feature_matrix, labels, T):
     theta_0 = 0
     # print("theta:",theta,theta_0)
     for t in range(T + 10):
-
         for i in get_order(feature_matrix.shape[0]):
             # Your code here
             # print("Shape: i",i,feature_matrix[i])

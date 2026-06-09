@@ -13,7 +13,6 @@ class Solution:
         i = 0
         res = 0
         while res <= amount:
-
             if coins[i] <= amount:
                 amount -= coins[i]
                 res += 1

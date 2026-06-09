@@ -135,12 +135,10 @@ class BinaryTree:
             # print(pointer,end=' ')
 
             if current:
-
                 queue.append(current)
                 current = current.left
 
             else:
-
                 current = queue.pop()
                 pointer = pointer + 1
                 if pointer == k:
@@ -178,7 +176,6 @@ class BinaryTree:
 
 def inOrder(root):
     if root is not None:
-
         inOrder(root.left)
         print(root.val, end=" ")
         inOrder(root.right)
@@ -218,7 +215,6 @@ def levelOrderTraversal(root):
     while len(queue) >= 1:
         current = queue.popleft()
         if current:
-
             if current.left:
                 queue.append(current.left)
 
@@ -277,7 +273,6 @@ def sumNumbers(root: Optional[TreeNode]) -> int:
     path_sum = root.val
     level = 1
     while queue:
-
         current = queue.popleft()
         if current:
             curr.append(current.val)

@@ -29,7 +29,6 @@ def isHappy(n: int) -> bool:
     s = str(n)
     total = 0
     while True:
-
         if total == 1:
             return True
         for e in s:

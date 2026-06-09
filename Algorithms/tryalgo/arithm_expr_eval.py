@@ -9,7 +9,6 @@ jill-jenn vie et christoph durr - 2014-2020
 # IPCELLS
 # http://www.spoj.com/problems/IPCELLS/
 
-
 from tryalgo.our_std import readint, readstr
 
 

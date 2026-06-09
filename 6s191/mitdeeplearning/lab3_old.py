@@ -9,10 +9,12 @@ import cv2
 def play_video(filename, width=None):
     encoded = base64.b64encode(io.open(filename, "r+b").read())
     video_width = 'width="' + str(width) + '"' if width is not None else ""
-    embedded = HTML(data="""
+    embedded = HTML(
+        data="""
         <video controls {0}>
             <source src="data:video/mp4;base64,{1}" type="video/mp4" />
-        </video>""".format(video_width, encoded.decode("ascii")))
+        </video>""".format(video_width, encoded.decode("ascii"))
+    )
 
     return embedded
 
@@ -64,9 +66,9 @@ def aggregate_memories(memories):
 
 
 def parallelized_collect_rollout(batch_size, envs, model, choose_action):
-    assert (
-        len(envs) == batch_size
-    ), "Number of parallel environments must be equal to the batch size."
+    assert len(envs) == batch_size, (
+        "Number of parallel environments must be equal to the batch size."
+    )
 
     memories = [Memory() for _ in range(batch_size)]
     next_observations = [single_env.reset() for single_env in envs]

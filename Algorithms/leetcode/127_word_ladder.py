@@ -45,7 +45,6 @@ class Solution:
 
         def get_neighbours(curr_word):
             for word in word_list:
-
                 if self.levenshteinDistance(curr_word, word) == 1:
                     graph[curr_word].append(word)
                     graph[word].append(curr_word)

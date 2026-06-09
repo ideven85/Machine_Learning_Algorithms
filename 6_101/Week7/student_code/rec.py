@@ -74,12 +74,14 @@ def feed(preferences: dict, quantities: dict):
         print(visited)
         return possiblities
 
-    names, liked_food_list = [name for name in preferences.keys()], [
-        val for val in preferences.values()
-    ]
-    foods_available, food_quantity_available = [food for food in quantities.keys()], [
-        val for val in quantities.values()
-    ]
+    names, liked_food_list = (
+        [name for name in preferences.keys()],
+        [val for val in preferences.values()],
+    )
+    foods_available, food_quantity_available = (
+        [food for food in quantities.keys()],
+        [val for val in quantities.values()],
+    )
     q = {
         k: v
         for k, v in sorted(
@@ -96,7 +98,6 @@ def feed(preferences: dict, quantities: dict):
         liked_foods = liked_food_list[i]
         # print("x",liked_foods)
         for x in liked_foods:
-
             # print(x,end=' ')
 
             choices = dfsUtil(agenda, x, q, visited)
@@ -109,7 +110,6 @@ def feed(preferences: dict, quantities: dict):
                 # print(choices)
                 if agenda not in output:
                     for val in choices.values():
-
                         if val in preferences[agenda]:
                             # print(val)
                             output[agenda] = val

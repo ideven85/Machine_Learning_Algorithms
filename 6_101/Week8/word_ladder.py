@@ -4,7 +4,6 @@ from typing import List
 
 
 class PrefixTree:
-
     def __init__(self):
         """
                 The __init__ method takes no arguments. It should set up exactly two instance variables:
@@ -30,7 +29,6 @@ class PrefixTree:
             raise TypeError("Word Must Be a string")
 
         if not key:
-
             if not value and not self.value:
                 return None
 
@@ -38,7 +36,6 @@ class PrefixTree:
         elif value is None and key[0] not in self.children:
             return None
         elif value and key[0] not in self.children:
-
             self.children[key[0]] = PrefixTree()
         return self.children[key[0]]._get_node(key[1:], value)
 
@@ -101,7 +98,6 @@ class PrefixTree:
 
 
 class Solution:
-
     characters = [0 for _ in range(26)]
     mapping = defaultdict(list)
 

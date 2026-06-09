@@ -8,7 +8,6 @@ jill-jênn vie et christoph dürr - 2014-2019
 
 # pylint: disable=too-many-arguments, too-many-locals
 
-
 # snip{ union_intervals
 from collections import Counter
 

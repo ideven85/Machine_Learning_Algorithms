@@ -13,7 +13,6 @@ class Problems:
             return nums[0]
 
         for i in range(len(nums)):
-
             max_ending_far += nums[i]
             if max_sum <= max_ending_far:
                 max_sum = max_ending_far
@@ -87,8 +86,9 @@ class Solution:
             for i in range(1, len(elements)):
                 current_element = elements[i]
                 if current_element == elements[i - 1] + 1:
-                    two_back, one_back = one_back, max(
-                        one_back, two_back + points[current_element]
+                    two_back, one_back = (
+                        one_back,
+                        max(one_back, two_back + points[current_element]),
                     )
                 else:
                     two_back, one_back = one_back, one_back + points[current_element]

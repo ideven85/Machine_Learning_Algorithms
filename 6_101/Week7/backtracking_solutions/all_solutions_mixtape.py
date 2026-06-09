@@ -19,7 +19,6 @@ def mixtape(songs: dict, target_duration: int):
             output.append(current[:])
 
         for i in range(start, n):
-
             first_song = list(songs.keys())[i]
 
             current_duration = songs[first_song]

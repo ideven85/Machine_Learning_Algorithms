@@ -23,7 +23,7 @@ def show_recursive_structure(f):
             arg_str = arg_str[: show_recursive_structure.TRIM_ARGS] + " ..."
         if show_recursive_structure.SHOW_CALL:
             sys.stderr.write(
-                f'{"   " * wrapper._depth}call to {f.__name__}: {arg_str}\n'
+                f"{'   ' * wrapper._depth}call to {f.__name__}: {arg_str}\n"
             )
         wrapper._count += 1
         wrapper._depth += 1
@@ -38,7 +38,7 @@ def show_recursive_structure(f):
             res_str = res_str[: show_recursive_structure.TRIM_RET] + " ..."
         if show_recursive_structure.SHOW_RET:
             sys.stderr.write(
-                f'{"   " * wrapper._depth}call to {f.__name__} returns: {res_str}\n'
+                f"{'   ' * wrapper._depth}call to {f.__name__} returns: {res_str}\n"
             )
         return result
 

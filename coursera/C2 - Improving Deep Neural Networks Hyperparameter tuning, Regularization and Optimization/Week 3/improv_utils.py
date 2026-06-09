@@ -249,13 +249,11 @@ def model(
 
     # Start the session to compute the tensorflow graph
     with tf.Session() as sess:
-
         # Run the initialization
         sess.run(init)
 
         # Do the training loop
         for epoch in range(num_epochs):
-
             minibatch_cost = 0.0
             num_minibatches = int(
                 m / minibatch_size
@@ -264,7 +262,6 @@ def model(
             minibatches = random_mini_batches(X_train, Y_train, minibatch_size, seed)
 
             for minibatch in minibatches:
-
                 # Select a minibatch
                 minibatch_X, minibatch_Y = minibatch
 

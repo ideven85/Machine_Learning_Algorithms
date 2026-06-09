@@ -106,7 +106,6 @@ def rnn_forward(X, Y, a0, parameters, vocab_size=27):
     loss = 0
 
     for t in range(len(X)):
-
         # Set x[t] to be the one-hot vector representation of the t'th character in X.
         # if X[t] == None, we just have x[t]=0. This is used to set the input for the first timestep to the zero vector.
         x[t] = np.zeros((vocab_size, 1))

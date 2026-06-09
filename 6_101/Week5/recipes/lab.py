@@ -19,7 +19,6 @@ def atomic_ingredient_costs(recipes):
     """
     atomic_recipes = dict()
     for recipe in recipes:
-
         if recipe[0] == "atomic":
             atomic_recipes[recipe[1]] = recipe[2]
     return atomic_recipes
@@ -86,7 +85,6 @@ def lowest_cost(recipes, food_item):
             # #(compound_element)
 
             for elements in lst:
-
                 for el in elements:
                     # if compound_element in cmpd_minimum_element_cost:
                     #     return current_cost

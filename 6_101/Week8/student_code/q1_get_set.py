@@ -79,7 +79,7 @@ def test_tiny():
     for word, val in word_vals:
         assert t[word] == val, f"{word} does not have value {val}"
     end = time.perf_counter()
-    print(f"test_tiny passed in {end-start} seconds")
+    print(f"test_tiny passed in {end - start} seconds")
 
 
 def test_large():
@@ -98,7 +98,7 @@ def test_large():
     for i, word in enumerate(all_words):
         assert t[word] == i, f"{word} does not have value {i}"
     end = time.perf_counter()
-    print(f"test_large passed in {end-start} seconds")
+    print(f"test_large passed in {end - start} seconds")
 
 
 # you can include test cases of your own in the block below.

@@ -69,7 +69,6 @@ def rightSmallerThan(array):
     # bt = BinaryTree(array[0])
     output = []
     for i in range(n):
-
         a = []
         bt = None
         bt = BinaryTree(array[i])
@@ -85,7 +84,6 @@ def rightSmallerThan(array):
 
 
 if __name__ == "__main__":
-
     # print(allKindsOfNodeDepths(b))
     arr = [8, 5, 11, -1, 3, 4, 2]
     print(rightSmallerThan(arr))

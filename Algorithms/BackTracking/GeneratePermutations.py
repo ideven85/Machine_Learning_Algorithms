@@ -27,13 +27,11 @@ def getPermutations(array):
 
 
 class Solution:
-
     series = []
 
     def generatePermutations(self, arr):
         answer = []
         if len(arr) == 0:
-
             return [answer]
         else:
             for i in range(len(arr)):

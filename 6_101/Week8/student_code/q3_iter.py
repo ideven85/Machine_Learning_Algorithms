@@ -72,7 +72,7 @@ def test_tiny():
     result = set(t)
     assert result == expected
     end = time.perf_counter()
-    print(f"test_tiny passed in {end-start} seconds")
+    print(f"test_tiny passed in {end - start} seconds")
 
 
 def test_large():
@@ -92,7 +92,7 @@ def test_large():
     assert len(list(t)) == len(all_words)
     assert dict(t) == expected
     end = time.perf_counter()
-    print(f"test_large passed in {end-start} seconds")
+    print(f"test_large passed in {end - start} seconds")
 
 
 # you can include test cases of your own in the block below.

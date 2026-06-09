@@ -14,7 +14,6 @@ def inversionCount(arr, n):
     flag = False
     n = len(arr)
     if n <= 1 or is_sorted(arr):
-
         return count
     element = arr[0]
     for i in range(1, n):

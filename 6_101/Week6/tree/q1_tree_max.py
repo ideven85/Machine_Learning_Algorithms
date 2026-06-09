@@ -27,7 +27,6 @@ def tree_max(tree):
         return value
 
     else:
-
         return max(max(tree_max(x) for x in children), value)
 
 

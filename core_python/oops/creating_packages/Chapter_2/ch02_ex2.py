@@ -47,7 +47,6 @@ class AceCard(Card):
 
 
 class FaceCard(Card):
-
     def _points(self) -> Tuple[int, int]:
         return 10, 10
 

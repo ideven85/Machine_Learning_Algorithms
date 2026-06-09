@@ -22,7 +22,6 @@ def minDistance(word1: str, word2: str) -> int:
 
 
 if __name__ == "__main__":
-
     word1 = "horse"
     word2 = "horse"
     print(minDistance(word1=word1, word2=word2))
