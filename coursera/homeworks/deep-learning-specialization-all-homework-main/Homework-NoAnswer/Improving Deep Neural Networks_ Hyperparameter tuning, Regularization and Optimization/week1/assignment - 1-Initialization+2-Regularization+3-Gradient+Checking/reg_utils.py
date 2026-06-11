@@ -146,7 +146,7 @@ def backward_propagation(X, Y, cache):
     gradients -- A dictionary with the gradients with respect to each parameter, activation and pre-activation variables
     """
     m = X.shape[1]
-    (Z1, A1, W1, b1, Z2, A2, W2, b2, Z3, A3, W3, b3) = cache
+    Z1, A1, W1, b1, Z2, A2, W2, b2, Z3, A3, W3, b3 = cache
 
     dZ3 = A3 - Y
     dW3 = 1.0 / m * np.dot(dZ3, A2.T)

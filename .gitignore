@@ -4,8 +4,6 @@ venv/
 ml-25m.zip
 ml-25m
 virtualenv/
-.idea/
-.vscode/
 __pycache__/
 .venv/
 .idea/
@@ -143,3 +141,4 @@ dmypy.json
 
 # Pycharm
 .env
+.ruff_cache/

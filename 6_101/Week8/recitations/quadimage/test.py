@@ -32,24 +32,24 @@ def setup_module(module):
 
 
 def compare_sets(x, y, test_name):
-    assert len(x) == len(y), (
-        f"Failure while testing {test_name}:\n Expected set of length {len(x)} but got {len(y)}"
-    )
-    assert isinstance(x, type(y)), (
-        f"Failure while testing {test_name}:\n Expected type {type(x)} but got {type(y)}"
-    )
+    assert len(x) == len(
+        y
+    ), f"Failure while testing {test_name}:\n Expected set of length {len(x)} but got {len(y)}"
+    assert isinstance(
+        x, type(y)
+    ), f"Failure while testing {test_name}:\n Expected type {type(x)} but got {type(y)}"
     for item in y:
-        assert item in x, (
-            f"Failure while testing {test_name}:\n Item {item} not found in expected result"
-        )
+        assert (
+            item in x
+        ), f"Failure while testing {test_name}:\n Item {item} not found in expected result"
 
 
 # convert QuadImage into a nested dictionary... useful for visualizing the QuadImage
 def dictify(q):
     expected_keys = {"width", "height", "pixel", "quadrants"}
-    assert set(q.__dict__) == expected_keys, (
-        f"Quadtree instances should only contain the instance attributes mentioned in the exercise. \n Extra vars: {set(q.__dict__) - expected_keys}"
-    )
+    assert (
+        set(q.__dict__) == expected_keys
+    ), f"Quadtree instances should only contain the instance attributes mentioned in the exercise. \n Extra vars: {set(q.__dict__) - expected_keys}"
     out = {k: q.__dict__[k] for k in expected_keys}
     out["quadrants"] = []
     for qc in q.quadrants:
@@ -61,9 +61,9 @@ def _helper(im, image_dict, test_name, test_func):
     quad = practice.QuadImage(image_dict)
     y = test_func(quad)
     x = test_results[test_name][im]
-    assert isinstance(y, types.GeneratorType), (
-        f"{test_name}  {im.split('/'[-1])}: \nExpected result to be generator but got {type(y)}"
-    )
+    assert isinstance(
+        y, types.GeneratorType
+    ), f"{test_name}  {im.split('/'[-1])}: \nExpected result to be generator but got {type(y)}"
     y = set(y)
     compare_sets(x, y, f"{test_name}  {im.split('/'[-1])}")
 
@@ -73,9 +73,9 @@ def _point_helper(im, image_dict, test_name, test_func):
     for point in test_results[test_name][im]:
         expected_val = image_dict["pixels"][point[0] + point[1] * image_dict["width"]]
         result = test_func(quad, point)
-        assert result == expected_val, (
-            f"{test_name}  {im.split('/'[-1])} Expected arg {point} to get {expected_val} != Result {result}"
-        )
+        assert (
+            result == expected_val
+        ), f"{test_name}  {im.split('/'[-1])} Expected arg {point} to get {expected_val} != Result {result}"
 
 
 ############        Test Cases:

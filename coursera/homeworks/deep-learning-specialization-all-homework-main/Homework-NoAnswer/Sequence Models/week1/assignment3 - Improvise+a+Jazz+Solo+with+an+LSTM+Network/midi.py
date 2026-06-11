@@ -12,7 +12,6 @@ import pygame  # midi playback
 import fnmatch  # name matching
 import os  # file listing
 
-
 #### CONFIGURATION ####
 
 do_ffmpeg_convert = True  # Uses FFmpeg to convert WAV files to MP3. Requires ffmpeg.exe in the script folder or PATH

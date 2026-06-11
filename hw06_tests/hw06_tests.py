@@ -18,7 +18,6 @@ import optim as our_optim
 from plotting import tidy_plot, plot_points, plot_fun, plot_heat
 from utils import get_data_loader, dataset_paths, run_pytorch
 
-
 ### Optimizers
 
 
@@ -148,7 +147,7 @@ def run_pytorch_2d(
         _ = run_pytorch_2d("2", layers, epochs=200, display=False, verbose=False, trials=5)
     """
     print("Pytorch FC: dataset=", data_name)
-    (train_dataset_path, val_dataset_path, test_dataset_path) = dataset_paths(data_name)
+    train_dataset_path, val_dataset_path, test_dataset_path = dataset_paths(data_name)
     # Load the datasets
     train_iter, num_classes = get_data_loader(train_dataset_path, batch_size)
     val_iter, num_classes = get_data_loader(val_dataset_path, batch_size)
@@ -684,7 +683,7 @@ def test_sequential_components(nn, test_values):
 
     # define the modules
     assert len(nn.modules) == 4
-    (linear_1, f_1, linear_2, f_2) = nn.modules
+    linear_1, f_1, linear_2, f_2 = nn.modules
     Loss = nn.loss
 
     unit_test("linear_1.W", test_values["linear_1.W"], linear_1.W)
@@ -739,7 +738,7 @@ def test_sequential_sgd(nn, test_values):
 
     # define the modules
     assert len(nn.modules) == 4
-    (linear_1, f_1, linear_2, f_2) = nn.modules
+    linear_1, f_1, linear_2, f_2 = nn.modules
 
     unit_test("linear_1.W", test_values["linear_1.W"], linear_1.W)
     unit_test("linear_1.W0", test_values["linear_1.W0"], linear_1.W0)

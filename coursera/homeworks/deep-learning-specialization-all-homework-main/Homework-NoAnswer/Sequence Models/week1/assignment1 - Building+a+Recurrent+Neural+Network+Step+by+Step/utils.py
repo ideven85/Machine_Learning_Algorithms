@@ -119,7 +119,7 @@ def rnn_backward(X, Y, parameters, cache):
     gradients = {}
 
     # Retrieve from cache and parameters
-    (y_hat, a, x) = cache
+    y_hat, a, x = cache
     Waa, Wax, Wya, by, b = (
         parameters["Waa"],
         parameters["Wax"],

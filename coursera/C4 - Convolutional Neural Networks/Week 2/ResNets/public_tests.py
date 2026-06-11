@@ -36,22 +36,22 @@ def identity_block_test(target):
     assert np.all(A3np >= 0), "The ReLu activation at the last layer is missing"
     resume = A3np[:, (0, -1), :, :].mean(axis=3)
 
-    assert np.floor(resume[1, 0, 0]) == 2 * np.floor(resume[1, 0, 3]), (
-        "Check the padding and strides"
-    )
-    assert np.floor(resume[1, 0, 3]) == np.floor(resume[1, 1, 0]), (
-        "Check the padding and strides"
-    )
-    assert np.floor(resume[1, 1, 0]) == 2 * np.floor(resume[1, 1, 3]), (
-        "Check the padding and strides"
-    )
-    assert np.floor(resume[1, 1, 0]) == 2 * np.floor(resume[1, 1, 3]), (
-        "Check the padding and strides"
-    )
+    assert np.floor(resume[1, 0, 0]) == 2 * np.floor(
+        resume[1, 0, 3]
+    ), "Check the padding and strides"
+    assert np.floor(resume[1, 0, 3]) == np.floor(
+        resume[1, 1, 0]
+    ), "Check the padding and strides"
+    assert np.floor(resume[1, 1, 0]) == 2 * np.floor(
+        resume[1, 1, 3]
+    ), "Check the padding and strides"
+    assert np.floor(resume[1, 1, 0]) == 2 * np.floor(
+        resume[1, 1, 3]
+    ), "Check the padding and strides"
 
-    assert resume[1, 1, 0] - np.floor(resume[1, 1, 0]) > 0.7, (
-        "Looks like the BatchNormalization units are not working"
-    )
+    assert (
+        resume[1, 1, 0] - np.floor(resume[1, 1, 0]) > 0.7
+    ), "Looks like the BatchNormalization units are not working"
 
     assert np.allclose(
         resume,

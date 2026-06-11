@@ -215,9 +215,7 @@ def model(
     ops.reset_default_graph()  # to be able to rerun the model without overwriting tf variables
     tf.set_random_seed(1)  # to keep consistent results
     seed = 3  # to keep consistent results
-    (n_x, m) = (
-        X_train.shape
-    )  # (n_x: input size, m : number of examples in the train set)
+    n_x, m = X_train.shape  # (n_x: input size, m : number of examples in the train set)
     n_y = Y_train.shape[0]  # n_y : output size
     costs = []  # To keep track of the cost
 
@@ -265,7 +263,7 @@ def model(
 
             for minibatch in minibatches:
                 # Select a minibatch
-                (minibatch_X, minibatch_Y) = minibatch
+                minibatch_X, minibatch_Y = minibatch
 
                 # IMPORTANT: The line that runs the graph on a minibatch.
                 # Run the session to execute the optimizer and the cost, the feedict should contain a minibatch for (X,Y).

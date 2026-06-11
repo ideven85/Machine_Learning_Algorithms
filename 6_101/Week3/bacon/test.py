@@ -56,9 +56,9 @@ def _run_pickled_together_test(n):
         tests = pickle.load(f)
     for a1, a2, v in tests:
         res = lab.acted_together(db_large, a1, a2)
-        assert res == v and isinstance(res, bool), (
-            f"expected {bool(v)} for {a1} and {a2} acting together, got {res}"
-        )
+        assert res == v and isinstance(
+            res, bool
+        ), f"expected {bool(v)} for {a1} and {a2} acting together, got {res}"
 
 
 @pytest.mark.parametrize("test_num", [0, 1])
@@ -445,9 +445,9 @@ def check_valid_path(f, p, s, e, l):
     l : length of expected path - 1
     """
     lp = len(p) if p is not None else None
-    assert lp == l + 1, (
-        f"expected a path of length {l + 1} between {s} and {e}, got {lp}"
-    )
+    assert (
+        lp == l + 1
+    ), f"expected a path of length {l + 1} between {s} and {e}, got {lp}"
     assert s is None or p[0] == s, f"path does not start with {s}"
     assert e is None or p[-1] == e, f"path does not end with {e}"
     assert all(frozenset(i) in f for i in zip(p, p[1:])), f"invalid path returned"

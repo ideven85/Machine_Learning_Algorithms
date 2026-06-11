@@ -209,7 +209,7 @@ def yolo_loss(args, anchors, num_classes, rescore_confidence=False, print_loss=F
     mean_loss : float
         mean localization loss across minibatch
     """
-    (yolo_output, true_boxes, detectors_mask, matching_true_boxes) = args
+    yolo_output, true_boxes, detectors_mask, matching_true_boxes = args
     num_anchors = len(anchors)
     object_scale = 5
     no_object_scale = 1

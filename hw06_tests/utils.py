@@ -14,9 +14,9 @@ def get_data_loader(name, batch_size, validation_split=None):
     try:
         loaded_data = np.loadtxt(name, skiprows=0, delimiter=" ")
     except:
-        assert validation_split is None, (
-            "Please make sure there is a folder `./data` on this file's path"
-        )
+        assert (
+            validation_split is None
+        ), "Please make sure there is a folder `./data` on this file's path"
         return None, None
     # print(loaded_data)
 
@@ -200,8 +200,8 @@ def run_pytorch(
     if verbose:
         print()
 
-    (train_loss, train_acc) = train_m
-    (vali_loss, val_acc) = vali_m
+    train_loss, train_acc = train_m
+    vali_loss, val_acc = vali_m
 
     # Evaluate the model on test data, if any
     if test_iter is not None:

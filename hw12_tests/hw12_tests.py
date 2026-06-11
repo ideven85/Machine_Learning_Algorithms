@@ -81,7 +81,7 @@ def test_linear_classifier_with_features(
         ax = plot_data(raw_data, labels)
 
         def draw_sep(params):
-            (th, th0) = params
+            th, th0 = params
             plot_nonlin_sep(
                 lambda x1, x2: int(
                     lin_reg_classify(feature_fun(cv([x1, x2])), th, th0)

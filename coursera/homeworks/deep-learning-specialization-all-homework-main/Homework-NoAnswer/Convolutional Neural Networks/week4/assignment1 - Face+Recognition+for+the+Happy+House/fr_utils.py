@@ -12,7 +12,6 @@ from keras.layers.pooling import MaxPooling2D, AveragePooling2D
 import h5py
 import matplotlib.pyplot as plt
 
-
 _FLOATX = "float32"
 
 
