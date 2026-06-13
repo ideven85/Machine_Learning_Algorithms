@@ -29,7 +29,6 @@ def inference_model(LSTM_cell, densor, n_x=90, n_a=64, Ty=100):
 
     # Step 2: Loop over Ty and generate a value at every time step
     for t in range(Ty):
-
         # Step 2.A: Perform one step of LSTM_cell (≈1 line)
         a, _, c = LSTM_cell(x, initial_state=[a, c])
 

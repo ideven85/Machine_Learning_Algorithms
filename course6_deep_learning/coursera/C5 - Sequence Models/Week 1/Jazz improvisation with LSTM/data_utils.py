@@ -50,7 +50,6 @@ def generate_music(inference_model, indices_tones, chords, diversity=0.5):
     # Loop over all 18 set of chords. At each iteration generate a sequence of tones
     # and use the current chords to convert it into actual sounds
     for i in range(1, num_chords):
-
         # Retrieve current chord from stream
         curr_chords = stream.Voice()
 

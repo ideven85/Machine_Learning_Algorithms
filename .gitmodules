@@ -3,3 +3,6 @@
 	path = Machine_Learning/handson-ml3
 	url = https://github.com/ageron/handson-ml3
 
+[submodule "nlp_course_revision"]
+	path = nlp_course_revision
+	url = https://github.com/ideven85/nlp_course_revision

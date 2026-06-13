@@ -1,0 +1,7 @@
+#!/bin/bash
+
+abcfile=$1
+suffix=${abcfile%.abc}
+abcmidi $abcfile -o "$suffix.mid"
+timidity "$suffix.mid" -Ow "$suffix.wav"
+#rm "$suffix.abc" "$suffix.mid"
