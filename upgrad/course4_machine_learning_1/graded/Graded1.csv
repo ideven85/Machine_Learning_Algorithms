@@ -1,0 +1,16 @@
+﻿S.No,Class,Freq 1,Freq 2,Freq 3,Freq 4
+2,Ham,reply,data,report,presentation
+3,Ham,report,presentation,file,end of day
+5,Ham,meeting,timelines,limited,documents
+8,Ham,presentation,end of day,data,report
+9,Ham,reply,data,presentation,click
+12,Ham,meeting,end of day,weekend,data
+14,Ham,report,presentation,file,end of day
+15,Ham,free,timelines,reply,offer
+1,Spam,free,buy,limited,hurry
+4,Spam,limited,file,buy,click
+6,Spam,hurry,data,buy,stock
+7,Spam,limited,sex,click,viagra
+10,Spam,free,reply,weekend,click
+11,Spam,limited,click,free,hurry
+13,Spam,hurry,weekend,stock,offer

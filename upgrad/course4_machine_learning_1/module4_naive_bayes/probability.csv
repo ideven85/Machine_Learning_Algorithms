@@ -1,0 +1,13 @@
+Word,n_education(w),p(w|c=education),n_cinema(w),p(w|c=cinema)
+cinema,0,0,1,1/8
+depends,1,1/13,1,1/8
+educational,3,3/13,0,0
+ethics,2,2/13,0,0
+good,0,0,2,2/8
+great,2,2/13,1,1/8
+greatness,2,2/13,0,0
+institution,1,1/13,0,0
+movie,0,0,1,1/8
+sholey,0,0,1,1/8
+story,1,1/13,1,1/8
+upgrad,1,1/13,0,0
