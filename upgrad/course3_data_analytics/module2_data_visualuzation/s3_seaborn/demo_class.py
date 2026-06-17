@@ -2,7 +2,6 @@ from typing import overload
 
 
 class Sexy:
-
     def set_name(self):
         self.name = "Deven"
 
