@@ -94,7 +94,7 @@ def main():
     grid_search_cv()
     s3 = time.perf_counter_ns()
     x = (s2 - s1) / (s3 - s2)
-    print(f"Bayesian optimizer took: {s2-s1} time")
+    print(f"Bayesian optimizer took: {s2 - s1} time")
     print(f"Grid Search CV took: {s3 - s2} time")
     print(f"Ratio: {x}")
 

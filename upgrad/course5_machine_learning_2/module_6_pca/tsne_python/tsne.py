@@ -47,7 +47,6 @@ def x2p(X=np.array([]), tol=1e-5, perplexity=30.0):
 
     # Loop over all datapoints
     for i in range(n):
-
         # Print progress
         if i % 500 == 0:
             print("Computing P-values for point %d of %d..." % (i, n))
@@ -62,7 +61,6 @@ def x2p(X=np.array([]), tol=1e-5, perplexity=30.0):
         Hdiff = H - logU
         tries = 0
         while np.abs(Hdiff) > tol and tries < 50:
-
             # If not, increase or decrease precision
             if Hdiff > 0:
                 betamin = beta[i].copy()
@@ -141,7 +139,6 @@ def tsne(X=np.array([]), no_dims=2, initial_dims=50, perplexity=30.0):
 
     # Run iterations
     for iter in range(max_iter):
-
         # Compute pairwise affinities
         sum_Y = np.sum(np.square(Y), 1)
         num = -2.0 * np.dot(Y, Y.T)

@@ -12,7 +12,6 @@ def unique_values_percentage3(df, columns):
     """
     results = {}
     for column in columns:
-
         # Count unique values and calculate percentages
         value_counts = df[column].value_counts()
         percentages = df[column].value_counts(normalize=True) * 100
