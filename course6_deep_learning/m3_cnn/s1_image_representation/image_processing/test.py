@@ -53,9 +53,9 @@ def compare_images(result, expected, exact=False):
     assert result["mode"] == expected["mode"], "Modes must match"
     assert result["height"] == expected["height"], "Heights must match"
     assert result["width"] == expected["width"], "Widths must match"
-    assert len(result["pixels"]) == result["height"] * result["width"], (
-        f"Incorrect number of pixels, exp_image {result['height'] * result['width']}"
-    )
+    assert (
+        len(result["pixels"]) == result["height"] * result["width"]
+    ), f"Incorrect number of pixels, exp_image {result['height'] * result['width']}"
     num_incorrect_val = 0
     first_incorrect_val = None
     num_bad_type = 0
@@ -427,9 +427,9 @@ def test_inverted_1():
         ],
     }
     compare_images(result_image, exp_image)
-    assert object_hash(input_image) == input_hash, (
-        "Be careful not to modify the original image!"
-    )
+    assert (
+        object_hash(input_image) == input_hash
+    ), "Be careful not to modify the original image!"
 
 
 def test_inverted_2():
@@ -445,9 +445,9 @@ def test_inverted_images(fname):
     result_image = lab.inverted(input_image)
     exp_image = load_image(exp_fname)
     compare_images(result_image, exp_image)
-    assert object_hash(input_image) == input_hash, (
-        "Be careful not to modify the original image!"
-    )
+    assert (
+        object_hash(input_image) == input_hash
+    ), "Be careful not to modify the original image!"
 
 
 def test_oob_get_pixel():
@@ -606,9 +606,9 @@ def test_blurred_images(kernsize, fname):
     result_image = lab.blurred(input_image, kernsize)
     exp_image = load_image(exp_fname)
     compare_images(result_image, exp_image)
-    assert object_hash(input_image) == input_hash, (
-        "Be careful not to modify the original image!"
-    )
+    assert (
+        object_hash(input_image) == input_hash
+    ), "Be careful not to modify the original image!"
 
 
 @pytest.mark.parametrize("kernsize", [1, 3, 9])
@@ -623,6 +623,6 @@ def test_sharpened_images(kernsize, fname):
     result_image = lab.sharpened(input_image, kernsize)
     exp_image = load_image(exp_fname)
     compare_images(result_image, exp_image)
-    assert object_hash(input_image) == input_hash, (
-        "Be careful not to modify the original image!"
-    )
+    assert (
+        object_hash(input_image) == input_hash
+    ), "Be careful not to modify the original image!"

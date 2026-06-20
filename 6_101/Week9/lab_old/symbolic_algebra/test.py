@@ -74,9 +74,9 @@ def mix_precedence(sym, expected):
     except DisallowedFunctionException:
         raise
     except:
-        assert False, (
-            f"Unexpected error, which may be due to bug or unexpected type checking!"
-        )
+        assert (
+            False
+        ), f"Unexpected error, which may be due to bug or unexpected type checking!"
     finally:
         for c in cn:
             if c in cprec:
@@ -87,12 +87,12 @@ def mix_precedence(sym, expected):
     no_paren = expected_str.replace("(", "").replace(")", "")
 
     if no_paren not in bad_strs:
-        assert False, (
-            "Unexpected result for __str__! This means there is type checking somewhere."
-        )
-    assert repr(sym) == expected_repr, (
-        "Your code did not get expected result for __repr__, might be type checking somewhere."
-    )
+        assert (
+            False
+        ), "Unexpected result for __str__! This means there is type checking somewhere."
+    assert (
+        repr(sym) == expected_repr
+    ), "Your code did not get expected result for __repr__, might be type checking somewhere."
 
 
 def with_mixed_up_symbols(test, do_symbols=True, do_names=True):
@@ -142,9 +142,9 @@ def with_mixed_up_symbols(test, do_symbols=True, do_names=True):
         except DisallowedFunctionException:
             raise
         except Exception as e:
-            assert False, (
-                f"Unexpected error, which may be due to bug or unexpected type checking!"
-            )
+            assert (
+                False
+            ), f"Unexpected error, which may be due to bug or unexpected type checking!"
         finally:
             for name, cls in oclasses.items():
                 setattr(lab, name, cls)
@@ -192,12 +192,12 @@ def with_no_type_checking(test):
         lab.isinstance = _disallowed
         try:
             test()
-            assert oii not in lab.__dict__.values(), (
-                f"You should not re-import isinstance in autocomplete_autocorrect.py!"
-            )
-            assert otype not in lab.__dict__.values(), (
-                f"You should not re-import type in autocomplete_autocorrect.py!"
-            )
+            assert (
+                oii not in lab.__dict__.values()
+            ), f"You should not re-import isinstance in autocomplete_autocorrect.py!"
+            assert (
+                otype not in lab.__dict__.values()
+            ), f"You should not re-import type in autocomplete_autocorrect.py!"
             assert builtins not in lab.__dict__.values(), f"No importing builtins!"
         except:
             raise
@@ -224,25 +224,25 @@ def test_style_binop():
         for left, right in (("x", "y"), (0.5, -0.5), (-1, "z"), ("z", 1.9)):
             obj = bin_class(left, right)
             name = obj.__class__.__name__
-            assert isinstance(obj.left, lab.Symbol), (
-                f"{name}({left=}, {right=}): left attribute is not a Symbol!"
-            )
-            assert isinstance(obj.right, lab.Symbol), (
-                f"{name}({left=}, {right=}): right attribute is not a Symbol!"
-            )
+            assert isinstance(
+                obj.left, lab.Symbol
+            ), f"{name}({left=}, {right=}): left attribute is not a Symbol!"
+            assert isinstance(
+                obj.right, lab.Symbol
+            ), f"{name}({left=}, {right=}): right attribute is not a Symbol!"
             with pytest.raises(Exception) as e:
                 bin_class.left
-            assert e.type == AttributeError, (
-                f"{name} has unexpected class attribute left {bin_class.left}"
-            )
+            assert (
+                e.type == AttributeError
+            ), f"{name} has unexpected class attribute left {bin_class.left}"
             with pytest.raises(Exception) as e:
                 bin_class.right
-            assert e.type == AttributeError, (
-                f"{name} has unexpected class attribute right {bin_class.right}"
-            )
-            assert len(dir(obj)) == len(dir(bin_class)) + 2, (
-                f"{bin_class} should only have 2 instance attributes!"
-            )
+            assert (
+                e.type == AttributeError
+            ), f"{name} has unexpected class attribute right {bin_class.right}"
+            assert (
+                len(dir(obj)) == len(dir(bin_class)) + 2
+            ), f"{bin_class} should only have 2 instance attributes!"
 
 
 def test_display_inheritance():
@@ -779,35 +779,35 @@ def test_style_attributes():
 
     for c, o in [(lab.Add, "+"), (lab.Sub, "-"), (lab.Mul, "*"), (lab.Div, "/")]:
         x = c("a", "b")
-        assert not any(getattr(x, att) == o for att in x.__dict__), (
-            f"Unexpected instance attribute storing operand {o!r}."
-        )
-        assert any(getattr(c, att) == o for att in dir(c)), (
-            f"Expected {c.__name__} to store operand {o!r} as class attribute!"
-        )
+        assert not any(
+            getattr(x, att) == o for att in x.__dict__
+        ), f"Unexpected instance attribute storing operand {o!r}."
+        assert any(
+            getattr(c, att) == o for att in dir(c)
+        ), f"Expected {c.__name__} to store operand {o!r} as class attribute!"
 
     for c in [lab.Var, lab.Num, lab.Add, lab.Sub, lab.Mul, lab.Div]:
         assert isinstance(c.precedence, (int, float))
         if c not in {lab.Var, lab.Num}:
-            assert isinstance(c.wrap_right_at_same_precedence, bool), (
-                f"{c} missing boolean class attribute wrap_right_at_same_precedence"
-            )
+            assert isinstance(
+                c.wrap_right_at_same_precedence, bool
+            ), f"{c} missing boolean class attribute wrap_right_at_same_precedence"
 
     x = lab.Symbol()
-    assert type(lab.Symbol.__init__) != type(lab.BinOp.__init__), (
-        f"Symbol class should have no init!"
-    )
-    assert len(dir(x)) == len(dir(lab.Symbol)), (
-        f"Symbol class should have no instance attributes!"
-    )
+    assert type(lab.Symbol.__init__) != type(
+        lab.BinOp.__init__
+    ), f"Symbol class should have no init!"
+    assert len(dir(x)) == len(
+        dir(lab.Symbol)
+    ), f"Symbol class should have no instance attributes!"
     x = lab.Var("x")
-    assert len(dir(x)) == len(dir(lab.Var)) + 1, (
-        f"Var class should only have one instance attribute!"
-    )
+    assert (
+        len(dir(x)) == len(dir(lab.Var)) + 1
+    ), f"Var class should only have one instance attribute!"
     x = lab.Num(2)
-    assert len(dir(x)) == len(dir(lab.Num)) + 1, (
-        f"Num class should only have one instance attribute!"
-    )
+    assert (
+        len(dir(x)) == len(dir(lab.Num)) + 1
+    ), f"Num class should only have one instance attribute!"
 
 
 def test_combinations_00():
@@ -904,9 +904,9 @@ def test_style_repetition():
                 "__truediv__",
                 "__rtruediv__",
             ]:
-                assert getattr(c1, f) == getattr(c2, f), (
-                    "Be careful to avoid unnecessary repetition!"
-                )
+                assert getattr(c1, f) == getattr(
+                    c2, f
+                ), "Be careful to avoid unnecessary repetition!"
 
 
 def make_eval_check(inp, vars, expected):
@@ -1277,18 +1277,18 @@ def test_eq_00():
     ]
 
     for e1, e2, exp in expressions:
-        assert (e1 == e2) is exp, (
-            f"{repr(e1)} == {repr(e2)} should be {exp} but got {not exp}!"
-        )
+        assert (
+            e1 == e2
+        ) is exp, f"{repr(e1)} == {repr(e2)} should be {exp} but got {not exp}!"
 
     for i, express1 in enumerate(expressions):
         for express2 in expressions[i + 1 :]:
-            assert express1[0] != express2[0], (
-                f"{repr(express1[0])} != {repr(express2[0])} but got True!"
-            )
-            assert express1[1] != express2[1], (
-                f"{repr(express1[1])} != {repr(express2[1])} but got True!"
-            )
+            assert (
+                express1[0] != express2[0]
+            ), f"{repr(express1[0])} != {repr(express2[0])} but got True!"
+            assert (
+                express1[1] != express2[1]
+            ), f"{repr(express1[1])} != {repr(express2[1])} but got True!"
 
     for c, o in [(lab.Add, "+"), (lab.Sub, "-"), (lab.Mul, "*"), (lab.Div, "/")]:
         assert lab.BinOp.__eq__ == c.__eq__, "Correct functionality but repetitive"
@@ -1529,9 +1529,9 @@ def test_simplify_00():
 
     result = lab.Div(lab.Var("x"), lab.Var("x"))
     expected = lab.Div(lab.Var("x"), lab.Var("x"))
-    assert symbol_rep(result.simplify()) == symbol_rep(expected), (
-        f"Make sure to not oversimplify!"
-    )
+    assert symbol_rep(result.simplify()) == symbol_rep(
+        expected
+    ), f"Make sure to not oversimplify!"
 
     result = lab.Div(lab.Var("x"), lab.Num(0))
     expected = lab.Div(lab.Var("x"), lab.Num(0))
@@ -1539,9 +1539,9 @@ def test_simplify_00():
 
     result = lab.Sub(lab.Var("x"), lab.Var("x"))
     expected = lab.Sub(lab.Var("x"), lab.Var("x"))
-    assert symbol_rep(result.simplify()) == symbol_rep(expected), (
-        f"Make sure to not oversimplify!"
-    )
+    assert symbol_rep(result.simplify()) == symbol_rep(
+        expected
+    ), f"Make sure to not oversimplify!"
 
     result = lab.Sub(lab.Num(0), lab.Var("x"))
     expected = lab.Sub(lab.Num(0), lab.Var("x"))
@@ -1549,15 +1549,15 @@ def test_simplify_00():
 
     result = lab.Add(lab.Var("x"), lab.Var("x"))
     expected = lab.Add(lab.Var("x"), lab.Var("x"))
-    assert symbol_rep(result.simplify()) == symbol_rep(expected), (
-        f"Make sure to not oversimplify!"
-    )
+    assert symbol_rep(result.simplify()) == symbol_rep(
+        expected
+    ), f"Make sure to not oversimplify!"
 
     result = lab.Mul(lab.Var("x"), lab.Var("x"))
     expected = lab.Mul(lab.Var("x"), lab.Var("x"))
-    assert symbol_rep(result.simplify()) == symbol_rep(expected), (
-        f"Make sure to not oversimplify!"
-    )
+    assert symbol_rep(result.simplify()) == symbol_rep(
+        expected
+    ), f"Make sure to not oversimplify!"
 
 
 def test_simplify_01():
@@ -1565,201 +1565,201 @@ def test_simplify_01():
     result = lab.Add(lab.Num(0), lab.Mul(lab.Var("y"), lab.Num(2)))
     expected = lab.Mul(lab.Var("y"), lab.Num(2))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Add(lab.Mul(lab.Var("z"), lab.Num(3)), lab.Num(0))
     result = lab.Add(lab.Mul(lab.Var("z"), lab.Num(3)), lab.Num(0))
     expected = lab.Mul(lab.Var("z"), lab.Num(3))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Mul(lab.Num(1), lab.Add(lab.Var("A"), lab.Var("x")))
     result = lab.Mul(lab.Num(1), lab.Add(lab.Var("A"), lab.Var("x")))
     expected = lab.Add(lab.Var("A"), lab.Var("x"))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Mul(lab.Sub(lab.Var("x"), lab.Var("A")), lab.Num(1))
     result = lab.Mul(lab.Sub(lab.Var("x"), lab.Var("A")), lab.Num(1))
     expected = lab.Sub(lab.Var("x"), lab.Var("A"))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Sub(lab.Mul(lab.Var("x"), lab.Num(3)), lab.Num(0))
     result = lab.Sub(lab.Mul(lab.Var("x"), lab.Num(3)), lab.Num(0))
     expected = lab.Mul(lab.Var("x"), lab.Num(3))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Div(lab.Mul(lab.Num(7), lab.Var("A")), lab.Num(1))
     result = lab.Div(lab.Mul(lab.Num(7), lab.Var("A")), lab.Num(1))
     expected = lab.Mul(lab.Num(7), lab.Var("A"))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Div(lab.Num(0), lab.Add(lab.Var("A"), lab.Num(3)))
     result = lab.Div(lab.Num(0), lab.Add(lab.Var("A"), lab.Num(3)))
     expected = lab.Num(0)
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Mul(lab.Add(lab.Num(0), lab.Var("x")), lab.Var("z"))
     result = lab.Mul(lab.Add(lab.Num(0), lab.Var("x")), lab.Var("z"))
     expected = lab.Mul(lab.Var("x"), lab.Var("z"))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Sub(lab.Add(lab.Var("x"), lab.Num(0)), lab.Var("A"))
     result = lab.Sub(lab.Add(lab.Var("x"), lab.Num(0)), lab.Var("A"))
     expected = lab.Sub(lab.Var("x"), lab.Var("A"))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Add(lab.Mul(lab.Num(1), lab.Var("x")), lab.Var("y"))
     result = lab.Add(lab.Mul(lab.Num(1), lab.Var("x")), lab.Var("y"))
     expected = lab.Add(lab.Var("x"), lab.Var("y"))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Add(lab.Var("z"), lab.Mul(lab.Var("x"), lab.Num(1)))
     result = lab.Add(lab.Var("z"), lab.Mul(lab.Var("x"), lab.Num(1)))
     expected = lab.Add(lab.Var("z"), lab.Var("x"))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Sub(lab.Var("A"), lab.Sub(lab.Var("x"), lab.Num(0)))
     result = lab.Sub(lab.Var("A"), lab.Sub(lab.Var("x"), lab.Num(0)))
     expected = lab.Sub(lab.Var("A"), lab.Var("x"))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Div(lab.Var("y"), lab.Div(lab.Var("x"), lab.Num(1)))
     result = lab.Div(lab.Var("y"), lab.Div(lab.Var("x"), lab.Num(1)))
     expected = lab.Div(lab.Var("y"), lab.Var("x"))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Mul(lab.Var("z"), lab.Div(lab.Num(0), lab.Var("x")))
     result = lab.Mul(lab.Var("z"), lab.Div(lab.Num(0), lab.Var("x")))
     expected = lab.Num(0)
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Add(lab.Mul(lab.Num(0), lab.Var("y")), lab.Var("x"))
     result = lab.Add(lab.Mul(lab.Num(0), lab.Var("y")), lab.Var("x"))
     expected = lab.Var("x")
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Add(lab.Var("x"), lab.Sub(lab.Num(2), lab.Num(2)))
     result = lab.Add(lab.Var("x"), lab.Sub(lab.Num(2), lab.Num(2)))
     expected = lab.Var("x")
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Mul(lab.Div(lab.Num(2), lab.Num(2)), lab.Var("x"))
     result = lab.Mul(lab.Div(lab.Num(2), lab.Num(2)), lab.Var("x"))
     expected = lab.Var("x")
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Mul(lab.Var("x"), lab.Sub(lab.Num(3), lab.Num(2)))
     result = lab.Mul(lab.Var("x"), lab.Sub(lab.Num(3), lab.Num(2)))
     expected = lab.Var("x")
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Sub(lab.Var("x"), lab.Mul(lab.Num(0), lab.Var("z")))
     result = lab.Sub(lab.Var("x"), lab.Mul(lab.Num(0), lab.Var("z")))
     expected = lab.Var("x")
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Div(lab.Var("x"), lab.Num(1))
     result = lab.Div(lab.Var("x"), lab.Num(1))
     expected = lab.Var("x")
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Div(lab.Add(lab.Num(0), lab.Num(0)), lab.Var("x"))
     result = lab.Div(lab.Add(lab.Num(0), lab.Num(0)), lab.Var("x"))
     expected = lab.Num(0)
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = read_expected("123_in.pyobj")
     result = read_expected("123_in.pyobj")
     expected = lab.Num(800)
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Sub(lab.Add(lab.Num(70), lab.Num(50)), lab.Num(80))
     result = lab.Sub(lab.Add(lab.Num(70), lab.Num(50)), lab.Num(80))
     expected = lab.Num(40)
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Sub(lab.Num(80), lab.Div(lab.Num(40), lab.Num(20)))
     result = lab.Sub(lab.Num(80), lab.Div(lab.Num(40), lab.Num(20)))
     expected = lab.Num(78.0)
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = read_expected("126_in.pyobj")
     result = read_expected("126_in.pyobj")
     expected = lab.Add(lab.Num(20), lab.Mul(lab.Num(101), lab.Var("z")))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
 
 def test_simplify_02():
@@ -1767,97 +1767,97 @@ def test_simplify_02():
     result = lab.Sub(lab.Num(1), lab.Var("L"))
     expected = lab.Sub(lab.Num(1), lab.Var("L"))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Add(lab.Var("b"), lab.Num(1))
     result = lab.Add(lab.Var("b"), lab.Num(1))
     expected = lab.Add(lab.Var("b"), lab.Num(1))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = read_expected("129_in.pyobj")
     result = read_expected("129_in.pyobj")
     expected = read_expected("129_out.pyobj")
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = read_expected("130_in.pyobj")
     result = read_expected("130_in.pyobj")
     expected = read_expected("130_out.pyobj")
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = read_expected("131_in.pyobj")
     result = read_expected("131_in.pyobj")
     expected = lab.Sub(lab.Div(lab.Num(-1), lab.Var("I")), lab.Num(-1))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = read_expected("132_in.pyobj")
     result = read_expected("132_in.pyobj")
     expected = read_expected("132_out.pyobj")
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Div(lab.Var("M"), lab.Var("D"))
     result = lab.Div(lab.Var("M"), lab.Var("D"))
     expected = lab.Div(lab.Var("M"), lab.Var("D"))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = read_expected("134_in.pyobj")
     result = read_expected("134_in.pyobj")
     expected = read_expected("134_out.pyobj")
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = read_expected("135_in.pyobj")
     result = read_expected("135_in.pyobj")
     expected = read_expected("135_out.pyobj")
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = read_expected("136_in.pyobj")
     result = read_expected("136_in.pyobj")
     expected = read_expected("136_out.pyobj")
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = read_expected("137_in.pyobj")
     result = read_expected("137_in.pyobj")
     expected = read_expected("137_out.pyobj")
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
     result_copy = lab.Div(lab.Add(lab.Num(1), lab.Var("Q")), lab.Var("k"))
     result = lab.Div(lab.Add(lab.Num(1), lab.Var("Q")), lab.Var("k"))
     expected = lab.Div(lab.Add(lab.Num(1), lab.Var("Q")), lab.Var("k"))
     assert symbol_rep(result.simplify()) == symbol_rep(expected)
-    assert symbol_rep(result) == symbol_rep(result_copy), (
-        f"Input to simplify should not be mutated!"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        result_copy
+    ), f"Input to simplify should not be mutated!"
 
 
 def test_simplify_style():
