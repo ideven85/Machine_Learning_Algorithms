@@ -1,0 +1,1152 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Semantic Processing",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          173.91796875,
+          75.6697998046875
+        ],
+        [
+          442.1826477050781,
+          75.6697998046875
+        ],
+        [
+          442.1826477050781,
+          101.664794921875
+        ],
+        [
+          173.91796875,
+          101.664794921875
+        ]
+      ]
+    },
+    {
+      "title": "Introduction to Semantic Processing",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          108.0,
+          258.10260009765625
+        ],
+        [
+          513.7977294921875,
+          258.10260009765625
+        ],
+        [
+          513.7977294921875,
+          281.0976257324219
+        ],
+        [
+          108.0,
+          281.0976257324219
+        ]
+      ]
+    },
+    {
+      "title": "Concepts and Terms",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          72.0,
+          313.6026306152344
+        ],
+        [
+          289.2413635253906,
+          313.6026306152344
+        ],
+        [
+          289.2413635253906,
+          336.5976257324219
+        ],
+        [
+          72.0,
+          336.5976257324219
+        ]
+      ]
+    },
+    {
+      "title": "Entity and Entity Types",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          72.0,
+          659.7421875
+        ],
+        [
+          307.1437072753906,
+          659.7421875
+        ],
+        [
+          307.1437072753906,
+          683.0976181030273
+        ],
+        [
+          72.0,
+          683.0976181030273
+        ]
+      ]
+    },
+    {
+      "title": "Arity and Reification",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          69.92578125,
+          369.1026306152344
+        ],
+        [
+          280.7308654785156,
+          369.1026306152344
+        ],
+        [
+          280.7308654785156,
+          392.0976257324219
+        ],
+        [
+          69.92578125,
+          392.0976257324219
+        ]
+      ]
+    },
+    {
+      "title": "Schema",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          71.419921875,
+          129.10260009765625
+        ],
+        [
+          160.60565185546875,
+          129.10260009765625
+        ],
+        [
+          160.60565185546875,
+          152.09759521484375
+        ],
+        [
+          71.419921875,
+          152.09759521484375
+        ]
+      ]
+    },
+    {
+      "title": "Semantic Associations",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          71.12109375,
+          280.37109375
+        ],
+        [
+          307.13665771484375,
+          280.37109375
+        ],
+        [
+          307.13665771484375,
+          303.5976257324219
+        ],
+        [
+          71.12109375,
+          303.5976257324219
+        ]
+      ]
+    },
+    {
+      "title": "Aboutness",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          70.822265625,
+          365.0271301269531
+        ],
+        [
+          150.2578887939453,
+          365.0271301269531
+        ],
+        [
+          150.2578887939453,
+          381.0246276855469
+        ],
+        [
+          70.822265625,
+          381.0246276855469
+        ]
+      ]
+    },
+    {
+      "title": "Databases - WordNet and ConceptNet",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          72.0,
+          204.10260009765625
+        ],
+        [
+          467.7226867675781,
+          204.10260009765625
+        ],
+        [
+          467.7226867675781,
+          227.09759521484375
+        ],
+        [
+          72.0,
+          227.09759521484375
+        ]
+      ]
+    },
+    {
+      "title": "Word Sense Disambiguation - Naive Bayes",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          70.5234375,
+          370.6026306152344
+        ],
+        [
+          516.7160034179688,
+          370.6026306152344
+        ],
+        [
+          516.7160034179688,
+          393.5976257324219
+        ],
+        [
+          70.5234375,
+          393.5976257324219
+        ]
+      ]
+    },
+    {
+      "title": "Word Sense Disambiguation - Lesk Algorithm",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          70.5234375,
+          552.1026153564453
+        ],
+        [
+          542.2613525390625,
+          552.1026153564453
+        ],
+        [
+          542.2613525390625,
+          575.0976257324219
+        ],
+        [
+          70.5234375,
+          575.0976257324219
+        ]
+      ]
+    },
+    {
+      "title": "Summary",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          72.0,
+          99.10260009765625
+        ],
+        [
+          174.2018585205078,
+          99.10260009765625
+        ],
+        [
+          174.2018585205078,
+          122.203125
+        ],
+        [
+          72.0,
+          122.203125
+        ]
+      ]
+    },
+    {
+      "title": "Distributional Semantics",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          144.0,
+          528.8526306152344
+        ],
+        [
+          417.8342590332031,
+          528.8526306152344
+        ],
+        [
+          417.8342590332031,
+          551.8476257324219
+        ],
+        [
+          144.0,
+          551.8476257324219
+        ]
+      ]
+    },
+    {
+      "title": "Introduction to Distributional Semantics",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          72.0,
+          584.3526153564453
+        ],
+        [
+          474.5597839355469,
+          584.3526153564453
+        ],
+        [
+          474.5597839355469,
+          607.3476257324219
+        ],
+        [
+          72.0,
+          607.3476257324219
+        ]
+      ]
+    },
+    {
+      "title": "Occurrence Matrix",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          71.71875,
+          204.10260009765625
+        ],
+        [
+          263.64459228515625,
+          204.10260009765625
+        ],
+        [
+          263.64459228515625,
+          227.09759521484375
+        ],
+        [
+          71.71875,
+          227.09759521484375
+        ]
+      ]
+    },
+    {
+      "title": "Co-occurrence Matrix",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          71.71875,
+          565.6026153564453
+        ],
+        [
+          295.5956726074219,
+          565.6026153564453
+        ],
+        [
+          295.5956726074219,
+          588.5976257324219
+        ],
+        [
+          71.71875,
+          588.5976257324219
+        ]
+      ]
+    },
+    {
+      "title": "2. Skip-grams (x-skip-n-grams):",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          88.453125,
+          118.58380126953125
+        ],
+        [
+          261.9203796386719,
+          118.58380126953125
+        ],
+        [
+          261.9203796386719,
+          129.9375
+        ],
+        [
+          88.453125,
+          129.9375
+        ]
+      ]
+    },
+    {
+      "title": "Word Vectors",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          69.92578125,
+          204.10260009765625
+        ],
+        [
+          215.1005401611328,
+          204.10260009765625
+        ],
+        [
+          215.1005401611328,
+          227.09759521484375
+        ],
+        [
+          69.92578125,
+          227.09759521484375
+        ]
+      ]
+    },
+    {
+      "title": "1. Occurrence context:",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          88.751953125,
+          254.07421875
+        ],
+        [
+          215.3057861328125,
+          254.07421875
+        ],
+        [
+          215.3057861328125,
+          269.14581298828125
+        ],
+        [
+          88.751953125,
+          269.14581298828125
+        ]
+      ]
+    },
+    {
+      "title": "2. Skipgrams:",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          89.349609375,
+          299.70703125
+        ],
+        [
+          168.2669677734375,
+          299.70703125
+        ],
+        [
+          168.2669677734375,
+          314.1457824707031
+        ],
+        [
+          89.349609375,
+          314.1457824707031
+        ]
+      ]
+    },
+    {
+      "title": "Word Embeddings",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          70.5234375,
+          400.25390625
+        ],
+        [
+          264.9693603515625,
+          400.25390625
+        ],
+        [
+          264.9693603515625,
+          423.5976257324219
+        ],
+        [
+          70.5234375,
+          423.5976257324219
+        ]
+      ]
+    },
+    {
+      "title": "Latent Semantic Analysis (LSA)",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          71.71875,
+          99.10260009765625
+        ],
+        [
+          397.8695983886719,
+          99.10260009765625
+        ],
+        [
+          397.8695983886719,
+          122.09759521484375
+        ],
+        [
+          71.71875,
+          122.09759521484375
+        ]
+      ]
+    },
+    {
+      "title": "Skipgram Model",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          71.12109375,
+          400.25390625
+        ],
+        [
+          239.81918334960938,
+          400.25390625
+        ],
+        [
+          239.81918334960938,
+          423.5976257324219
+        ],
+        [
+          71.12109375,
+          423.5976257324219
+        ]
+      ]
+    },
+    {
+      "title": "Word2Vec",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          71.12109375,
+          566.9296875
+        ],
+        [
+          183.1719512939453,
+          566.9296875
+        ],
+        [
+          183.1719512939453,
+          590.0976257324219
+        ],
+        [
+          71.12109375,
+          590.0976257324219
+        ]
+      ]
+    },
+    {
+      "title": "Continuous Bag-of-Words (CBOW)",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          71.12109375,
+          242.47265625
+        ],
+        [
+          338.28668212890625,
+          242.47265625
+        ],
+        [
+          338.28668212890625,
+          259.71319580078125
+        ],
+        [
+          71.12109375,
+          259.71319580078125
+        ]
+      ]
+    },
+    {
+      "title": "Glove Embeddings",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          71.419921875,
+          373.95703125
+        ],
+        [
+          218.4046173095703,
+          373.95703125
+        ],
+        [
+          218.4046173095703,
+          390.9632263183594
+        ],
+        [
+          71.419921875,
+          390.9632263183594
+        ]
+      ]
+    },
+    {
+      "title": "Basics of Topic Modelling with ESA",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          72.0,
+          675.2109375
+        ],
+        [
+          432.343505859375,
+          675.2109375
+        ],
+        [
+          432.343505859375,
+          699.5976181030273
+        ],
+        [
+          72.0,
+          699.5976181030273
+        ]
+      ]
+    },
+    {
+      "title": "Introduction to Probabilistic Latent Semantics\nAnalysis (PLSA)",
+      "heading_level": null,
+      "page_id": 10,
+      "polygon": [
+        [
+          70.5234375,
+          444.1026306152344
+        ],
+        [
+          535.9246826171875,
+          444.1026306152344
+        ],
+        [
+          535.9246826171875,
+          501.1875
+        ],
+        [
+          70.5234375,
+          501.1875
+        ]
+      ]
+    },
+    {
+      "title": "Summary",
+      "heading_level": null,
+      "page_id": 12,
+      "polygon": [
+        [
+          72.0,
+          99.10260009765625
+        ],
+        [
+          174.2018585205078,
+          99.10260009765625
+        ],
+        [
+          174.2018585205078,
+          122.58984375
+        ],
+        [
+          72.0,
+          122.58984375
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          544
+        ],
+        [
+          "Line",
+          24
+        ],
+        [
+          "Text",
+          7
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "ListItem",
+          3
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          741
+        ],
+        [
+          "Line",
+          31
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "ListItem",
+          3
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          767
+        ],
+        [
+          "Line",
+          31
+        ],
+        [
+          "Text",
+          7
+        ],
+        [
+          "ListItem",
+          5
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          635
+        ],
+        [
+          "Line",
+          27
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "SectionHeader",
+          3
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          497
+        ],
+        [
+          "Line",
+          22
+        ],
+        [
+          "Text",
+          7
+        ],
+        [
+          "SectionHeader",
+          3
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          697
+        ],
+        [
+          "Line",
+          30
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "ListItem",
+          2
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          640
+        ],
+        [
+          "Line",
+          33
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "SectionHeader",
+          5
+        ],
+        [
+          "ListItem",
+          2
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          603
+        ],
+        [
+          "Line",
+          26
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "SectionHeader",
+          3
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 8,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          549
+        ],
+        [
+          "Line",
+          19
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 9,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          725
+        ],
+        [
+          "Line",
+          31
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "ListItem",
+          2
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 10,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          610
+        ],
+        [
+          "Line",
+          27
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "ListItem",
+          3
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 11,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          459
+        ],
+        [
+          "Line",
+          19
+        ],
+        [
+          "Text",
+          5
+        ],
+        [
+          "ListItem",
+          2
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "PictureGroup",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 12,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          577
+        ],
+        [
+          "Line",
+          26
+        ],
+        [
+          "Text",
+          5
+        ],
+        [
+          "ListItem",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/3. Semantic Processing"
+}
