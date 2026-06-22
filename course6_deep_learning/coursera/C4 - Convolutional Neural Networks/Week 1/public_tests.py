@@ -327,14 +327,14 @@ def conv_forward_test(target):
     hparameters = {"pad": 1, "stride": 2}
     Z, cache_conv = target(A_prev, W, b, {"pad": 3, "stride": 1})
     Z_shape = Z.shape
-    assert (
-        Z_shape[0] == A_prev.shape[0]
-    ), f"m is wrong. Current: {Z_shape[0]}.  Expected: {A_prev.shape[0]}"
+    assert Z_shape[0] == A_prev.shape[0], (
+        f"m is wrong. Current: {Z_shape[0]}.  Expected: {A_prev.shape[0]}"
+    )
     assert Z_shape[1] == 9, f"n_H is wrong. Current: {Z_shape[1]}.  Expected: 9"
     assert Z_shape[2] == 11, f"n_W is wrong. Current: {Z_shape[2]}.  Expected: 11"
-    assert (
-        Z_shape[3] == W.shape[3]
-    ), f"n_C is wrong. Current: {Z_shape[3]}.  Expected: {W.shape[3]}"
+    assert Z_shape[3] == W.shape[3], (
+        f"n_C is wrong. Current: {Z_shape[3]}.  Expected: {W.shape[3]}"
+    )
 
     Z, cache_conv = target(A_prev, W, b, {"pad": 0, "stride": 2})
     assert Z.shape == (
@@ -640,14 +640,14 @@ def pool_forward_test(target):
     A_prev = np.random.randn(2, 5, 7, 3)
     A, cache = target(A_prev, {"stride": 2, "f": 2}, mode="average")
     A_shape = A.shape
-    assert (
-        A_shape[0] == A_prev.shape[0]
-    ), f"m is wrong. Current: {A_shape[0]}.  Expected: {A_prev.shape[0]}"
+    assert A_shape[0] == A_prev.shape[0], (
+        f"m is wrong. Current: {A_shape[0]}.  Expected: {A_prev.shape[0]}"
+    )
     assert A_shape[1] == 2, f"n_H is wrong. Current: {A_shape[1]}.  Expected: 2"
     assert A_shape[2] == 3, f"n_W is wrong. Current: {A_shape[2]}.  Expected: 3"
-    assert (
-        A_shape[3] == A_prev.shape[3]
-    ), f"n_C is wrong. Current: {A_shape[3]}.  Expected: {A_prev.shape[3]}"
+    assert A_shape[3] == A_prev.shape[3], (
+        f"n_C is wrong. Current: {A_shape[3]}.  Expected: {A_prev.shape[3]}"
+    )
 
     np.random.seed(1)
     A_prev = np.random.randn(2, 5, 5, 3)

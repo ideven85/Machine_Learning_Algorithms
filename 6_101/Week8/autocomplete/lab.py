@@ -330,7 +330,9 @@ def dictify(t):
     assert set(t.__dict__) == {
         "value",
         "children",
-    }, "PrefixTree instances should only contain the two instance attributes mentioned in the lab writeup."
+    }, (
+        "PrefixTree instances should only contain the two instance attributes mentioned in the lab writeup."
+    )
     out = {"value": t.value, "children": {}}
     for ch, child in t.children.items():
         out["children"][ch] = dictify(child)

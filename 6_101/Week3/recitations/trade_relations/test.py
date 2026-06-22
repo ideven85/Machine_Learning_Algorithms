@@ -27,37 +27,37 @@ def setup_module(module):
 
 
 def compare_lists(x, y, test_name, db_name):
-    assert len(x) == len(
-        y
-    ), f"Failure while testing {test_name} with {db_name} db:\n Expected list of length {len(x)} but got {len(y)}"
-    assert isinstance(
-        x, type(y)
-    ), f"Failure while testing {test_name} with {db_name} db:\n Expected type {type(x)} but got {type(y)}"
+    assert len(x) == len(y), (
+        f"Failure while testing {test_name} with {db_name} db:\n Expected list of length {len(x)} but got {len(y)}"
+    )
+    assert isinstance(x, type(y)), (
+        f"Failure while testing {test_name} with {db_name} db:\n Expected type {type(x)} but got {type(y)}"
+    )
     copy = [t for t in x]
     for i, item in enumerate(y):
-        assert (
-            item in copy
-        ), f"Failure while testing {test_name} with {db_name} db:\n Element at index {i}: {item} not found in expected result"
+        assert item in copy, (
+            f"Failure while testing {test_name} with {db_name} db:\n Element at index {i}: {item} not found in expected result"
+        )
         copy.remove(item)
 
 
 def compare_sets(x, y, test_name, db_name):
-    assert len(x) == len(
-        y
-    ), f"Failure while testing {test_name} with {db_name} db:\n Expected set of length {len(x)} but got {len(y)}"
-    assert isinstance(
-        x, type(y)
-    ), f"Failure while testing {test_name} with {db_name} db:\n Expected type {type(x)} but got {type(y)}"
+    assert len(x) == len(y), (
+        f"Failure while testing {test_name} with {db_name} db:\n Expected set of length {len(x)} but got {len(y)}"
+    )
+    assert isinstance(x, type(y)), (
+        f"Failure while testing {test_name} with {db_name} db:\n Expected type {type(x)} but got {type(y)}"
+    )
     for item in y:
-        assert (
-            item in x
-        ), f"Failure while testing {test_name} with {db_name} db:\n Item {item} not found in expected result"
+        assert item in x, (
+            f"Failure while testing {test_name} with {db_name} db:\n Item {item} not found in expected result"
+        )
 
 
 def compare_dictionary(x, y, test_name, db_name):
-    assert len(x) == len(
-        y
-    ), f"Failure while testing {test_name} with {db_name} db:\n Expected {len(x)} number of keys but got {len(y)}"
+    assert len(x) == len(y), (
+        f"Failure while testing {test_name} with {db_name} db:\n Expected {len(x)} number of keys but got {len(y)}"
+    )
     compare_sets(set(x.keys()), set(y.keys()), test_name, db_name)
 
     for key in y:
@@ -67,16 +67,16 @@ def compare_dictionary(x, y, test_name, db_name):
             try:
                 compare_lists(expected, result_values, test_name, db_name)
             except BaseException:
-                assert (
-                    False
-                ), f"Failure while testing {test_name} with {db_name} db:\n Expected key {key} to have value {expected} but got {result_values}"
+                assert False, (
+                    f"Failure while testing {test_name} with {db_name} db:\n Expected key {key} to have value {expected} but got {result_values}"
+                )
         if isinstance(expected, set):
             try:
                 compare_sets(expected, result_values, test_name, db_name)
             except BaseException:
-                assert (
-                    False
-                ), f"Failure while testing {test_name} with {db_name} db:\n Expected key {key} to have value {expected} but got {result_values}"
+                assert False, (
+                    f"Failure while testing {test_name} with {db_name} db:\n Expected key {key} to have value {expected} but got {result_values}"
+                )
 
 
 def test_transform_list_pairs():
@@ -127,30 +127,30 @@ def test_oneway_loop():
         oneway_relations = test_results["oneway_relations"][db_name]
         for state, expected in test_results[test_name][db_name]:
             result = practice.oneway_loop(db, state)
-            assert isinstance(
-                expected, type(result)
-            ), f"Failure while testing {test_name} with {db_name} db:\n With state {state} expected type {type(expected)} but got {type(result)}"
+            assert isinstance(expected, type(result)), (
+                f"Failure while testing {test_name} with {db_name} db:\n With state {state} expected type {type(expected)} but got {type(result)}"
+            )
             if isinstance(expected, list):
                 try:
                     compare_lists(expected, result, test_name, db_name)
                 except BaseException:
-                    assert len(expected) == len(
-                        result
-                    ), f"Failure while testing {test_name} with {db_name} db:\n With state {state} expected path of length {len(expected)} but got {len(result)}"
+                    assert len(expected) == len(result), (
+                        f"Failure while testing {test_name} with {db_name} db:\n With state {state} expected path of length {len(expected)} but got {len(result)}"
+                    )
                     # if the lists are not the same, but the same length, check
                     # that it represents a valid path
-                    assert (
-                        result[0] == expected[0]
-                    ), f"Failure while testing {test_name} with {db_name} db:\n Expected path to start at state {state} but got {result[0]}"
-                    assert (
-                        result[-1] == expected[-1]
-                    ), f"Failure while testing {test_name} with {db_name} db:\n Expected path to end at state {state} but got {result[-1]}"
+                    assert result[0] == expected[0], (
+                        f"Failure while testing {test_name} with {db_name} db:\n Expected path to start at state {state} but got {result[0]}"
+                    )
+                    assert result[-1] == expected[-1], (
+                        f"Failure while testing {test_name} with {db_name} db:\n Expected path to end at state {state} but got {result[-1]}"
+                    )
                     for i in range(len(result) - 1):
                         cur_state = result[i]
                         next_state = result[i + 1]
-                        assert next_state in oneway_relations.get(
-                            cur_state, []
-                        ), f"Failure while testing {test_name} with {db_name} db:\n Path found for state {state} is not a valid oneway path {result}"
+                        assert next_state in oneway_relations.get(cur_state, []), (
+                            f"Failure while testing {test_name} with {db_name} db:\n Path found for state {state} is not a valid oneway path {result}"
+                        )
 
 
 if __name__ == "__main__":

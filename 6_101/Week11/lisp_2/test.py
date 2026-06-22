@@ -529,9 +529,9 @@ def test_file_repl():
             res = get_output()
             try:
                 assert out(res), repr(inp) + repr(res)
-                assert out(
-                    res
-                ), "unexpected output from REPL!  did you implement loading files?"
+                assert out(res), (
+                    "unexpected output from REPL!  did you implement loading files?"
+                )
             except:
                 p.terminate()
                 p.wait(1)

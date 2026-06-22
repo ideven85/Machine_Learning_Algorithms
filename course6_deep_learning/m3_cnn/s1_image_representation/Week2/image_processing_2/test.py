@@ -24,16 +24,17 @@ def compare_greyscale_images(im1, im2):
     }, "Incorrect keys in dictionary"
     assert im1["height"] == im2["height"], "Heights must match"
     assert im1["width"] == im2["width"], "Widths must match"
-    assert (
-        len(im1["pixels"]) == im1["height"] * im1["width"]
-    ), "Incorrect number of pixels"
+    assert len(im1["pixels"]) == im1["height"] * im1["width"], (
+        "Incorrect number of pixels"
+    )
     pix_incorrect = (None, None)
     for ix, (i, j) in enumerate(zip(im1["pixels"], im2["pixels"])):
-        assert (
-            i == j
-        ), "Incorrect value at location %s (differs from expected by %s)" % (
-            ix,
-            abs(i - j),
+        assert i == j, (
+            "Incorrect value at location %s (differs from expected by %s)"
+            % (
+                ix,
+                abs(i - j),
+            )
         )
 
 
@@ -45,23 +46,24 @@ def compare_color_images(im1, im2):
     }, "Incorrect keys in dictionary"
     assert im1["height"] == im2["height"], "Heights must match"
     assert im1["width"] == im2["width"], "Widths must match"
-    assert (
-        len(im1["pixels"]) == im1["height"] * im1["width"]
-    ), "Incorrect number of pixels"
-    assert all(
-        isinstance(i, tuple) and len(i) == 3 for i in im1["pixels"]
-    ), "Pixels must all be 3-tuples"
-    assert all(
-        0 <= subi <= 255 for i in im1["pixels"] for subi in i
-    ), "Pixels values must all be in the range from [0, 255]"
+    assert len(im1["pixels"]) == im1["height"] * im1["width"], (
+        "Incorrect number of pixels"
+    )
+    assert all(isinstance(i, tuple) and len(i) == 3 for i in im1["pixels"]), (
+        "Pixels must all be 3-tuples"
+    )
+    assert all(0 <= subi <= 255 for i in im1["pixels"] for subi in i), (
+        "Pixels values must all be in the range from [0, 255]"
+    )
     pix_incorrect = (None, None)
     for ix, (i, j) in enumerate(zip(im1["pixels"], im2["pixels"])):
         if i != j:
-            assert (
-                False
-            ), "Incorrect value at location %s (differs from expected by %s)" % (
-                ix,
-                tuple(abs(i[t] - j[t]) for t in {0, 1, 2}),
+            assert False, (
+                "Incorrect value at location %s (differs from expected by %s)"
+                % (
+                    ix,
+                    tuple(abs(i[t] - j[t]) for t in {0, 1, 2}),
+                )
             )
 
 
@@ -200,9 +202,9 @@ def test_load_color():
 def test_color_filter_inverted():
     im = load_color_image("test_images/centered_pixel.png")
     color_inverted = lab.color_filter_from_greyscale_filter(lab.inverted)
-    assert callable(
-        color_inverted
-    ), "color_filter_from_greyscale_filter should return a function."
+    assert callable(color_inverted), (
+        "color_filter_from_greyscale_filter should return a function."
+    )
     result = color_inverted(im)
     expected = {
         "height": 11,
@@ -337,9 +339,9 @@ def test_color_filter_inverted():
 def test_color_filter_edges():
     im = load_color_image("test_images/centered_pixel.png")
     color_edges = lab.color_filter_from_greyscale_filter(lab.edges)
-    assert callable(
-        color_edges
-    ), "color_filter_from_greyscale_filter should return a function."
+    assert callable(color_edges), (
+        "color_filter_from_greyscale_filter should return a function."
+    )
     result = color_edges(im)
     expected = {
         "height": 11,
@@ -480,9 +482,9 @@ def test_color_filter_images(fname, filter_name):
     im = load_color_image(inpfile)
     oim = object_hash(im)
     color_filter = lab.color_filter_from_greyscale_filter(filter_)
-    assert callable(
-        color_filter
-    ), "color_filter_from_greyscale_filter should return a function."
+    assert callable(color_filter), (
+        "color_filter_from_greyscale_filter should return a function."
+    )
     result = color_filter(im)
     expected = load_color_image(expfile)
     assert object_hash(im) == oim, "Be careful not to modify the original image!"

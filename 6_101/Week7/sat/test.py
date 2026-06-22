@@ -232,9 +232,9 @@ def _get_sudoku(n):
 
 def _run_sudoku_test(n, original):
     result = lab.satisfying_assignment(_get_sudoku(n))
-    assert (
-        result is not None
-    ), "There is a valid sudoku solution, but you returned None."
+    assert result is not None, (
+        "There is a valid sudoku solution, but you returned None."
+    )
     _check_sudoku(original, _assignment_to_grid(result))
 
 
@@ -355,17 +355,17 @@ def _scheduling_satisfiable(casename=None, students=None, sessions=None):
         if val:
             student, session = var.split("_")
 
-            assert (
-                student in unplaced_students
-            ), "Students should be assigned at most one session."
+            assert student in unplaced_students, (
+                "Students should be assigned at most one session."
+            )
             unplaced_students.remove(student)
 
             assert student in students, "This is not a valid classroom."
             assert session in sessions, "This is not a valid session."
 
-            assert (
-                session in students[student]
-            ), "Student should be assigned a desired session."
+            assert session in students[student], (
+                "Student should be assigned a desired session."
+            )
 
             assert sessions[session] >= 1, "This session is over-capacity."
             sessions[session] -= 1

@@ -22,9 +22,9 @@ def test_my_flatten():
     y = [[[[[[[1, 2, 3]]]]], 4], 5]
     z = [[[[[[[[[[[1]]]]]]]]]]]
 
-    assert isinstance(
-        flatten(x), types.GeneratorType
-    ), f"my_zip should produce a generator!"
+    assert isinstance(flatten(x), types.GeneratorType), (
+        f"my_zip should produce a generator!"
+    )
     assert list(flatten(x)) == [1, 2, 3, 4]
     assert list(flatten(y)) == [1, 2, 3, 4, 5]
     assert list(flatten(z)) == [1]

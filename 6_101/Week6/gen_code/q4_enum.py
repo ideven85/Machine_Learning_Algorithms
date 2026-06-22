@@ -27,9 +27,9 @@ def test_my_enumerate():
 
     x = range(5, 10)
     x1, x2 = f(x), my_enumerate(x)
-    assert isinstance(
-        x2, types.GeneratorType
-    ), f"My enumerate should produce a generator!"
+    assert isinstance(x2, types.GeneratorType), (
+        f"My enumerate should produce a generator!"
+    )
     assert list(x1) == list(x2)
     # check that the generator is exhausted
     assert list(x1) == list(x2)
