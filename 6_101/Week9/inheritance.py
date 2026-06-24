@@ -7,7 +7,7 @@ class A:
 
 
 class B(A):
-    x = "bear"
+    b = "bear"
 
     def __init__(self):
         super().__init__()
@@ -18,11 +18,11 @@ b = B()
 print(b.x)
 
 
-class C(B):
-    x = "cat"
+class C(A):
+    u = "cat"
 
     def __init__(self):
-        pass
+        super().__init__()
 
 
 c = C()
@@ -30,8 +30,8 @@ print(c.x)
 print(C.x)
 
 
-class D(C):
-    x = "dog"
+class D(A):
+    e = "dog"
 
     def __init__(self):
         super().__init__()
@@ -39,3 +39,4 @@ class D(C):
 
 d = D()
 print(d.x)
+print(c.b)
