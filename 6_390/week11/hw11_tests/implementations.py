@@ -97,9 +97,9 @@ class NNQ:
     def fit(self, model, X, Y, epochs=None, dbg=None):
         # This function expects numpy arrays for X (shape (K, state_dim)) and Y (shape (K, 1)),
         # not Python lists.
-        assert type(X) is not type([]), (
-            "self.fit expects numpy arrays for X (shape (K, state_dim)) and Y (shape (K, 1)), not Python lists."
-        )
+        assert type(X) is not type(
+            []
+        ), "self.fit expects numpy arrays for X (shape (K, state_dim)) and Y (shape (K, 1)), not Python lists."
 
         if epochs is None:
             epochs = self.epochs

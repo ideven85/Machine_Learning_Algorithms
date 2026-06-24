@@ -6,7 +6,6 @@ ml-25m
 virtualenv/
 __pycache__/
 .venv/
-.idea/
 .DS_Store
 .env
 static/node_modules/
