@@ -78,12 +78,12 @@ def test_find_blank_loc_rect():
 
 
 def compare_paths(result_path, expected_path, test_name):
-    assert bool(
-        result_path
-    ), f"{test_name} expected path list of length {len(expected_path)} but got {result_path}"
-    assert len(result_path) == len(
-        expected_path
-    ), f"{test_name} expected path length {len(expected_path)} but got {len(result_path)}"
+    assert bool(result_path), (
+        f"{test_name} expected path list of length {len(expected_path)} but got {result_path}"
+    )
+    assert len(result_path) == len(expected_path), (
+        f"{test_name} expected path length {len(expected_path)} but got {len(result_path)}"
+    )
     for i, (rboard, eboard) in enumerate(zip(result_path, expected_path)):
         err_msg = f"{test_name} boards at move {i} do not match!\n exp:\n {str_board(eboard)} \n result:\n{str_board(rboard)}"
         assert blist(rboard) == blist(eboard), err_msg

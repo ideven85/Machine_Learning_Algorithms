@@ -8,15 +8,15 @@ from statsmodels.stats.outliers_influence import variance_inflation_factor
 from IPython.display import display
 
 
-
 import random
+
 
 def data_loader(data, batch_size=32, shuffle=False):
     """
     mimics functionality of torch DataLoader
     """
     if batch_size <= 0:
-         raise ValueError("batch_size must be 1 or greater.")
+        raise ValueError("batch_size must be 1 or greater.")
 
     dataset = data.clone() if shuffle else data
 
@@ -25,6 +25,7 @@ def data_loader(data, batch_size=32, shuffle=False):
 
     for i in range(0, len(dataset), batch_size):
         yield dataset[i : i + batch_size]
+
 
 def removing_statistical_outliers(df, columns, quantile=None):
     """

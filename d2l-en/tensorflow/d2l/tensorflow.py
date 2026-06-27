@@ -1093,9 +1093,12 @@ class EncoderDecoder(d2l.Classifier):
         src, tgt, src_valid_len, _ = batch
         enc_all_outputs = self.encoder(src, src_valid_len, training=False)
         dec_state = self.decoder.init_state(enc_all_outputs, src_valid_len)
-        outputs, attention_weights = [
-            d2l.expand_dims(tgt[:, 0], 1),
-        ], []
+        outputs, attention_weights = (
+            [
+                d2l.expand_dims(tgt[:, 0], 1),
+            ],
+            [],
+        )
         for _ in range(num_steps):
             Y, dec_state = self.decoder(outputs[-1], dec_state, training=False)
             outputs.append(d2l.argmax(Y, 2))
@@ -1595,7 +1598,7 @@ def train_ch11(trainer_fn, states, hyperparams, data_iter, feature_dim, num_epoc
                 r = (d2l.evaluate_loss(net, data_iter, loss),)
                 animator.add(q, r)
                 timer.start()
-    print(f"loss: {animator.Y[0][-1]:.3f}, {timer.sum()/num_epochs:.3f} sec/epoch")
+    print(f"loss: {animator.Y[0][-1]:.3f}, {timer.sum() / num_epochs:.3f} sec/epoch")
     return timer.cumsum(), animator.Y[0]
 
 
@@ -1632,7 +1635,7 @@ def train_concise_ch11(trainer_fn, hyperparams, data_iter, num_epochs=2):
                 r = (d2l.evaluate_loss(net, data_iter, loss) / 2,)
                 animator.add(q, r)
                 timer.start()
-    print(f"loss: {animator.Y[0][-1]:.3f}, {timer.sum()/num_epochs:.3f} sec/epoch")
+    print(f"loss: {animator.Y[0][-1]:.3f}, {timer.sum() / num_epochs:.3f} sec/epoch")
 
 
 class Benchmark:

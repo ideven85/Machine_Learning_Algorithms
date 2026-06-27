@@ -25,16 +25,16 @@ def setup_module(module):
 
 
 def compare_sets(x, y, test_name):
-    assert len(x) == len(
-        y
-    ), f"Failure while testing {test_name}:\n Expected list of length {len(x)} but got {len(y)}"
-    assert isinstance(
-        x, type(y)
-    ), f"Failure while testing {test_name}:\n Expected type {type(x)} but got {type(y)}"
+    assert len(x) == len(y), (
+        f"Failure while testing {test_name}:\n Expected list of length {len(x)} but got {len(y)}"
+    )
+    assert isinstance(x, type(y)), (
+        f"Failure while testing {test_name}:\n Expected type {type(x)} but got {type(y)}"
+    )
 
-    assert (
-        x == y
-    ), f"Failure while testing {test_name}: Expected\n {x} \nbut got\n {y} \n missing: {y - x} \n extra: {x - y}"
+    assert x == y, (
+        f"Failure while testing {test_name}: Expected\n {x} \nbut got\n {y} \n missing: {y - x} \n extra: {x - y}"
+    )
 
 
 def verify(inputs, expecteds, test_name, test_func):
@@ -47,14 +47,14 @@ def verify(inputs, expecteds, test_name, test_func):
 
         expected = expecteds[i]
 
-        assert isinstance(
-            res, type(expected)
-        ), f"Failure while testing {test_name}:\n Expected type {type(expected)} but got {type(res)}"
+        assert isinstance(res, type(expected)), (
+            f"Failure while testing {test_name}:\n Expected type {type(expected)} but got {type(res)}"
+        )
         if isinstance(expected, int):
             inp_message = "" if len(inp[0]) > 5 else f"\ninputs:\n{inp}"
-            assert (
-                expected == res
-            ), f"Failure while testing {test_name}:\nExpected {expected} but got {res} {inp_message}"
+            assert expected == res, (
+                f"Failure while testing {test_name}:\nExpected {expected} but got {res} {inp_message}"
+            )
         else:
             compare_sets(expected, res, test_name)
 

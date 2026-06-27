@@ -1111,9 +1111,12 @@ class EncoderDecoder(d2l.Classifier):
         src, tgt, src_valid_len, _ = batch
         enc_all_outputs = self.encoder(src, src_valid_len)
         dec_state = self.decoder.init_state(enc_all_outputs, src_valid_len)
-        outputs, attention_weights = [
-            d2l.expand_dims(tgt[:, 0], 1),
-        ], []
+        outputs, attention_weights = (
+            [
+                d2l.expand_dims(tgt[:, 0], 1),
+            ],
+            [],
+        )
         for _ in range(num_steps):
             Y, dec_state = self.decoder(outputs[-1], dec_state)
             outputs.append(d2l.argmax(Y, 2))
@@ -1586,7 +1589,7 @@ def train_ch11(trainer_fn, states, hyperparams, data_iter, feature_dim, num_epoc
                     (d2l.evaluate_loss(net, data_iter, loss),),
                 )
                 timer.start()
-    print(f"loss: {animator.Y[0][-1]:.3f}, {timer.sum()/num_epochs:.3f} sec/epoch")
+    print(f"loss: {animator.Y[0][-1]:.3f}, {timer.sum() / num_epochs:.3f} sec/epoch")
     return timer.cumsum(), animator.Y[0]
 
 
@@ -1624,7 +1627,7 @@ def train_concise_ch11(trainer_fn, hyperparams, data_iter, num_epochs=4):
                     (d2l.evaluate_loss(net, data_iter, loss) / 2,),
                 )
                 timer.start()
-    print(f"loss: {animator.Y[0][-1]:.3f}, {timer.sum()/num_epochs:.3f} sec/epoch")
+    print(f"loss: {animator.Y[0][-1]:.3f}, {timer.sum() / num_epochs:.3f} sec/epoch")
 
 
 class Benchmark:
@@ -1735,9 +1738,7 @@ def train_ch13(
         f"loss {metric[0] / metric[2]:.3f}, train acc "
         f"{metric[1] / metric[3]:.3f}, test acc {test_acc:.3f}"
     )
-    print(
-        f"{metric[2] * num_epochs / timer.sum():.1f} examples/sec on " f"{str(devices)}"
-    )
+    print(f"{metric[2] * num_epochs / timer.sum():.1f} examples/sec on {str(devices)}")
 
 
 d2l.DATA_HUB["hotdog"] = (
@@ -1878,7 +1879,7 @@ def box_iou(boxes1, boxes2):
     """Compute pairwise IoU across two lists of anchor or bounding boxes.
 
     Defined in :numref:`sec_anchor`"""
-    box_area = lambda boxes: ((boxes[:, 2] - boxes[:, 0]) * (boxes[:, 3] - boxes[:, 1]))
+    box_area = lambda boxes: (boxes[:, 2] - boxes[:, 0]) * (boxes[:, 3] - boxes[:, 1])
     # Shape of `boxes1`, `boxes2`, `areas1`, `areas2`: (no. of boxes1, 4),
     # (no. of boxes2, 4), (no. of boxes1,), (no. of boxes2,)
     areas1 = box_area(boxes1)
@@ -2680,7 +2681,7 @@ class BERTModel(nn.Module):
 
 
 d2l.DATA_HUB["wikitext-2"] = (
-    "https://s3.amazonaws.com/research.metamind.io/wikitext/" "wikitext-2-v1.zip",
+    "https://s3.amazonaws.com/research.metamind.io/wikitext/wikitext-2-v1.zip",
     "3c914d17d80b1459be871a5039ac23e752a53cbe",
 )
 
@@ -3654,10 +3655,8 @@ def train_ch6(net, train_iter, test_iter, num_epochs, lr, device):
                 animator.add(epoch + (i + 1) / num_batches, (train_l, train_acc, None))
         test_acc = evaluate_accuracy_gpu(net, test_iter)
         animator.add(epoch + 1, (None, None, test_acc))
-    print(f"loss {train_l:.3f}, train acc {train_acc:.3f}, " f"test acc {test_acc:.3f}")
-    print(
-        f"{metric[2] * num_epochs / timer.sum():.1f} examples/sec " f"on {str(device)}"
-    )
+    print(f"loss {train_l:.3f}, train acc {train_acc:.3f}, test acc {test_acc:.3f}")
+    print(f"{metric[2] * num_epochs / timer.sum():.1f} examples/sec on {str(device)}")
 
 
 def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):

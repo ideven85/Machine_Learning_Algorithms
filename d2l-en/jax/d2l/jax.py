@@ -655,7 +655,8 @@ class Classifier(d2l.Module):
 
         Defined in :numref:`sec_classification`"""
         Y_hat = state.apply_fn(
-            {"params": params, "batch_stats": state.batch_stats}, *X  # BatchNorm Only
+            {"params": params, "batch_stats": state.batch_stats},
+            *X,  # BatchNorm Only
         )
         Y_hat = d2l.reshape(Y_hat, (-1, Y_hat.shape[-1]))
         preds = d2l.astype(d2l.argmax(Y_hat, axis=1), Y.dtype)
@@ -1339,9 +1340,12 @@ class EncoderDecoder(d2l.Classifier):
             ][0]
 
         dec_state = self.decoder.init_state(enc_all_outputs, src_valid_len)
-        outputs, attention_weights = [
-            d2l.expand_dims(tgt[:, 0], 1),
-        ], []
+        outputs, attention_weights = (
+            [
+                d2l.expand_dims(tgt[:, 0], 1),
+            ],
+            [],
+        )
         for _ in range(num_steps):
             (Y, dec_state), inter_dec_vars = self.decoder.apply(
                 {"params": params["decoder"]},
