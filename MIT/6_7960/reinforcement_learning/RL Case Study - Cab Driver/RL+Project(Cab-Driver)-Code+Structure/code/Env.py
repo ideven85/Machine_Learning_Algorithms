@@ -20,7 +20,6 @@ R = 9  # per hour revenue from a passenger
 
 
 class CabDriver:
-
     def __init__(self):
         """initialise your state and define your action space and state space"""
         self.action_space = [
