@@ -202,7 +202,7 @@ def dump_game(game):
     if not game_state:
         game_state = make_new_game(game)
     # print(rows, columns)
-    game = [[[] for _ in range(rows[0])] for _ in range(columns[1] + 1)]
+    game = [[[] for _ in range(rows[0])] for _ in range(columns[1] )]
 
     # print(game)
     walls = game_state["wall"]
