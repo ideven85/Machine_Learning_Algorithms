@@ -96,7 +96,6 @@ def animate(states, n, ep_length):
     try:
         from matplotlib import animation, rc
         import matplotlib.pyplot as plt
-        from google.colab import widgets
 
         plt.ion()
         plt.figure(facecolor="white")

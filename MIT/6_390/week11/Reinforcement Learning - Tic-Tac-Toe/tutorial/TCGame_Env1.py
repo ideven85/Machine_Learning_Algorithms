@@ -1,4 +1,4 @@
-# from gym import spaces
+from gymnasium import spaces
 import numpy as np
 import random
 from itertools import groupby
@@ -104,4 +104,5 @@ class TicTacToe:
             -else
                 reward = -1
         reward, Next_state/Updated_Next_state, terminal
+        #todo write yourself
         """

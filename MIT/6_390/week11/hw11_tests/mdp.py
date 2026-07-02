@@ -56,8 +56,11 @@ class MDP:
         )
         return r, s_prime
 
-    # Return one-hot encoding of state s; used in neural network agent implementations
     def state2vec(self, s):
+        """
+        Return one-hot encoding of state s; used in neural network agent implementations
+
+        """
         v = np.zeros((1, len(self.states)))
         v[0, self.states.index(s)] = 1.0
         return v
