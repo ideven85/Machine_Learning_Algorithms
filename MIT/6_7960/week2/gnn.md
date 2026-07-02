@@ -280,27 +280,27 @@ The biggest advantage of using an MDP over traditional heuristic algorithms in C
 ## 4. Implementation: TSP Masking Layer
 Here is how the PyTorch geometric logic shifts to accommodate a dynamic constraint like remaining capacity or visited nodes in CO:
 
-import torch
-def tsp_combinatorial_mask(node_embeddings, current_node_idx, visited_cities):
-    """
-    node_embeddings: [num_cities, hidden_dim]
-    current_node_idx: int (where the agent is right now)
-    visited_cities: Tensor of IDs [already_visited_1, already_visited_2]
-    """
-    # 1. Compute raw affinity scores between current city and all other cities
-    current_emb = node_embeddings[current_node_idx].unsqueeze(0) # [1, hidden_dim]
-    # Matrix multiplication to see where the GNN wants to go next
-    logits = torch.matmul(node_embeddings, current_emb.T).squeeze(-1) # [num_cities]
-    
-    # 2. Build the dynamic Combinatorial Mask
-    mask = torch.ones_like(logits)
-    mask[visited_cities] = 0.0 # Block all previously visited cities
-    
-    # 3. Prune invalid optimization branches
-    masked_logits = logits + (1.0 - mask) * -1e9
-    
-    # 4. Return valid next-step probabilities
-    return torch.softmax(masked_logits, dim=-1)
+    #import torch
+    def tsp_combinatorial_mask(node_embeddings, current_node_idx, visited_cities):
+        """
+        node_embeddings: [num_cities, hidden_dim]
+        current_node_idx: int (where the agent is right now)
+        visited_cities: Tensor of IDs [already_visited_1, already_visited_2]
+        """
+        # 1. Compute raw affinity scores between current city and all other cities
+        current_emb = node_embeddings[current_node_idx].unsqueeze(0) # [1, hidden_dim]
+        # Matrix multiplication to see where the GNN wants to go next
+        logits = torch.matmul(node_embeddings, current_emb.T).squeeze(-1) # [num_cities]
+        
+        # 2. Build the dynamic Combinatorial Mask
+        mask = torch.ones_like(logits)
+        mask[visited_cities] = 0.0 # Block all previously visited cities
+        
+        # 3. Prune invalid optimization branches
+        masked_logits = logits + (1.0 - mask) * -1e9
+        
+        # 4. Return valid next-step probabilities
+        return torch.softmax(masked_logits, dim=-1)
 
 Would you like to see how Autoregressive models (like Pointer Networks) use this mask to build a complete TSP tour, or how Value-Based RL (like Q-learning) evaluates the long-term cost of a branch?
 

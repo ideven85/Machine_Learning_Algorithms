@@ -3,24 +3,21 @@ import numpy as np
 import random
 
 
-
-#==============================================================================
-#===  PART I  =================================================================
-#==============================================================================
-
+# ==============================================================================
+# ===  PART I  =================================================================
+# ==============================================================================
 
 
 def get_order(n_samples):
     try:
-        with open(str(n_samples) + '.txt') as fp:
+        with open(str(n_samples) + ".txt") as fp:
             line = fp.readline()
-            return list(map(int, line.split(',')))
+            return list(map(int, line.split(",")))
     except FileNotFoundError:
         random.seed(1)
         indices = list(range(n_samples))
         random.shuffle(indices)
         return indices
-
 
 
 def hinge_loss_single(feature_vector, label, theta, theta_0):
@@ -39,8 +36,7 @@ def hinge_loss_single(feature_vector, label, theta, theta_0):
         parameters.
     """
     # Your code here
-    return (np.dot(theta,feature_vector)+theta_0)-label
-
+    return (np.dot(theta, feature_vector) + theta_0) - label
 
 
 def hinge_loss_full(feature_matrix, labels, theta, theta_0):
@@ -64,13 +60,9 @@ def hinge_loss_full(feature_matrix, labels, theta, theta_0):
     raise NotImplementedError
 
 
-
-
 def perceptron_single_step_update(
-        feature_vector,
-        label,
-        current_theta,
-        current_theta_0):
+    feature_vector, label, current_theta, current_theta_0
+):
     """
     Updates the classification parameters `theta` and `theta_0` via a single
     step of the perceptron algorithm.  Returns new parameters rather than
@@ -89,7 +81,6 @@ def perceptron_single_step_update(
     """
     # Your code here
     raise NotImplementedError
-
 
 
 def perceptron(feature_matrix, labels, T):
@@ -124,7 +115,6 @@ def perceptron(feature_matrix, labels, T):
     raise NotImplementedError
 
 
-
 def average_perceptron(feature_matrix, labels, T):
     """
     Runs the average perceptron algorithm on a given dataset.  Runs `T`
@@ -155,13 +145,7 @@ def average_perceptron(feature_matrix, labels, T):
     raise NotImplementedError
 
 
-def pegasos_single_step_update(
-        feature_vector,
-        label,
-        L,
-        eta,
-        theta,
-        theta_0):
+def pegasos_single_step_update(feature_vector, label, L, eta, theta, theta_0):
     """
     Updates the classification parameters `theta` and `theta_0` via a single
     step of the Pegasos algorithm.  Returns new parameters rather than
@@ -184,7 +168,6 @@ def pegasos_single_step_update(
     """
     # Your code here
     raise NotImplementedError
-
 
 
 def pegasos(feature_matrix, labels, T, L):
@@ -218,11 +201,9 @@ def pegasos(feature_matrix, labels, T, L):
     raise NotImplementedError
 
 
-
-#==============================================================================
-#===  PART II  ================================================================
-#==============================================================================
-
+# ==============================================================================
+# ===  PART II  ================================================================
+# ==============================================================================
 
 
 ##  #pragma: coderesponse template
@@ -231,7 +212,6 @@ def pegasos(feature_matrix, labels, T, L):
 ##  def classify_vector(feature_vector, theta, theta_0):
 ##      return 2*np.heaviside(decision_function(feature_vector, theta, theta_0), 0)-1
 ##  #pragma: coderesponse end
-
 
 
 def classify(feature_matrix, theta, theta_0):
@@ -256,12 +236,13 @@ def classify(feature_matrix, theta, theta_0):
 
 
 def classifier_accuracy(
-        classifier,
-        train_feature_matrix,
-        val_feature_matrix,
-        train_labels,
-        val_labels,
-        **kwargs):
+    classifier,
+    train_feature_matrix,
+    val_feature_matrix,
+    train_labels,
+    val_labels,
+    **kwargs,
+):
     """
     Trains a linear classifier and computes accuracy.  The classifier is
     trained on the train data.  The classifier's accuracy on the train and
@@ -292,7 +273,6 @@ def classifier_accuracy(
     raise NotImplementedError
 
 
-
 def extract_words(text):
     """
     Helper function for `bag_of_words(...)`.
@@ -306,9 +286,8 @@ def extract_words(text):
     raise NotImplementedError
 
     for c in punctuation + digits:
-        text = text.replace(c, ' ' + c + ' ')
+        text = text.replace(c, " " + c + " ")
     return text.lower().split()
-
 
 
 def bag_of_words(texts, remove_stopword=False):
@@ -324,17 +303,18 @@ def bag_of_words(texts, remove_stopword=False):
     """
     # Your code here
     raise NotImplementedError
-    
+
     indices_by_word = {}  # maps word to unique index
     for text in texts:
         word_list = extract_words(text)
         for word in word_list:
-            if word in indices_by_word: continue
-            if word in stopword: continue
+            if word in indices_by_word:
+                continue
+            if word in stopword:
+                continue
             indices_by_word[word] = len(indices_by_word)
 
     return indices_by_word
-
 
 
 def extract_bow_feature_vectors(reviews, indices_by_word, binarize=True):
@@ -352,13 +332,13 @@ def extract_bow_feature_vectors(reviews, indices_by_word, binarize=True):
     for i, text in enumerate(reviews):
         word_list = extract_words(text)
         for word in word_list:
-            if word not in indices_by_word: continue
+            if word not in indices_by_word:
+                continue
             feature_matrix[i, indices_by_word[word]] += 1
     if binarize:
         # Your code here
         raise NotImplementedError
     return feature_matrix
-
 
 
 def accuracy(preds, targets):
