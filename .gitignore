@@ -141,3 +141,4 @@ dmypy.json
 # Pycharm
 .env
 .ruff_cache/
+/MIT/6_7960/weekly/week2/homeworks/data/cifar-100-python/

@@ -1,0 +1,80 @@
+
+Q1. CNNs assume translation equivariance. Why don’t they also assume rotation equivariance? What would break if they did?
+A when doing nerf
+⸻
+
+Q2. Suppose you have unlimited data. Does inductive bias still matter? Why or why not?
+
+⸻
+
+Q3. Sara says a CNN is essentially a constrained linear layer (a sparse Toeplitz matrix). What are the two constraints, and why do they improve learning?
+
+
+⸻
+
+Level 2: “Why?” questions
+
+Q4. Suppose every object in your dataset always appears exactly in the center of the image.
+
+Would weight sharing still be the optimal inductive bias? If not, what changes?
+
+⸻
+
+Q5. Imagine you remove pooling from a CNN but keep adding convolutional layers.
+
+What properties improve?
+What properties become worse?
+
+Think in terms of:
+
+* receptive field,
+* computational cost,
+* translation robustness,
+* localization.
+
+⸻
+
+Level 3: Architecture design
+
+Q6. You need to build a model for satellite imagery where:
+
+* cars occupy 5×5 pixels,
+* airports occupy thousands of pixels.
+
+Why is a single convolution kernel size insufficient?
+
+Design the architecture conceptually.
+
+⸻
+
+Q7. U-Net has skip connections.
+
+ResNet also has skip connections.
+
+They look similar.
+
+Why are they solving different problems?
+
+⸻
+
+Level 4: Research-style
+
+Sara said:
+
+“Better architectures approximate important function classes more efficiently.”
+
+Q8.
+Suppose you replace every ReLU in a CNN with a sine activation (SIREN).
+
+Predict:
+
+* what gets easier,
+* what gets harder,
+* which tasks would benefit,
+* which tasks would likely degrade.
+
+Don’t answer from memory—reason from the inductive bias.
+
+⸻
+
+I think this level is much closer to what you’re after. These don’t have one-line textbook answers; they test whether you can reason about why an architecture exists and what trade-offs it introduces.
