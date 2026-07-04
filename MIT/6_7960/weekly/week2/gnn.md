@@ -388,7 +388,7 @@ index = torch.tensor([0, 0, 0])
 
 print("Sum:", sum_agg.tolist()[0])   # [6.0, 5.0, 6.0]
 print("Max:", max_agg.tolist()[0])   # [5.0, 4.0, 5.0]
-
+```
 After this Aggregate step finishes, the GNN performs the Update step to combine this neighborhood summary with Node A's own original features. Would you like to see how that next step works?
 
 [1] [https://www.geeksforgeeks.org](https://www.geeksforgeeks.org/dbms/aggregation-in-dbms/)
