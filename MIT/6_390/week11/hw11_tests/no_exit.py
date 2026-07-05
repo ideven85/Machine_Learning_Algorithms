@@ -1,17 +1,8 @@
-import functools
 import matplotlib.pyplot as plt
 import numpy as np
-import pickle
 
-import dist
-import util
-from plotting import plot_points, animate
-
-from mdp import MDP, TabularQ, sim_episode, evaluate
-
-# to run stand-alone, import these instead of mdp:
-# from mdp_solutions import *
-# from nnq import *
+from dist import DDist, uniform_dist, delta_dist
+from mdp import MDP
 
 
 class NoExit(MDP):
@@ -26,7 +17,6 @@ class NoExit(MDP):
         h = self.n * ball_speed
         self.discount_factor = (h - 1.0) / h
         self.ball_speed = ball_speed
-
         # state space is: ball position and velocity, paddle position
         # and velocity
         # - ball position is n by n
@@ -45,15 +35,13 @@ class NoExit(MDP):
             for pv in (-1, 0, 1)
         ]
         self.states.append("over")
-        self.start = (
-            dist.uniform_dist([((br, 0), (0, 1), 0, 0) for br in range(self.n)])
-            if random_start
-            else dist.delta_dist(((int(self.n / 2), 0), (0, 1), 0, 0))
-        )
+        if random_start:
+            self.start = uniform_dist([((br, 0), (0, 1), 0, 0) for br in range(self.n)])
+        else:
+            self.start = delta_dist(((int(self.n / 2), 0), (0, 1), 0, 0))
 
     ax = None
     ims = None
-
     # Updating values in google colab
     try:
         from google.colab import widgets
@@ -66,7 +54,6 @@ class NoExit(MDP):
         grid = None
 
     def draw_state(self, state=None, pause=False):
-
         def _update(self, state, pause):
             if self.ax is None or self.IS_COLAB:
                 plt.ion()
@@ -75,7 +62,7 @@ class NoExit(MDP):
 
             if state is None:
                 state = self.state
-            (br, bc), (brv, bcv), pp, pv = state
+            ((br, bc), (brv, bcv), pp, pv) = state
             im = np.zeros((self.n, self.n + 1))
             im[br, bc] = -1
             im[pp, self.n] = 1
@@ -105,7 +92,7 @@ class NoExit(MDP):
     def state2vec(self, s):
         if s == "over":
             return np.array([[0, 0, 0, 0, 0, 0, 1]])
-        (br, bc), (brv, bcv), pp, pv = s
+        ((br, bc), (brv, bcv), pp, pv) = s
         return np.array([[br, bc, brv, bcv, pp, pv, 0]])
 
     def terminal(self, state):
@@ -114,30 +101,23 @@ class NoExit(MDP):
     def reward_fn(self, s, a):
         return 0 if s == "over" else 1
 
-    def greedy(self, s):
-        return argmax(self.actions, lambda a: self.q.get(s, a))
-
     def transition_model(self, s, a, p=0.4):
         # Only randomness is in brv and brc after a bounce
         # 1- prob of negating nominal velocity
         if s == "over":
-            return dist.delta_dist("over")
-
+            return delta_dist("over")
         # Current state
-        (br, bc), (brv, bcv), pp, pv = s
-
+        ((br, bc), (brv, bcv), pp, pv) = s
         # Nominal next ball state
         new_br = br + self.ball_speed * brv
         new_brv = brv
         new_bc = bc + self.ball_speed * bcv
         new_bcv = bcv
-
         # nominal paddle state, a is action (-1, 0, 1)
         new_pp = max(0, min(self.n - 1, pp + a))
         new_pv = a
         new_s = None
         hit_r = hit_c = False
-
         # bottom, top contacts
         if new_br < 0:
             new_br = 0
@@ -147,7 +127,6 @@ class NoExit(MDP):
             new_br = self.n - 1
             new_brv = -1
             hit_r = True
-
         # back, front contacts
         if new_bc < 0:  # back bounce
             new_bc = 0
@@ -159,21 +138,21 @@ class NoExit(MDP):
                 new_bcv = -1
                 hit_c = True
             else:
-                return dist.delta_dist("over")
+                return delta_dist("over")
 
         new_s = ((new_br, new_bc), (new_brv, new_bcv), new_pp, new_pv)
         if (not hit_c) and (not hit_r):
-            return dist.delta_dist(new_s)
+            return delta_dist(new_s)
         elif hit_c:  # also hit_c and hit_r
             if abs(new_brv) > 0:
-                return dist.DDist(
+                return DDist(
                     {
                         new_s: p,
                         ((new_br, new_bc), (-new_brv, new_bcv), new_pp, new_pv): 1 - p,
                     }
                 )
             else:
-                return dist.DDist(
+                return DDist(
                     {
                         new_s: p,
                         ((new_br, new_bc), (-1, new_bcv), new_pp, new_pv): 0.5
@@ -182,7 +161,7 @@ class NoExit(MDP):
                     }
                 )
         elif hit_r:
-            return dist.DDist(
+            return DDist(
                 {
                     new_s: p,
                     ((new_br, new_bc), (new_brv, -new_bcv), new_pp, new_pv): 1 - p,
@@ -194,179 +173,3 @@ class NoExit(MDP):
         prset = set(range(pp, pp + 2)).union(set(range(new_pp, new_pp + 2)))
         brset = set([br, br + 1, new_br, new_br + 1])
         return len(prset.intersection(brset)) >= 2
-
-
-##############################
-
-
-def test_learn_play(
-    d=5,
-    num_layers=2,
-    num_units=100,
-    eps=0.5,
-    iters=10_000,
-    draw=False,
-    tabular=True,
-    batch=False,
-    batch_epochs=10,
-    num_episodes=10,
-    episode_length=100,
-    nnq_lr=3e-3,
-):
-    iters_per_value = 1 if iters <= 10 else int(iters / 10)
-    scores = []
-
-    game = NoExit(d)
-    if game.q is None:
-        if tabular:
-            game.q = TabularQ(game.states, game.actions)
-        else:
-            game.q = NNQ(
-                game.states,
-                game.actions,
-                game.state2vec,
-                num_layers,
-                num_units,
-                epochs=batch_epochs if batch else 1,
-                lr=nnq_lr,
-            )
-
-    def interact(iter=0, s=None, a=None, r=None):
-        if iter % iters_per_value == 0:
-            scores.append(
-                (iter, evaluate(game, game.greedy, num_episodes, episode_length)[0])
-            )
-            print("score", scores[-1], flush=True)
-
-    # learn the game
-    if batch:
-        Q_learn_batch(
-            game,
-            iters=iters + 1,
-            eps=eps,
-            episode_length=100,
-            n_episodes=10,
-            interactive_fn=interact,
-        )
-    else:
-        Q_learn(game, iters=iters + 1, eps=eps, interactive_fn=interact)
-
-    if scores:
-        print("Plotting learning curve")
-        x_scores, y_length = (
-            np.array([s[0] for s in scores]),
-            np.array([s[1] for s in scores]),
-        )
-        ax = plot_points(x_scores, y_length, style="ro-")
-        # Plot the running mean to smooth the learning curve
-        plot_points(
-            x_scores,
-            np.cumsum(y_length) / np.arange(1, len(y_length) + 1),
-            style="bx-",
-            ax=ax,
-        )
-        plt.show()
-
-    # play the game using greedy policy
-    print("simulating episodes to play the game...", flush=True)
-    rewards = []
-    for i in range(num_episodes):
-        reward, _, animation = sim_episode(
-            game,
-            game.greedy,
-            episode_length,
-            draw=(i == (num_episodes - 1)),
-            animate=animate,
-        )
-        print("Reward", reward)
-        rewards.append(reward)
-
-    print("String to upload (incude quotes):")
-    print(f'"{to_hex(pickle.dumps([tabular, batch, scores, rewards], 0).decode())}"')
-
-    return animation
-
-
-def to_hex(s):
-    lst = []
-    for ch in s:
-        hv = hex(ord(ch)).replace("0x", "")
-        if len(hv) == 1:
-            hv = "0" + hv
-        lst.append(hv)
-    return functools.reduce(lambda x, y: x + y, lst)
-
-
-def test_solve_play(d=5, draw=False, num_episodes=10, episode_length=100):
-    """Use value_iteration to optimally 'solve' the game, then play it"""
-    game = NoExit(d)
-    game.q = TabularQ(game.states, game.actions)
-
-    # solve the game
-    value_iteration(game)
-
-    # print(f"{game.q=}") #DEBUG
-    # return
-
-    # play the game using greedy policy
-    print("simulating episodes to play the game...")
-    for i in range(num_episodes):
-        reward, _, animation = sim_episode(
-            game,
-            game.greedy,
-            episode_length,
-            draw=(i == (num_episodes - 1)),
-            animate=animate,
-        )
-        print("Reward", reward)
-    return animation
-
-
-##########   Test cases
-
-
-def try_value_iteration(d=5, draw=True, num_episodes=1, episode_length=100):
-    return test_solve_play(d, draw, num_episodes, episode_length)
-
-
-def try_tabular_q_learning(iters=10000, eps=0.5):
-    return test_learn_play(
-        iters=iters, tabular=True, batch=False, draw=True, num_episodes=10, eps=eps
-    )
-
-
-def try_tabular_batch_q_learning(iters=10, eps=0.5):
-    return test_learn_play(
-        iters=iters, tabular=True, batch=True, draw=True, num_episodes=10, eps=eps
-    )
-
-
-def try_nn_q_learning(iters=10000, eps=0.5):
-    # nn_q_learning not implemented for lab code; just uses TabularQ
-    return test_learn_play(
-        iters=iters, tabular=False, batch=False, draw=True, num_episodes=10, eps=eps
-    )
-
-
-def try_nn_batch_q_learning(iters=100, eps=0.5):
-    # nn_q_learning not implemented for lab code; just uses TabularQ
-    return test_learn_play(
-        iters=iters, tabular=False, batch=True, draw=True, num_episodes=100, eps=eps
-    )
-
-
-if __name__ == "__main__":
-    pass
-    # try_value_iteration()
-    # try_tabular_q_learning()
-    # try_tabular_batch_q_learning(iters=100)  # used in lab colab notebook
-    # try_tabular_batch_q_learning(iters=200, eps=0.5)  # used in lab colab notebook
-    # try_nn_q_learning()
-    # try_nn_batch_q_learning()
-
-    # Homework
-    # test_solve_play()
-    # test_learn_play(iters=1000, tabular=True, batch=False)  # Tabular Q-learn
-    test_learn_play(iters=50, tabular=True, batch=True)  # Tabular Batch Q-learn
-    # test_learn_play(iters=1000, tabular=False, batch=False)  # NN Q-learn
-    # test_learn_play(iters=50, tabular=False, batch=True)  # NN Batch Q-learn (Fitted Q-learn)

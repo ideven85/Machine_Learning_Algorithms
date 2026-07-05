@@ -1,15 +1,12 @@
-import numpy as np
 import random
+import numpy as np
 
 
 class DDist:
-    """
-    Discrete distribution represented as a dictionary.  Can be sparse,
-    in the sense that elements that are not explicitly contained in
-    the dictionary are assumed to have zero probability.
-    """
-
-    def __init__(self, dictionary, name=None):
+    """Discrete distribution represented as a dictionary.  Can be
+    sparse, in the sense that elements that are not explicitly
+    contained in the dictionary are assuemd to have zero probability."""
+    def __init__(self, dictionary, name = None):
         self.d = dictionary
         """ Dictionary whose keys are elements of the domain and values
         are their probabilities. """
@@ -20,7 +17,7 @@ class DDist:
         """
         return self.d.get(elt, 0)
 
-    def set_prob(self, elt, p):
+    def setProb(self, elt, p):
         """
         @param elt: element of the domain
         @param p: probability
@@ -31,21 +28,21 @@ class DDist:
     def support(self):
         """
         @returns: A list (in any order) of the elements of this
-        distribution with non-zero probability.
+        distribution with non-zero probabability.
         """
-        return list(self.d.keys())
+        return self.d.keys()
 
-    def max_prob_elt(self):
+    def maxProbElt(self):
         """
         @returns: The element in this domain with maximum probability
         """
-        best_p = 0
-        best_elt = None
-        for elt, p in self.d.items():
-            if p > best_p:
-                best_p = p
-                best_elt = elt
-        return (best_elt, best_p)
+        bestP = 0
+        bestElt = None
+        for (elt, p) in self.d.items():
+            if p > bestP:
+                bestP = p
+                bestElt = elt
+        return (bestElt, bestP)
 
     def draw(self):
         """
@@ -53,25 +50,28 @@ class DDist:
         """
         r = random.random()
         sum = 0.0
-        for val in self.support():
+        for val in sorted(self.support()):
             sum += self.prob(val)
             if r < sum:
                 return val
-        raise Exception("Failed to draw from " + str(self))
+        raise Exception('Failed to draw from '+ str(self))
 
-    def add_prob(self, val, p):
+    def addProb(self, val, p):
         """
         Increase the probability of element C{val} by C{p}
         """
-        self.set_prob(val, self.prob(val) + p)
+        self.setProb(val, self.prob(val) + p)
 
-    def mul_prob(self, val, p):
+    def mulProb(self, val, p):
         """
         Multiply the probability of element C{val} by C{p}
         """
-        self.set_prob(val, self.prob(val) * p)
+        self.setProb(val, self.prob(val) * p)
 
     def expectation(self, f):
+        """
+        f is a function that returns a value given an element in the distribution
+        """
         return sum(self.prob(x) * f(x) for x in self.support())
 
     def normalize(self):
@@ -85,44 +85,43 @@ class DDist:
         values is zero.
         """
         z = sum([self.prob(e) for e in self.support()])
-        assert z > 0.0, "degenerate distribution " + str(self)
+        assert z > 0.0, 'degenerate distribution ' + str(self)
         alpha = 1.0 / z
         for e in self.support():
-            self.mul_prob(e, alpha)
+            self.mulProb(e, alpha)
         return self
 
-    def __str__(self):
-        return f"DDist({repr(self.d)})"
+    def getAllProbs(self):
+        """
+        @returns: A list of (element, probability) tuple for all
+        elements with non-zero probabability.
+        """
+        return self.d.items()
 
-    __repr__ = __str__
-
-
-def uniform_dist(elts):
+def uniform_dist(elements):
     """
-    Uniform distribution over a given finite set of C{elts}
-    @param elts: list of any kind of item
+    Uniform distribution over a given finite set of C{elements}
+    @param elements: list of any kind of item
     """
-    p = 1.0 / len(elts)
-    return DDist(dict([(e, p) for e in elts]))
-
+    p = 1.0 / len(elements)
+    return DDist(dict([(e, p) for e in elements]))
 
 def delta_dist(elt):
     return DDist({elt: 1.0})
 
-
-class mixture_dist(DDist):
+class MixtureDDist(DDist):
     """
-    A mixture of two probability distributions, d1 and d2, with
-    mixture parameter p.  Probability of an element x under this
-    distribution is p * d1(x) + (1 - p) * d2(x).  It is as if we first
-    flip a probability-p coin to decide which distribution to draw
-    from, and then choose from the approriate distribution.
+    A mixture of two probabability distributions, d1 and d2, with
+    mixture parameter p.  Probability of an
+    element x under this distribution is p * d1(x) + (1 - p) * d2(x).
+    It is as if we first flip a probability-p coin to decide which
+    distribution to draw from, and then choose from the approriate
+    distribution.
 
     This implementation is lazy;  it stores the component
     distributions.  Alternatively, we could assume that d1 and d2 are
     DDists and compute a new DDist.
     """
-
     def __init__(self, d1, d2, p):
         self.d1 = d1
         self.d2 = d2
@@ -142,11 +141,11 @@ class mixture_dist(DDist):
         return list(set(self.d1.support()).union(set(self.d2.support())))
 
     def __str__(self):
-        result = "mixture_dist({"
-        elts = self.support()
-        for x in elts[:-1]:
-            result += str(x) + " : " + str(self.prob(x)) + ", "
-        result += str(elts[-1]) + " : " + str(self.prob(elts[-1])) + "})"
+        result = 'MixtureDist({'
+        elements = self.support()
+        for x in elements[:-1]:
+            result += str(x) + ' : ' + str(self.prob(x)) + ', '
+        result += str(elements[-1]) + ' : ' + str(self.prob(elements[-1])) + '})'
         return result
 
     __repr__ = __str__
