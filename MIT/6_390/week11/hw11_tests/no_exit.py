@@ -62,7 +62,7 @@ class NoExit(MDP):
 
             if state is None:
                 state = self.state
-            ((br, bc), (brv, bcv), pp, pv) = state
+            (br, bc), (brv, bcv), pp, pv = state
             im = np.zeros((self.n, self.n + 1))
             im[br, bc] = -1
             im[pp, self.n] = 1
@@ -92,7 +92,7 @@ class NoExit(MDP):
     def state2vec(self, s):
         if s == "over":
             return np.array([[0, 0, 0, 0, 0, 0, 1]])
-        ((br, bc), (brv, bcv), pp, pv) = s
+        (br, bc), (brv, bcv), pp, pv = s
         return np.array([[br, bc, brv, bcv, pp, pv, 0]])
 
     def terminal(self, state):
@@ -107,7 +107,7 @@ class NoExit(MDP):
         if s == "over":
             return delta_dist("over")
         # Current state
-        ((br, bc), (brv, bcv), pp, pv) = s
+        (br, bc), (brv, bcv), pp, pv = s
         # Nominal next ball state
         new_br = br + self.ball_speed * brv
         new_brv = brv

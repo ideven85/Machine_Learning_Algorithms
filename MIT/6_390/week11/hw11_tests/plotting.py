@@ -114,7 +114,7 @@ def animate(states, n, ep_length):
         def animate(i):
             if states[i % len(states)] == None or states[i % len(states)] == "over":
                 return
-            ((br, bc), (brv, bcv), pp, pv) = states[i % len(states)]
+            (br, bc), (brv, bcv), pp, pv = states[i % len(states)]
             im = np.zeros((n, n + 1))
             im[br, bc] = -1
             im[pp, n] = 1

@@ -53,29 +53,29 @@ def expression(inp):
 def test_long_expression():
     result = expression("(x)")
     expected = Var("x")
-    assert symbol_rep(result) == symbol_rep(expected), (
-        f"{repr(result)}  != {repr(expected)}"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        expected
+    ), f"{repr(result)}  != {repr(expected)}"
 
     result = expression("(1 + 2 + 3)")
     expected = Add(Add(Num(1), Num(2)), Num(3))
-    assert symbol_rep(result) == symbol_rep(expected), (
-        f"{repr(result)}  != {repr(expected)}"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        expected
+    ), f"{repr(result)}  != {repr(expected)}"
     assert result.eval({}) == 6
 
     result = expression("(-1 - -2 + 3)")
     expected = Add(Sub(Num(-1), Num(-2)), Num(3))
-    assert symbol_rep(result) == symbol_rep(expected), (
-        f"{repr(result)}  != {repr(expected)}"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        expected
+    ), f"{repr(result)}  != {repr(expected)}"
     assert result.eval({}) == 4
 
     result = expression("(-1 - (-2 / x * 5) + 3)")
     expected = Add(Sub(Num(-1), Mul(Div(Num(-2), Var("x")), Num(5))), Num(3))
-    assert symbol_rep(result) == symbol_rep(expected), (
-        f"{repr(result)}  != {repr(expected)}"
-    )
+    assert symbol_rep(result) == symbol_rep(
+        expected
+    ), f"{repr(result)}  != {repr(expected)}"
     assert result.eval({"x": 2}) == 7
 
     print("expression works as expected!")

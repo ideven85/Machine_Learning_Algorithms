@@ -6,7 +6,8 @@ class DDist:
     """Discrete distribution represented as a dictionary.  Can be
     sparse, in the sense that elements that are not explicitly
     contained in the dictionary are assuemd to have zero probability."""
-    def __init__(self, dictionary, name = None):
+
+    def __init__(self, dictionary, name=None):
         self.d = dictionary
         """ Dictionary whose keys are elements of the domain and values
         are their probabilities. """
@@ -38,7 +39,7 @@ class DDist:
         """
         bestP = 0
         bestElt = None
-        for (elt, p) in self.d.items():
+        for elt, p in self.d.items():
             if p > bestP:
                 bestP = p
                 bestElt = elt
@@ -54,7 +55,7 @@ class DDist:
             sum += self.prob(val)
             if r < sum:
                 return val
-        raise Exception('Failed to draw from '+ str(self))
+        raise Exception("Failed to draw from " + str(self))
 
     def addProb(self, val, p):
         """
@@ -85,7 +86,7 @@ class DDist:
         values is zero.
         """
         z = sum([self.prob(e) for e in self.support()])
-        assert z > 0.0, 'degenerate distribution ' + str(self)
+        assert z > 0.0, "degenerate distribution " + str(self)
         alpha = 1.0 / z
         for e in self.support():
             self.mulProb(e, alpha)
@@ -98,6 +99,7 @@ class DDist:
         """
         return self.d.items()
 
+
 def uniform_dist(elements):
     """
     Uniform distribution over a given finite set of C{elements}
@@ -106,8 +108,10 @@ def uniform_dist(elements):
     p = 1.0 / len(elements)
     return DDist(dict([(e, p) for e in elements]))
 
+
 def delta_dist(elt):
     return DDist({elt: 1.0})
+
 
 class MixtureDDist(DDist):
     """
@@ -122,6 +126,7 @@ class MixtureDDist(DDist):
     distributions.  Alternatively, we could assume that d1 and d2 are
     DDists and compute a new DDist.
     """
+
     def __init__(self, d1, d2, p):
         self.d1 = d1
         self.d2 = d2
@@ -141,11 +146,11 @@ class MixtureDDist(DDist):
         return list(set(self.d1.support()).union(set(self.d2.support())))
 
     def __str__(self):
-        result = 'MixtureDist({'
+        result = "MixtureDist({"
         elements = self.support()
         for x in elements[:-1]:
-            result += str(x) + ' : ' + str(self.prob(x)) + ', '
-        result += str(elements[-1]) + ' : ' + str(self.prob(elements[-1])) + '})'
+            result += str(x) + " : " + str(self.prob(x)) + ", "
+        result += str(elements[-1]) + " : " + str(self.prob(elements[-1])) + "})"
         return result
 
     __repr__ = __str__

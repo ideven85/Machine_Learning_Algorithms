@@ -53,16 +53,16 @@ def compare_simulation(filename):
         err_msg = compare_boards(lab.dump_game(game), exp_dump)
         if err_msg is not None:
             original_dump = json.dumps(lab.dump_game(original_game))
-            assert False, (
-                f"Unexpected results in step {ix}, moving {direction} starting from the following board ({err_msg}):\n\n{original_dump}\n\nYou can copy/paste this representation into the GUI to test."
-            )
+            assert (
+                False
+            ), f"Unexpected results in step {ix}, moving {direction} starting from the following board ({err_msg}):\n\n{original_dump}\n\nYou can copy/paste this representation into the GUI to test."
         original_game = copy.deepcopy(game)
         original_dump = json.dumps(lab.dump_game(original_game))
         win = lab.victory_check(game)
         assert original_game == game, "be careful not to modify the input game!"
-        assert lab.victory_check(game) == exp_win, (
-            f"Incorrect victory check in step {ix} for the following board (expected {exp_win}):\n\n{original_dump}\n\nYou can copy/paste this representation into the GUI to test."
-        )
+        assert (
+            lab.victory_check(game) == exp_win
+        ), f"Incorrect victory check in step {ix} for the following board (expected {exp_win}):\n\n{original_dump}\n\nYou can copy/paste this representation into the GUI to test."
 
 
 unit_test_cases = [
@@ -264,7 +264,7 @@ def test_solver(test_group):
             assert result is None, f"Expected no solution for {puzzle}, but got one."
         else:
             assert result is not None, f"Expected a solution for {puzzle}, got None."
-            assert len(result) == elen, (
-                f"Expected a solution of length {elen} for {puzzle}, got {len(result)}."
-            )
+            assert (
+                len(result) == elen
+            ), f"Expected a solution of length {elen} for {puzzle}, got {len(result)}."
             compare_solution(puzzle, result)

@@ -158,6 +158,7 @@ def actor_path(transformed_data, actor_id_1, goal_test_function):
 
     return None
 
+
 def actors_connecting_films(transformed_data, film1, film2):
     """
     Finds and returns a set of all actor IDs who have acted in BOTH film1 and film2.

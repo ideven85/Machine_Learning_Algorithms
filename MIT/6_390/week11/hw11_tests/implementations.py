@@ -1,6 +1,7 @@
 """
 Your implementations. These functions will get overwritten with your finished implementations in the colab.
 """
+
 import random
 
 
@@ -89,7 +90,7 @@ class NNQ:
         opt = torch.optim.SGD(model.parameters(), lr=self.lr)
 
         for epoch in range(epochs):
-            for (X, Y) in train_loader:
+            for X, Y in train_loader:
                 opt.zero_grad()
                 loss = torch.nn.MSELoss()(model(X), Y)
                 loss.backward()

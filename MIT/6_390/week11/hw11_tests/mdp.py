@@ -56,9 +56,11 @@ class MDP:
         """
         return (
             self.reward_fn(s, a),
-            self.init_state()
-            if self.terminal(s)
-            else self.transition_model(s, a).draw(),
+            (
+                self.init_state()
+                if self.terminal(s)
+                else self.transition_model(s, a).draw()
+            ),
         )
 
     def state2vec(self, s):

@@ -291,9 +291,9 @@ class CarRacing(gym.Env, EzPickle):
             self.grass_color = np.array([102, 230, 102])
 
     def _reinit_colors(self, randomize):
-        assert self.domain_randomize, (
-            "domain_randomize must be True to use this function."
-        )
+        assert (
+            self.domain_randomize
+        ), "domain_randomize must be True to use this function."
 
         if randomize:
             # domain randomize the bg and grass colour

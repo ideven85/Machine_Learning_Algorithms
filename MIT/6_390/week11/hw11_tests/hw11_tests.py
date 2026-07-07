@@ -86,7 +86,7 @@ def sim_episode(mdp, episode_length, policy, draw=False):
     all_states = [s]
     for i in range(episode_length):
         a = policy(s)
-        (r, s_prime) = mdp.sim_transition(s, a)
+        r, s_prime = mdp.sim_transition(s, a)
         reward += r
         if mdp.terminal(s):
             episode.append((s, a, r, None))
@@ -282,6 +282,7 @@ def test_NNQ2(nnq_module):
 
 
 ### No Exit: Learning to Play
+
 
 # Return average reward for n_episodes of length episode_length
 # while following policy (a function of state) to choose actions.
