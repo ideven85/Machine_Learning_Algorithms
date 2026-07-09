@@ -14,9 +14,9 @@ def get_data_loader(name, batch_size, validation_split=None):
     try:
         loaded_data = np.loadtxt(name, skiprows=0, delimiter=" ")
     except:
-        assert (
-            validation_split is None
-        ), "Please make sure there is a folder `./data` on this file's path"
+        assert validation_split is None, (
+            "Please make sure there is a folder `./data` on this file's path"
+        )
         return None, None
     # print(loaded_data)
 

@@ -85,7 +85,8 @@ def print_board(board):
     Given a board, print it out in aligned rows.
     """
     for row in board:
-        print(f"{
+        print(
+            f"{
                 '  '.join(
                     [
                         ' ' + str(num)
@@ -95,7 +96,8 @@ def print_board(board):
                         else ' X'
                         for num in row
                     ]
-                ):25}")
+                ):25}"
+        )
 
 
 def move_board(blank_loc, board, direction):

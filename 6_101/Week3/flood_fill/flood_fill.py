@@ -141,7 +141,7 @@ COLOR_NAMES = {
 }
 
 SCALE = 7
-IMAGE = "large_maze.png"
+IMAGE = "flood_input.png"
 
 pygame.init()
 pygame.display.set_caption("Flood Fill BFS")
@@ -180,3 +180,6 @@ while True:
 
 # You clicked at row 63 col 40
 # Time taken: 0.8618607521057129
+#  1.4168169498443604,
+#  1.1387178897857666
+# Time taken: 1.1635689735412598

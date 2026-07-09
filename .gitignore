@@ -142,3 +142,9 @@ dmypy.json
 .env
 .ruff_cache/
 /MIT/6_7960/weekly/week2/homeworks/data/cifar-100-python/
+/MIT/6_7960/weekly/week2/homeworks/data/cifar-10-batches-py/
+/MIT/6_7960/weekly/week2/homeworks/cifar-100-python/
+cifar*
+/MIT/6_7960/weekly/week2/homeworks/cifar-100-python/
+cifar-100-python/
+/MIT/6_7960/weekly/week2/homeworks/cifar-100-python/

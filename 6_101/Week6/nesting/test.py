@@ -25,16 +25,16 @@ def setup_module(module):
 
 
 def compare_lists(x, y, test_name):
-    assert len(x) == len(
-        y
-    ), f"Failure while testing {test_name}:\n Expected list of length {len(x)} but got {len(y)}"
-    assert isinstance(
-        x, type(y)
-    ), f"Failure while testing {test_name}:\n Expected type {type(x)} but got {type(y)}"
+    assert len(x) == len(y), (
+        f"Failure while testing {test_name}:\n Expected list of length {len(x)} but got {len(y)}"
+    )
+    assert isinstance(x, type(y)), (
+        f"Failure while testing {test_name}:\n Expected type {type(x)} but got {type(y)}"
+    )
     for i, (sub_x, sub_y) in enumerate(zip(x, y)):
-        assert (
-            sub_x == sub_y
-        ), f"Failure while testing {test_name}: Element at index {i}: Expected\n {sub_x} \nbut got\n {sub_y}"
+        assert sub_x == sub_y, (
+            f"Failure while testing {test_name}: Element at index {i}: Expected\n {sub_x} \nbut got\n {sub_y}"
+        )
 
 
 def test_pascal():

@@ -25,26 +25,56 @@ def get_neighbours(cell):
     ]
 
 
+# def flood_fill(image, original_location, new_color):
+#     original_color = get_pixel(image, *original_location)
+#     # visited = {original_location}
+#     print(f"You clicked at row {original_location[0]} col {original_location[1]}")
+#     if original_color == new_color:
+#         return
+#
+#     start = time.time()
+#
+#     def fill_from(location):
+#
+#         global count
+#         count += 1
+#         set_pixel(image, *location, new_color)
+#         for neighbor in get_neighbours(location):
+#             if get_pixel(image, *neighbor) == original_color:
+#                 # visited.add(neighbor)
+#                 fill_from(neighbor)
+#
+#     fill_from(original_location)
+#
+#     print("Time taken:", time.time() - start)
 def flood_fill(image, original_location, new_color):
     original_color = get_pixel(image, *original_location)
-    # visited = {original_location}
     print(f"You clicked at row {original_location[0]} col {original_location[1]}")
+
     if original_color == new_color:
         return
 
     start = time.time()
+    global count
 
-    def fill_from(location):
+    # Use a standard list as a stack for Iterative DFS
+    stack = [original_location]
+    visited = {original_location}
 
-        global count
+    while stack:
+        location = stack.pop()  # Pops the last item (DFS behavior)
         count += 1
-        set_pixel(image, *location, new_color)
-        for neighbor in get_neighbours(location):
-            if get_pixel(image, *neighbor) == original_color:
-                # visited.add(neighbor)
-                fill_from(neighbor)
 
-    fill_from(original_location)
+        set_pixel(image, *location, new_color)
+
+        for neighbor in get_neighbours(location):
+            # Check if it hasn't been visited AND matches the original color
+            if (
+                neighbor not in visited
+                and get_pixel(image, *neighbor) == original_color
+            ):
+                visited.add(neighbor)
+                stack.append(neighbor)
 
     print("Time taken:", time.time() - start)
 

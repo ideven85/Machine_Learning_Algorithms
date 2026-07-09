@@ -341,9 +341,9 @@ def test_pattern_seam_indices():
     oim = object_hash(cem)
     result = lab.minimum_energy_seam(cem)
     expected = [2, 11, 21, 31]
-    assert (
-        object_hash(cem) == oim
-    ), "Be careful not to modify the original cumulative energy map!"
+    assert object_hash(cem) == oim, (
+        "Be careful not to modify the original cumulative energy map!"
+    )
     assert set(result) == set(expected)
 
 
