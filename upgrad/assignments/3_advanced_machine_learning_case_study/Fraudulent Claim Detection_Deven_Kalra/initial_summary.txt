@@ -1,0 +1,66 @@
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:         fraud_reported   No. Observations:                 1052
+Model:                            GLM   Df Residuals:                     1002
+Model Family:                Binomial   Df Model:                           49
+Link Function:                  Logit   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -470.58
+Date:                Mon, 04 Aug 2025   Deviance:                       941.17
+Time:                        09:42:41   Pearson chi2:                 1.08e+03
+No. Iterations:                   100   Pseudo R-squ. (CS):             0.3884
+Covariance Type:            nonrobust                                         
+==========================================================================================================
+                                             coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------
+const                                      0.8181      0.300      2.728      0.006       0.230       1.406
+insured_occupation_armed-forces            1.0270      0.338      3.035      0.002       0.364       1.690
+insured_occupation_craft-repair            0.6082      0.354      1.720      0.085      -0.085       1.301
+insured_occupation_exec-managerial         0.8352      0.348      2.402      0.016       0.154       1.517
+insured_occupation_machine-op-inspct       0.8027      0.295      2.725      0.006       0.225       1.380
+insured_occupation_other-service          -0.8687      0.368     -2.359      0.018      -1.590      -0.147
+insured_occupation_priv-house-serv        -0.5691      0.367     -1.549      0.121      -1.289       0.151
+insured_occupation_prof-specialty         -0.4833      0.360     -1.344      0.179      -1.188       0.222
+insured_occupation_protective-serv        -0.4866      0.420     -1.159      0.247      -1.310       0.337
+insured_occupation_transport-moving        0.5061      0.344      1.469      0.142      -0.169       1.181
+incident_type_Others                       1.1620      0.370      3.137      0.002       0.436       1.888
+incident_type_Single Vehicle Collision     0.6836      0.196      3.486      0.000       0.299       1.068
+incident_severity_Minor Damage            -3.1334      0.258    -12.162      0.000      -3.638      -2.628
+incident_severity_Total Loss              -2.4489      0.225    -10.906      0.000      -2.889      -2.009
+incident_severity_Trivial Damage          -3.9783      0.517     -7.697      0.000      -4.991      -2.965
+incident_state_Others                      0.7636      0.202      3.784      0.000       0.368       1.159
+incident_state_SC                          0.7545      0.216      3.487      0.000       0.330       1.179
+incident_city_Northbrook                  -0.9733      0.295     -3.304      0.001      -1.551      -0.396
+incident_city_Riverwood                   -0.5431      0.281     -1.933      0.053      -1.094       0.008
+property_damage_NO                        -0.3104      0.193     -1.609      0.108      -0.688       0.068
+witnesses_2                                0.6044      0.192      3.148      0.002       0.228       0.981
+police_report_available_YES               -0.7839      0.191     -4.101      0.000      -1.158      -0.409
+auto_make_Audi                             0.6946      0.306      2.271      0.023       0.095       1.294
+auto_make_Dodge                            0.4082      0.209      1.957      0.050      -0.001       0.817
+auto_make_Mercedes                         0.6750      0.351      1.923      0.054      -0.013       1.363
+auto_make_Nissan                          -0.7648      0.566     -1.352      0.176      -1.873       0.344
+auto_model_93                             -0.5134      0.560     -0.916      0.360      -1.612       0.585
+auto_model_CRV                            -1.5090      0.696     -2.168      0.030      -2.873      -0.145
+auto_model_Camry                          -1.7109      0.725     -2.361      0.018      -3.132      -0.290
+auto_model_Civic                           1.1618      0.664      1.750      0.080      -0.140       2.463
+auto_model_F150                            0.9160      0.463      1.979      0.048       0.009       1.823
+auto_model_Grand Cherokee                  1.4938      0.542      2.754      0.006       0.431       2.557
+auto_model_Highlander                      0.9450      0.569      1.660      0.097      -0.171       2.061
+auto_model_Legacy                         -1.1197      0.590     -1.896      0.058      -2.277       0.037
+auto_model_M5                              0.9215      0.787      1.172      0.241      -0.620       2.463
+auto_model_MDX                            -0.8672      0.568     -1.526      0.127      -1.981       0.246
+auto_model_Malibu                         -1.9043      0.761     -2.501      0.012      -3.396      -0.412
+auto_model_Maxima                          0.9198      0.736      1.250      0.211      -0.522       2.361
+auto_model_Neon                           -0.5999      0.303     -1.978      0.048      -1.194      -0.005
+auto_model_RAM                             1.0082      0.306      3.294      0.001       0.408       1.608
+auto_model_Silverado                       0.7749      0.496      1.564      0.118      -0.196       1.746
+auto_model_Ultima                         -1.0643      1.049     -1.014      0.310      -3.121       0.992
+auto_model_Wrangler                       -1.0960      0.517     -2.119      0.034      -2.110      -0.082
+auto_model_X5                              0.7175      0.501      1.433      0.152      -0.264       1.699
+auto_model_X6                              1.5791      0.610      2.590      0.010       0.384       2.774
+auto_year_1996                             0.5826      0.403      1.446      0.148      -0.207       1.372
+auto_year_2000                             0.4881      0.454      1.074      0.283      -0.402       1.379
+auto_year_2004                             0.6832      0.384      1.777      0.076      -0.070       1.437
+auto_year_2007                             0.9515      0.349      2.725      0.006       0.267       1.636
+auto_year_2010                            -1.1473      0.486     -2.361      0.018      -2.100      -0.195
+auto_year_2012                            -0.9843      0.466     -2.112      0.035      -1.898      -0.071
+==========================================================================================================
