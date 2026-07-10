@@ -10,3 +10,8 @@ class Coordinate:
         ns = "N" if self.lat >= 0 else "S"
         ws = "E" if self.lon >= 0 else "W"
         return f"{abs(self.lat):.1f}°{ns}, {abs(self.lon):.1f}° {ws}"
+
+
+co = Coordinate(lat=12,lon=13)
+
+print(co)
