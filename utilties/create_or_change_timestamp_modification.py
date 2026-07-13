@@ -5,8 +5,6 @@ import ast
 import datetime
 import time
 
-from PIL.Image import Image
-
 # Create a dummy file for demonstration
 
 
@@ -64,7 +62,7 @@ def change_modification_time(file_path=None, new_time=None):
 
 
 def main():
-    folder = "/Users/deven/Developer/images/"
+    folder = "/Users/deven/Pictures/Elmedia/N"
 
     for file in os.listdir(folder):
         print(os.path.getmtime(os.path.join(folder, file)))
