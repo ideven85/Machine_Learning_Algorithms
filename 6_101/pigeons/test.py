@@ -17,9 +17,9 @@ TEST_DIRECTORY = os.path.dirname(__file__)
 
 def legal_assignment(birds, cities, result):
     # defend against ill-formed results
-    assert type(result) == dict, (
-        f"Expected assign_cities to return a dictionary, got {type(result)}"
-    )
+    assert (
+        type(result) == dict
+    ), f"Expected assign_cities to return a dictionary, got {type(result)}"
     assigned = set()
     pigeons = {p[0]: p[1] for p in birds}
     # each destination must have a pigeon
@@ -190,9 +190,9 @@ def test_lottery_2():
     prairie_dogs = [[0, 1], [1, 0], [0, 1]]
     capacities = [1, 1]
     result = practice.lottery(prairie_dogs, capacities)
-    assert result == None, (
-        f"No solution, expected None for {prairie_dogs=}, {capacities=}"
-    )
+    assert (
+        result == None
+    ), f"No solution, expected None for {prairie_dogs=}, {capacities=}"
 
 
 def test_lottery_3():

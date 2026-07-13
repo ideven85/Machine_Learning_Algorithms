@@ -15,9 +15,9 @@ def compare_sounds(result, expected, eps=1e-6):
     # well formed?
     assert isinstance(result["rate"], int), "Sampling rate should be an integer"
     if "left" in result:
-        assert len(result["left"]) == len(result["right"]), (
-            "Left and Right channels do not have the same length"
-        )
+        assert len(result["left"]) == len(
+            result["right"]
+        ), "Left and Right channels do not have the same length"
 
     # matches expected?
     assert result["rate"] == expected["rate"], "Sampling rates do not match"
@@ -32,14 +32,14 @@ def compare_sounds(result, expected, eps=1e-6):
                 zip(expected["left"], expected["right"]),
             )
         ):
-            assert abs(res_l - exp_l) <= eps and abs(res_r - exp_r) < eps, (
-                f"Values at index {ix} do not match."
-            )
+            assert (
+                abs(res_l - exp_l) <= eps and abs(res_r - exp_r) < eps
+            ), f"Values at index {ix} do not match."
     else:
         assert "samples" in expected, "Expected stereo sound, got mono"
-        assert len(result["samples"]) == len(expected["samples"]), (
-            "Lengths do not match"
-        )
+        assert len(result["samples"]) == len(
+            expected["samples"]
+        ), "Lengths do not match"
         for ix, (res, exp) in enumerate(zip(result["samples"], expected["samples"])):
             assert abs(res - exp) <= eps, f"Values at index {ix} do not match."
 

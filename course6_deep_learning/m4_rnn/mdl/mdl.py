@@ -53,18 +53,14 @@ def play_song(song):
 def play_generated_song(generated_text):
     songs = extract_song_snippet(generated_text)
     if len(songs) == 0:
-        print(
-            "No valid songs found in generated text. Try training the \
+        print("No valid songs found in generated text. Try training the \
             model longer or increasing the amount of generated music to \
-            ensure complete songs are generated!"
-        )
+            ensure complete songs are generated!")
 
     for song in songs:
         play_song(song)
-    print(
-        "None of the songs were valid, try training longer to improve \
-        syntax."
-    )
+    print("None of the songs were valid, try training longer to improve \
+        syntax.")
 
 
 def test_batch_func_types(func, args):
@@ -80,15 +76,15 @@ def test_batch_func_shapes(func, args):
     dataset, seq_length, batch_size = args
     x, y = func(*args)
     correct = (batch_size, seq_length)
-    assert x.shape == correct, (
-        "[FAIL] test_batch_func_shapes: x {} is not correct shape {}".format(
-            x.shape, correct
-        )
+    assert (
+        x.shape == correct
+    ), "[FAIL] test_batch_func_shapes: x {} is not correct shape {}".format(
+        x.shape, correct
     )
-    assert y.shape == correct, (
-        "[FAIL] test_batch_func_shapes: y {} is not correct shape {}".format(
-            y.shape, correct
-        )
+    assert (
+        y.shape == correct
+    ), "[FAIL] test_batch_func_shapes: y {} is not correct shape {}".format(
+        y.shape, correct
     )
     print("[PASS] test_batch_func_shapes")
     return True
@@ -96,9 +92,9 @@ def test_batch_func_shapes(func, args):
 
 def test_batch_func_next_step(func, args):
     x, y = func(*args)
-    assert (x[:, 1:] == y[:, :-1]).all(), (
-        "[FAIL] test_batch_func_next_step: x_{t} must equal y_{t-1} for all t"
-    )
+    assert (
+        x[:, 1:] == y[:, :-1]
+    ).all(), "[FAIL] test_batch_func_next_step: x_{t} must equal y_{t-1} for all t"
     print("[PASS] test_batch_func_next_step")
     return True
 
@@ -106,10 +102,10 @@ def test_batch_func_next_step(func, args):
 def test_custom_dense_layer_output(y):
     # define the ground truth value for the array
     true_y = np.array([[0.27064407, 0.1826951, 0.50374055]], dtype="float32")
-    assert tf.shape(y).numpy().tolist() == list(true_y.shape), (
-        "[FAIL] output is of incorrect shape. expected {} but got {}".format(
-            true_y.shape, y.numpy().shape
-        )
+    assert tf.shape(y).numpy().tolist() == list(
+        true_y.shape
+    ), "[FAIL] output is of incorrect shape. expected {} but got {}".format(
+        true_y.shape, y.numpy().shape
     )
     np.testing.assert_almost_equal(
         y.numpy(),

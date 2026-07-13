@@ -3,6 +3,7 @@
 import numpy as np, pandas as pd
 
 from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.model_selection import train_test_split
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 
 from IPython.display import display
@@ -119,3 +120,17 @@ def display_info(df: pd.DataFrame):
     display(df)
     print("\n\n")
     display(pd.DataFrame(df.info()))
+
+
+def func_train_test_val_split(X, y):
+    """
+    splits into train,test,val
+    @return:  X_train,y_train,X_val,y_val,X_test,y_test
+    """
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, random_state=42, test_size=0.3, stratify=y
+    )
+    X_train, X_val, y_train, y_val = train_test_split(
+        X_train, y_train, test_size=0.1, random_state=42
+    )
+    return X_train, y_train, X_val, y_val, X_test, y_test

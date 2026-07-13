@@ -36,13 +36,13 @@ class Binary_Long_Addition(SM):
     start_state = (0, 0)
 
     def transition_fn(self, s, i):
-        (carry, digit) = s
-        (i0, i1) = i
+        carry, digit = s
+        i0, i1 = i
         total = i0 + i1 + carry
         return 1 if total > 1 else 0, total % 2
 
     def output_fn(self, s):
-        (carry, digit) = s
+        carry, digit = s
         return digit
 
 
@@ -50,7 +50,7 @@ class Reverser(SM):
     start_state = ([], "input")
 
     def transition_fn(self, s, i):
-        (symbols, mode) = s
+        symbols, mode = s
         if i == "end":
             return symbols, "output"
         elif mode == "input":
@@ -59,7 +59,7 @@ class Reverser(SM):
             return symbols[:-1], mode
 
     def output_fn(self, s):
-        (symbols, mode) = s
+        symbols, mode = s
         if mode == "output" and len(symbols) > 0:
             return symbols[-1]
         else:

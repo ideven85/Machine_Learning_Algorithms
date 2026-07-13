@@ -12,6 +12,6 @@ class Coordinate:
         return f"{abs(self.lat):.1f}°{ns}, {abs(self.lon):.1f}° {ws}"
 
 
-co = Coordinate(lat=12,lon=13)
+co = Coordinate(lat=12, lon=13)
 
 print(co)

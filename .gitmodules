@@ -6,3 +6,6 @@
 [submodule "nlp_course_revision"]
 	path = nlp_course_revision
 	url = https://github.com/ideven85/nlp_course_revision
+[submodule "machine-learning-book"]
+	path = machine-learning-book
+	url = https://github.com/rasbt/machine-learning-book

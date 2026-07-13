@@ -275,7 +275,7 @@ def sgd_test(nn, test_values):
 
     # define the modules
     assert len(nn.modules) == 4
-    (linear_1, f_1, linear_2, f_2) = nn.modules
+    linear_1, f_1, linear_2, f_2 = nn.modules
     Loss = nn.loss
 
     unit_test("linear_1.W", test_values["linear_1.W"], linear_1.W)

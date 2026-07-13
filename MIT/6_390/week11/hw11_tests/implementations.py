@@ -76,9 +76,9 @@ class NNQ:
 
     def fit(self, model, X, Y, epochs=None, dbg=None):
         # This function receives two numpy arrays (with shape (K,7) and (K,1)), not two lists!
-        assert type(X) is not type([]), (
-            "self.fit receives two numpy arrays (with shape (K,7) and (K,1)), not two lists!"
-        )
+        assert type(X) is not type(
+            []
+        ), "self.fit receives two numpy arrays (with shape (K,7) and (K,1)), not two lists!"
 
         if epochs is None:
             epochs = self.epochs

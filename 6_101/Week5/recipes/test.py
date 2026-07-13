@@ -80,39 +80,37 @@ example_recipes = [
 
 
 def compare_recipe_list(expected, result):
-    assert len(expected) == len(result), (
-        f"Expected recipes list of length {len(expected)} but got {len(result)}"
-    )
-    assert type(expected) == type(result), (
-        f"Expected recipes list to be of type {type(expected)} but got {type(result)}"
-    )
+    assert len(expected) == len(
+        result
+    ), f"Expected recipes list of length {len(expected)} but got {len(result)}"
+    assert type(expected) == type(
+        result
+    ), f"Expected recipes list to be of type {type(expected)} but got {type(result)}"
     for item in result:
-        assert isinstance(item, tuple), (
-            f"Expected all items in recipes to be a tuple but got {item}"
-        )
-        assert len(item) == 3, (
-            f"Expected all items in recipes to have length 3 but got {len(item)} \n for {item}"
-        )
+        assert isinstance(
+            item, tuple
+        ), f"Expected all items in recipes to be a tuple but got {item}"
+        assert (
+            len(item) == 3
+        ), f"Expected all items in recipes to have length 3 but got {len(item)} \n for {item}"
         a, b, c = item
         assert isinstance(a, str) and a in {
             "atomic",
             "compound",
-        }, (
-            f"Expected first item in recipe tuple to be atomic or compound but got {a} in {item}"
-        )
-        assert isinstance(b, str), (
-            f"Expected second item in recipe tuple to be a string but got {type(b)} for {b} in {item}"
-        )
+        }, f"Expected first item in recipe tuple to be atomic or compound but got {a} in {item}"
+        assert isinstance(
+            b, str
+        ), f"Expected second item in recipe tuple to be a string but got {type(b)} for {b} in {item}"
         expected_type = (list,) if a == "compound" else (int, float)
-        assert isinstance(c, expected_type), (
-            f"Expected third item in recipe to be of type {expected_type} but got {type(c)} for {c} in {item}"
-        )
+        assert isinstance(
+            c, expected_type
+        ), f"Expected third item in recipe to be of type {expected_type} but got {type(c)} for {c} in {item}"
 
     exp = set((a, b, tuple(c) if a == "compound" else c) for a, b, c in expected)
     res = set((a, b, tuple(c) if a == "compound" else c) for a, b, c in result)
-    assert res == exp, (
-        f"Found {len(res.intersection(exp))} matching recipes. Additional recipes: {len(res - exp)} \n {res - exp} \n Missing Recipes: {len(exp - res)} \n {exp - res}"
-    )
+    assert (
+        res == exp
+    ), f"Found {len(res.intersection(exp))} matching recipes. Additional recipes: {len(res - exp)} \n {res - exp} \n Missing Recipes: {len(exp - res)} \n {exp - res}"
 
 
 def canonize_flat_recipe(recipe):
@@ -129,9 +127,9 @@ def canonize_flat_recipes(recipes):
     """
     Like above, for lists of recipes
     """
-    assert isinstance(recipes, list) and all(isinstance(i, dict) for i in recipes), (
-        "Recipes should be represented as a list of dictionaries!"
-    )
+    assert isinstance(recipes, list) and all(
+        isinstance(i, dict) for i in recipes
+    ), "Recipes should be represented as a list of dictionaries!"
     return frozenset((canonize_flat_recipe(recipe) for recipe in recipes))
 
 
@@ -156,9 +154,9 @@ def check_recipe_book(result, expected):
         assert ing in result, f"missing ingredient {ing} from recipe book"
         canonical_rep = sorted(sorted(rec) for rec in val)
         canonical_res = sorted(sorted(rec) for rec in result.get(ing, []))
-        assert canonical_rep == canonical_res, (
-            f"recipes don't match for ingredient {ing}"
-        )
+        assert (
+            canonical_rep == canonical_res
+        ), f"recipes don't match for ingredient {ing}"
 
 
 def test_recipe_book_examples():
@@ -326,9 +324,9 @@ def test_lowest_cost_big_excluded(testnum):
 
 
 def test_lowest_cost_examples_forbidden():
-    assert lab.lowest_cost.__defaults__ is not None, (
-        "Make sure that forbidden items are an optional agument!"
-    )
+    assert (
+        lab.lowest_cost.__defaults__ is not None
+    ), "Make sure that forbidden items are an optional agument!"
 
     orig = copy.deepcopy(example_recipes)
 
@@ -353,9 +351,9 @@ def test_lowest_cost_examples_forbidden():
 
 
 def test_lowest_cost_more_examples_forbidden():
-    assert lab.lowest_cost.__defaults__ is not None, (
-        "Make sure that forbidden items are an optional agument!"
-    )
+    assert (
+        lab.lowest_cost.__defaults__ is not None
+    ), "Make sure that forbidden items are an optional agument!"
 
     with open(
         os.path.join(TEST_DIRECTORY, "test_recipes", "examples_filter.pickle"), "rb"
@@ -371,9 +369,9 @@ def test_lowest_cost_more_examples_forbidden():
 
 @pytest.mark.parametrize("testnum", range(11))
 def test_lowest_cost_big_forbidden(testnum):
-    assert lab.lowest_cost.__defaults__ is not None, (
-        "Make sure that forbidden items are an optional agument!"
-    )
+    assert (
+        lab.lowest_cost.__defaults__ is not None
+    ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 5, (testnum + 1) * 5):
         test_data = _load_test(i)
@@ -392,9 +390,9 @@ def test_lowest_cost_big_forbidden(testnum):
 
 @pytest.mark.parametrize("testnum", range(5))
 def test_lowest_cost_big_excluded_forbidden(testnum):
-    assert lab.lowest_cost.__defaults__ is not None, (
-        "Make sure that forbidden items are an optional agument!"
-    )
+    assert (
+        lab.lowest_cost.__defaults__ is not None
+    ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 11, (testnum + 1) * 11):
         test_data = _load_test(i)
@@ -420,9 +418,9 @@ def test_scaled_flat_recipe_small(scale):
     expected = {"vanilla ice cream": 3 * scale, "chocolate chips": 6 * scale}
 
     res = lab.scaled_flat_recipe(recipe, scale)
-    assert len(res) == len(recipe), (
-        f"expected recipe of length {len(recipe)}, got recipe of length {len(res)}"
-    )
+    assert len(res) == len(
+        recipe
+    ), f"expected recipe of length {len(recipe)}, got recipe of length {len(res)}"
     assert res == expected
     assert recipe == recipe_copy, "Be careful not to modify the input"
 
@@ -470,9 +468,9 @@ def test_scaled_flat_recipe_medium(scale_num):
         expected = pickle.load(f)
 
     res = lab.scaled_flat_recipe(recipe, scale)
-    assert len(res) == len(recipe), (
-        f"expected recipe of length {len(recipe)}, got recipe of length {len(res)}"
-    )
+    assert len(res) == len(
+        recipe
+    ), f"expected recipe of length {len(recipe)}, got recipe of length {len(res)}"
     assert res == expected
     assert recipe == recipe_copy, "Be careful not to modify the input"
 
@@ -493,9 +491,9 @@ def test_grocery_list_small():
         "creamer": 2,
         "milk": 5,
     }
-    assert flat_recipes == flat_recipes2, (
-        "Be careful not to modify the input to add_flat_recipes!"
-    )
+    assert (
+        flat_recipes == flat_recipes2
+    ), "Be careful not to modify the input to add_flat_recipes!"
 
 
 def test_grocery_list_medium():
@@ -517,9 +515,9 @@ def test_grocery_list_medium():
         "dough": 21,
         "sugar": 3,
     }
-    assert flat_recipes == flat_recipes2, (
-        "Be careful not to modify the input to add_flat_recipes!"
-    )
+    assert (
+        flat_recipes == flat_recipes2
+    ), "Be careful not to modify the input to add_flat_recipes!"
 
 
 @pytest.mark.parametrize("num_ingredients", (20, 100, 1000))
@@ -553,9 +551,9 @@ def test_grocery_list_random(num_ingredients):
     flat_recipes2 = [rep.copy() for rep in flat_recipes]
     res = lab.add_flat_recipes(flat_recipes)
     assert res == original_totals
-    assert flat_recipes == flat_recipes2, (
-        "Be careful not to modify the input to add_flat_recipes!"
-    )
+    assert (
+        flat_recipes == flat_recipes2
+    ), "Be careful not to modify the input to add_flat_recipes!"
 
 
 def test_cheapest_examples_all_included():
@@ -604,9 +602,9 @@ def test_cheapest_examples_all_included():
 
 
 def test_cheapest_examples_forbidden():
-    assert lab.cheapest_flat_recipe.__defaults__ is not None, (
-        "Make sure that forbidden items are an optional agument!"
-    )
+    assert (
+        lab.cheapest_flat_recipe.__defaults__ is not None
+    ), "Make sure that forbidden items are an optional agument!"
 
     orig = copy.deepcopy(example_recipes)
 
@@ -695,9 +693,9 @@ def test_cheapest_big_excluded(testnum):
 
 
 def test_cheapest_more_examples_forbidden():
-    assert lab.cheapest_flat_recipe.__defaults__ is not None, (
-        "Make sure that forbidden items are an optional agument!"
-    )
+    assert (
+        lab.cheapest_flat_recipe.__defaults__ is not None
+    ), "Make sure that forbidden items are an optional agument!"
 
     with open(
         os.path.join(TEST_DIRECTORY, "test_recipes", "examples_filter.pickle"), "rb"
@@ -713,9 +711,9 @@ def test_cheapest_more_examples_forbidden():
 
 @pytest.mark.parametrize("testnum", range(5))
 def test_cheapest_big_forbidden(testnum):
-    assert lab.cheapest_flat_recipe.__defaults__ is not None, (
-        "Make sure that forbidden items are an optional agument!"
-    )
+    assert (
+        lab.cheapest_flat_recipe.__defaults__ is not None
+    ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 11, (testnum + 1) * 11):
         test_data = _load_test(i)
@@ -734,9 +732,9 @@ def test_cheapest_big_forbidden(testnum):
 
 @pytest.mark.parametrize("testnum", range(5))
 def test_cheapest_big_excluded_forbidden(testnum):
-    assert lab.cheapest_flat_recipe.__defaults__ is not None, (
-        "Make sure that forbidden items are an optional agument!"
-    )
+    assert (
+        lab.cheapest_flat_recipe.__defaults__ is not None
+    ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 11, (testnum + 1) * 11):
         test_data = _load_test(i)
@@ -908,9 +906,9 @@ def test_all_recipes_examples_all_included():
 
 
 def test_all_recipes_examples_forbidden():
-    assert lab.all_flat_recipes.__defaults__ is not None, (
-        "Make sure that forbidden items are an optional agument!"
-    )
+    assert (
+        lab.all_flat_recipes.__defaults__ is not None
+    ), "Make sure that forbidden items are an optional agument!"
 
     orig = copy.deepcopy(example_recipes)
 
@@ -972,9 +970,9 @@ def test_all_recipes_examples_forbidden():
 
 @pytest.mark.parametrize("testnum", range(11))
 def test_all_recipes_big(testnum):
-    assert lab.all_flat_recipes.__defaults__ is not None, (
-        "Make sure that forbidden items are an optional agument!"
-    )
+    assert (
+        lab.all_flat_recipes.__defaults__ is not None
+    ), "Make sure that forbidden items are an optional agument!"
 
     for i in range(testnum * 5, (testnum + 1) * 5):
         test_data = _load_test(i)

@@ -22,13 +22,13 @@ def compare_images(im1, im2):
     }, "Incorrect keys in dictionary"
     assert im1["height"] == im2["height"], "Heights must match"
     assert im1["width"] == im2["width"], "Widths must match"
-    assert len(im1["pixels"]) == im1["height"] * im1["width"], (
-        "Incorrect number of pixels"
-    )
+    assert (
+        len(im1["pixels"]) == im1["height"] * im1["width"]
+    ), "Incorrect number of pixels"
     assert all(isinstance(i, int) for i in im1["pixels"]), "Pixels must all be integers"
-    assert all(0 <= i <= 255 for i in im1["pixels"]), (
-        "Pixels must all be in the range from [0, 255]"
-    )
+    assert all(
+        0 <= i <= 255 for i in im1["pixels"]
+    ), "Pixels must all be in the range from [0, 255]"
     pix_incorrect = (None, None)
     for ix, (i, j) in enumerate(zip(im1["pixels"], im2["pixels"])):
         if i != j:
@@ -338,9 +338,9 @@ def test_blurred_images(kernsize, fname):
     input_hash = object_hash(input_img)
     result = lab.blurred(input_img, kernsize)
     expected = lab.load_greyscale_image(expfile)
-    assert object_hash(input_img) == input_hash, (
-        "Be careful not to modify the original image!"
-    )
+    assert (
+        object_hash(input_img) == input_hash
+    ), "Be careful not to modify the original image!"
     compare_images(result, expected)
 
 
@@ -365,9 +365,9 @@ def test_sharpened_images(kernsize, fname):
     input_hash = object_hash(input_img)
     result = lab.sharpened(input_img, kernsize)
     expected = lab.load_greyscale_image(expfile)
-    assert object_hash(input_img) == input_hash, (
-        "Be careful not to modify the original image!"
-    )
+    assert (
+        object_hash(input_img) == input_hash
+    ), "Be careful not to modify the original image!"
     compare_images(result, expected)
 
 
@@ -379,9 +379,9 @@ def test_edges_images(fname):
     input_hash = object_hash(input_img)
     result = lab.edges(input_img)
     expected = lab.load_greyscale_image(expfile)
-    assert object_hash(input_img) == input_hash, (
-        "Be careful not to modify the original image!"
-    )
+    assert (
+        object_hash(input_img) == input_hash
+    ), "Be careful not to modify the original image!"
     compare_images(result, expected)
 
 

@@ -34,9 +34,9 @@ if __name__ == "__main__":
     # print(list(x1))
     # print(list(list(list(my_zip(x,y)))))
 
-    assert isinstance(x2, types.GeneratorType), (
-        f"my_zip first should produce a generator!"
-    )
+    assert isinstance(
+        x2, types.GeneratorType
+    ), f"my_zip first should produce a generator!"
     # print(list(x2))
     assert list(x1) == list(x2)
     # check that the generator is exhausted
