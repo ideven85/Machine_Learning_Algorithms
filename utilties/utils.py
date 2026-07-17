@@ -134,3 +134,25 @@ def func_train_test_val_split(X, y):
         X_train, y_train, test_size=0.1, random_state=42
     )
     return X_train, y_train, X_val, y_val, X_test, y_test
+
+
+from typing import List, Any
+import dataclasses
+
+
+@dataclasses.dataclass
+class TrainResult:
+    # 1. Required Parameters (Must be passed at instantiation)
+    num_epochs: int
+    lr: float
+    model_state: dict = dataclasses.field(default_factory=dict)
+
+    # 2. Optional Selected Parameters (Automatically initialized if omitted)
+    train_loss: List[float] = dataclasses.field(default_factory=list)
+    train_acc: List[float] = dataclasses.field(default_factory=list)
+    val_loss: List[float] = dataclasses.field(default_factory=list)
+    val_acc: List[float] = dataclasses.field(default_factory=list)
+
+    # Simple scalar defaults
+    test_loss: float = 0.0
+    test_acc: float = 0.0

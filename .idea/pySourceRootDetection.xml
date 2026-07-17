@@ -4,6 +4,7 @@
     <option name="sourcePathsSet">
       <set>
         <option value="$PROJECT_DIR$/core_python/oops" />
+        <option value="$PROJECT_DIR$/ref/d2l-en/jax" />
       </set>
     </option>
   </component>

@@ -79,7 +79,7 @@ w, h, p = "width", "height", "pixels"
 # HELPER FUNCTIONS
 
 
-def correlate(image, kernel, boundary_behavior):
+def correlate(image, kernel, boundary_behavior):  # convolution
     """
     Compute the result of correlating the given image with the given kernel.
     `boundary_behavior` will one of the strings "zero", "extend", or "wrap",
