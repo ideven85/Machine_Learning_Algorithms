@@ -23,4 +23,4 @@ class GenerateParenthesis:
 
 if __name__ == "__main__":
     parenthesis = GenerateParenthesis()
-    print(parenthesis.generateParenthesis(10))
+    print(parenthesis.generateParenthesis(15))

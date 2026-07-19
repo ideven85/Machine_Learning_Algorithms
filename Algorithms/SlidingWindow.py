@@ -1,5 +1,6 @@
 from bisect import bisect_right
 from collections import Counter
+from functools import lru_cache
 from typing import List
 
 
@@ -67,7 +68,7 @@ def threeSum(nums: List[int]) -> List[List[int]]:
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
 
-        @cache
+        @lru_cache
         def cached_bisect_right(val):
             nonlocal keys
             return bisect_right(keys, val)

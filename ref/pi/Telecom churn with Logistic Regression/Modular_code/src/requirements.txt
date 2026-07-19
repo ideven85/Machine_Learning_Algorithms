@@ -1,0 +1,7 @@
+numpy==1.18.5
+statsmodels
+pandas==1.3.0
+imbalanced_learn
+matplotlib==3.4.2
+imblearn
+scikit_learn==1.0.1
