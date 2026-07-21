@@ -202,8 +202,8 @@
 
     </style>
 
-    <title>The Platonic Representation Hypothesis</title>
-    <meta property="og:title" content="The Platonic Representation Hypothesis"/>
+    <title>Graph Neural Network Transformers</title>
+    <meta property="og:title" content="GNN Transformer"/>
     <meta charset="UTF-8">
 </head>
 
@@ -216,18 +216,16 @@
         <table class="header" align=left>
             <tr>
                 <td colspan=4>
-                    <span style="font-size: 32px; font-family: 'Courier New', Courier, monospace; /* Adds fallbacks */">A Grand Unified Theory of Deep Learning</span>
+                    <span style="font-size: 32px; font-family: 'Courier New', Courier, monospace; /* Adds fallbacks */">GNN Transformer</span>
                 </td>
             </tr>
             <tr>
                 <td align=left>
                     <span style="font-size:17px"><a href="your_website">Deven Kalra</a></span>
                 </td>
-                <td align=left>
-                    <span style="font-size:17px"><a href="your_partner's_website">Your partner's name</a></span>
-                </td>
+
             <tr>
-                <td colspan=4 align=left><span style="font-size:18px">Final project for 6.7960, MIT</span></td>
+                <td colspan=4 align=left><span style="font-size:18px">Why transformers are gnns</span></td>
             </tr>
         </table>
     </div>
@@ -241,7 +239,7 @@
         <div style="position:fixed; max-width:inherit; top:max(20%,120px)">
             <b style="font-size:16px">Outline</b><br><br>
             <a href="#intro">Introduction</a><br><br>
-            <a href="#does_x_do_y">Does X do Y?</a><br><br>
+            <a href="#does_x_do_y">Can transformers be viewed as gnns</a><br><br>
             <a href="#implications_and_limitations">Implications and limitations</a><br><br>
         </div>
     </div>
@@ -258,13 +256,24 @@
     <div class="margin-left-block">
     </div>
     <div class="main-content-block">
-        <h1>Introduction</h1>
-        Motivate your project. What question are you asking. Why is it unanswered so far? What gap in the literature or
-        practice are you filling?
-        Why is it important?
+        <h1>        Motivation and Background</h1>
+        Over the past decade, deep learning models have increasingly been used for modeling time series data for fluid dynamical systems. One of the most recent applications is in forecasting weather
+        [1]  with deep learning models being developed by tech giants including NVIDIA
+        [2]  and Google
+        [3]  with reasonable prediction accuracy compared to conventional numerical weather prediction. While these models completely replace traditional numerical weather models with deep neural networks (i.e., “surrogate modeling”), in general, deep neural models can also be used to augment existing numerical solvers and methods
+        [4] .
+
+        Training deep neural models to completely replace numerical solvers requires a lot of data, which might not be available due to constraints with sensor and satellite usage associated with collecting ocean and weather data. Additionally, these surrogate models are completely data-driven and could lead to non-physical predictions (lack of volume preservation, and non-conservation of physical laws) if these needs are not explicitly attended to during training
+        [4] . A huge advantage of these models is their very low computational cost during inference compared to using numerical solvers
+        [2] . Another approach is to use closure models that augment low fidelity (low resolution) numerical simulations with a neural network (i.e., a closure term) to predict high fidelity (high resolution) forecasts
+        [5] . This approach could lead to some conservation of physical laws since it builds upon conventional numerical solvers that obey physical equations like PDEs, with a lower computational cost compared to directly running high-fidelity numerical simulations.
+
+        In closure modeling, we are interested in solving the following problem: Here, we describe the case of closure modeling with loss of accuracy due to low numerical resolution which leads to loss of sub-grid scale processes, and sometimes even truncation and discretization errors. But there could also be closure due to missing or unknown physics, incorrect parameters, etc.
+        [5] .
     </div>
     <div class="margin-right-block">
-        Margin note that clarifies some detail #main-content-block for intro section.
+
+
     </div>
 </div>
 
@@ -273,11 +282,33 @@
     </div>
     <div class="main-content-block">
         <h1>Does X do Y?</h1>
-        It is well known that Y does Y. And this has raised the question does X do Y? Because if Y does Y then it stands
-        to reason that X does Y.
-        But we cannot answer this until we realize the Z implies Y and X can be linked to Z.<br><br>
+        Word Embeddings
+        Overview
+        Word embeddings are vector representations of words used in machine learning models. Count-based methods, like co-occurrence counts and PPMI, capture word meaning by analyzing word contexts in a corpus. Word2Vec, a prediction-based method, learns word vectors by training them to predict surrounding words in a sliding window context.
 
-        Now let's write some math!<br>
+        Word2Vec is trained using gradient descent, updating parameters for each central word and its context words. The Skip-Gram model predicts context words from a central word, while the CBOW model predicts the central word from context vectors. Negative sampling is used to improve training efficiency by updating only a subset of context vectors.
+
+        The text discusses word embeddings, focusing on Word2Vec and GloVe models. It compares their approaches, highlighting Word2Vec’s skip-gram with negative sampling and GloVe’s combination of count-based and prediction methods. The text also explores evaluation methods for word embeddings, including intrinsic evaluation (e.g., word similarity and analogy tasks) and extrinsic evaluation (e.g., real-world tasks like text classification).
+
+        The text explores the geometry of learned semantic spaces and the possibility of a linear mapping between languages. It also discusses the importance of context words in Word2Vec training and how subword information can be incorporated into embeddings. Additionally, it touches on detecting semantic change in words across different text corpora.
+
+        Representation	Description	Pros	Cons
+        One-hot Vectors	Words represented as vectors with a 1 at the index of the word and 0s elsewhere. To account for unknown words (the ones which are not in the vocabulary), usually a vocabulary contains a special token UNK. Alternatively, unknown tokens can be ignored or assigned a zero vector. Like 1 added in Naive bayes to remove 0. LDA Algorithm	Simple representation of categorical features.	High dimensionality for large vocabularies, do not capture word meanings.
+        ++Latent Semantic Analysis++
+        LSA Definition: A topic model that analyzes a collection of documents and uses cosine similarity between document vectors to measure document similarity.
+        LSA Application: Applies Singular Value Decomposition (SVD) to a term-document matrix where elements are computed using various weighting schemes like co-occurrence or tf-idf.
+        LSA Visualization: Wikipedia page provides an animation of the topic detection process within a document-word matrix.
+        Distributional Semantics
+        Context Window Method**:** Defines contexts as each word in an L-sized window and uses word-context co-occurrence to generate embeddings.
+        PPMI Method**:** Uses Positive Pointwise Mutual Information (PPMI) to measure the association between word and context, considered state-of-the-art for pre-neural models.
+        LSA for Document Analysis: Analyzes a collection of documents to generate document vectors, allowing for document similarity measurement using cosine similarity.
+        To date the cleverest thinker of all time was
+
+        Sentences Example
+        Mole 3 types
+        American shrew mole-> Animal
+        One **mole **of carbon dioxide-> Atom
+        Take a biopsy of the mole-> Biological Term<br>
         <center>
             <math xmlns="http://www.w3.org/1998/Math/MathML">
                 <mrow>
@@ -296,12 +327,125 @@
             </math>
         </center>
         <br>
-        It's probably best to ask an LLM to help do the web
-        formatting for math. You can tell it "convert this latex equation into MathML: $$\frac{\partial dy}{\partial dx}
-        = x$$"
-        But it took me a few tries. So, if you get frustrated, you can embed an image of the equation, or use other
-        packages for
-        rendering equations on webpages.
+        eepLearning 6.6
+
+        So far we have discussed neural networks with a relatively informal graph language.
+        To describe the back-propagation algorithm more precisely, it is helpful to have a
+        more precise computational graph language.
+
+        Many ways of formalizing computation as graphs are possible.
+        Here, we use each node in the graph to indicate a variable. The variable may
+        be a scalar, vector, matrix, tensor, or even a variable of another type.
+
+        To formalize our graphs, we also need to introduce the idea of an operation.
+        An operation is a simple function of one or more variables. Our graph language is ccompanied by a set of allowable operations.
+
+        Functions more complicated than the operations in this set may be described by composing many operations together.
+
+        Without loss of generality, we define an operation to return only a single output
+        variable. This does not lose generality because the output variable can have multiple entries, such as a vector. (eg images, text, video, numbers, categories as numbers).all basically vectors..
+
+
+
+        Software implementations of back-propagation usually support operations with multiple outputs, but we avoid this case in our description because it introduces many extra details that are not important to conceptual
+        understanding.
+
+        If a variable y is computed by applying an operation to a variable x, then we draw a directed edge from x to y. We sometimes annotate the output node with the name of the operation applied, and other times omit this label when the
+        operation is clear from context.
+
+
+
+        **Core Concepts of Graph ML**
+        * **Nodes and Edges:** Nodes represent objects, while edges model the relationships between them (directed or undirected).
+        * **Graph Representation Learning:** Aims to find low-dimensional vector representations (embeddings) of nodes, edges, or the entire graph, preserving the structural information for downstream tasks.
+        * **Graph Neural Networks (GNNs):** A family of deep learning models designed to directly process graph data by aggregating information from a node's neighbors.
+        * **Types of Graphs:**
+        * **Homogeneous:** Nodes and edges are of the same type.
+        * **Heterogeneous:** Contains different types of nodes and edges (e.g., in a brain wiring graph: neurons, synapses, and functional regions).
+        * **Multi-relational:** Multiple edge types exist between nodes. [++[1](https://www.ijraset.com/research-paper/graph-theory-applications-in-machine-learning#:~:text=Graph%20Theory%20in%20Machine%20Learning%20states%20to,Each%20edge%20may%20be%20directed%20or%20undirected.)++, ++[4](https://www.geeksforgeeks.org/data-science/graph-representation-learning/#:~:text=Multi%2Drelational%20graphs%20extend%20traditional%20graphs%20by%20allowing,number%20of%20distinct%20edge%20types%20or%20relations.)++, ++[5](https://ieeexplore.ieee.org/iel8/10904979/10905066/10905665.pdf)++, ++[6](https://dl.acm.org/doi/10.1007/978-3-032-05162-2_13)++, ++[7](https://huggingface.co/blog/intro-graphml)++, ++[8](https://medium.com/arangodb/a-voyage-through-graph-machine-learning-universe-motivation-applications-datasets-graph-ml-e573a898b346)++, ++[9](https://medium.com/data-science/graph-machine-learning-an-overview-c996e53fab90)++, ++[10](https://medium.com/@ahmedkhamis47/machine-learning-representation-of-electric-circuits-part-i-continuous-circuits-fe86dbbadd9d#:~:text=Graph%20Neural%20Networks%20(GNNs)%20have%20the%20unique,information%20about%20the%20graph%20as%20a%20whole.)++]
+        **Key Techniques and Algorithms**
+        * **Message Passing Neural Networks (MPNN):** Models that learn by passing, updating, and aggregating information across edges.
+        * **GraphSAGE:** An inductive framework that generates embeddings by sampling and aggregating features from a node’s local neighborhood.
+        * **Graph Attention Networks (GAT):** Uses attention mechanisms to learn the importance of neighbors.
+        * **Random Walks:** Algorithms like node2vec create embeddings by traversing the graph, identifying neighborhoods.
+        * **Community Detection:** Clustering techniques that identify densely connected nodes. [++[9](https://medium.com/data-science/graph-machine-learning-an-overview-c996e53fab90)++, ++[11](https://www.sciencedirect.com/science/article/pii/S2666651021000012)++, ++[12](https://web.media.mit.edu/~xdong/talk/intro_graphml.pdf)++, ++[13](https://isamu-website.medium.com/understanding-graph-machine-learning-in-the-era-of-large-language-models-llms-dce2fd3f3af4)++, ++[14](https://medium.com/mlearning-ai/demystifying-graph-based-machine-learning-ed6b6b7c4081)++]
+        **Applications**
+        * **Drug Discovery/Chemistry:** Modeling protein-protein interaction networks and molecular structures.
+        * **Fraud Detection:** Identifying coordinated, subtle behaviors that span multiple entities (e.g., bank accounts, IP addresses).
+        * **Recommender Systems:** Leveraging connection patterns to recommend products, movies, or social media connections.
+        * **Physics/Engineering:** Modeling physical systems and energy flow.
+        * **Circuit Design:** Representing electrical circuits for automated analysis using heterogeneous graphs.
+        * **Brain Mapping:** Using Knowledge Graphs (KG) and Lie Group Embedding to model synaptic connectivity and functional neuronal relationships. [++[6](https://dl.acm.org/doi/10.1007/978-3-032-05162-2_13)++, ++[11](https://www.sciencedirect.com/science/article/pii/S2666651021000012)++, ++[13](https://isamu-website.medium.com/understanding-graph-machine-learning-in-the-era-of-large-language-models-llms-dce2fd3f3af4)++, ++[15](https://www.youtube.com/watch?v=WDT52cWmhsI)++, ++[16](https://ieeexplore.ieee.org/document/10905665/)++, ++[17](https://www.tigergraph.com/glossary/graph-machine-learning/#:~:text=Graph%20machine%20learning%20shines%20in%20domains%20where,most%20impactful%20use%20cases%20include:%20Fraud%20Detection.)++]
+        **Common Frameworks and Tools**
+        * **PyTorch Geometric (PyG):** A popular library for deep learning on graphs.
+        * **NetworkX:** For graph analysis and manipulation.
+        * **GraphML:** A comprehensive file format for graph structures. [++[18](https://docs.arango.ai/ai-suite/graphml/quickstart/#:~:text=How%20to%20get%20started%20with%20GraphML%20*,Notebooks%20and%20the%20HTTP%20API%20for%20GraphML.)++, ++[19](https://tvayer.github.io/courses/coursegraph.html)++, ++[20](https://www.meegle.com/en_us/topics/transfer-learning/transfer-learning-in-knowledge-graphs#:~:text=Popular%20Tools%20PyTorch%20Geometric:%20A%20library%20for,graph%20neural%20networks%2C%20supporting%20transfer%20learning%20applications.)++, ++[21](https://kumo.ai/research/introduction-to-graph-transformers/#:~:text=If%20you're%20excited%20to%20dive%20deeper%20and,comes%20with%20built%2Din%20support%20for%20Graph%20Transformers.)++, ++[22](https://pub.towardsai.net/graph-based-learning-part-1-fc96b70ecf4a#:~:text=Today's%20blog%20is%20more%20focused%20on%20understanding,library%20called%20networkx.%20So%2C%20let's%20get%20started.)++]
+        **Emerging Areas**
+        * **Graph Transformers:** Applying attention-based architectures to graph-structured data.
+        * **LLM + GNN:** Combining Large Language Models with Graph Neural Networks for richer, more semantic understanding of relational data.
+        * **Wiring Diagrams/Quasi-skeletons:** Using labeled directed graphs to represent and analyze temporal processes and agent behavior. [++[23](https://papers.cool/arxiv/2511.20138)++, ++[24](https://cs224w.stanford.edu/)++, ++[25](https://arxiv.org/abs/2301.12493#:~:text=Abstract:%20In%20recent%20years%2C%20the%20attention%20mechanism,to%20extract%20relational%20information%20from%20graph%2Dstructured%20data.)++, ++[26]([https://docs.techsoft3d.com/hoops/ai/programming_guide/ml-fundamentals.html#:~:text=Graph%20Transformers%20apply%20the%20transformer%20architecture%20(a,all%20nodes%20rather%20than%20just%20immediate%20neighbors.)++](https://docs.techsoft3d.com/hoops/ai/programming_guide/ml-fundamentals.html#:~:text=Graph%20Transformers%20apply%20the%20transformer%20architecture%20(a,all%20nodes%20rather%20than%20just%20immediate%20neighbors.)++), ++[27](https://www.rohan-paul.com/p/llms-and-graph-neural-networks-for#:~:text=Combining%20GNNs%20and%20LLMs:%20Key%20Approaches%0A%0AMerging%20graph,patterns%20to%20bring%20these%20two%20worlds%20together.)++]
+        *AI can make mistakes, so double-check responses* [1] ++[https://www.ijraset.com/research-paper/graph-theory-applications-in-machine-learning](https://www.ijraset.com/research-paper/graph-theory-applications-in-machine-learning#:~:text=Graph%20Theory%20in%20Machine%20Learning%20states%20to,Each%20edge%20may%20be%20directed%20or%20undirected.)++ [2] ++[https://www.youtube.com/watch?v=JAB_plj2rbA](https://www.youtube.com/watch?v=JAB_plj2rbA)++ [3] ++[https://towardsdatascience.com/introduction-to-machine-learning-with-graphs-f3e73c38d4f8/](https://towardsdatascience.com/introduction-to-machine-learning-with-graphs-f3e73c38d4f8/)++ [4] ++[https://www.geeksforgeeks.org/data-science/graph-representation-learning/](https://www.geeksforgeeks.org/data-science/graph-representation-learning/#:~:text=Multi%2Drelational%20graphs%20extend%20traditional%20graphs%20by%20allowing,number%20of%20distinct%20edge%20types%20or%20relations.)++ [5] ++[https://ieeexplore.ieee.org/iel8/10904979/10905066/10905665.pdf](https://ieeexplore.ieee.org/iel8/10904979/10905066/10905665.pdf)++ [6] ++[https://dl.acm.org/doi/10.1007/978-3-032-05162-2_13](https://dl.acm.org/doi/10.1007/978-3-032-05162-2_13)++ [7] ++[https://huggingface.co/blog/intro-graphml](https://huggingface.co/blog/intro-graphml)++ [8] ++[https://medium.com/arangodb/a-voyage-through-graph-machine-learning-universe-motivation-applications-datasets-graph-ml-e573a898b346](https://medium.com/arangodb/a-voyage-through-graph-machine-learning-universe-motivation-applications-datasets-graph-ml-e573a898b346)++ [9] ++[https://medium.com/data-science/graph-machine-learning-an-overview-c996e53fab90](https://medium.com/data-science/graph-machine-learning-an-overview-c996e53fab90)++ [10] ++[https://medium.com/@ahmedkhamis47/machine-learning-representation-of-electric-circuits-part-i-continuous-circuits-fe86dbbadd9d](https://medium.com/@ahmedkhamis47/machine-learning-representation-of-electric-circuits-part-i-continuous-circuits-fe86dbbadd9d#:~:text=Graph%20Neural%20Networks%20(GNNs)%20have%20the%20unique,information%20about%20the%20graph%20as%20a%20whole.)++ [11] ++[https://www.sciencedirect.com/science/article/pii/S2666651021000012](https://www.sciencedirect.com/science/article/pii/S2666651021000012)++ [12] ++[https://web.media.mit.edu/~xdong/talk/intro_graphml.pdf](https://web.media.mit.edu/~xdong/talk/intro_graphml.pdf)++ [13] ++[https://isamu-website.medium.com/understanding-graph-machine-learning-in-the-era-of-large-language-models-llms-dce2fd3f3af4](https://isamu-website.medium.com/understanding-graph-machine-learning-in-the-era-of-large-language-models-llms-dce2fd3f3af4)++ [14] ++[https://medium.com/mlearning-ai/demystifying-graph-based-machine-learning-ed6b6b7c4081](https://medium.com/mlearning-ai/demystifying-graph-based-machine-learning-ed6b6b7c4081)++ [15] ++[https://www.youtube.com/watch?v=WDT52cWmhsI](https://www.youtube.com/watch?v=WDT52cWmhsI)++ [16] ++[https://ieeexplore.ieee.org/document/10905665/](https://ieeexplore.ieee.org/document/10905665/)++ [17] ++[https://www.tigergraph.com/glossary/graph-machine-learning/](https://www.tigergraph.com/glossary/graph-machine-learning/#:~:text=Graph%20machine%20learning%20shines%20in%20domains%20where,most%20impactful%20use%20cases%20include:%20Fraud%20Detection.)++ [18] ++[https://docs.arango.ai/ai-suite/graphml/quickstart/](https://docs.arango.ai/ai-suite/graphml/quickstart/#:~:text=How%20to%20get%20started%20with%20GraphML%20*,Notebooks%20and%20the%20HTTP%20API%20for%20GraphML.)++ [19] ++[https://tvayer.github.io/courses/coursegraph.html](https://tvayer.github.io/courses/coursegraph.html)++ [20] ++[https://www.meegle.com/en_us/topics/transfer-learning/transfer-learning-in-knowledge-graphs](https://www.meegle.com/en_us/topics/transfer-learning/transfer-learning-in-knowledge-graphs#:~:text=Popular%20Tools%20PyTorch%20Geometric:%20A%20library%20for,graph%20neural%20networks%2C%20supporting%20transfer%20learning%20applications.)++ [21] ++[https://kumo.ai/research/introduction-to-graph-transformers/](https://kumo.ai/research/introduction-to-graph-transformers/#:~:text=If%20you're%20excited%20to%20dive%20deeper%20and,comes%20with%20built%2Din%20support%20for%20Graph%20Transformers.)++ [22] ++[https://pub.towardsai.net/graph-based-learning-part-1-fc96b70ecf4a](https://pub.towardsai.net/graph-based-learning-part-1-fc96b70ecf4a#:~:text=Today's%20blog%20is%20more%20focused%20on%20understanding,library%20called%20networkx.%20So%2C%20let's%20get%20started.)++ [23] ++[https://papers.cool/arxiv/2511.20138](https://papers.cool/arxiv/2511.20138)++ [24] ++[https://cs224w.stanford.edu/](https://cs224w.stanford.edu/)++ [25] ++[https://arxiv.org/abs/2301.12493](https://arxiv.org/abs/2301.12493#:~:text=Abstract:%20In%20recent%20years%2C%20the%20attention%20mechanism,to%20extract%20relational%20information%20from%20graph%2Dstructured%20data.)++ [26] ++[https://docs.techsoft3d.com/hoops/ai/programming_guide/ml-fundamentals.html]([https://docs.techsoft3d.com/hoops/ai/programming_guide/ml-fundamentals.html#:~:text=Graph%20Transformers%20apply%20the%20transformer%20architecture%20(a,all%20nodes%20rather%20than%20just%20immediate%20neighbors.)++](https://docs.techsoft3d.com/hoops/ai/programming_guide/ml-fundamentals.html#:~:text=Graph%20Transformers%20apply%20the%20transformer%20architecture%20(a,all%20nodes%20rather%20than%20just%20immediate%20neighbors.)++) [27] ++[https://www.rohan-paul.com/p/llms-and-graph-neural-networks-for++](https://www.rohan-paul.com/p/llms-and-graph-neural-networks-for++)
+
+
+
+        **Multi-relational Graphs**
+        Multi-relational graphs extend traditional graphs by allowing different types of edges to represent different relationships between nodes. Each edge is associated with a specific edge type or relation
+        ∣V∣×∣R∣×∣V∣, where ∣R∣ is the number of distinct edge types or relations.
+
+
+        ### Heterogenous Graph
+        * Heterogeneous graphs are a subset of multi-relational graphs where nodes and edges can have different types or categories.
+        * Nodes in a heterogeneous graph may represent different types of entities (e.g., users, products, events), and edges may represent different types of relationships or interactions between these entities.
+        * For example, in a social network, nodes could represent users, pages, and events, while edges could represent friendships, likes, and attendances.
+        * Heterogeneous graphs provide a flexible framework for modeling complex relationships and interactions in various domains.
+        ### Multiplex Graphs
+        * Multiplex graphs are another subset of multi-relational graphs where different layers or "layers" of edges exist, each representing a distinct relationship between nodes.
+        * Unlike heterogeneous graphs, multiplex graphs typically have homogeneous nodes (i.e., all nodes belong to the same type), but different layers of edges capture different types of interactions between these nodes.
+        * For example, in a transportation network, one layer of edges could represent road connections, while another layer could represent railway connections.
+        * Multiplex graphs are useful for modeling systems with multiple interaction modalities or networks with diverse edge types.
+        ## What is Graph Representation Learning?
+        Graph representation learning is indeed a field of++[ machine learning](https://www.geeksforgeeks.org/machine-learning/machine-learning/)++ and ++[artificial intelligence](https://www.geeksforgeeks.org/artificial-intelligence/what-is-artificial-intelligence-ai/)++ that is concerned with developing algorithms capable of learning meaningful representations of graph-structured data. In traditional machine learning tasks, such as image classification or natural language processing, data is often represented in structured formats like matrices or tensors. However, many real-world datasets exhibit complex relational structures that cannot be easily captured using traditional representations. Graphs provide a flexible and expressive way to model relationships between entities in various domains, such as social networks, biological networks, recommendation systems, knowledge graphs, and more. In these graphs, entities are represented as nodes, and relationships between entities are represented as edges. Analyzing and extracting insights from such graph-structured data poses unique challenges due to its irregular and heterogeneous nature. Graph representation learning aims to learn low-dimensional vector representations (embeddings) of nodes, edges, or entire graphs. Techniques like node embeddings (e.g., node2vec, DeepWalk), graph embeddings (e.g., GraphSAGE, Graph Convolutional Networks), and graph neural networks (GNNs) are commonly used for this purpose. These embeddings capture structural and relational information from the graph, enabling downstream tasks such as node classification, link prediction, and graph classification. Machine Learning with Graph Graph in machine learning provides a mathematical foundation for an accurate analysis, understanding the problem and learning real world problems. They bring simplicity to the complex system and makes such task easy to handle. Those System which uses networking, such as biological networks, social media network, transportational network and other kind of networks related system are significant to use the graphs in Machine Learning. Those system where networking and connection of various nodes is a requirement graph are used. Let's discuss some key concepts in machine learning with Graphs:
+        ### Supervised Graph Machine learning tasks
+        Supervised Graph Machine learning tasks includes leveraging labeled data by which a machine learning model can be trained. This data contains nodes and edges and node or edge labels. We have described such task associated with Graph machine learning. Here is a list of those task which can be performed using Supervised Graph Machine Learning. Following are the examples of supervised Graph Machine learning tasks:
+        Node Classification Classification of Nodes is a process of prediction of labels of the nodes of a graph according to their relationships and association with their neighbor nodes. If the graph is partially labeled than this classification aids to label the unlabeled part of graph. Graph Classification This a process of classification of graph in different parts according to its properties, attributes and nodes. This process is used in graph make a graph simple. It aids in community detection and anomaly detection. Its application is in biological networks, social networking system and various other system which includes networking. Graph Regression Graph regression tasks involve predicting continuous-valued target variables associated with nodes or graphs. Instead of discrete class labels, the goal is to predict real-valued quantities such as node properties, graph properties, or graph-level attributes. Example applications include predicting node properties like protein folding energies in biological networks, estimating graph properties like centrality measures in social networks, and forecasting financial indicators in economic networks. Link Prediction Link prediction is process of finding the possibility of link between two nodes of a graph. So, this process predicts the possibility of link between various nodes of a graph. There are many methods of link prediction. Heuristic approach is one of the feasible methods for link prediction. In this method it has to be found the similarity between two nodes according to their heuristics such as common neighbor. Link prediction is key problem of network-structured data. Unsupervised graph machine learning tasks In unsupervised a machine learning algorithm have to find the hidden patterns on its own without any label. In context of graph unlabeled data is analyzed through the graphs. Following are the examples of unsupervised machine learning task: Graph Clustering Graph clustering, also known as community detection, involves partitioning the nodes of a graph into clusters or communities based on their connectivity patterns. The objective is to identify densely connected subgraphs within the larger graph. Clustering algorithms such as spectral clustering, modularity optimization, and hierarchical clustering are commonly used for this task. Anomaly detection Anomaly detection is task of machine learning in which it is identified whether a pattern deviates from its regular characteristics. This process identifies the unusual characteristic of a patten within a graph. It is applicable in various domain such as fraud detection, social networking and spam detection. Graph Generation Graph generation aims to generate new graph instances that exhibit similar properties to a given set of training graphs. The goal is to learn a generative model that captures the underlying distribution of the data and can produce novel graph samples. Generative models such as graph autoencoders, graph generative adversarial networks (GANs), and variational graph autoencoders (VGAEs) are used for graph generation. Applications of Graph Representation in ML Following are the various applications of Graph representation in Machine Learning:
+        * Graphs are widely used in various ML based application such as social networking platforms.
+        * Domains such as network analysis, fraud detection, bioinformatics and map construction have significant requirement of graph theory.
+        * food websites, product delivery system and other map related websites and many other applications.
+        * By implementing Minimum distance algorithms, we can easily get the minimum distance among two cities as we use it in google maps.
+        * Graphs are also used in many scientific research related tasks and inventions. Where some entities are related with each other.
+        * GNN, Graphical Neural Network is also a concept where graphs are used and on crucial part of Machine Learning.
+
+
+        Wiring graphs in machine learning **refers to the application of mathematical structures—nodes (entities) and edges (relationships)—to model, analyze, and predict outcomes based on connected data**. This approach goes beyond traditional ML by utilizing the structural information, not just isolated data points. [++[1](https://www.ijraset.com/research-paper/graph-theory-applications-in-machine-learning#:~:text=Graph%20Theory%20in%20Machine%20Learning%20states%20to,Each%20edge%20may%20be%20directed%20or%20undirected.)++, ++[2](https://www.youtube.com/watch?v=JAB_plj2rbA)++, ++[3](https://towardsdatascience.com/introduction-to-machine-learning-with-graphs-f3e73c38d4f8/)++]
+        ## Graph Machine Learning Examples
+        **Neuron: x->∑[x1..xd]*[w1..wd]->Can be linear regressor or logistic regressor** Linear Regression: x->[housing,bedroom] W->[w1,w2] Single Neuron-> 
+        ![eg. linear regressor represented as a computation graph](Attachments/3FB19A09-E811-4BDB-89E4-CEB19F5C3D30.png)
+
+        # Neural Network
+        Neural Layer-> Combination of linear functions-> Can be linear anything>
+        ![Alayer:](Attachments/77A8232D-8153-4BBF-A9EC-07BC7A7F56DD.png)
+        ![Forward pass: evaluate, givn the current parameters](Attachments/D90E4483-82BD-4B30-8C8C-34DA0165ECCC.png)
+        ![Hidden layer activation function / choices](Attachments/2188029B-8E4E-4BB8-AC5C-C15CD7EFE85D.png)
+        ## Feed Forward
+        [A (fully-connected, feed-forward) neural network:](Attachments/36319A32-FBC6-498B-8930-5EE75D4FE150.png)
+        ![A (fully-connected, feed-forward) neural network:](Attachments/11F042F2-64E3-45B2-B63F-156998E94633.png)
+        #todo Read Normalization from Deep Learning Book... thinking same as pooling.. yes.. Normalization is converting to stand form.. between 0-1.. Batch Normalization is pooling.. k max pooling..
+        Cross Entropy-> 
+        $$-1*(y*log(O)-(1*(1-y)*log(1-O))=
+        − mod((y logg+ (1 − y) log(1 − g)))
+
+        What is Graph Representation Learning?
+        Graph representation learning is indeed a field of++ machine learning++ and ++artificial intelligence++ that is concerned with developing algorithms capable of learning meaningful representations of graph-structured data. In traditional machine learning tasks, such as image classification or natural language processing, data is often represented in structured formats like matrices or tensors. However, many real-world datasets exhibit complex relational structures that cannot be easily captured using traditional representations. Graphs provide a flexible and expressive way to model relationships between entities in various domains, such as social networks, biological networks, recommendation systems, knowledge graphs, and more. In these graphs, entities are represented as nodes, and relationships between entities are represented as edges. Analyzing and extracting insights from such graph-structured data poses unique challenges due to its irregular and heterogeneous nature. Graph representation learning aims to learn low-dimensional vector representations (embeddings) of nodes, edges, or entire graphs. Techniques like node embeddings (e.g., node2vec, DeepWalk), graph embeddings (e.g., GraphSAGE, Graph Convolutional Networks), and graph neural networks (GNNs) are commonly used for this purpose. These embeddings capture structural and relational information from the graph, enabling downstream tasks such as node classification, link prediction, and graph classification. Machine Learning with Graph Graph in machine learning provides a mathematical foundation for an accurate analysis, understanding the problem and learning real world problems. They bring simplicity to the complex system and makes such task easy to handle. Those System which uses networking, such as biological networks, social media network, transportational network and other kind of networks related system are significant to use the graphs in Machine Learning. Those system where networking and connection of various nodes is a requirement graph are used. Let's discuss some key concepts in machine learning with Graphs:
+        Supervised Graph Machine learning tasks
+        Supervised Graph Machine learning tasks includes leveraging labeled data by which a machine learning model can be trained. This data contains nodes and edges and node or edge labels. We have described such task associated with Graph machine learning. Here is a list of those task which can be performed using Supervised Graph Machine Learning. Following are the examples of supervised Graph Machine learning tasks: Node Classification Classification of Nodes is a process of prediction of labels of the nodes of a graph according to their relationships and association with their neighbor nodes. If the graph is partially labeled than this classification aids to label the unlabeled part of graph. Graph Classification This a process of classification of graph in different parts according to its properties, attributes and nodes. This process is used in graph make a graph simple. It aids in community detection and anomaly detection. Its application is in biological networks, social networking system and various other system which includes networking. Graph Regression Graph regression tasks involve predicting continuous-valued target variables associated with nodes or graphs. Instead of discrete class labels, the goal is to predict real-valued quantities such as node properties, graph properties, or graph-level attributes. Example applications include predicting node properties like protein folding energies in biological networks, estimating graph properties like centrality measures in social networks, and forecasting financial indicators in economic networks. Link Prediction Link prediction is process of finding the possibility of link between two nodes of a graph. So, this process predicts the possibility of link between various nodes of a graph. There are many methods of link prediction. Heuristic approach is one of the feasible methods for link prediction. In this method it has to be found the similarity between two nodes according to their heuristics such as common neighbor. Link prediction is key problem of network-structured data. Unsupervised graph machine learning tasks In unsupervised a machine learning algorithm have to find the hidden patterns on its own without any label. In context of graph unlabeled data is analyzed through the graphs. Following are the examples of unsupervised machine learning task: Graph Clustering Graph clustering, also known as community detection, involves partitioning the nodes of a graph into clusters or communities based on their connectivity patterns. The objective is to identify densely connected subgraphs within the larger graph. Clustering algorithms such as spectral clustering, modularity optimization, and hierarchical clustering are commonly used for this task. Anomaly detection Anomaly detection is task of machine learning in which it is identified whether a pattern deviates from its regular characteristics. This process identifies the unusual characteristic of a patten within a graph. It is applicable in various domain such as fraud detection, social networking and spam detection. Graph Generation Graph generation aims to generate new graph instances that exhibit similar properties to a given set of training graphs. The goal is to learn a generative model that captures the underlying distribution of the data and can produce novel graph samples. Generative models such as graph autoencoders, graph generative adversarial networks (GANs), and variational graph autoencoders (VGAEs) are used for graph generation. Applications of Graph Representation in ML Following are the various applications of Graph representation in Machine Learning:
+        * Graphs are widely used in various ML based application such as social networking platforms.
+        * Domains such as network analysis, fraud detection, bioinformatics and map construction have significant requirement of graph theory.
+        * food websites, product delivery system and other map related websites and many other applications.
+        * By implementing Minimum distance algorithms, we can easily get the minimum distance among two cities as we use it in google maps.
+        * Graphs are also used in many scientific research related tasks and inventions. Where some entities are related with each other.
+        * GNN, Graphical Neural Network is also a concept where graphs are used and on crucial part of Machine Learning.
+        Wiring graphs in machine learning refers to the application of mathematical structures—nodes (entities) and edges (relationships)—to model, analyze, and predict outcomes based on connected data. This approach goes beyond traditional ML by utilizing the structural information, not just isolated data points. [++1++, ++2++, ++3++]
+
     </div>
     <div class="margin-right-block" style="transform: translate(0%, -100%);">
         <!-- you can move the margin notes up and down with translate -->
@@ -316,7 +460,7 @@
         <h1>Another section</h1>
         In this section we embed a video:
         <video class='my-video' loop autoplay muted style="width: 725px">
-            <source src="./images/mtsh.mp4" type="video/mp4">
+            <source src="./images/embeddings.mov" type="video/mp4">
         </video>
     </div>
     <div class="margin-right-block">
