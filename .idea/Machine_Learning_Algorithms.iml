@@ -2,7 +2,9 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/MIT" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MIT/6_7960" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MIT/6s191" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/MIT/6_7960/homeworks/1 nn basics/data/cifar-10-batches-py" />
       <excludeFolder url="file://$MODULE_DIR$/MIT/6_7960/weekly/week2/homeworks/data/cifar-100-python" />
       <excludeFolder url="file://$MODULE_DIR$/core_python/cythonizing/build" />
@@ -11,6 +13,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Python 3.12 (Machine_Learning_Algorithms)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
   </component>
   <component name="PyDocumentationSettings">
