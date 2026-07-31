@@ -24,31 +24,27 @@ import tensorflow as tf
 from tensorflow.keras import layers, models
 
 # Create a CNN model
-model = models.Sequential([
-    # First convolutional block
-    layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)),
-    layers.MaxPooling2D((2, 2)),
-    
-    # Second convolutional block
-    layers.Conv2D(64, (3, 3), activation='relu'),
-    layers.MaxPooling2D((2, 2)),
-    
-    # Third convolutional block
-    layers.Conv2D(128, (3, 3), activation='relu'),
-    layers.MaxPooling2D((2, 2)),
-    
-    # Flatten layer to prepare for fully connected layers
-    layers.Flatten(),
-    
-    # Fully connected layers
-    layers.Dense(64, activation='relu'),
-    layers.Dense(10, activation='softmax')  # 10 classes for CIFAR-10
-])
+model = models.Sequential(
+    [
+        # First convolutional block
+        layers.Conv2D(32, (3, 3), activation="relu", input_shape=(32, 32, 3)),
+        layers.MaxPooling2D((2, 2)),
+        # Second convolutional block
+        layers.Conv2D(64, (3, 3), activation="relu"),
+        layers.MaxPooling2D((2, 2)),
+        # Third convolutional block
+        layers.Conv2D(128, (3, 3), activation="relu"),
+        layers.MaxPooling2D((2, 2)),
+        # Flatten layer to prepare for fully connected layers
+        layers.Flatten(),
+        # Fully connected layers
+        layers.Dense(64, activation="relu"),
+        layers.Dense(10, activation="softmax"),  # 10 classes for CIFAR-10
+    ]
+)
 
 # Compile the model
-model.compile(optimizer='adam',
-              loss='categorical_crossentropy',
-              metrics=['accuracy'])
+model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
 
 # Print model summary
 model.summary()
@@ -93,40 +89,43 @@ from tensorflow.keras.datasets import cifar10
 (train_images, train_labels), (test_images, test_labels) = cifar10.load_data()
 
 # Preprocess data
-train_images = train_images.astype('float32') / 255
-test_images = test_images.astype('float32') / 255
+train_images = train_images.astype("float32") / 255
+test_images = test_images.astype("float32") / 255
 
 # Convert labels to one-hot encoding
 train_labels = tf.keras.utils.to_categorical(train_labels, 10)
 test_labels = tf.keras.utils.to_categorical(test_labels, 10)
 
 # Build the model
-model = models.Sequential([
-    layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)),
-    layers.MaxPooling2D((2, 2)),
-    layers.Conv2D(64, (3, 3), activation='relu'),
-    layers.MaxPooling2D((2, 2)),
-    layers.Conv2D(128, (3, 3), activation='relu'),
-    layers.MaxPooling2D((2, 2)),
-    layers.Flatten(),
-    layers.Dense(64, activation='relu'),
-    layers.Dense(10, activation='softmax')
-])
+model = models.Sequential(
+    [
+        layers.Conv2D(32, (3, 3), activation="relu", input_shape=(32, 32, 3)),
+        layers.MaxPooling2D((2, 2)),
+        layers.Conv2D(64, (3, 3), activation="relu"),
+        layers.MaxPooling2D((2, 2)),
+        layers.Conv2D(128, (3, 3), activation="relu"),
+        layers.MaxPooling2D((2, 2)),
+        layers.Flatten(),
+        layers.Dense(64, activation="relu"),
+        layers.Dense(10, activation="softmax"),
+    ]
+)
 
 # Compile the model
-model.compile(optimizer='adam',
-              loss='categorical_crossentropy',
-              metrics=['accuracy'])
+model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
 
 # Train the model
-history = model.fit(train_images, train_labels,
-                    epochs=10,
-                    batch_size=64,
-                    validation_data=(test_images, test_labels))
+history = model.fit(
+    train_images,
+    train_labels,
+    epochs=10,
+    batch_size=64,
+    validation_data=(test_images, test_labels),
+)
 
 # Evaluate the model
 test_loss, test_acc = model.evaluate(test_images, test_labels, verbose=2)
-print(f'\nTest accuracy: {test_acc}')
+print(f"\nTest accuracy: {test_acc}")
 ```
 
 ## Key Advantages of CNNs
@@ -320,11 +319,7 @@ import torch
 import torch.nn as nn
 
 # Define a neural network
-model = nn.Sequential(
-    nn.Linear(2, 4),
-    nn.ReLU(),
-    nn.Linear(4, 1)
-)
+model = nn.Sequential(nn.Linear(2, 4), nn.ReLU(), nn.Linear(4, 1))
 
 # Loss function and optimizer
 criterion = nn.MSELoss()
@@ -333,7 +328,7 @@ optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 # Forward pass
 inputs = torch.randn(3, 2)  # 3 samples, 2 features
 outputs = model(inputs)
-target = torch.ones(3, 1)   # Target values
+target = torch.ones(3, 1)  # Target values
 
 # Calculate loss
 loss = criterion(outputs, target)
@@ -509,7 +504,7 @@ import torch.nn as nn
 model = nn.Sequential(
     nn.Linear(2, 4),  # 2 inputs, 4 hidden neurons
     nn.ReLU(),
-    nn.Linear(4, 1)
+    nn.Linear(4, 1),
 )
 
 # Loss function and optimizer
@@ -523,16 +518,16 @@ y_train = torch.randn(100, 1)  # Target
 for epoch in range(100):
     # Forward pass
     y_pred = model(X_train)
-    
+
     # Compute loss
     loss = criterion(y_pred, y_train)
-    
+
     # Backward pass (backpropagation)
     loss.backward()
-    
+
     # Update parameters
     optimizer.step()
-    
+
     # Reset gradients
     optimizer.zero_grad()
 ```
@@ -627,23 +622,23 @@ for i in range(n_iterations):
     idx = np.random.permutation(X.shape[0])
     X_shuffled = X[idx]
     y_shuffled = y[idx]
-    
+
     for j in range(X_shuffled.shape[0]):
         # Single sample (stochastic)
         x_j = X_shuffled[j, :-1]  # Features (bias and feature)
-        y_j = y_shuffled[j]       # Target
-        
+        y_j = y_shuffled[j]  # Target
+
         # Forward pass
         z = np.dot(theta.T, x_j)
         y_pred = 1 / (1 + np.exp(-z))
-        
+
         # Backward pass (compute gradient)
         gradient = (y_pred - y_j) * y_pred * (1 - y_pred) * x_j
         gradient = gradient.reshape(-1, 1)
-        
+
         # Update parameters
         theta -= learning_rate * gradient
-        
+
     # Compute loss for plotting
     losses.append(compute_loss(X, y, theta))
 
@@ -651,10 +646,11 @@ print("Final parameters:", theta)
 
 # Plot loss
 plt.plot(losses)
-plt.title('Loss over Iterations (SGD)')
-plt.xlabel('Iteration')
-plt.ylabel('Loss')
+plt.title("Loss over Iterations (SGD)")
+plt.xlabel("Iteration")
+plt.ylabel("Loss")
 plt.show()
+
 
 # Function to compute logistic loss
 def compute_loss(X, y, theta):
@@ -861,17 +857,18 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 class TransformerLayer(nn.Module):
     def __init__(self, d_model, num_heads, dim_feedforward):
         super().__init__()
         self.self_attn = nn.MultiheadAttention(d_model, num_heads)
         self.linear1 = nn.Linear(d_model, dim_feedforward)
         self.linear2 = nn.Linear(dim_feedforward, d_model)
-        
+
         # Layer Normalization layers
         self.norm1 = nn.LayerNorm(d_model)
         self.norm2 = nn.LayerNorm(d_model)
-        
+
         # Feedforward layer with dropout
         self.activation = nn.ReLU()
         self.dropout1 = nn.Dropout(0.1)
@@ -885,17 +882,21 @@ class TransformerLayer(nn.Module):
         x = self.norm2(x + self.dropout2(self.linear2(x)))
         return x
 
+
 class Transformer(nn.Module):
     def __init__(self, vocab_size, d_model, num_layers, num_heads, dim_feedforward):
         super().__init__()
         self.embedding = nn.Embedding(vocab_size, d_model)
         self.pos_encoder = nn.PositionalEncoding(d_model)
         self.transformer = nn.TransformerEncoder(
-            nn.TransformerEncoderLayer(d_model=d_model, 
-                                       num_heads=num_heads,
-                                       dim_feedforward=dim_feedforward,
-                                       norm_layer=nn.LayerNorm(d_model)),
-            num_layers=num_layers)
+            nn.TransformerEncoderLayer(
+                d_model=d_model,
+                num_heads=num_heads,
+                dim_feedforward=dim_feedforward,
+                norm_layer=nn.LayerNorm(d_model),
+            ),
+            num_layers=num_layers,
+        )
         self.fc_out = nn.Linear(d_model, vocab_size)
 
     def forward(self, src):
@@ -905,13 +906,10 @@ class Transformer(nn.Module):
         output = self.fc_out(output)
         return output
 
+
 # Example usage
 model = Transformer(
-    vocab_size=30000,
-    d_model=512,
-    num_layers=6,
-    num_heads=8,
-    dim_feedforward=2048
+    vocab_size=30000, d_model=512, num_layers=6, num_heads=8, dim_feedforward=2048
 )
 
 # Create a batch of sequences

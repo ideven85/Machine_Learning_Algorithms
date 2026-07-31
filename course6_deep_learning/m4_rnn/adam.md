@@ -267,26 +267,28 @@ parameter.
 
 **Practical Implementation** (Python-like pseudocode):
 ```python
-def adam_optimizer(params, grads, learning_rate=0.001, beta1=0.9, beta2=0.999, epsilon=1e-8):
+def adam_optimizer(
+    params, grads, learning_rate=0.001, beta1=0.9, beta2=0.999, epsilon=1e-8
+):
     # Initialize if first step
-    if not hasattr(adam_optimizer, 'm') or not hasattr(adam_optimizer, 'v'):
+    if not hasattr(adam_optimizer, "m") or not hasattr(adam_optimizer, "v"):
         adam_optimizer.m = {p: torch.zeros_like(p) for p in params}
         adam_optimizer.v = {p: torch.zeros_like(p) for p in params}
         adam_optimizer.t = 0  # Step counter
-    
+
     adam_optimizer.t += 1
-    bias_correction1 = 1 - beta1 ** adam_optimizer.t
-    bias_correction2 = 1 - beta2 ** adam_optimizer.t
-    
+    bias_correction1 = 1 - beta1**adam_optimizer.t
+    bias_correction2 = 1 - beta2**adam_optimizer.t
+
     for p in params:
         if p.grad is not None:
             grad = p.grad
             adam_optimizer.m[p] = beta1 * adam_optimizer.m[p] + (1 - beta1) * grad
-            adam_optimizer.v[p] = beta2 * adam_optimizer.v[p] + (1 - beta2) * (grad ** 2)
-            
+            adam_optimizer.v[p] = beta2 * adam_optimizer.v[p] + (1 - beta2) * (grad**2)
+
             m_hat = adam_optimizer.m[p] / bias_correction1
             v_hat = adam_optimizer.v[p] / bias_correction2
-            
+
             p.data -= learning_rate * (m_hat / (torch.sqrt(v_hat) + epsilon))
 ```
 

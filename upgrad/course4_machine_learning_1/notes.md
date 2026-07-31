@@ -539,13 +539,15 @@ import pandas as pd
 from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import LogisticRegression
 import warnings
-warnings.filterwarnings('ignore')
+
+warnings.filterwarnings("ignore")
 
 # Load a winequality dataset
 X = df_winequality.drop("quality", axis=1)
 y = df_winequality["quality"]
 
-def forward_selection(X, y, model, scoring='accuracy', cv=5):
+
+def forward_selection(X, y, model, scoring="accuracy", cv=5):
 
     selected_features = []
     remaining_features = list(X.columns)
@@ -576,8 +578,9 @@ def forward_selection(X, y, model, scoring='accuracy', cv=5):
 
     return selected_features
 
+
 # Instantiate the model
-model = LogisticRegression(max_iter=10,solver='liblinear')
+model = LogisticRegression(max_iter=10, solver="liblinear")
 
 # Perform forward selection
 selected_features = forward_selection(X, y, model)

@@ -793,22 +793,24 @@ Implications of L2-regularization on:
     ```python
     import numpy as np
     import tensorflow as tf
-    
-    
-    w = tf.Variable(0, dtype=tf.float32)                 # creating a variable w
-    cost = tf.add(tf.add(w**2, tf.multiply(-10.0, w)), 25.0)        # can be written as this - cost = w**2 - 10*w + 25
+
+
+    w = tf.Variable(0, dtype=tf.float32)  # creating a variable w
+    cost = tf.add(
+        tf.add(w**2, tf.multiply(-10.0, w)), 25.0
+    )  # can be written as this - cost = w**2 - 10*w + 25
     train = tf.train.GradientDescentOptimizer(0.01).minimize(cost)
 
     init = tf.global_variables_initializer()
     session = tf.Session()
     session.run(init)
-    session.run(w)    # Runs the definition of w, if you print this it will print zero
+    session.run(w)  # Runs the definition of w, if you print this it will print zero
     session.run(train)
 
     print("W after one iteration:", session.run(w))
 
     for i in range(1000):
-    	session.run(train)
+        session.run(train)
 
     print("W after 1000 iterations:", session.run(w))
     ```
@@ -817,26 +819,26 @@ Implications of L2-regularization on:
     ```python
     import numpy as np
     import tensorflow as tf
-    
-    
-    coefficients = np.array([[1.], [-10.], [25.]])
+
+
+    coefficients = np.array([[1.0], [-10.0], [25.0]])
 
     x = tf.placeholder(tf.float32, [3, 1])
-    w = tf.Variable(0, dtype=tf.float32)                 # Creating a variable w
-    cost = x[0][0]*w**2 + x[1][0]*w + x[2][0]
+    w = tf.Variable(0, dtype=tf.float32)  # Creating a variable w
+    cost = x[0][0] * w**2 + x[1][0] * w + x[2][0]
 
     train = tf.train.GradientDescentOptimizer(0.01).minimize(cost)
 
     init = tf.global_variables_initializer()
     session = tf.Session()
     session.run(init)
-    session.run(w)    # Runs the definition of w, if you print this it will print zero
+    session.run(w)  # Runs the definition of w, if you print this it will print zero
     session.run(train, feed_dict={x: coefficients})
 
     print("W after one iteration:", session.run(w))
 
     for i in range(1000):
-    	session.run(train, feed_dict={x: coefficients})
+        session.run(train, feed_dict={x: coefficients})
 
     print("W after 1000 iterations:", session.run(w))
     ```
@@ -845,9 +847,9 @@ Implications of L2-regularization on:
 - If you are using a mini-batch training you should change the `feed_dict={x: coefficients}` to the current mini-batch data.
 - Almost all TensorFlow programs use this:
   ```python
-  with tf.Session() as session:       # better for cleaning up in case of error/exception
-  	session.run(init)
-  	session.run(w)
+  with tf.Session() as session:  # better for cleaning up in case of error/exception
+      session.run(init)
+      session.run(w)
   ```
 - In deep learning frameworks there are a lot of things that you can do with one line of code like changing the optimizer.
 _**Side notes:**_

@@ -53,13 +53,11 @@ def weighted_avg_overlap(similarity_fn, samples, log_probs):
 
     # run a for loop for each sample
     for index_candidate, candidate in enumerate(samples):
-
         # initialize overlap and weighted sum
         overlap, weight_sum = 0.0, 0.0
 
         # run a for loop for each sample
         for index_sample, (sample, logp) in enumerate(zip(samples, log_probs)):
-
             # skip if the candidate index is the same as the sample index
             if index_candidate == index_sample:
                 continue
@@ -511,7 +509,6 @@ def test_rouge1_similarity(rouge1_similarity):
     ]
 
     for test_case in test_cases:
-
         try:
             if test_case["name"] == "simple_test_check":
                 assert abs(test_case["expected"] - target(*test_case["input"])) < 1e-6

@@ -6,7 +6,6 @@ import torch
 
 @dataclass
 class TrainResult:
-
     train_acc: List[float]
 
     test_acc: List[float]

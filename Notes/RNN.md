@@ -225,8 +225,7 @@ Parallelizable models like Transformers are often faster.
 For simpler models, you can use `nn.Sequential`:
 ```python
 model = nn.Sequential(
-nn.LSTM(input_size=50, hidden_size=100, batch_first=True),
-nn.Linear(100, 27)
+    nn.LSTM(input_size=50, hidden_size=100, batch_first=True), nn.Linear(100, 27)
 )
 ```
 ---
@@ -1064,16 +1063,18 @@ self-attention) are often more effective than fully connected layers.
 ### Example: CNN vs. Fully Connected Network
 A typical CNN for image classification might look like this:
 ```python
-model = Sequential([
-Conv2D(32, (3, 3), input_shape=(32, 32, 3)),
-Activation('relu'),
-MaxPooling2D(),
-Flatten(), # Convert 2D feature maps to 1D vectors
-Dense(64), # Fully connected layer
-Activation('relu'),
-Dropout(0.5),
-Dense(10) # Output layer for 10 classes
-])
+model = Sequential(
+    [
+        Conv2D(32, (3, 3), input_shape=(32, 32, 3)),
+        Activation("relu"),
+        MaxPooling2D(),
+        Flatten(),  # Convert 2D feature maps to 1D vectors
+        Dense(64),  # Fully connected layer
+        Activation("relu"),
+        Dropout(0.5),
+        Dense(10),  # Output layer for 10 classes
+    ]
+)
 ```
 Here, the `Dense` (fully connected) layers are used after the
 convolutional layers to perform classification.
@@ -1139,28 +1140,28 @@ TensorFlow/Keras:
 ```python
 import tensorflow as tf
 from tensorflow.keras import layers, models
+
 # Create a CNN model
-model = models.Sequential([
-# First convolutional block
-layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32,
-3)),
-layers.MaxPooling2D((2, 2)),
-# Second convolutional block
-layers.Conv2D(64, (3, 3), activation='relu'),
-layers.MaxPooling2D((2, 2)),
-# Third convolutional block
-layers.Conv2D(128, (3, 3), activation='relu'),
-layers.MaxPooling2D((2, 2)),
-# Flatten layer to prepare for fully connected layers
-layers.Flatten(),
-# Fully connected layers
-layers.Dense(64, activation='relu'),
-layers.Dense(10, activation='softmax') # 10 classes for CIFAR-10
-])
+model = models.Sequential(
+    [
+        # First convolutional block
+        layers.Conv2D(32, (3, 3), activation="relu", input_shape=(32, 32, 3)),
+        layers.MaxPooling2D((2, 2)),
+        # Second convolutional block
+        layers.Conv2D(64, (3, 3), activation="relu"),
+        layers.MaxPooling2D((2, 2)),
+        # Third convolutional block
+        layers.Conv2D(128, (3, 3), activation="relu"),
+        layers.MaxPooling2D((2, 2)),
+        # Flatten layer to prepare for fully connected layers
+        layers.Flatten(),
+        # Fully connected layers
+        layers.Dense(64, activation="relu"),
+        layers.Dense(10, activation="softmax"),  # 10 classes for CIFAR-10
+    ]
+)
 # Compile the model
-model.compile(optimizer='adam',
-loss='categorical_crossentropy',
-metrics=['accuracy'])
+model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
 # Print model summary
 model.summary()
 ```
@@ -1394,23 +1395,20 @@ compute gradients
 ```python
 import torch
 import torch.nn as nn
+
 # Define a neural network
-model = nn.Sequential(
-nn.Linear(2, 4),
-nn.ReLU(),
-nn.Linear(4, 1)
-)
+model = nn.Sequential(nn.Linear(2, 4), nn.ReLU(), nn.Linear(4, 1))
 # Loss function and optimizer
 criterion = nn.MSELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 # Forward pass
-inputs = torch.randn(3, 2) # 3 samples, 2 features
+inputs = torch.randn(3, 2)  # 3 samples, 2 features
 outputs = model(inputs)
-target = torch.ones(3, 1) # Target values
+target = torch.ones(3, 1)  # Target values
 # Calculate loss
 loss = criterion(outputs, target)
 # Backward pass (backpropagation)
-loss.backward() # Computes gradients for all parameters
+loss.backward()  # Computes gradients for all parameters
 # Update weights
 optimizer.step()
 # Reset gradients

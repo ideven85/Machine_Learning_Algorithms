@@ -9,6 +9,7 @@ recognition, and time series prediction. Below is an explanation of RNNs with Py
 import torch
 import torch.nn as nn
 
+
 # Define a simple RNN model
 class VanillaRNN(nn.Module):
     def __init__(self, input_size, hidden_size, output_size):
@@ -25,7 +26,9 @@ class VanillaRNN(nn.Module):
 
     def init_hidden(self, batch_size):
         # Initialize hidden state
-        return torch.zeros(1, batch_size, self.hidden_size)  # (num_layers, batch_size, hidden_size)
+        return torch.zeros(
+            1, batch_size, self.hidden_size
+        )  # (num_layers, batch_size, hidden_size)
 ```
 
 #### Key Components:
@@ -46,14 +49,19 @@ seq_lengths = [5, 3, 7, 2]  # Sequence lengths for each example
 max_len = max(seq_lengths)
 
 # Pad sequences to max_len
-padded_sequences = torch.zeros(batch_size, max_len, 10)  # (batch_size, seq_len, feature_dim)
+padded_sequences = torch.zeros(
+    batch_size, max_len, 10
+)  # (batch_size, seq_len, feature_dim)
 for i, length in enumerate(seq_lengths):
     padded_sequences[i, :length, :] = random_data[i]  # Replace with actual data
 
 # Create packed sequence
 from torch.nn.utils.rnn import pack_padded_sequence
+
 lengths_tensor = torch.tensor(seq_lengths)
-padded_sequence_packed = pack_padded_sequence(padded_sequences, lengths_tensor, batch_first=True)
+padded_sequence_packed = pack_padded_sequence(
+    padded_sequences, lengths_tensor, batch_first=True
+)
 
 # Forward pass with packed sequence
 out, hidden = model(padded_sequence_packed, hidden)
@@ -115,15 +123,15 @@ for epoch in range(num_epochs):
     for input_batch, target_batch in train_loader:
         hidden = model.init_hidden(batch_size)
         outputs, hidden = model(input_batch, hidden)
-        
+
         # Reshape outputs to match targets
         outputs = outputs[:, -1, :]  # Predict only the last time step
         loss = criterion(outputs, target_batch)
-        
+
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-    print(f"Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}")
+    print(f"Epoch [{epoch + 1}/{num_epochs}], Loss: {loss.item():.4f}")
 ```
 
 ---
@@ -139,8 +147,7 @@ for epoch in range(num_epochs):
 For simpler models, you can use `nn.Sequential`:
 ```python
 model = nn.Sequential(
-    nn.LSTM(input_size=50, hidden_size=100, batch_first=True),
-    nn.Linear(100, 27)
+    nn.LSTM(input_size=50, hidden_size=100, batch_first=True), nn.Linear(100, 27)
 )
 ```
 
@@ -163,11 +170,12 @@ the basic RNN cell, forward and backward passes, and a simple text generation ex
 ```python
 import numpy as np
 
+
 class RNN:
     def __init__(self, input_size, hidden_size, output_size):
         """
         Initialize RNN parameters
-        
+
         Args:
             input_size: Dimension of input features
             hidden_size: Dimension of hidden state
@@ -177,22 +185,22 @@ class RNN:
         self.Wx = np.random.randn(input_size, hidden_size) * 0.1  # Input to hidden
         self.Wh = np.random.randn(hidden_size, hidden_size) * 0.1  # Hidden to hidden
         self.Wy = np.random.randn(hidden_size, output_size) * 0.1  # Hidden to output
-        
+
         self.bh = np.zeros((hidden_size,))  # Hidden bias
         self.by = np.zeros((output_size,))  # Output bias
-        
+
         # For prediction
         self.losses = []
         self.predictions = []
-    
+
     def forward(self, x, initial_hidden=None):
         """
         Forward pass through the RNN
-        
+
         Args:
             x: Input sequence (seq_length, batch_size, input_size)
             initial_hidden: Initial hidden state (batch_size, hidden_size)
-            
+
         Returns:
             outputs: Output sequence (seq_length, batch_size, output_size)
             hidden_states: Hidden states (seq_length, batch_size, hidden_size)
@@ -201,30 +209,30 @@ class RNN:
             hidden = np.zeros((x.shape[1], self.hidden_size))
         else:
             hidden = initial_hidden
-            
+
         outputs = []
         hidden_states = []
-        
+
         for i in range(x.shape[0]):  # Iterate over sequence length
             # Forward through the RNN cell
             hidden = np.tanh(np.dot(x[i], self.Wx) + np.dot(hidden, self.Wh) + self.bh)
             output = np.dot(hidden, self.Wy) + self.by
             softmax_scores = self.softmax(output)
-            
+
             outputs.append(softmax_scores)
             hidden_states.append(hidden)
-            
+
         return np.array(outputs), np.array(hidden_states)
-    
+
     def softmax(self, x):
         """Softmax activation function"""
         exp_x = np.exp(x - np.max(x, axis=1, keepdims=True))
         return exp_x / exp_x.sum(axis=1, keepdims=True)
-    
+
     def backward(self, x, y, learning_rate=0.1):
         """
         Backward pass (gradient calculation and update)
-        
+
         Args:
             x: Input sequence (seq_length, batch_size, input_size)
             y: Target sequence (seq_length, batch_size, output_size)
@@ -236,107 +244,114 @@ class RNN:
         dWy = np.zeros((self.hidden_size, self.output_size))
         dbh = np.zeros(self.hidden_size)
         dby = np.zeros(self.output_size)
-        
+
         # We'll compute gradients in reverse order (backwards)
         # Start from the last time step
         m = x.shape[1]  # Batch size
-        
+
         # Backward through the last time step
         for i in reversed(range(x.shape[0])):
             # Forward pass to get current outputs
             if i == 0:
                 hidden = np.zeros((m, self.hidden_size))
             else:
-                hidden = self.hidden_states[i-1]  # Get hidden state from previous time step
-            
+                hidden = self.hidden_states[
+                    i - 1
+                ]  # Get hidden state from previous time step
+
             output = np.dot(hidden, self.Wy) + self.by
             softmax_scores = self.softmax(output)
-            
+
             # Calculate output layer gradient
             dsoftmax = softmax_scores.copy()
             dsoftmax[range(m), y[i]] -= 1
             dsoftmax /= m
-            
+
             # Output to hidden gradient
             dWy = np.dot(hidden.T, dsoftmax)
             dby = np.sum(dsoftmax, axis=0)
-            
+
             # Hidden to output gradient
             dhidden_prev = np.dot(dsoftmax, self.Wy.T)
-            
+
             # Now calculate hidden state gradient
             dhidden = dhidden_prev
-            
+
             # Calculate input and hidden to hidden gradients
             dWx = np.dot(x[i].T, dhidden)
             dWh = np.dot(hidden.T, dhidden)
             dbh = np.sum(dhidden, axis=0)
-            
+
             # Save gradients for this time step
             self.dWx = dWx
             self.dWh = dWh
             self.dWy = dWy
             self.dbh = dbh
             self.dby = dby
-            
+
             # Update parameters
             self.Wx -= learning_rate * dWx
             self.Wh -= learning_rate * dWh
             self.Wy -= learning_rate * dWy
             self.bh -= learning_rate * dbh
             self.by -= learning_rate * dby
-            
+
             # Store losses and predictions for evaluation
-            self.losses.append(-np.log(np.mean(np.sum(np.choose(y[i], softmax_scores), axis=1))))
+            self.losses.append(
+                -np.log(np.mean(np.sum(np.choose(y[i], softmax_scores), axis=1)))
+            )
             self.predictions.append(softmax_scores)
-        
+
         return self.losses
-    
+
     def generate_text(self, seed_text, vocab, max_length=50):
         """
         Generate text using the trained RNN
-        
+
         Args:
             seed_text: Starting text for generation
             vocab: Vocabulary dictionary mapping characters to indices
             max_length: Maximum length of generated text
-            
+
         Returns:
             Generated text
         """
         # Convert seed text to indices
         seed_indices = [vocab[char] for char in seed_text]
-        
+
         # Create input sequence (last character only)
         x = np.zeros((1, len(seed_indices), 1))
         for t in range(len(seed_indices)):
             x[0, t, 0] = seed_indices[t]
-        
+
         # Forward pass to get initial hidden state
         _, hidden_states = self.forward(x)
-        
+
         # Generate new text
         generated_text = seed_text
-        
+
         for i in range(max_length):
             # Create input for next character
             x_next = np.zeros((1, 1, 1))
             x_next[0, 0, 0] = seed_indices[-1] if i == 0 else generated_text[-1]
-            
+
             # Forward pass for next character
-            output, _ = self.forward(x_next, initial_hidden=hidden_states[-1] if i > 0 else hidden_states[0])
-            
+            output, _ = self.forward(
+                x_next, initial_hidden=hidden_states[-1] if i > 0 else hidden_states[0]
+            )
+
             # Sample next character
             prediction = output[0, 0]
             next_char = np.random.choice(list(vocab.keys()), p=prediction)
-            
+
             # Append to generated text
             generated_text += next_char
-            
+
             # Update seed for next prediction
             seed_indices.append(vocab[next_char])
-        
+
         return generated_text
+
 
 # Example usage
 if __name__ == "__main__":
@@ -345,24 +360,24 @@ if __name__ == "__main__":
     chars = list(set(text))
     char_to_idx = {c: i for i, c in enumerate(chars)}
     idx_to_char = {i: c for i, c in enumerate(chars)}
-    
+
     # Parameters
     input_size = len(char_to_idx)
     hidden_size = 100
     output_size = len(char_to_idx)
     seq_length = 1  # We'll use single character sequences
     batch_size = 1
-    
+
     # Initialize RNN
     rnn = RNN(input_size, hidden_size, output_size)
-    
+
     # Convert text to sequences
     X = []
     y = []
     for i in range(len(text) - seq_length):
         X.append(np.array([[char_to_idx[text[i]]]]))
-        y.append(np.array([[char_to_idx[text[i+1]]]]))
-    
+        y.append(np.array([[char_to_idx[text[i + 1]]]]))
+
     # Train the RNN
     epochs = 100
     for epoch in range(epochs):
@@ -370,15 +385,15 @@ if __name__ == "__main__":
         for i in range(len(X)):
             # Forward pass
             _, _ = rnn.forward(X[i])
-            
+
             # Backward pass
             loss = rnn.backward(X[i], y[i])
             total_loss += loss[0]  # The first loss value in the list
-            
+
         # Print progress
         if epoch % 10 == 0:
-            print(f"Epoch {epoch}, Loss: {total_loss/len(X)}")
-    
+            print(f"Epoch {epoch}, Loss: {total_loss / len(X)}")
+
     # Generate text
     generated_text = rnn.generate_text("hello", char_to_idx)
     print("\nGenerated Text:")
@@ -631,19 +646,22 @@ b1 = np.zeros((hidden_size,))
 W2 = np.random.randn(hidden_size, output_size)
 b2 = np.zeros((output_size,))
 
+
 # Define activation function (ReLU)
 def relu(x):
     return np.maximum(0, x)
+
 
 # Define the forward pass
 def forward(x):
     # Forward pass through the first layer
     z1 = np.dot(x, W1) + b1
     a1 = relu(z1)
-    
+
     # Forward pass through the output layer
     z2 = np.dot(a1, W2) + b2
     return z2
+
 
 # Example input
 x = np.array([[0.5, 0.3]])
@@ -764,16 +782,18 @@ self-attention) are often more effective than fully connected layers.
 ### Example: CNN vs. Fully Connected Network
 A typical CNN for image classification might look like this:
 ```python
-model = Sequential([
-    Conv2D(32, (3, 3), input_shape=(32, 32, 3)),
-    Activation('relu'),
-    MaxPooling2D(),
-    Flatten(),  # Convert 2D feature maps to 1D vectors
-    Dense(64),   # Fully connected layer
-    Activation('relu'),
-    Dropout(0.5),
-    Dense(10)    # Output layer for 10 classes
-])
+model = Sequential(
+    [
+        Conv2D(32, (3, 3), input_shape=(32, 32, 3)),
+        Activation("relu"),
+        MaxPooling2D(),
+        Flatten(),  # Convert 2D feature maps to 1D vectors
+        Dense(64),  # Fully connected layer
+        Activation("relu"),
+        Dropout(0.5),
+        Dense(10),  # Output layer for 10 classes
+    ]
+)
 ```
 
 Here, the `Dense` (fully connected) layers are used after the convolutional layers to perform classification. 

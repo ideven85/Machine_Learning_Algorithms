@@ -55,7 +55,7 @@ def compare_images(result, expected, exact=False):
     assert result["width"] == expected["width"], "Widths must match"
     assert (
         len(result["pixels"]) == result["height"] * result["width"]
-    ), f"Incorrect number of pixels, exp_image {result['height']*result['width']}"
+    ), f"Incorrect number of pixels, exp_image {result['height'] * result['width']}"
     num_incorrect_val = 0
     first_incorrect_val = None
     num_bad_type = 0
@@ -99,17 +99,17 @@ def compare_images(result, expected, exact=False):
     if first_bad_type:
         msg = (
             first_bad_type
-            + f"\n{num_bad_type} pixel{'s'*int(num_bad_type>1)} had this problem."
+            + f"\n{num_bad_type} pixel{'s' * int(num_bad_type > 1)} had this problem."
         )
     elif first_bad_range:
         msg = (
             first_bad_range
-            + f"\n{num_bad_range} pixel{'s'*int(num_bad_range>1)} had this problem."
+            + f"\n{num_bad_range} pixel{'s' * int(num_bad_range > 1)} had this problem."
         )
     elif first_incorrect_val:
         msg = (
             first_incorrect_val
-            + f"\n{num_incorrect_val} pixel{'s'*int(num_incorrect_val>1)} had incorrect value{'s'*int(num_incorrect_val>1)}."
+            + f"\n{num_incorrect_val} pixel{'s' * int(num_incorrect_val > 1)} had incorrect value{'s' * int(num_incorrect_val > 1)}."
         )
 
     assert correct_image, msg

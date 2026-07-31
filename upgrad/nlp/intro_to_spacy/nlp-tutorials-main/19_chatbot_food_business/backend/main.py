@@ -118,11 +118,11 @@ def remove_from_order(parameters: dict, session_id: str):
             del current_order[item]
 
     if len(removed_items) > 0:
-        fulfillment_text = f'Removed {",".join(removed_items)} from your order!'
+        fulfillment_text = f"Removed {','.join(removed_items)} from your order!"
 
     if len(no_such_items) > 0:
         fulfillment_text = (
-            f' Your current order does not have {",".join(no_such_items)}'
+            f" Your current order does not have {','.join(no_such_items)}"
         )
 
     if len(current_order.keys()) == 0:

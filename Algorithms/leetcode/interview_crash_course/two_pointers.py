@@ -19,7 +19,7 @@ def is_palindrome(s: str):
 def main():
     a = "nitin"
     b = "sexya"
-    print(f"{is_palindrome(a),is_palindrome(b)}")
+    print(f"{is_palindrome(a), is_palindrome(b)}")
 
 
 if __name__ == "__main__":

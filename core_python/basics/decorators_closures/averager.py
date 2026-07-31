@@ -42,7 +42,7 @@ def make_averager():
         avg = total / count
         return avg
 
-    return make_averager
+    return calc_average
 
 
 def memoization(func):

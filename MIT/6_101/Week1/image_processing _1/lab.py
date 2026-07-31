@@ -183,10 +183,10 @@ def save_image(image, filename, buffer_filetype="PNG"):
     """
     # make sure we have a valid image
     if image["mode"] not in {"greyscale", "color"}:
-        raise ValueError(f'Unknown image mode: {image["mode"]}')
+        raise ValueError(f"Unknown image mode: {image['mode']}")
     if (pixcount := image["height"] * image["width"]) != len(image["pixels"]):
         raise ValueError(
-            f'Incorrect number of pixels (expected {pixcount}, got {len(image["pixels"])})'
+            f"Incorrect number of pixels (expected {pixcount}, got {len(image['pixels'])})"
         )
     if image["mode"] == "greyscale":
         if not all(isinstance(x, int) and 0 <= x <= 255 for x in image["pixels"]):

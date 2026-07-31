@@ -310,7 +310,7 @@ def check_seam(cem, result, expected):
     if missing_exp_vals:
         ind = max(missing_exp_vals)
         row, col = ind // cem["width"], ind % cem["width"]
-        msg = f'Missing seam index{"es"*(len(missing_exp_vals) > 1)}!'
+        msg = f"Missing seam index{'es' * (len(missing_exp_vals) > 1)}!"
         msg += f"\nExpected index {ind} (row {row}, col {col}) to be present in seam."
         msg += f"\nFound {len(bad_res_vals)} unexpected seam indices in result."
         res_show = ", ".join(str(x) for x in sorted(result)[-10:])

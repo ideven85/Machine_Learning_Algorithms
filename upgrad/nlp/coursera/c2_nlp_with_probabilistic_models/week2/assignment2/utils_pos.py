@@ -68,9 +68,7 @@ def preprocess(vocab, data_fp):
 
     # Read data
     with open(data_fp, "r") as data_file:
-
         for cnt, word in enumerate(data_file):
-
             # End of sentence
             if not word.split():
                 orig.append(word.strip())

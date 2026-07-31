@@ -49,11 +49,13 @@ NLTK includes various text datasets (corpora). 
 
 Python
 ```python
-        from nltk.corpus import movie_reviews
+from nltk.corpus import movie_reviews
 
-        documents = [(list(movie_reviews.words(fileid)), category)
-                     for category in movie_reviews.categories()
-                     for fileid in movie_reviews.fileids(category)]
+documents = [
+    (list(movie_reviews.words(fileid)), category)
+    for category in movie_reviews.categories()
+    for fileid in movie_reviews.fileids(category)
+]
 ```
 3. Additional Functionality 
 
@@ -85,12 +87,12 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 
-nltk.download('punkt')
-nltk.download('stopwords')
+nltk.download("punkt")
+nltk.download("stopwords")
 
 text = "NLTK is a powerful tool for natural language processing."
 words = word_tokenize(text)
-stop_words = set(stopwords.words('english'))
+stop_words = set(stopwords.words("english"))
 filtered_words = [word for word in words if word.lower() not in stop_words]
 stemmer = PorterStemmer()
 stemmed_words = [stemmer.stem(word) for word in filtered_words]
