@@ -1,5 +1,7 @@
 #
 # print(unzip("Polynomial_Regression_and_Data_Transformation.zip", "."))
+from collections import Counter
+
 import numpy as np, pandas as pd
 
 from sklearn.metrics import mean_squared_error, r2_score
@@ -156,3 +158,24 @@ class TrainResult:
     # Simple scalar defaults
     test_loss: float = 0.0
     test_acc: float = 0.0
+
+
+def tokenize(text):
+    corpus = [a.split() for a in text]
+    vocabulary = Counter()
+    for token in corpus:
+        vocabulary.update([t.lower() for t in token])
+    word_to_index = {
+        word.lower(): i + 1 for i, (word, _) in enumerate(vocabulary.items())
+    }
+    word_to_index["pad"] = 0
+    numerical_sequences = [
+        [word_to_index[token.lower()] for token in tokens] for tokens in corpus
+    ]
+    max_length = max(len(seq) for seq in numerical_sequences)
+
+    padded_sequences = [
+        seq + [word_to_index["pad"]] * (max_length - len(seq))
+        for seq in numerical_sequences
+    ]
+    return padded_sequences
