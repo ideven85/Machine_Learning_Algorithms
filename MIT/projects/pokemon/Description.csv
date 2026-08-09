@@ -1,0 +1,18 @@
+,Column Name,Description
+0,Card ID,Unique identifier for each card used by the simulator.
+1,Card Name,The name of the card.
+2,Expansion,The expansion set the card belongs to.
+3,Collection No.,The card's collection number within the expansion.
+4,Stage (Pokémon) / Type (Energy and Trainer),"Indicates the Pokémon evolution stage (Basic, Stage 1, Stage 2) or the card type for Energy and Trainer cards."
+5,Rule,"Special rule text associated with the card, if applicable."
+6,Category,"The category of the card (e.g., Pokémon, Trainer, Energy)."
+7,Previous stage,The previous evolution stage required for this Pokémon card.
+8,HP,Hit Points of the Pokémon.
+9,Type,"Pokémon type (e.g., Grass, Fire, Water)."
+10,Weakness,Type weakness of the Pokémon.
+11,Resistance (Type),Type resistance of the Pokémon.
+12,Retreat,Retreat cost required to switch the Pokémon.
+13,Move Name,Name of the attack or move.
+14,Cost,Energy cost required to use the move.
+15,Damage,Damage dealt by the move.
+16,Effect Explanation,Description of the move effect or additional rule text.
