@@ -1,0 +1,73 @@
+Criteria,Meet Expectations,Does Not Meet Expectations,,,,
+"Task 1:
+Data Cleaning and Pre-Processing
+(10%)","Performed all data quality checks and addressed all data quality issues in the right way (especially the missing value treatment). Provided a clear explanation for missing value removal or imputation
+ 
+ 
+Provided a well-commented explanation for each step of data processing
+ 
+ 
+Dropped the variables that were not relevant for the project with a well-commented explanation for each step. Converted all variables to correct datatypes.","Did not handle the missing values efficiently
+ 
+ 
+ 
+ 
+ 
+Did not perform and explain the necessary steps for data processing in the comments
+ 
+Did not remove unwanted variables from the columns and did not convert the variables to correct datatypes",,,,
+"Task 2:
+Text Processing
+(10%)","Explored all the relevant text preprocessing steps after cleaning the data set.
+ 
+Provided well-commented reasons for every step that was performed in text preprocessing.",Did not perform the relevant text preprocessing steps to clean the text of the reviews. Did not get clean text at the end of this step,,,,
+"Task 3:
+Feature Extraction
+(10 %)","Divided the data into training and testing parts
+ 
+Converted the text to features using the best-suited vectorizer (bag-of-words, TD-IDF, Word2Vec, etc.) for the ML model for sentiment analysis model building.","Did not divide the data into training and testing parts
+ 
+Did not create the appropriate vectorizer for feature extraction to build the ML model",,,,
+"Task 4:
+Model Building
+(20%)","Built at least 3 ML models and did the comparative analysis on why one model is better than the other three models
+ 
+ 
+Checked whether the data is imbalanced or not and took the necessary steps. If necessary then did the hyperparameter tuning also
+ 
+ 
+Selected one out of the 3 models based on performance for predicting the sentiments based on the text and title of the reviews. Provided detailed reasons for selecting the model","Did not build the 3 ML models and did not give a satisfactory explanation on why one model is better than the other three models
+ 
+Did not consider the imbalance in the data set
+ 
+Did not select the ML model that performed better than the rest. Did not give reasons for selecting the model chosen",,,,
+"Task 5:
+Building the Recommendation System
+(20%)","Split the data set into train and test data set for the recommendation system
+ 
+ 
+Built at least two types of recommendation systems: user-based and item-based recommendation systems
+ 
+ 
+ 
+Evaluated both the types of recommendation systems and selected one based on performance. Provided detailed reasons for selecting the recommendation system","Did not split the data set into train and test datasets
+ 
+ 
+Did not build the two types of recommendation systems
+ 
+ 
+ 
+Did not evaluate the recommendation systems and did not provide any explanation for selecting the best-suited recommendation system",,,,
+"Task 6:
+Recommendation of Top 20 Products to a Specified User
+(10%)",Recommended the top 20 products for the username selected by the user based on the recommendation system built,Did not recommend the top 20 products for any selected username using the finalised recommendation system,,,,
+"Task 7:
+Fine-Tuning the Recommendation System and Recommendation of Top 5 Products
+(10%)","Predicted the sentiment (positive or negative) of all the reviews in the train data set of the top 20 recommended products for a user. For each of the 20 products recommended, found the percentage of positive sentiments for all the reviews of each product. Filtered out the top 5 products with the highest percentage of positive reviews",Did not predict the sentiment using the ML model of all the reviews of the top 20 recommended products for a user. Did not filter out the top 5 products based on the percentage of positive reviews,,,,
+"Task 8:
+Deployment Using Flask
+(10%)","Build an end-to-end web application using Flask and deploy it in your local system. You need to only include one ML model and one recommendation system to deploy the model.
+ 
+You need to:
+	1	Take the username as input, and
+	2	Create a submit button, and once you press the submit button, it should recommend the 5 products based on the username entered.",Was not able deploy the project using Flask,,,,
