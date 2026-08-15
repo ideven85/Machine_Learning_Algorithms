@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/MIT/6_7960" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MIT/6s191" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MIT/graph_deep_learning" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MIT/udl" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/core_python/cythonizing/build" />
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/MIT/6_7960/homeworks/1 nn basics/data/cifar-10-batches-py" />

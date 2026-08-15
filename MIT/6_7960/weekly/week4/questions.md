@@ -213,3 +213,23 @@ Because the GNN neatly packages complex structural data into standard vectors, y
 ---
 
 What specific downstream architecture or task (like sequence generation, global classification, or temporal forecasting) are you planning to pair with your GNN?
+
+Transformers use parallel processing to find "shortcut" solutions that simulate recurrent tasks like finite-state automata in fewer sequential steps than input length T. While recurrent models step through time linearly, shallow Transformers leverage self-attention and hierarchical reparameterization to compute outputs in $$O(log T)$$ or O(1) depth. [1, 2]
+
+Transformers and Automata Shortcuts
+Parallel Simulation: Instead of iterative step-by-step updates, Transformers use multi-head attention layers to process sequences simultaneously.
+Sublinear Depth: Theory shows o(T)-layer Transformers can perfectly replicate automata. Solvable or specific finite-state systems achieve constant O(1) or logarithmic $O(\log T)$ depth.
+Brittle Generalization: These parallel shortcuts allow fast computation, but they can be less robust on out-of-distribution lengths compared to true sequential models. [2]
+
+Autoencoders and Shortcut Learning
+Information Compression: Autoencoders learn compressed latent representations by mapping high-dimensional inputs to a bottleneck layer and reconstructing them.
+Feature Shortcuts: If allowed, autoencoders can exploit trivial mapping shortcuts (such as copying data or memorizing noise) rather than learning meaningful underlying generative factors.
+Regularization: Techniques like denoising, sparsity, or variational constraints force autoencoders past superficial shortcuts to extract robust features.
+
+If you'd like, I can dive deeper into:The algebraic semigroup theory behind automaton shortcutsHow autoencoder bottlenecks prevent superficial shortcut learning
+AI responses may include mistakes.
+[1] https://arxiv.org/abs/2210.10749
+[2] https://www.youtube.com/watch?v=ni9jCjhRUyY
+[3] https://www.linkedin.com/pulse/demystifying-ai-language-revolution-transformers-gpt-1-ishaq-miyawala-n7duf
+[4] https://nigam-vibhor01.medium.com/attention-is-all-you-need-explained-for-everyone-1349430f8f6e
+[5] https://medium.com/@ncaraliceanews/transformer-fundamentals-the-autoencoder-part-1-a6f486d18429
