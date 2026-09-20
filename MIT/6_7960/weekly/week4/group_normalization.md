@@ -33,9 +33,7 @@ class GroupNorm(nn.Module):
         N, C, H, W = x.shape
 
         # Ensure channels can be evenly split into groups
-        assert C % self.num_groups == 0, (
-            "Number of channels must be divisible by num_groups"
-        )
+        assert C % self.num_groups == 0, "Number of channels must be divisible by num_groups"
 
         # 1. Reshape the tensor to isolate the groups
         # Shape becomes: (N, num_groups, C // num_groups, H, W)

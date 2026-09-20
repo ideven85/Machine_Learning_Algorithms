@@ -7,8 +7,8 @@
 # Work through the cells below, running each cell in turn. In various places you will see the words "TODO". Follow the instructions at these places and make predictions about what is going to happen or write code to complete the functions.
 #
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 # First let's define a neural network. We'll initialize both the weights and biases randomly with Glorot initialization (He initialization without the factor of two)
 

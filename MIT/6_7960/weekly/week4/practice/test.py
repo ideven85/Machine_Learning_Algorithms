@@ -1,4 +1,5 @@
 import array
+
 import main as inference
 
 # Representing our "Slow Memory" - Large parameter weights stored in System RAM

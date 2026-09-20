@@ -1,4 +1,8 @@
-# these are already implemented for you!
+import torch
+from torch import nn
+
+from typing import Tuple, Optional, Any
+
 
 class FFN(nn.Module):
     def __init__(self, dim: int, n_hidden: int):
@@ -23,6 +27,8 @@ class FFN(nn.Module):
         out = self.net(x)
         # print(f"Out={out.shape=}")
         return out
+
+
 class AttentionResidual(nn.Module):
     def __init__(self, dim: int, attn_dim: int, mlp_dim: int, num_heads: int):
         # dim       the dimension of the input
@@ -30,12 +36,15 @@ class AttentionResidual(nn.Module):
         # mlp_dim   the hidden layer of the FFN
         # num_heads the number of heads in the attention layer
         super().__init__()
+        # noqa: F821
+        self.attn = nn.Sequential(
+            nn.Linear(dim, attn_dim), nn.ReLU(), nn.Linear(attn_dim, num_heads)
+        )
 
-        self.attn = MultiHeadedAttentionParallel(dim, attn_dim, num_heads)
         self.ffn = FFN(dim, mlp_dim)
 
     def forward(
-            self, x: torch.Tensor, attn_mask=False
+        self, x: torch.Tensor, attn_mask=False
     ) -> Tuple[torch.Tensor, torch.Tensor]:
         # x                the inputs. shape: (B x T x dim)
         # attn_mask        an attention mask. If None, ignore. If not None, then mask[b, i, j]

@@ -25,8 +25,6 @@
 # We will be using [Comet ML](https://www.comet.com/docs/v2/) to track our model development and training runs. First, sign up for a Comet account [at this link](https://www.comet.com/signup?utm_source=mit_dl&utm_medium=partner&utm_content=github
 # ) (you can use your Google or Github account). You will need to generate a new personal API Key, which you can find either in the first 'Get Started with Comet' page, under your account settings, or by pressing the '?' in the top right corner and then 'Quickstart Guide'. Enter this API key as the global variable `COMET_API_KEY`.
 # %%
-!pip install comet_ml > /dev/null 2>&1
-import comet_ml
 
 # TODO: ENTER YOUR API KEY HERE!! instructions above
 COMET_API_KEY = ""
@@ -37,7 +35,7 @@ import torch.nn as nn
 import torch.optim as optim
 
 # Download and import the MIT Introduction to Deep Learning package
-!pip install mitdeeplearning --quiet
+!pip install  --quiet
 import mitdeeplearning as mdl
 
 # Import all remaining packages
