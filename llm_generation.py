@@ -26,6 +26,7 @@ with open(file, "r") as f:
 
 all_dialogues = dialogues.split("\n\n")
 
+
 def tokenize(s):
     return nltk.word_tokenize(s)
 
@@ -60,7 +61,7 @@ class MyTokenizer:
                 [self.tok_to_id[self.start]]
                 + [self.tok_to_id[w] for w in tokenize(s) if w in self.tok_to_id],
                 dtype=np.int32,
-                )
+            )
         )
 
         # TODO: tokenize the input using word_tokenize. Return a tensor  of the token ids, starting with the token id for the start token.
@@ -112,6 +113,8 @@ class MyTokenizer:
 
 
 tok = MyTokenizer(dialogues)
+
+
 class DialogueDataset:
     def __init__(self, tokenizer: MyTokenizer, lines: List[str], max_N: int):
         # tokenizer    an instance of MyTokenizer
@@ -135,6 +138,8 @@ class DialogueDataset:
 
     # def __getitems__(self,indices:int):
     #     return [self.__getitem__(idx) for idx in indices]
+
+
 def collate_fn(examples: List[torch.Tensor]):
     """
     # examples        a batch of tensors containing token ids (maybe of different lengths)
@@ -152,12 +157,13 @@ def collate_fn(examples: List[torch.Tensor]):
         0  # should be ignored if it is a padded
     )
     return {"input_ids": new_input_ids, "input_mask": attn_mask}
+
+
 ds = DialogueDataset(tok, all_dialogues, max_N=200)
 
 train_dl = DataLoader(ds, batch_size=16, num_workers=0, collate_fn=collate_fn)
 BATCH_SIZE = 16
 BUFFER_SIZE = 4
-
 
 
 torch.autograd.set_detect_anomaly(True)
@@ -203,6 +209,7 @@ def clean_memory_cache():
         gc.collect()
         return
 
+
 @dataclass(init=True)
 class TrainResult:
     """
@@ -244,7 +251,6 @@ def print_variance(name: str, data: torch.Tensor):
     print(f"{name}: Variance = {neuron_variance.item():.6f}")
 
 
-
 class MultiHeadedAttention(nn.Module):
     def __init__(self, dim: int, n_hidden: int, num_heads: int):
         super().__init__()
@@ -257,11 +263,11 @@ class MultiHeadedAttention(nn.Module):
         self.W0 = nn.Linear(num_heads * n_hidden, dim)
 
     def forward(
-            self,
-            x: torch.Tensor,
-            attn_mask: Optional[torch.Tensor] = None,
-            layer_past: Optional[Tuple[torch.Tensor, torch.Tensor]] = None,
-            use_cache: bool = False
+        self,
+        x: torch.Tensor,
+        attn_mask: Optional[torch.Tensor] = None,
+        layer_past: Optional[Tuple[torch.Tensor, torch.Tensor]] = None,
+        use_cache: bool = False,
     ) -> Tuple[torch.Tensor, Optional[Tuple[torch.Tensor, torch.Tensor]]]:
         B, T, _ = x.shape
 
@@ -292,9 +298,7 @@ class MultiHeadedAttention(nn.Module):
         is_causal = (attn_mask is None) and (T > 1) and (layer_past is None)
 
         context = F.scaled_dot_product_attention(
-            q, k, v,
-            attn_mask=attn_mask,
-            is_causal=is_causal
+            q, k, v, attn_mask=attn_mask, is_causal=is_causal
         )
 
         context = (
@@ -312,30 +316,40 @@ class AttentionResidual(nn.Module):
         self.norm1 = nn.LayerNorm(dim)
 
         self.attn = MultiHeadedAttention(dim, attn_dim, num_heads)
-        #self.attn = OptimizedAttentionLayer(dim,attn_dim, num_heads)
+        # self.attn = OptimizedAttentionLayer(dim,attn_dim, num_heads)
         # LayerNorm applied inside the FFN sequence only
         self.norm2 = nn.LayerNorm(dim)
         self.ffn = nn.Sequential(
-            #nn.LayerNorm(dim),
+            # nn.LayerNorm(dim),
             nn.Linear(dim, mlp_dim),
             nn.GELU(),
             nn.Linear(mlp_dim, dim),
         )
 
     def forward(
-            self, x: torch.Tensor, attn_mask: Optional[torch.Tensor] = None,layer_past: Optional[Tuple[torch.Tensor, torch.Tensor]] = None,use_cache: bool = False
+        self,
+        x: torch.Tensor,
+        attn_mask: Optional[torch.Tensor] = None,
+        layer_past: Optional[Tuple[torch.Tensor, torch.Tensor]] = None,
+        use_cache: bool = False,
     ) -> Tuple[torch.Tensor, torch.Tensor]:
         # Attention block with residual connection (no norm)
-        attn_out, alphas = self.attn(x=self.norm1(x), attn_mask=attn_mask, layer_past=layer_past, use_cache=use_cache)
+        attn_out, alphas = self.attn(
+            x=self.norm1(x),
+            attn_mask=attn_mask,
+            layer_past=layer_past,
+            use_cache=use_cache,
+        )
         x = x + attn_out
 
         # FFN block with residual connection (norm is first layer inside self.ffn)
         x = x + self.ffn(self.norm2(x))
         return x, alphas
 
+
 class Transformer(nn.Module):
     def __init__(
-            self, dim: int, attn_dim: int, mlp_dim: int, num_heads: int, num_layers: int
+        self, dim: int, attn_dim: int, mlp_dim: int, num_heads: int, num_layers: int
     ):
         super().__init__()
         self.layers = nn.ModuleList(
@@ -346,13 +360,17 @@ class Transformer(nn.Module):
         )
 
     def forward(
-            self,
-            x: torch.Tensor,
-            attn_mask: Optional[torch.Tensor] = None,
-            return_attn: bool = False,
-            layer_past: Optional[List[Tuple[torch.Tensor, torch.Tensor]]] = None,
-            use_cache: bool = False,
-    ) -> Tuple[torch.Tensor, Optional[torch.Tensor], Optional[List[Tuple[torch.Tensor, torch.Tensor]]]]:
+        self,
+        x: torch.Tensor,
+        attn_mask: Optional[torch.Tensor] = None,
+        return_attn: bool = False,
+        layer_past: Optional[List[Tuple[torch.Tensor, torch.Tensor]]] = None,
+        use_cache: bool = False,
+    ) -> Tuple[
+        torch.Tensor,
+        Optional[torch.Tensor],
+        Optional[List[Tuple[torch.Tensor, torch.Tensor]]],
+    ]:
         presents = [] if use_cache else None
 
         for i, layer in enumerate(self.layers):
@@ -370,16 +388,17 @@ class Transformer(nn.Module):
 
         return x, None, presents
 
+
 class DialogueGPT(nn.Module):
     def __init__(
-            self,
-            vocab_size: int,
-            max_N: int,
-            dim: int,
-            attn_dim: int,
-            mlp_dim: int,
-            num_heads: int,
-            num_layers: int,
+        self,
+        vocab_size: int,
+        max_N: int,
+        dim: int,
+        attn_dim: int,
+        mlp_dim: int,
+        num_heads: int,
+        num_layers: int,
     ):
         super().__init__()
         self.token_embeddings = nn.Embedding(vocab_size, dim)
@@ -394,11 +413,11 @@ class DialogueGPT(nn.Module):
         self.head = nn.Sequential(nn.LayerNorm(dim), nn.Linear(dim, vocab_size))
 
     def forward(
-            self,
-            input_ids: torch.Tensor,
-            return_attn: bool = False,
-            layer_past: Optional[List[Tuple[torch.Tensor, torch.Tensor]]] = None,
-            use_cache: bool = False,
+        self,
+        input_ids: torch.Tensor,
+        return_attn: bool = False,
+        layer_past: Optional[List[Tuple[torch.Tensor, torch.Tensor]]] = None,
+        use_cache: bool = False,
     ):
         B, T = input_ids.shape
 
@@ -413,10 +432,10 @@ class DialogueGPT(nn.Module):
         # Causal mask is only needed for sequences longer than 1 when NOT using cache
         if layer_past is None and T > 1:
             causal_attn_mask = (
-                                   torch.tril(torch.ones(T, T, device=input_ids.device))
-                                   .unsqueeze(0)
-                                   .repeat(B, 1, 1)
-                               ) == 1
+                torch.tril(torch.ones(T, T, device=input_ids.device))
+                .unsqueeze(0)
+                .repeat(B, 1, 1)
+            ) == 1
         else:
             causal_attn_mask = None
 
@@ -451,13 +470,14 @@ class DialogueGPT(nn.Module):
 
         return input_ids
 
+
 class DialogueLoss(nn.Module):
     def __init__(self):
         super().__init__()
         self.criterion = nn.CrossEntropyLoss(reduction="none")
 
     def forward(
-            self, logits: torch.Tensor, input_ids: torch.Tensor, inp_mask: torch.Tensor
+        self, logits: torch.Tensor, input_ids: torch.Tensor, inp_mask: torch.Tensor
     ):
         """
         # logits      the logits produced by DialogueGPT. shape: (B x T x V)
@@ -511,7 +531,7 @@ def main():
 
         # Wrap your loader securely
         for step, inp_dict in tqdm.tqdm(
-                enumerate(train_dl), desc=f"Training at {epoch}", total=len(train_dl)
+            enumerate(train_dl), desc=f"Training at {epoch}", total=len(train_dl)
         ):
             inp_ids, inp_mask = inp_dict["input_ids"], inp_dict["input_mask"]
 
@@ -557,5 +577,6 @@ def main():
             f"Train Epoch: {epoch}, Loss: {loss_meter.calculate():0.4f}, LR: {scheduler.get_last_lr()[0]}"
         )
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
