@@ -1,0 +1,806 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Lecture Notes",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          241.00999450683594,
+          90.757568359375
+        ],
+        [
+          355.0390625,
+          90.757568359375
+        ],
+        [
+          355.0390625,
+          112.27001953125
+        ],
+        [
+          241.00999450683594,
+          112.27001953125
+        ]
+      ]
+    },
+    {
+      "title": "Logistic Regression",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          220.97000122070312,
+          125.3955078125
+        ],
+        [
+          376.57421875,
+          125.3955078125
+        ],
+        [
+          376.57421875,
+          146.5899658203125
+        ],
+        [
+          220.97000122070312,
+          146.5899658203125
+        ]
+      ]
+    },
+    {
+      "title": "Binary Classification",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          240.0500030517578,
+          311.84423828125
+        ],
+        [
+          354.45703125,
+          311.84423828125
+        ],
+        [
+          354.45703125,
+          327.87841796875
+        ],
+        [
+          240.0500030517578,
+          327.87841796875
+        ]
+      ]
+    },
+    {
+      "title": "Odds and Log Odds",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          239.505859375,
+          190.251708984375
+        ],
+        [
+          355.912109375,
+          190.251708984375
+        ],
+        [
+          355.912109375,
+          206.77001953125
+        ],
+        [
+          239.505859375,
+          206.77001953125
+        ]
+      ]
+    },
+    {
+      "title": "Multivariate Logistic Regression (Model Building)",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          157.439453125,
+          612.1767578125
+        ],
+        [
+          439.142578125,
+          612.1767578125
+        ],
+        [
+          439.142578125,
+          628.1699981689453
+        ],
+        [
+          157.439453125,
+          628.1699981689453
+        ]
+      ]
+    },
+    {
+      "title": "The you saw that the different elements in the confusion matrix can be labelled as follows \u2013",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          33.0302734375,
+          108.641845703125
+        ],
+        [
+          485.4140625,
+          108.641845703125
+        ],
+        [
+          485.4140625,
+          122.86004638671875
+        ],
+        [
+          33.0302734375,
+          122.86004638671875
+        ]
+      ]
+    },
+    {
+      "title": "ROC Curve",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          265.6100158691406,
+          386.0537109375
+        ],
+        [
+          327.392578125,
+          386.0537109375
+        ],
+        [
+          327.392578125,
+          400.7200012207031
+        ],
+        [
+          265.6100158691406,
+          400.7200012207031
+        ]
+      ]
+    },
+    {
+      "title": "Model Evaluation: Precision and Recall",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          186.4099884033203,
+          427.1669921875
+        ],
+        [
+          408.294921875,
+          427.1669921875
+        ],
+        [
+          408.294921875,
+          442.3800048828125
+        ],
+        [
+          186.4099884033203,
+          442.3800048828125
+        ]
+      ]
+    },
+    {
+      "title": "Sample Selection for Logistic Regression",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          182.1800079345703,
+          151.810791015625
+        ],
+        [
+          409.6813659667969,
+          151.810791015625
+        ],
+        [
+          409.6813659667969,
+          166.406005859375
+        ],
+        [
+          182.1800079345703,
+          166.406005859375
+        ]
+      ]
+    },
+    {
+      "title": "Segmentation",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          258.04998779296875,
+          294.98779296875
+        ],
+        [
+          339.32421875,
+          294.98779296875
+        ],
+        [
+          339.32421875,
+          309.78857421875
+        ],
+        [
+          258.04998779296875,
+          309.78857421875
+        ]
+      ]
+    },
+    {
+      "title": "Variable Transformation",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          225.65000915527344,
+          503.6376953125
+        ],
+        [
+          366.6796875,
+          503.6376953125
+        ],
+        [
+          366.6796875,
+          518.5800170898438
+        ],
+        [
+          225.65000915527344,
+          518.5800170898438
+        ]
+      ]
+    },
+    {
+      "title": "DUMMY VARIABLE TRANSFORMATION",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          35.43115234375,
+          685.3583984375
+        ],
+        [
+          264.82421875,
+          685.3583984375
+        ],
+        [
+          264.82421875,
+          700.5299987792969
+        ],
+        [
+          35.43115234375,
+          700.5299987792969
+        ]
+      ]
+    },
+    {
+      "title": "WOE TRANSFORMATION",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          34.448974609375,
+          284.29833984375
+        ],
+        [
+          182.7578125,
+          284.29833984375
+        ],
+        [
+          182.7578125,
+          300.03997802734375
+        ],
+        [
+          34.448974609375,
+          300.03997802734375
+        ]
+      ]
+    },
+    {
+      "title": "Model Stability",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          252.7470703125,
+          559.962890625
+        ],
+        [
+          340.48828125,
+          559.962890625
+        ],
+        [
+          340.48828125,
+          575.5859375
+        ],
+        [
+          252.7470703125,
+          575.5859375
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          67
+        ],
+        [
+          "Line",
+          26
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "ListItem",
+          3
+        ],
+        [
+          "Picture",
+          2
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          59
+        ],
+        [
+          "Line",
+          11
+        ],
+        [
+          "Text",
+          3
+        ],
+        [
+          "Picture",
+          2
+        ],
+        [
+          "Figure",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          109
+        ],
+        [
+          "Line",
+          31
+        ],
+        [
+          "Text",
+          12
+        ],
+        [
+          "ListItem",
+          3
+        ],
+        [
+          "Picture",
+          2
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "Equation",
+          2
+        ],
+        [
+          "Code",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          75
+        ],
+        [
+          "Line",
+          17
+        ],
+        [
+          "TableCell",
+          9
+        ],
+        [
+          "Text",
+          7
+        ],
+        [
+          "TextInlineMath",
+          3
+        ],
+        [
+          "Picture",
+          2
+        ],
+        [
+          "ListItem",
+          2
+        ],
+        [
+          "Code",
+          1
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          42
+        ],
+        [
+          "Line",
+          13
+        ],
+        [
+          "TableCell",
+          9
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "Picture",
+          2
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "TextInlineMath",
+          2
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "Equation",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          53
+        ],
+        [
+          "Line",
+          14
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "Picture",
+          2
+        ],
+        [
+          "Figure",
+          2
+        ],
+        [
+          "TextInlineMath",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Equation",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          86
+        ],
+        [
+          "Line",
+          28
+        ],
+        [
+          "ListItem",
+          10
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "Picture",
+          2
+        ],
+        [
+          "ListGroup",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          115
+        ],
+        [
+          "Line",
+          33
+        ],
+        [
+          "Text",
+          12
+        ],
+        [
+          "ListItem",
+          3
+        ],
+        [
+          "Picture",
+          2
+        ],
+        [
+          "Equation",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 8,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          82
+        ],
+        [
+          "Line",
+          28
+        ],
+        [
+          "Text",
+          12
+        ],
+        [
+          "ListItem",
+          5
+        ],
+        [
+          "Picture",
+          2
+        ],
+        [
+          "ListGroup",
+          2
+        ],
+        [
+          "TextInlineMath",
+          1
+        ],
+        [
+          "Code",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 9,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          46
+        ],
+        [
+          "Line",
+          18
+        ],
+        [
+          "Text",
+          7
+        ],
+        [
+          "ListItem",
+          2
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 10,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          62
+        ],
+        [
+          "Line",
+          19
+        ],
+        [
+          "ListItem",
+          7
+        ],
+        [
+          "Picture",
+          2
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/2. Logistic Regression"
+}
