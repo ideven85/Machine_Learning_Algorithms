@@ -16,7 +16,6 @@ def train_epoch(model, optimizer, device, data_loader, epoch, LPE):
     epoch_train_mae = 0
 
     for iter, (batch_graphs, batch_targets) in enumerate(data_loader):
-
         batch_graphs = batch_graphs.to(device)
         batch_x = batch_graphs.ndata["feat"].to(device)
         batch_e = batch_graphs.edata["feat"].to(device)

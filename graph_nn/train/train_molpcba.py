@@ -34,7 +34,6 @@ def train_epoch(model, optimizer, device, data_loader, epoch, LPE, batch_accumul
         batch_targets = batch_targets.to(device)
 
         if LPE == "node":
-
             batch_EigVecs = batch_graphs.ndata["EigVecs"]
             # random sign flipping
             sign_flip = torch.rand(batch_EigVecs.size(1), device=device)
@@ -48,7 +47,6 @@ def train_epoch(model, optimizer, device, data_loader, epoch, LPE, batch_accumul
             )
 
         elif LPE == "edge":
-
             batch_diff = batch_graphs.edata["diff"]
             batch_prod = batch_graphs.edata["product"]
             batch_EigVals = batch_graphs.edata["EigVals"]

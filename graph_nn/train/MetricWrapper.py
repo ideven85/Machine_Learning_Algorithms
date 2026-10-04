@@ -78,7 +78,6 @@ class MetricWrapper:
             raise ValueError(f"Invalid option `{self.target_nan_mask}`")
 
         if self.target_nan_mask == "ignore-mean-label":
-
             # Compute the metric for each column, and output nan if there's an error on a given column
             metric_val = []
             for ii in range(len(target)):

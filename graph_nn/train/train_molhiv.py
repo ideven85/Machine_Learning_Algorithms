@@ -21,7 +21,6 @@ def train_epoch(model, optimizer, device, data_loader, epoch, LPE):
     scores = torch.tensor([]).to(device)
 
     for iter, (batch_graphs, batch_targets) in enumerate(data_loader):
-
         batch_graphs = batch_graphs.to(device)
         batch_x = batch_graphs.ndata["feat"].to(device)  # num x feat
         batch_e = batch_graphs.edata["feat"].to(device)
@@ -30,7 +29,6 @@ def train_epoch(model, optimizer, device, data_loader, epoch, LPE):
         optimizer.zero_grad()
 
         if LPE == "node":
-
             batch_EigVecs = batch_graphs.ndata["EigVecs"].to(device)
             # random sign flipping
             sign_flip = torch.rand(batch_EigVecs.size(1)).to(device)
@@ -44,7 +42,6 @@ def train_epoch(model, optimizer, device, data_loader, epoch, LPE):
             )
 
         elif LPE == "edge":
-
             batch_diff = batch_graphs.edata["diff"].to(device)
             batch_prod = batch_graphs.edata["product"].to(device)
             batch_EigVals = batch_graphs.edata["EigVals"].to(device)

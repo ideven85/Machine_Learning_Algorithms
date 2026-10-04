@@ -7,7 +7,6 @@ import torch.nn.functional as F
 
 
 class MLPReadout(nn.Module):
-
     def __init__(self, input_dim, output_dim, L=2):  # L=nb_hidden_layers
         super().__init__()
         list_FC_layers = [

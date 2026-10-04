@@ -6,7 +6,6 @@ from itertools import product
 
 
 class TicTacToe:
-
     def __init__(self):
         """initialise the board"""
 
@@ -142,7 +141,6 @@ class TicTacToe:
         elif terminal[1] == "Tie":
             reward = 0
         else:  # Resume for Env move
-
             env_action_space = [x for x in self.action_space(Next_state)[1]]
             next_action = tuple(
                 np.asarray(env_action_space)[

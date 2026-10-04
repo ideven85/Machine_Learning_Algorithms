@@ -178,7 +178,6 @@ def train_val_pipeline(MODEL_NAME, dataset, params, net_params, dirs):
     try:
         with tqdm(range(params["epochs"])) as t:
             for epoch in t:
-
                 start = time.time()
 
                 epoch_train_loss, epoch_train_acc, optimizer = train_epoch(
