@@ -1,7 +1,6 @@
-import tarfile
 import os
-
 import shutil
+import tarfile
 
 
 def compress_directory(dir_name, out_file="cifar-100-python.tar.gz"):

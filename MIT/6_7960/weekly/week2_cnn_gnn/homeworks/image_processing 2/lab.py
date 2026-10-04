@@ -69,7 +69,6 @@ def blurred(image, blur_size):
     """
     raise NotImplementedError
 
-
 # HELPER FUNCTIONS FOR DISPLAYING, LOADING, AND SAVING IMAGES
 
 
@@ -82,22 +81,14 @@ def print_values(image):
     Note that pixel values that are floats will be rounded to the nearest int.
     """
     assert image["mode"] in {"greyscale", "color"}
-    print(
-        f"{image['mode'].title()} image with {image['height']} rows and {image['width']} columns:"
-    )
+    print(f"{image['mode'].title()} image with {image['height']} rows and {image['width']} columns:")
     print()
     for r in range(image["height"]):
-        if image["mode"] == "greyscale":
+        if image['mode'] == "greyscale":
             formatted_pixel = lambda p: f"{round(p):>3}"
         else:
-            formatted_pixel = lambda p: (
-                "(" + ", ".join(f"{round(v):>3}" for v in p) + ")"
-            )
-        print(
-            "   ".join(
-                formatted_pixel(get_pixel(image, r, c)) for c in range(image["width"])
-            )
-        )
+            formatted_pixel = lambda p: ("(" + ", ".join(f"{round(v):>3}" for v in p) + ")")
+        print("   ".join(formatted_pixel(get_pixel(image, r, c)) for c in range(image["width"])))
 
 
 def load_image(filename, mode="greyscale"):
@@ -135,23 +126,20 @@ def save_image(image, filename, buffer_filetype="PNG"):
     by the "buffer_filetype" parameter.
     """
     # make sure we have a valid image
-    if image["mode"] not in {"greyscale", "color"}:
-        raise ValueError(f"Unknown image mode: {image['mode']}")
-    if (pixcount := image["height"] * image["width"]) != len(image["pixels"]):
-        raise ValueError(
-            f"Incorrect number of pixels (expected {pixcount}, got {len(image['pixels'])})"
-        )
-    if image["mode"] == "greyscale":
-        if not all(isinstance(x, int) and 0 <= x <= 255 for x in image["pixels"]):
+    if image['mode'] not in {'greyscale', 'color'}:
+        raise ValueError(f'Unknown image mode: {image["mode"]}')
+    if (pixcount := image['height'] * image['width']) != len(image['pixels']):
+        raise ValueError(f'Incorrect number of pixels (expected {pixcount}, got {len(image["pixels"])})')
+    if image['mode'] == 'greyscale':
+        if not all(isinstance(x, int) and 0 <= x <= 255 for x in image['pixels']):
             msg = "Pixel values in a greyscale image must be integers between 0 and 255"
             raise ValueError(msg)
     else:
         msg = "Pixel values in a color image must be tuples of length 3"
         if not all(
-            isinstance(tuple, p)
-            and len(p) == 3
+            isinstance(tuple, p) and len(p) == 3
             and all(isinstance(x, int) and 0 <= x < 255 for x in p)
-            for p in image["pixels"]
+            for p in image['pixels']
         ):
             msg = "Pixel values in a color image must be length-3 tuples of integers between 0 and 255"
             raise ValueError(msg)

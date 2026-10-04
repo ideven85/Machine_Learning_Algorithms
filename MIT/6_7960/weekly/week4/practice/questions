@@ -1,0 +1,46 @@
+Hard Quiz: CNN → Backprop → GELU → Transformers
+Q1. (Gating)
+Suppose a ReLU layer receives
+[ x=[-2,;3,;-1,;5] ]
+The upstream gradient is
+[ \𝛅=[4,;1,;7,;2]. ]
+Without doing matrix multiplication, what gradient leaves the ReLU layer?
+3,5
+
+Q2. (Reasoning)
+If we replace ReLU with GELU, which statement is most correct?
+A. Gradients become larger everywhere.
+B. Previously dead neurons now receive exactly the same gradient as positive neurons.
+C. Small negative activations can still contribute some gradient.
+D. GELU removes the need for residual connections.
+
+Q3. (Attention)
+A CNN needs many layers before the top-right bird can influence the bottom-left bird.
+A transformer can do this in one self-attention layer.
+Why?
+One sentence.
+
+Q4. (Backprop)
+Why is the Jacobian of ReLU a diagonal matrix?
+Don't say "because derivatives are independent." Explain structurally.
+1/0
+
+Q5. (Very hard)
+Imagine replacing GELU with
+[ f(x)=2x. ]
+Would this activation increase the expressive power of the network?
+A. Yes
+B. No
+Explain in one sentence.
+
+Q6. (Research-level intuition)
+Suppose every activation in a transformer becomes ReLU instead of GELU.
+Training still converges.
+Why might validation accuracy still be slightly worse?
+Don't mention "papers say so." Explain mechanistically.
+
+Q7. (Connection question)
+Complete the sentence:
+Attention is to tokens what ________ is to neurons.
+
+Answer all at once. I'll grade like an MIT TA and point out any reasoning gaps rather than just marking right or wrong.
