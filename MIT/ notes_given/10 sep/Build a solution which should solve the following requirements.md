@@ -1,0 +1,7 @@
+- Build a solution which should solve the following requirements:  
+- Users would get responses from insurance policy knowledge base.  
+- If user want to perform a query system must be able to response to query accurately.  
+- If user want to perform a query system must be able to response to query accurately.  
+- If they want to refer to the original page from which the bot is responding, the bot should  
+- If they want to refer to the original page from which the bot is responding, the bot should  
+- provide a citation as well.  

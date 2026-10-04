@@ -1,0 +1,9 @@
+Ek jungle mein ek lalchi bhalu rehta tha. Wah har samay zyada ki talash mein rehta tha. Thode se wah kabhi santusht nahi hota tha. Ek dopahar jab wah sokar utha, toh use zoron ki bhookh lagi. Wah bhojan ki talash mein nikal pada.  
+​Uss din mausam saaf tha. Sunhari dhoop khili hui thi. Bhalu ne socha, “Kitna achha mausam hai. Iss mausam mein toh mujhe machhli pakadni chahiye. Chalo, aaj machhli ki hi daawat ki jaye.”  
+​Yeh sochkar usne nadi ki raah pakad li. Nadi kinare pahunchkar bhalu ne socha ki agar ek badi machhli haath lag jaye, toh maza aa jaye. Usne poori umeed se nadi mein haath dala aur ek machhli uske haath aa gayi. Wah bahut khush hua. Lekin, jab usne haath nadi se bahar nikala, toh dekha ki haath lagi machhli chhoti si hai.  
+​Wah bahut niraash hua. Usne socha, "Arey! Isse mera kya hoga? Badi machhli haath lage, toh baat bane." Usne wah chhoti machhli wapas nadi mein phenk di aur phir se machhli pakadne ke liye taiyar ho gaya.  
+​Kuch der baad usne phir se nadi mein haath dala aur uske haath phir se ek machhli lag gayi. Lekin, wah machhli bhi chhoti thi. Usne wah machhli bhi yeh sochkar nadi mein phenk di ki is chhoti si machhli se mera pet nahi bhar payega.  
+​Wah baar-baar nadi mein haath daalkar machhli pakadta aur har baar uske haath chhoti machhli lagti. Wah badi machhli ki aasha mein chhoti machhliyon ko wapas nadi mein phenk deta. Aisa karte-karte shaam ho gayi aur uske haath ek bhi badi machhli nahi lagi.  
+​Bhookh ke maare uska bura haal ho gaya. Wah sochne laga ki badi machhli ke liye maine kitni saari chhoti machhliyan phenk deen. Utni chhoti machhliyan milkar ek badi machhli ke barabar ho sakti theen aur mera pet bhar sakta tha.  
+​Seekh (Moral of the story):  
+Aapke paas jo hai, uska mahatva samjhein. Bhale hi wah thoda hi sahi, lekin kuch na hone se behtar hai.  
